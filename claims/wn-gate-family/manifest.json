@@ -1,0 +1,16 @@
+{
+  "allowed": [
+    "ch. 7"
+  ],
+  "claims": [
+    "K6",
+    "K9",
+    "K11"
+  ],
+  "commit": "662166ecff0651902cc5fcb04bf747c62d795af2",
+  "name": "wn-gate-family",
+  "round": 29,
+  "run_label": "20261017-1126",
+  "staged_at": "2026-10-18T14:27:07Z",
+  "title": "An unexploitable modal agent that defects against itself"
+}

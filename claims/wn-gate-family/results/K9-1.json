@@ -1,0 +1,8 @@
+{
+  "duration_s": 21.30088210105896,
+  "exit": 0,
+  "path": "checks/K9-c046_wn_lean.py",
+  "result": "pass",
+  "run_at": "2026-10-17T11:55:20.494887+00:00",
+  "stdout_tail": "PASS Lean proof of the W_n gate family for all n; 3 negative controls rejected; tables n<=12 agree\n"
+}

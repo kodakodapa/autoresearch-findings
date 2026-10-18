@@ -1,0 +1,8 @@
+{
+  "duration_s": 26.93888807296753,
+  "exit": 0,
+  "path": "checks/K11-c046_wpairs_lean.py",
+  "result": "pass",
+  "run_at": "2026-10-17T11:58:57.032476+00:00",
+  "stdout_tail": "PASS: Lean w_fk, pj_db, w_pj, w_wm for all indices; 4 negative controls rejected; tables n<=12, k,j,m<=14 agree\n"
+}

@@ -1,0 +1,8 @@
+{
+  "duration_s": 6.897450923919678,
+  "exit": 0,
+  "path": "checks/K6-c046_combo12.py",
+  "result": "pass",
+  "run_at": "2026-10-17T11:48:19.349189+00:00",
+  "stdout_tail": "census+filter ok [(12, '[]([][]F|(p&(q|~[]q)))'), (12, '[]([]p&(q|[]([]F|~q)))'), (12, '[][](p&(q|[]([]F|~q)))')] 6.4 s\nindependent solver ok 6.7 s\nPASS 6.7 s\n"
+}
