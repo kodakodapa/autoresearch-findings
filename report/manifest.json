@@ -20,6 +20,19 @@
       "run_label": "20261017-1126",
       "slug": "wn-gate-family",
       "title": "An unexploitable modal agent that defects against itself"
+    },
+    {
+      "allowed": [
+        "ch. 7"
+      ],
+      "claims": [
+        "K8"
+      ],
+      "commit": "662166ecff0651902cc5fcb04bf747c62d795af2",
+      "date": "2026-10-18",
+      "run_label": "20261017-1126",
+      "slug": "graded-prudent-fair",
+      "title": "When graded PrudentBots cooperate with graded FairBots"
     }
   ]
 }

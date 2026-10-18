@@ -1,0 +1,14 @@
+{
+  "allowed": [
+    "ch. 7"
+  ],
+  "claims": [
+    "K8"
+  ],
+  "commit": "662166ecff0651902cc5fcb04bf747c62d795af2",
+  "name": "graded-prudent-fair",
+  "round": 29,
+  "run_label": "20261017-1126",
+  "staged_at": "2026-10-18T17:05:27Z",
+  "title": "When graded PrudentBots cooperate with graded FairBots"
+}

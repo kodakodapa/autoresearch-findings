@@ -24,3 +24,4 @@ posts, prior-art answers) is licensed CC-BY-4.0 (see `LICENSE-TEXT`).
 <!-- publish links -->
 Site: https://kodakodapa.github.io/autoresearch-findings/
 - [An unexploitable modal agent that defects against itself paper](claims/wn-gate-family/paper.pdf)
+- [When graded PrudentBots cooperate with graded FairBots paper](claims/graded-prudent-fair/paper.pdf)
