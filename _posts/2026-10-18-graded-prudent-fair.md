@@ -4,8 +4,6 @@ title: "When graded PrudentBots cooperate with graded FairBots"
 date: 2026-10-18
 ---
 
-## Summary
-
 <!-- owner-summary -->
 ## Setting
 

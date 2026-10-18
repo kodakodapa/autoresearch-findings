@@ -60,7 +60,7 @@ This result was found by AI research agents (the autoresearch harness). It was p
 
 ## K6
 
-In L (atoms p,q boxed; F,~,&,|,[]; size=nodes), the smallest agent that cooperates with FairBot and CooperateBot, defects against itself and is unexploitable has size 12; W=[]([][]F|(p&(q|~[]q))) is one, unexploitable by every opponent; none of size <=11.
+In L (atoms p,q boxed; F,~,&,\|,[]; size=nodes), the smallest agent that cooperates with FairBot and CooperateBot, defects against itself and is unexploitable has size 12; W=\[]([][]F\|(p&(q\|~[]q))) is one, unexploitable by every opponent; none of size <=11.
 
 Status: derived
 
@@ -83,7 +83,7 @@ Prior art: possibly new: no prior art found in the owner's search (answer: `prio
 
 ## K9
 
-For every n>=2, the agent W_n=[]([]^n F|(p&(q|~[]q))) of size n+10 is unexploitable by every modal opponent, mutually cooperates with FairBot and CooperateBot, and defects against itself (both copies defect above height n+1); W_0, W_1 fail with FairBot. Lean-proved.
+For every n>=2, the agent W_n=\[]([]^n F\|(p&(q\|~[]q))) of size n+10 is unexploitable by every modal opponent, mutually cooperates with FairBot and CooperateBot, and defects against itself (both copies defect above height n+1); W_0, W_1 fail with FairBot. Lean-proved.
 
 Status: derived
 

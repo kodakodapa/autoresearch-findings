@@ -87,7 +87,7 @@ This result was found by AI research agents (the autoresearch harness). It was p
 
 ## K14
 
-For all n>=0, r>=1, k>=1, j>=0 (height semantics of closed GL fixed points), V_{n,r}=[]([]^nF|(p&(q|~[]^r q))): CC with F_k iff k+r<=n; with P_j iff r<n<j; any two V's defect. For r<n each is universally unexploitable, all pairwise distinct. Lean.
+For all n>=0, r>=1, k>=1, j>=0 (height semantics of closed GL fixed points), V_{n,r}=\[]([]^nF\|(p&(q\|~[]^r q))): CC with F_k iff k+r<=n; with P_j iff r<n<j; any two V's defect. For r<n each is universally unexploitable, all pairwise distinct. Lean.
 
 Status: derived
 
@@ -111,7 +111,7 @@ Prior art: possibly new: no prior art found in the owner's search (answer: `prio
 
 ## K18
 
-For all m>=j>=1 (height semantics of closed GL fixed points), G_{m,j}=[]([]^m p&(q|[]([]^jF|~q))), size m+j+10, is unexploitable, coops with FB and CB, defects vs itself; CC with F_k iff k<=j, P_i iff i>m; defects vs ~[]F unlike every V_{n,r} with n>=1. Lean.
+For all m>=j>=1 (height semantics of closed GL fixed points), G_{m,j}=\[]([]^m p&(q\|\[]([]^jF\|~q))), size m+j+10, is unexploitable, coops with FB and CB, defects vs itself; CC with F_k iff k<=j, P_i iff i>m; defects vs ~[]F unlike every V_{n,r} with n>=1. Lean.
 
 Status: derived
 
@@ -136,7 +136,7 @@ Prior art: possibly new: no prior art found in the owner's search (answer: `prio
 
 ## K20
 
-For all H_{m,j}=box^{m+1}(p&(q|box(box^j F|~q))), 1<=j<=m, size m+j+10<=15 (six agents), self-play is DD, FB/CB CC; CC with F_k iff k<=j (k<=4), P_i iff i>m (i<=5). GLS certifies 102 cells including separators from matching G and bounded V.
+For all H_{m,j}=box^{m+1}(p&(q\|box(box^j F\|~q))), 1<=j<=m, size m+j+10<=15 (six agents), self-play is DD, FB/CB CC; CC with F_k iff k<=j (k<=4), P_i iff i>m (i<=5). GLS certifies 102 cells including separators from matching G and bounded V.
 
 Status: derived
 
@@ -159,7 +159,7 @@ Prior art: possibly new: no prior art found in the owner's search (answer: `prio
 
 ## K21
 
-For m>=1, j>=1 (height semantics of closed GL fixed points), H_{m,j}=[]^{m+1}(p&(q|[]([]^jF|~q))) is unexploitable; DB trace h<=m; CC with F_k iff k<=j, P_i iff i>m; H vs H defect (j<=m); S_j=[]^{j+1}(p|~[]^{j+1}q) gives D/C vs H_{m,j}, D/D vs G_{m,j}. Lean.
+For m>=1, j>=1 (height semantics of closed GL fixed points), H_{m,j}=[]^{m+1}(p&(q\|\[]([]^jF\|~q))) is unexploitable; DB trace h<=m; CC with F_k iff k<=j, P_i iff i>m; H vs H defect (j<=m); S_j=[]^{j+1}(p\|~[]^{j+1}q) gives D/C vs H_{m,j}, D/D vs G_{m,j}. Lean.
 
 Status: derived
 
@@ -184,7 +184,7 @@ Prior art: possibly new: no prior art found in the owner's search (answer: `prio
 
 ## K22
 
-In L, the size-13 agent J=[][]([]p&(q|[]([]F|~q))) has self DD and FB/CB CC. Its F1..4/P0..5 outcomes match G21 and H21, but two size<=9 opponents distinguish all three; all 48 stated cells are GLS-certified.
+In L, the size-13 agent J=[]\[]([]p&(q\|\[]([]F\|~q))) has self DD and FB/CB CC. Its F1..4/P0..5 outcomes match G21 and H21, but two size<=9 opponents distinguish all three; all 48 stated cells are GLS-certified.
 
 Status: derived
 
