@@ -11,6 +11,12 @@
       ],
       "commit": "662166ecff0651902cc5fcb04bf747c62d795af2",
       "date": "2026-10-18",
+      "revisions": [
+        {
+          "date": "2026-10-18",
+          "reason": "Escaped claim statements, compiled PDF, references, per-finding paper, website layout"
+        }
+      ],
       "run_label": "20261017-1126",
       "slug": "wn-gate-family",
       "title": "An unexploitable modal agent that defects against itself"

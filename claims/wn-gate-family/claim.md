@@ -4,7 +4,7 @@
 ## Setting
 
 Two programs play a one-shot prisoner's dilemma, and each can read the other's source code.
-Following Barasz et al. (2014), a *modal agent* decides by asking what can be proved about the
+Following Barasz et al. [1], a *modal agent* decides by asking what can be proved about the
 opponent in Peano arithmetic, written with the provability box $\Box$ of the logic GL. FairBot,
 $\Box p$, cooperates exactly when it can prove that the opponent cooperates with it
 ($p$); CooperateBot always cooperates; DefectBot always defects. An agent is *unexploitable* if
@@ -35,7 +35,7 @@ two copies of $W_n$ never reach mutual cooperation.
 
 The properties of $W_n$ and its laws against graded FairBots, graded PrudentBots and other
 $W_m$ are proved for all indices in Lean 4 (height semantics of closed GL fixed points; the link
-to provability in arithmetic is Solovay's theorem, cited, not formalised). The minimality of size
+to provability in arithmetic is Solovay's theorem [2], cited, not formalised; see also [3]). The minimality of size
 12 is an exhaustive computation over all agents up to size 12 in the stated language.
 <!-- /owner-summary -->
 
@@ -121,3 +121,14 @@ Prior art: possibly new: no prior art found in the owner's search (answer: `prio
 - round: 6
 - run-folder commit: 662166ecff0651902cc5fcb04bf747c62d795af2
 - check results: K11-1.json
+
+## References
+
+1. <!-- cite:barasz2014robust --> Barasz, Mihaly and Christiano, Paul and Fallenstein, Benja and Herreshoff, Marcello and LaVictoire, Patrick and Yudkowsky, Eliezer. 2014. Robust Cooperation in the Prisoner's Dilemma: Program Equilibrium via Provability Logic. [Link](https://arxiv.org/abs/1401.5577)
+2. <!-- cite:solovay1976provability --> Solovay, Robert M.. 1976. Provability Interpretations of Modal Logic. Israel Journal of Mathematics
+3. <!-- cite:boolos1993logic --> Boolos, George. 1993. The Logic of Provability. Cambridge University Press
+
+<!-- autoresearch:revisions -->
+## Revisions
+
+- 2026-10-18 — Escaped claim statements, compiled PDF, references, per-finding paper, website layout

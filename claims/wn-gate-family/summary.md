@@ -1,7 +1,7 @@
 ## Setting
 
 Two programs play a one-shot prisoner's dilemma, and each can read the other's source code.
-Following Barasz et al. (2014), a *modal agent* decides by asking what can be proved about the
+Following Barasz et al. [@barasz2014robust], a *modal agent* decides by asking what can be proved about the
 opponent in Peano arithmetic, written with the provability box $\Box$ of the logic GL. FairBot,
 $\Box p$, cooperates exactly when it can prove that the opponent cooperates with it
 ($p$); CooperateBot always cooperates; DefectBot always defects. An agent is *unexploitable* if
@@ -32,5 +32,5 @@ two copies of $W_n$ never reach mutual cooperation.
 
 The properties of $W_n$ and its laws against graded FairBots, graded PrudentBots and other
 $W_m$ are proved for all indices in Lean 4 (height semantics of closed GL fixed points; the link
-to provability in arithmetic is Solovay's theorem, cited, not formalised). The minimality of size
+to provability in arithmetic is Solovay's theorem [@solovay1976provability], cited, not formalised; see also [@boolos1993logic]). The minimality of size
 12 is an exhaustive computation over all agents up to size 12 in the stated language.
