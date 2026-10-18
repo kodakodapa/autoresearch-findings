@@ -1,0 +1,19 @@
+{
+  "allowed": [
+    "ch. 7"
+  ],
+  "claims": [
+    "K14",
+    "K18",
+    "K20",
+    "K21",
+    "K22",
+    "K23"
+  ],
+  "commit": "662166ecff0651902cc5fcb04bf747c62d795af2",
+  "name": "gate-families",
+  "round": 29,
+  "run_label": "20261017-1126",
+  "staged_at": "2026-10-18T19:05:42Z",
+  "title": "Families of unexploitable agents that defect against themselves"
+}

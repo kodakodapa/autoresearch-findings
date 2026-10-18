@@ -9,7 +9,7 @@
 \begin{document}
 \maketitle
 \begin{abstract}
-This report collects the findings: An unexploitable modal agent that defects against itself; When graded PrudentBots cooperate with graded FairBots.
+This report collects the findings: An unexploitable modal agent that defects against itself; When graded PrudentBots cooperate with graded FairBots; Families of unexploitable agents that defect against themselves.
 \end{abstract}
 
 \section{An unexploitable modal agent that defects against itself}
@@ -207,6 +207,159 @@ Status: derived.
 
 \paragraph{Provenance.}
 Run \texttt{20261017-1126}, claims K8, run-folder commit \texttt{662166ecff0651902cc5fcb04bf747c62d795af2}, published 2026-10-18.
+
+\section{Families of unexploitable agents that defect against themselves}
+\label{sec:gate-families}
+
+\subsection*{Setting}
+
+Two programs play a one-shot prisoner's dilemma, and each can read the other's source code.
+Following Barasz et al. \cite{barasz2014robust}, a \emph{modal agent} decides by asking what can be proved
+about the opponent, written with the provability box $\Box$ of the logic GL. $p$ means ``the
+opponent cooperates with me'' and $q$ means ``the opponent cooperates with DefectBot''. FairBot is
+$\Box p$, graded FairBots are $F_k = \Box^k p$, graded PrudentBots are
+$P_j = \Box p \wedge \Box(\neg\Box^j\bot \to \neg q)$, and ConBot is $\neg\Box\bot$. An agent is
+\emph{unexploitable} if no modal opponent ever gets it to cooperate while the opponent defects.
+
+An earlier finding on this site described $W_n = \Box(\Box^n\bot \vee (p \wedge (q \vee \neg\Box q)))$: unexploitable, cooperative with FairBot and CooperateBot, yet defecting against
+its own copy. This finding describes four further families of unexploitable agents that defect against
+themselves, and how they relate.
+
+\subsection*{Result}
+
+\begin{itemize}
+\item \textbf{Gate families $V_{n,r} = \Box(\Box^n\bot \vee (p \wedge (q \vee \neg\Box^r q)))$}, which contain $W_n = V_{n,1}$. $V_{n,r}$ and $F_k$ cooperate exactly when $k + r \le n$; $V_{n,r}$ and $P_j$ exactly when $r < n < j$; any two members defect against each other. For $r < n$ every member is unexploitable, and these members are pairwise distinct.
+\item \textbf{Prudent families $G_{m,j} = \Box(\Box^m p \wedge (q \vee \Box(\Box^j\bot \vee \neg q)))$ and $H_{m,j} = \Box^{m+1}(p \wedge (q \vee \Box(\Box^j\bot \vee \neg q)))$}, $m \ge j \ge 1$. Both are unexploitable, cooperate with FairBot and CooperateBot, defect against themselves, and cooperate with $F_k$ exactly when $k \le j$ and with $P_i$ exactly when $i > m$. So $G_{m,j}$ and $H_{m,j}$ cannot be told apart by graded FairBots or PrudentBots; the agent $S_j = \Box^{j+1}(p \vee \neg\Box^{j+1} q)$ separates them ($H_{m,j}$ defects against it while it cooperates; against $G_{m,j}$ both defect). ConBot separates the two kinds of family: $G_{m,j}$ defects against it, every $V_{n,r}$ with $n \ge 1$ does not.
+\item \textbf{A common family $J_{a,b,j} = \Box^{a+1}(\Box^b p \wedge (q \vee \Box(\Box^j\bot \vee \neg q)))$}, which contains $G$ ($a = 0$) and $H$ ($b = 0$). Checked for $a, b \le 5$, $j \le 6$: $J_{a,b,j}$ cooperates with $F_k$ exactly when $k \le j$ and with $P_i$ exactly when $i > a + b$, and exact laws hold against a two-parameter family of separating probes; the 70 members with $j \le a + b \le 5$ are pairwise distinct. The size-13 member $J_{1,1,1}$ has the same outcomes as $G_{2,1}$ and $H_{2,1}$ against $F_1, \dots, F_4$ and $P_0, \dots, P_5$, yet two opponents of size at most 9 distinguish all three.
+\end{itemize}
+
+\subsection*{Why it matters}
+
+The unexploitable agents we found in the literature (FairBot, PrudentBot and its graded and
+probabilistic variants \cite{barasz2014robust}, \cite{oesterheld2022compatibility}) all cooperate with
+their own copies. These families show that defecting against oneself is not a single odd
+example: it comes in several infinite families with different mechanisms (a delayed gate on
+the DefectBot test in $V$, a PrudentBot-style check in $G$, $H$ and $J$). Their behaviour
+against graded FairBots and PrudentBots is described by simple thresholds, and these opponents
+alone do not identify an agent: distinct members can agree on all of them and need other probes
+to be told apart.
+
+\subsection*{Proved vs checked}
+
+The laws for $V_{n,r}$, $G_{m,j}$ and $H_{m,j}$ (including the separations by ConBot and $S_j$)
+are proved for all indices in Lean 4, in the height semantics of closed GL fixed points; the link
+to provability in arithmetic is Solovay's theorem \cite{solovay1976provability}, cited, not
+formalised (see also \cite{boolos1993logic}). The statements about $J_{a,b,j}$ and $J_{1,1,1}$ are
+checked, not proved: exact tables for the stated parameter ranges, with every member of size at
+most 15 independently certified by GL fixed-point solving. The unexploitability of $J_{a,b,j}$ is
+supported by a short argument (the agent implies $\Box^{a+b+1}p$) and randomised safety tests,
+not by a proof for all indices.
+
+We believe this result is new. Our prior-art searches (2026-10-17 to 2026-10-18) covered:
+
+\begin{itemize}
+\item Barasz et al. 2014, Robust Cooperation in the Prisoner's Dilemma (arXiv 1401.5577), full text: named agents CB, DB, CliqueBot, FairBot, PrudentBot, TrollBot, JustBot, WaitFairBot\_K; Theorems 3.2, 4.8, 4.10; obstacles section.
+\item LaVictoire et al. 2014, Program Equilibrium in the Prisoner's Dilemma via Löb's Theorem.
+\item LessWrong post on Barasz et al. and its comments (orthonormal, cousin\_it, Will\_Sawin, Karl, dankane).
+\item Arbital / LessWrong wiki ``Modal combat''.
+\item Garrabrant, ``Prisoners' Dilemma with Costs to Modeling''; Garrabrant, ``Modal SAT: Introduction'' (2015).
+\item Mennen, ``Modal Combat for games other than the prisoner's dilemma''.
+\item Critch, Parametric Bounded Löb's Theorem and Robust Cooperation of Bounded Agents (arXiv 1602.04184), first sections.
+\item Searches for round-robin, tournament, replicator or ESS analyses of modal agents: only iterated-PD and FDT evolution papers (e.g. arXiv 2005.05154, no modal agents).
+\item github.com/machine-intelligence/provability (owner, 2026-10-18): its example agent file (target.ua) and the Haskell agent catalogue (Agents.hs) (CB, DB, FB, FB\_1..5, TbF\_1..3, FB\_r, MB, WB, WB\_2, aMB, sMB, IB, PB, PB\_2, PB\_3, NB, JB, TB, QB\_1..3, modal UDT). Evaluated in height semantics (our reading of its [k] and boxk notation as PA+k provability): none of them defects against itself while cooperating with FairBot and CooperateBot; none has the form of V, G, H or J.
+\item Barasz et al. 2014 (arXiv 1401.5577), full text; LaVictoire et al. 2014 (Program Equilibrium via Löb's Theorem).
+\item LessWrong post on Barasz et al. and comments; Arbital ``Modal combat''.
+\item Garrabrant, ``Prisoners' Dilemma with Costs to Modeling'' and ``Modal SAT: Introduction''; Mennen, ``Modal Combat for games other than the prisoner's dilemma''.
+\item Critch, Parametric Bounded Löb (arXiv 1602.04184), first sections.
+\item Oesterheld 2022, A Note on the Compatibility of Different Robust Program Equilibria of the Prisoner's Dilemma (arXiv 2211.05057).
+\end{itemize}
+
+We found no earlier statement of it, but we can't be certain. If you know of prior work, please open an issue.
+
+This result was found by AI research agents (the autoresearch harness). It was partly proved in Lean (claims K14, K18, K21) and partly checked by script (claims K20, K22, K23); the proof and check files are included so anyone can re-run them.
+
+\subsection*{Claim K14}
+
+For all n\textgreater{}=0, r\textgreater{}=1, k\textgreater{}=1, j\textgreater{}=0 (height semantics of closed GL fixed points), V\_\{n,r\}=[]([]\textasciicircum{}nF\textbar{}(p\&(q\textbar{}\textasciitilde{}[]\textasciicircum{}r q))): CC with F\_k iff k+r\textless{}=n; with P\_j iff r\textless{}n\textless{}j; any two V's defect. For r\textless{}n each is universally unexploitable, all pairwise distinct. Lean.
+
+Status: derived.
+
+\paragraph{Verified.}
+\begin{itemize}
+\item \texttt{checks/K14-c046\_vfam\_lean.py}: embedded Lean 4 theorems qclause\_r, v\_unexploitable, v\_db, v\_cb, v\_fk, pj\_db, v\_pj, v\_vm, v\_params compile with no sorryAx; 5 false variants rejected; literal height tables n\textless{}=10, r\textless{}=5, k,j\textless{}=12 and V-vs-V n,m\textless{}=6, r,s\textless{}=3 agree; 35 r\textless{}n agents have distinct F/P outcome vectors; size(V\_\{n,r\})=n+r+9 --- pass (Lean-proved, no sorryAx)
+\item \texttt{checks/K14-c046\_vfam\_lean.py}: embedded Lean 4 theorems qclause\_r, v\_unexploitable, v\_db, v\_cb, v\_fk, pj\_db, v\_pj, v\_vm, v\_params compile with no sorryAx; 5 false variants rejected; literal height tables agree; 35 r\textless{}n agents have distinct F/P outcome vectors --- pass (Lean-proved, no sorryAx)
+\end{itemize}
+
+\paragraph{Prior art.} Possibly new: no prior art found in the owner's search.
+
+\subsection*{Claim K18}
+
+For all m\textgreater{}=j\textgreater{}=1 (height semantics of closed GL fixed points), G\_\{m,j\}=[]([]\textasciicircum{}m p\&(q\textbar{}[]([]\textasciicircum{}jF\textbar{}\textasciitilde{}q))), size m+j+10, is unexploitable, coops with FB and CB, defects vs itself; CC with F\_k iff k\textless{}=j, P\_i iff i\textgreater{}m; defects vs \textasciitilde{}[]F unlike every V\_\{n,r\} with n\textgreater{}=1. Lean.
+
+Status: derived.
+
+\paragraph{Verified.}
+\begin{itemize}
+\item \texttt{checks/K18-c046\_gfam\_lean.py}: embedded Lean 4 theorems gq, g\_unexploitable, g\_db, g\_cb, g\_conbot, g\_fk, g\_pj, g\_gg, v\_conbot, g\_params compile with no sorryAx; 4 false variants rejected; literal height tables m\textless{}=8, j\textless{}=9, k,i\textless{}=11 and G-vs-G m,m'\textless{}=5 agree; independent string solver: self/FB/CB/DB/ConBot for m,j\textless{}=3, W\_2 coops with ConBot; size(G\_\{m,j\})=m+j+10 --- pass (Lean-proved, no sorryAx)
+\end{itemize}
+
+\paragraph{Prior art.} Possibly new: no prior art found in the owner's search.
+
+\subsection*{Claim K20}
+
+For all H\_\{m,j\}=box\textasciicircum{}\{m+1\}(p\&(q\textbar{}box(box\textasciicircum{}j F\textbar{}\textasciitilde{}q))), 1\textless{}=j\textless{}=m, size m+j+10\textless{}=15 (six agents), self-play is DD, FB/CB CC; CC with F\_k iff k\textless{}=j (k\textless{}=4), P\_i iff i\textgreater{}m (i\textless{}=5). GLS certifies 102 cells including separators from matching G and bounded V.
+
+Status: derived.
+
+\paragraph{Verified.}
+\begin{itemize}
+\item \texttt{checks/K20-outer\_prudent\_family.py}: Exhausts six H parameters of size\textless{}=15; all 102 pinned fixed-point cells pass GLS with mutation controls; common F/P rows distinguish all six; explicit matching-G and ConBot/V separators. --- pass
+\end{itemize}
+
+\paragraph{Prior art.} Possibly new: no prior art found in the owner's search.
+
+\subsection*{Claim K21}
+
+For m\textgreater{}=1, j\textgreater{}=1 (height semantics of closed GL fixed points), H\_\{m,j\}=[]\textasciicircum{}\{m+1\}(p\&(q\textbar{}[]([]\textasciicircum{}jF\textbar{}\textasciitilde{}q))) is unexploitable; DB trace h\textless{}=m; CC with F\_k iff k\textless{}=j, P\_i iff i\textgreater{}m; H vs H defect (j\textless{}=m); S\_j=[]\textasciicircum{}\{j+1\}(p\textbar{}\textasciitilde{}[]\textasciicircum{}\{j+1\}q) gives D/C vs H\_\{m,j\}, D/D vs G\_\{m,j\}. Lean.
+
+Status: derived.
+
+\paragraph{Verified.}
+\begin{itemize}
+\item \texttt{checks/K21-c046\_hfam\_lean.py}: embedded Lean 4 theorems h\_fail, h\_unexploitable, h\_db, h\_cb, h\_conbot, h\_fk, h\_pj, h\_hh, s\_db, h\_sep, g\_sep, h\_params compile with no sorryAx; 4 false variants rejected; literal height tables m,j\textless{}=8, k,i\textless{}=11, H-vs-H m,m'\textless{}=5, H/G vs S\_j agree; independent string solver for m,j\textless{}=3: self, FB, CB, DB, ConBot, F\_1..4, P\_0..5, S\_j; size(H)=m+j+10, size(S\_j)=2j+6 --- pass (Lean-proved, no sorryAx)
+\end{itemize}
+
+\paragraph{Prior art.} Possibly new: no prior art found in the owner's search.
+
+\subsection*{Claim K22}
+
+In L, the size-13 agent J=[][]([]p\&(q\textbar{}[]([]F\textbar{}\textasciitilde{}q))) has self DD and FB/CB CC. Its F1..4/P0..5 outcomes match G21 and H21, but two size\textless{}=9 opponents distinguish all three; all 48 stated cells are GLS-certified.
+
+Status: derived.
+
+\paragraph{Verified.}
+\begin{itemize}
+\item \texttt{checks/K22-mixed\_prudent.py}: 48 hash-pinned GLS-certified cells with mutation controls; all three agents size13; named rows agree; two small opponents distinguish G21,J,H21. --- pass
+\end{itemize}
+
+\paragraph{Prior art.} Possibly new: no prior art found in the owner's search.
+
+\subsection*{Claim K23}
+
+For $J_{a,b,j}=\Box^{a+1}(\Box^b p\wedge(q\vee\Box(\Box^jF\vee\neg q)))$, $0\le a,b\le5$, $1\le j\le6$: CC with $F_k$ ($k\le9$) iff $k\le j$, $P_i$ ($i\le9$) iff $i>a+b$; vs $S_{u,t}$ ($u,t\le8$): CC if $u\le j$, else D/C iff $t+b\le u$, else DD. The 70 with $j\le a+b\le5$ are distinct.
+
+Status: derived.
+
+\paragraph{Verified.}
+\begin{itemize}
+\item \texttt{checks/K23-c046\_jfam.py}: literal tables a,b\textless{}=5, j\textless{}=6: DB/CB/ConBot, F\_k (k\textless{}=9), P\_i (i\textless{}=9), S\_\{u,t\} (u,t\textless{}=8) laws incl. defection heights, J vs J defect, random-trace safety; 70 members (j\textless{}=a+b\textless{}=5) have distinct vectors; independent string solver: 882 cells for all 21 members of size\textless{}=15 --- pass
+\item \texttt{checks/K23-c046\_jfam\_gls.py}: all 21 J\_\{a,b,j\} with 1\textless{}=j\textless{}=a+b, size\textless{}=15: 265 cells (self, CB, DB, ConBot, F\_j/F\_\{j+1\}, P\_\{a+b\}/P\_\{a+b+1\}, S\_\{j,j+3\}, S\_\{u,t\} boundaries t+b=u vs u+1 for u=j+1,j+2, G21/J111/H21 split on S\_\{2,1\},S\_\{2,2\}) match the K23 law formulas and pass GLS fixed-point certificates with flipped-candidate rejection --- pass
+\end{itemize}
+
+\paragraph{Prior art.} Possibly new: no prior art found in the owner's search.
+
+\paragraph{Provenance.}
+Run \texttt{20261017-1126}, claims K14, K18, K20, K21, K22, K23, run-folder commit \texttt{662166ecff0651902cc5fcb04bf747c62d795af2}, published 2026-10-18.
 
 \section{How to verify}
 

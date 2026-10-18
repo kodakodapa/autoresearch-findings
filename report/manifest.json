@@ -33,6 +33,24 @@
       "run_label": "20261017-1126",
       "slug": "graded-prudent-fair",
       "title": "When graded PrudentBots cooperate with graded FairBots"
+    },
+    {
+      "allowed": [
+        "ch. 7"
+      ],
+      "claims": [
+        "K14",
+        "K18",
+        "K20",
+        "K21",
+        "K22",
+        "K23"
+      ],
+      "commit": "662166ecff0651902cc5fcb04bf747c62d795af2",
+      "date": "2026-10-18",
+      "run_label": "20261017-1126",
+      "slug": "gate-families",
+      "title": "Families of unexploitable agents that defect against themselves"
     }
   ]
 }

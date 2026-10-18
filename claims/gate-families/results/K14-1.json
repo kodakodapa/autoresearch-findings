@@ -1,0 +1,8 @@
+{
+  "duration_s": 32.8908269405365,
+  "exit": 0,
+  "path": "checks/K14-c046_vfam_lean.py",
+  "result": "pass",
+  "run_at": "2026-10-17T14:42:19.276417+00:00",
+  "stdout_tail": "PASS: Lean V_{n,r} laws for all indices; 5 negative controls rejected; 35 separated r<n gates; tables agree\n"
+}

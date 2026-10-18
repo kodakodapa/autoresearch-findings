@@ -1,0 +1,8 @@
+{
+  "duration_s": 15.792684078216553,
+  "exit": 0,
+  "path": "checks/K23-c046_jfam.py",
+  "result": "pass",
+  "run_at": "2026-10-18T09:46:40.921142+00:00",
+  "stdout_tail": "PASS: J_{a,b,j} tables (a,b<=5, j<=6), 70 distinct agents, 882 string-solver cells for 21 agents of size<=15\n"
+}

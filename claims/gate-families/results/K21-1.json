@@ -1,0 +1,8 @@
+{
+  "duration_s": 29.84902000427246,
+  "exit": 0,
+  "path": "checks/K21-c046_hfam_lean.py",
+  "result": "pass",
+  "run_at": "2026-10-17T16:40:06.753370+00:00",
+  "stdout_tail": "PASS: Lean H_{m,j} laws and S_j separator for all indices; 4 negative controls rejected; tables and string solver agree\n"
+}

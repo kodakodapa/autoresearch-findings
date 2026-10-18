@@ -1,0 +1,8 @@
+{
+  "duration_s": 0.6666507720947266,
+  "exit": 0,
+  "path": "checks/K22-mixed_prudent.py",
+  "result": "pass",
+  "run_at": "2026-10-17T16:40:41.925931+00:00",
+  "stdout_tail": "profiles [((False, False), (False, False)), ((False, True), (False, False)), ((False, True), (False, True))]\nPASS 48 GLS cells 5a771d2b405f4596e75e84f58479582a1598352fa4c5e5b6642f464d7c5b9306\n"
+}

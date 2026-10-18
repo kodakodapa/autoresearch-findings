@@ -1,0 +1,8 @@
+{
+  "duration_s": 250.8392140865326,
+  "exit": 0,
+  "path": "checks/K18-c046_gfam_lean.py",
+  "result": "pass",
+  "run_at": "2026-10-17T15:46:38.355224+00:00",
+  "stdout_tail": "PASS: Lean G_{m,j} laws for all m,j; 4 negative controls rejected; tables and string solver agree\n"
+}

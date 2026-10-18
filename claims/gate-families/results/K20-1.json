@@ -1,0 +1,8 @@
+{
+  "duration_s": 9.814188003540039,
+  "exit": 0,
+  "path": "checks/K20-outer_prudent_family.py",
+  "result": "pass",
+  "run_at": "2026-10-17T16:35:08.309354+00:00",
+  "stdout_tail": "PASS 102 GLS-certified cells; sha256 4d63db184b4e6ef10f49b5fcf8aec8f8d826b8a2b278b5ec17e13188f420f15f\n"
+}
