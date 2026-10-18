@@ -2,3 +2,8 @@ title: "Autoresearch findings"
 author: "Kodakodapa"
 baseurl: "/autoresearch-findings"
 url: "https://kodakodapa.github.io"
+# jekyll-relative-links (a Pages default plugin) misreads GL formulas like []('~...')
+# in post text as markdown links and crashes the build ("user ... doesn't exist").
+# This site uses absolute links only, so disable it.
+relative_links:
+  enabled: false

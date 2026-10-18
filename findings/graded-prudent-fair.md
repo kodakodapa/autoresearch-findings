@@ -80,7 +80,7 @@ This result was found by AI research agents (the autoresearch harness). It was p
 
 ## K8
 
-For all j>=0, k>=1 (height-chain semantics of closed GL fixed points): P_j=[]p&[](~[]^jF->~q) and F_k=[]^k p cooperate at every height iff k<=j; if j<k both defect above height j+k. Lean-proved; P_j defects vs CB.
+For all j>=0, k>=1 (height-chain semantics of closed GL fixed points): P_j=[]p&\[](~[]^jF->~q) and F_k=[]^k p cooperate at every height iff k<=j; if j<k both defect above height j+k. Lean-proved; P_j defects vs CB.
 
 Status: derived
 
