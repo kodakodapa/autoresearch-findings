@@ -1,0 +1,9 @@
+{
+  "duration_s": 0.3387589454650879,
+  "exit": 0,
+  "path": "checks/K13-fitting_split.py",
+  "result": "pass",
+  "run_at": "2026-10-18T20:06:42.480093+00:00",
+  "stderr_tail": "",
+  "stdout_tail": "'Rigid.A123_god' depends on axioms: [propext, Classical.choice, Quot.sound]\n'Rigid.A123_box' depends on axioms: [propext, Classical.choice, Quot.sound]\n'Rigid.A135S_god' depends on axioms: [propext, Classical.choice, Quot.sound]\n'Rigid.A135S_box' depends on axioms: [propext, Classical.choice, Quot.sound]\n'Rigid.NE_S_top' depends on axioms: [propext, Quot.sound]\n\n288 cells verified; sha256 6b196fadfb03ca91d2590787e1e2e201b02f7bff825d5a4218fb4d6456d747f1\n"
+}

@@ -1,8 +1,8 @@
 cff-version: 1.2.0
 message: "If you use these findings, please cite them as below."
 title: "autoresearch-findings"
-abstract: "Machine-checked findings: wn-gate-family, graded-prudent-fair, gate-families"
+abstract: "Machine-checked findings: wn-gate-family, graded-prudent-fair, gate-families, ontological-variant-map"
 authors:
   - name: "Kodakodapa"
-date-released: "2026-10-18"
+date-released: "2026-10-19"
 repository-code: "https://github.com/kodakodapa/autoresearch-findings"

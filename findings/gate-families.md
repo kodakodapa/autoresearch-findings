@@ -87,16 +87,16 @@ This result was found by AI research agents (the autoresearch harness). It was p
 
 ## K14
 
-For all n>=0, r>=1, k>=1, j>=0 (height semantics of closed GL fixed points), V_{n,r}=\[]([]^nF\|(p&(q\|~[]^r q))): CC with F_k iff k+r<=n; with P_j iff r<n<j; any two V's defect. For r<n each is universally unexploitable, all pairwise distinct. Lean.
+`For all n>=0, r>=1, k>=1, j>=0 (height semantics of closed GL fixed points), V_{n,r}=[]([]^nF|(p&(q|~[]^r q))): CC with F_k iff k+r<=n; with P_j iff r<n<j; any two V's defect. For r<n each is universally unexploitable, all pairwise distinct. Lean.`
 
 Status: derived
 
 Kind: model
 
 Evidence:
-- check `checks/K14-c046_vfam_lean.py`: embedded Lean 4 theorems qclause_r, v_unexploitable, v_db, v_cb, v_fk, pj_db, v_pj, v_vm, v_params compile with no sorryAx; 5 false variants rejected; literal height tables n<=10, r<=5, k,j<=12 and V-vs-V n,m<=6, r,s<=3 agree; 35 r<n agents have distinct F/P outcome vectors; size(V_{n,r})=n+r+9 — pass (`results/K14-2.json`)
-- reasoning: Closed GL fixed points are letter-free and decided by height on finite linear frames (Boolos, Logic of Provability ch. 7); v_unexploitable quantifies over arbitrary opponent traces, hence all modal opponents.
-- check `checks/K14-c046_vfam_lean.py`: embedded Lean 4 theorems qclause_r, v_unexploitable, v_db, v_cb, v_fk, pj_db, v_pj, v_vm, v_params compile with no sorryAx; 5 false variants rejected; literal height tables agree; 35 r<n agents have distinct F/P outcome vectors — pass (`results/K14-2.json`)
+- check `checks/K14-c046_vfam_lean.py`: embedded Lean 4 theorems qclause\_r, v\_unexploitable, v\_db, v\_cb, v\_fk, pj\_db, v\_pj, v\_vm, v\_params compile with no sorryAx; 5 false variants rejected; literal height tables n\<=10, r\<=5, k,j\<=12 and V-vs-V n,m\<=6, r,s\<=3 agree; 35 r\<n agents have distinct F/P outcome vectors; size(V\_{n,r})=n+r+9 — pass (`results/K14-2.json`)
+- reasoning: Closed GL fixed points are letter-free and decided by height on finite linear frames (Boolos, Logic of Provability ch. 7); v\_unexploitable quantifies over arbitrary opponent traces, hence all modal opponents.
+- check `checks/K14-c046_vfam_lean.py`: embedded Lean 4 theorems qclause\_r, v\_unexploitable, v\_db, v\_cb, v\_fk, pj\_db, v\_pj, v\_vm, v\_params compile with no sorryAx; 5 false variants rejected; literal height tables agree; 35 r\<n agents have distinct F/P outcome vectors — pass (`results/K14-2.json`)
 
 Prior art: possibly new: no prior art found in the owner's search (answer: `prior-art/R6.md`)
 
@@ -111,17 +111,17 @@ Prior art: possibly new: no prior art found in the owner's search (answer: `prio
 
 ## K18
 
-For all m>=j>=1 (height semantics of closed GL fixed points), G_{m,j}=\[]([]^m p&(q\|\[]([]^jF\|~q))), size m+j+10, is unexploitable, coops with FB and CB, defects vs itself; CC with F_k iff k<=j, P_i iff i>m; defects vs ~[]F unlike every V_{n,r} with n>=1. Lean.
+`For all m>=j>=1 (height semantics of closed GL fixed points), G_{m,j}=[]([]^m p&(q|[]([]^jF|~q))), size m+j+10, is unexploitable, coops with FB and CB, defects vs itself; CC with F_k iff k<=j, P_i iff i>m; defects vs ~[]F unlike every V_{n,r} with n>=1. Lean.`
 
 Status: derived
 
 Kind: model
 
 Evidence:
-- check `checks/K18-c046_gfam_lean.py`: embedded Lean 4 theorems gq, g_unexploitable, g_db, g_cb, g_conbot, g_fk, g_pj, g_gg, v_conbot, g_params compile with no sorryAx; 4 false variants rejected; literal height tables m<=8, j<=9, k,i<=11 and G-vs-G m,m'<=5 agree; independent string solver: self/FB/CB/DB/ConBot for m,j<=3, W_2 coops with ConBot; size(G_{m,j})=m+j+10 — pass (`results/K18-1.json`)
-- reasoning: Closed GL fixed points are letter-free and decided by height on finite linear frames (Boolos, Logic of Provability ch. 7); g_unexploitable quantifies over arbitrary opponent traces, hence all modal opponents.
-- reasoning: Scope fix only: the Lean lemma v_conbot already assumes n>=1; V_{0,1} defects against ConBot (the skeptic, k18_conbot_scope_failure.py).
-- reasoning: Scope corrected: v_conbot (Lean, in c046_gfam_lean.py) assumes 1<=n; V_{0,r} defects vs ConBot (the skeptic's k18_conbot_scope_failure.py).
+- check `checks/K18-c046_gfam_lean.py`: embedded Lean 4 theorems gq, g\_unexploitable, g\_db, g\_cb, g\_conbot, g\_fk, g\_pj, g\_gg, v\_conbot, g\_params compile with no sorryAx; 4 false variants rejected; literal height tables m\<=8, j\<=9, k,i\<=11 and G-vs-G m,m'\<=5 agree; independent string solver: self/FB/CB/DB/ConBot for m,j\<=3, W\_2 coops with ConBot; size(G\_{m,j})=m+j+10 — pass (`results/K18-1.json`)
+- reasoning: Closed GL fixed points are letter-free and decided by height on finite linear frames (Boolos, Logic of Provability ch. 7); g\_unexploitable quantifies over arbitrary opponent traces, hence all modal opponents.
+- reasoning: Scope fix only: the Lean lemma v\_conbot already assumes n\>=1; V\_{0,1} defects against ConBot (the skeptic, k18\_conbot\_scope\_failure.py).
+- reasoning: Scope corrected: v\_conbot (Lean, in c046\_gfam\_lean.py) assumes 1\<=n; V\_{0,r} defects vs ConBot (the skeptic's k18\_conbot\_scope\_failure.py).
 
 Prior art: possibly new: no prior art found in the owner's search (answer: `prior-art/R11.md`)
 
@@ -136,14 +136,14 @@ Prior art: possibly new: no prior art found in the owner's search (answer: `prio
 
 ## K20
 
-For all H_{m,j}=box^{m+1}(p&(q\|box(box^j F\|~q))), 1<=j<=m, size m+j+10<=15 (six agents), self-play is DD, FB/CB CC; CC with F_k iff k<=j (k<=4), P_i iff i>m (i<=5). GLS certifies 102 cells including separators from matching G and bounded V.
+`For all H_{m,j}=box^{m+1}(p&(q|box(box^j F|~q))), 1<=j<=m, size m+j+10<=15 (six agents), self-play is DD, FB/CB CC; CC with F_k iff k<=j (k<=4), P_i iff i>m (i<=5). GLS certifies 102 cells including separators from matching G and bounded V.`
 
 Status: derived
 
 Kind: model
 
 Evidence:
-- check `checks/K20-outer_prudent_family.py`: Exhausts six H parameters of size<=15; all 102 pinned fixed-point cells pass GLS with mutation controls; common F/P rows distinguish all six; explicit matching-G and ConBot/V separators. — pass (`results/K20-1.json`)
+- check `checks/K20-outer_prudent_family.py`: Exhausts six H parameters of size\<=15; all 102 pinned fixed-point cells pass GLS with mutation controls; common F/P rows distinguish all six; explicit matching-G and ConBot/V separators. — pass (`results/K20-1.json`)
 - reasoning: H implies box^(m+1)p; eventual cooperation by H forces p at every fixed height and hence prevents exploitation by any modal opponent.
 
 Prior art: possibly new: no prior art found in the owner's search (answer: `prior-art/R13.md`)
@@ -159,17 +159,17 @@ Prior art: possibly new: no prior art found in the owner's search (answer: `prio
 
 ## K21
 
-For m>=1, j>=1 (height semantics of closed GL fixed points), H_{m,j}=[]^{m+1}(p&(q\|\[]([]^jF\|~q))) is unexploitable; DB trace h<=m; CC with F_k iff k<=j, P_i iff i>m; H vs H defect (j<=m); S_j=[]^{j+1}(p\|~[]^{j+1}q) gives D/C vs H_{m,j}, D/D vs G_{m,j}. Lean.
+`For m>=1, j>=1 (height semantics of closed GL fixed points), H_{m,j}=[]^{m+1}(p&(q|[]([]^jF|~q))) is unexploitable; DB trace h<=m; CC with F_k iff k<=j, P_i iff i>m; H vs H defect (j<=m); S_j=[]^{j+1}(p|~[]^{j+1}q) gives D/C vs H_{m,j}, D/D vs G_{m,j}. Lean.`
 
 Status: derived
 
 Kind: model
 
 Evidence:
-- check `checks/K21-c046_hfam_lean.py`: embedded Lean 4 theorems h_fail, h_unexploitable, h_db, h_cb, h_conbot, h_fk, h_pj, h_hh, s_db, h_sep, g_sep, h_params compile with no sorryAx; 4 false variants rejected; literal height tables m,j<=8, k,i<=11, H-vs-H m,m'<=5, H/G vs S_j agree; independent string solver for m,j<=3: self, FB, CB, DB, ConBot, F_1..4, P_0..5, S_j; size(H)=m+j+10, size(S_j)=2j+6 — pass (`results/K21-1.json`)
-- reasoning: Closed GL fixed points are letter-free and decided by height on finite linear frames (Boolos, Logic of Provability ch. 7); h_unexploitable quantifies over arbitrary opponent traces, hence all modal opponents.
-- reasoning: Scope narrowed to m>=1; Lean theorem g_sep assumes 1<=m, and at m=0 G=H syntactically.
-- reasoning: Scope fix: g_sep (Lean) assumes 1<=m; at m=0 G_{0,j}=H_{0,j} (another researcher's k21_zero_scope.py).
+- check `checks/K21-c046_hfam_lean.py`: embedded Lean 4 theorems h\_fail, h\_unexploitable, h\_db, h\_cb, h\_conbot, h\_fk, h\_pj, h\_hh, s\_db, h\_sep, g\_sep, h\_params compile with no sorryAx; 4 false variants rejected; literal height tables m,j\<=8, k,i\<=11, H-vs-H m,m'\<=5, H/G vs S\_j agree; independent string solver for m,j\<=3: self, FB, CB, DB, ConBot, F\_1..4, P\_0..5, S\_j; size(H)=m+j+10, size(S\_j)=2j+6 — pass (`results/K21-1.json`)
+- reasoning: Closed GL fixed points are letter-free and decided by height on finite linear frames (Boolos, Logic of Provability ch. 7); h\_unexploitable quantifies over arbitrary opponent traces, hence all modal opponents.
+- reasoning: Scope narrowed to m\>=1; Lean theorem g\_sep assumes 1\<=m, and at m=0 G=H syntactically.
+- reasoning: Scope fix: g\_sep (Lean) assumes 1\<=m; at m=0 G\_{0,j}=H\_{0,j} (another researcher's k21\_zero\_scope.py).
 
 Prior art: possibly new: no prior art found in the owner's search (answer: `prior-art/R14.md`)
 
@@ -184,7 +184,7 @@ Prior art: possibly new: no prior art found in the owner's search (answer: `prio
 
 ## K22
 
-In L, the size-13 agent J=[]\[]([]p&(q\|\[]([]F\|~q))) has self DD and FB/CB CC. Its F1..4/P0..5 outcomes match G21 and H21, but two size<=9 opponents distinguish all three; all 48 stated cells are GLS-certified.
+`In L, the size-13 agent J=[][]([]p&(q|[]([]F|~q))) has self DD and FB/CB CC. Its F1..4/P0..5 outcomes match G21 and H21, but two size<=9 opponents distinguish all three; all 48 stated cells are GLS-certified.`
 
 Status: derived
 
@@ -214,10 +214,10 @@ Status: derived
 Kind: model
 
 Evidence:
-- check `checks/K23-c046_jfam.py`: literal tables a,b<=5, j<=6: DB/CB/ConBot, F_k (k<=9), P_i (i<=9), S_{u,t} (u,t<=8) laws incl. defection heights, J vs J defect, random-trace safety; 70 members (j<=a+b<=5) have distinct vectors; independent string solver: 882 cells for all 21 members of size<=15 — pass (`results/K23-1.json`)
-- reasoning: S_{u,t} has DB trace h<=u-1, so for u>j J's q-test fails from u and J coops exactly at h<=u+a; S needs J at all g<=a+b+t, satisfied iff t+b<=u.
-- check `checks/K23-c046_jfam_gls.py`: all 21 J_{a,b,j} with 1<=j<=a+b, size<=15: 265 cells (self, CB, DB, ConBot, F_j/F_{j+1}, P_{a+b}/P_{a+b+1}, S_{j,j+3}, S_{u,t} boundaries t+b=u vs u+1 for u=j+1,j+2, G21/J111/H21 split on S_{2,1},S_{2,2}) match the K23 law formulas and pass GLS fixed-point certificates with flipped-candidate rejection — pass (`results/K23-2.json`)
-- reasoning: another researcher's `placement_certificates.py` (a check not published with this finding): 160 GLS-certified cells for all 8 triples with 1<=j<=a+b<=2 vs F_1..3, P_0..3, S_{u,t} (u,t<=3), self, CB, DB, ConBot agree with these laws; another researcher's independent height solver reproduces the pinned rows (sha c0422274...).
+- check `checks/K23-c046_jfam.py`: literal tables a,b\<=5, j\<=6: DB/CB/ConBot, F\_k (k\<=9), P\_i (i\<=9), S\_{u,t} (u,t\<=8) laws incl. defection heights, J vs J defect, random-trace safety; 70 members (j\<=a+b\<=5) have distinct vectors; independent string solver: 882 cells for all 21 members of size\<=15 — pass (`results/K23-1.json`)
+- reasoning: S\_{u,t} has DB trace h\<=u-1, so for u\>j J's q-test fails from u and J coops exactly at h\<=u+a; S needs J at all g\<=a+b+t, satisfied iff t+b\<=u.
+- check `checks/K23-c046_jfam_gls.py`: all 21 J\_{a,b,j} with 1\<=j\<=a+b, size\<=15: 265 cells (self, CB, DB, ConBot, F\_j/F\_{j+1}, P\_{a+b}/P\_{a+b+1}, S\_{j,j+3}, S\_{u,t} boundaries t+b=u vs u+1 for u=j+1,j+2, G21/J111/H21 split on S\_{2,1},S\_{2,2}) match the K23 law formulas and pass GLS fixed-point certificates with flipped-candidate rejection — pass (`results/K23-2.json`)
+- reasoning: another researcher's `placement_certificates.py` (a check not published with this finding): 160 GLS-certified cells for all 8 triples with 1\<=j\<=a+b\<=2 vs F\_1..3, P\_0..3, S\_{u,t} (u,t\<=3), self, CB, DB, ConBot agree with these laws; another researcher's independent height solver reproduces the pinned rows (sha c0422274...).
 
 Prior art: possibly new: no prior art found in the owner's search (answer: `prior-art/R17.md`)
 

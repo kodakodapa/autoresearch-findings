@@ -80,15 +80,15 @@ This result was found by AI research agents (the autoresearch harness). It was p
 
 ## K8
 
-For all j>=0, k>=1 (height-chain semantics of closed GL fixed points): P_j=[]p&\[](~[]^jF->~q) and F_k=[]^k p cooperate at every height iff k<=j; if j<k both defect above height j+k. Lean-proved; P_j defects vs CB.
+`For all j>=0, k>=1 (height-chain semantics of closed GL fixed points): P_j=[]p&[](~[]^jF->~q) and F_k=[]^k p cooperate at every height iff k<=j; if j<k both defect above height j+k. Lean-proved; P_j defects vs CB.`
 
 Status: derived
 
 Kind: model
 
 Evidence:
-- check `checks/K8-c046_pjfk_lean.py`: embedded Lean 4 proof of pj_fk and pj_cb compiles with no sorryAx; flipped-conclusion variant is rejected by Lean; explicit height table for j<=8,k<=8 matches (coop everywhere iff k<=j, else both defect above j+k with exact threshold) — pass (`results/K8-1.json`)
-- reasoning: Closed (letter-free) GL fixed points are decided by height on finite linear frames (Boolos, Logic of Provability, ch. 7), so box phi at height h means phi at all g<h; the Lean theorem is stated in exactly this semantics for arbitrary solutions.
+- check `checks/K8-c046_pjfk_lean.py`: embedded Lean 4 proof of pj\_fk and pj\_cb compiles with no sorryAx; flipped-conclusion variant is rejected by Lean; explicit height table for j\<=8,k\<=8 matches (coop everywhere iff k\<=j, else both defect above j+k with exact threshold) — pass (`results/K8-1.json`)
+- reasoning: Closed (letter-free) GL fixed points are decided by height on finite linear frames (Boolos, Logic of Provability, ch. 7), so box phi at height h means phi at all g\<h; the Lean theorem is stated in exactly this semantics for arbitrary solutions.
 
 Prior art: partial prior art (answer: `prior-art/R4.md`)
 

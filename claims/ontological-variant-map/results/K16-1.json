@@ -1,0 +1,9 @@
+{
+  "duration_s": 1.8012020587921143,
+  "exit": 0,
+  "path": "checks/K16-c009_varying_fitting.py",
+  "result": "pass",
+  "run_at": "2026-10-18T20:22:16.741366+00:00",
+  "stderr_tail": "",
+  "stdout_tail": "<stdin>:43:9: warning: Variable name `Y` is not explicitly referenced.\n\nHint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:\n  [apply] _Y\n\nNote: This linter can be disabled with `set_option linter.unusedVariables false`\n'VFit.god_nonempty' depends on axioms: [propext, Classical.choice, Quot.sound]\n'VFit.haec_ess' does not depend on any axioms\n'VFit.god_exists_succ' does not depend on any axioms\n'VFit.NE_iff' does not depend on any axioms\n'VFit.refl_god' depends on axioms: [propext, Classical.choice, Quot.sound]\n'VFit.T_god' depends on axioms: [propext, Classical.choice, Quot.sound]\n'VFit.T_box' depends on axioms: [propext, Classical.choice, Quot.sound]\n'VFit.eucl_box' depends on axioms: [propext, Classical.choice, Quot.sound]\n'VFit.noN_S5' does not depend on any axioms\n'VFit.noA2_S5' does not depend on any axioms\n\n\nall certificates re-evaluated: 1134\nnonempty certificates re-evaluated: 1134\nevery certificates re-evaluated: 1134\nconst certificates re-evaluated: 1044\ntable sha256 4e6a9a11eb1dd5fc9f887e870d9d46e1b3378e75659f110a5f3328388924e132\nPASS: varying-domain Fitting 288 cells; no OPEN cell\n"
+}

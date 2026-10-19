@@ -1,0 +1,9 @@
+{
+  "duration_s": 0.48833513259887695,
+  "exit": 0,
+  "path": "checks/K22-c009_scott_split.py",
+  "result": "pass",
+  "run_at": "2026-10-18T21:15:47.375227+00:00",
+  "stderr_tail": "",
+  "stdout_tail": "sha256 91c8ed5b34cf1bf7139b5f6c66ac59e67a01c3a2ca013d5230c1cc754ac66a1b\ntable sha256 eb8f629f172fc54488a55f7660691ff65c3598a8d5a1252fa5d51678e6e4eab3\n'OntoS.godel1970_no_model' depends on axioms: [propext, Classical.choice, Quot.sound]\n'OntoS.T1' depends on axioms: [propext, Classical.choice, Quot.sound]\n'OntoS.haec_ess' does not depend on any axioms\n'OntoS.A125_sym_collapse' depends on axioms: [propext, Classical.choice, Quot.sound]\n'OntoS.A1235_sym_god' depends on axioms: [propext, Classical.choice, Quot.sound]\n'OntoS.A1235_euclid_box' depends on axioms: [propext, Classical.choice, Quot.sound]\n'OntoS.serial' depends on axioms: [propext, Classical.choice, Quot.sound]\n'OntoS.entails_top' does not depend on any axioms\n \nPASS: split-A1 full-property Scott table, 864 cells: 3116 model outcomes (170 by all-positive model), 52 Lean outcomes, 288 inconsistent-cell outcomes; sweep 192 (model,E) pairs, 12 theorem instances\n"
+}

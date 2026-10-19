@@ -4,6 +4,8 @@ title: "Families of unexploitable agents that defect against themselves"
 date: 2026-10-18
 ---
 
+## Summary
+
 <!-- owner-summary -->
 ## Setting
 
@@ -84,31 +86,31 @@ We found no earlier statement of it, but we can't be certain. If you know of pri
 
 This result was found by AI research agents (the autoresearch harness). It was partly proved in Lean (claims K14, K18, K21) and partly checked by script (claims K20, K22, K23); the proof and check files are included so anyone can re-run them.
 
-**K14.** For all n>=0, r>=1, k>=1, j>=0 (height semantics of closed GL fixed points), V_{n,r}=\[]([]^nF\|(p&(q\|~[]^r q))): CC with F_k iff k+r<=n; with P_j iff r<n<j; any two V's defect. For r<n each is universally unexploitable, all pairwise distinct. Lean.
+**K14.** `For all n>=0, r>=1, k>=1, j>=0 (height semantics of closed GL fixed points), V_{n,r}=[]([]^nF|(p&(q|~[]^r q))): CC with F_k iff k+r<=n; with P_j iff r<n<j; any two V's defect. For r<n each is universally unexploitable, all pairwise distinct. Lean.`
 
 - Status: derived
 - Machine-checked: 2 of 2 check scripts passed.
 - Prior art: possibly new: no prior art found in the owner's search
 
-**K18.** For all m>=j>=1 (height semantics of closed GL fixed points), G_{m,j}=\[]([]^m p&(q\|\[]([]^jF\|~q))), size m+j+10, is unexploitable, coops with FB and CB, defects vs itself; CC with F_k iff k<=j, P_i iff i>m; defects vs ~[]F unlike every V_{n,r} with n>=1. Lean.
+**K18.** `For all m>=j>=1 (height semantics of closed GL fixed points), G_{m,j}=[]([]^m p&(q|[]([]^jF|~q))), size m+j+10, is unexploitable, coops with FB and CB, defects vs itself; CC with F_k iff k<=j, P_i iff i>m; defects vs ~[]F unlike every V_{n,r} with n>=1. Lean.`
 
 - Status: derived
 - Machine-checked: 1 of 1 check scripts passed.
 - Prior art: possibly new: no prior art found in the owner's search
 
-**K20.** For all H_{m,j}=box^{m+1}(p&(q\|box(box^j F\|~q))), 1<=j<=m, size m+j+10<=15 (six agents), self-play is DD, FB/CB CC; CC with F_k iff k<=j (k<=4), P_i iff i>m (i<=5). GLS certifies 102 cells including separators from matching G and bounded V.
+**K20.** `For all H_{m,j}=box^{m+1}(p&(q|box(box^j F|~q))), 1<=j<=m, size m+j+10<=15 (six agents), self-play is DD, FB/CB CC; CC with F_k iff k<=j (k<=4), P_i iff i>m (i<=5). GLS certifies 102 cells including separators from matching G and bounded V.`
 
 - Status: derived
 - Machine-checked: 1 of 1 check scripts passed.
 - Prior art: possibly new: no prior art found in the owner's search
 
-**K21.** For m>=1, j>=1 (height semantics of closed GL fixed points), H_{m,j}=[]^{m+1}(p&(q\|\[]([]^jF\|~q))) is unexploitable; DB trace h<=m; CC with F_k iff k<=j, P_i iff i>m; H vs H defect (j<=m); S_j=[]^{j+1}(p\|~[]^{j+1}q) gives D/C vs H_{m,j}, D/D vs G_{m,j}. Lean.
+**K21.** `For m>=1, j>=1 (height semantics of closed GL fixed points), H_{m,j}=[]^{m+1}(p&(q|[]([]^jF|~q))) is unexploitable; DB trace h<=m; CC with F_k iff k<=j, P_i iff i>m; H vs H defect (j<=m); S_j=[]^{j+1}(p|~[]^{j+1}q) gives D/C vs H_{m,j}, D/D vs G_{m,j}. Lean.`
 
 - Status: derived
 - Machine-checked: 1 of 1 check scripts passed.
 - Prior art: possibly new: no prior art found in the owner's search
 
-**K22.** In L, the size-13 agent J=[]\[]([]p&(q\|\[]([]F\|~q))) has self DD and FB/CB CC. Its F1..4/P0..5 outcomes match G21 and H21, but two size<=9 opponents distinguish all three; all 48 stated cells are GLS-certified.
+**K22.** `In L, the size-13 agent J=[][]([]p&(q|[]([]F|~q))) has self DD and FB/CB CC. Its F1..4/P0..5 outcomes match G21 and H21, but two size<=9 opponents distinguish all three; all 48 stated cells are GLS-certified.`
 
 - Status: derived
 - Machine-checked: 1 of 1 check scripts passed.

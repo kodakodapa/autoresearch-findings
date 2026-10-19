@@ -1,0 +1,9 @@
+{
+  "duration_s": 0.6822850704193115,
+  "exit": 0,
+  "path": "checks/K9-c009_anderson_open.py",
+  "result": "pass",
+  "run_at": "2026-10-18T20:02:19.731986+00:00",
+  "stderr_tail": "",
+  "stdout_tail": "'And.NE_univ' does not depend on any axioms\n'And.A2H_A5' does not depend on any axioms\n'And.poss' depends on axioms: [propext, Classical.choice, Quot.sound]\n'And.sym_god' depends on axioms: [propext, Classical.choice, Quot.sound]\n'And.sym_box' depends on axioms: [propext, Classical.choice, Quot.sound]\n'And.eucl_box' depends on axioms: [propext, Classical.choice, Quot.sound]\n'And.eucl_A4_god' depends on axioms: [propext, Classical.choice, Quot.sound]\n'And.kd45_countermodel' depends on axioms: [propext]\n\nB 7 ('valid:sym_god', 'valid:sym_box')\nB 15 ('valid:sym_god', 'valid:sym_box')\nB 23 ('valid:sym_god', 'valid:sym_box')\nB 31 ('valid:sym_god', 'valid:sym_box')\nKB 7 ('valid:sym_god', 'valid:sym_box')\nKB 15 ('valid:sym_god', 'valid:sym_box')\nKB 23 ('valid:sym_god', 'valid:sym_box')\nKB 31 ('valid:sym_god', 'valid:sym_box')\nKD45 7 ('refuted:kd45_countermodel', 'valid:eucl_box')\nKD45 15 ('valid:eucl_A4_god', 'valid:eucl_box')\nKD45 23 ('refuted:kd45_countermodel', 'valid:eucl_box')\nKD45 31 ('valid:eucl_A4_god', 'valid:eucl_box')\nS5 7 ('valid:sym_god', 'valid:sym_box')\nS5 15 ('valid:sym_god', 'valid:sym_box')\nS5 23 ('valid:sym_god', 'valid:sym_box')\nS5 31 ('valid:sym_god', 'valid:sym_box')\nPASS: 8 theorems, countermodel re-evaluated, 16 open cells resolved\n"
+}

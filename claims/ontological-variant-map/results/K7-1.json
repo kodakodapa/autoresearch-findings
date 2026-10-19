@@ -1,0 +1,9 @@
+{
+  "duration_s": 0.7969708442687988,
+  "exit": 0,
+  "path": "checks/K7-c009_rigid_table.py",
+  "result": "pass",
+  "run_at": "2026-10-18T19:58:41.061452+00:00",
+  "stderr_tail": "",
+  "stdout_tail": "'Rigid.A123_god' depends on axioms: [propext, Classical.choice, Quot.sound]\n'Rigid.A123_box' depends on axioms: [propext, Classical.choice, Quot.sound]\n'Rigid.A135S_god' depends on axioms: [propext, Classical.choice, Quot.sound]\n'Rigid.A135S_box' depends on axioms: [propext, Classical.choice, Quot.sound]\n'Rigid.A12_A5S' depends on axioms: [propext, Classical.choice, Quot.sound]\n'Rigid.A125G_no_world' depends on axioms: [propext, Classical.choice, Quot.sound]\n'Rigid.scott_rigid_noncollapse' does not depend on any axioms\n\npool models: 5160\ncells: 576 model certs: 2016 lean certs: 288\nPASS: rigid slice, 576 cells certified (models or Lean), pattern asserted\n"
+}

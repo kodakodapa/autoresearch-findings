@@ -1,0 +1,9 @@
+{
+  "duration_s": 1.4260749816894531,
+  "exit": 0,
+  "path": "checks/K21-c009_anderson_a1b.py",
+  "result": "pass",
+  "run_at": "2026-10-18T21:11:50.507345+00:00",
+  "stderr_tail": "",
+  "stdout_tail": "'VAndB.god_exists_succ' depends on axioms: [propext, Classical.choice, Quot.sound]\n'VAndB.poss' depends on axioms: [propext, Classical.choice, Quot.sound]\n'VAndB.god_box' does not depend on any axioms\n'VAndB.sym_god' depends on axioms: [propext, Classical.choice, Quot.sound]\n'VAndB.sym_box' depends on axioms: [propext, Classical.choice, Quot.sound]\n'VAndB.eucl_box' depends on axioms: [propext, Classical.choice, Quot.sound]\n'VAndB.A2H_A5' depends on axioms: [propext, Classical.choice, Quot.sound]\n'VAndB.god_det' depends on axioms: [propext, Classical.choice, Quot.sound]\n'VAndB.god_unique' does not depend on any axioms\n'VAndB.eucl_A1b_godlike' depends on axioms: [propext, Classical.choice, Quot.sound]\n'VAndB.eucl_A4_godlike' depends on axioms: [propext, Classical.choice, Quot.sound]\n'VAndB.const_ex' does not depend on any axioms\n'VAndB.refl_sym_collapse' depends on axioms: [propext, Classical.choice, Quot.sound]\n'VAndB.sym_A4_collapse' depends on axioms: [propext, Classical.choice, Quot.sound]\n'VAndB.kb_cycle' depends on axioms: [propext, Classical.choice, Quot.sound]\n'VAndB.kd45_A1b' depends on axioms: [propext, Classical.choice, Quot.sound]\n'VAndB.entails_top' does not depend on any axioms\n\ntable sha256 08d76079aa3a81893c9709a6fee5bbc484377c33d9cb72a0079b63b81b654168\nPASS: 17 theorems, 1152 Anderson+A1b cells certified (const and varying), no OPEN\n"
+}

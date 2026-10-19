@@ -51,6 +51,29 @@
       "run_label": "20261017-1126",
       "slug": "gate-families",
       "title": "Families of unexploitable agents that defect against themselves"
+    },
+    {
+      "allowed": [
+        "ch. 7"
+      ],
+      "claims": [
+        "K2",
+        "K7",
+        "K9",
+        "K13",
+        "K15",
+        "K16",
+        "K18",
+        "K21",
+        "K22",
+        "K24",
+        "K28"
+      ],
+      "commit": "338871c09385f72bc0f657c9a639ef6a3c825566",
+      "date": "2026-10-19",
+      "run_label": "20261018-1933",
+      "slug": "ontological-variant-map",
+      "title": "A certified map of variants of G\u00f6del's ontological argument"
     }
   ]
 }

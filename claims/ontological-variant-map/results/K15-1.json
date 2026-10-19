@@ -1,0 +1,9 @@
+{
+  "duration_s": 0.9387593269348145,
+  "exit": 0,
+  "path": "checks/K15-c009_varying_anderson.py",
+  "result": "pass",
+  "run_at": "2026-10-18T20:17:01.964131+00:00",
+  "stderr_tail": "",
+  "stdout_tail": "'VAnd.god_exists_succ' depends on axioms: [propext, Classical.choice, Quot.sound]\n'VAnd.poss' depends on axioms: [propext, Classical.choice, Quot.sound]\n'VAnd.sym_god' depends on axioms: [propext, Classical.choice, Quot.sound]\n'VAnd.sym_box' depends on axioms: [propext, Classical.choice, Quot.sound]\n'VAnd.eucl_box' depends on axioms: [propext, Classical.choice, Quot.sound]\n'VAnd.A2H_A5' depends on axioms: [propext, Classical.choice, Quot.sound]\n'VAnd.kd45_varying' depends on axioms: [propext, Classical.choice, Quot.sound]\n'VAnd.entails_top' does not depend on any axioms\n\nvarying sweep: 16528\ntable sha256 68c42afb8718f655b152ba1f9d8669c84ac3030846e4faaac584030cacd16689\nPASS: 8 theorems, 288 varying cells certified, KD45+A4 actual existence flips\n"
+}

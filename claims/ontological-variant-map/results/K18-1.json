@@ -1,0 +1,9 @@
+{
+  "duration_s": 4.627928733825684,
+  "exit": 0,
+  "path": "checks/K18-c009_varying_rigid_split.py",
+  "result": "pass",
+  "run_at": "2026-10-18T20:29:02.665378+00:00",
+  "stderr_tail": "",
+  "stdout_tail": "'VRig.god_nonempty' depends on axioms: [propext, Classical.choice, Quot.sound]\n'VRig.serial' depends on axioms: [propext, Classical.choice, Quot.sound]\n'VRig.haec_ess' does not depend on any axioms\n'VRig.NE_iff' does not depend on any axioms\n'VRig.god_exists_succ' does not depend on any axioms\n'VRig.T_god' depends on axioms: [propext, Classical.choice, Quot.sound]\n'VRig.T_box' depends on axioms: [propext, Classical.choice, Quot.sound]\n'VRig.eucl_box' depends on axioms: [propext, Classical.choice, Quot.sound]\n'VRig.A4_god_back' does not depend on any axioms\n'VRig.A4_box' depends on axioms: [propext, Classical.choice, Quot.sound]\n'VRig.sym_A4_god' depends on axioms: [propext, Classical.choice, Quot.sound]\n'VRig.godel_no_world' does not depend on any axioms\n'VRig.kd45_A4' does not depend on any axioms\n'VRig.kb_noA4' does not depend on any axioms\n\n\nall certificates re-evaluated: 4274\nnonempty certificates re-evaluated: 4274\nconst certificates re-evaluated: 4032\ntable sha256 70aa8973c32cf13b9dc4571e1f8e55c913b047737b09e48de4bb856fae12bbff\nPASS: varying-domain rigid Scott/Goedel split-A1 1152 cells; A1b never needed; no OPEN cell\n"
+}

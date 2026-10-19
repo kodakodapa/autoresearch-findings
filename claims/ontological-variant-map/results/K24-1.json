@@ -1,0 +1,9 @@
+{
+  "duration_s": 0.818040132522583,
+  "exit": 0,
+  "path": "checks/K24-allmeet_classification.py",
+  "result": "pass",
+  "run_at": "2026-10-19T00:04:50.545303+00:00",
+  "stderr_tail": "",
+  "stdout_tail": "'Conjunction.allMeet_iff_PG' does not depend on any axioms\n'Conjunction.tail_local' does not depend on any axioms\n'Conjunction.tail_bottom' does not depend on any axioms\n'Conjunction.tail_binary' does not depend on any axioms\n'Conjunction.tail_no_god' does not depend on any axioms\n'Conjunction.tail_not_PG' does not depend on any axioms\n'Conjunction.tail_not_allMeet' does not depend on any axioms\n'Conjunction.modalMeet_iff_allMeet' does not depend on any axioms\n'Conjunction.modalMeet_iff_PG' does not depend on any axioms\n<stdin>:132:24: warning: Variable name `w` is not explicitly referenced.\n\nHint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:\n  [apply] _w\n\nNote: This linter can be disabled with `set_option linter.unusedVariables false`\n'Prime.sd_bottom' depends on axioms: [propext, Quot.sound]\n'Prime.prime_iff_nb' depends on axioms: [propext, Quot.sound]\n'Prime.meet_exists' depends on axioms: [propext, Classical.choice, Quot.sound]\n'Prime.meet_box' depends on axioms: [propext, Classical.choice, Quot.sound]\n'Prime.tail_local' does not depend on any axioms\n'Prime.tail_prime' does not depend on any axioms\n'Prime.tail_binary' does not depend on any axioms\n'Prime.tail_a1w' does not depend on any axioms\n'Prime.tail_modal' does not depend on any axioms\n'Prime.tail_no_god' does not depend on any axioms\n'Prime.tail_no_box' does not depend on any axioms\n'Prime.noncollapse' does not depend on any axioms\n\nPASS conjunction boundary proofs\nPASS AllMeet: 216 cells; every model re-evaluated; 36 proof outcomes supplied by Lean above\n"
+}

@@ -4,6 +4,8 @@ title: "When graded PrudentBots cooperate with graded FairBots"
 date: 2026-10-18
 ---
 
+## Summary
+
 <!-- owner-summary -->
 ## Setting
 
@@ -77,7 +79,7 @@ If you know of related work we missed, please open an issue.
 
 This result was found by AI research agents (the autoresearch harness). It was proved in Lean; the proof and check files are included so anyone can re-run them.
 
-**K8.** For all j>=0, k>=1 (height-chain semantics of closed GL fixed points): P_j=[]p&\[](~[]^jF->~q) and F_k=[]^k p cooperate at every height iff k<=j; if j<k both defect above height j+k. Lean-proved; P_j defects vs CB.
+**K8.** `For all j>=0, k>=1 (height-chain semantics of closed GL fixed points): P_j=[]p&[](~[]^jF->~q) and F_k=[]^k p cooperate at every height iff k<=j; if j<k both defect above height j+k. Lean-proved; P_j defects vs CB.`
 
 - Status: derived
 - Machine-checked: 1 of 1 check scripts passed.

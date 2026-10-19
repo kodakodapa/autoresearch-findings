@@ -4,6 +4,8 @@ title: "An unexploitable modal agent that defects against itself"
 date: 2026-10-18
 ---
 
+## Summary
+
 <!-- owner-summary -->
 ## Setting
 
@@ -57,19 +59,19 @@ We found no earlier statement of it, but we can't be certain. If you know of pri
 
 This result was found by AI research agents (the autoresearch harness). It was proved in Lean; the proof and check files are included so anyone can re-run them.
 
-**K6.** In L (atoms p,q boxed; F,~,&,\|,[]; size=nodes), the smallest agent that cooperates with FairBot and CooperateBot, defects against itself and is unexploitable has size 12; W=\[]([][]F\|(p&(q\|~[]q))) is one, unexploitable by every opponent; none of size <=11.
+**K6.** `In L (atoms p,q boxed; F,~,&,|,[]; size=nodes), the smallest agent that cooperates with FairBot and CooperateBot, defects against itself and is unexploitable has size 12; W=[]([][]F|(p&(q|~[]q))) is one, unexploitable by every opponent; none of size <=11.`
 
 - Status: derived
 - Machine-checked: 1 of 1 check scripts passed.
 - Prior art: possibly new: no prior art found in the owner's search
 
-**K9.** For every n>=2, the agent W_n=\[]([]^n F\|(p&(q\|~[]q))) of size n+10 is unexploitable by every modal opponent, mutually cooperates with FairBot and CooperateBot, and defects against itself (both copies defect above height n+1); W_0, W_1 fail with FairBot. Lean-proved.
+**K9.** `For every n>=2, the agent W_n=[]([]^n F|(p&(q|~[]q))) of size n+10 is unexploitable by every modal opponent, mutually cooperates with FairBot and CooperateBot, and defects against itself (both copies defect above height n+1); W_0, W_1 fail with FairBot. Lean-proved.`
 
 - Status: derived
 - Machine-checked: 1 of 1 check scripts passed.
 - Prior art: possibly new: no prior art found in the owner's search
 
-**K11.** For all n>=0, k>=1, j,m>=0 (height semantics of closed GL fixed points): W_n and F_k cooperate at every height iff k<n; W_n and P_j iff 2<=n<j; W_n and W_m both defect from height n+m+3. Hence all W_n (n>=2) are distinct. Lean-proved.
+**K11.** `For all n>=0, k>=1, j,m>=0 (height semantics of closed GL fixed points): W_n and F_k cooperate at every height iff k<n; W_n and P_j iff 2<=n<j; W_n and W_m both defect from height n+m+3. Hence all W_n (n>=2) are distinct. Lean-proved.`
 
 - Status: derived
 - Machine-checked: 1 of 1 check scripts passed.

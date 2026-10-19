@@ -1,0 +1,9 @@
+{
+  "duration_s": 0.3183908462524414,
+  "exit": 0,
+  "path": "checks/K2-c009_lean_table.py",
+  "result": "pass",
+  "run_at": "2026-10-18T19:51:49.942783+00:00",
+  "stderr_tail": "",
+  "stdout_tail": "'Onto.godel1970_no_model' depends on axioms: [propext, Classical.choice, Quot.sound]\n'Onto.scott_serial' depends on axioms: [propext, Classical.choice, Quot.sound]\n'Onto.scott_symmetric' depends on axioms: [propext, Classical.choice, Quot.sound]\n'Onto.scott_symmetric_box' depends on axioms: [propext, Classical.choice, Quot.sound]\n'Onto.scott_symmetric_collapse' depends on axioms: [propext, Classical.choice, Quot.sound]\n'Onto.T3_euclid' depends on axioms: [propext, Classical.choice, Quot.sound]\n'Onto.refl_box_fail' does not depend on any axioms\n'Onto.god_world_collapse' depends on axioms: [propext, Classical.choice, Quot.sound]\n'Onto.A125_isolated_succ' depends on axioms: [propext, Classical.choice, Quot.sound]\n'Onto.A125_sym_iso' depends on axioms: [propext, Classical.choice, Quot.sound]\n'Onto.A125_sym_collapse' depends on axioms: [propext, Classical.choice, Quot.sound]\n'Onto.A1235_sym_god' depends on axioms: [propext, Classical.choice, Quot.sound]\n'Onto.A1235_euclid_box' depends on axioms: [propext, Classical.choice, Quot.sound]\n'Onto.majority_model' depends on axioms: [propext, Classical.choice, Quot.sound]\n'Onto.scott_S4_model' does not depend on any axioms\n'Onto.scott_KD45_model' does not depend on any axioms\n'Onto.scott_consistent_two' does not depend on any axioms\n\nPASS: 17 theorems, A4-free symmetric/euclidean results, majority countermodel\n"
+}
