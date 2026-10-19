@@ -1,0 +1,8 @@
+{
+  "duration_s": 37.94679093360901,
+  "exit": 0,
+  "path": "checks/K19-c046_segment.py",
+  "result": "pass",
+  "run_at": "2026-10-17T16:34:30.359633+00:00",
+  "stdout_tail": "census 36.9 s\nlaw ok on 9979 37.5 s\nY ok 37.5 s\nGLS []([][]F|(p&(q|~[](q&[][][]F)))) False False 37.6 s\nGLS []p True True 37.6 s\nGLS [][]p False False 37.6 s\nGLS [][][]p False False 37.6 s\nGLS [][][][]p True True 37.6 s\nGLS ([]p&[]([][]F|~q)) False False 37.6 s\nGLS ([]p&[]([][][]F|~q)) True True 37.6 s\nGLS ~F True True 37.6 s\nPASS 37.6 s\n"
+}

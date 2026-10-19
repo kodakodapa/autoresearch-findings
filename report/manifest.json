@@ -74,6 +74,23 @@
       "run_label": "20261018-1933",
       "slug": "ontological-variant-map",
       "title": "A certified map of variants of G\u00f6del's ontological argument"
+    },
+    {
+      "allowed": [
+        "ch. 7"
+      ],
+      "claims": [
+        "K1",
+        "K12",
+        "K15",
+        "K17",
+        "K19"
+      ],
+      "commit": "662166ecff0651902cc5fcb04bf747c62d795af2",
+      "date": "2026-10-19",
+      "run_label": "20261017-1126",
+      "slug": "modal-agent-census",
+      "title": "A census of modal agents in the prisoner's dilemma"
     }
   ]
 }

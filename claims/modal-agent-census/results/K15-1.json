@@ -1,0 +1,8 @@
+{
+  "duration_s": 23.767827033996582,
+  "exit": 0,
+  "path": "checks/K15-c046_structure11.py",
+  "result": "pass",
+  "run_at": "2026-10-17T14:47:49.571228+00:00",
+  "stdout_tail": "PASS: round-robin max 59893 by 16 total defectors (sizes 10-11), DB 59193 rank 21; obs classes 9095 ; Nash 1120 ( 401 defect, 719 coop ); ESS 0; re-solved 53938 games 23.3 s\n"
+}

@@ -1,0 +1,8 @@
+{
+  "duration_s": 2.7481870651245117,
+  "exit": 0,
+  "path": "checks/K1-c046_census9.py",
+  "result": "pass",
+  "run_at": "2026-10-17T11:37:23.464862+00:00",
+  "stdout_tail": "PASS: counts [1, 4, 8, 12, 31, 98, 255, 646, 1760] ; cells re-solved 18890 ; combos 15 2.6 s\n"
+}

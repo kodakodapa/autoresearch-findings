@@ -1,0 +1,8 @@
+{
+  "duration_s": 87.93061017990112,
+  "exit": 0,
+  "path": "checks/K17-c046_dichotomy14.py",
+  "result": "pass",
+  "run_at": "2026-10-17T15:16:59.125864+00:00",
+  "stdout_tail": "census 90.8 s\nU list sha256 d9bb03ac40552c50c07d6741b895735d4dba5f979e6a223f24916178c18c2208\ndichotomy ok 10861 witnessed 91.4 s\ncontrols 40 /40 91.7 s\nPASS 91.7 s\n"
+}

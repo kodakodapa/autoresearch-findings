@@ -1,0 +1,8 @@
+{
+  "duration_s": 5.317188024520874,
+  "exit": 0,
+  "path": "checks/K12-c046_replicator9.py",
+  "result": "pass",
+  "run_at": "2026-10-17T16:40:36.606244+00:00",
+  "stdout_tail": "mean payoff 3.000000000, survivors 788, weight on exploitable 0.3784\nrounded final vector sha256 7bb39750c0b1b13b5b1ab96600b4b3873fa6f5029a0c8961f9b271155b0e707d\n0.003961 [](p&(~q|[][]q))\n0.003961 [](p&(~q|[]q))\n0.003961 [](p&[](~q|[]q))\n0.003710 [](p|(q&[]F))\n0.003710 [](p|(q&[]~q))\nPASS replicator9 in 5.1 s\n"
+}

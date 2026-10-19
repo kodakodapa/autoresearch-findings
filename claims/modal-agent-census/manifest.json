@@ -1,0 +1,38 @@
+{
+  "allowed": [
+    "ch. 7"
+  ],
+  "claims": [
+    "K1",
+    "K12",
+    "K15",
+    "K17",
+    "K19"
+  ],
+  "commit": "662166ecff0651902cc5fcb04bf747c62d795af2",
+  "data": [
+    {
+      "original": "/run/agents/r1/census/census9.json",
+      "path": "data/census/census9.json",
+      "sha256": "82b872829655bbcc898e1e03213ff3f0f44da86a720b2fa9c9ad7c8992d6c6e2",
+      "size": 2036720
+    },
+    {
+      "original": "/run/agents/r1/census/census11_M.zlib",
+      "path": "data/census/census11_M.zlib",
+      "sha256": "4cf7d9895fc0267f9e2473ae8c4d5de78c6e97d09d31394ddd0ac342c3dab31b",
+      "size": 11869555
+    },
+    {
+      "original": "/run/agents/r1/census/census11_agents.json",
+      "path": "data/census/census11_agents.json",
+      "sha256": "04a4a117183b345ba543b77b5a5841cbf064f068d960eba5a270da5e0255bb7a",
+      "size": 540249
+    }
+  ],
+  "name": "modal-agent-census",
+  "round": 29,
+  "run_label": "20261017-1126",
+  "staged_at": "2026-10-19T11:54:23Z",
+  "title": "A census of modal agents in the prisoner's dilemma"
+}

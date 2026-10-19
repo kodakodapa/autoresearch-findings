@@ -1,0 +1,8 @@
+{
+  "duration_s": 24.39928698539734,
+  "exit": 0,
+  "path": "checks/K12-c046_structure9.py",
+  "result": "pass",
+  "run_at": "2026-10-17T12:02:56.946308+00:00",
+  "stdout_tail": "PASS: round-robin max 8083 by 63 DB-identical agents; second 7979 ; obs classes 1335 ; Nash 180 ( 78 defect, 102 coop ); ESS 0 ; re-solved 183965 games 24.2 s\n"
+}
