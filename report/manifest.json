@@ -91,6 +91,22 @@
       "run_label": "20261017-1126",
       "slug": "modal-agent-census",
       "title": "A census of modal agents in the prisoner's dilemma"
+    },
+    {
+      "allowed": [
+        "ch. 7"
+      ],
+      "claims": [
+        "K5",
+        "K6",
+        "K11",
+        "K12"
+      ],
+      "commit": "24c2a64bf8b8cb8be184b4d449ce11068d8270ea",
+      "date": "2026-10-20",
+      "run_label": "20261019-1400",
+      "slug": "chicken-informal-claims",
+      "title": "Settling informal claims about modal agents in Chicken"
     }
   ]
 }

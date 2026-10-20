@@ -1,0 +1,10 @@
+{
+  "duration_s": 1.2959179878234863,
+  "exit": 0,
+  "path": "checks/K12-hobson_all_indices.py",
+  "result": "pass",
+  "run_at": "2026-10-19T15:15:55.463719+00:00",
+  "stderr_head": "",
+  "stderr_tail": "",
+  "stdout_tail": "Lean: hob_eq, hob_tail, hob_fair proved; 2 false variants rejected\nrecurrence cells 7098\nPASS\n"
+}

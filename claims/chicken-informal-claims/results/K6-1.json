@@ -1,0 +1,10 @@
+{
+  "duration_s": 0.19490361213684082,
+  "exit": 0,
+  "path": "checks/K5-informal_tables.py",
+  "result": "pass",
+  "run_at": "2026-10-19T19:44:11.653393+00:00",
+  "stderr_head": "",
+  "stderr_tail": "",
+  "stdout_tail": "S SS SD SD SD SD SD SS SS\nN DS DD DS DS DS DD DD DD\nB0 DS SD DD SD SD SD DD DD\nC0 DS SD DS SS SD SS SD SD\nA DS SD DS DS SS SD SD SD\nH DS DD DS SS DS SS DD DD\nF0 SS DD DD DS DS DD SS SS\nF1 SS DD DD DS DS DD SS SS\ngraded C/B tables 0..4: PASS\n"
+}

@@ -1,0 +1,17 @@
+{
+  "allowed": [
+    "ch. 7"
+  ],
+  "claims": [
+    "K5",
+    "K6",
+    "K11",
+    "K12"
+  ],
+  "commit": "24c2a64bf8b8cb8be184b4d449ce11068d8270ea",
+  "name": "chicken-informal-claims",
+  "round": 20,
+  "run_label": "20261019-1400",
+  "staged_at": "2026-10-20T06:27:07Z",
+  "title": "Settling informal claims about modal agents in Chicken"
+}

@@ -1,0 +1,10 @@
+{
+  "duration_s": 0.46558284759521484,
+  "exit": 0,
+  "path": "checks/K5-graded_families.py",
+  "result": "pass",
+  "run_at": "2026-10-19T14:55:04.395965+00:00",
+  "stderr_head": "",
+  "stderr_tail": "",
+  "stdout_tail": "PASS: all-index Lean laws, boxed-formula bridge, negative control, 20480 recurrence cells\n"
+}

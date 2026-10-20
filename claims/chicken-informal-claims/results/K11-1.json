@@ -1,0 +1,10 @@
+{
+  "duration_s": 0.5163860321044922,
+  "exit": 0,
+  "path": "checks/K11-mixed_graded.py",
+  "result": "pass",
+  "run_at": "2026-10-19T14:58:50.330697+00:00",
+  "stderr_head": "",
+  "stderr_tail": "",
+  "stdout_tail": "PASS mixed_all: Lean all indices; 25 GLS cells; 10240 recurrence cells; negative control\n"
+}
