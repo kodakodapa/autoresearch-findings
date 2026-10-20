@@ -1,0 +1,10 @@
+{
+  "duration_s": 28.972715616226196,
+  "exit": 0,
+  "path": "checks/K3-c046_replicator10.py",
+  "result": "pass",
+  "run_at": "2026-10-19T14:46:25.897769+00:00",
+  "stderr_head": "",
+  "stderr_tail": "",
+  "stdout_tail": "PD survivors 1116 max dead 1.06e-31 24.1s\nCH survivors 1116 max dead 2.91e-27 26.5s\nSH survivors 1116 max dead 2.45e-27 28.7s\nPASS replicator10 28.7s\n"
+}

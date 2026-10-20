@@ -1,0 +1,10 @@
+{
+  "duration_s": 1.5372159481048584,
+  "exit": 0,
+  "path": "checks/K10-c046_depth_bound.py",
+  "result": "pass",
+  "run_at": "2026-10-19T14:58:48.791716+00:00",
+  "stderr_head": "",
+  "stderr_tail": "",
+  "stdout_tail": "(1) Lean depth_bound proved; weakened variants rejected\n(2) census 7561 {'straight_vs_SB': 3102, 'pairs_checked': 12407, 'cc_any': 178} tight 92 (6, '[]([]F|~q)')\n(3) explicit cells ok\nPASS 1.4 s\n"
+}

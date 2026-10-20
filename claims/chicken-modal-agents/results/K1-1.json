@@ -1,0 +1,10 @@
+{
+  "duration_s": 29.26005458831787,
+  "exit": 0,
+  "path": "checks/K1-c046_games10.py",
+  "result": "pass",
+  "run_at": "2026-10-19T14:45:56.635527+00:00",
+  "stderr_head": "",
+  "stderr_tail": "",
+  "stdout_tail": "PASS games10: 7561 classes, 18126 cells re-solved, 13 GLS certs, 29.0s\n"
+}

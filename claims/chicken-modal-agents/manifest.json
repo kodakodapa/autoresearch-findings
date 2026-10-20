@@ -1,0 +1,20 @@
+{
+  "allowed": [
+    "ch. 7"
+  ],
+  "claims": [
+    "K1",
+    "K2",
+    "K3",
+    "K4",
+    "K7",
+    "K8",
+    "K10"
+  ],
+  "commit": "24c2a64bf8b8cb8be184b4d449ce11068d8270ea",
+  "name": "chicken-modal-agents",
+  "round": 20,
+  "run_label": "20261019-1400",
+  "staged_at": "2026-10-20T07:16:06Z",
+  "title": "Modal agents in the game of Chicken"
+}

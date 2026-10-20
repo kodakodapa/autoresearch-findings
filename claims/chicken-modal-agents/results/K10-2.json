@@ -1,0 +1,10 @@
+{
+  "duration_s": 2.2013978958129883,
+  "exit": 0,
+  "path": "checks/K10-c046_depth_bound_g.py",
+  "result": "pass",
+  "run_at": "2026-10-19T15:11:10.788189+00:00",
+  "stderr_head": "",
+  "stderr_tail": "",
+  "stdout_tail": "(1) Lean depth_bound, straight_at, depth_bound_G proved; four weakened variants rejected\n(2G) {'straight_vs_SB': 3102, 'pairs_checked': 12407, 'cc_any': 178, 'G_pairs_checked': 12407, 'G_cc_any': 178} tightG 92 [(6, '[]([]F|~q)'), (7, '([][]F|~[]q)'), (7, '[](~q|[][]F)'), (7, '[](~q|[]~p)'), (7, '[](~q|[]~q)')]\n(2) census 7561 {'straight_vs_SB': 3102, 'pairs_checked': 12407, 'cc_any': 178, 'G_pairs_checked': 12407, 'G_cc_any': 178} tight 92 (6, '[]([]F|~q)')\n(3) explicit cells ok\nPASS 2.0 s\n"
+}

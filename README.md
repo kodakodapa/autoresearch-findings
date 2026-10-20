@@ -29,6 +29,7 @@ A certified map of variants of Gödel's ontological argument: This result was fo
 A census of modal agents in the prisoner's dilemma: This result was found by AI research agents (the autoresearch harness). It was checked by script; the proof and check files are included so anyone can re-run them.
 Settling informal claims about modal agents in Chicken: This result was found by AI research agents (the autoresearch harness). It was partly proved in Lean (claims K5, K11, K12) and partly checked by script (claims K6); the proof and check files are included so anyone can re-run them.
 Three-player modal agents in a public-goods game: This result was found by AI research agents (the autoresearch harness). It was partly proved in Lean (claims K14, K16, K18, K19) and partly checked by script (claims K13, K21); the proof and check files are included so anyone can re-run them.
+Modal agents in the game of Chicken: This result was found by AI research agents (the autoresearch harness). It was partly proved in Lean (claims K7, K8, K10) and partly checked by script (claims K1, K2, K3, K4); the proof and check files are included so anyone can re-run them.
 Site: https://kodakodapa.github.io/autoresearch-findings/
 - [An unexploitable modal agent that defects against itself paper](claims/wn-gate-family/paper.pdf)
 - [When graded PrudentBots cooperate with graded FairBots paper](claims/graded-prudent-fair/paper.pdf)
@@ -37,3 +38,4 @@ Site: https://kodakodapa.github.io/autoresearch-findings/
 - [A census of modal agents in the prisoner's dilemma paper](claims/modal-agent-census/paper.pdf)
 - [Settling informal claims about modal agents in Chicken paper](claims/chicken-informal-claims/paper.pdf)
 - [Three-player modal agents in a public-goods game paper](claims/three-player-modal-agents/paper.pdf)
+- [Modal agents in the game of Chicken paper](claims/chicken-modal-agents/paper.pdf)

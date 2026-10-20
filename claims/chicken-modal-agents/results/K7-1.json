@@ -1,0 +1,10 @@
+{
+  "duration_s": 22.842550039291382,
+  "exit": 0,
+  "path": "checks/K7-c046_chicken_q.py",
+  "result": "pass",
+  "run_at": "2026-10-19T14:54:40.984297+00:00",
+  "stderr_head": "",
+  "stderr_tail": "",
+  "stdout_tail": "PASS chicken_q: 7561 classes, 808 safe, 695 SU, 4 safe&strSB&FBss, 9 GLS certs, Lean 9 theorems, 22.6s\n"
+}
