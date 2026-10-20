@@ -1,0 +1,10 @@
+{
+  "duration_s": 26.151107788085938,
+  "exit": 0,
+  "path": "checks/K19-c046_prudent3.py",
+  "result": "pass",
+  "run_at": "2026-10-19T19:42:24.081202+00:00",
+  "stderr_head": "",
+  "stderr_tail": "",
+  "stdout_tail": "(1) 9 E-cells GL-certified: {'EEE': '111', 'ECC': '011', 'ECD': '010', 'EDD': '000', 'EBB': '111', 'EEB': '111', 'ECB': '010', 'EDB': '000', 'EEC': '111'}\n(2) GL proves E -> [](p1&p2); control rejected\n(3) self-coop & defect vs (C,C) per size 1..7: [0, 0, 4, 4, 68, 220, 1808] all beaten by size<=3 pairs; total trees 28125\n(5) Lean: lag_tail, fair3_payoff proved; false variant rejected\nPASS\n"
+}

@@ -1,0 +1,10 @@
+{
+  "duration_s": 0.5371441841125488,
+  "exit": 0,
+  "path": "checks/K14-c046_xreview_k13.py",
+  "result": "pass",
+  "run_at": "2026-10-19T15:15:54.924963+00:00",
+  "stderr_head": "",
+  "stderr_tail": "",
+  "stdout_tail": "(1) 125 triples re-solved; headline cells and classifications agree\n(2) (Q,B,C) tail (True, False, True) payoffs [1, 4, 1]\n(3) two-player box(q) vs box(q): DD\n(2) QBC, FFF, FFD, QQQ, FCD: 24 replacement equations each GL-certified; flips rejected\n(4) Lean: fair3_tail, fair3_payoff proved; false variant rejected\nPASS\n"
+}

@@ -107,6 +107,24 @@
       "run_label": "20261019-1400",
       "slug": "chicken-informal-claims",
       "title": "Settling informal claims about modal agents in Chicken"
+    },
+    {
+      "allowed": [
+        "ch. 7"
+      ],
+      "claims": [
+        "K13",
+        "K14",
+        "K16",
+        "K18",
+        "K19",
+        "K21"
+      ],
+      "commit": "24c2a64bf8b8cb8be184b4d449ce11068d8270ea",
+      "date": "2026-10-20",
+      "run_label": "20261019-1400",
+      "slug": "three-player-modal-agents",
+      "title": "Three-player modal agents in a public-goods game"
     }
   ]
 }

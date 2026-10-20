@@ -1,0 +1,19 @@
+{
+  "allowed": [
+    "ch. 7"
+  ],
+  "claims": [
+    "K13",
+    "K14",
+    "K16",
+    "K18",
+    "K19",
+    "K21"
+  ],
+  "commit": "24c2a64bf8b8cb8be184b4d449ce11068d8270ea",
+  "name": "three-player-modal-agents",
+  "round": 20,
+  "run_label": "20261019-1400",
+  "staged_at": "2026-10-20T06:27:08Z",
+  "title": "Three-player modal agents in a public-goods game"
+}

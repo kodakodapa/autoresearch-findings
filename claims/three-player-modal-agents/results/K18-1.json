@@ -1,0 +1,10 @@
+{
+  "duration_s": 19.265207052230835,
+  "exit": 0,
+  "path": "checks/K18-c046_safe6.py",
+  "result": "pass",
+  "run_at": "2026-10-19T19:18:27.311642+00:00",
+  "stderr_head": "",
+  "stderr_tail": "",
+  "stdout_tail": "(1) guarded raw trees per size 1..6: [1, 6, 18, 112, 596, 3756]\n(2) self-cooperators (<=3,4,5,6): [11, 41, 263, 1448]\n    survivors per size: [0, 0, 0, 2, 8, 56] non-constant witnesses needed for ['[](p1&(p2|q2))', '[](p1&(q2|p2))', '[](p2&(p1|q1))', '[](p2&(q1|p1))', '[]((p1|q1)&p2)', '[]((p2|q2)&p1)', '[]((q1|p1)&p2)', '[]((q2|p2)&p1)']\n(3) 66 survivors q-free, each GL-proves A -> [][][](p1&p2); control []p1 rejected\n(4) 3438 triples GL-certified (24 equations each)\n(5) Lean: lag_tail, fair3_payoff proved; false variant rejected\nPASS\n"
+}

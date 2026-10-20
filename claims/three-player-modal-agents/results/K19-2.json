@@ -1,0 +1,10 @@
+{
+  "duration_s": 0.18014788627624512,
+  "exit": 0,
+  "path": "checks/K19-c046_xreview_k20.py",
+  "result": "pass",
+  "run_at": "2026-10-19T19:46:41.767088+00:00",
+  "stderr_head": "",
+  "stderr_tail": "",
+  "stdout_tail": "(1) K20 six cells re-certified with r1 engine\n(2) GL proves A<->E; 8 mixed A/E triples certified 111\n(3) GL rejects A<->R\nPASS\n"
+}

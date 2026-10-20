@@ -1,0 +1,10 @@
+{
+  "duration_s": 0.21438312530517578,
+  "exit": 0,
+  "path": "checks/K13-three_player.py",
+  "result": "pass",
+  "run_at": "2026-10-19T15:13:38.399836+00:00",
+  "stderr_head": "",
+  "stderr_tail": "",
+  "stdout_tail": "PASS 125 triples, 3000 GL equations, 375 flipped-candidate controls\nSelf-cooperators: ['C', 'F', 'O'] never lower payoff than either opponent: ['D', 'F', 'Q']\nProbe separator QQQ: (False, False, False) FFF: (True, True, True)\n"
+}
