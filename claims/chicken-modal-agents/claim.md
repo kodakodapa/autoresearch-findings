@@ -67,13 +67,13 @@ We believe this result is new. Our prior-art search (2026-10-20) covered:
 
 We found no earlier statement of it, but we can't be certain. If you know of prior work, please open an issue.
 
-This result was found by AI research agents (the autoresearch harness). It was partly proved in Lean (claims K7, K8, K10) and partly checked by script (claims K1, K2, K3, K4); the proof and check files are included so anyone can re-run them.
+This result was found by AI research agents (the autoresearch harness). It was partly checked by scripts that run Lean proofs (claims K7, K8, K10) and partly checked by script (claims K1, K2, K3, K4); the proof and check files are included so anyone can re-run them.
 
 ## K1
 
 `In L up to size 10 (7561 classes; Chicken 3/3, 1/4, 0/0), census program equilibria: 517 symmetric, all mutual swerve; none with a crash; every swerve/straight one pairs one of the 701 agents that never swerve against any census agent with an agent swerving against it.`
 
-Status: derived
+Status: derived · author check only
 
 Kind: model
 
@@ -96,7 +96,7 @@ Prior art: possibly new: no prior art found in the owner's search (answer: `prio
 
 In L up to size 10, round robin incl. self: Chicken (3,1,4,0) max 17666 only by $\neg\Box p\wedge\Box(\neg p\vee\Box p)$, which crashes vs itself (SwerveBot 16479, FairBot 14303); Stag Hunt (4,0,3,2) max 23411 only by $\Box(p\vee\Box^3\neg(p\vee q))$, which hunts stag vs HareBot (FairBot 21719).
 
-Status: derived
+Status: derived · author check only
 
 Kind: model
 
@@ -118,7 +118,7 @@ Prior art: possibly new: no prior art found in the owner's search (answer: `prio
 
 In L up to size 10, discrete replicator dynamics from uniform start (2000 steps) leave exactly the same 1116 observational classes (weight $>10^{-6}$) in PD, Chicken and Stag Hunt; they form a maximal set of mutual cooperators containing FairBot.
 
-Status: derived
+Status: derived · author check only
 
 Kind: model
 
@@ -140,7 +140,7 @@ Prior art: possibly new: no prior art found in the owner's search (answer: `prio
 
 In L up to size 10, the smallest agents that swerve vs themselves and vs NerveBot but go straight vs SwerveBot have size 3: exactly $\neg\Box p$ and $\neg\Box q$; $\neg\Box p$ crashes against no census agent, $\neg\Box q$ against 755.
 
-Status: derived
+Status: derived · author check only
 
 Kind: model
 
@@ -163,7 +163,7 @@ Prior art: possibly new: no prior art found in the owner's search (answer: `prio
 
 For all $k\ge0$, $Q_k=\Box^k\bot\vee\neg\Box(p\wedge q)$ never crashes vs any opponent, beats SwerveBot, self-swerves; it mutually swerves with $\Box^jp$ ($j\ge1$) iff $j<k$ and with $\Box(\Box^j\bot\vee p)$ iff $j+2\le k$, else is exploited; vs $Q_m$, $m>k$, $Q_k$ goes straight. Lean.
 
-Status: derived
+Status: derived · author check only
 
 Kind: model
 
@@ -186,7 +186,7 @@ Prior art: possibly new: no prior art found in the owner's search (answer: `prio
 
 In L up to size 10 (Chicken), exactly 4 agents crash against no census agent, go straight vs SwerveBot and mutually swerve with FairBot; all 4 never crash vs any modal opponent; the unique smallest (size 9) is $\Box^2\bot\vee\neg\Box(p\wedge q)$.
 
-Status: derived
+Status: derived · author check only
 
 Kind: model
 
@@ -209,7 +209,7 @@ Prior art: possibly new: no prior art found in the owner's search (answer: `prio
 
 For every guarded agent $A$ of modal depth $d$ playing action 2 vs the constant action-1 bot: $\Box^jp$ ($j\ge d$) plays 2 vs $A$ from height $d+j$, and $\Box(\Box^j\bot\vee p)$ ($j\ge d-1$) from height $j+2$; never mutual action 1 (any 2-action game; Lean). Both tight via $Q_k$.
 
-Status: derived
+Status: derived · author check only
 
 Kind: model
 
@@ -246,3 +246,8 @@ a search for threshold families beyond FairBot-like agents there.
 2. <!-- cite:mennen2017modal --> Mennen, Alex. 2017. Modal Combat for Games Other Than the Prisoner's Dilemma. [Link](https://www.lesswrong.com/posts/5bd75cc58225bf0670375375/modal-combat-for-games-other-than-the-prisoner-s-dilemma)
 3. <!-- cite:boolos1993logic --> Boolos, George. 1993. The Logic of Provability. Cambridge University Press
 4. <!-- cite:solovay1976provability --> Solovay, Robert M.. 1976. Provability Interpretations of Modal Logic. Israel Journal of Mathematics
+
+<!-- autoresearch:revisions -->
+## Revisions
+
+- 2026-10-21 — Production note: Lean proofs run inside check scripts are now described as such, separately from harness-built proofs
