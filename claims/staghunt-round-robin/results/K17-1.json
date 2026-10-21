@@ -1,0 +1,12 @@
+{
+  "duration_s": 49.966434955596924,
+  "exit": 0,
+  "figures": [],
+  "path": "checks/K17-c046_rk_artifact.py",
+  "result": "pass",
+  "run_at": "2026-10-21T06:37:58.820912+00:00",
+  "stderr_head": "",
+  "stderr_tail": "",
+  "stdout_tail": "PASS: R_k census counts k=0..12; score strictly increasing to k=8 then constant; R_8-R_6=4(a-t); differences E_7-type then E_8; 4 GLS certificates; 49.6s\n",
+  "timeout_s": 120
+}

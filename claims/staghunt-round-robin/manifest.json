@@ -1,0 +1,23 @@
+{
+  "allowed": [
+    "ch. 7"
+  ],
+  "claims": [
+    "K15",
+    "K6",
+    "K14",
+    "K5",
+    "K7",
+    "K4",
+    "K8",
+    "K3",
+    "K17",
+    "K18"
+  ],
+  "commit": "580565ffd3b3f1a8ca3ffa0407c949c8d724865c",
+  "name": "staghunt-round-robin",
+  "round": 9,
+  "run_label": "20261021-0517",
+  "staged_at": "2026-10-21T10:28:28Z",
+  "title": "Round robins of modal agents in the Stag Hunt"
+}

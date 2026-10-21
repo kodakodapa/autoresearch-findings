@@ -1,0 +1,16 @@
+{
+  "claims": [
+    "K2",
+    "K3"
+  ],
+  "duration_s": 0.8327591419219971,
+  "exit": 0,
+  "figures": [],
+  "path": "checks/K3-c046_lenient_laws.py",
+  "result": "pass",
+  "run_at": "2026-10-21T05:30:56.807509+00:00",
+  "stderr_head": "",
+  "stderr_tail": "",
+  "stdout_tail": "PASS lenient_laws: Lean 17 theorems + negative control, 656 table cells, 14 GLS certs, 0.6s\n",
+  "timeout_s": 120
+}

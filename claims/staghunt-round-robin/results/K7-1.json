@@ -1,0 +1,12 @@
+{
+  "duration_s": 36.90103197097778,
+  "exit": 0,
+  "figures": [],
+  "path": "checks/K7-c046_xreview_k4k6.py",
+  "result": "pass",
+  "run_at": "2026-10-21T05:42:31.419027+00:00",
+  "stderr_head": "",
+  "stderr_tail": "",
+  "stdout_tail": "PASS xreview K4/K5/K6: 7561 classes, envelopes and transitions match, StagBot split 3848-2156=1692, 60488 cells re-solved, 4 GLS certs, 36.6s\n",
+  "timeout_s": 120
+}

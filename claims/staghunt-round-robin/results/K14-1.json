@@ -1,0 +1,16 @@
+{
+  "claims": [
+    "K13",
+    "K14"
+  ],
+  "duration_s": 24.807738065719604,
+  "exit": 0,
+  "figures": [],
+  "path": "checks/K14-todorov_safety.py",
+  "result": "pass",
+  "run_at": "2026-10-21T06:13:47.398721+00:00",
+  "stderr_head": "",
+  "stderr_tail": "",
+  "stdout_tail": "WINNERS [('[](p|[][][]~(p|q))', 16393, [4444, 543, 487, 2087])]\nFB 14158\nPASS safety counts, full winner rows independently re-solved and headline GLS certificates\n",
+  "timeout_s": 120
+}

@@ -1,0 +1,12 @@
+{
+  "duration_s": 44.40989589691162,
+  "exit": 0,
+  "figures": [],
+  "path": "checks/K19-safety12.py",
+  "result": "pass",
+  "run_at": "2026-10-21T06:48:05.442243+00:00",
+  "stderr_head": "",
+  "stderr_tail": "",
+  "stdout_tail": "{\"candidates\": 517, \"extended_cells\": 25303014, \"exploited\": 1, \"witnesses\": {\"[](p|(q&~[][][]q))\": \"(~[][]p|[](p&[][]q))\"}}\nPASS: exactly one of 517 census-safe self-stag agents refuted; 516 survive all size<=12 opponents; minimal exploiter size 11; 7561 independent victim cells and 2 GLS certificates\n",
+  "timeout_s": 120
+}

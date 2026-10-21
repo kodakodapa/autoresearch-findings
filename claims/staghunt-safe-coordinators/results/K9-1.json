@@ -1,0 +1,12 @@
+{
+  "duration_s": 24.38350200653076,
+  "exit": 0,
+  "figures": [],
+  "path": "checks/K9-c046_patient_laws.py",
+  "result": "pass",
+  "run_at": "2026-10-21T05:48:47.364055+00:00",
+  "stderr_head": "",
+  "stderr_tail": "",
+  "stdout_tail": "PASS patient_laws: Lean 16 theorems + negative control, 452 height cells, 12 GLS certs, census 0/230/75, 24.1s\n",
+  "timeout_s": 120
+}

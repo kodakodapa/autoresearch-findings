@@ -1,0 +1,12 @@
+{
+  "duration_s": 0.8104257583618164,
+  "exit": 0,
+  "figures": [],
+  "path": "checks/K8-ak_laws.py",
+  "result": "pass",
+  "run_at": "2026-10-21T05:43:08.323334+00:00",
+  "stderr_head": "",
+  "stderr_tail": "",
+  "stdout_tail": "'ak_db' depends on axioms: [propext, Quot.sound]\n'prudent_db' depends on axioms: [propext, Classical.choice, Quot.sound]\n'ak_stag' does not depend on any axioms\n'ak_pair' does not depend on any axioms\n'ak_fair' does not depend on any axioms\n'ak_prudent_zero' depends on axioms: [propext, Classical.choice, Quot.sound]\n'ak_prudent_positive' depends on axioms: [propext, Classical.choice, Quot.sound]\n\nPASS: seven Lean theorems; false mutation rejected; 261 height cells; 8 GLS fixed-point certificates\n",
+  "timeout_s": 120
+}

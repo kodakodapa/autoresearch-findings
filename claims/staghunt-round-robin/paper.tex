@@ -1,0 +1,242 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{hyperref}
+\title{Round robins of modal agents in the Stag Hunt}
+\author{Kodakodapa}
+\date{}
+\begin{document}
+\maketitle
+\section{Introduction}
+\label{sec:staghunt-round-robin}
+
+\subsection*{Setting}
+
+In the Stag Hunt both players do best by hunting stag together; hunting stag alone pays nothing,
+and hare is a safe middle option. We write the payoffs as stag/stag $a$, stag against hare $s$,
+hare against stag $t$, hare/hare $d$, with $a > t > d > s$. The players are modal agents in the
+sense of Barasz et al. \cite{barasz2014robust}: programs that decide by what can be proved about the
+opponent, with $p$ = ``the opponent hunts stag against me'' and $q$ = ``the opponent hunts stag
+against HareBot''. FairBot $\Box p$ hunts stag exactly when it can prove the opponent does. We take
+all 7,561 behaviourally distinct guarded agents of size at most 10 and let every agent play every
+agent, itself included, with equal weight (a round robin).
+
+\subsection*{Result}
+
+\begin{itemize}
+\item \textbf{FairBot never wins.} Normalising $a = 1$, $s = 0$, the triangle of strict Stag Hunts $0 < d < t < 1$ splits into exactly six regions, each won by a single agent, and FairBot wins none of them. The agent $A_3 = \Box(p \vee \Box^3\neg(p \vee q))$ wins on 44.6\% of the area, including every game with payoffs $(4, 0, t, 2)$ for $2 < t < 4$ and the game $(3, 0, 2, 1)$. At $(4, 0, 3, 2)$ it scores 23,411 against FairBot's 21,719.
+\item \textbf{Why it beats FairBot.} $A_3$ reaches stag/stag with 4,444 of the 4,459 agents that hunt stag against StagBot and with none of the others; it gains on the first group and loses on the second, for a net gain of 1,692 points over FairBot at $(4, 0, 3, 2)$.
+\item \textbf{Families behind the winners.} For every $k$, $A_k = \Box(p \vee \Box^k\neg(p \vee q))$ hunts stag against HareBot (and is left alone there), coordinates with StagBot, with every $A_m$ and with every $F_j = \Box(\Box^j\bot \vee p)$ (FairBot over a stronger system); the lenient FairBots $R_k = \Box(p \vee \Box^k p)$ are safe and coordinate with $\neg\Box^j\bot$ exactly when $j \le k$.
+\item \textbf{The winner depends on the size bound.} In the same census the score of $R_k$ rises strictly with $k$ up to $k = 8$ and that of $A_k$ up to $k = 5$, so longer members of both families score higher than the census winners. The specific winners above are therefore artefacts of the size bound; what holds across the families is that lenient agents beat FairBot in this round robin.
+\end{itemize}
+
+\subsection*{Why it matters}
+
+Round robins are a natural way to compare programs that read each other's code, and FairBot is
+often taken as the reference cooperative agent. In the Stag Hunt, where cooperating with a
+defector costs less than in the prisoner's dilemma, agents that are more willing to hunt stag do
+better than FairBot against a broad population, and exact payoff breakpoints show where each
+agent takes over.
+
+\subsection*{Proved vs checked}
+
+The laws for $A_k$ and $R_k$ are proved for all indices in Lean 4, in the height semantics of
+closed GL fixed points; the link to provability in arithmetic is Solovay's theorem
+\cite{solovay1976provability}, cited, not formalised (see also \cite{boolos1993logic}). Scores, regions
+and breakpoints are exact rational computations over the stated census.
+
+\subsection*{Novelty statement}
+
+We believe this result is new. Our prior-art search (2026-10-21) covered:
+
+\begin{itemize}
+\item Barasz, LaVictoire et al., arXiv 1401.5577.
+\item LessWrong / Alignment Forum wiki ``Modal combat'' and ``Is there only one FairBot?'' (2026).
+\item Mennen, ``Modal combat for games other than the prisoner's dilemma'' (2017).
+\item Todorov, ten Napel \& Müller, ``Parametric Open Source Games'', arXiv 2606.27068.
+\item Tennenholtz (2004), program equilibrium (background).
+\item Web searches for modal agents in the Stag Hunt and for tournaments of modal agents (2026-10-21); none means not found in this search.
+\end{itemize}
+
+We found no earlier statement of it, but we can't be certain. If you know of prior work, please open an issue.
+
+\subsection*{How it was produced}
+
+This result was found by AI research agents (the autoresearch harness). It was partly proved in Lean (claims K8, K3) and partly checked by script (claims K15, K6, K14, K5, K7, K4, K17, K18); the proof and check files are included so anyone can re-run them.
+
+\section{Claims}
+
+\subsection*{Claim K15}
+
+Normalising $a=1,s=0$, the strict Stag Hunt triangle $0<d<t<1$ splits into exactly 6 census (size $\le10$) round-robin winner regions, each one agent; $A_3$ wins on 44.6\% of the area and $R_6=\Box(p\lor\Box^6p)$ near $t,d\to1$; FairBot nowhere.
+
+Status: derived · author check only.
+
+\paragraph{Verified.}
+\begin{itemize}
+\item \texttt{checks/K15-c046\_sh\_triangle.py}: 7561 classes re-enumerated (own engine); K13/K14 values; 3309 score planes; exact Fraction clipping gives 6 winner polygons with total area exactly 1/2, one agent each, exact areas and A3 vertices; unique exact argmax at 7 interior points; 6 GLS self-certificates --- pass
+\end{itemize}
+
+\paragraph{Evidence.}
+\begin{itemize}
+\item reasoning: Round-robin argmax is invariant under positive affine payoff maps, so (a,s,t,d) reduces to (1,0,t,d); scores are affine in (t,d), so winner regions are convex polygons.
+\end{itemize}
+
+\paragraph{Prior art.} Possibly new: no prior art found in the owner's search.
+
+\subsection*{Claim K6}
+
+In the 7,561-class guarded-language census of size $\le10$, $A_3=\Box(p\lor\Box^3\neg(p\lor q))$ uniquely maximizes round-robin score $21950+487t$ for every $2<t<4$, with payoffs $(SS,SH,HS,HH)=(4,0,t,2)$.
+
+Status: derived · author check only.
+
+\paragraph{Verified.}
+\begin{itemize}
+\item \texttt{checks/K6-stag\_payoffs.py}: Pinned solver source; exact census counts; all ordered cells solved; GLS certificates for A3/self, A3/HareBot, A3/FairBot and FairBot/self; exact outcome counts, transitions, and upper envelopes for both payoff slices. --- pass
+\end{itemize}
+
+\paragraph{Prior art.} Possibly new: no prior art found in the owner's search.
+
+\subsection*{Claim K14}
+
+At $(SS,SH,HS,HH)=(3,0,2,1)$, $A_3=\Box(p\lor\Box^3\neg(p\lor q))$ uniquely maximizes the equally weighted round robin over the 7561 guarded size-$\le10$ census classes, scoring 16393 versus FairBot's 14158.
+
+Status: derived · author check only.
+
+\paragraph{Verified.}
+\begin{itemize}
+\item \texttt{checks/K14-todorov\_safety.py}: SHA256-pinned solver; all 7561-class cells re-solved; unique winner A3 at (3,0,2,1), score 16393 versus FairBot 14158; 7561 winner cells independently re-solved; 4 GLS certificates; 1693 census-safe classes, 517 self-stag. --- pass
+\end{itemize}
+
+\paragraph{Prior art.} Possibly new: no prior art found in the owner's search.
+
+\subsection*{Claim K5}
+
+For $(SS,SH,HS,HH)=(4,0,3,h)$ and $0<h<4$, the size-$\le10$ modal census has six winner intervals, separated by $116/1423$, $15/22$, $2537/1001$, $4079/1071$, and $463/116$.
+
+Status: derived · author check only.
+
+\paragraph{Verified.}
+\begin{itemize}
+\item \texttt{checks/K6-stag\_payoffs.py}: Pinned solver source; exact census counts; all ordered cells solved; GLS certificates for A3/self, A3/HareBot, A3/FairBot and FairBot/self; exact outcome counts, transitions, and upper envelopes for both payoff slices. --- pass
+\end{itemize}
+
+\paragraph{Prior art.} Possibly new: no prior art found in the owner's search.
+
+\subsection*{Claim K7}
+
+In L up to size 10 with Stag Hunt $(4,0,3,2)$, $A_3=\Box(p\lor\Box^3\neg(p\lor q))$ ends stag/stag with exactly 4444 of the 4459 opponents that hunt stag vs StagBot and with none of the other 3102; vs FairBot it gains $+3848$ on the first group and loses $2156$ on the second.
+
+Status: derived · author check only.
+
+\paragraph{Verified.}
+\begin{itemize}
+\item \texttt{checks/K7-c046\_xreview\_k4k6.py}: 7561 classes; A3/FB counts and K4 transitions; K5/K6 envelopes; StagBot split 4459/3102, A3 SS = 4444 all in first group, 15 HS exceptions of size \textgreater{}=9 with []\textasciicircum{}4, gains +3848/-2156; 60488 cells re-solved independently; 4 GLS certificates --- pass
+\end{itemize}
+
+\paragraph{Prior art.} Possibly new: no prior art found in the owner's search.
+
+\subsection*{Claim K4}
+
+At Stag Hunt payoffs $(4,0,3,2)$ in the size-$\le10$ census, $A_3$ gains 1,692 points over FairBot: 1,643 opponents change $HH\to SS$ and 562 change $HS\to SS$, offset by other outcome changes.
+
+Status: derived · author check only.
+
+\paragraph{Verified.}
+\begin{itemize}
+\item \texttt{checks/K6-stag\_payoffs.py}: Pinned solver source; exact census counts; all ordered cells solved; GLS certificates for A3/self, A3/HareBot, A3/FairBot and FairBot/self; exact outcome counts, transitions, and upper envelopes for both payoff slices. --- pass
+\end{itemize}
+
+\paragraph{Prior art.} Possibly new: no prior art found in the owner's search.
+
+\subsection*{Claim K8}
+
+For all $k,j,m\ge0$, $A_k$ plays stag/hare vs HareBot and stag/stag vs StagBot, $A_m$, and $F_j=\Box(\Box^j\bot\lor p)$. Against $PB_j=\Box p\land\Box(\Box^{j+1}\bot\lor\neg q)$, it plays stag/hare for $k=0$ and hare/hare for $k\ge1$.
+
+Status: derived · author check only.
+
+\paragraph{Verified.}
+\begin{itemize}
+\item \texttt{checks/K8-ak\_laws.py}: Seven core Lean theorems for all indices and arbitrary solution traces; no sorryAx; incorrect strict bound rejected; 261 independent height cells; eight GLS fixed-point certificates; pinned prior solver source. --- pass (Lean-proved, no sorryAx)
+\item \texttt{checks/K8-ak\_laws.py}: 11 core Lean theorem reports, no sorryAx; faithful PB guard equivalent to original P\_(j+1) when q=true; all-index A/PB outcomes; false mutation rejected; 342 height cells; 12 GLS certificates. --- pass (Lean-proved, no sorryAx)
+\end{itemize}
+
+\paragraph{Prior art.} Possibly new: no prior art found in the owner's search.
+
+\subsection*{Claim K3}
+
+For all $k\ge0$, $R_k=\Box(p\lor\Box^kp)$ ($R_0$ = FairBot) never ends hunting stag against an opponent that ends hunting hare, and in the Stag Hunt ends stag/stag with $E_j=\neg\Box^j\bot$ iff $j\le k$ (else hare vs stag) and with $N_n=\Box(\Box^n\bot\lor\neg q)$ iff $n>k$ (else hare/hare).
+
+Status: derived · author check only.
+
+\paragraph{Verified.}
+\begin{itemize}
+\item \texttt{checks/K3-c046\_lenient\_laws.py}: Lean (17 theorems, no sorryAx): rk\_safe, rr\_pair, rk\_db, rk\_E (stag/stag iff j\textless{}=k), rk\_N (stag/stag iff n\textgreater{}k, else hare/hare), modal bridges; false variant rejected; height tables k\textless{}=7, j,n\textless{}=8; 14 GLS certificates --- pass (Lean-proved, no sorryAx)
+\item \texttt{checks/K3-c046\_relabel\_gk.py}: Lean re-proves rk\_E, rk\_N, rk\_Z, rk\_db for all indices alongside gk\_E, gk\_N (same E\_j/N\_n laws for G\_k); no sorryAx; false bound rejected; 588 height cells; 10 GLS certificates --- pass (Lean-proved, no sorryAx)
+\end{itemize}
+
+\paragraph{Evidence.}
+\begin{itemize}
+\item reasoning: Height semantics on the GL chain (box holds at h iff its argument holds at all g\textbackslash{}\textless{}h). Game tails equal standard-model actions; Lean proves the laws for every index, given any traces solving the height equations.
+\end{itemize}
+
+\paragraph{Prior art.} Possibly new: no prior art found in the owner's search.
+
+\subsection*{Claim K17}
+
+Against the 7561 size-$\\le10$ census agents, $R_k=\\Box(p\\lor\\Box^kp)$ has round-robin score strictly increasing in $k$ for $0\\le k\\le8$ and constant for $8\\le k\\le12$, for all payoffs with $a>t,a>d$; so $R_6$'s K15 region reflects the size bound (size $k+4$).
+
+Status: derived · author check only.
+
+\paragraph{Verified.}
+\begin{itemize}
+\item \texttt{checks/K17-c046\_rk\_artifact.py}: 7561 classes re-enumerated; R\_k counts k=0..12 (machine solver = height solver for k\textless{}=6), SH=0; SS up, HS/HH non-increasing, strict until k=8 then constant; 200 exact random payoffs: score strictly increasing to k=8, R\_8-R\_6=4(a-t); R\_6-\textgreater{}R\_7 differs on \textasciitilde{}[]\textasciicircum{}7F,\textasciitilde{}[]\textasciicircum{}7\textasciitilde{}p,\textasciitilde{}[]\textasciicircum{}7\textasciitilde{}q, R\_7-\textgreater{}R\_8 on \textasciitilde{}[]\textasciicircum{}8F; 4 GLS certificates --- pass
+\end{itemize}
+
+\paragraph{Evidence.}
+\begin{itemize}
+\item reasoning: SH=0 for all k and counts sum to 7561, so the score difference is -dHS(a-t)-dHH(a-d), positive whenever dHS,dHH\textbackslash{}\textless{}=0 with one strict and a\textbackslash{}\textgreater{}t,a\textbackslash{}\textgreater{}d.
+\end{itemize}
+
+\paragraph{Prior art.} Possibly new: no prior art found in the owner's search.
+
+\subsection*{Claim K18}
+
+Against the 7561 size-$\le10$ census agents, $A_k=\Box(p\lor\Box^k\neg(p\lor q))$ (size $k+7$) has 543 SH and 2087 HH for $1\le k\le10$; its score rises strictly for $k\le5$ (by $\Delta SS(a-t)$) and is constant after, so $A_5-A_3=15(a-t)$ whenever $a>t$.
+
+Status: derived · author check only.
+
+\paragraph{Verified.}
+\begin{itemize}
+\item \texttt{checks/K18-c046\_ak\_artifact.py}: 7561 classes re-enumerated; A\_k counts k=1..10 (machine = height solver for k\textless{}=3, A\_4.. not census members); SH 543, HH 2087 fixed; only HS-\textgreater{}SS for k\textgreater{}=2; 200 exact random payoffs: strict increase to k=5, constant to k=10, A\_5-A\_3=15(a-t); A\_5 SS set = 4459 stag-vs-StagBot agents; 12 then 3 listed flips; 5 GLS certificates --- pass
+\end{itemize}
+
+\paragraph{Evidence.}
+\begin{itemize}
+\item reasoning: SH and HH counts are constant and counts sum to 7561, so the score difference is dSS\textbackslash{}\emph{a + dHS\textbackslash{}}t = dSS(a-t) \textbackslash{}\textgreater{} 0 when dSS\textbackslash{}\textgreater{}0 and a\textbackslash{}\textgreater{}t.
+\end{itemize}
+
+\paragraph{Prior art.} Possibly new: no prior art found in the owner's search.
+
+
+\paragraph{Provenance.}
+Run \texttt{20261021-0517}, claims K15, K6, K14, K5, K7, K4, K8, K3, K17, K18, run-folder commit \texttt{580565ffd3b3f1a8ca3ffa0407c949c8d724865c}, published 2026-10-21.
+
+\section{Discussion}
+
+Round-robin results depend on the opponent population: here all small formulas with equal
+weight, which over-represents some behaviours. The scores are aggregate quantities, not
+equilibrium thresholds; they are not comparable to the learning-dynamics threshold of Todorov et
+al. for parametric (non-modal) agents \cite{todorov2026parametric}. Open: whether the scores of $A_k$ and $R_k$ keep their
+order in larger censuses, and which agent wins in the limit.
+
+\section{How to verify}
+
+Each finding has its check scripts in \texttt{claims/staghunt-round-robin/checks/} of the findings repository. Run each with \texttt{python -I <script>}; it passes if it exits with status 0. The checks are Python scripts and need the packages of the research image (the image's \texttt{requirements.txt}); the Lean checks also need \texttt{lean}.
+
+\nocite{*}
+\bibliographystyle{plain}
+\bibliography{refs}
+
+\end{document}

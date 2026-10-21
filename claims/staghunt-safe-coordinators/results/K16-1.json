@@ -1,0 +1,12 @@
+{
+  "duration_s": 16.338670015335083,
+  "exit": 0,
+  "figures": [],
+  "path": "checks/K16-no_safe12.py",
+  "result": "pass",
+  "run_at": "2026-10-21T06:29:52.856635+00:00",
+  "stderr_head": "",
+  "stderr_tail": "",
+  "stdout_tail": "PASS: 56503 classes through size 12; 356 self-stag/E1/N1 candidates; every candidate exploited by a size<=10 witness; 362 GLS certificates\n",
+  "timeout_s": 120
+}

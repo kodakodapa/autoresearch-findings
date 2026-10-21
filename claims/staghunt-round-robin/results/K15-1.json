@@ -1,0 +1,12 @@
+{
+  "duration_s": 49.5476598739624,
+  "exit": 0,
+  "figures": [],
+  "path": "checks/K15-c046_sh_triangle.py",
+  "result": "pass",
+  "run_at": "2026-10-21T06:22:24.197626+00:00",
+  "stderr_head": "",
+  "stderr_tail": "",
+  "stdout_tail": "PASS: K13/K14 reproduced; strict Stag Hunt triangle tiled exactly by 6 winner regions; A3 area share 0.44571113981548266 49.2s\n",
+  "timeout_s": 120
+}

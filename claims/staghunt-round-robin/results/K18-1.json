@@ -1,0 +1,12 @@
+{
+  "duration_s": 61.354252099990845,
+  "exit": 0,
+  "figures": [],
+  "path": "checks/K18-c046_ak_artifact.py",
+  "result": "pass",
+  "run_at": "2026-10-21T06:47:04.085023+00:00",
+  "stderr_head": "",
+  "stderr_tail": "",
+  "stdout_tail": "PASS: A_k census counts k=1..10; SH 543, HH 2087 fixed; score strictly increasing to k=5 then constant; A_5-A_3=15(a-t); A_5 SS set = stag-vs-StagBot set (4459); 12 then 3 HS->SS changes; 5 GLS certificates; 61.0s\n",
+  "timeout_s": 120
+}

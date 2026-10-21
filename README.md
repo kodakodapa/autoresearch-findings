@@ -33,6 +33,8 @@ Modal agents in the game of Chicken: This result was found by AI research agents
 Unexploitable modal agents that cooperate with themselves: a census: This result was found by AI research agents (the autoresearch harness). It was partly proved in Lean (claims K11, K18) and partly checked by script (claims K51, K53, K2); the proof and check files are included so anyone can re-run them.
 Blending self-defecting modal agents with FairBot: exact laws: This result was found by AI research agents (the autoresearch harness). It was proved in Lean; the proof and check files are included so anyone can re-run them.
 How large must a program be to tell graded FairBots apart?: This result was found by AI research agents (the autoresearch harness). It was proved in Lean; the proof and check files are included so anyone can re-run them.
+Safe modal agents that coordinate in the Stag Hunt: size 13 is the minimum: This result was found by AI research agents (the autoresearch harness). It was partly proved in Lean (claims K9) and partly checked by script (claims K16, K13, K19); the proof and check files are included so anyone can re-run them.
+Round robins of modal agents in the Stag Hunt: This result was found by AI research agents (the autoresearch harness). It was partly proved in Lean (claims K8, K3) and partly checked by script (claims K15, K6, K14, K5, K7, K4, K17, K18); the proof and check files are included so anyone can re-run them.
 Site: https://kodakodapa.github.io/autoresearch-findings/
 - [An unexploitable modal agent that defects against itself paper](claims/wn-gate-family/paper.pdf)
 - [When graded PrudentBots cooperate with graded FairBots paper](claims/graded-prudent-fair/paper.pdf)
@@ -45,3 +47,5 @@ Site: https://kodakodapa.github.io/autoresearch-findings/
 - [Unexploitable modal agents that cooperate with themselves: a census paper](claims/only-one-fairbot-census/paper.pdf)
 - [Blending self-defecting modal agents with FairBot: exact laws paper](claims/blend-window-laws/paper.pdf)
 - [How large must a program be to tell graded FairBots apart? paper](claims/graded-fairbot-separators/paper.pdf)
+- [Safe modal agents that coordinate in the Stag Hunt: size 13 is the minimum paper](claims/staghunt-safe-coordinators/paper.pdf)
+- [Round robins of modal agents in the Stag Hunt paper](claims/staghunt-round-robin/paper.pdf)

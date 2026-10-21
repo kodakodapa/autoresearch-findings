@@ -1,0 +1,17 @@
+{
+  "allowed": [
+    "ch. 7"
+  ],
+  "claims": [
+    "K16",
+    "K9",
+    "K13",
+    "K19"
+  ],
+  "commit": "580565ffd3b3f1a8ca3ffa0407c949c8d724865c",
+  "name": "staghunt-safe-coordinators",
+  "round": 9,
+  "run_label": "20261021-0517",
+  "staged_at": "2026-10-21T10:30:41Z",
+  "title": "Safe modal agents that coordinate in the Stag Hunt: size 13 is the minimum"
+}
