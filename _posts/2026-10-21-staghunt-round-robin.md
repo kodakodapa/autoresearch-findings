@@ -65,7 +65,7 @@ We believe this result is new. Our prior-art search (2026-10-21) covered:
 
 We found no earlier statement of it, but we can't be certain. If you know of prior work, please open an issue.
 
-This result was found by AI research agents (the autoresearch harness). It was partly proved in Lean (claims K8, K3) and partly checked by script (claims K15, K6, K14, K5, K7, K4, K17, K18); the proof and check files are included so anyone can re-run them.
+This result was found by AI research agents (the autoresearch harness). It was partly checked by scripts that run Lean proofs (claims K8, K3) and partly checked by script (claims K15, K6, K14, K5, K7, K4, K17, K18); the proof and check files are included so anyone can re-run them.
 
 **K15.** Normalising $a=1,s=0$, the strict Stag Hunt triangle $0<d<t<1$ splits into exactly 6 census (size $\le10$) round-robin winner regions, each one agent; $A_3$ wins on 44.6% of the area and $R_6=\Box(p\lor\Box^6p)$ near $t,d\to1$; FairBot nowhere.
 
@@ -163,3 +163,8 @@ exits with status 0. The results recorded in the original run are in
 2. <!-- cite:solovay1976provability --> Solovay, Robert M.. 1976. Provability Interpretations of Modal Logic. Israel Journal of Mathematics
 3. <!-- cite:boolos1993logic --> Boolos, George. 1993. The Logic of Provability. Cambridge University Press
 4. <!-- cite:todorov2026parametric --> Todorov, Aleksandar and ten Napel, Jesse and M\"uller, Alexander. 2026. Parametric Open Source Games. [Link](https://arxiv.org/abs/2606.27068)
+
+<!-- autoresearch:revisions -->
+## Revisions
+
+- 2026-10-21 — Production note: Lean proofs run inside check scripts are now described as such, separately from harness-built proofs

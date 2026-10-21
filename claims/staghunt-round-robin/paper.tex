@@ -63,7 +63,7 @@ We found no earlier statement of it, but we can't be certain. If you know of pri
 
 \subsection*{How it was produced}
 
-This result was found by AI research agents (the autoresearch harness). It was partly proved in Lean (claims K8, K3) and partly checked by script (claims K15, K6, K14, K5, K7, K4, K17, K18); the proof and check files are included so anyone can re-run them.
+This result was found by AI research agents (the autoresearch harness). It was partly checked by scripts that run Lean proofs (claims K8, K3) and partly checked by script (claims K15, K6, K14, K5, K7, K4, K17, K18); the proof and check files are included so anyone can re-run them.
 
 \section{Claims}
 
@@ -234,6 +234,12 @@ order in larger censuses, and which agent wins in the limit.
 \section{How to verify}
 
 Each finding has its check scripts in \texttt{claims/staghunt-round-robin/checks/} of the findings repository. Run each with \texttt{python -I <script>}; it passes if it exits with status 0. The checks are Python scripts and need the packages of the research image (the image's \texttt{requirements.txt}); the Lean checks also need \texttt{lean}.
+
+\section{Revisions}
+
+\begin{itemize}
+\item 2026-10-21 --- Production note: Lean proofs run inside check scripts are now described as such, separately from harness-built proofs
+\end{itemize}
 
 \nocite{*}
 \bibliographystyle{plain}
