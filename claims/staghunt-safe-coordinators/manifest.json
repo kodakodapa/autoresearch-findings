@@ -10,8 +10,14 @@
   ],
   "commit": "580565ffd3b3f1a8ca3ffa0407c949c8d724865c",
   "name": "staghunt-safe-coordinators",
+  "revisions": [
+    {
+      "date": "2026-10-21",
+      "reason": "Production note: Lean proofs run inside check scripts are now described as such, separately from harness-built proofs"
+    }
+  ],
   "round": 9,
   "run_label": "20261021-0517",
-  "staged_at": "2026-10-21T10:30:41Z",
+  "staged_at": "2026-10-21T18:56:57Z",
   "title": "Safe modal agents that coordinate in the Stag Hunt: size 13 is the minimum"
 }

@@ -9,7 +9,7 @@
 \begin{document}
 \maketitle
 \begin{abstract}
-This report collects the findings: A census of modal agents in the prisoner's dilemma; Safe modal agents that coordinate in the Stag Hunt: size 13 is the minimum; When graded PrudentBots cooperate with graded FairBots; An unexploitable modal agent that defects against itself; Families of unexploitable agents that defect against themselves; A certified map of variants of Gödel's ontological argument; Settling informal claims about modal agents in Chicken; Modal agents in the game of Chicken; Three-player modal agents in a public-goods game; Blending self-defecting modal agents with FairBot: exact laws; How large must a program be to tell graded FairBots apart?; Unexploitable modal agents that cooperate with themselves: a census; Round robins of modal agents in the Stag Hunt.
+This report collects the findings: A census of modal agents in the prisoner's dilemma; When graded PrudentBots cooperate with graded FairBots; An unexploitable modal agent that defects against itself; Families of unexploitable agents that defect against themselves; A certified map of variants of Gödel's ontological argument; Settling informal claims about modal agents in Chicken; Modal agents in the game of Chicken; Three-player modal agents in a public-goods game; Blending self-defecting modal agents with FairBot: exact laws; How large must a program be to tell graded FairBots apart?; Unexploitable modal agents that cooperate with themselves: a census; Round robins of modal agents in the Stag Hunt; Safe modal agents that coordinate in the Stag Hunt: size 13 is the minimum.
 \end{abstract}
 
 \section{A census of modal agents in the prisoner's dilemma}
@@ -165,124 +165,6 @@ unchanged and only the scoring differs, and a census with more probes.
 
 \paragraph{Provenance.}
 Run \texttt{20261017-1126}, claims K1, K12, K15, K17, K19, run-folder commit \texttt{662166ecff0651902cc5fcb04bf747c62d795af2}, published 2026-10-19.
-
-\section{Safe modal agents that coordinate in the Stag Hunt: size 13 is the minimum}
-\label{sec:staghunt-safe-coordinators}
-
-\subsection*{Setting}
-
-In the Stag Hunt two players each choose stag or hare: both hunting stag pays most, hunting stag
-alone pays least, and hare is a safe middle option. Here the players are programs that read each
-other's source code. Following Barasz et al. \cite{barasz2014robust}, a \emph{modal agent} decides by
-asking what can be proved about the opponent, written with the provability box $\Box$ of the
-logic GL: $p$ means ``the opponent hunts stag against me'' and $q$ ``the opponent hunts stag against
-HareBot'', the agent that always hunts hare. Call an agent \emph{safe} if no modal opponent ever ends up
-hunting hare while the agent hunts stag (the Stag Hunt reading of unexploitability). Two simple
-probes test willingness to coordinate: $E_1 = \neg\Box\bot$, which hunts stag unconditionally in
-practice, and $N_1 = \Box(\Box\bot \vee \neg q)$, which hunts stag against agents that do not
-hunt stag against HareBot. We take guarded formulas built from $p$, $q$, $\bot$, $\neg$,
-$\wedge$, $\vee$, $\Box$ and measure size as the number of nodes.
-
-\subsection*{Result}
-
-\begin{itemize}
-\item \textbf{No small safe coordinator.} Among the 56,503 agent classes of size at most 12, exactly 356 reach stag/stag with themselves, with $E_1$ and with $N_1$, and every one of them is exploited by some opponent of size at most 10. So no safe agent of size at most 12 has all three coordination properties.
-\item \textbf{Size 13 is enough.} The agent $X_1 = \Box(p \vee \Box p) \wedge (\Box\bot \vee \neg\Box\neg p)$ of size 13 is safe against every modal opponent and reaches stag/stag with itself, with FairBot, with $E_1$ and with $N_1$. More generally, the family $X_k = \Box(p \vee \Box^k p) \wedge (\Box\bot \vee \neg\Box\neg p)$ is safe for every $k \ge 1$, coordinates with itself and with FairBot, with $E_j$ exactly when $j \le k$, and with every $N_n$, $n \ge 1$.
-\item \textbf{Census safety counts.} Among the 7,561 classes of size at most 10, exactly 1,693 avoid being left hunting stag alone against every agent in that census, and 517 of these hunt stag with themselves; tested against all opponents of size at most 12, only one of the 517, $\Box(p \vee (q \wedge \neg\Box^3 q))$, is exploited (by an opponent of size 11).
-\end{itemize}
-
-\subsection*{Why it matters}
-
-Safe agents in the Stag Hunt must refuse to hunt stag unless they can be sure of a partner, which
-pulls against coordinating with simple partners such as $E_1$ and $N_1$. The result locates the
-smallest size at which safety and these coordination properties can be combined, and gives an
-explicit infinite family that does it.
-
-\subsection*{Proved vs checked}
-
-The laws for $X_k$, including safety against every modal opponent, are proved for all $k$ in
-Lean 4, in the height semantics of closed GL fixed points; the link to provability in arithmetic
-is Solovay's theorem \cite{solovay1976provability}, cited, not formalised (see also
-\cite{boolos1993logic}). The non-existence below size 13 and the census counts are exhaustive
-computations up to the stated sizes, with every exploiting opponent recorded and re-solved.
-
-We believe this result is new. Our prior-art search (2026-10-21) covered:
-
-\begin{itemize}
-\item Barasz, LaVictoire et al., arXiv 1401.5577.
-\item LessWrong / Alignment Forum wiki ``Modal combat'' and ``Is there only one FairBot?'' (2026).
-\item Mennen, ``Modal combat for games other than the prisoner's dilemma'' (2017).
-\item Todorov, ten Napel \& Müller, ``Parametric Open Source Games'', arXiv 2606.27068.
-\item Tennenholtz (2004), program equilibrium (background).
-\item Web searches for modal agents in the Stag Hunt and for tournaments of modal agents (2026-10-21); none means not found in this search.
-\end{itemize}
-
-We found no earlier statement of it, but we can't be certain. If you know of prior work, please open an issue.
-
-This result was found by AI research agents (the autoresearch harness). It was partly proved in Lean (claims K9) and partly checked by script (claims K16, K13, K19); the proof and check files are included so anyone can re-run them.
-
-\subsection*{Claim K16}
-
-In guarded $L$ of syntax-node size $\le12$, exactly 356 of 56,503 classes get stag/stag with self, $E_1$, and $N_1$; every one is exploited by a size-$\le10$ opponent. Hence no universally safe agent of size $\le12$ has all three coordination properties.
-
-Status: derived · author check only.
-
-\paragraph{Verified.}
-\begin{itemize}
-\item \texttt{checks/K16-no\_safe12.py}: SHA256-pinned full enumerator; 56503 classes through size 12; independent machine and formula filters give exactly 356 self/E1/N1 candidates; each has re-solved size\textless{}=10 exploitation witness; 362 GLS certificates. --- pass
-\end{itemize}
-
-\paragraph{Prior art.} Possibly new: no prior art found in the owner's search.
-
-\subsection*{Claim K9}
-
-For all $k\ge1$, $X_k=\Box(p\lor\Box^kp)\land(\Box\bot\lor\neg\Box\neg p)$ never ends hunting stag against an eventual hare hunter, ends stag/stag with itself, FairBot and every $R_m$, $D_m$, $X_m$, with $E_j$ ($j\ge1$) iff $j\le k$ and with $N_n$ iff $n\ge1$.
-
-Status: derived · author check only.
-
-\paragraph{Verified.}
-\begin{itemize}
-\item \texttt{checks/K9-c046\_patient\_laws.py}: Lean 16 theorems (xk\_safe, xk\_self, xx/xr/xd\_pair, xk\_db, xk\_E, xk\_N, xk\_Z, xk\_modal,...), no sorryAx, false bound rejected; 452 height cells k\textless{}=7; 12 GLS certificates; census size\textless{}=10: 1693 safe, 517 safe self-stag, 230 SS with E\_1, 75 with N\_1, 0 with both --- pass (Lean-proved, no sorryAx)
-\end{itemize}
-
-\paragraph{Prior art.} Possibly new: no prior art found in the owner's search.
-
-\subsection*{Claim K13}
-
-Among the 7561 guarded $L$ classes of syntax-node size $\le10$, exactly 1693 avoid stag/hare against every census opponent; exactly 517 of these hunt stag with themselves. These are finite-census safety counts.
-
-Status: derived · author check only.
-
-\paragraph{Verified.}
-\begin{itemize}
-\item \texttt{checks/K13-todorov\_safety.py}: SHA256-pinned solver; all 7561-class cells re-solved; unique winner A3 at (3,0,2,1), score 16393 versus FairBot 14158; 7561 winner cells independently re-solved; 4 GLS certificates; 1693 census-safe classes, 517 self-stag. --- pass
-\end{itemize}
-
-\paragraph{Prior art.} Possibly new: no prior art found in the owner's search.
-
-\subsection*{Claim K19}
-
-Of the 517 size-$\le10$ census-safe self-stag agents, exactly one is exploited by a size-$\le12$ opponent: $V=\Box(p\lor(q\land\neg\Box^3q))$, by $B=\neg\Box^2p\lor\Box(p\land\Box^2q)$ of minimum size 11. The other 516 survive this finite test.
-
-Status: derived · author check only.
-
-\paragraph{Verified.}
-\begin{itemize}
-\item \texttt{checks/K19-safety12.py}: Pinned full enumeration: 56503 classes; 7561-class matrix recovers 1693/517; 25303014 extension cells at exact joint fixed states; exactly V refuted, 516 survive; minimum exploiter size11; 7561 independent V row cells; exploitation and self-play GLS certificates. --- pass
-\end{itemize}
-
-\paragraph{Prior art.} Possibly new: no prior art found in the owner's search.
-
-\subsection*{Discussion}
-
-The census counts are finite statements: ``safe'' there means safe against the agents in the census,
-and tests against larger opponents can still find exploits, as they did for one agent.
-The size-13 agent is safe against every modal opponent by proof. Safety is the same outcome
-condition as unexploitability in the prisoner's dilemma; what changes in the Stag Hunt is which
-coordination properties one wants alongside it.
-
-\paragraph{Provenance.}
-Run \texttt{20261021-0517}, claims K16, K9, K13, K19, run-folder commit \texttt{580565ffd3b3f1a8ca3ffa0407c949c8d724865c}, published 2026-10-21.
 
 \section{When graded PrudentBots cooperate with graded FairBots}
 \label{sec:graded-prudent-fair}
@@ -2046,6 +1928,124 @@ order in larger censuses, and which agent wins in the limit.
 
 \paragraph{Provenance.}
 Run \texttt{20261021-0517}, claims K15, K6, K14, K5, K7, K4, K8, K3, K17, K18, run-folder commit \texttt{580565ffd3b3f1a8ca3ffa0407c949c8d724865c}, published 2026-10-21.
+
+\section{Safe modal agents that coordinate in the Stag Hunt: size 13 is the minimum}
+\label{sec:staghunt-safe-coordinators}
+
+\subsection*{Setting}
+
+In the Stag Hunt two players each choose stag or hare: both hunting stag pays most, hunting stag
+alone pays least, and hare is a safe middle option. Here the players are programs that read each
+other's source code. Following Barasz et al. \cite{barasz2014robust}, a \emph{modal agent} decides by
+asking what can be proved about the opponent, written with the provability box $\Box$ of the
+logic GL: $p$ means ``the opponent hunts stag against me'' and $q$ ``the opponent hunts stag against
+HareBot'', the agent that always hunts hare. Call an agent \emph{safe} if no modal opponent ever ends up
+hunting hare while the agent hunts stag (the Stag Hunt reading of unexploitability). Two simple
+probes test willingness to coordinate: $E_1 = \neg\Box\bot$, which hunts stag unconditionally in
+practice, and $N_1 = \Box(\Box\bot \vee \neg q)$, which hunts stag against agents that do not
+hunt stag against HareBot. We take guarded formulas built from $p$, $q$, $\bot$, $\neg$,
+$\wedge$, $\vee$, $\Box$ and measure size as the number of nodes.
+
+\subsection*{Result}
+
+\begin{itemize}
+\item \textbf{No small safe coordinator.} Among the 56,503 agent classes of size at most 12, exactly 356 reach stag/stag with themselves, with $E_1$ and with $N_1$, and every one of them is exploited by some opponent of size at most 10. So no safe agent of size at most 12 has all three coordination properties.
+\item \textbf{Size 13 is enough.} The agent $X_1 = \Box(p \vee \Box p) \wedge (\Box\bot \vee \neg\Box\neg p)$ of size 13 is safe against every modal opponent and reaches stag/stag with itself, with FairBot, with $E_1$ and with $N_1$. More generally, the family $X_k = \Box(p \vee \Box^k p) \wedge (\Box\bot \vee \neg\Box\neg p)$ is safe for every $k \ge 1$, coordinates with itself and with FairBot, with $E_j$ exactly when $j \le k$, and with every $N_n$, $n \ge 1$.
+\item \textbf{Census safety counts.} Among the 7,561 classes of size at most 10, exactly 1,693 avoid being left hunting stag alone against every agent in that census, and 517 of these hunt stag with themselves; tested against all opponents of size at most 12, only one of the 517, $\Box(p \vee (q \wedge \neg\Box^3 q))$, is exploited (by an opponent of size 11).
+\end{itemize}
+
+\subsection*{Why it matters}
+
+Safe agents in the Stag Hunt must refuse to hunt stag unless they can be sure of a partner, which
+pulls against coordinating with simple partners such as $E_1$ and $N_1$. The result locates the
+smallest size at which safety and these coordination properties can be combined, and gives an
+explicit infinite family that does it.
+
+\subsection*{Proved vs checked}
+
+The laws for $X_k$, including safety against every modal opponent, are proved for all $k$ in
+Lean 4, in the height semantics of closed GL fixed points; the link to provability in arithmetic
+is Solovay's theorem \cite{solovay1976provability}, cited, not formalised (see also
+\cite{boolos1993logic}). The non-existence below size 13 and the census counts are exhaustive
+computations up to the stated sizes, with every exploiting opponent recorded and re-solved.
+
+We believe this result is new. Our prior-art search (2026-10-21) covered:
+
+\begin{itemize}
+\item Barasz, LaVictoire et al., arXiv 1401.5577.
+\item LessWrong / Alignment Forum wiki ``Modal combat'' and ``Is there only one FairBot?'' (2026).
+\item Mennen, ``Modal combat for games other than the prisoner's dilemma'' (2017).
+\item Todorov, ten Napel \& Müller, ``Parametric Open Source Games'', arXiv 2606.27068.
+\item Tennenholtz (2004), program equilibrium (background).
+\item Web searches for modal agents in the Stag Hunt and for tournaments of modal agents (2026-10-21); none means not found in this search.
+\end{itemize}
+
+We found no earlier statement of it, but we can't be certain. If you know of prior work, please open an issue.
+
+This result was found by AI research agents (the autoresearch harness). It was partly checked by scripts that run Lean proofs (claims K9) and partly checked by script (claims K16, K13, K19); the proof and check files are included so anyone can re-run them.
+
+\subsection*{Claim K16}
+
+In guarded $L$ of syntax-node size $\le12$, exactly 356 of 56,503 classes get stag/stag with self, $E_1$, and $N_1$; every one is exploited by a size-$\le10$ opponent. Hence no universally safe agent of size $\le12$ has all three coordination properties.
+
+Status: derived · author check only.
+
+\paragraph{Verified.}
+\begin{itemize}
+\item \texttt{checks/K16-no\_safe12.py}: SHA256-pinned full enumerator; 56503 classes through size 12; independent machine and formula filters give exactly 356 self/E1/N1 candidates; each has re-solved size\textless{}=10 exploitation witness; 362 GLS certificates. --- pass
+\end{itemize}
+
+\paragraph{Prior art.} Possibly new: no prior art found in the owner's search.
+
+\subsection*{Claim K9}
+
+For all $k\ge1$, $X_k=\Box(p\lor\Box^kp)\land(\Box\bot\lor\neg\Box\neg p)$ never ends hunting stag against an eventual hare hunter, ends stag/stag with itself, FairBot and every $R_m$, $D_m$, $X_m$, with $E_j$ ($j\ge1$) iff $j\le k$ and with $N_n$ iff $n\ge1$.
+
+Status: derived · author check only.
+
+\paragraph{Verified.}
+\begin{itemize}
+\item \texttt{checks/K9-c046\_patient\_laws.py}: Lean 16 theorems (xk\_safe, xk\_self, xx/xr/xd\_pair, xk\_db, xk\_E, xk\_N, xk\_Z, xk\_modal,...), no sorryAx, false bound rejected; 452 height cells k\textless{}=7; 12 GLS certificates; census size\textless{}=10: 1693 safe, 517 safe self-stag, 230 SS with E\_1, 75 with N\_1, 0 with both --- pass (Lean-proved, no sorryAx)
+\end{itemize}
+
+\paragraph{Prior art.} Possibly new: no prior art found in the owner's search.
+
+\subsection*{Claim K13}
+
+Among the 7561 guarded $L$ classes of syntax-node size $\le10$, exactly 1693 avoid stag/hare against every census opponent; exactly 517 of these hunt stag with themselves. These are finite-census safety counts.
+
+Status: derived · author check only.
+
+\paragraph{Verified.}
+\begin{itemize}
+\item \texttt{checks/K13-todorov\_safety.py}: SHA256-pinned solver; all 7561-class cells re-solved; unique winner A3 at (3,0,2,1), score 16393 versus FairBot 14158; 7561 winner cells independently re-solved; 4 GLS certificates; 1693 census-safe classes, 517 self-stag. --- pass
+\end{itemize}
+
+\paragraph{Prior art.} Possibly new: no prior art found in the owner's search.
+
+\subsection*{Claim K19}
+
+Of the 517 size-$\le10$ census-safe self-stag agents, exactly one is exploited by a size-$\le12$ opponent: $V=\Box(p\lor(q\land\neg\Box^3q))$, by $B=\neg\Box^2p\lor\Box(p\land\Box^2q)$ of minimum size 11. The other 516 survive this finite test.
+
+Status: derived · author check only.
+
+\paragraph{Verified.}
+\begin{itemize}
+\item \texttt{checks/K19-safety12.py}: Pinned full enumeration: 56503 classes; 7561-class matrix recovers 1693/517; 25303014 extension cells at exact joint fixed states; exactly V refuted, 516 survive; minimum exploiter size11; 7561 independent V row cells; exploitation and self-play GLS certificates. --- pass
+\end{itemize}
+
+\paragraph{Prior art.} Possibly new: no prior art found in the owner's search.
+
+\subsection*{Discussion}
+
+The census counts are finite statements: ``safe'' there means safe against the agents in the census,
+and tests against larger opponents can still find exploits, as they did for one agent.
+The size-13 agent is safe against every modal opponent by proof. Safety is the same outcome
+condition as unexploitability in the prisoner's dilemma; what changes in the Stag Hunt is which
+coordination properties one wants alongside it.
+
+\paragraph{Provenance.}
+Run \texttt{20261021-0517}, claims K16, K9, K13, K19, run-folder commit \texttt{580565ffd3b3f1a8ca3ffa0407c949c8d724865c}, published 2026-10-21.
 
 \section{How to verify}
 

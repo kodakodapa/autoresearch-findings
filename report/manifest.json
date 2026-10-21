@@ -26,26 +26,6 @@
         "ch. 7"
       ],
       "claims": [
-        "K16",
-        "K9",
-        "K13",
-        "K19"
-      ],
-      "commit": "580565ffd3b3f1a8ca3ffa0407c949c8d724865c",
-      "date": "2026-10-21",
-      "pdf": true,
-      "run_label": "20261021-0517",
-      "slug": "staghunt-safe-coordinators",
-      "threads": [
-        "C046"
-      ],
-      "title": "Safe modal agents that coordinate in the Stag Hunt: size 13 is the minimum"
-    },
-    {
-      "allowed": [
-        "ch. 7"
-      ],
-      "claims": [
         "K8"
       ],
       "commit": "662166ecff0651902cc5fcb04bf747c62d795af2",
@@ -356,6 +336,32 @@
         "C046"
       ],
       "title": "Round robins of modal agents in the Stag Hunt"
+    },
+    {
+      "allowed": [
+        "ch. 7"
+      ],
+      "claims": [
+        "K16",
+        "K9",
+        "K13",
+        "K19"
+      ],
+      "commit": "580565ffd3b3f1a8ca3ffa0407c949c8d724865c",
+      "date": "2026-10-21",
+      "pdf": true,
+      "revisions": [
+        {
+          "date": "2026-10-21",
+          "reason": "Production note: Lean proofs run inside check scripts are now described as such, separately from harness-built proofs"
+        }
+      ],
+      "run_label": "20261021-0517",
+      "slug": "staghunt-safe-coordinators",
+      "threads": [
+        "C046"
+      ],
+      "title": "Safe modal agents that coordinate in the Stag Hunt: size 13 is the minimum"
     }
   ]
 }
