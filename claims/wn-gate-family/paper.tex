@@ -18,7 +18,8 @@ Following Barasz et al. \cite{barasz2014robust}, a \emph{modal agent} decides by
 opponent in Peano arithmetic, written with the provability box $\Box$ of the logic GL. FairBot,
 $\Box p$, cooperates exactly when it can prove that the opponent cooperates with it
 ($p$); CooperateBot always cooperates; DefectBot always defects. An agent is \emph{unexploitable} if
-no modal opponent ever gets it to cooperate while the opponent defects. We consider agents
+no modal opponent ever gets it to cooperate while the opponent defects. Graded FairBots are $F_k = \Box^k p$ and graded PrudentBots are
+$P_j = \Box p \wedge \Box(\neg\Box^j\bot \to \neg q)$. We consider agents
 built from $p$, from $q$ (``the opponent cooperates with DefectBot''), $\bot$, $\neg$, $\wedge$,
 $\vee$ and $\Box$, with every atom under a box, and measure size as the number of nodes in the
 formula.
@@ -39,7 +40,7 @@ Every unexploitable agent in the literature we checked (FairBot, PrudentBot, Cli
 cooperates with its own copy. $W_n$ shows that unexploitability, cooperation with FairBot and
 generosity towards CooperateBot do not force self-cooperation: the delayed ``gate''
 $\Box^n\bot$ lets the agent tolerate FairBot's failure to prove anything about DefectBot, while
-two copies of $W_n$ never reach mutual cooperation.
+two copies of $W_n$ end in mutual defection (both defect above height $n+1$).
 
 \subsection*{Proved vs checked}
 
@@ -66,15 +67,15 @@ We found no earlier statement of it, but we can't be certain. If you know of pri
 
 \subsection*{How it was produced}
 
-This result was found by AI research agents (the autoresearch harness). It was proved in Lean; the proof and check files are included so anyone can re-run them.
+This result was found by AI research agents (the autoresearch harness). It was partly checked by scripts that run Lean proofs (claims K9, K11) and partly checked by script (claims K6); the proof and check files are included so anyone can re-run them.
 
 \section{Claims}
 
 \subsection*{Claim K6}
 
-In L (atoms p,q boxed; F,\textasciitilde{},\&,\textbar{},[]; size=nodes), the smallest agent that cooperates with FairBot and CooperateBot, defects against itself and is unexploitable has size 12; W=[]([][]F\textbar{}(p\&(q\textbar{}\textasciitilde{}[]q))) is one, unexploitable by every opponent; none of size \textless{}=11.
+\texttt{In L (atoms p,q boxed; F,\textasciitilde{},\&,\textbar{},[]; size=nodes), the smallest agent that cooperates with FairBot and CooperateBot, defects against itself and is unexploitable has size 12; W=[]([][]F\textbar{}(p\&(q\textbar{}\textasciitilde{}[]q))) is one, unexploitable by every opponent; none of size \textless{}=11.}
 
-Status: derived.
+Status: derived · author check only.
 
 \paragraph{Verified.}
 \begin{itemize}
@@ -83,16 +84,16 @@ Status: derived.
 
 \paragraph{Evidence.}
 \begin{itemize}
-\item reasoning: W at the tail implies p at every height \textgreater{}=2 (box over lower heights), so any opponent cooperates at the tail whenever W does: W is unexploitable by every modal agent, not only census agents. The 3 size-12 agents all have such a gate.
+\item reasoning: W at the tail implies p at every height \textbackslash{}\textgreater{}=2 (box over lower heights), so any opponent cooperates at the tail whenever W does: W is unexploitable by every modal agent, not only census agents. The 3 size-12 agents all have such a gate.
 \end{itemize}
 
 \paragraph{Prior art.} Possibly new: no prior art found in the owner's search.
 
 \subsection*{Claim K9}
 
-For every n\textgreater{}=2, the agent W\_n=[]([]\textasciicircum{}n F\textbar{}(p\&(q\textbar{}\textasciitilde{}[]q))) of size n+10 is unexploitable by every modal opponent, mutually cooperates with FairBot and CooperateBot, and defects against itself (both copies defect above height n+1); W\_0, W\_1 fail with FairBot. Lean-proved.
+\texttt{For every n\textgreater{}=2, the agent W\_n=[]([]\textasciicircum{}n F\textbar{}(p\&(q\textbar{}\textasciitilde{}[]q))) of size n+10 is unexploitable by every modal opponent, mutually cooperates with FairBot and CooperateBot, and defects against itself (both copies defect above height n+1); W\_0, W\_1 fail with FairBot. Lean-proved.}
 
-Status: derived.
+Status: derived · author check only.
 
 \paragraph{Verified.}
 \begin{itemize}
@@ -101,16 +102,16 @@ Status: derived.
 
 \paragraph{Evidence.}
 \begin{itemize}
-\item reasoning: Closed GL fixed points are letter-free and so decided by height on finite linear frames (Boolos, Logic of Provability ch. 7); w\_gate quantifies over arbitrary opponent traces, hence over all modal opponents.
+\item reasoning: Closed GL fixed points are letter-free and so decided by height on finite linear frames (Boolos, Logic of Provability ch. 7); w\textbackslash{}\_gate quantifies over arbitrary opponent traces, hence over all modal opponents.
 \end{itemize}
 
 \paragraph{Prior art.} Possibly new: no prior art found in the owner's search.
 
 \subsection*{Claim K11}
 
-For all n\textgreater{}=0, k\textgreater{}=1, j,m\textgreater{}=0 (height semantics of closed GL fixed points): W\_n and F\_k cooperate at every height iff k\textless{}n; W\_n and P\_j iff 2\textless{}=n\textless{}j; W\_n and W\_m both defect from height n+m+3. Hence all W\_n (n\textgreater{}=2) are distinct. Lean-proved.
+\texttt{For all n\textgreater{}=0, k\textgreater{}=1, j,m\textgreater{}=0 (height semantics of closed GL fixed points): W\_n and F\_k cooperate at every height iff k\textless{}n; W\_n and P\_j iff 2\textless{}=n\textless{}j; W\_n and W\_m both defect from height n+m+3. Hence all W\_n (n\textgreater{}=2) are distinct. Lean-proved.}
 
-Status: derived.
+Status: derived · author check only.
 
 \paragraph{Verified.}
 \begin{itemize}
@@ -119,7 +120,7 @@ Status: derived.
 
 \paragraph{Evidence.}
 \begin{itemize}
-\item reasoning: Closed GL fixed points are letter-free and decided by height on finite linear frames (Boolos, Logic of Provability ch. 7). F\_n coops with W\_m iff m\textgreater{}n, so F\_n separates W\_n from W\_\{n+1\}.
+\item reasoning: Closed GL fixed points are letter-free and decided by height on finite linear frames (Boolos, Logic of Provability ch. 7). F\textbackslash{}\_n coops with W\textbackslash{}\_m iff m\textbackslash{}\textgreater{}n, so F\textbackslash{}\_n separates W\textbackslash{}\_n from W\textbackslash{}\_\{n+1\}.
 \end{itemize}
 
 \paragraph{Prior art.} Possibly new: no prior art found in the owner's search.
@@ -135,6 +136,7 @@ Each finding has its check scripts in \texttt{claims/wn-gate-family/checks/} of 
 
 \begin{itemize}
 \item 2026-10-18 --- Escaped claim statements, compiled PDF, references, per-finding paper, website layout
+\item 2026-10-21 --- Production note corrected (K6 is checked by script); summary wording and definitions fixed
 \end{itemize}
 
 \nocite{*}

@@ -13,10 +13,14 @@
     {
       "date": "2026-10-18",
       "reason": "Escaped claim statements, compiled PDF, references, per-finding paper, website layout"
+    },
+    {
+      "date": "2026-10-21",
+      "reason": "Production note corrected (K6 is checked by script); summary wording and definitions fixed"
     }
   ],
   "round": 29,
   "run_label": "20261017-1126",
-  "staged_at": "2026-10-18T16:13:36Z",
+  "staged_at": "2026-10-21T18:44:00Z",
   "title": "An unexploitable modal agent that defects against itself"
 }

@@ -14,7 +14,8 @@ Following Barasz et al. [1], a *modal agent* decides by asking what can be prove
 opponent in Peano arithmetic, written with the provability box $\Box$ of the logic GL. FairBot,
 $\Box p$, cooperates exactly when it can prove that the opponent cooperates with it
 ($p$); CooperateBot always cooperates; DefectBot always defects. An agent is *unexploitable* if
-no modal opponent ever gets it to cooperate while the opponent defects. We consider agents
+no modal opponent ever gets it to cooperate while the opponent defects. Graded FairBots are $F_k = \Box^k p$ and graded PrudentBots are
+$P_j = \Box p \wedge \Box(\neg\Box^j\bot \to \neg q)$. We consider agents
 built from $p$, from $q$ ("the opponent cooperates with DefectBot"), $\bot$, $\neg$, $\wedge$,
 $\vee$ and $\Box$, with every atom under a box, and measure size as the number of nodes in the
 formula.
@@ -35,7 +36,7 @@ Every unexploitable agent in the literature we checked (FairBot, PrudentBot, Cli
 cooperates with its own copy. $W_n$ shows that unexploitability, cooperation with FairBot and
 generosity towards CooperateBot do not force self-cooperation: the delayed "gate"
 $\Box^n\bot$ lets the agent tolerate FairBot's failure to prove anything about DefectBot, while
-two copies of $W_n$ never reach mutual cooperation.
+two copies of $W_n$ end in mutual defection (both defect above height $n+1$).
 
 ## Proved vs checked
 
@@ -57,13 +58,13 @@ We believe this result is new. Our prior-art search (2026-10-17) covered:
 
 We found no earlier statement of it, but we can't be certain. If you know of prior work, please open an issue.
 
-This result was found by AI research agents (the autoresearch harness). It was proved in Lean; the proof and check files are included so anyone can re-run them.
+This result was found by AI research agents (the autoresearch harness). It was partly checked by scripts that run Lean proofs (claims K9, K11) and partly checked by script (claims K6); the proof and check files are included so anyone can re-run them.
 
 ## K6
 
 `In L (atoms p,q boxed; F,~,&,|,[]; size=nodes), the smallest agent that cooperates with FairBot and CooperateBot, defects against itself and is unexploitable has size 12; W=[]([][]F|(p&(q|~[]q))) is one, unexploitable by every opponent; none of size <=11.`
 
-Status: derived
+Status: derived · author check only
 
 Kind: model
 
@@ -86,7 +87,7 @@ Prior art: possibly new: no prior art found in the owner's search (answer: `prio
 
 `For every n>=2, the agent W_n=[]([]^n F|(p&(q|~[]q))) of size n+10 is unexploitable by every modal opponent, mutually cooperates with FairBot and CooperateBot, and defects against itself (both copies defect above height n+1); W_0, W_1 fail with FairBot. Lean-proved.`
 
-Status: derived
+Status: derived · author check only
 
 Kind: model
 
@@ -109,7 +110,7 @@ Prior art: possibly new: no prior art found in the owner's search (answer: `prio
 
 `For all n>=0, k>=1, j,m>=0 (height semantics of closed GL fixed points): W_n and F_k cooperate at every height iff k<n; W_n and P_j iff 2<=n<j; W_n and W_m both defect from height n+m+3. Hence all W_n (n>=2) are distinct. Lean-proved.`
 
-Status: derived
+Status: derived · author check only
 
 Kind: model
 
@@ -138,3 +139,4 @@ Prior art: possibly new: no prior art found in the owner's search (answer: `prio
 ## Revisions
 
 - 2026-10-18 — Escaped claim statements, compiled PDF, references, per-finding paper, website layout
+- 2026-10-21 — Production note corrected (K6 is checked by script); summary wording and definitions fixed

@@ -9,106 +9,8 @@
 \begin{document}
 \maketitle
 \begin{abstract}
-This report collects the findings: An unexploitable modal agent that defects against itself; Families of unexploitable agents that defect against themselves; A certified map of variants of Gödel's ontological argument; A census of modal agents in the prisoner's dilemma; Settling informal claims about modal agents in Chicken; Three-player modal agents in a public-goods game; Modal agents in the game of Chicken; Unexploitable modal agents that cooperate with themselves: a census; Blending self-defecting modal agents with FairBot: exact laws; How large must a program be to tell graded FairBots apart?; Safe modal agents that coordinate in the Stag Hunt: size 13 is the minimum; Round robins of modal agents in the Stag Hunt; When graded PrudentBots cooperate with graded FairBots.
+This report collects the findings: Families of unexploitable agents that defect against themselves; A certified map of variants of Gödel's ontological argument; A census of modal agents in the prisoner's dilemma; Settling informal claims about modal agents in Chicken; Three-player modal agents in a public-goods game; Modal agents in the game of Chicken; Unexploitable modal agents that cooperate with themselves: a census; Blending self-defecting modal agents with FairBot: exact laws; How large must a program be to tell graded FairBots apart?; Safe modal agents that coordinate in the Stag Hunt: size 13 is the minimum; Round robins of modal agents in the Stag Hunt; When graded PrudentBots cooperate with graded FairBots; An unexploitable modal agent that defects against itself.
 \end{abstract}
-
-\section{An unexploitable modal agent that defects against itself}
-\label{sec:wn-gate-family}
-
-\subsection*{Setting}
-
-Two programs play a one-shot prisoner's dilemma, and each can read the other's source code.
-Following Barasz et al. \cite{barasz2014robust}, a \emph{modal agent} decides by asking what can be proved about the
-opponent in Peano arithmetic, written with the provability box $\Box$ of the logic GL. FairBot,
-$\Box p$, cooperates exactly when it can prove that the opponent cooperates with it
-($p$); CooperateBot always cooperates; DefectBot always defects. An agent is \emph{unexploitable} if
-no modal opponent ever gets it to cooperate while the opponent defects. We consider agents
-built from $p$, from $q$ (``the opponent cooperates with DefectBot''), $\bot$, $\neg$, $\wedge$,
-$\vee$ and $\Box$, with every atom under a box, and measure size as the number of nodes in the
-formula.
-
-\subsection*{Result}
-
-The agent $W = \Box(\Box\Box\bot \vee (p \wedge (q \vee \neg\Box q)))$ is unexploitable,
-cooperates with FairBot and with CooperateBot, yet defects against an exact copy of itself. An
-exhaustive search shows that no agent of size 11 or less has this combination of properties, and
-$W$ (size 12) is one of the three smallest. It is the first member of an infinite family
-$W_n = \Box(\Box^n\bot \vee (p \wedge (q \vee \neg\Box q)))$, $n \ge 2$, all with the same four
-properties, with exact laws for how $W_n$ plays against graded FairBots $\Box^k p$, graded
-PrudentBots and other members of the family.
-
-\subsection*{Why it matters}
-
-Every unexploitable agent in the literature we checked (FairBot, PrudentBot, CliqueBot)
-cooperates with its own copy. $W_n$ shows that unexploitability, cooperation with FairBot and
-generosity towards CooperateBot do not force self-cooperation: the delayed ``gate''
-$\Box^n\bot$ lets the agent tolerate FairBot's failure to prove anything about DefectBot, while
-two copies of $W_n$ never reach mutual cooperation.
-
-\subsection*{Proved vs checked}
-
-The properties of $W_n$ and its laws against graded FairBots, graded PrudentBots and other
-$W_m$ are proved for all indices in Lean 4 (height semantics of closed GL fixed points; the link
-to provability in arithmetic is Solovay's theorem \cite{solovay1976provability}, cited, not formalised; see also \cite{boolos1993logic}). The minimality of size
-12 is an exhaustive computation over all agents up to size 12 in the stated language.
-
-We believe this result is new. Our prior-art search (2026-10-17) covered:
-
-\begin{itemize}
-\item Barasz et al. 2014, Robust Cooperation in the Prisoner's Dilemma (arXiv 1401.5577), full text: agents CB, DB, CliqueBot, FairBot, PrudentBot, TrollBot, JustBot, WaitFairBot\_K; Theorems 3.2, 4.8, 4.10 and the obstacles section.
-\item LaVictoire et al. 2014, Program Equilibrium in the Prisoner's Dilemma via Löb's Theorem (intelligence.org/files/ProgramEquilibrium.pdf).
-\item LessWrong post ``Robust Cooperation in the Prisoner's Dilemma'' and its comments (orthonormal, cousin\_it, Will\_Sawin, Karl, dankane).
-\item Arbital / LessWrong wiki ``Modal combat''.
-\item Garrabrant, ``Prisoners' Dilemma with Costs to Modeling'' (Alignment Forum).
-\item Mennen, ``Modal Combat for games other than the prisoner's dilemma'' (agentfoundations.org item 1304).
-\item github.com/machine-intelligence/provability (Haskell solver and combat code; the agents folder contents were not visible).
-\end{itemize}
-
-We found no earlier statement of it, but we can't be certain. If you know of prior work, please open an issue.
-
-This result was found by AI research agents (the autoresearch harness). It was proved in Lean; the proof and check files are included so anyone can re-run them.
-
-\subsection*{Claim K6}
-
-In L (atoms p,q boxed; F,\textasciitilde{},\&,\textbar{},[]; size=nodes), the smallest agent that cooperates with FairBot and CooperateBot, defects against itself and is unexploitable has size 12; W=[]([][]F\textbar{}(p\&(q\textbar{}\textasciitilde{}[]q))) is one, unexploitable by every opponent; none of size \textless{}=11.
-
-Status: derived.
-
-\paragraph{Verified.}
-\begin{itemize}
-\item \texttt{checks/K6-c046\_combo12.py}: census counts to size 12; S=0,FBc=1,CBc=1 counts per size 4..12 = 2,2,4,8,19,46,120,357,900; none \textless{}=11 and exactly 3 of size 12 unexploited by all 2815 size\textless{}=9 classes; W's self/FB/CB/DB outcomes and zero exploiters by an independent height-table solver; GLS certificates for W vs W, FB, CB with flipped-candidate controls --- pass
-\end{itemize}
-
-\paragraph{Prior art.} Possibly new: no prior art found in the owner's search.
-
-\subsection*{Claim K9}
-
-For every n\textgreater{}=2, the agent W\_n=[]([]\textasciicircum{}n F\textbar{}(p\&(q\textbar{}\textasciitilde{}[]q))) of size n+10 is unexploitable by every modal opponent, mutually cooperates with FairBot and CooperateBot, and defects against itself (both copies defect above height n+1); W\_0, W\_1 fail with FairBot. Lean-proved.
-
-Status: derived.
-
-\paragraph{Verified.}
-\begin{itemize}
-\item \texttt{checks/K9-c046\_wn\_lean.py}: embedded Lean 4 theorems w\_gate, w\_unexploitable, w\_db, w\_cb, w\_self, w\_self\_db, w\_fb compile with no sorryAx; three false variants rejected; height tables n\textless{}=12 and 3000 random opponent traces agree; size(W\_n)=n+10 --- pass (Lean-proved, no sorryAx)
-\end{itemize}
-
-\paragraph{Prior art.} Possibly new: no prior art found in the owner's search.
-
-\subsection*{Claim K11}
-
-For all n\textgreater{}=0, k\textgreater{}=1, j,m\textgreater{}=0 (height semantics of closed GL fixed points): W\_n and F\_k cooperate at every height iff k\textless{}n; W\_n and P\_j iff 2\textless{}=n\textless{}j; W\_n and W\_m both defect from height n+m+3. Hence all W\_n (n\textgreater{}=2) are distinct. Lean-proved.
-
-Status: derived.
-
-\paragraph{Verified.}
-\begin{itemize}
-\item \texttt{checks/K11-c046\_wpairs\_lean.py}: embedded Lean 4 theorems w\_fk, pj\_db, w\_pj, w\_wm compile with no sorryAx; four false variants rejected with proof errors; height tables n\textless{}=12, k,j,m\textless{}=14 (heights 0..79) agree with all theorems and K10's n=2..5 predicates --- pass (Lean-proved, no sorryAx)
-\end{itemize}
-
-\paragraph{Prior art.} Possibly new: no prior art found in the owner's search.
-
-\paragraph{Provenance.}
-Run \texttt{20261017-1126}, claims K6, K9, K11, run-folder commit \texttt{662166ecff0651902cc5fcb04bf747c62d795af2}, published 2026-10-18.
 
 \section{Families of unexploitable agents that defect against themselves}
 \label{sec:gate-families}
@@ -2045,6 +1947,105 @@ Status: derived · author check only.
 
 \paragraph{Provenance.}
 Run \texttt{20261017-1126}, claims K8, run-folder commit \texttt{662166ecff0651902cc5fcb04bf747c62d795af2}, published 2026-10-18.
+
+\section{An unexploitable modal agent that defects against itself}
+\label{sec:wn-gate-family}
+
+\subsection*{Setting}
+
+Two programs play a one-shot prisoner's dilemma, and each can read the other's source code.
+Following Barasz et al. \cite{barasz2014robust}, a \emph{modal agent} decides by asking what can be proved about the
+opponent in Peano arithmetic, written with the provability box $\Box$ of the logic GL. FairBot,
+$\Box p$, cooperates exactly when it can prove that the opponent cooperates with it
+($p$); CooperateBot always cooperates; DefectBot always defects. An agent is \emph{unexploitable} if
+no modal opponent ever gets it to cooperate while the opponent defects. Graded FairBots are $F_k = \Box^k p$ and graded PrudentBots are
+$P_j = \Box p \wedge \Box(\neg\Box^j\bot \to \neg q)$. We consider agents
+built from $p$, from $q$ (``the opponent cooperates with DefectBot''), $\bot$, $\neg$, $\wedge$,
+$\vee$ and $\Box$, with every atom under a box, and measure size as the number of nodes in the
+formula.
+
+\subsection*{Result}
+
+The agent $W = \Box(\Box\Box\bot \vee (p \wedge (q \vee \neg\Box q)))$ is unexploitable,
+cooperates with FairBot and with CooperateBot, yet defects against an exact copy of itself. An
+exhaustive search shows that no agent of size 11 or less has this combination of properties, and
+$W$ (size 12) is one of the three smallest. It is the first member of an infinite family
+$W_n = \Box(\Box^n\bot \vee (p \wedge (q \vee \neg\Box q)))$, $n \ge 2$, all with the same four
+properties, with exact laws for how $W_n$ plays against graded FairBots $\Box^k p$, graded
+PrudentBots and other members of the family.
+
+\subsection*{Why it matters}
+
+Every unexploitable agent in the literature we checked (FairBot, PrudentBot, CliqueBot)
+cooperates with its own copy. $W_n$ shows that unexploitability, cooperation with FairBot and
+generosity towards CooperateBot do not force self-cooperation: the delayed ``gate''
+$\Box^n\bot$ lets the agent tolerate FairBot's failure to prove anything about DefectBot, while
+two copies of $W_n$ end in mutual defection (both defect above height $n+1$).
+
+\subsection*{Proved vs checked}
+
+The properties of $W_n$ and its laws against graded FairBots, graded PrudentBots and other
+$W_m$ are proved for all indices in Lean 4 (height semantics of closed GL fixed points; the link
+to provability in arithmetic is Solovay's theorem \cite{solovay1976provability}, cited, not formalised; see also \cite{boolos1993logic}). The minimality of size
+12 is an exhaustive computation over all agents up to size 12 in the stated language.
+
+We believe this result is new. Our prior-art search (2026-10-17) covered:
+
+\begin{itemize}
+\item Barasz et al. 2014, Robust Cooperation in the Prisoner's Dilemma (arXiv 1401.5577), full text: agents CB, DB, CliqueBot, FairBot, PrudentBot, TrollBot, JustBot, WaitFairBot\_K; Theorems 3.2, 4.8, 4.10 and the obstacles section.
+\item LaVictoire et al. 2014, Program Equilibrium in the Prisoner's Dilemma via Löb's Theorem (intelligence.org/files/ProgramEquilibrium.pdf).
+\item LessWrong post ``Robust Cooperation in the Prisoner's Dilemma'' and its comments (orthonormal, cousin\_it, Will\_Sawin, Karl, dankane).
+\item Arbital / LessWrong wiki ``Modal combat''.
+\item Garrabrant, ``Prisoners' Dilemma with Costs to Modeling'' (Alignment Forum).
+\item Mennen, ``Modal Combat for games other than the prisoner's dilemma'' (agentfoundations.org item 1304).
+\item github.com/machine-intelligence/provability (Haskell solver and combat code; the agents folder contents were not visible).
+\end{itemize}
+
+We found no earlier statement of it, but we can't be certain. If you know of prior work, please open an issue.
+
+This result was found by AI research agents (the autoresearch harness). It was partly checked by scripts that run Lean proofs (claims K9, K11) and partly checked by script (claims K6); the proof and check files are included so anyone can re-run them.
+
+\subsection*{Claim K6}
+
+\texttt{In L (atoms p,q boxed; F,\textasciitilde{},\&,\textbar{},[]; size=nodes), the smallest agent that cooperates with FairBot and CooperateBot, defects against itself and is unexploitable has size 12; W=[]([][]F\textbar{}(p\&(q\textbar{}\textasciitilde{}[]q))) is one, unexploitable by every opponent; none of size \textless{}=11.}
+
+Status: derived · author check only.
+
+\paragraph{Verified.}
+\begin{itemize}
+\item \texttt{checks/K6-c046\_combo12.py}: census counts to size 12; S=0,FBc=1,CBc=1 counts per size 4..12 = 2,2,4,8,19,46,120,357,900; none \textless{}=11 and exactly 3 of size 12 unexploited by all 2815 size\textless{}=9 classes; W's self/FB/CB/DB outcomes and zero exploiters by an independent height-table solver; GLS certificates for W vs W, FB, CB with flipped-candidate controls --- pass
+\end{itemize}
+
+\paragraph{Prior art.} Possibly new: no prior art found in the owner's search.
+
+\subsection*{Claim K9}
+
+\texttt{For every n\textgreater{}=2, the agent W\_n=[]([]\textasciicircum{}n F\textbar{}(p\&(q\textbar{}\textasciitilde{}[]q))) of size n+10 is unexploitable by every modal opponent, mutually cooperates with FairBot and CooperateBot, and defects against itself (both copies defect above height n+1); W\_0, W\_1 fail with FairBot. Lean-proved.}
+
+Status: derived · author check only.
+
+\paragraph{Verified.}
+\begin{itemize}
+\item \texttt{checks/K9-c046\_wn\_lean.py}: embedded Lean 4 theorems w\_gate, w\_unexploitable, w\_db, w\_cb, w\_self, w\_self\_db, w\_fb compile with no sorryAx; three false variants rejected; height tables n\textless{}=12 and 3000 random opponent traces agree; size(W\_n)=n+10 --- pass (Lean-proved, no sorryAx)
+\end{itemize}
+
+\paragraph{Prior art.} Possibly new: no prior art found in the owner's search.
+
+\subsection*{Claim K11}
+
+\texttt{For all n\textgreater{}=0, k\textgreater{}=1, j,m\textgreater{}=0 (height semantics of closed GL fixed points): W\_n and F\_k cooperate at every height iff k\textless{}n; W\_n and P\_j iff 2\textless{}=n\textless{}j; W\_n and W\_m both defect from height n+m+3. Hence all W\_n (n\textgreater{}=2) are distinct. Lean-proved.}
+
+Status: derived · author check only.
+
+\paragraph{Verified.}
+\begin{itemize}
+\item \texttt{checks/K11-c046\_wpairs\_lean.py}: embedded Lean 4 theorems w\_fk, pj\_db, w\_pj, w\_wm compile with no sorryAx; four false variants rejected with proof errors; height tables n\textless{}=12, k,j,m\textless{}=14 (heights 0..79) agree with all theorems and K10's n=2..5 predicates --- pass (Lean-proved, no sorryAx)
+\end{itemize}
+
+\paragraph{Prior art.} Possibly new: no prior art found in the owner's search.
+
+\paragraph{Provenance.}
+Run \texttt{20261017-1126}, claims K6, K9, K11, run-folder commit \texttt{662166ecff0651902cc5fcb04bf747c62d795af2}, published 2026-10-18.
 
 \section{How to verify}
 

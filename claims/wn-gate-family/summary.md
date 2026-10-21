@@ -5,7 +5,8 @@ Following Barasz et al. [@barasz2014robust], a *modal agent* decides by asking w
 opponent in Peano arithmetic, written with the provability box $\Box$ of the logic GL. FairBot,
 $\Box p$, cooperates exactly when it can prove that the opponent cooperates with it
 ($p$); CooperateBot always cooperates; DefectBot always defects. An agent is *unexploitable* if
-no modal opponent ever gets it to cooperate while the opponent defects. We consider agents
+no modal opponent ever gets it to cooperate while the opponent defects. Graded FairBots are $F_k = \Box^k p$ and graded PrudentBots are
+$P_j = \Box p \wedge \Box(\neg\Box^j\bot \to \neg q)$. We consider agents
 built from $p$, from $q$ ("the opponent cooperates with DefectBot"), $\bot$, $\neg$, $\wedge$,
 $\vee$ and $\Box$, with every atom under a box, and measure size as the number of nodes in the
 formula.
@@ -26,7 +27,7 @@ Every unexploitable agent in the literature we checked (FairBot, PrudentBot, Cli
 cooperates with its own copy. $W_n$ shows that unexploitability, cooperation with FairBot and
 generosity towards CooperateBot do not force self-cooperation: the delayed "gate"
 $\Box^n\bot$ lets the agent tolerate FairBot's failure to prove anything about DefectBot, while
-two copies of $W_n$ never reach mutual cooperation.
+two copies of $W_n$ end in mutual defection (both defect above height $n+1$).
 
 ## Proved vs checked
 

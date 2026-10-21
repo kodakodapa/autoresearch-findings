@@ -5,31 +5,6 @@
         "ch. 7"
       ],
       "claims": [
-        "K6",
-        "K9",
-        "K11"
-      ],
-      "commit": "662166ecff0651902cc5fcb04bf747c62d795af2",
-      "date": "2026-10-18",
-      "pdf": true,
-      "revisions": [
-        {
-          "date": "2026-10-18",
-          "reason": "Escaped claim statements, compiled PDF, references, per-finding paper, website layout"
-        }
-      ],
-      "run_label": "20261017-1126",
-      "slug": "wn-gate-family",
-      "threads": [
-        "C046"
-      ],
-      "title": "An unexploitable modal agent that defects against itself"
-    },
-    {
-      "allowed": [
-        "ch. 7"
-      ],
-      "claims": [
         "K14",
         "K18",
         "K20",
@@ -298,6 +273,35 @@
         "C046"
       ],
       "title": "When graded PrudentBots cooperate with graded FairBots"
+    },
+    {
+      "allowed": [
+        "ch. 7"
+      ],
+      "claims": [
+        "K6",
+        "K9",
+        "K11"
+      ],
+      "commit": "662166ecff0651902cc5fcb04bf747c62d795af2",
+      "date": "2026-10-18",
+      "pdf": true,
+      "revisions": [
+        {
+          "date": "2026-10-18",
+          "reason": "Escaped claim statements, compiled PDF, references, per-finding paper, website layout"
+        },
+        {
+          "date": "2026-10-21",
+          "reason": "Production note corrected (K6 is checked by script); summary wording and definitions fixed"
+        }
+      ],
+      "run_label": "20261017-1126",
+      "slug": "wn-gate-family",
+      "threads": [
+        "C046"
+      ],
+      "title": "An unexploitable modal agent that defects against itself"
     }
   ]
 }
