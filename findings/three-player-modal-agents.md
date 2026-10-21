@@ -1,6 +1,7 @@
 ---
 layout: default
 title: "Three-player modal agents in a public-goods game"
+scholar: {"citation_title": "Three-player modal agents in a public-goods game", "citation_author": "Kodakodapa", "citation_publication_date": "2026/10/20", "citation_abstract_html_url": "https://kodakodapa.github.io/autoresearch-findings/findings/three-player-modal-agents.html", "citation_keywords": "C046", "citation_pdf_url": "https://kodakodapa.github.io/autoresearch-findings/claims/three-player-modal-agents/paper.pdf"}
 ---
 
 # Three-player modal agents in a public-goods game

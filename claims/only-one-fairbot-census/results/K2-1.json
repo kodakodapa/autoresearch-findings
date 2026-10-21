@@ -1,0 +1,16 @@
+{
+  "claims": [
+    "K1",
+    "K2"
+  ],
+  "duration_s": 3.156874179840088,
+  "exit": 0,
+  "figures": [],
+  "path": "checks/K2-c046_ponly12.py",
+  "result": "pass",
+  "run_at": "2026-10-20T16:07:05.195969+00:00",
+  "stderr_head": "",
+  "stderr_tail": "",
+  "stdout_tail": "PASS: p-only guarded classes [1, 3, 5, 6, 9, 25, 60, 102, 189, 424, 925, 1854] ; exploited self-cooperators 1588 ; unexploitable self-cooperators 591 ; all 590 non-FB separated (max opponent size 60 ); depth-1: 16 function(s), all FB; 3.0 s\n",
+  "timeout_s": 120
+}

@@ -1,0 +1,12 @@
+{
+  "duration_s": 3.6893310546875,
+  "exit": 0,
+  "figures": [],
+  "path": "checks/K49-c046_fk_sep.py",
+  "result": "pass",
+  "run_at": "2026-10-21T06:12:41.451894+00:00",
+  "stderr_head": "",
+  "stderr_tail": "",
+  "stdout_tail": "classes per size [1, 4, 8, 12, 31, 98, 255, 646, 1760, 4746, 12880]\nengine: k=1..6 min separator size k+5, unique S_k; k=7,8 none <= 11; 2.3s\nliteral evaluator agrees\nLean: 6 theorems, no sorryAx, 4 mutations rejected; total 3.5s\nPASS\n",
+  "timeout_s": 120
+}

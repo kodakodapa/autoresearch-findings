@@ -1,0 +1,12 @@
+{
+  "duration_s": 1.3298099040985107,
+  "exit": 0,
+  "figures": [],
+  "path": "checks/K23-j_other_grid.py",
+  "result": "pass",
+  "run_at": "2026-10-20T17:02:21.824986+00:00",
+  "stderr_head": "",
+  "stderr_tail": "",
+  "stdout_tail": "PASS: 384 GL-certified J DB/CB blend cells; six triples, 16 selectors, self and DB\n",
+  "timeout_s": 120
+}

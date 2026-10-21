@@ -1,0 +1,18 @@
+{
+  "allowed": [
+    "ch. 7"
+  ],
+  "claims": [
+    "K51",
+    "K53",
+    "K11",
+    "K18",
+    "K2"
+  ],
+  "commit": "e3d59e30bce37b58223f480d4f0d5a79bbff59ce",
+  "name": "only-one-fairbot-census",
+  "round": 52,
+  "run_label": "20261020-1600",
+  "staged_at": "2026-10-21T10:01:49Z",
+  "title": "Unexploitable modal agents that cooperate with themselves: a census"
+}

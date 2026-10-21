@@ -1,0 +1,12 @@
+{
+  "duration_s": 0.6485140323638916,
+  "exit": 0,
+  "figures": [],
+  "path": "checks/K11-c046_xfb_lean.py",
+  "result": "pass",
+  "run_at": "2026-10-20T16:25:19.755142+00:00",
+  "stderr_head": "",
+  "stderr_tail": "",
+  "stdout_tail": "PASS: X_same_as_FairBot proved (no sorry); 3 mutations rejected\n",
+  "timeout_s": 120
+}

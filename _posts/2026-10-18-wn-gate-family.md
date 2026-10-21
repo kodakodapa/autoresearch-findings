@@ -2,6 +2,7 @@
 layout: post
 title: "An unexploitable modal agent that defects against itself"
 date: 2026-10-18
+scholar: {"citation_title": "An unexploitable modal agent that defects against itself", "citation_author": "Kodakodapa", "citation_publication_date": "2026/10/18", "citation_abstract_html_url": "https://kodakodapa.github.io/autoresearch-findings/findings/wn-gate-family.html", "citation_keywords": "C046", "citation_pdf_url": "https://kodakodapa.github.io/autoresearch-findings/claims/wn-gate-family/paper.pdf"}
 ---
 
 ## Summary

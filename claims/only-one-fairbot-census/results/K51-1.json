@@ -1,0 +1,12 @@
+{
+  "duration_s": 16.533041954040527,
+  "exit": 0,
+  "figures": [],
+  "path": "checks/K51-c046_ponly15.py",
+  "result": "pass",
+  "run_at": "2026-10-21T06:29:27.155717+00:00",
+  "stderr_head": "",
+  "stderr_tail": "",
+  "stdout_tail": "FB-defecting per size [(9, 4), (10, 8), (11, 16), (12, 33), (13, 80), (14, 171), (15, 345)] ; CB-defecting [(9, 2), (10, 4), (11, 8), (12, 16), (13, 41), (14, 87), (15, 181)] ; FB&CB-cooperating total 4374\nPASS: p-only guarded classes [1, 3, 5, 6, 9, 25, 60, 102, 189, 424, 925, 1854, 3755, 7981, 17063] ; exploited self-cooperators 15092 ; unexploitable self-cooperators 5031 ; all 5030 non-FB separated (max opponent size 117 ); depth-1: 16 function(s), all FB; 16.3 s\n",
+  "timeout_s": 120
+}

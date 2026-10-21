@@ -1,0 +1,12 @@
+{
+  "duration_s": 0.44458508491516113,
+  "exit": 0,
+  "figures": [],
+  "path": "checks/K14-blend_gate.py",
+  "result": "pass",
+  "run_at": "2026-10-20T16:25:21.486849+00:00",
+  "stderr_head": "",
+  "stderr_tail": "",
+  "stdout_tail": "PASS: four general Lean blend theorems and box-power semantics; negative control rejected\n",
+  "timeout_s": 120
+}

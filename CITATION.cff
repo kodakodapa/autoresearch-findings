@@ -1,8 +1,8 @@
 cff-version: 1.2.0
 message: "If you use these findings, please cite them as below."
 title: "autoresearch-findings"
-abstract: "Machine-checked findings: wn-gate-family, graded-prudent-fair, gate-families, ontological-variant-map, modal-agent-census, chicken-informal-claims, three-player-modal-agents, chicken-modal-agents"
+abstract: "Machine-checked findings: wn-gate-family, graded-prudent-fair, gate-families, ontological-variant-map, modal-agent-census, chicken-informal-claims, three-player-modal-agents, chicken-modal-agents, only-one-fairbot-census, blend-window-laws, graded-fairbot-separators"
 authors:
   - name: "Kodakodapa"
-date-released: "2026-10-20"
+date-released: "2026-10-21"
 repository-code: "https://github.com/kodakodapa/autoresearch-findings"

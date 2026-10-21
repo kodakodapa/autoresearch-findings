@@ -1,0 +1,12 @@
+{
+  "duration_s": 0.7735128402709961,
+  "exit": 0,
+  "figures": [],
+  "path": "checks/K14-graded_self.py",
+  "result": "pass",
+  "run_at": "2026-10-20T16:39:09.893494+00:00",
+  "stderr_head": "",
+  "stderr_tail": "",
+  "stdout_tail": "PASS: six general Lean theorems; three mutations rejected\n",
+  "timeout_s": 120
+}

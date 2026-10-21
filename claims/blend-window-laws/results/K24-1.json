@@ -1,0 +1,12 @@
+{
+  "duration_s": 3.1770269870758057,
+  "exit": 0,
+  "figures": [],
+  "path": "checks/K24-c046_jcof.py",
+  "result": "pass",
+  "run_at": "2026-10-20T17:09:00.092381+00:00",
+  "stderr_head": "",
+  "stderr_tail": "",
+  "stdout_tail": "PASS: 7680 cofinite J blends: 80 FairBot-equivalent (k=1, S>=N+), 7344 separated by R_h(q), 256 by Y_h0; 6288 self-CC, 6208 separated, 108 of them bank-unseparated; Lean 8 theorems, 3 mutations rejected (3.0s)\n",
+  "timeout_s": 120
+}

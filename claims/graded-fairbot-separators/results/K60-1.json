@@ -1,0 +1,16 @@
+{
+  "claims": [
+    "K56",
+    "K60"
+  ],
+  "duration_s": 30.95897889137268,
+  "exit": 0,
+  "figures": [],
+  "path": "checks/K56-c046_fk_psize.py",
+  "result": "pass",
+  "run_at": "2026-10-21T08:06:57.659348+00:00",
+  "stderr_head": "",
+  "stderr_tail": "",
+  "stdout_tail": "literal: 8890 q-free formulas (size<=11, <=1 ~, <=1 binary) and 40758 boxed q-free formulas (size<=9) same vs F_1..F_6; T_k size k+6 DD/CD (k<=6)\nLean: pone_same, one_one_same, psize_bound, tk_size proved (no sorryAx)\n4 mutations rejected\nPASS (30.2 s)\n",
+  "timeout_s": 120
+}

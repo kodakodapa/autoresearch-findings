@@ -1,0 +1,12 @@
+{
+  "duration_s": 3.9750289916992188,
+  "exit": 0,
+  "figures": [],
+  "path": "checks/K26-c046_vcof.py",
+  "result": "pass",
+  "run_at": "2026-10-20T17:14:32.037687+00:00",
+  "stderr_head": "",
+  "stderr_tail": "",
+  "stdout_tail": "PASS: cofinite V blends 3840: 40 FairBot (k=1, S>=N+), 3664 R_h(q)-separated (CC/DD), 136 Z-separated (DD/CC); 2522 self-CC, 2482 separated, bank-unseparated 0; finite 3840 none FB-equivalent; K25: 3200 DB/CB cells (258 DB self-CC) laws and exact unexploitability; Lean 8 theorems, 3 mutations rejected (3.8s)\n",
+  "timeout_s": 120
+}

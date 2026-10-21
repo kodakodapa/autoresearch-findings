@@ -1,0 +1,12 @@
+{
+  "duration_s": 31.077038049697876,
+  "exit": 0,
+  "figures": [],
+  "path": "checks/K49-c046_fk_unique.py",
+  "result": "pass",
+  "run_at": "2026-10-21T08:32:18.323727+00:00",
+  "stderr_head": "",
+  "stderr_tail": "",
+  "stdout_tail": "PASS: Lean unique_sep (all k>=1), 7 mutation errors located, 30.2s; literal S_k k<=10; exhaustive syntax size 6/7: 1390/7382 guarded formulas, only S_1/S_2 (both orders) separate; total 30.9s\n",
+  "timeout_s": 120
+}

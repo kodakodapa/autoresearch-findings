@@ -1,0 +1,12 @@
+{
+  "duration_s": 0.8384490013122559,
+  "exit": 0,
+  "figures": [],
+  "path": "checks/K25-v_other.py",
+  "result": "pass",
+  "run_at": "2026-10-20T17:09:03.271485+00:00",
+  "stderr_head": "",
+  "stderr_tail": "",
+  "stdout_tail": "PASS: six Lean theorems, three mutations rejected\n",
+  "timeout_s": 120
+}

@@ -1,0 +1,12 @@
+{
+  "duration_s": 0.3338587284088135,
+  "exit": 0,
+  "figures": [],
+  "path": "checks/K9-other_grid.py",
+  "result": "pass",
+  "run_at": "2026-10-20T16:34:46.747057+00:00",
+  "stderr_head": "",
+  "stderr_tail": "",
+  "stdout_tail": "PASS 32 GL-certified self cells: n=2,3; 8 selectors; DB/CB blends\n",
+  "timeout_s": 120
+}

@@ -1,0 +1,18 @@
+{
+  "allowed": [
+    "ch. 7"
+  ],
+  "claims": [
+    "K49",
+    "K56",
+    "K58",
+    "K59",
+    "K60"
+  ],
+  "commit": "e3d59e30bce37b58223f480d4f0d5a79bbff59ce",
+  "name": "graded-fairbot-separators",
+  "round": 52,
+  "run_label": "20261020-1600",
+  "staged_at": "2026-10-21T10:01:54Z",
+  "title": "How large must a program be to tell graded FairBots apart?"
+}

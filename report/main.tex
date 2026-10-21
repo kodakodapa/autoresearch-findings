@@ -9,7 +9,7 @@
 \begin{document}
 \maketitle
 \begin{abstract}
-This report collects the findings: An unexploitable modal agent that defects against itself; When graded PrudentBots cooperate with graded FairBots; Families of unexploitable agents that defect against themselves; A certified map of variants of Gödel's ontological argument; A census of modal agents in the prisoner's dilemma; Settling informal claims about modal agents in Chicken; Three-player modal agents in a public-goods game; Modal agents in the game of Chicken.
+This report collects the findings: An unexploitable modal agent that defects against itself; When graded PrudentBots cooperate with graded FairBots; Families of unexploitable agents that defect against themselves; A certified map of variants of Gödel's ontological argument; A census of modal agents in the prisoner's dilemma; Settling informal claims about modal agents in Chicken; Three-player modal agents in a public-goods game; Modal agents in the game of Chicken; Unexploitable modal agents that cooperate with themselves: a census; Blending self-defecting modal agents with FairBot: exact laws; How large must a program be to tell graded FairBots apart?.
 \end{abstract}
 
 \section{An unexploitable modal agent that defects against itself}
@@ -1191,6 +1191,569 @@ a search for threshold families beyond FairBot-like agents there.
 
 \paragraph{Provenance.}
 Run \texttt{20261019-1400}, claims K1, K2, K3, K4, K7, K8, K10, run-folder commit \texttt{24c2a64bf8b8cb8be184b4d449ce11068d8270ea}, published 2026-10-20.
+
+\section{Unexploitable modal agents that cooperate with themselves: a census}
+\label{sec:only-one-fairbot-census}
+
+\subsection*{Setting}
+
+Two programs play a one-shot prisoner's dilemma, and each can read the other's source code.
+Following Barasz et al. \cite{barasz2014robust}, a \emph{modal agent} decides by asking what can be proved
+about the opponent, written with the provability box $\Box$ of the logic GL: $p$ means ``the
+opponent cooperates with me'' and $q$ ``the opponent cooperates with DefectBot''. FairBot is
+$\Box p$: it cooperates exactly when it can prove that the opponent cooperates with it. An agent
+is \emph{unexploitable} if no modal opponent ever ends up defecting while the agent cooperates, and
+\emph{self-cooperating} if two copies cooperate. We take guarded formulas (every atom under a box)
+built from $p$, $q$, $\bot$, $\neg$, $\wedge$, $\vee$, $\Box$, measure size as the number of
+nodes, and call two agents behaviourally equal when they make the same moves against every
+opponent. Agents using only $p$ are the rank-0 agents of Barasz et al.
+
+A LessWrong post \cite{onlyonefairbot2026} asked whether every rank-0 agent that is unexploitable and
+self-cooperating is FairBot. A comment there shows that the answer is yes up to modal depth 1 and
+no from depth 2, with examples such as $\Box\Box p$, FairBot over PA+1 and $\Box^k p$.
+
+\subsection*{Result}
+
+\begin{itemize}
+\item \textbf{Rank 0.} Among rank-0 agents of size at most 15 there are exactly 5031 classes that are unexploitable and self-cooperating (4374 of them also cooperate with FairBot and CooperateBot). Only $\Box p$ itself is FairBot; every other class is told apart from FairBot by an explicit opponent.
+\item \textbf{With $q$.} Allowing $q$, up to size 14 there are 26449 such classes (16756 up to behaviour); 387 of them behave exactly like FairBot against every opponent, and each of the others is told apart from FairBot by an explicit opponent.
+\item \textbf{Why some different formulas are FairBot.} Two agents behave identically against every opponent exactly when they have the same moves against DefectBot and agree on every input the opponent can actually produce: until the agent first cooperates, the opponent's move against it equals its move against DefectBot. So, for example, $\Box(p \vee (q \wedge \Box\bot))$ is behaviourally FairBot.
+\item \textbf{A small example that is not FairBot.} $\neg\Box\bot \wedge \Box(p \vee \Box\bot)$ (size 9) is unexploitable and cooperates with itself and with CooperateBot, yet mutually defects with FairBot; it is the agent WaitFairBot$_1$ of Barasz et al. Every smaller rank-0 agent that is unexploitable and self-cooperating cooperates with FairBot.
+\end{itemize}
+
+\subsection*{Why it matters}
+
+The LessWrong question was answered with a few examples. These counts make the answer
+quantitative: among small agents, FairBot is one of thousands of unexploitable self-cooperators,
+and for each one there is a concrete opponent that tells it apart from FairBot. The criterion for
+behavioural equality explains which syntactically different agents are nevertheless FairBot.
+
+\subsection*{Proved vs checked}
+
+The equality criterion and the FairBot-equivalence of $\Box(p \vee (q \wedge \Box\bot))$ are
+proved in Lean 4, in the height semantics of closed GL fixed points; the link to provability in
+arithmetic is Solovay's theorem \cite{solovay1976provability}, cited, not formalised (see also
+\cite{boolos1993logic}). The counts are exhaustive computations up to the stated sizes, with every
+separating opponent recorded and re-solved by the checks. The minimality statement for the size-9
+agent is an exhaustive search over smaller rank-0 agents.
+
+This result extends Barasz et al. (arXiv 1401.5577): modal agents, unexploitability, rank, and WaitFairBot\_K; ``Is there only one FairBot?'' (LessWrong, 2026), with Zac Hatfield-Dodds's comment answering it to modal depth 1 and giving examples. Our prior-art search (2026-10-21) covered:
+
+\begin{itemize}
+\item Barasz, LaVictoire, Christiano, Fallenstein, Herreshoff, Yudkowsky, ``Robust Cooperation in the Prisoner's Dilemma: Program Equilibrium via Provability Logic'' (arXiv 1401.5577): unexploitability (Section 2), rank and Theorem 4.10 (Section 4), WaitFairBot\_K and the obstacle theorem (Section 5).
+\item LessWrong, ``Is there only one FairBot?'' (transhumanist\_atom\_understander, 29 Aug 2026) and comments: Zac Hatfield-Dodds shows the uniqueness conjecture holds up to modal depth 1 for rank-0 agents and fails from depth 2 (Box Box p; FairBot over PA+1 = Box(p or Box False); Box\textasciicircum{}k p for k \textgreater{}= 3); PrudentBot separates Box Box p from FairBot; the author notes Box Box p is not provably unexploitable in PA. No enumeration or counts.
+\item LessWrong / Alignment Forum wiki ``Modal combat'': DefectBot, CooperateBot, FairBot, PrudentBot, CliqueBot, TrollBot; no uniqueness result, no enumeration.
+\item LaVictoire et al. 2014 (MIPC); comment thread on ``Robust Cooperation in the Prisoner's Dilemma'' (LessWrong, on instability of FairBot equilibria); Hobson, ``Yet More Modal Combat'' (2021); Critch, parametric bounded Löb (arXiv 1602.04184); Critch, Dennis \& Russell (arXiv 2208.07006); MIRI provability repository (github.com/machine-intelligence/provability, a modal-agent evaluator, no published census).
+\item Out of scope by direction: probabilistic blends (Oesterheld arXiv 2211.05057; Cooper et al. arXiv 2412.14570).
+\item Web searches for deterministic blends, behavioural distance and classifications of modal agents (2026-10-20/21); none means not found in this search.
+\end{itemize}
+
+If you know of related work we missed, please open an issue.
+
+We believe this result is new. Our prior-art search (2026-10-21) covered:
+
+\begin{itemize}
+\item Barasz, LaVictoire, Christiano, Fallenstein, Herreshoff, Yudkowsky, ``Robust Cooperation in the Prisoner's Dilemma: Program Equilibrium via Provability Logic'' (arXiv 1401.5577): unexploitability (Section 2), rank and Theorem 4.10 (Section 4), WaitFairBot\_K and the obstacle theorem (Section 5).
+\item LessWrong, ``Is there only one FairBot?'' (transhumanist\_atom\_understander, 29 Aug 2026) and comments: Zac Hatfield-Dodds shows the uniqueness conjecture holds up to modal depth 1 for rank-0 agents and fails from depth 2 (Box Box p; FairBot over PA+1 = Box(p or Box False); Box\textasciicircum{}k p for k \textgreater{}= 3); PrudentBot separates Box Box p from FairBot; the author notes Box Box p is not provably unexploitable in PA. No enumeration or counts.
+\item LessWrong / Alignment Forum wiki ``Modal combat'': DefectBot, CooperateBot, FairBot, PrudentBot, CliqueBot, TrollBot; no uniqueness result, no enumeration.
+\item LaVictoire et al. 2014 (MIPC); comment thread on ``Robust Cooperation in the Prisoner's Dilemma'' (LessWrong, on instability of FairBot equilibria); Hobson, ``Yet More Modal Combat'' (2021); Critch, parametric bounded Löb (arXiv 1602.04184); Critch, Dennis \& Russell (arXiv 2208.07006); MIRI provability repository (github.com/machine-intelligence/provability, a modal-agent evaluator, no published census).
+\item Out of scope by direction: probabilistic blends (Oesterheld arXiv 2211.05057; Cooper et al. arXiv 2412.14570).
+\item Web searches for deterministic blends, behavioural distance and classifications of modal agents (2026-10-20/21); none means not found in this search.
+\end{itemize}
+
+We found no earlier statement of it, but we can't be certain. If you know of prior work, please open an issue.
+
+This result was found by AI research agents (the autoresearch harness). It was partly proved in Lean (claims K11, K18) and partly checked by script (claims K51, K53, K2); the proof and check files are included so anyone can re-run them.
+
+\subsection*{Claim K51}
+
+In rank-0 $L$ (atom $p$, guarded, size $\le15$) exactly 5031 classes are unexploitable and self-cooperating, 4374 of them cooperating with FairBot and CooperateBot; only $\Box p$ is FairBot, every other one is separated from it by an explicit opponent.
+
+Status: derived · author check only.
+
+\paragraph{Verified.}
+\begin{itemize}
+\item \texttt{checks/K51-c046\_ponly15.py}: guarded p-only class counts per size 1..15; 15092 exploitable self-cooperators each exploited by a re-solved letterless opponent; 5031 unexploitable self-cooperators (per-size list); 5030 non-FB each separated from []p by a constructed re-solved opponent; FB-defecting 4,8,16,33,80,171,345 (sizes 9..15), CB-defecting 2,4,8,16,41,87,181, FB\&CB-cooperating 4374; depth-1 reproduction; K1 prefix counts --- pass
+\item \texttt{checks/K51-c046\_top.py}: K51 engine enumerated to size 13 with and without primitive top (size 1): guarded counts differ only at sizes 1,2; unexploitable self-cooperator counts per size identical (1202); top itself exploitable --- pass
+\end{itemize}
+
+\paragraph{Prior art.} Partial prior art.
+
+\subsection*{Claim K53}
+
+In $L$ with atoms $p,q$ (guarded, size $\le14$), 26449 machine classes (16756 behaviour classes) are unexploitable and self-cooperating; 387 of them behave as FairBot, and each other one gets a different outcome than FairBot against an explicit opponent.
+
+Status: derived · author check only.
+
+\paragraph{Verified.}
+\begin{itemize}
+\item \texttt{checks/K53-c046\_qfull14.py}: guarded class counts 1..14 (279115 at 14); 249390 self-cooperators, 222941 exploited by re-solved explicit opponents; 26449 unexploitable (per-size list), 16756 behaviour classes; FairBot class 387 machine classes with per-size list; 26062 others separated from []p by re-solved opponents; rank-0 2468 (=K51 prefix); 1058 not CC with FB (smallest size 9), 15306 CC with FB and CB; literal evaluator cross-check --- pass
+\end{itemize}
+
+\paragraph{Prior art.} Partial prior art.
+
+\subsection*{Claim K11}
+
+$X=\Box(p\vee(q\wedge\Box\bot))$ (size 7) has the same moves as FairBot $\Box p$ at every height against every modal opponent, since an opponent's height-0 move against any agent equals its move against DefectBot.
+
+Status: derived · author check only.
+
+\paragraph{Verified.}
+\begin{itemize}
+\item \texttt{checks/K11-c046\_xfb\_lean.py}: Lean 4 core theorem X\_same\_as\_FairBot for every causal opponent operator (fixed points coincide at all heights), no sorryAx; 3 mutations rejected --- pass (Lean-proved, no sorryAx)
+\end{itemize}
+
+\paragraph{Prior art.} Possibly new: no prior art found in the owner's search.
+
+\subsection*{Claim K18}
+
+For causal agents $A,A'$ in height semantics: they make the same moves in every game against every causal opponent iff their DefectBot traces are equal and they agree on all realizable words ($p=q$ up to the first cooperation of $A$ or its DefectBot trace).
+
+Status: derived · author check only.
+
+\paragraph{Verified.}
+\begin{itemize}
+\item \texttt{checks/K18-c046\_realizable\_lean.py}: Lean 4 core theorems game\_exists, inputs\_realizable, same\_behaviour, separation, behaviour\_iff, X\_beheq\_FB; SHA-pinned source; no sorryAx; 4 mutations rejected --- pass (Lean-proved, no sorryAx)
+\item \texttt{checks/K18-c046\_qfull12.py}: behav() realizable-word machines: 2574 classes, FairBot class has 86 machine classes with identical realizable-word machine to []p (consequence: FairBot behaviour against every opponent via same\_behaviour) --- pass
+\end{itemize}
+
+\paragraph{Prior art.} Possibly new: no prior art found in the owner's search.
+
+\subsection*{Claim K2}
+
+$A=\neg\Box\bot\wedge\Box(p\vee\Box\bot)$ (size 9) is unexploitable by every modal opponent, cooperates with its copy and with CooperateBot, yet mutually defects with FairBot; every rank-0 unexploitable self-cooperator of size $\le 8$ cooperates with FairBot.
+
+Status: derived · author check only.
+
+\paragraph{Verified.}
+\begin{itemize}
+\item \texttt{checks/K2-c046\_ponly12.py}: A and \textasciitilde{}[]p\&[](p\textbar{}[]F) are among the 591 unexploitable self-cooperators, A vs A = CC, A vs []p = DD, A vs \textasciitilde{}F = CC; all such agents not cooperating with FB have size \textgreater{}= 9 --- pass
+\end{itemize}
+
+\paragraph{Prior art.} Partial prior art.
+
+\subsection*{Discussion}
+
+The counts depend on the agent language and the size measure; they say how common
+non-FairBot unexploitable self-cooperators are among small formulas, not in any absolute sense.
+``Unexploitable'' is about what actually happens in play (truth in the standard model, as in Barasz
+et al.), not about what Peano arithmetic can prove about the agent; the LessWrong discussion
+points out that the two differ. Open questions: how the counts grow with size, and whether the
+non-FairBot classes fall into a small number of families.
+
+\paragraph{Provenance.}
+Run \texttt{20261020-1600}, claims K51, K53, K11, K18, K2, run-folder commit \texttt{e3d59e30bce37b58223f480d4f0d5a79bbff59ce}, published 2026-10-21.
+
+\section{Blending self-defecting modal agents with FairBot: exact laws}
+\label{sec:blend-window-laws}
+
+\subsection*{Setting}
+
+Two programs play a one-shot prisoner's dilemma, and each can read the other's source code.
+Following Barasz et al. \cite{barasz2014robust}, a \emph{modal agent} decides by asking what can be proved
+about the opponent, written with the provability box $\Box$ of the logic GL: $p$ means ``the
+opponent cooperates with me'' and $q$ ``the opponent cooperates with DefectBot''. FairBot is
+$\Box p$, graded FairBots are $F_k = \Box^k p$. An agent is \emph{unexploitable} if no modal opponent
+ever ends up defecting while the agent cooperates. Outcomes are computed in the height semantics:
+a game is a sequence of moves at heights $0, 1, 2, \dots$, and its result is the eventual move.
+
+Earlier findings on this site describe infinite families of unexploitable agents that cooperate
+with FairBot and CooperateBot but defect against their own copy: the gate families
+$V_{n,r} = \Box(\Box^n\bot \vee (p \wedge (q \vee \neg\Box^r q)))$, with $W_n = V_{n,1}$, and
+$J_{a,b,j} = \Box^{a+1}(\Box^b p \wedge (q \vee \Box(\Box^j\bot \vee \neg q)))$. Here we ask what
+happens when such an agent is \emph{blended} with another agent X: a formula $\sigma_S$ without atoms
+picks out a set $S$ of heights (finite, or all but finitely many), and the blend plays like X at
+the heights in $S$ and like the family member elsewhere. X is FairBot, a graded FairBot,
+DefectBot or CooperateBot.
+
+\subsection*{Result}
+
+\begin{itemize}
+\item \textbf{FairBot-type blends.} For a graded-FairBot blend with finitely many selected heights: - a $W_n$ blend cooperates with itself exactly when $S$ meets $\{k, \dots, n-1\}$; - a $J_{a,b,j}$ blend exactly when $k \le j$ and $S$ contains all of $\{j, \dots, a+b\}$; - for $V_{n,r}$ the condition is a window determined by the blend's DefectBot trace, and it is not monotone: for $V_{3,2}$, selecting height 2 makes the blend cooperate with itself, while selecting heights 2 and 3 does not.
+\end{itemize}
+
+  All these blends stay unexploitable and keep cooperating with FairBot and CooperateBot.
+
+\begin{itemize}
+\item \textbf{DefectBot blends.} Playing DefectBot at even one height rules out mutual cooperation with FairBot and with every $F_k$, because an agent ends in mutual cooperation with $F_k$ exactly when it cooperates at every height of that game. A DefectBot blend of $W_n$ still cooperates with itself exactly when $S$ is a non-empty subset of $\{0, \dots, n-1\}$; for $J_{a,b,j}$ never.
+\item \textbf{CooperateBot blends} cooperate with themselves only when CooperateBot is played at all but finitely many heights, and then DefectBot exploits them.
+\item \textbf{Not FairBot in disguise.} For finitely many selected heights, a single graded FairBot ($F_{j+1}$ for $J$, $F_{\max(1,n-r+1)}$ for $V$) behaves differently against the blend than against FairBot or any $\Box^m p$. A blend selecting all but finitely many heights behaves exactly like FairBot only in the trivial case (FairBot at every height from 1 on); otherwise an explicit opponent tells them apart.
+\end{itemize}
+
+\subsection*{Why it matters}
+
+Unexploitable agents that defect against themselves seem to sit far from FairBot, which
+cooperates with itself. These laws say exactly how much FairBot behaviour, and at which heights,
+is needed to restore self-cooperation without losing safety, and they give an infinite supply of
+unexploitable self-cooperating agents that are provably not FairBot.
+
+\subsection*{Proved vs checked}
+
+All laws are proved for all indices in Lean 4, in the height semantics of closed GL fixed points;
+the link to provability in arithmetic is Solovay's theorem \cite{solovay1976provability}, cited, not
+formalised (see also \cite{boolos1993logic}). Finite grids of cases were also checked independently
+by GL fixed-point solving with certificates.
+
+We believe this result is new. Our prior-art search (2026-10-21) covered:
+
+\begin{itemize}
+\item Barasz, LaVictoire, Christiano, Fallenstein, Herreshoff, Yudkowsky, ``Robust Cooperation in the Prisoner's Dilemma: Program Equilibrium via Provability Logic'' (arXiv 1401.5577): unexploitability (Section 2), rank and Theorem 4.10 (Section 4), WaitFairBot\_K and the obstacle theorem (Section 5).
+\item LessWrong, ``Is there only one FairBot?'' (transhumanist\_atom\_understander, 29 Aug 2026) and comments: Zac Hatfield-Dodds shows the uniqueness conjecture holds up to modal depth 1 for rank-0 agents and fails from depth 2 (Box Box p; FairBot over PA+1 = Box(p or Box False); Box\textasciicircum{}k p for k \textgreater{}= 3); PrudentBot separates Box Box p from FairBot; the author notes Box Box p is not provably unexploitable in PA. No enumeration or counts.
+\item LessWrong / Alignment Forum wiki ``Modal combat'': DefectBot, CooperateBot, FairBot, PrudentBot, CliqueBot, TrollBot; no uniqueness result, no enumeration.
+\item LaVictoire et al. 2014 (MIPC); comment thread on ``Robust Cooperation in the Prisoner's Dilemma'' (LessWrong, on instability of FairBot equilibria); Hobson, ``Yet More Modal Combat'' (2021); Critch, parametric bounded Löb (arXiv 1602.04184); Critch, Dennis \& Russell (arXiv 2208.07006); MIRI provability repository (github.com/machine-intelligence/provability, a modal-agent evaluator, no published census).
+\item Out of scope by direction: probabilistic blends (Oesterheld arXiv 2211.05057; Cooper et al. arXiv 2412.14570).
+\item Web searches for deterministic blends, behavioural distance and classifications of modal agents (2026-10-20/21); none means not found in this search.
+\end{itemize}
+
+We found no earlier statement of it, but we can't be certain. If you know of prior work, please open an issue.
+
+This result extends Barasz et al. (arXiv 1401.5577): FairBot, the height guards of WaitFairBot\_K, and the evaluation of modal agents on linear GL frames; Boolos, The Logic of Provability (1993): semantics of GL; Our earlier published findings on W\_n and the gate families. Our prior-art search (2026-10-21) covered:
+
+\begin{itemize}
+\item Barasz, LaVictoire, Christiano, Fallenstein, Herreshoff, Yudkowsky, ``Robust Cooperation in the Prisoner's Dilemma: Program Equilibrium via Provability Logic'' (arXiv 1401.5577): unexploitability (Section 2), rank and Theorem 4.10 (Section 4), WaitFairBot\_K and the obstacle theorem (Section 5).
+\item LessWrong, ``Is there only one FairBot?'' (transhumanist\_atom\_understander, 29 Aug 2026) and comments: Zac Hatfield-Dodds shows the uniqueness conjecture holds up to modal depth 1 for rank-0 agents and fails from depth 2 (Box Box p; FairBot over PA+1 = Box(p or Box False); Box\textasciicircum{}k p for k \textgreater{}= 3); PrudentBot separates Box Box p from FairBot; the author notes Box Box p is not provably unexploitable in PA. No enumeration or counts.
+\item LessWrong / Alignment Forum wiki ``Modal combat'': DefectBot, CooperateBot, FairBot, PrudentBot, CliqueBot, TrollBot; no uniqueness result, no enumeration.
+\item LaVictoire et al. 2014 (MIPC); comment thread on ``Robust Cooperation in the Prisoner's Dilemma'' (LessWrong, on instability of FairBot equilibria); Hobson, ``Yet More Modal Combat'' (2021); Critch, parametric bounded Löb (arXiv 1602.04184); Critch, Dennis \& Russell (arXiv 2208.07006); MIRI provability repository (github.com/machine-intelligence/provability, a modal-agent evaluator, no published census).
+\item Out of scope by direction: probabilistic blends (Oesterheld arXiv 2211.05057; Cooper et al. arXiv 2412.14570).
+\item Web searches for deterministic blends, behavioural distance and classifications of modal agents (2026-10-20/21); none means not found in this search.
+\item Boolos, The Logic of Provability (1993): GL semantics.
+\end{itemize}
+
+If you know of related work we missed, please open an issue.
+
+This result was found by AI research agents (the autoresearch harness). It was proved in Lean; the proof and check files are included so anyone can re-run them.
+
+\subsection*{Claim K14}
+
+For $n\ge2,k\ge1$, an $F_k$ height blend of $W_n$ with finite $S$ self-cooperates iff $S\cap\{k,\ldots,n-1\}\ne\varnothing$; all such blends remain unexploitable and cooperate with FairBot and CooperateBot.
+
+Status: derived · author check only.
+
+\paragraph{Verified.}
+\begin{itemize}
+\item \texttt{checks/K14-graded\_self.py}: Six general Lean theorems: first-hole self-play law, DefectBot trace, first failure existence, early-hole criterion, FB and CB partners; SHA-pinned source, no sorryAx, three mutations rejected. --- pass (Lean-proved, no sorryAx)
+\item \texttt{checks/K14-graded\_grid.py}: 144 GL-certified cells for n2,3; k1,2,3; eight height selectors; self, FairBot, CooperateBot; wrong-candidate controls. --- pass
+\item \texttt{checks/K14-blend\_gate.py}: General graded-FairBot blend unexploitability and iterated-box semantics (K7). --- pass
+\end{itemize}
+
+\paragraph{Prior art.} Possibly new: no prior art found in the owner's search.
+
+\subsection*{Claim K6}
+
+For $n\ge2$, a FairBot height blend of $W_n$ self-cooperates iff the first false height $t$ of its DefectBot trace satisfies $t<n$ or all $h>t$ belong to $S$; all such blends remain unexploitable.
+
+Status: derived · author check only.
+
+\paragraph{Verified.}
+\begin{itemize}
+\item \texttt{checks/K6-fb\_self.py}: General Lean self-play iff law; first-hole and DefectBot trace semantics; first failure exists; early-hole criterion; all-height FB/CB cooperation; no sorryAx; three mutations rejected. --- pass (Lean-proved, no sorryAx)
+\item \texttt{checks/K6-fb\_grid.py}: All 48 GL-certified self/FB/CB cells for n=2,3 and eight selectors arbitrary on heights 0,1 and constant from 2; wrong-candidate controls. --- pass
+\item \texttt{checks/K14-blend\_gate.py}: General Lean unexploitability of all graded-FairBot blends, including FairBot. --- pass
+\end{itemize}
+
+\paragraph{Prior art.} Possibly new: no prior art found in the owner's search.
+
+\subsection*{Claim K16}
+
+For an $F_k$ height blend of $V_{n,r}$, let $d$ be its DefectBot trace, $t$ its first false height and $E=\{g\ge n:\neg d(g),\ g<t+r\}$. Self-play cooperates iff every height above every $g\in E$ is selected; for finite $S$, iff $E=\varnothing$.
+
+Status: derived · author check only.
+
+\paragraph{Verified.}
+\begin{itemize}
+\item \texttt{checks/K16-v\_self.py}: 11 general Lean core theorems: obstruction law, first-hole window, finite-set law, singleton iff, DB trace, FB/CB cooperation, universal unexploitability; SHA-pinned, no sorryAx; 3 mutations rejected. --- pass (Lean-proved, no sorryAx)
+\item \texttt{checks/K16-v\_grid.py}: 486 GL-certified cells including all 480 grid cells for five (n,r) pairs, k1,2, 16 selectors vs self/FB/CB and six nonmonotonicity headline cells; wrong candidate controls. --- pass
+\item \texttt{checks/K16-v\_reestablished.py}: SHA-pinned full prior V-family script re-executed: nine Lean theorem checks, five rejected mutations, literal tables and 35 separated family members. --- pass
+\end{itemize}
+
+\paragraph{Prior art.} Possibly new: no prior art found in the owner's search.
+
+\subsection*{Claim K19}
+
+For $1\le j\le a+b$ and $k\ge1$, an $F_k$ height blend of $J_{a,b,j}$ with finite $S$ self-cooperates iff $k\le j$ and $\{j,\ldots,a+b\}\subseteq S$; all such blends are unexploitable and cooperate with FairBot and CooperateBot.
+
+Status: derived · author check only.
+
+\paragraph{Verified.}
+\begin{itemize}
+\item \texttt{checks/K19-j\_self.py}: 9 SHA-pinned Lean core theorems: literal J normalization, general obstruction law, finite interval law, DB trace, universal unexploitability, FB/CB cooperation; no sorryAx; 3 rejected mutations. --- pass (Lean-proved, no sorryAx)
+\item \texttt{checks/K19-j\_grid.py}: 581 GL-certified cells: exhaustive six-triple/two-k/16-selector self-FB-CB grid and 5 headline cells including J111 selection1 versus2 versus1,2; F2 separator; wrong-candidate controls. --- pass
+\item \texttt{checks/K19-j\_reestablished.py}: Full SHA-pinned prior J-family script, including G and H special cases: literal tables, 70 distinct agents, formula-string cells, re-executed. --- pass
+\end{itemize}
+
+\paragraph{Prior art.} Possibly new: no prior art found in the owner's search.
+
+\subsection*{Claim K9}
+
+A DefectBot height blend of $W_n$ ($n\ge2$) self-cooperates iff $\varnothing\ne S\subseteq\{0,\ldots,n-1\}$; a CooperateBot blend self-cooperates iff $S$ is cofinite.
+
+Status: derived · author check only.
+
+\paragraph{Verified.}
+\begin{itemize}
+\item \texttt{checks/K9-other\_self.py}: Lean core proofs of the general DB and CB self-play iff laws and both DefectBot-trace formulas; SHA-pinned source; no sorryAx; three mutations rejected. --- pass (Lean-proved, no sorryAx)
+\item \texttt{checks/K9-other\_grid.py}: All 32 GL-certified self-play cells for DB/CB blends, n=2,3, eight selectors arbitrary at 0,1 and constant from 2; wrong-candidate controls. --- pass
+\end{itemize}
+
+\paragraph{Prior art.} Partial prior art.
+
+\subsection*{Claim K25}
+
+For $r\ge1$, a DefectBot height blend of $V_{n,r}$ self-cooperates iff $S\subseteq\{0,\ldots,n-1\}$ and some $s\in S$ satisfies $s+r\le n+1$; all remain unexploitable. CooperateBot blends self-cooperate iff $S$ is cofinite, when DefectBot exploits them.
+
+Status: derived · author check only.
+
+\paragraph{Verified.}
+\begin{itemize}
+\item \texttt{checks/K25-v\_other.py}: Six SHA-pinned Lean core theorem groups: general DB iff, CB iff eventual selection, DB traces, DB safety, finite CB safety, cofinite CB exploitation; no sorryAx; three rejected mutations. --- pass (Lean-proved, no sorryAx)
+\item \texttt{checks/K25-v\_other\_grid.py}: 896 GL-certified self/DB cells for 14 n,r pairs, 16 selectors, DB/CB branches; wrong-candidate controls. --- pass
+\item \texttt{checks/K16-v\_reestablished.py}: SHA-pinned prior V-family literal semantics and Lean results re-established as in K16. --- pass
+\end{itemize}
+
+\paragraph{Prior art.} Possibly new: no prior art found in the owner's search.
+
+\subsection*{Claim K23}
+
+For $1\le j\le a+b$, no DefectBot height blend of $J_{a,b,j}$ self-cooperates; a CooperateBot blend self-cooperates iff its selector is cofinite, and then DefectBot exploits it. Every DefectBot blend and every finite-selector CooperateBot blend is unexploitable.
+
+Status: derived · author check only.
+
+\paragraph{Verified.}
+\begin{itemize}
+\item \texttt{checks/K23-j\_other.py}: Six SHA-pinned Lean core theorems for arbitrary indices/selectors: traces, no DB self-cooperation, CB self iff eventual selection, DB safety, finite CB safety, cofinite CB exploitation; no sorryAx; three rejected mutations. --- pass (Lean-proved, no sorryAx)
+\item \texttt{checks/K23-j\_other\_grid.py}: All 384 self/DB cells GL-certified for six J triples, 16 selectors and DB/CB branches; wrong-candidate controls. --- pass
+\item \texttt{checks/K19-j\_self.py}: K19 literal J normalization into the height gate, SHA-pinned Lean proof. --- pass
+\end{itemize}
+
+\paragraph{Prior art.} Possibly new: no prior art found in the owner's search.
+
+\subsection*{Claim K28}
+
+For every agent and $k\ge1$: it ends CC with $F_k=\Box^kp$ iff it cooperates at every height of that game. Hence any height blend that plays DefectBot at some height, whatever its other branches, never ends CC with FairBot or any $F_k$; if unexploitable, it ends DD.
+
+Status: derived · author check only.
+
+\paragraph{Verified.}
+\begin{itemize}
+\item \texttt{checks/K28-c046\_mixed.py}: Lean 4 core fk\_cc\_iff, fk\_defects, db\_height\_blocks (SHA-pinned, no sorryAx, 3 mutations rejected); literal evaluator 6804 mixed F\_k/DB/V\_\{n,r\} blends (n1..4, r=1..n+1, k1,2, 243 labelings) vs self, F\_1..F\_3, CB: CC with F\_m iff all-height cooperation; any DB label gives DD and F\_m defects from s+m; DB-free blends match K22; 702 DB-labelled self-CC blends, none FB-CC --- pass (Lean-proved, no sorryAx)
+\end{itemize}
+
+\paragraph{Prior art.} Partial prior art.
+
+\subsection*{Claim K20}
+
+For finite $S$, $k,m\ge1$: the $F_k$ height blend of $J_{a,b,j}$ and $F_m=\Box^m p$ cooperate at every height iff $m\le j$, else both eventually defect; so $F_{j+1}$ separates every such blend, including every self-cooperating one, from FairBot and from each $\Box^{m'}p$.
+
+Status: derived · author check only.
+
+\paragraph{Verified.}
+\begin{itemize}
+\item \texttt{checks/K20-c046\_j\_xcheck.py}: Lean 4 core fm\_db, fm\_coop (m\textless{}=j: all-height CC, any S), fm\_defect (j\textless{}m, finite S: eventual DD), fm\_fm, separator; SHA-pinned, no sorryAx, 3 mutations rejected; exact engine: 53760 finite-S cells vs F\_m (m\textless{}=7) CC iff m\textless{}=j; 1668 finite self-CC blends none FB-equivalent; K19 laws on 15360 blends --- pass (Lean-proved, no sorryAx)
+\end{itemize}
+
+\paragraph{Prior art.} Possibly new: no prior art found in the owner's search.
+
+\subsection*{Claim K22}
+
+For $r,k,m\ge1$ and any $S$, the $F_k$ height blend of $V_{n,r}$ ($W_n=V_{n,1}$) and $F_m=\Box^mp$ cooperate at every height iff $m+r\le n$ or all $h>\max(n,m)$ are selected, else both eventually defect; for finite $S$, $F_{\max(1,n-r+1)}$ separates the blend from every $\Box^{m'}p$.
+
+Status: derived · author check only.
+
+\paragraph{Verified.}
+\begin{itemize}
+\item \texttt{checks/K22-c046\_v\_fm.py}: Lean 4 core vfm\_coop, vfm\_defect, vfm\_law (iff for arbitrary S), fm\_fm, v\_separator; SHA-pinned, no sorryAx, 3 mutations rejected; exact engine: 55296 cells (6912 V blends n2..5, r=1..n+1, k1..3, 128 selectors vs F\_1..F\_8) match the law; all blends unexploitable; 1010 finite self-CC blends DD with F\_max(1,n-r+1), none FB-equivalent; hand examples W2\{1\}, V32\{2\}, W4\{2\} --- pass (Lean-proved, no sorryAx)
+\end{itemize}
+
+\paragraph{Prior art.} Possibly new: no prior art found in the owner's search.
+
+\subsection*{Claim K24}
+
+An $F_k$ height blend of $J_{a,b,j}$ ($k\ge1$, cofinite $S$) is FairBot-equivalent iff $k=1$ and all $h\ge1$ are selected; else $R_h(q)$ (its DefectBot trace true at $h\ge1$) or $Y_{h_0}$ (unselected $h_0\ge a+b+1$) gets CC or DC from it and DD from FairBot.
+
+Status: derived · author check only.
+
+\paragraph{Verified.}
+\begin{itemize}
+\item \texttt{checks/K24-c046\_jcof.py}: Lean 4 core db\_trace, reader, cases3, fb\_case, rq\_blend, rq\_fb, y\_blend, y\_fb (arbitrary a,b,j, k\textgreater{}=1, cofinite S); SHA-pinned, no sorryAx, 3 mutations rejected; exact engine on 7680 cofinite J blends: FB-equivalent iff k=1 and \{1..5\} in S (80), 7344 R\_h(q)-separated (CC vs DD), 256 Y\_h0-separated (DC vs DD); 6288 self-CC, 6208 separated incl. all 108 bank-unseparated; G11 hand example --- pass (Lean-proved, no sorryAx)
+\end{itemize}
+
+\paragraph{Prior art.} Possibly new: no prior art found in the owner's search.
+
+\subsection*{Claim K26}
+
+For $n,r,k\ge1$ and any finite or cofinite $S$, the $F_k$ height blend of $V_{n,r}$ ($W_n=V_{n,1}$) is FairBot-equivalent iff $k=1$ and all $h\ge1$ are selected; else, for cofinite $S$, $R_h(q)$ gets CC from it and DD from FairBot, or $Z_{n,h_0}$ gets DD from it and CC from FairBot.
+
+Status: derived · author check only.
+
+\paragraph{Verified.}
+\begin{itemize}
+\item \texttt{checks/K26-c046\_vcof.py}: Lean 4 core db\_trace, reader, cases3, fb\_case, rq\_blend (any unselected branch), rq\_fb, z\_blend, z\_fb; SHA-pinned, no sorryAx, 3 mutations rejected; exact engine on 7680 V blends (n1..5, r=1..n+1, k1..3, 64 masks x finite/cofinite tail): FB-equivalent iff k=1 and S contains 1..5 cofinitely (40); 3664 R\_h(q) CC/DD, 136 Z\_\{n,h0\} DD/CC; 2522 cofinite self-CC, 2482 separated; W2 hand example unexploitable, self/FB/CB CC --- pass (Lean-proved, no sorryAx)
+\end{itemize}
+
+\paragraph{Prior art.} Possibly new: no prior art found in the owner's search.
+
+\subsection*{Discussion}
+
+The blends are a deliberately simple, deterministic way to mix agents: a formula without atoms
+decides, height by height, which agent to imitate. Probabilistic mixtures of FairBot-like agents
+have been studied elsewhere \cite{oesterheld2022compatibility} and are not covered here. The results
+are stated for the W, V and J families; whether similar window laws hold for every
+self-defecting unexploitable agent is open. The use of height guards to switch behaviour goes
+back to WaitFairBot in Barasz et al.
+
+\paragraph{Provenance.}
+Run \texttt{20261020-1600}, claims K14, K6, K16, K19, K9, K25, K23, K28, K20, K22, K24, K26, run-folder commit \texttt{e3d59e30bce37b58223f480d4f0d5a79bbff59ce}, published 2026-10-21.
+
+\section{How large must a program be to tell graded FairBots apart?}
+\label{sec:graded-fairbot-separators}
+
+\subsection*{Setting}
+
+Two programs play a one-shot prisoner's dilemma, and each can read the other's source code.
+Following Barasz et al. \cite{barasz2014robust}, a \emph{modal agent} decides by asking what can be proved
+about the opponent, written with the provability box $\Box$ of the logic GL: $p$ means ``the
+opponent cooperates with me'' and $q$ ``the opponent cooperates with DefectBot''. Graded FairBots
+are $F_k = \Box^k p$ ($F_1$ is FairBot). They are all unexploitable and cooperate with themselves
+and with each other, and a LessWrong discussion \cite{onlyonefairbot2026} lists them among the agents
+that share these properties with FairBot without being FairBot. We take guarded formulas built
+from $p$, $q$, $\bot$, $\neg$, $\wedge$, $\vee$, $\Box$ and measure size as the number of nodes. An
+opponent \emph{separates} two agents if it gets a different outcome against them.
+
+\subsection*{Result}
+
+\begin{itemize}
+\item \textbf{Smallest separators.} Every opponent that separates $F_k$ from $F_{k+1}$ has size at least $k+5$, and the only one of size $k+5$ is $S_k = \Box(\neg q \vee \Box^k\bot)$ (up to the order of the disjuncts): it cooperates with $F_k$ and mutually defects with $F_{k+1}$. Without $q$ the minimum is $k+6$, attained by $T_k = \neg\Box(\neg p \vee \Box^k\bot)$.
+\item \textbf{Depth.} Every opponent of modal depth at most $k$ gets the same outcome against $F_k$ and $F_{k+1}$, so a separator needs depth at least $k+1$; $S_k$ and $T_k$ show this is tight.
+\item \textbf{Ingredients.} An opponent with no negation, or with no $\wedge$/$\vee$, gets the same outcome against every graded FairBot; without $q$ the same holds for every boxed opponent and every opponent with at most one negation and at most one binary connective.
+\end{itemize}
+
+\subsection*{Why it matters}
+
+Graded FairBots look alike: each is unexploitable, cooperates with itself and with every other
+graded FairBot. These results say exactly how complex a program must be to tell two neighbouring
+ones apart, and that the cost grows linearly with the grade.
+
+\subsection*{Proved vs checked}
+
+All statements are proved for every $k$ in Lean 4, in the height semantics of closed GL fixed
+points; the link to provability in arithmetic is Solovay's theorem \cite{solovay1976provability},
+cited, not formalised (see also \cite{boolos1993logic}). The uniqueness of $T_k$ among $q$-free
+separators of size $k+6$ is proved only for $k \le 22$, by exhaustive search; the lower bound
+$k+6$ holds for all $k$.
+
+We believe this result is new. Our prior-art search (2026-10-21) covered:
+
+\begin{itemize}
+\item Barasz, LaVictoire, Christiano, Fallenstein, Herreshoff, Yudkowsky, ``Robust Cooperation in the Prisoner's Dilemma: Program Equilibrium via Provability Logic'' (arXiv 1401.5577): unexploitability (Section 2), rank and Theorem 4.10 (Section 4), WaitFairBot\_K and the obstacle theorem (Section 5).
+\item LessWrong, ``Is there only one FairBot?'' (transhumanist\_atom\_understander, 29 Aug 2026) and comments: Zac Hatfield-Dodds shows the uniqueness conjecture holds up to modal depth 1 for rank-0 agents and fails from depth 2 (Box Box p; FairBot over PA+1 = Box(p or Box False); Box\textasciicircum{}k p for k \textgreater{}= 3); PrudentBot separates Box Box p from FairBot; the author notes Box Box p is not provably unexploitable in PA. No enumeration or counts.
+\item LessWrong / Alignment Forum wiki ``Modal combat'': DefectBot, CooperateBot, FairBot, PrudentBot, CliqueBot, TrollBot; no uniqueness result, no enumeration.
+\item LaVictoire et al. 2014 (MIPC); comment thread on ``Robust Cooperation in the Prisoner's Dilemma'' (LessWrong, on instability of FairBot equilibria); Hobson, ``Yet More Modal Combat'' (2021); Critch, parametric bounded Löb (arXiv 1602.04184); Critch, Dennis \& Russell (arXiv 2208.07006); MIRI provability repository (github.com/machine-intelligence/provability, a modal-agent evaluator, no published census).
+\item Out of scope by direction: probabilistic blends (Oesterheld arXiv 2211.05057; Cooper et al. arXiv 2412.14570).
+\item Web searches for deterministic blends, behavioural distance and classifications of modal agents (2026-10-20/21); none means not found in this search.
+\end{itemize}
+
+We found no earlier statement of it, but we can't be certain. If you know of prior work, please open an issue.
+
+This result extends Blackburn, de Rijke \& Venema, Modal Logic (2001); ``Is there only one FairBot?'' (LessWrong, 2026). Our prior-art search (2026-10-21) covered:
+
+\begin{itemize}
+\item Barasz, LaVictoire, Christiano, Fallenstein, Herreshoff, Yudkowsky, ``Robust Cooperation in the Prisoner's Dilemma: Program Equilibrium via Provability Logic'' (arXiv 1401.5577): unexploitability (Section 2), rank and Theorem 4.10 (Section 4), WaitFairBot\_K and the obstacle theorem (Section 5).
+\item LessWrong, ``Is there only one FairBot?'' (transhumanist\_atom\_understander, 29 Aug 2026) and comments: Zac Hatfield-Dodds shows the uniqueness conjecture holds up to modal depth 1 for rank-0 agents and fails from depth 2 (Box Box p; FairBot over PA+1 = Box(p or Box False); Box\textasciicircum{}k p for k \textgreater{}= 3); PrudentBot separates Box Box p from FairBot; the author notes Box Box p is not provably unexploitable in PA. No enumeration or counts.
+\item LessWrong / Alignment Forum wiki ``Modal combat'': DefectBot, CooperateBot, FairBot, PrudentBot, CliqueBot, TrollBot; no uniqueness result, no enumeration.
+\item LaVictoire et al. 2014 (MIPC); comment thread on ``Robust Cooperation in the Prisoner's Dilemma'' (LessWrong, on instability of FairBot equilibria); Hobson, ``Yet More Modal Combat'' (2021); Critch, parametric bounded Löb (arXiv 1602.04184); Critch, Dennis \& Russell (arXiv 2208.07006); MIRI provability repository (github.com/machine-intelligence/provability, a modal-agent evaluator, no published census).
+\item Out of scope by direction: probabilistic blends (Oesterheld arXiv 2211.05057; Cooper et al. arXiv 2412.14570).
+\item Blackburn, de Rijke \& Venema, Modal Logic (2001): n-bisimulation and modal depth.
+\item Web searches for deterministic blends, behavioural distance and classifications of modal agents (2026-10-20/21); none means not found in this search.
+\end{itemize}
+
+If you know of related work we missed, please open an issue.
+
+This result was found by AI research agents (the autoresearch harness). It was proved in Lean; the proof and check files are included so anyone can re-run them.
+
+\subsection*{Claim K49}
+
+For all $k\ge1$, every guarded separator of $F_k=\Box^kp$ and $F_{k+1}$ has size $\ge k+5$, and every size-$(k+5)$ one is $S_k=\Box(\neg q\vee\Box^k\bot)$ up to disjunct order (CC with $F_k$, DD with $F_{k+1}$).
+
+Status: derived · author check only.
+
+\paragraph{Verified.}
+\begin{itemize}
+\item \texttt{checks/K49-c046\_fk\_sep.py}: Lean 4 core sizes, sk\_ev, sep\_coop (j\textless{}=k CC all heights), sep\_defect (j\textgreater{}k), fk\_fk, separator (all k; SHA-pinned, no sorryAx, 4 mutations rejected); exact engine over guarded classes of size \textless{}=11: k=1..6 no separator of size \textless{}=k+4, unique S\_k at size k+5, k=7,8 none \textless{}=11; literal evaluator S\_k vs F\_j CC iff j\textless{}=k for k\textless{}=10, j\textless{}=12 --- pass (Lean-proved, no sorryAx)
+\item \texttt{checks/K49-c046\_fk\_sep13.py}: guarded class counts 1..13 (36062, 100823 at 12, 13); exact engine k=1..8: no separator of F\_k/F\_\{k+1\} of size \textless{}=k+4, unique machine class S\_k at size k+5; same Lean theorems as c046\_fk\_sep.py (sizes, sep\_coop, sep\_defect, fk\_fk, separator; no sorryAx; 4 mutations rejected); literal evaluator S\_k vs F\_j CC iff j\textless{}=k --- pass (Lean-proved, no sorryAx)
+\item \texttt{checks/K49-c046\_fk\_sep14.py}: guarded class counts 1..14 (100823 at 13, 279115 at 14; guarded-only products at top size); exact engine k=1..9: no F\_k/F\_\{k+1\} separator of size \textless{}=k+4, unique machine class S\_k at size k+5; Lean sizes, sep\_coop, sep\_defect, fk\_fk, separator (no sorryAx, 4 mutations rejected); literal evaluator S\_k vs F\_j CC iff j\textless{}=k --- pass (Lean-proved, no sorryAx)
+\item \texttt{checks/K49-c046\_fk\_size40.py}: every reduced guarded formula of depth \textgreater{}=k+1: p,q sizes k+2..k+5 for k=1..40 (803710 solved), p-only sizes k+2..k+6 for k=1..22 (498344): no separator below k+5 / k+6, unique reduced separator S\_k / T\_k; full all-depth enumeration k\textless{}=2 reproduces minima without K58; bitmask games = naive literal evaluator on 1112 games --- pass
+\item \texttt{checks/K49-c046\_fk\_depth.py}: K58 Lean same\_outcome: no guarded opponent of modal depth \textless{}=k separates F\_k/F\_\{k+1\}, for every k --- pass
+\item \texttt{checks/K49-c046\_fk\_shape.py}: Lean 4 core (SHA-pinned, includes K58 development): negfree\_same (no negation: same outcome vs all F\_j,F\_j'), nobin\_same (no \&/\textbar{}: same outcome vs all F\_j,F\_j', j,j'\textgreater{}=1), size\_bound (k\textgreater{}=1: separator has \textasciitilde{}, binary node, md\textgreater{}=k+1, size\textgreater{}=k+5), sk\_size; no sorryAx; 4 mutations rejected; literal evaluator: 4333 such formulas of size\textless{}=8 same vs F\_1..F\_5, all 414 separator cells (size\textless{}=9, k\textless{}=4) have \textasciitilde{} and a binary node --- pass (Lean-proved, no sorryAx)
+\item \texttt{checks/K49-c046\_fk\_unique.py}: Lean 4 core unique\_sep (all k\textgreater{}=1: guarded size-(k+5) separator of F\_k/F\_\{k+1\} is S\_k up to disjunct order), code\_same, shapeA/B/C, size\_bound, sk\_codes; SHA-pinned; no sorryAx/ofReduceBool; 4 mutations rejected; literal evaluator S\_k k\textless{}=10 and exhaustive unreduced guarded syntax of size 6,7: only S\_1,S\_2 (both orders) separate --- pass (Lean-proved, no sorryAx)
+\end{itemize}
+
+\paragraph{Prior art.} Possibly new: no prior art found in the owner's search.
+
+\subsection*{Claim K56}
+
+For all $k\ge1$, every $q$-free guarded separator of $F_k=\Box^kp$ and $F_{k+1}$ has size $\ge k+6$, attained by $T_k=\neg\Box(\neg p\lor\Box^k\bot)$ (DD with $F_k$, exploited by $F_{k+1}$); for $k\le22$ every size-$(k+6)$ one is $T_k$ up to disjunct order.
+
+Status: derived · author check only.
+
+\paragraph{Verified.}
+\begin{itemize}
+\item \texttt{checks/K56-c046\_fk\_psep17.py}: p-only guarded class counts 1..17 (K51 list to 15, then 35721, 74728); exact engine k=1..11: no p-only F\_k/F\_\{k+1\} separator of size \textless{}=k+5, unique machine class T\_k at size k+6 with F\_k DD and F\_\{k+1\} (D,C); k=12 none \textless{}=17; Lean tsize, tk\_ev, t\_low, t\_high, psep for all k (no sorryAx, 4 mutations rejected); literal evaluator k\textless{}=12, j\textless{}=14 --- pass (Lean-proved, no sorryAx)
+\item \texttt{checks/K49-c046\_fk\_size40.py}: every reduced guarded formula of depth \textgreater{}=k+1: p,q sizes k+2..k+5 for k=1..40 (803710 solved), p-only sizes k+2..k+6 for k=1..22 (498344): no separator below k+5 / k+6, unique reduced separator S\_k / T\_k; full all-depth enumeration k\textless{}=2 reproduces minima without K58; bitmask games = naive literal evaluator on 1112 games --- pass
+\item \texttt{checks/K49-c046\_fk\_depth.py}: K58 Lean same\_outcome: no guarded opponent of modal depth \textless{}=k separates F\_k/F\_\{k+1\}, for every k --- pass
+\item \texttt{checks/K56-c046\_fk\_psize.py}: Lean 4 core (SHA-pinned, includes K58 and K49 shape developments): stab\_box, stab\_top, pone\_same, one\_one\_same (q-free, \textless{}=1 neg and \textless{}=1 binary: same outcome vs all F\_j,F\_j', j,j'\textgreater{}=1), psize\_bound (q-free separator of F\_k,F\_\{k+1\}: size \textgreater{}= k+6, all k\textgreater{}=1), tk\_size; no sorryAx; 4 mutations rejected; literal evaluator 8890 small and 40758 boxed q-free formulas same vs F\_1..F\_6, T\_k DD/CD k\textless{}=6 --- pass (Lean-proved, no sorryAx)
+\end{itemize}
+
+\paragraph{Prior art.} Possibly new: no prior art found in the owner's search.
+
+\subsection*{Claim K58}
+
+For every $k\ge1$, every guarded opponent $O$ in $p,q$ of modal depth $\le k$ gets the same eventual outcome against $F_k=\Box^kp$ and $F_{k+1}$; so every separator has depth $\ge k+1$ (size $\ge k+2$), tight for $S_k$ (K49) and $T_k$ (K56).
+
+Status: derived · author check only.
+
+\paragraph{Verified.}
+\begin{itemize}
+\item \texttt{checks/K49-c046\_fk\_depth.py}: Lean 4 core (SHA-pinned) same\_outcome for all k and guarded O with md\textless{}=k, separator\_bound (md\textgreater{}=k+1, size\textgreater{}=k+2), sk\_depth=k+1; no sorryAx; 5 mutations rejected; exact engine k=1..6: no depth\textless{}=k class of size\textless{}=12 separates, depth k+1 control finds S\_k; literal evaluator 3200 random depth\textless{}=k opponents, exact K40 horizon --- pass (Lean-proved, no sorryAx)
+\end{itemize}
+
+\paragraph{Prior art.} Partial prior art.
+
+\subsection*{Claim K59}
+
+For guarded $O$ in $p,q$ with no negation, or with no $\land/\lor$, and all $j,j'\ge1$: $O$ gets the same eventual outcome against $F_j=\Box^jp$ and $F_{j'}$ (Lean, height semantics).
+
+Status: derived · author check only.
+
+\paragraph{Verified.}
+\begin{itemize}
+\item \texttt{checks/K49-c046\_fk\_shape.py}: Lean 4 core (SHA-pinned, includes K58 development): negfree\_same (no negation: same outcome vs all F\_j,F\_j'), nobin\_same (no \&/\textbar{}: same outcome vs all F\_j,F\_j', j,j'\textgreater{}=1), size\_bound (k\textgreater{}=1: separator has \textasciitilde{}, binary node, md\textgreater{}=k+1, size\textgreater{}=k+5), sk\_size; no sorryAx; 4 mutations rejected; literal evaluator: 4333 such formulas of size\textless{}=8 same vs F\_1..F\_5, all 414 separator cells (size\textless{}=9, k\textless{}=4) have \textasciitilde{} and a binary node --- pass (Lean-proved, no sorryAx)
+\end{itemize}
+
+\paragraph{Prior art.} Possibly new: no prior art found in the owner's search.
+
+\subsection*{Claim K60}
+
+In $L$ without $q$ (guarded), every boxed opponent $\Box W$, and every opponent with at most one $\neg$ and at most one $\land/\lor$, gets the same eventual outcome against $F_j=\Box^jp$ and $F_{j'}$ for all $j,j'\ge1$ (Lean, height semantics).
+
+Status: derived · author check only.
+
+\paragraph{Verified.}
+\begin{itemize}
+\item \texttt{checks/K56-c046\_fk\_psize.py}: Lean 4 core (SHA-pinned): stab\_box, stab\_top, pone\_same (q-free O boxed or with top-level boxes negation-free or binary-free: same outcome vs all F\_j,F\_j', j,j'\textgreater{}=1), one\_one\_same (\textless{}=1 neg, \textless{}=1 binary), psize\_bound, tk\_size; no sorryAx; 4 mutations rejected; literal evaluator 8890 small and 40758 boxed q-free formulas same vs F\_1..F\_6 --- pass (Lean-proved, no sorryAx)
+\end{itemize}
+
+\paragraph{Prior art.} Possibly new: no prior art found in the owner's search.
+
+\subsection*{Discussion}
+
+The depth bound uses the standard back-and-forth (n-bisimulation) method of modal logic
+\cite{blackburn2001modal}; the new part is its application to games between modal agents. The
+results concern separating graded FairBots from each other; how large a separator must be for
+other pairs of agents (for example the gate-family members of earlier findings) is open, as is a
+numerical bound on separator size at fixed modal depth.
+
+\paragraph{Provenance.}
+Run \texttt{20261020-1600}, claims K49, K56, K58, K59, K60, run-folder commit \texttt{e3d59e30bce37b58223f480d4f0d5a79bbff59ce}, published 2026-10-21.
 
 \section{How to verify}
 

@@ -1,0 +1,25 @@
+{
+  "allowed": [
+    "ch. 7"
+  ],
+  "claims": [
+    "K14",
+    "K6",
+    "K16",
+    "K19",
+    "K9",
+    "K25",
+    "K23",
+    "K28",
+    "K20",
+    "K22",
+    "K24",
+    "K26"
+  ],
+  "commit": "e3d59e30bce37b58223f480d4f0d5a79bbff59ce",
+  "name": "blend-window-laws",
+  "round": 52,
+  "run_label": "20261020-1600",
+  "staged_at": "2026-10-21T10:01:51Z",
+  "title": "Blending self-defecting modal agents with FairBot: exact laws"
+}

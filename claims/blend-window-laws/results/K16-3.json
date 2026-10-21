@@ -1,0 +1,12 @@
+{
+  "duration_s": 2.2933731079101562,
+  "exit": 0,
+  "figures": [],
+  "path": "checks/K16-v_reestablished.py",
+  "result": "pass",
+  "run_at": "2026-10-20T16:46:38.075894+00:00",
+  "stderr_head": "",
+  "stderr_tail": "",
+  "stdout_tail": "PASS: Lean V_{n,r} laws for all indices; 5 negative controls rejected; 35 separated r<n gates; tables agree\n",
+  "timeout_s": 120
+}

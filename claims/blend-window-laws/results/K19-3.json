@@ -1,0 +1,12 @@
+{
+  "duration_s": 15.80288290977478,
+  "exit": 0,
+  "figures": [],
+  "path": "checks/K19-j_reestablished.py",
+  "result": "pass",
+  "run_at": "2026-10-20T16:54:00.234535+00:00",
+  "stderr_head": "",
+  "stderr_tail": "",
+  "stdout_tail": "PASS: J_{a,b,j} tables (a,b<=5, j<=6), 70 distinct agents, 882 string-solver cells for 21 agents of size<=15\n",
+  "timeout_s": 120
+}

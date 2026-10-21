@@ -1,0 +1,12 @@
+{
+  "duration_s": 2.1994259357452393,
+  "exit": 0,
+  "figures": [],
+  "path": "checks/K19-j_grid.py",
+  "result": "pass",
+  "run_at": "2026-10-20T16:53:58.033414+00:00",
+  "stderr_head": "",
+  "stderr_tail": "",
+  "stdout_tail": "PASS: 576 GL-certified cells, 6 J/G/H triples, k1,2,16 masks, self/FB/CB\nPASS: 5 headline GL cells: J111 needs both heights1,2; F2 separates blend from FB\n",
+  "timeout_s": 120
+}

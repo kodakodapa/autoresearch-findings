@@ -1,0 +1,16 @@
+{
+  "claims": [
+    "K16",
+    "K17"
+  ],
+  "duration_s": 1.0337762832641602,
+  "exit": 0,
+  "figures": [],
+  "path": "checks/K16-v_self.py",
+  "result": "pass",
+  "run_at": "2026-10-20T16:46:27.191490+00:00",
+  "stderr_head": "",
+  "stderr_tail": "",
+  "stdout_tail": "PASS: 11 Lean theorems, 3 rejected mutations\n",
+  "timeout_s": 120
+}

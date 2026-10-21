@@ -1,0 +1,12 @@
+{
+  "duration_s": 30.429791927337646,
+  "exit": 0,
+  "figures": [],
+  "path": "checks/K28-c046_mixed.py",
+  "result": "pass",
+  "run_at": "2026-10-20T17:30:22.118796+00:00",
+  "stderr_head": "",
+  "stderr_tail": "",
+  "stdout_tail": "PASS: Lean fk_cc_iff, fk_defects, db_height_blocks (no sorryAx), 3 mutations rejected; {'blends': 6804, 'withD': 5908, 'selfCC_withD': 702, 'selfCC_fbCC': 476, 'cells': 34020} 29.5 s\n",
+  "timeout_s": 120
+}

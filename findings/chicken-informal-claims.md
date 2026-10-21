@@ -1,6 +1,7 @@
 ---
 layout: default
 title: "Settling informal claims about modal agents in Chicken"
+scholar: {"citation_title": "Settling informal claims about modal agents in Chicken", "citation_author": "Kodakodapa", "citation_publication_date": "2026/10/20", "citation_abstract_html_url": "https://kodakodapa.github.io/autoresearch-findings/findings/chicken-informal-claims.html", "citation_keywords": "C046", "citation_pdf_url": "https://kodakodapa.github.io/autoresearch-findings/claims/chicken-informal-claims/paper.pdf"}
 ---
 
 # Settling informal claims about modal agents in Chicken

@@ -1,0 +1,6 @@
+{% if page.scholar %}
+{% for tag in page.scholar %}
+<meta name="{{ tag[0] | escape }}" content="{{ tag[1] | escape }}">
+{% endfor %}
+{% endif %}
+{% if page.google_site_verification %}<meta name="google-site-verification" content="{{ page.google_site_verification | escape }}">{% endif %}

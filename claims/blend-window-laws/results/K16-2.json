@@ -1,0 +1,16 @@
+{
+  "claims": [
+    "K16",
+    "K17"
+  ],
+  "duration_s": 9.847021102905273,
+  "exit": 0,
+  "figures": [],
+  "path": "checks/K16-v_grid.py",
+  "result": "pass",
+  "run_at": "2026-10-20T16:46:28.226933+00:00",
+  "stderr_head": "",
+  "stderr_tail": "",
+  "stdout_tail": "PASS 480 GL-certified cells: five (n,r) pairs; k1,2; 16 selectors; self/FB/CB\nPASS: 6 further GL cells, V32 singleton2 vs selectors2,3: CC flips back to DD\n",
+  "timeout_s": 120
+}

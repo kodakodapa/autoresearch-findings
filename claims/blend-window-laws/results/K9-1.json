@@ -1,0 +1,12 @@
+{
+  "duration_s": 0.9599969387054443,
+  "exit": 0,
+  "figures": [],
+  "path": "checks/K9-other_self.py",
+  "result": "pass",
+  "run_at": "2026-10-20T16:34:45.785215+00:00",
+  "stderr_head": "",
+  "stderr_tail": "",
+  "stdout_tail": "PASS: three general Lean theorems; three mutations rejected\n",
+  "timeout_s": 120
+}

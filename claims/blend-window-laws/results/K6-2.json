@@ -1,0 +1,12 @@
+{
+  "duration_s": 0.3381938934326172,
+  "exit": 0,
+  "figures": [],
+  "path": "checks/K6-fb_grid.py",
+  "result": "pass",
+  "run_at": "2026-10-20T16:25:21.147005+00:00",
+  "stderr_head": "",
+  "stderr_tail": "",
+  "stdout_tail": "PASS 48 GL-certified cells: n=2,3; 8 height selectors (0,1,constant >=2); self/FB/CB\n",
+  "timeout_s": 120
+}

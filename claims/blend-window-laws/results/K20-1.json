@@ -1,0 +1,12 @@
+{
+  "duration_s": 5.410156726837158,
+  "exit": 0,
+  "figures": [],
+  "path": "checks/K20-c046_j_xcheck.py",
+  "result": "pass",
+  "run_at": "2026-10-20T16:57:56.399057+00:00",
+  "stderr_head": "",
+  "stderr_tail": "",
+  "stdout_tail": "PASS: 15360 J blends: K19 DB trace, obstruction law, finite interval law, unexploitable, DB/FB/CB cells; 53760 finite-S cells vs F_m (CC iff m<=j); 1668 finite self-CC blends none FB-equivalent; 80 cofinite FB-equivalent; Lean 5 theorems, 3 mutations rejected (5.2s)\n",
+  "timeout_s": 120
+}

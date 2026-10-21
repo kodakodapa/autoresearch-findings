@@ -1,0 +1,12 @@
+{
+  "duration_s": 1.9586608409881592,
+  "exit": 0,
+  "figures": [],
+  "path": "checks/K14-graded_grid.py",
+  "result": "pass",
+  "run_at": "2026-10-20T16:39:10.668728+00:00",
+  "stderr_head": "",
+  "stderr_tail": "",
+  "stdout_tail": "PASS 144 GL-certified cells: n=2,3; k=1,2,3; 8 height selectors; self/FB/CB\n",
+  "timeout_s": 120
+}

@@ -1,0 +1,12 @@
+{
+  "duration_s": 32.568777084350586,
+  "exit": 0,
+  "figures": [],
+  "path": "checks/K49-c046_fk_depth.py",
+  "result": "pass",
+  "run_at": "2026-10-21T07:31:55.765203+00:00",
+  "stderr_head": "",
+  "stderr_tail": "",
+  "stdout_tail": "engine: k=1, 406 guarded classes of depth <= k, size <= 12: none separates F_k/F_k+1\nengine: k=2, 10711 guarded classes of depth <= k, size <= 12: none separates F_k/F_k+1\nengine: k=3, 29127 guarded classes of depth <= k, size <= 12: none separates F_k/F_k+1\nengine: k=4, 43331 guarded classes of depth <= k, size <= 12: none separates F_k/F_k+1\nengine: k=5, 51382 guarded classes of depth <= k, size <= 12: none separates F_k/F_k+1\nengine: k=6, 54859 guarded classes of depth <= k, size <= 12: none separates F_k/F_k+1\nengine control: depth k+1 (size<=10) has 87 separator classes for k=1, incl. S_k\nengine control: depth k+1 (size<=10) has 48 separator classes for k=2, incl. S_k\nengine control: depth k+1 (size<=10) has 19 separator classes for k=3, incl. S_k\nengine control: depth k+1 (size<=10) has 6 separator classes for k=4, incl. S_k\nliteral: 3200 random depth<=k opponents (k=1..8) same outcome vs F_k, F_k+1; 1 depth-(k+1) random separators; S_k, T_k (depth k+1) separate\nLean: same_outcome, separator_bound, sk_depth; no sorryAx; 5 mutations rejected; total 32.3s\nPASS\n",
+  "timeout_s": 120
+}

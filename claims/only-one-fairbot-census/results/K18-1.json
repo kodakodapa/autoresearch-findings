@@ -1,0 +1,12 @@
+{
+  "duration_s": 1.04256010055542,
+  "exit": 0,
+  "figures": [],
+  "path": "checks/K18-c046_realizable_lean.py",
+  "result": "pass",
+  "run_at": "2026-10-20T16:53:47.848642+00:00",
+  "stderr_head": "",
+  "stderr_tail": "",
+  "stdout_tail": "PASS: behaviour_iff, same_behaviour, separation, game_exists, X_beheq_FB proved (no sorry); 4 mutations rejected\n",
+  "timeout_s": 120
+}

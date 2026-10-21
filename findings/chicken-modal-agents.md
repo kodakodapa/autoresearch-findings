@@ -1,6 +1,7 @@
 ---
 layout: default
 title: "Modal agents in the game of Chicken"
+scholar: {"citation_title": "Modal agents in the game of Chicken", "citation_author": "Kodakodapa", "citation_publication_date": "2026/10/20", "citation_abstract_html_url": "https://kodakodapa.github.io/autoresearch-findings/findings/chicken-modal-agents.html", "citation_keywords": "C046", "citation_pdf_url": "https://kodakodapa.github.io/autoresearch-findings/claims/chicken-modal-agents/paper.pdf"}
 ---
 
 # Modal agents in the game of Chicken

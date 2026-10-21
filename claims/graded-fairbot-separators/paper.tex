@@ -1,0 +1,177 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{hyperref}
+\title{How large must a program be to tell graded FairBots apart?}
+\author{Kodakodapa}
+\date{}
+\begin{document}
+\maketitle
+\section{Introduction}
+\label{sec:graded-fairbot-separators}
+
+\subsection*{Setting}
+
+Two programs play a one-shot prisoner's dilemma, and each can read the other's source code.
+Following Barasz et al. \cite{barasz2014robust}, a \emph{modal agent} decides by asking what can be proved
+about the opponent, written with the provability box $\Box$ of the logic GL: $p$ means ``the
+opponent cooperates with me'' and $q$ ``the opponent cooperates with DefectBot''. Graded FairBots
+are $F_k = \Box^k p$ ($F_1$ is FairBot). They are all unexploitable and cooperate with themselves
+and with each other, and a LessWrong discussion \cite{onlyonefairbot2026} lists them among the agents
+that share these properties with FairBot without being FairBot. We take guarded formulas built
+from $p$, $q$, $\bot$, $\neg$, $\wedge$, $\vee$, $\Box$ and measure size as the number of nodes. An
+opponent \emph{separates} two agents if it gets a different outcome against them.
+
+\subsection*{Result}
+
+\begin{itemize}
+\item \textbf{Smallest separators.} Every opponent that separates $F_k$ from $F_{k+1}$ has size at least $k+5$, and the only one of size $k+5$ is $S_k = \Box(\neg q \vee \Box^k\bot)$ (up to the order of the disjuncts): it cooperates with $F_k$ and mutually defects with $F_{k+1}$. Without $q$ the minimum is $k+6$, attained by $T_k = \neg\Box(\neg p \vee \Box^k\bot)$.
+\item \textbf{Depth.} Every opponent of modal depth at most $k$ gets the same outcome against $F_k$ and $F_{k+1}$, so a separator needs depth at least $k+1$; $S_k$ and $T_k$ show this is tight.
+\item \textbf{Ingredients.} An opponent with no negation, or with no $\wedge$/$\vee$, gets the same outcome against every graded FairBot; without $q$ the same holds for every boxed opponent and every opponent with at most one negation and at most one binary connective.
+\end{itemize}
+
+\subsection*{Why it matters}
+
+Graded FairBots look alike: each is unexploitable, cooperates with itself and with every other
+graded FairBot. These results say exactly how complex a program must be to tell two neighbouring
+ones apart, and that the cost grows linearly with the grade.
+
+\subsection*{Proved vs checked}
+
+All statements are proved for every $k$ in Lean 4, in the height semantics of closed GL fixed
+points; the link to provability in arithmetic is Solovay's theorem \cite{solovay1976provability},
+cited, not formalised (see also \cite{boolos1993logic}). The uniqueness of $T_k$ among $q$-free
+separators of size $k+6$ is proved only for $k \le 22$, by exhaustive search; the lower bound
+$k+6$ holds for all $k$.
+
+\subsection*{Novelty statement}
+
+We believe this result is new. Our prior-art search (2026-10-21) covered:
+
+\begin{itemize}
+\item Barasz, LaVictoire, Christiano, Fallenstein, Herreshoff, Yudkowsky, ``Robust Cooperation in the Prisoner's Dilemma: Program Equilibrium via Provability Logic'' (arXiv 1401.5577): unexploitability (Section 2), rank and Theorem 4.10 (Section 4), WaitFairBot\_K and the obstacle theorem (Section 5).
+\item LessWrong, ``Is there only one FairBot?'' (transhumanist\_atom\_understander, 29 Aug 2026) and comments: Zac Hatfield-Dodds shows the uniqueness conjecture holds up to modal depth 1 for rank-0 agents and fails from depth 2 (Box Box p; FairBot over PA+1 = Box(p or Box False); Box\textasciicircum{}k p for k \textgreater{}= 3); PrudentBot separates Box Box p from FairBot; the author notes Box Box p is not provably unexploitable in PA. No enumeration or counts.
+\item LessWrong / Alignment Forum wiki ``Modal combat'': DefectBot, CooperateBot, FairBot, PrudentBot, CliqueBot, TrollBot; no uniqueness result, no enumeration.
+\item LaVictoire et al. 2014 (MIPC); comment thread on ``Robust Cooperation in the Prisoner's Dilemma'' (LessWrong, on instability of FairBot equilibria); Hobson, ``Yet More Modal Combat'' (2021); Critch, parametric bounded Löb (arXiv 1602.04184); Critch, Dennis \& Russell (arXiv 2208.07006); MIRI provability repository (github.com/machine-intelligence/provability, a modal-agent evaluator, no published census).
+\item Out of scope by direction: probabilistic blends (Oesterheld arXiv 2211.05057; Cooper et al. arXiv 2412.14570).
+\item Web searches for deterministic blends, behavioural distance and classifications of modal agents (2026-10-20/21); none means not found in this search.
+\end{itemize}
+
+We found no earlier statement of it, but we can't be certain. If you know of prior work, please open an issue.
+
+This result extends Blackburn, de Rijke \& Venema, Modal Logic (2001); ``Is there only one FairBot?'' (LessWrong, 2026). Our prior-art search (2026-10-21) covered:
+
+\begin{itemize}
+\item Barasz, LaVictoire, Christiano, Fallenstein, Herreshoff, Yudkowsky, ``Robust Cooperation in the Prisoner's Dilemma: Program Equilibrium via Provability Logic'' (arXiv 1401.5577): unexploitability (Section 2), rank and Theorem 4.10 (Section 4), WaitFairBot\_K and the obstacle theorem (Section 5).
+\item LessWrong, ``Is there only one FairBot?'' (transhumanist\_atom\_understander, 29 Aug 2026) and comments: Zac Hatfield-Dodds shows the uniqueness conjecture holds up to modal depth 1 for rank-0 agents and fails from depth 2 (Box Box p; FairBot over PA+1 = Box(p or Box False); Box\textasciicircum{}k p for k \textgreater{}= 3); PrudentBot separates Box Box p from FairBot; the author notes Box Box p is not provably unexploitable in PA. No enumeration or counts.
+\item LessWrong / Alignment Forum wiki ``Modal combat'': DefectBot, CooperateBot, FairBot, PrudentBot, CliqueBot, TrollBot; no uniqueness result, no enumeration.
+\item LaVictoire et al. 2014 (MIPC); comment thread on ``Robust Cooperation in the Prisoner's Dilemma'' (LessWrong, on instability of FairBot equilibria); Hobson, ``Yet More Modal Combat'' (2021); Critch, parametric bounded Löb (arXiv 1602.04184); Critch, Dennis \& Russell (arXiv 2208.07006); MIRI provability repository (github.com/machine-intelligence/provability, a modal-agent evaluator, no published census).
+\item Out of scope by direction: probabilistic blends (Oesterheld arXiv 2211.05057; Cooper et al. arXiv 2412.14570).
+\item Blackburn, de Rijke \& Venema, Modal Logic (2001): n-bisimulation and modal depth.
+\item Web searches for deterministic blends, behavioural distance and classifications of modal agents (2026-10-20/21); none means not found in this search.
+\end{itemize}
+
+If you know of related work we missed, please open an issue.
+
+\subsection*{How it was produced}
+
+This result was found by AI research agents (the autoresearch harness). It was proved in Lean; the proof and check files are included so anyone can re-run them.
+
+\section{Claims}
+
+\subsection*{Claim K49}
+
+For all $k\ge1$, every guarded separator of $F_k=\Box^kp$ and $F_{k+1}$ has size $\ge k+5$, and every size-$(k+5)$ one is $S_k=\Box(\neg q\vee\Box^k\bot)$ up to disjunct order (CC with $F_k$, DD with $F_{k+1}$).
+
+Status: derived · author check only.
+
+\paragraph{Verified.}
+\begin{itemize}
+\item \texttt{checks/K49-c046\_fk\_sep.py}: Lean 4 core sizes, sk\_ev, sep\_coop (j\textless{}=k CC all heights), sep\_defect (j\textgreater{}k), fk\_fk, separator (all k; SHA-pinned, no sorryAx, 4 mutations rejected); exact engine over guarded classes of size \textless{}=11: k=1..6 no separator of size \textless{}=k+4, unique S\_k at size k+5, k=7,8 none \textless{}=11; literal evaluator S\_k vs F\_j CC iff j\textless{}=k for k\textless{}=10, j\textless{}=12 --- pass (Lean-proved, no sorryAx)
+\item \texttt{checks/K49-c046\_fk\_sep13.py}: guarded class counts 1..13 (36062, 100823 at 12, 13); exact engine k=1..8: no separator of F\_k/F\_\{k+1\} of size \textless{}=k+4, unique machine class S\_k at size k+5; same Lean theorems as c046\_fk\_sep.py (sizes, sep\_coop, sep\_defect, fk\_fk, separator; no sorryAx; 4 mutations rejected); literal evaluator S\_k vs F\_j CC iff j\textless{}=k --- pass (Lean-proved, no sorryAx)
+\item \texttt{checks/K49-c046\_fk\_sep14.py}: guarded class counts 1..14 (100823 at 13, 279115 at 14; guarded-only products at top size); exact engine k=1..9: no F\_k/F\_\{k+1\} separator of size \textless{}=k+4, unique machine class S\_k at size k+5; Lean sizes, sep\_coop, sep\_defect, fk\_fk, separator (no sorryAx, 4 mutations rejected); literal evaluator S\_k vs F\_j CC iff j\textless{}=k --- pass (Lean-proved, no sorryAx)
+\item \texttt{checks/K49-c046\_fk\_size40.py}: every reduced guarded formula of depth \textgreater{}=k+1: p,q sizes k+2..k+5 for k=1..40 (803710 solved), p-only sizes k+2..k+6 for k=1..22 (498344): no separator below k+5 / k+6, unique reduced separator S\_k / T\_k; full all-depth enumeration k\textless{}=2 reproduces minima without K58; bitmask games = naive literal evaluator on 1112 games --- pass
+\item \texttt{checks/K49-c046\_fk\_depth.py}: K58 Lean same\_outcome: no guarded opponent of modal depth \textless{}=k separates F\_k/F\_\{k+1\}, for every k --- pass
+\item \texttt{checks/K49-c046\_fk\_shape.py}: Lean 4 core (SHA-pinned, includes K58 development): negfree\_same (no negation: same outcome vs all F\_j,F\_j'), nobin\_same (no \&/\textbar{}: same outcome vs all F\_j,F\_j', j,j'\textgreater{}=1), size\_bound (k\textgreater{}=1: separator has \textasciitilde{}, binary node, md\textgreater{}=k+1, size\textgreater{}=k+5), sk\_size; no sorryAx; 4 mutations rejected; literal evaluator: 4333 such formulas of size\textless{}=8 same vs F\_1..F\_5, all 414 separator cells (size\textless{}=9, k\textless{}=4) have \textasciitilde{} and a binary node --- pass (Lean-proved, no sorryAx)
+\item \texttt{checks/K49-c046\_fk\_unique.py}: Lean 4 core unique\_sep (all k\textgreater{}=1: guarded size-(k+5) separator of F\_k/F\_\{k+1\} is S\_k up to disjunct order), code\_same, shapeA/B/C, size\_bound, sk\_codes; SHA-pinned; no sorryAx/ofReduceBool; 4 mutations rejected; literal evaluator S\_k k\textless{}=10 and exhaustive unreduced guarded syntax of size 6,7: only S\_1,S\_2 (both orders) separate --- pass (Lean-proved, no sorryAx)
+\end{itemize}
+
+\paragraph{Prior art.} Possibly new: no prior art found in the owner's search.
+
+\subsection*{Claim K56}
+
+For all $k\ge1$, every $q$-free guarded separator of $F_k=\Box^kp$ and $F_{k+1}$ has size $\ge k+6$, attained by $T_k=\neg\Box(\neg p\lor\Box^k\bot)$ (DD with $F_k$, exploited by $F_{k+1}$); for $k\le22$ every size-$(k+6)$ one is $T_k$ up to disjunct order.
+
+Status: derived · author check only.
+
+\paragraph{Verified.}
+\begin{itemize}
+\item \texttt{checks/K56-c046\_fk\_psep17.py}: p-only guarded class counts 1..17 (K51 list to 15, then 35721, 74728); exact engine k=1..11: no p-only F\_k/F\_\{k+1\} separator of size \textless{}=k+5, unique machine class T\_k at size k+6 with F\_k DD and F\_\{k+1\} (D,C); k=12 none \textless{}=17; Lean tsize, tk\_ev, t\_low, t\_high, psep for all k (no sorryAx, 4 mutations rejected); literal evaluator k\textless{}=12, j\textless{}=14 --- pass (Lean-proved, no sorryAx)
+\item \texttt{checks/K49-c046\_fk\_size40.py}: every reduced guarded formula of depth \textgreater{}=k+1: p,q sizes k+2..k+5 for k=1..40 (803710 solved), p-only sizes k+2..k+6 for k=1..22 (498344): no separator below k+5 / k+6, unique reduced separator S\_k / T\_k; full all-depth enumeration k\textless{}=2 reproduces minima without K58; bitmask games = naive literal evaluator on 1112 games --- pass
+\item \texttt{checks/K49-c046\_fk\_depth.py}: K58 Lean same\_outcome: no guarded opponent of modal depth \textless{}=k separates F\_k/F\_\{k+1\}, for every k --- pass
+\item \texttt{checks/K56-c046\_fk\_psize.py}: Lean 4 core (SHA-pinned, includes K58 and K49 shape developments): stab\_box, stab\_top, pone\_same, one\_one\_same (q-free, \textless{}=1 neg and \textless{}=1 binary: same outcome vs all F\_j,F\_j', j,j'\textgreater{}=1), psize\_bound (q-free separator of F\_k,F\_\{k+1\}: size \textgreater{}= k+6, all k\textgreater{}=1), tk\_size; no sorryAx; 4 mutations rejected; literal evaluator 8890 small and 40758 boxed q-free formulas same vs F\_1..F\_6, T\_k DD/CD k\textless{}=6 --- pass (Lean-proved, no sorryAx)
+\end{itemize}
+
+\paragraph{Prior art.} Possibly new: no prior art found in the owner's search.
+
+\subsection*{Claim K58}
+
+For every $k\ge1$, every guarded opponent $O$ in $p,q$ of modal depth $\le k$ gets the same eventual outcome against $F_k=\Box^kp$ and $F_{k+1}$; so every separator has depth $\ge k+1$ (size $\ge k+2$), tight for $S_k$ (K49) and $T_k$ (K56).
+
+Status: derived · author check only.
+
+\paragraph{Verified.}
+\begin{itemize}
+\item \texttt{checks/K49-c046\_fk\_depth.py}: Lean 4 core (SHA-pinned) same\_outcome for all k and guarded O with md\textless{}=k, separator\_bound (md\textgreater{}=k+1, size\textgreater{}=k+2), sk\_depth=k+1; no sorryAx; 5 mutations rejected; exact engine k=1..6: no depth\textless{}=k class of size\textless{}=12 separates, depth k+1 control finds S\_k; literal evaluator 3200 random depth\textless{}=k opponents, exact K40 horizon --- pass (Lean-proved, no sorryAx)
+\end{itemize}
+
+\paragraph{Prior art.} Partial prior art.
+
+\subsection*{Claim K59}
+
+For guarded $O$ in $p,q$ with no negation, or with no $\land/\lor$, and all $j,j'\ge1$: $O$ gets the same eventual outcome against $F_j=\Box^jp$ and $F_{j'}$ (Lean, height semantics).
+
+Status: derived · author check only.
+
+\paragraph{Verified.}
+\begin{itemize}
+\item \texttt{checks/K49-c046\_fk\_shape.py}: Lean 4 core (SHA-pinned, includes K58 development): negfree\_same (no negation: same outcome vs all F\_j,F\_j'), nobin\_same (no \&/\textbar{}: same outcome vs all F\_j,F\_j', j,j'\textgreater{}=1), size\_bound (k\textgreater{}=1: separator has \textasciitilde{}, binary node, md\textgreater{}=k+1, size\textgreater{}=k+5), sk\_size; no sorryAx; 4 mutations rejected; literal evaluator: 4333 such formulas of size\textless{}=8 same vs F\_1..F\_5, all 414 separator cells (size\textless{}=9, k\textless{}=4) have \textasciitilde{} and a binary node --- pass (Lean-proved, no sorryAx)
+\end{itemize}
+
+\paragraph{Prior art.} Possibly new: no prior art found in the owner's search.
+
+\subsection*{Claim K60}
+
+In $L$ without $q$ (guarded), every boxed opponent $\Box W$, and every opponent with at most one $\neg$ and at most one $\land/\lor$, gets the same eventual outcome against $F_j=\Box^jp$ and $F_{j'}$ for all $j,j'\ge1$ (Lean, height semantics).
+
+Status: derived · author check only.
+
+\paragraph{Verified.}
+\begin{itemize}
+\item \texttt{checks/K56-c046\_fk\_psize.py}: Lean 4 core (SHA-pinned): stab\_box, stab\_top, pone\_same (q-free O boxed or with top-level boxes negation-free or binary-free: same outcome vs all F\_j,F\_j', j,j'\textgreater{}=1), one\_one\_same (\textless{}=1 neg, \textless{}=1 binary), psize\_bound, tk\_size; no sorryAx; 4 mutations rejected; literal evaluator 8890 small and 40758 boxed q-free formulas same vs F\_1..F\_6 --- pass (Lean-proved, no sorryAx)
+\end{itemize}
+
+\paragraph{Prior art.} Possibly new: no prior art found in the owner's search.
+
+
+\paragraph{Provenance.}
+Run \texttt{20261020-1600}, claims K49, K56, K58, K59, K60, run-folder commit \texttt{e3d59e30bce37b58223f480d4f0d5a79bbff59ce}, published 2026-10-21.
+
+\section{Discussion}
+
+The depth bound uses the standard back-and-forth (n-bisimulation) method of modal logic
+\cite{blackburn2001modal}; the new part is its application to games between modal agents. The
+results concern separating graded FairBots from each other; how large a separator must be for
+other pairs of agents (for example the gate-family members of earlier findings) is open, as is a
+numerical bound on separator size at fixed modal depth.
+
+\section{How to verify}
+
+Each finding has its check scripts in \texttt{claims/graded-fairbot-separators/checks/} of the findings repository. Run each with \texttt{python -I <script>}; it passes if it exits with status 0. The checks are Python scripts and need the packages of the research image (the image's \texttt{requirements.txt}); the Lean checks also need \texttt{lean}.
+
+\nocite{*}
+\bibliographystyle{plain}
+\bibliography{refs}
+
+\end{document}

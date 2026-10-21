@@ -1,0 +1,12 @@
+{
+  "duration_s": 1.110116720199585,
+  "exit": 0,
+  "figures": [],
+  "path": "checks/K19-j_self.py",
+  "result": "pass",
+  "run_at": "2026-10-20T16:53:56.921604+00:00",
+  "stderr_head": "",
+  "stderr_tail": "",
+  "stdout_tail": "PASS: 9 Lean theorems including literal J normalization; 3 mutations rejected\n",
+  "timeout_s": 120
+}

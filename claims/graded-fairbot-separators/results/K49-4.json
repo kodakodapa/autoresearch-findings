@@ -1,0 +1,16 @@
+{
+  "claims": [
+    "K49",
+    "K56"
+  ],
+  "duration_s": 51.42224192619324,
+  "exit": 0,
+  "figures": [],
+  "path": "checks/K49-c046_fk_size40.py",
+  "result": "pass",
+  "run_at": "2026-10-21T07:48:50.284315+00:00",
+  "stderr_head": "",
+  "stderr_tail": "",
+  "stdout_tail": "bitmask = naive on 1112 games\nfull enumeration k<=2 reproduces minima k+5 / k+6 without K58\npq k=1..40 formulas solved 803710 min size k+5, unique reduced separator 37.6 s\np k=1..22 formulas solved 498344 min size k+6, unique reduced separator 51.2 s\nPASS\n",
+  "timeout_s": 120
+}

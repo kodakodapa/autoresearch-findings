@@ -1,0 +1,12 @@
+{
+  "duration_s": 3.4733521938323975,
+  "exit": 0,
+  "figures": [],
+  "path": "checks/K25-v_other_grid.py",
+  "result": "pass",
+  "run_at": "2026-10-20T17:09:04.111647+00:00",
+  "stderr_head": "",
+  "stderr_tail": "",
+  "stdout_tail": "PASS: 896 GL-certified V DB/CB blend cells; 14 pairs, 16 selectors, self and DB\n",
+  "timeout_s": 120
+}

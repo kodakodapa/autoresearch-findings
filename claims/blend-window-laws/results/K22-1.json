@@ -1,0 +1,12 @@
+{
+  "duration_s": 2.7413570880889893,
+  "exit": 0,
+  "figures": [],
+  "path": "checks/K22-c046_v_fm.py",
+  "result": "pass",
+  "run_at": "2026-10-20T17:02:18.292433+00:00",
+  "stderr_head": "",
+  "stderr_tail": "",
+  "stdout_tail": "cells CC 26904 finite self-CC blends 1010\nPASS: 6912 V blends, 55296 cells vs F_m match the law; unexploitable; 1010 finite self-CC blends separated by F_{max(1,n-r+1)}; Lean 5 theorems, 3 mutations rejected (2.6s)\n",
+  "timeout_s": 120
+}

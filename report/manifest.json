@@ -11,6 +11,7 @@
       ],
       "commit": "662166ecff0651902cc5fcb04bf747c62d795af2",
       "date": "2026-10-18",
+      "pdf": true,
       "revisions": [
         {
           "date": "2026-10-18",
@@ -19,6 +20,9 @@
       ],
       "run_label": "20261017-1126",
       "slug": "wn-gate-family",
+      "threads": [
+        "C046"
+      ],
       "title": "An unexploitable modal agent that defects against itself"
     },
     {
@@ -30,8 +34,12 @@
       ],
       "commit": "662166ecff0651902cc5fcb04bf747c62d795af2",
       "date": "2026-10-18",
+      "pdf": true,
       "run_label": "20261017-1126",
       "slug": "graded-prudent-fair",
+      "threads": [
+        "C046"
+      ],
       "title": "When graded PrudentBots cooperate with graded FairBots"
     },
     {
@@ -48,8 +56,12 @@
       ],
       "commit": "662166ecff0651902cc5fcb04bf747c62d795af2",
       "date": "2026-10-18",
+      "pdf": true,
       "run_label": "20261017-1126",
       "slug": "gate-families",
+      "threads": [
+        "C046"
+      ],
       "title": "Families of unexploitable agents that defect against themselves"
     },
     {
@@ -71,8 +83,12 @@
       ],
       "commit": "338871c09385f72bc0f657c9a639ef6a3c825566",
       "date": "2026-10-19",
+      "pdf": true,
       "run_label": "20261018-1933",
       "slug": "ontological-variant-map",
+      "threads": [
+        "C009"
+      ],
       "title": "A certified map of variants of G\u00f6del's ontological argument"
     },
     {
@@ -88,8 +104,12 @@
       ],
       "commit": "662166ecff0651902cc5fcb04bf747c62d795af2",
       "date": "2026-10-19",
+      "pdf": true,
       "run_label": "20261017-1126",
       "slug": "modal-agent-census",
+      "threads": [
+        "C046"
+      ],
       "title": "A census of modal agents in the prisoner's dilemma"
     },
     {
@@ -104,8 +124,12 @@
       ],
       "commit": "24c2a64bf8b8cb8be184b4d449ce11068d8270ea",
       "date": "2026-10-20",
+      "pdf": true,
       "run_label": "20261019-1400",
       "slug": "chicken-informal-claims",
+      "threads": [
+        "C046"
+      ],
       "title": "Settling informal claims about modal agents in Chicken"
     },
     {
@@ -122,8 +146,12 @@
       ],
       "commit": "24c2a64bf8b8cb8be184b4d449ce11068d8270ea",
       "date": "2026-10-20",
+      "pdf": true,
       "run_label": "20261019-1400",
       "slug": "three-player-modal-agents",
+      "threads": [
+        "C046"
+      ],
       "title": "Three-player modal agents in a public-goods game"
     },
     {
@@ -141,9 +169,83 @@
       ],
       "commit": "24c2a64bf8b8cb8be184b4d449ce11068d8270ea",
       "date": "2026-10-20",
+      "pdf": true,
       "run_label": "20261019-1400",
       "slug": "chicken-modal-agents",
+      "threads": [
+        "C046"
+      ],
       "title": "Modal agents in the game of Chicken"
+    },
+    {
+      "allowed": [
+        "ch. 7"
+      ],
+      "claims": [
+        "K51",
+        "K53",
+        "K11",
+        "K18",
+        "K2"
+      ],
+      "commit": "e3d59e30bce37b58223f480d4f0d5a79bbff59ce",
+      "date": "2026-10-21",
+      "pdf": true,
+      "run_label": "20261020-1600",
+      "slug": "only-one-fairbot-census",
+      "threads": [
+        "C046"
+      ],
+      "title": "Unexploitable modal agents that cooperate with themselves: a census"
+    },
+    {
+      "allowed": [
+        "ch. 7"
+      ],
+      "claims": [
+        "K14",
+        "K6",
+        "K16",
+        "K19",
+        "K9",
+        "K25",
+        "K23",
+        "K28",
+        "K20",
+        "K22",
+        "K24",
+        "K26"
+      ],
+      "commit": "e3d59e30bce37b58223f480d4f0d5a79bbff59ce",
+      "date": "2026-10-21",
+      "pdf": true,
+      "run_label": "20261020-1600",
+      "slug": "blend-window-laws",
+      "threads": [
+        "C046"
+      ],
+      "title": "Blending self-defecting modal agents with FairBot: exact laws"
+    },
+    {
+      "allowed": [
+        "ch. 7"
+      ],
+      "claims": [
+        "K49",
+        "K56",
+        "K58",
+        "K59",
+        "K60"
+      ],
+      "commit": "e3d59e30bce37b58223f480d4f0d5a79bbff59ce",
+      "date": "2026-10-21",
+      "pdf": true,
+      "run_label": "20261020-1600",
+      "slug": "graded-fairbot-separators",
+      "threads": [
+        "C046"
+      ],
+      "title": "How large must a program be to tell graded FairBots apart?"
     }
   ]
 }

@@ -1,0 +1,16 @@
+{
+  "claims": [
+    "K49",
+    "K59"
+  ],
+  "duration_s": 31.706058025360107,
+  "exit": 0,
+  "figures": [],
+  "path": "checks/K49-c046_fk_shape.py",
+  "result": "pass",
+  "run_at": "2026-10-21T07:57:55.429787+00:00",
+  "stderr_head": "",
+  "stderr_tail": "",
+  "stdout_tail": "literal: 4333 negation-free/binary-free guarded formulas (size<=8) same vs F_1..F_5; 414 separator cells (size<=9, k<=4) all with ~ and binary, size>=k+5\nS_k size k+5, CC vs F_k, DD vs F_{k+1}, k<=6\nLean: negfree_same, nobin_same, size_bound, sk_size proved (no sorryAx)\n4 mutations rejected\nPASS (31.5 s)\n",
+  "timeout_s": 120
+}

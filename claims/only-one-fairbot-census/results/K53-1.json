@@ -1,0 +1,12 @@
+{
+  "duration_s": 53.37869095802307,
+  "exit": 0,
+  "figures": [],
+  "path": "checks/K53-c046_qfull14.py",
+  "result": "pass",
+  "run_at": "2026-10-21T06:56:02.693469+00:00",
+  "stderr_head": "",
+  "stderr_tail": "",
+  "stdout_tail": "self-cooperators 249390 exploitable (explicit exploiter re-solved) 222941 unexploitable 26449\nFairBot behaviour class: 387 members, sizes [(2, 1), (7, 1), (8, 5), (9, 2), (10, 8), (11, 19), (12, 50), (13, 93), (14, 208)]\nmachine classes separated from FairBot: 26062 by distinguishing height [(0, 1227), (1, 21785), (2, 2080), (3, 414), (4, 245), (5, 157), (6, 84), (7, 48), (8, 15), (9, 7)]\nbehaviour classes 16756 nonFB 16755 not CC with FB 1058 CC with FB and CB 15306\nrank-0 classes 2468 ; behaviour classes not CC with FB 1058 smallest [(9, '(~[]F&[](p|[]F))'), (9, '(~[]F&[](p|[]p))'), (9, '(~[]p&[](p|[]F))')]\nliteral evaluator agrees; total 52.7s\nPASS\n",
+  "timeout_s": 120
+}
