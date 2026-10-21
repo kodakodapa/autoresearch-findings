@@ -26,27 +26,6 @@
         "ch. 7"
       ],
       "claims": [
-        "K51",
-        "K53",
-        "K11",
-        "K18",
-        "K2"
-      ],
-      "commit": "e3d59e30bce37b58223f480d4f0d5a79bbff59ce",
-      "date": "2026-10-21",
-      "pdf": true,
-      "run_label": "20261020-1600",
-      "slug": "only-one-fairbot-census",
-      "threads": [
-        "C046"
-      ],
-      "title": "Unexploitable modal agents that cooperate with themselves: a census"
-    },
-    {
-      "allowed": [
-        "ch. 7"
-      ],
-      "claims": [
         "K16",
         "K9",
         "K13",
@@ -344,6 +323,33 @@
         "C046"
       ],
       "title": "How large must a program be to tell graded FairBots apart?"
+    },
+    {
+      "allowed": [
+        "ch. 7"
+      ],
+      "claims": [
+        "K51",
+        "K53",
+        "K11",
+        "K18",
+        "K2"
+      ],
+      "commit": "e3d59e30bce37b58223f480d4f0d5a79bbff59ce",
+      "date": "2026-10-21",
+      "pdf": true,
+      "revisions": [
+        {
+          "date": "2026-10-21",
+          "reason": "Production note: Lean proofs run inside check scripts are now described as such, separately from harness-built proofs"
+        }
+      ],
+      "run_label": "20261020-1600",
+      "slug": "only-one-fairbot-census",
+      "threads": [
+        "C046"
+      ],
+      "title": "Unexploitable modal agents that cooperate with themselves: a census"
     }
   ]
 }

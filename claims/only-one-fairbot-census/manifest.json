@@ -11,8 +11,14 @@
   ],
   "commit": "e3d59e30bce37b58223f480d4f0d5a79bbff59ce",
   "name": "only-one-fairbot-census",
+  "revisions": [
+    {
+      "date": "2026-10-21",
+      "reason": "Production note: Lean proofs run inside check scripts are now described as such, separately from harness-built proofs"
+    }
+  ],
   "round": 52,
   "run_label": "20261020-1600",
-  "staged_at": "2026-10-21T10:01:49Z",
+  "staged_at": "2026-10-21T18:56:54Z",
   "title": "Unexploitable modal agents that cooperate with themselves: a census"
 }

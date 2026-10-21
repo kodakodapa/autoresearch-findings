@@ -83,7 +83,7 @@ We believe this result is new. Our prior-art search (2026-10-21) covered:
 
 We found no earlier statement of it, but we can't be certain. If you know of prior work, please open an issue.
 
-This result was found by AI research agents (the autoresearch harness). It was partly proved in Lean (claims K11, K18) and partly checked by script (claims K51, K53, K2); the proof and check files are included so anyone can re-run them.
+This result was found by AI research agents (the autoresearch harness). It was partly checked by scripts that run Lean proofs (claims K11, K18) and partly checked by script (claims K51, K53, K2); the proof and check files are included so anyone can re-run them.
 
 **K51.** In rank-0 $L$ (atom $p$, guarded, size $\le15$) exactly 5031 classes are unexploitable and self-cooperating, 4374 of them cooperating with FairBot and CooperateBot; only $\Box p$ is FairBot, every other one is separated from it by an explicit opponent.
 
@@ -147,3 +147,8 @@ exits with status 0. The results recorded in the original run are in
 2. <!-- cite:onlyonefairbot2026 --> transhumanist\_atom\_understander. 2026. Is there only one FairBot?. [Link](https://www.lesswrong.com/posts/auAq7Rcstop3FBEob/is-there-only-one-fairbot)
 3. <!-- cite:solovay1976provability --> Solovay, Robert M.. 1976. Provability Interpretations of Modal Logic. Israel Journal of Mathematics
 4. <!-- cite:boolos1993logic --> Boolos, George. 1993. The Logic of Provability. Cambridge University Press
+
+<!-- autoresearch:revisions -->
+## Revisions
+
+- 2026-10-21 — Production note: Lean proofs run inside check scripts are now described as such, separately from harness-built proofs
