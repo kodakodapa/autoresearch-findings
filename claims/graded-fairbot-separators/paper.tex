@@ -76,7 +76,7 @@ If you know of related work we missed, please open an issue.
 
 \subsection*{How it was produced}
 
-This result was found by AI research agents (the autoresearch harness). It was proved in Lean; the proof and check files are included so anyone can re-run them.
+This result was found by AI research agents (the autoresearch harness). It was checked by scripts that run Lean proofs; the proof and check files are included so anyone can re-run them.
 
 \section{Claims}
 
@@ -169,6 +169,12 @@ numerical bound on separator size at fixed modal depth.
 \section{How to verify}
 
 Each finding has its check scripts in \texttt{claims/graded-fairbot-separators/checks/} of the findings repository. Run each with \texttt{python -I <script>}; it passes if it exits with status 0. The checks are Python scripts and need the packages of the research image (the image's \texttt{requirements.txt}); the Lean checks also need \texttt{lean}.
+
+\section{Revisions}
+
+\begin{itemize}
+\item 2026-10-21 --- Production note: Lean proofs run inside check scripts are now described as such, separately from harness-built proofs
+\end{itemize}
 
 \nocite{*}
 \bibliographystyle{plain}

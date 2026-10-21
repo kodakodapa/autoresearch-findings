@@ -70,7 +70,7 @@ This result extends Blackburn, de Rijke & Venema, Modal Logic (2001); "Is there 
 
 If you know of related work we missed, please open an issue.
 
-This result was found by AI research agents (the autoresearch harness). It was proved in Lean; the proof and check files are included so anyone can re-run them.
+This result was found by AI research agents (the autoresearch harness). It was checked by scripts that run Lean proofs; the proof and check files are included so anyone can re-run them.
 
 **K49.** For all $k\ge1$, every guarded separator of $F_k=\Box^kp$ and $F_{k+1}$ has size $\ge k+5$, and every size-$(k+5)$ one is $S_k=\Box(\neg q\vee\Box^k\bot)$ up to disjunct order (CC with $F_k$, DD with $F_{k+1}$).
 
@@ -134,3 +134,8 @@ exits with status 0. The results recorded in the original run are in
 3. <!-- cite:solovay1976provability --> Solovay, Robert M.. 1976. Provability Interpretations of Modal Logic. Israel Journal of Mathematics
 4. <!-- cite:boolos1993logic --> Boolos, George. 1993. The Logic of Provability. Cambridge University Press
 5. <!-- cite:blackburn2001modal --> Blackburn, Patrick and de Rijke, Maarten and Venema, Yde. 2001. Modal Logic. Cambridge University Press
+
+<!-- autoresearch:revisions -->
+## Revisions
+
+- 2026-10-21 — Production note: Lean proofs run inside check scripts are now described as such, separately from harness-built proofs
