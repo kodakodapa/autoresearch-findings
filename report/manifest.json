@@ -26,26 +26,6 @@
         "ch. 7"
       ],
       "claims": [
-        "K5",
-        "K6",
-        "K11",
-        "K12"
-      ],
-      "commit": "24c2a64bf8b8cb8be184b4d449ce11068d8270ea",
-      "date": "2026-10-20",
-      "pdf": true,
-      "run_label": "20261019-1400",
-      "slug": "chicken-informal-claims",
-      "threads": [
-        "C046"
-      ],
-      "title": "Settling informal claims about modal agents in Chicken"
-    },
-    {
-      "allowed": [
-        "ch. 7"
-      ],
-      "claims": [
         "K13",
         "K14",
         "K16",
@@ -314,6 +294,32 @@
         "C009"
       ],
       "title": "A certified map of variants of G\u00f6del's ontological argument"
+    },
+    {
+      "allowed": [
+        "ch. 7"
+      ],
+      "claims": [
+        "K5",
+        "K6",
+        "K11",
+        "K12"
+      ],
+      "commit": "24c2a64bf8b8cb8be184b4d449ce11068d8270ea",
+      "date": "2026-10-20",
+      "pdf": true,
+      "revisions": [
+        {
+          "date": "2026-10-21",
+          "reason": "Production note: Lean proofs run inside check scripts are now described as such, separately from harness-built proofs"
+        }
+      ],
+      "run_label": "20261019-1400",
+      "slug": "chicken-informal-claims",
+      "threads": [
+        "C046"
+      ],
+      "title": "Settling informal claims about modal agents in Chicken"
     }
   ]
 }

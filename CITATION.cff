@@ -1,7 +1,7 @@
 cff-version: 1.2.0
 message: "If you use these findings, please cite them as below."
 title: "autoresearch-findings"
-abstract: "Machine-checked findings: modal-agent-census, chicken-informal-claims, three-player-modal-agents, chicken-modal-agents, only-one-fairbot-census, blend-window-laws, graded-fairbot-separators, staghunt-safe-coordinators, staghunt-round-robin, graded-prudent-fair, wn-gate-family, gate-families, ontological-variant-map"
+abstract: "Machine-checked findings: modal-agent-census, three-player-modal-agents, chicken-modal-agents, only-one-fairbot-census, blend-window-laws, graded-fairbot-separators, staghunt-safe-coordinators, staghunt-round-robin, graded-prudent-fair, wn-gate-family, gate-families, ontological-variant-map, chicken-informal-claims"
 authors:
   - name: "Kodakodapa"
 date-released: "2026-10-21"

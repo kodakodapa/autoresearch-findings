@@ -61,29 +61,29 @@ This result extends the informal claims about CarefulBot, AstuteBot and graded C
 
 If you know of related work we missed, please open an issue.
 
-This result was found by AI research agents (the autoresearch harness). It was partly proved in Lean (claims K5, K11, K12) and partly checked by script (claims K6); the proof and check files are included so anyone can re-run them.
+This result was found by AI research agents (the autoresearch harness). It was partly checked by scripts that run Lean proofs (claims K5, K11, K12) and partly checked by script (claims K6); the proof and check files are included so anyone can re-run them.
 
 **K5.** For all $n,m\ge0$, $C_n=\neg P_n(p)$ swerves against $C_m$ iff $n\le m$, while $B_n=P_n(\neg p)$ swerves against $B_m$ iff $n>m$, where $P_n(a)=\Box(\Box^n\bot\lor a)$. Exact height laws are Lean-proved.
 
-- Status: derived
+- Status: derived · author check only
 - Machine-checked: 2 of 2 check scripts passed.
 - Prior art: partial prior art
 
 **K6.** The 64-cell GL table for $S,N,B_0,C_0,A,H,F_0,F_1$ is certified: original CarefulBot $B_0$ self-crashes; displayed AstuteBot $A$ self-swerves; $H=\neg\Box p\land\Box(\Box\bot\lor p)$ self-cooperates but mutually defects with $F_0,F_1$.
 
-- Status: derived
+- Status: derived · author check only
 - Machine-checked: 2 of 2 check scripts passed.
 - Prior art: partial prior art
 
 **K11.** For all $n,m\ge0$, $C_n=\neg P_n(p)$ goes straight and $B_m=P_m(\neg p)$ swerves against it at every height, where $P_k(a)=\Box(\Box^k\bot\lor a)$. The mixed pair always yields Chicken payoffs $(4,1)$, independent of grades (Lean).
 
-- Status: derived
+- Status: derived · author check only
 - Machine-checked: 1 of 1 check scripts passed.
 - Prior art: partial prior art
 
 **K12.** For $H_{a,b}=\neg P_a(p)\land P_b(p)$, $P_a(z)=\Box(\Box^a\bot\lor z)$, all $a<b,c<d$ give eventual mutual action 1 iff $a=c$, else mutual action 2. Every pairing with $P_e(p)$ eventually gives mutual action 2, for all $e$ (Lean).
 
-- Status: derived
+- Status: derived · author check only
 - Machine-checked: 2 of 2 check scripts passed.
 - Prior art: partial prior art
 
@@ -117,3 +117,8 @@ exits with status 0. The results recorded in the original run are in
 3. <!-- cite:hobson2021modal --> Hobson, Donald. 2021. Yet More Modal Combat. [Link](https://www.lesswrong.com/posts/EPMnjRdhHNd65XpDt/yet-more-modal-combat)
 4. <!-- cite:boolos1993logic --> Boolos, George. 1993. The Logic of Provability. Cambridge University Press
 5. <!-- cite:solovay1976provability --> Solovay, Robert M.. 1976. Provability Interpretations of Modal Logic. Israel Journal of Mathematics
+
+<!-- autoresearch:revisions -->
+## Revisions
+
+- 2026-10-21 — Production note: Lean proofs run inside check scripts are now described as such, separately from harness-built proofs
