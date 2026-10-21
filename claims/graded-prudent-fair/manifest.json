@@ -7,8 +7,14 @@
   ],
   "commit": "662166ecff0651902cc5fcb04bf747c62d795af2",
   "name": "graded-prudent-fair",
+  "revisions": [
+    {
+      "date": "2026-10-21",
+      "reason": "Novelty statement: render the Related work list instead of the whole prior-art answer"
+    }
+  ],
   "round": 29,
   "run_label": "20261017-1126",
-  "staged_at": "2026-10-18T17:05:27Z",
+  "staged_at": "2026-10-21T18:43:58Z",
   "title": "When graded PrudentBots cooperate with graded FairBots"
 }

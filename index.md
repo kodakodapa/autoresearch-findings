@@ -17,7 +17,6 @@ Research findings with reproducible proofs and checks.
 ## Findings
 
 - [An unexploitable modal agent that defects against itself]({{ "/findings/wn-gate-family.html" | relative_url }}) ([paper]({{ "/claims/wn-gate-family/paper.pdf" | relative_url }}), [checks]({{ "/claims/wn-gate-family/checks/" | relative_url }}))
-- [When graded PrudentBots cooperate with graded FairBots]({{ "/findings/graded-prudent-fair.html" | relative_url }}) ([paper]({{ "/claims/graded-prudent-fair/paper.pdf" | relative_url }}), [checks]({{ "/claims/graded-prudent-fair/checks/" | relative_url }}))
 - [Families of unexploitable agents that defect against themselves]({{ "/findings/gate-families.html" | relative_url }}) ([paper]({{ "/claims/gate-families/paper.pdf" | relative_url }}), [checks]({{ "/claims/gate-families/checks/" | relative_url }}))
 - [A certified map of variants of Gödel's ontological argument]({{ "/findings/ontological-variant-map.html" | relative_url }}) ([paper]({{ "/claims/ontological-variant-map/paper.pdf" | relative_url }}), [checks]({{ "/claims/ontological-variant-map/checks/" | relative_url }}))
 - [A census of modal agents in the prisoner's dilemma]({{ "/findings/modal-agent-census.html" | relative_url }}) ([paper]({{ "/claims/modal-agent-census/paper.pdf" | relative_url }}), [checks]({{ "/claims/modal-agent-census/checks/" | relative_url }}))
@@ -29,3 +28,4 @@ Research findings with reproducible proofs and checks.
 - [How large must a program be to tell graded FairBots apart?]({{ "/findings/graded-fairbot-separators.html" | relative_url }}) ([paper]({{ "/claims/graded-fairbot-separators/paper.pdf" | relative_url }}), [checks]({{ "/claims/graded-fairbot-separators/checks/" | relative_url }}))
 - [Safe modal agents that coordinate in the Stag Hunt: size 13 is the minimum]({{ "/findings/staghunt-safe-coordinators.html" | relative_url }}) ([paper]({{ "/claims/staghunt-safe-coordinators/paper.pdf" | relative_url }}), [checks]({{ "/claims/staghunt-safe-coordinators/checks/" | relative_url }}))
 - [Round robins of modal agents in the Stag Hunt]({{ "/findings/staghunt-round-robin.html" | relative_url }}) ([paper]({{ "/claims/staghunt-round-robin/paper.pdf" | relative_url }}), [checks]({{ "/claims/staghunt-round-robin/checks/" | relative_url }}))
+- [When graded PrudentBots cooperate with graded FairBots]({{ "/findings/graded-prudent-fair.html" | relative_url }}) ([paper]({{ "/claims/graded-prudent-fair/paper.pdf" | relative_url }}), [checks]({{ "/claims/graded-prudent-fair/checks/" | relative_url }}))

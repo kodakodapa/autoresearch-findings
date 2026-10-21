@@ -49,24 +49,7 @@ $k > j$ both defect above height $j + k$). The link to provability in PA is Solo
 in the standard model assumes PA is sound.
 <!-- /owner-summary -->
 
-This result extends # Prior-art answer for R4 (K8: P_j / F_k threshold law)
-
-Verdict: partial prior art.
-
-- Barasz et al. 2014, remark after Theorem 3.2: PrudentBot's DefectBot check may use PA+n for larger n, which widens the set of agents it cooperates with without losing safety. That is the idea behind graded PrudentBots, stated informally.
-- LessWrong comments on the Barasz et al. post (orthonormal, cousin_it) discuss indexed variants "Prudent(m,n)Bot" with specific pairs, e.g. Prudent(0,100)Bot cooperating with Prudent(0,1)Bot and Prudent(99,1000)Bot, and cousin_it noting that a PrudentBot using PA and PA+1 does not cooperate with one using PA+1 and PA+2.
-- Not found: a general threshold law for P_j against graded FairBots F_k (cooperate iff k <= j, both defect above j+k), or a proof of it.
-- Suggested wording: the graded family was discussed informally (Barasz et al. remark; LessWrong comments); the general law and its Lean proof were not found.
-
-## Sources searched (owner, web search, 2026-10-17)
-- Barasz et al. 2014, Robust Cooperation in the Prisoner's Dilemma (arXiv 1401.5577), full text: agents CB, DB, CliqueBot, FairBot, PrudentBot, TrollBot, JustBot, WaitFairBot_K; Theorems 3.2, 4.8, 4.10 and the obstacles section.
-- LaVictoire et al. 2014, Program Equilibrium in the Prisoner's Dilemma via Löb's Theorem (intelligence.org/files/ProgramEquilibrium.pdf).
-- LessWrong post "Robust Cooperation in the Prisoner's Dilemma" and its comments (orthonormal, cousin_it, Will_Sawin, Karl, dankane).
-- Arbital / LessWrong wiki "Modal combat".
-- Garrabrant, "Prisoners' Dilemma with Costs to Modeling" (Alignment Forum).
-- Mennen, "Modal Combat for games other than the prisoner's dilemma" (agentfoundations.org item 1304).
-- github.com/machine-intelligence/provability (Haskell solver and combat code; the agents folder contents were not visible).
-Not searched: Critch's parametric bounded Löb paper, theses, the contents of the Haskell agents folder, non-English sources. A "none" verdict means "not found in this search", nothing more. Our prior-art search (2026-10-17) covered:
+This result extends Barasz et al. (arXiv 1401.5577), remark after Theorem 3.2: PrudentBot's DefectBot check may use PA+n for larger n; LessWrong comments on "Robust Cooperation in the Prisoner's Dilemma" (orthonormal, cousin_it): indexed Prudent(m,n)Bot variants with specific pairs. Our prior-art search (2026-10-21) covered:
 
 - Barasz et al. 2014, Robust Cooperation in the Prisoner's Dilemma (arXiv 1401.5577), full text: agents CB, DB, CliqueBot, FairBot, PrudentBot, TrollBot, JustBot, WaitFairBot_K; Theorems 3.2, 4.8, 4.10 and the obstacles section.
 - LaVictoire et al. 2014, Program Equilibrium in the Prisoner's Dilemma via Löb's Theorem (intelligence.org/files/ProgramEquilibrium.pdf).
@@ -78,11 +61,11 @@ Not searched: Critch's parametric bounded Löb paper, theses, the contents of th
 
 If you know of related work we missed, please open an issue.
 
-This result was found by AI research agents (the autoresearch harness). It was proved in Lean; the proof and check files are included so anyone can re-run them.
+This result was found by AI research agents (the autoresearch harness). It was checked by scripts that run Lean proofs; the proof and check files are included so anyone can re-run them.
 
 **K8.** `For all j>=0, k>=1 (height-chain semantics of closed GL fixed points): P_j=[]p&[](~[]^jF->~q) and F_k=[]^k p cooperate at every height iff k<=j; if j<k both defect above height j+k. Lean-proved; P_j defects vs CB.`
 
-- Status: derived
+- Status: derived · author check only
 - Machine-checked: 1 of 1 check scripts passed.
 - Prior art: partial prior art
 
@@ -104,3 +87,8 @@ exits with status 0. The results recorded in the original run are in
 1. <!-- cite:barasz2014robust --> Barasz, Mihaly and Christiano, Paul and Fallenstein, Benja and Herreshoff, Marcello and LaVictoire, Patrick and Yudkowsky, Eliezer. 2014. Robust Cooperation in the Prisoner's Dilemma: Program Equilibrium via Provability Logic. [Link](https://arxiv.org/abs/1401.5577)
 2. <!-- cite:solovay1976provability --> Solovay, Robert M.. 1976. Provability Interpretations of Modal Logic. Israel Journal of Mathematics
 3. <!-- cite:boolos1993logic --> Boolos, George. 1993. The Logic of Provability. Cambridge University Press
+
+<!-- autoresearch:revisions -->
+## Revisions
+
+- 2026-10-21 — Novelty statement: render the Related work list instead of the whole prior-art answer

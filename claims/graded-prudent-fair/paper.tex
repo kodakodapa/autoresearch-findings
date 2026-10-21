@@ -53,30 +53,7 @@ in the standard model assumes PA is sound.
 
 \subsection*{Novelty statement}
 
-This result extends \# Prior-art answer for R4 (K8: P\_j / F\_k threshold law)
-
-Verdict: partial prior art.
-
-\begin{itemize}
-\item Barasz et al. 2014, remark after Theorem 3.2: PrudentBot's DefectBot check may use PA+n for larger n, which widens the set of agents it cooperates with without losing safety. That is the idea behind graded PrudentBots, stated informally.
-\item LessWrong comments on the Barasz et al. post (orthonormal, cousin\_it) discuss indexed variants ``Prudent(m,n)Bot'' with specific pairs, e.g. Prudent(0,100)Bot cooperating with Prudent(0,1)Bot and Prudent(99,1000)Bot, and cousin\_it noting that a PrudentBot using PA and PA+1 does not cooperate with one using PA+1 and PA+2.
-\item Not found: a general threshold law for P\_j against graded FairBots F\_k (cooperate iff k \textless{}= j, both defect above j+k), or a proof of it.
-\item Suggested wording: the graded family was discussed informally (Barasz et al. remark; LessWrong comments); the general law and its Lean proof were not found.
-\end{itemize}
-
-\subsection*{Sources searched (owner, web search, 2026-10-17)}
-
-\begin{itemize}
-\item Barasz et al. 2014, Robust Cooperation in the Prisoner's Dilemma (arXiv 1401.5577), full text: agents CB, DB, CliqueBot, FairBot, PrudentBot, TrollBot, JustBot, WaitFairBot\_K; Theorems 3.2, 4.8, 4.10 and the obstacles section.
-\item LaVictoire et al. 2014, Program Equilibrium in the Prisoner's Dilemma via Löb's Theorem (intelligence.org/files/ProgramEquilibrium.pdf).
-\item LessWrong post ``Robust Cooperation in the Prisoner's Dilemma'' and its comments (orthonormal, cousin\_it, Will\_Sawin, Karl, dankane).
-\item Arbital / LessWrong wiki ``Modal combat''.
-\item Garrabrant, ``Prisoners' Dilemma with Costs to Modeling'' (Alignment Forum).
-\item Mennen, ``Modal Combat for games other than the prisoner's dilemma'' (agentfoundations.org item 1304).
-\item github.com/machine-intelligence/provability (Haskell solver and combat code; the agents folder contents were not visible).
-\end{itemize}
-
-Not searched: Critch's parametric bounded Löb paper, theses, the contents of the Haskell agents folder, non-English sources. A ``none'' verdict means ``not found in this search'', nothing more. Our prior-art search (2026-10-17) covered:
+This result extends Barasz et al. (arXiv 1401.5577), remark after Theorem 3.2: PrudentBot's DefectBot check may use PA+n for larger n; LessWrong comments on ``Robust Cooperation in the Prisoner's Dilemma'' (orthonormal, cousin\_it): indexed Prudent(m,n)Bot variants with specific pairs. Our prior-art search (2026-10-21) covered:
 
 \begin{itemize}
 \item Barasz et al. 2014, Robust Cooperation in the Prisoner's Dilemma (arXiv 1401.5577), full text: agents CB, DB, CliqueBot, FairBot, PrudentBot, TrollBot, JustBot, WaitFairBot\_K; Theorems 3.2, 4.8, 4.10 and the obstacles section.
@@ -92,15 +69,15 @@ If you know of related work we missed, please open an issue.
 
 \subsection*{How it was produced}
 
-This result was found by AI research agents (the autoresearch harness). It was proved in Lean; the proof and check files are included so anyone can re-run them.
+This result was found by AI research agents (the autoresearch harness). It was checked by scripts that run Lean proofs; the proof and check files are included so anyone can re-run them.
 
 \section{Claims}
 
 \subsection*{Claim K8}
 
-For all j\textgreater{}=0, k\textgreater{}=1 (height-chain semantics of closed GL fixed points): P\_j=[]p\&[](\textasciitilde{}[]\textasciicircum{}jF-\textgreater{}\textasciitilde{}q) and F\_k=[]\textasciicircum{}k p cooperate at every height iff k\textless{}=j; if j\textless{}k both defect above height j+k. Lean-proved; P\_j defects vs CB.
+\texttt{For all j\textgreater{}=0, k\textgreater{}=1 (height-chain semantics of closed GL fixed points): P\_j=[]p\&[](\textasciitilde{}[]\textasciicircum{}jF-\textgreater{}\textasciitilde{}q) and F\_k=[]\textasciicircum{}k p cooperate at every height iff k\textless{}=j; if j\textless{}k both defect above height j+k. Lean-proved; P\_j defects vs CB.}
 
-Status: derived.
+Status: derived · author check only.
 
 \paragraph{Verified.}
 \begin{itemize}
@@ -109,7 +86,7 @@ Status: derived.
 
 \paragraph{Evidence.}
 \begin{itemize}
-\item reasoning: Closed (letter-free) GL fixed points are decided by height on finite linear frames (Boolos, Logic of Provability, ch. 7), so box phi at height h means phi at all g\textless{}h; the Lean theorem is stated in exactly this semantics for arbitrary solutions.
+\item reasoning: Closed (letter-free) GL fixed points are decided by height on finite linear frames (Boolos, Logic of Provability, ch. 7), so box phi at height h means phi at all g\textbackslash{}\textless{}h; the Lean theorem is stated in exactly this semantics for arbitrary solutions.
 \end{itemize}
 
 \paragraph{Prior art.} Partial prior art.
@@ -120,6 +97,12 @@ Run \texttt{20261017-1126}, claims K8, run-folder commit \texttt{662166ecff06519
 \section{How to verify}
 
 Each finding has its check scripts in \texttt{claims/graded-prudent-fair/checks/} of the findings repository. Run each with \texttt{python -I <script>}; it passes if it exits with status 0. The checks are Python scripts and need the packages of the research image (the image's \texttt{requirements.txt}); the Lean checks also need \texttt{lean}.
+
+\section{Revisions}
+
+\begin{itemize}
+\item 2026-10-21 --- Novelty statement: render the Related work list instead of the whole prior-art answer
+\end{itemize}
 
 \nocite{*}
 \bibliographystyle{plain}

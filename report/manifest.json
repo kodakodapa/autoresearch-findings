@@ -30,23 +30,6 @@
         "ch. 7"
       ],
       "claims": [
-        "K8"
-      ],
-      "commit": "662166ecff0651902cc5fcb04bf747c62d795af2",
-      "date": "2026-10-18",
-      "pdf": true,
-      "run_label": "20261017-1126",
-      "slug": "graded-prudent-fair",
-      "threads": [
-        "C046"
-      ],
-      "title": "When graded PrudentBots cooperate with graded FairBots"
-    },
-    {
-      "allowed": [
-        "ch. 7"
-      ],
-      "claims": [
         "K14",
         "K18",
         "K20",
@@ -292,6 +275,29 @@
         "C046"
       ],
       "title": "Round robins of modal agents in the Stag Hunt"
+    },
+    {
+      "allowed": [
+        "ch. 7"
+      ],
+      "claims": [
+        "K8"
+      ],
+      "commit": "662166ecff0651902cc5fcb04bf747c62d795af2",
+      "date": "2026-10-18",
+      "pdf": true,
+      "revisions": [
+        {
+          "date": "2026-10-21",
+          "reason": "Novelty statement: render the Related work list instead of the whole prior-art answer"
+        }
+      ],
+      "run_label": "20261017-1126",
+      "slug": "graded-prudent-fair",
+      "threads": [
+        "C046"
+      ],
+      "title": "When graded PrudentBots cooperate with graded FairBots"
     }
   ]
 }
