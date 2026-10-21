@@ -74,13 +74,13 @@ This result extends Mennen's framework for multiplayer modal agents, whose oppon
 
 If you know of related work we missed, please open an issue.
 
-This result was found by AI research agents (the autoresearch harness). It was partly proved in Lean (claims K14, K16, K18, K19) and partly checked by script (claims K13, K21); the proof and check files are included so anyone can re-run them.
+This result was found by AI research agents (the autoresearch harness). It was partly checked by scripts that run Lean proofs (claims K14, K16, K18, K19) and partly checked by script (claims K13, K21); the proof and check files are included so anyone can re-run them.
 
 ## K13
 
 For five three-player bots $D,C,F=\Box(p_1\land p_2),O=\Box(p_1\lor p_2),Q=\Box(q_1\land q_2)$, 125 triples are GL-certified under evaluator-replacement probes: $FFF=111$, $FFD=000$, $QQQ=000$; exactly $D,F,Q$ never earn less than either opponent within this five-bot set.
 
-Status: derived
+Status: derived · author check only
 
 Kind: model
 
@@ -103,7 +103,7 @@ Prior art: possibly new: no prior art found in the owner's search (answer: `prio
 
 In the three-player public-goods game $u_i=2\sum_j a_j-3a_i$, $F=\Box(p_1\land p_2)$ never earns less than either opponent against any two modal opponents (Lean, tail semantics), while cooperating with two copies and defecting against a defector.
 
-Status: derived
+Status: derived · author check only
 
 Kind: model
 
@@ -126,7 +126,7 @@ Prior art: possibly new: no prior art found in the owner's search (answer: `prio
 
 In the guarded three-player language with node-count size and evaluator-replacement probes, size 4 is minimal for self-cooperation plus never earning less than either opponent in $u_i=2\sum_j a_j-3a_i$: $F=\Box(p_1\land p_2)$ attains it (tail semantics).
 
-Status: derived
+Status: derived · author check only
 
 Kind: model
 
@@ -150,7 +150,7 @@ Prior art: possibly new: no prior art found in the owner's search (answer: `prio
 
 In the guarded three-player language (evaluator-replacement probes, $u_i=2\sum_j a_j-3a_i$), exactly 66 trees of size $\le6$ self-cooperate and never earn less than either opponent; all are $q$-free and GL proves $A\to\Box^3(p_1\land p_2)$; others fail vs size-$\le3$ pairs.
 
-Status: derived
+Status: derived · author check only
 
 Kind: model
 
@@ -173,7 +173,7 @@ Prior art: possibly new: no prior art found in the owner's search (answer: `prio
 
 In K18's three-player language, $E=\Box((p_1\land p_2)\land(\Box\bot\lor\neg q_1))$ (size 10) self-cooperates, defects against two constant contributors (payoffs 4,1,1) and never earns less than either opponent; no tree of size $\le7$ has all three properties.
 
-Status: derived
+Status: derived · author check only
 
 Kind: model
 
@@ -197,12 +197,12 @@ Prior art: possibly new: no prior art found in the owner's search (answer: `prio
 
 For K13’s five bots, replacing the evaluator alone versus replacing all players other than the queried opponent changes exactly 9 of 125 triples: permutations of $(Q,C,O)$ and $(Q,O,O)$ change from $111$ to only $Q$ defecting (GL-certified).
 
-Status: derived
+Status: derived · author check only
 
 Kind: model
 
 Evidence:
-- check `checks/K13-probe_semantics_alternative.py`: 250 triples, 6000 GL equations, 750 flips; exactly the specified nine differences, QOC 111 versus 011; all probe-free triples unchanged. — pass (`results/K21-1.json`)
+- check `checks/K13-probe_semantics_alternative.py`: 250 triples, 6000 GL equations, 750 flips; exactly the specified nine differences, QOC 111 versus 011; all probe-free triples unchanged. — pass (`results/K13-2.json`)
 
 Prior art: partial prior art (answer: `prior-art/R2.md`)
 
@@ -213,7 +213,7 @@ Prior art: partial prior art (answer: `prior-art/R2.md`)
 - author: r2 (codex)
 - round: 15
 - run-folder commit: 24c2a64bf8b8cb8be184b4d449ce11068d8270ea
-- check results: K21-1.json
+- check results: K13-2.json
 
 ## Discussion
 
@@ -229,3 +229,8 @@ games.
 
 1. <!-- cite:barasz2014robust --> Barasz, Mihaly and Christiano, Paul and Fallenstein, Benja and Herreshoff, Marcello and LaVictoire, Patrick and Yudkowsky, Eliezer. 2014. Robust Cooperation in the Prisoner's Dilemma: Program Equilibrium via Provability Logic. [Link](https://arxiv.org/abs/1401.5577)
 2. <!-- cite:mennen2017modal --> Mennen, Alex. 2017. Modal Combat for Games Other Than the Prisoner's Dilemma. [Link](https://www.lesswrong.com/posts/5bd75cc58225bf0670375375/modal-combat-for-games-other-than-the-prisoner-s-dilemma)
+
+<!-- autoresearch:revisions -->
+## Revisions
+
+- 2026-10-21 — Production note: Lean proofs run inside check scripts are now described as such, separately from harness-built proofs

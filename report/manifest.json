@@ -26,28 +26,6 @@
         "ch. 7"
       ],
       "claims": [
-        "K13",
-        "K14",
-        "K16",
-        "K18",
-        "K19",
-        "K21"
-      ],
-      "commit": "24c2a64bf8b8cb8be184b4d449ce11068d8270ea",
-      "date": "2026-10-20",
-      "pdf": true,
-      "run_label": "20261019-1400",
-      "slug": "three-player-modal-agents",
-      "threads": [
-        "C046"
-      ],
-      "title": "Three-player modal agents in a public-goods game"
-    },
-    {
-      "allowed": [
-        "ch. 7"
-      ],
-      "claims": [
         "K51",
         "K53",
         "K11",
@@ -326,6 +304,34 @@
         "C046"
       ],
       "title": "Modal agents in the game of Chicken"
+    },
+    {
+      "allowed": [
+        "ch. 7"
+      ],
+      "claims": [
+        "K13",
+        "K14",
+        "K16",
+        "K18",
+        "K19",
+        "K21"
+      ],
+      "commit": "24c2a64bf8b8cb8be184b4d449ce11068d8270ea",
+      "date": "2026-10-20",
+      "pdf": true,
+      "revisions": [
+        {
+          "date": "2026-10-21",
+          "reason": "Production note: Lean proofs run inside check scripts are now described as such, separately from harness-built proofs"
+        }
+      ],
+      "run_label": "20261019-1400",
+      "slug": "three-player-modal-agents",
+      "threads": [
+        "C046"
+      ],
+      "title": "Three-player modal agents in a public-goods game"
     }
   ]
 }
