@@ -87,13 +87,13 @@ This result extends the single cells and per-proof axiom dependencies of Scott's
 
 If you know of related work we missed, please open an issue.
 
-This result was found by AI research agents (the autoresearch harness). It was proved in Lean; the proof and check files are included so anyone can re-run them.
+This result was found by AI research agents (the autoresearch harness). It was checked by scripts that run Lean proofs; the proof and check files are included so anyone can re-run them.
 
 ## K2
 
 Full-property constant-domain embedding, Scott essence: A1, A2, A5 imply $R\,w\,v \leftrightarrow v = w$ and modal collapse on every symmetric frame; adding A3 gives $\exists x\,G(x)$ and $\Box\exists x\,G(x)$ there, and $\Box\exists x\,G(x)$ on euclidean frames. A4 is not used.
 
-Status: derived
+Status: derived · author check only
 
 Kind: model
 
@@ -116,7 +116,7 @@ Prior art: partial prior art (answer: `prior-art/R1.md`)
 
 Constant domain, rigid properties, Scott/Gödel essence, all 32 subsets × 9 classes certified: no consistent cell forces collapse; $\exists x\,G(x)$ and $\Box\exists x\,G(x)$ hold iff the subset contains A1,A2,A3, or A1,A3,A5 with Scott essence, on every frame.
 
-Status: derived
+Status: derived · author check only
 
 Kind: model
 
@@ -139,7 +139,7 @@ Prior art: partial prior art (answer: `prior-art/R5.md`)
 
 Constant-domain full-property Anderson slice: $\exists x\,G_A(x)$ holds iff the subset contains A1a, A2, H and the class is B, KB, S5, or KD45 with A4; $\Box\exists x\,G_A(x)$ iff it contains A1a, A2, H on B, KB, KD45, S5. A5 is derivable from A2 and H.
 
-Status: derived
+Status: derived · author check only
 
 Kind: model
 
@@ -162,7 +162,7 @@ Prior art: partial prior art (answer: `prior-art/R8.md`)
 
 Constant-domain extensional Fitting, all subsets of A1a,A1b,A2,H,N × nine frame classes: all 288 cells are consistent and permit noncollapse; both existence conclusions hold exactly for supersets of $\{A1a,A2,H\}$ or $\{A1a,H,N\}$. A1b is unnecessary.
 
-Status: derived
+Status: derived · author check only
 
 Kind: model
 
@@ -185,7 +185,7 @@ Prior art: partial prior art (answer: `prior-art/R10.md`)
 
 Varying-domain (actualist) full-property Anderson, 32 subsets × 9 classes: as in constant domains except $\exists^E x\,G_A(x)$ on KD45 with A4 now fails; a 3-world KD45 model satisfies all five axioms, but its God-like being does not exist at the root.
 
-Status: derived
+Status: derived · author check only
 
 Kind: model
 
@@ -209,7 +209,7 @@ Prior art: partial prior art (answer: `prior-art/R12.md`)
 
 Varying-domain (actualist) extensional Fitting, 32 subsets of A1a,A1b,A2,H,N × 9 classes: $\exists^E x\,G(x)$ holds iff the subset contains $\{A1a,A2,H,N\}$ on T, B, S4, S5; $\Box\exists^E x\,G(x)$ also on KD45. K13's sets $\{A1a,A2,H\}$ and $\{A1a,H,N\}$ fail in S5.
 
-Status: derived
+Status: derived · author check only
 
 Kind: model
 
@@ -233,7 +233,7 @@ Prior art: partial prior art (answer: `prior-art/R10.md`)
 
 Varying-domain rigid Scott, 64 subsets of A1a,A1b,A2..A5 × 9 classes: A1b is never needed; $\exists^E G$ iff ⊇{A1a,A2,A3,A5} on T,B,S4,S5 or +A4 on KB; $\Box\exists^E G$ iff ⊇{A1a,A2,A3,A5} on T,B,S4,S5,KD45 or +A4 on any frame.
 
-Status: derived
+Status: derived · author check only
 
 Kind: model
 
@@ -258,7 +258,7 @@ Prior art: partial prior art (answer: `prior-art/R9.md`)
 
 Anderson $G_A$, full properties, 64 subsets of A1a,A1b,A2,H,A4,A5 × 9 classes × constant/varying domains: collapse iff ⊇{A1a,A1b,A2,H} on B,S5, or +A4 on KB; $\exists G_A$ on KD45 needs A4 or A1b and constant domains; otherwise as K9/K15.
 
-Status: derived
+Status: derived · author check only
 
 Kind: model
 
@@ -282,7 +282,7 @@ Prior art: partial prior art (answer: `prior-art/R7.md`)
 
 Full-property Scott, constant or varying domains, 64 subsets of A1a,A1b,A2–A5 × 2 essences × 9 classes: A1b is never needed; $\exists G$ iff ⊇{A1a,A2,A3,A5} on B,KB,S5 (box also KD45); collapse iff ⊇{A1a,A2,A5} there; Gödel essence with {A1a,A2,A5} has no model.
 
-Status: derived
+Status: derived · author check only
 
 Kind: model
 
@@ -306,7 +306,7 @@ Prior art: partial prior art (answer: `prior-art/R9.md`)
 
 Constant-domain full-property simplified AllMeet slice (216 cells): every cell is consistent and permits noncollapse; $\exists G$ and $\Box\exists G$ hold exactly for all three axioms with local/either closure. Every other cell has a finite countermodel.
 
-Status: derived
+Status: derived · author check only
 
 Kind: model
 
@@ -328,7 +328,7 @@ Prior art: partial prior art (answer: `prior-art/R11.md`)
 
 Varying-domain full-property simplified slices: AllMeet has exactly K24’s 216-cell outcomes; binary closure has 216 consistent, noncollapsing cells refuting $\exists^E G$ and $\Box\exists^E G$, even with A1w. Positive AllMeet cells require all axioms and local/either closure.
 
-Status: derived
+Status: derived · author check only
 
 Kind: model
 
@@ -380,3 +380,8 @@ essence.
 5. <!-- cite:fitting2002types --> Fitting, Melvin. 2002. Types, Tableaus, and G\"odel's God. Kluwer
 6. <!-- cite:benzmueller2017hajek --> Benzm\"uller, Christoph and Weber, Leon and Woltzenlogel Paleo, Bruno. 2017. Computer-Assisted Analysis of the Anderson--H\'ajek Ontological Controversy. Logica Universalis
 7. <!-- cite:benzmueller2026ultrafilters --> Benzm\"uller, Christoph. 2026. A Comment on Modal Collapse and Ultrafilters in G\"odel's Ontological Argument. [Link](https://arxiv.org/abs/2608.07578)
+
+<!-- autoresearch:revisions -->
+## Revisions
+
+- 2026-10-21 — Production note: Lean proofs run inside check scripts are now described as such, separately from harness-built proofs
