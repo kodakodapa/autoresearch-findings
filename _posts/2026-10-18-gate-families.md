@@ -85,41 +85,41 @@ We believe this result is new. Our prior-art searches (2026-10-17 to 2026-10-18)
 
 We found no earlier statement of it, but we can't be certain. If you know of prior work, please open an issue.
 
-This result was found by AI research agents (the autoresearch harness). It was partly proved in Lean (claims K14, K18, K21) and partly checked by script (claims K20, K22, K23); the proof and check files are included so anyone can re-run them.
+This result was found by AI research agents (the autoresearch harness). It was partly checked by scripts that run Lean proofs (claims K14, K18, K21) and partly checked by script (claims K20, K22, K23); the proof and check files are included so anyone can re-run them.
 
 **K14.** `For all n>=0, r>=1, k>=1, j>=0 (height semantics of closed GL fixed points), V_{n,r}=[]([]^nF|(p&(q|~[]^r q))): CC with F_k iff k+r<=n; with P_j iff r<n<j; any two V's defect. For r<n each is universally unexploitable, all pairwise distinct. Lean.`
 
-- Status: derived
+- Status: derived · author check only
 - Machine-checked: 2 of 2 check scripts passed.
 - Prior art: possibly new: no prior art found in the owner's search
 
 **K18.** `For all m>=j>=1 (height semantics of closed GL fixed points), G_{m,j}=[]([]^m p&(q|[]([]^jF|~q))), size m+j+10, is unexploitable, coops with FB and CB, defects vs itself; CC with F_k iff k<=j, P_i iff i>m; defects vs ~[]F unlike every V_{n,r} with n>=1. Lean.`
 
-- Status: derived
+- Status: derived · author check only
 - Machine-checked: 1 of 1 check scripts passed.
 - Prior art: possibly new: no prior art found in the owner's search
 
 **K20.** `For all H_{m,j}=box^{m+1}(p&(q|box(box^j F|~q))), 1<=j<=m, size m+j+10<=15 (six agents), self-play is DD, FB/CB CC; CC with F_k iff k<=j (k<=4), P_i iff i>m (i<=5). GLS certifies 102 cells including separators from matching G and bounded V.`
 
-- Status: derived
+- Status: derived · author check only
 - Machine-checked: 1 of 1 check scripts passed.
 - Prior art: possibly new: no prior art found in the owner's search
 
 **K21.** `For m>=1, j>=1 (height semantics of closed GL fixed points), H_{m,j}=[]^{m+1}(p&(q|[]([]^jF|~q))) is unexploitable; DB trace h<=m; CC with F_k iff k<=j, P_i iff i>m; H vs H defect (j<=m); S_j=[]^{j+1}(p|~[]^{j+1}q) gives D/C vs H_{m,j}, D/D vs G_{m,j}. Lean.`
 
-- Status: derived
+- Status: derived · author check only
 - Machine-checked: 1 of 1 check scripts passed.
 - Prior art: possibly new: no prior art found in the owner's search
 
 **K22.** `In L, the size-13 agent J=[][]([]p&(q|[]([]F|~q))) has self DD and FB/CB CC. Its F1..4/P0..5 outcomes match G21 and H21, but two size<=9 opponents distinguish all three; all 48 stated cells are GLS-certified.`
 
-- Status: derived
+- Status: derived · author check only
 - Machine-checked: 1 of 1 check scripts passed.
 - Prior art: possibly new: no prior art found in the owner's search
 
 **K23.** For $J_{a,b,j}=\Box^{a+1}(\Box^b p\wedge(q\vee\Box(\Box^jF\vee\neg q)))$, $0\le a,b\le5$, $1\le j\le6$: CC with $F_k$ ($k\le9$) iff $k\le j$, $P_i$ ($i\le9$) iff $i>a+b$; vs $S_{u,t}$ ($u,t\le8$): CC if $u\le j$, else D/C iff $t+b\le u$, else DD. The 70 with $j\le a+b\le5$ are distinct.
 
-- Status: derived
+- Status: derived · author check only
 - Machine-checked: 2 of 2 check scripts passed.
 - Prior art: possibly new: no prior art found in the owner's search
 
@@ -147,3 +147,8 @@ exits with status 0. The results recorded in the original run are in
 2. <!-- cite:oesterheld2022compatibility --> Oesterheld, Caspar. 2022. A Note on the Compatibility of Different Robust Program Equilibria of the Prisoner's Dilemma. [Link](https://arxiv.org/abs/2211.05057)
 3. <!-- cite:solovay1976provability --> Solovay, Robert M.. 1976. Provability Interpretations of Modal Logic. Israel Journal of Mathematics
 4. <!-- cite:boolos1993logic --> Boolos, George. 1993. The Logic of Provability. Cambridge University Press
+
+<!-- autoresearch:revisions -->
+## Revisions
+
+- 2026-10-21 — Production note: Lean proofs run inside check scripts are now described as such, separately from harness-built proofs

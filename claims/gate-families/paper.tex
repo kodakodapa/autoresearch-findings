@@ -80,15 +80,15 @@ We found no earlier statement of it, but we can't be certain. If you know of pri
 
 \subsection*{How it was produced}
 
-This result was found by AI research agents (the autoresearch harness). It was partly proved in Lean (claims K14, K18, K21) and partly checked by script (claims K20, K22, K23); the proof and check files are included so anyone can re-run them.
+This result was found by AI research agents (the autoresearch harness). It was partly checked by scripts that run Lean proofs (claims K14, K18, K21) and partly checked by script (claims K20, K22, K23); the proof and check files are included so anyone can re-run them.
 
 \section{Claims}
 
 \subsection*{Claim K14}
 
-For all n\textgreater{}=0, r\textgreater{}=1, k\textgreater{}=1, j\textgreater{}=0 (height semantics of closed GL fixed points), V\_\{n,r\}=[]([]\textasciicircum{}nF\textbar{}(p\&(q\textbar{}\textasciitilde{}[]\textasciicircum{}r q))): CC with F\_k iff k+r\textless{}=n; with P\_j iff r\textless{}n\textless{}j; any two V's defect. For r\textless{}n each is universally unexploitable, all pairwise distinct. Lean.
+\texttt{For all n\textgreater{}=0, r\textgreater{}=1, k\textgreater{}=1, j\textgreater{}=0 (height semantics of closed GL fixed points), V\_\{n,r\}=[]([]\textasciicircum{}nF\textbar{}(p\&(q\textbar{}\textasciitilde{}[]\textasciicircum{}r q))): CC with F\_k iff k+r\textless{}=n; with P\_j iff r\textless{}n\textless{}j; any two V's defect. For r\textless{}n each is universally unexploitable, all pairwise distinct. Lean.}
 
-Status: derived.
+Status: derived · author check only.
 
 \paragraph{Verified.}
 \begin{itemize}
@@ -98,16 +98,16 @@ Status: derived.
 
 \paragraph{Evidence.}
 \begin{itemize}
-\item reasoning: Closed GL fixed points are letter-free and decided by height on finite linear frames (Boolos, Logic of Provability ch. 7); v\_unexploitable quantifies over arbitrary opponent traces, hence all modal opponents.
+\item reasoning: Closed GL fixed points are letter-free and decided by height on finite linear frames (Boolos, Logic of Provability ch. 7); v\textbackslash{}\_unexploitable quantifies over arbitrary opponent traces, hence all modal opponents.
 \end{itemize}
 
 \paragraph{Prior art.} Possibly new: no prior art found in the owner's search.
 
 \subsection*{Claim K18}
 
-For all m\textgreater{}=j\textgreater{}=1 (height semantics of closed GL fixed points), G\_\{m,j\}=[]([]\textasciicircum{}m p\&(q\textbar{}[]([]\textasciicircum{}jF\textbar{}\textasciitilde{}q))), size m+j+10, is unexploitable, coops with FB and CB, defects vs itself; CC with F\_k iff k\textless{}=j, P\_i iff i\textgreater{}m; defects vs \textasciitilde{}[]F unlike every V\_\{n,r\} with n\textgreater{}=1. Lean.
+\texttt{For all m\textgreater{}=j\textgreater{}=1 (height semantics of closed GL fixed points), G\_\{m,j\}=[]([]\textasciicircum{}m p\&(q\textbar{}[]([]\textasciicircum{}jF\textbar{}\textasciitilde{}q))), size m+j+10, is unexploitable, coops with FB and CB, defects vs itself; CC with F\_k iff k\textless{}=j, P\_i iff i\textgreater{}m; defects vs \textasciitilde{}[]F unlike every V\_\{n,r\} with n\textgreater{}=1. Lean.}
 
-Status: derived.
+Status: derived · author check only.
 
 \paragraph{Verified.}
 \begin{itemize}
@@ -116,18 +116,18 @@ Status: derived.
 
 \paragraph{Evidence.}
 \begin{itemize}
-\item reasoning: Closed GL fixed points are letter-free and decided by height on finite linear frames (Boolos, Logic of Provability ch. 7); g\_unexploitable quantifies over arbitrary opponent traces, hence all modal opponents.
-\item reasoning: Scope fix only: the Lean lemma v\_conbot already assumes n\textgreater{}=1; V\_\{0,1\} defects against ConBot (the skeptic, k18\_conbot\_scope\_failure.py).
-\item reasoning: Scope corrected: v\_conbot (Lean, in c046\_gfam\_lean.py) assumes 1\textless{}=n; V\_\{0,r\} defects vs ConBot (the skeptic's k18\_conbot\_scope\_failure.py).
+\item reasoning: Closed GL fixed points are letter-free and decided by height on finite linear frames (Boolos, Logic of Provability ch. 7); g\textbackslash{}\_unexploitable quantifies over arbitrary opponent traces, hence all modal opponents.
+\item reasoning: Scope fix only: the Lean lemma v\textbackslash{}\_conbot already assumes n\textbackslash{}\textgreater{}=1; V\textbackslash{}\_\{0,1\} defects against ConBot (the skeptic, k18\textbackslash{}\_conbot\textbackslash{}\_scope\textbackslash{}\_failure.py).
+\item reasoning: Scope corrected: v\textbackslash{}\_conbot (Lean, in c046\textbackslash{}\_gfam\textbackslash{}\_lean.py) assumes 1\textbackslash{}\textless{}=n; V\textbackslash{}\_\{0,r\} defects vs ConBot (the skeptic's k18\textbackslash{}\_conbot\textbackslash{}\_scope\textbackslash{}\_failure.py).
 \end{itemize}
 
 \paragraph{Prior art.} Possibly new: no prior art found in the owner's search.
 
 \subsection*{Claim K20}
 
-For all H\_\{m,j\}=box\textasciicircum{}\{m+1\}(p\&(q\textbar{}box(box\textasciicircum{}j F\textbar{}\textasciitilde{}q))), 1\textless{}=j\textless{}=m, size m+j+10\textless{}=15 (six agents), self-play is DD, FB/CB CC; CC with F\_k iff k\textless{}=j (k\textless{}=4), P\_i iff i\textgreater{}m (i\textless{}=5). GLS certifies 102 cells including separators from matching G and bounded V.
+\texttt{For all H\_\{m,j\}=box\textasciicircum{}\{m+1\}(p\&(q\textbar{}box(box\textasciicircum{}j F\textbar{}\textasciitilde{}q))), 1\textless{}=j\textless{}=m, size m+j+10\textless{}=15 (six agents), self-play is DD, FB/CB CC; CC with F\_k iff k\textless{}=j (k\textless{}=4), P\_i iff i\textgreater{}m (i\textless{}=5). GLS certifies 102 cells including separators from matching G and bounded V.}
 
-Status: derived.
+Status: derived · author check only.
 
 \paragraph{Verified.}
 \begin{itemize}
@@ -143,9 +143,9 @@ Status: derived.
 
 \subsection*{Claim K21}
 
-For m\textgreater{}=1, j\textgreater{}=1 (height semantics of closed GL fixed points), H\_\{m,j\}=[]\textasciicircum{}\{m+1\}(p\&(q\textbar{}[]([]\textasciicircum{}jF\textbar{}\textasciitilde{}q))) is unexploitable; DB trace h\textless{}=m; CC with F\_k iff k\textless{}=j, P\_i iff i\textgreater{}m; H vs H defect (j\textless{}=m); S\_j=[]\textasciicircum{}\{j+1\}(p\textbar{}\textasciitilde{}[]\textasciicircum{}\{j+1\}q) gives D/C vs H\_\{m,j\}, D/D vs G\_\{m,j\}. Lean.
+\texttt{For m\textgreater{}=1, j\textgreater{}=1 (height semantics of closed GL fixed points), H\_\{m,j\}=[]\textasciicircum{}\{m+1\}(p\&(q\textbar{}[]([]\textasciicircum{}jF\textbar{}\textasciitilde{}q))) is unexploitable; DB trace h\textless{}=m; CC with F\_k iff k\textless{}=j, P\_i iff i\textgreater{}m; H vs H defect (j\textless{}=m); S\_j=[]\textasciicircum{}\{j+1\}(p\textbar{}\textasciitilde{}[]\textasciicircum{}\{j+1\}q) gives D/C vs H\_\{m,j\}, D/D vs G\_\{m,j\}. Lean.}
 
-Status: derived.
+Status: derived · author check only.
 
 \paragraph{Verified.}
 \begin{itemize}
@@ -154,18 +154,18 @@ Status: derived.
 
 \paragraph{Evidence.}
 \begin{itemize}
-\item reasoning: Closed GL fixed points are letter-free and decided by height on finite linear frames (Boolos, Logic of Provability ch. 7); h\_unexploitable quantifies over arbitrary opponent traces, hence all modal opponents.
-\item reasoning: Scope narrowed to m\textgreater{}=1; Lean theorem g\_sep assumes 1\textless{}=m, and at m=0 G=H syntactically.
-\item reasoning: Scope fix: g\_sep (Lean) assumes 1\textless{}=m; at m=0 G\_\{0,j\}=H\_\{0,j\} (another researcher's k21\_zero\_scope.py).
+\item reasoning: Closed GL fixed points are letter-free and decided by height on finite linear frames (Boolos, Logic of Provability ch. 7); h\textbackslash{}\_unexploitable quantifies over arbitrary opponent traces, hence all modal opponents.
+\item reasoning: Scope narrowed to m\textbackslash{}\textgreater{}=1; Lean theorem g\textbackslash{}\_sep assumes 1\textbackslash{}\textless{}=m, and at m=0 G=H syntactically.
+\item reasoning: Scope fix: g\textbackslash{}\_sep (Lean) assumes 1\textbackslash{}\textless{}=m; at m=0 G\textbackslash{}\_\{0,j\}=H\textbackslash{}\_\{0,j\} (another researcher's k21\textbackslash{}\_zero\textbackslash{}\_scope.py).
 \end{itemize}
 
 \paragraph{Prior art.} Possibly new: no prior art found in the owner's search.
 
 \subsection*{Claim K22}
 
-In L, the size-13 agent J=[][]([]p\&(q\textbar{}[]([]F\textbar{}\textasciitilde{}q))) has self DD and FB/CB CC. Its F1..4/P0..5 outcomes match G21 and H21, but two size\textless{}=9 opponents distinguish all three; all 48 stated cells are GLS-certified.
+\texttt{In L, the size-13 agent J=[][]([]p\&(q\textbar{}[]([]F\textbar{}\textasciitilde{}q))) has self DD and FB/CB CC. Its F1..4/P0..5 outcomes match G21 and H21, but two size\textless{}=9 opponents distinguish all three; all 48 stated cells are GLS-certified.}
 
-Status: derived.
+Status: derived · author check only.
 
 \paragraph{Verified.}
 \begin{itemize}
@@ -183,7 +183,7 @@ Status: derived.
 
 For $J_{a,b,j}=\Box^{a+1}(\Box^b p\wedge(q\vee\Box(\Box^jF\vee\neg q)))$, $0\le a,b\le5$, $1\le j\le6$: CC with $F_k$ ($k\le9$) iff $k\le j$, $P_i$ ($i\le9$) iff $i>a+b$; vs $S_{u,t}$ ($u,t\le8$): CC if $u\le j$, else D/C iff $t+b\le u$, else DD. The 70 with $j\le a+b\le5$ are distinct.
 
-Status: derived.
+Status: derived · author check only.
 
 \paragraph{Verified.}
 \begin{itemize}
@@ -193,8 +193,8 @@ Status: derived.
 
 \paragraph{Evidence.}
 \begin{itemize}
-\item reasoning: S\_\{u,t\} has DB trace h\textless{}=u-1, so for u\textgreater{}j J's q-test fails from u and J coops exactly at h\textless{}=u+a; S needs J at all g\textless{}=a+b+t, satisfied iff t+b\textless{}=u.
-\item reasoning: another researcher's \texttt{placement\_certificates.py} (a check not published with this finding): 160 GLS-certified cells for all 8 triples with 1\textless{}=j\textless{}=a+b\textless{}=2 vs F\_1..3, P\_0..3, S\_\{u,t\} (u,t\textless{}=3), self, CB, DB, ConBot agree with these laws; another researcher's independent height solver reproduces the pinned rows (sha c0422274...).
+\item reasoning: S\textbackslash{}\_\{u,t\} has DB trace h\textbackslash{}\textless{}=u-1, so for u\textbackslash{}\textgreater{}j J's q-test fails from u and J coops exactly at h\textbackslash{}\textless{}=u+a; S needs J at all g\textbackslash{}\textless{}=a+b+t, satisfied iff t+b\textbackslash{}\textless{}=u.
+\item reasoning: another researcher's \texttt{placement\_certificates.py} (a check not published with this finding): 160 GLS-certified cells for all 8 triples with 1\textbackslash{}\textless{}=j\textbackslash{}\textless{}=a+b\textbackslash{}\textless{}=2 vs F\textbackslash{}\_1..3, P\textbackslash{}\_0..3, S\textbackslash{}\_\{u,t\} (u,t\textbackslash{}\textless{}=3), self, CB, DB, ConBot agree with these laws; another researcher's independent height solver reproduces the pinned rows (sha c0422274...).
 \end{itemize}
 
 \paragraph{Prior art.} Possibly new: no prior art found in the owner's search.
@@ -205,6 +205,12 @@ Run \texttt{20261017-1126}, claims K14, K18, K20, K21, K22, K23, run-folder comm
 \section{How to verify}
 
 Each finding has its check scripts in \texttt{claims/gate-families/checks/} of the findings repository. Run each with \texttt{python -I <script>}; it passes if it exits with status 0. The checks are Python scripts and need the packages of the research image (the image's \texttt{requirements.txt}); the Lean checks also need \texttt{lean}.
+
+\section{Revisions}
+
+\begin{itemize}
+\item 2026-10-21 --- Production note: Lean proofs run inside check scripts are now described as such, separately from harness-built proofs
+\end{itemize}
 
 \nocite{*}
 \bibliographystyle{plain}

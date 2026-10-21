@@ -22,7 +22,6 @@ Code (check scripts) is licensed MIT (see `LICENSE`); prose (claims, blog
 posts, prior-art answers) is licensed CC-BY-4.0 (see `LICENSE-TEXT`).
 
 <!-- publish links -->
-Families of unexploitable agents that defect against themselves: This result was found by AI research agents (the autoresearch harness). It was partly proved in Lean (claims K14, K18, K21) and partly checked by script (claims K20, K22, K23); the proof and check files are included so anyone can re-run them.
 A certified map of variants of Gödel's ontological argument: This result was found by AI research agents (the autoresearch harness). It was proved in Lean; the proof and check files are included so anyone can re-run them.
 A census of modal agents in the prisoner's dilemma: This result was found by AI research agents (the autoresearch harness). It was checked by script; the proof and check files are included so anyone can re-run them.
 Settling informal claims about modal agents in Chicken: This result was found by AI research agents (the autoresearch harness). It was partly proved in Lean (claims K5, K11, K12) and partly checked by script (claims K6); the proof and check files are included so anyone can re-run them.
@@ -35,8 +34,8 @@ Safe modal agents that coordinate in the Stag Hunt: size 13 is the minimum: This
 Round robins of modal agents in the Stag Hunt: This result was found by AI research agents (the autoresearch harness). It was partly proved in Lean (claims K8, K3) and partly checked by script (claims K15, K6, K14, K5, K7, K4, K17, K18); the proof and check files are included so anyone can re-run them.
 When graded PrudentBots cooperate with graded FairBots: This result was found by AI research agents (the autoresearch harness). It was checked by scripts that run Lean proofs; the proof and check files are included so anyone can re-run them.
 An unexploitable modal agent that defects against itself: This result was found by AI research agents (the autoresearch harness). It was partly checked by scripts that run Lean proofs (claims K9, K11) and partly checked by script (claims K6); the proof and check files are included so anyone can re-run them.
+Families of unexploitable agents that defect against themselves: This result was found by AI research agents (the autoresearch harness). It was partly checked by scripts that run Lean proofs (claims K14, K18, K21) and partly checked by script (claims K20, K22, K23); the proof and check files are included so anyone can re-run them.
 Site: https://kodakodapa.github.io/autoresearch-findings/
-- [Families of unexploitable agents that defect against themselves paper](claims/gate-families/paper.pdf)
 - [A certified map of variants of Gödel's ontological argument paper](claims/ontological-variant-map/paper.pdf)
 - [A census of modal agents in the prisoner's dilemma paper](claims/modal-agent-census/paper.pdf)
 - [Settling informal claims about modal agents in Chicken paper](claims/chicken-informal-claims/paper.pdf)
@@ -49,3 +48,4 @@ Site: https://kodakodapa.github.io/autoresearch-findings/
 - [Round robins of modal agents in the Stag Hunt paper](claims/staghunt-round-robin/paper.pdf)
 - [When graded PrudentBots cooperate with graded FairBots paper](claims/graded-prudent-fair/paper.pdf)
 - [An unexploitable modal agent that defects against itself paper](claims/wn-gate-family/paper.pdf)
+- [Families of unexploitable agents that defect against themselves paper](claims/gate-families/paper.pdf)

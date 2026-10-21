@@ -5,28 +5,6 @@
         "ch. 7"
       ],
       "claims": [
-        "K14",
-        "K18",
-        "K20",
-        "K21",
-        "K22",
-        "K23"
-      ],
-      "commit": "662166ecff0651902cc5fcb04bf747c62d795af2",
-      "date": "2026-10-18",
-      "pdf": true,
-      "run_label": "20261017-1126",
-      "slug": "gate-families",
-      "threads": [
-        "C046"
-      ],
-      "title": "Families of unexploitable agents that defect against themselves"
-    },
-    {
-      "allowed": [
-        "ch. 7"
-      ],
-      "claims": [
         "K2",
         "K7",
         "K9",
@@ -302,6 +280,34 @@
         "C046"
       ],
       "title": "An unexploitable modal agent that defects against itself"
+    },
+    {
+      "allowed": [
+        "ch. 7"
+      ],
+      "claims": [
+        "K14",
+        "K18",
+        "K20",
+        "K21",
+        "K22",
+        "K23"
+      ],
+      "commit": "662166ecff0651902cc5fcb04bf747c62d795af2",
+      "date": "2026-10-18",
+      "pdf": true,
+      "revisions": [
+        {
+          "date": "2026-10-21",
+          "reason": "Production note: Lean proofs run inside check scripts are now described as such, separately from harness-built proofs"
+        }
+      ],
+      "run_label": "20261017-1126",
+      "slug": "gate-families",
+      "threads": [
+        "C046"
+      ],
+      "title": "Families of unexploitable agents that defect against themselves"
     }
   ]
 }
