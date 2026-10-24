@@ -1,0 +1,33 @@
+{
+  "axioms": [
+    "Ax1GenTwo",
+    "Ax2a",
+    "Ax2b",
+    "Ax3",
+    "Ax4",
+    "P",
+    "R",
+    "e",
+    "eNonempty",
+    "existsAt",
+    "i",
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "axioms_output": "'Programme.F.TwoV3Plain.P_of_conj_hf' depends on axioms: [Ax1GenTwo,\n Ax2a,\n Ax2b,\n Ax3,\n Ax4,\n P,\n R,\n e,\n eNonempty,\n existsAt,\n i,\n propext,\n Classical.choice,\n Quot.sound]\n",
+  "build_log": "main_False_hf' depends on axioms: [Ax1GenTwo,\n Ax2a,\n Ax3,\n Ax4,\n P,\n R,\n e,\n eNonempty,\n existsAt,\n i,\n propext,\n Classical.choice,\n Quot.sound]\ninfo: Programme/F/TwoV2.lean:92:0: 'Programme.F.TwoV2.only_top_and_empty_domain_hf' depends on axioms: [Ax1GenTwo,\n Ax2a,\n Ax3,\n Ax4,\n P,\n R,\n e,\n eNonempty,\n existsAt,\n i,\n propext,\n Classical.choice,\n Quot.sound]\nBuild completed successfully (7 jobs).\n",
+  "duration_s": 0.7825727462768555,
+  "exit": 0,
+  "figures": [],
+  "path": "checks/K2-TwoV3Plain.lean",
+  "reason": "proof built and axioms verified",
+  "result": "pass",
+  "run_at": "2026-10-22T13:22:05.580923+00:00",
+  "stderr_head": "",
+  "stderr_tail": "",
+  "stdout_tail": "{\"result\": \"pass\", \"reason\": \"proof built and axioms verified\", \"axioms_output\": \"'Programme.F.TwoV3Plain.P_of_conj_hf' depends on axioms: [Ax1GenTwo,\\n Ax2a,\\n Ax2b,\\n Ax3,\\n Ax4,\\n P,\\n R,\\n e,\\n eNonempty,\\n existsAt,\\n i,\\n propext,\\n Classical.choice,\\n Quot.sound]\\n\", \"build_log\": \"main_False_hf' depends on axioms: [Ax1GenTwo,\\n Ax2a,\\n Ax3,\\n Ax4,\\n P,\\n R,\\n e,\\n eNonempty,\\n existsAt,\\n i,\\n propext,\\n Classical.choice,\\n Quot.sound]\\ninfo: Programme/F/TwoV2.lean:92:0: 'Programme.F.TwoV2.only_top_and_empty_domain_hf' depends on axioms: [Ax1GenTwo,\\n Ax2a,\\n Ax3,\\n Ax4,\\n P,\\n R,\\n e,\\n eNonempty,\\n existsAt,\\n i,\\n propext,\\n Classical.choice,\\n Quot.sound]\\nBuild completed successfully (7 jobs).\\n\"}\n",
+  "theorem": "Programme.F.TwoV3Plain.P_of_conj_hf",
+  "timeout_s": 120,
+  "type": "proof"
+}

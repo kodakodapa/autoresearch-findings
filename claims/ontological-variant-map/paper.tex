@@ -68,13 +68,13 @@ This result extends the single cells and per-proof axiom dependencies of Scott's
 \item Benzmüller \& Scott, ``Notes on Gödel's and Scott's variants of the ontological argument'', Monatshefte für Mathematik (2025), and its Isabelle/HOL development (AFP entry Notes\_On\_Goedels\_Ontological\_Argument, theory outline): per-theorem dependencies; modal collapse for Gödel variants 2 and 3 needs ``only symmetry''; Scott's T3 and MC use Rsymm; Scott's variant fails in K only in the last step; UniqueEss lemmas (an essence of x is necessarily had only by x).
 \item Benzmüller, ``Gödel's and Scott's Variants of the Ontological Argument in Lean 4 and TPTP THF'' (arXiv 2609.26806, Oct 2026): Lean port with \texttt{\#print axioms} dependency tables (Table 4) over S5, S4 and K embeddings, actualist/possibilist/mixed quantifiers; Th4 of Gödel variant 2 does not need Ax4; Scott's T3 and MC depend on symmetry alone; Gödel's 1970 axioms inconsistent in K.
 \item Benzmüller, ``Proofs Without Nominals: Gödel's Ontological Argument, its Shallow Embedding, and the Open Questions of the Monatshefte Notes'' (arXiv 2609.36279, 2026): the conjunction axiom must be emended (two or more conjuncts); collapse in K under the original axiom; in variant 3 an essence of x can only be ``being x''.
-\item Benzmüller \& Woltzenlogel Paleo, automating Gödel's proof (2014–2016, incl. arXiv 1308.4526): KB suffices; Scott's axioms imply collapse; Gödel's original inconsistent.
+\item Benzmüller \& Woltzenlogel Paleo, automating Gödel's proof (2014--2016, incl. arXiv 1308.4526): KB suffices; Scott's axioms imply collapse; Gödel's original inconsistent.
 \item Benzmüller \& Fuenmayor, positive properties, ultrafilters and modal collapse (arXiv 1910.08955): Anderson and Fitting variants avoid collapse.
 \item Benzmüller, ``A (simplified) supreme being necessarily exists'' (arXiv 2001.04701; KR 2020): simplified axioms valid in K and T without collapse.
 \item github.com/drewarrowood/godel-ontological (Lean 4): Scott with frame hypotheses; Symmetric gives local T3, S4 countermodel; rigid (world-independent) positivity makes A4 free but admits a countermodel to global T3; Russell-cut table (dropping A5 or A3).
 \item Fitting, Types, Tableaus and Gödel's God (2002); Sobel, Logic and Theism (2004); Anderson (1990); Wikipedia ``Gödel's ontological proof'' and ``Modal collapse''.
 \item Benzmüller, ``A Comment on Modal Collapse and Ultrafilters in Gödel's Ontological Argument'' (arXiv 2608.07578, 2026), replying to Odifreddi \& Gomes, Logica Universalis (2026).
-\item Benzmüller, Weber \& Woltzenlogel Paleo, ``Computer-Assisted Analysis of the Anderson–Hájek Ontological Controversy'' (Logica Universalis 2017; summary version read).
+\item Benzmüller, Weber \& Woltzenlogel Paleo, ``Computer-Assisted Analysis of the Anderson--Hájek Ontological Controversy'' (Logica Universalis 2017; summary version read).
 \item Anderson \& Gettings, ``Gödel's Ontological Proof Revisited'', in Gödel '96 (abstract only).
 \end{itemize}
 
@@ -106,18 +106,18 @@ Status: derived · author check only.
 
 \subsection*{Claim K7}
 
-Constant domain, rigid properties, Scott/Gödel essence, all 32 subsets × 9 classes certified: no consistent cell forces collapse; $\exists x\,G(x)$ and $\Box\exists x\,G(x)$ hold iff the subset contains A1,A2,A3, or A1,A3,A5 with Scott essence, on every frame.
+Constant domain, rigid properties, Scott/Gödel essence, all 32 subsets $\times$ 9 classes certified: no consistent cell forces collapse; $\exists x\,G(x)$ and $\Box\exists x\,G(x)$ hold iff the subset contains A1,A2,A3, or A1,A3,A5 with Scott essence, on every frame.
 
 Status: derived · author check only.
 
 \paragraph{Verified.}
 \begin{itemize}
-\item \texttt{checks/K7-c009\_rigid\_table.py}: lean --stdin exit 0, no sorry, no axiom decls; A123\_god/box, A135S\_god/box, A12\_A5S, A125G\_no\_world within \{propext, Classical.choice, Quot.sound\}, scott\_rigid\_noncollapse axiom-free; all 576 cells × 4 outcomes certified by a brute-force re-evaluated model or a Lean theorem whose hypotheses ⊆ cell axioms; no pool model contradicts a Lean cell; stated pattern asserted for every cell --- pass
+\item \texttt{checks/K7-c009\_rigid\_table.py}: lean --stdin exit 0, no sorry, no axiom decls; A123\_god/box, A135S\_god/box, A12\_A5S, A125G\_no\_world within \{propext, Classical.choice, Quot.sound\}, scott\_rigid\_noncollapse axiom-free; all 576 cells $\times$ 4 outcomes certified by a brute-force re-evaluated model or a Lean theorem whose hypotheses $\subseteq$ cell axioms; no pool model contradicts a Lean cell; stated pattern asserted for every cell --- pass
 \end{itemize}
 
 \paragraph{Evidence.}
 \begin{itemize}
-\item reasoning: Rigid essence of x is \{x\} (Scott) or ⊆\{x\} (Gödel, includes ∅), so NE\textbackslash{}\_w is ⊤ (Scott) or ∅ (Gödel) at serial worlds; constant copies of one-world models onto a universal 2-world frame preserve all axioms, so collapse is never forced.
+\item reasoning: Rigid essence of x is \{x\} (Scott) or $\subseteq$\{x\} (Gödel, includes ∅), so NE\textbackslash{}\_w is $\top$ (Scott) or ∅ (Gödel) at serial worlds; constant copies of one-world models onto a universal 2-world frame preserve all axioms, so collapse is never forced.
 \end{itemize}
 
 \paragraph{Prior art.} Partial prior art.
@@ -142,7 +142,7 @@ Status: derived · author check only.
 
 \subsection*{Claim K13}
 
-Constant-domain extensional Fitting, all subsets of A1a,A1b,A2,H,N × nine frame classes: all 288 cells are consistent and permit noncollapse; both existence conclusions hold exactly for supersets of $\{A1a,A2,H\}$ or $\{A1a,H,N\}$. A1b is unnecessary.
+Constant-domain extensional Fitting, all subsets of A1a,A1b,A2,H,N $\times$ nine frame classes: all 288 cells are consistent and permit noncollapse; both existence conclusions hold exactly for supersets of $\{A1a,A2,H\}$ or $\{A1a,H,N\}$. A1b is unnecessary.
 
 Status: derived · author check only.
 
@@ -160,7 +160,7 @@ Status: derived · author check only.
 
 \subsection*{Claim K15}
 
-Varying-domain (actualist) full-property Anderson, 32 subsets × 9 classes: as in constant domains except $\exists^E x\,G_A(x)$ on KD45 with A4 now fails; a 3-world KD45 model satisfies all five axioms, but its God-like being does not exist at the root.
+Varying-domain (actualist) full-property Anderson, 32 subsets $\times$ 9 classes: as in constant domains except $\exists^E x\,G_A(x)$ on KD45 with A4 now fails; a 3-world KD45 model satisfies all five axioms, but its God-like being does not exist at the root.
 
 Status: derived · author check only.
 
@@ -172,14 +172,14 @@ Status: derived · author check only.
 \paragraph{Evidence.}
 \begin{itemize}
 \item reasoning: A God-like x at w exists at every successor of w (A2 alone), so symmetric and euclidean transfers carry existence along. On KD45 the root is not its own successor, so nothing forces the God-like individual to exist there; A4 fixes positivity, not existence.
-\item citation arxiv:1910.08955 “Computer-supported Analysis of Positive Properties, Ultrafilters and Modal Collapse in Variants of Gödel’s Ontological Argument” — verified
+\item citation arxiv:1910.08955 “Computer-supported Analysis of Positive Properties, Ultrafilters and Modal Collapse in Variants of Gödel’s Ontological Argument” --- verified
 \end{itemize}
 
 \paragraph{Prior art.} Partial prior art.
 
 \subsection*{Claim K16}
 
-Varying-domain (actualist) extensional Fitting, 32 subsets of A1a,A1b,A2,H,N × 9 classes: $\exists^E x\,G(x)$ holds iff the subset contains $\{A1a,A2,H,N\}$ on T, B, S4, S5; $\Box\exists^E x\,G(x)$ also on KD45. K13's sets $\{A1a,A2,H\}$ and $\{A1a,H,N\}$ fail in S5.
+Varying-domain (actualist) extensional Fitting, 32 subsets of A1a,A1b,A2,H,N $\times$ 9 classes: $\exists^E x\,G(x)$ holds iff the subset contains $\{A1a,A2,H,N\}$ on T, B, S4, S5; $\Box\exists^E x\,G(x)$ also on KD45. K13's sets $\{A1a,A2,H\}$ and $\{A1a,H,N\}$ fail in S5.
 
 Status: derived · author check only.
 
@@ -191,14 +191,14 @@ Status: derived · author check only.
 \paragraph{Evidence.}
 \begin{itemize}
 \item reasoning: The haecceity is an essence, so NE(x) at w means x exists at all successors. N then makes a God-like being exist at successors only, so actual existence needs reflexivity, and N no longer forces P(top), which is why \{A1a,H,N\} loses its constant-domain proof. Without N, A2 gives a God-like individual that need not exist anywhere relevant.
-\item citation arxiv:1910.08955 “Computer-supported Analysis of Positive Properties, Ultrafilters and Modal Collapse in Variants of Gödel’s Ontological Argument” — verified
+\item citation arxiv:1910.08955 “Computer-supported Analysis of Positive Properties, Ultrafilters and Modal Collapse in Variants of Gödel’s Ontological Argument” --- verified
 \end{itemize}
 
 \paragraph{Prior art.} Partial prior art.
 
 \subsection*{Claim K18}
 
-Varying-domain rigid Scott, 64 subsets of A1a,A1b,A2..A5 × 9 classes: A1b is never needed; $\exists^E G$ iff ⊇\{A1a,A2,A3,A5\} on T,B,S4,S5 or +A4 on KB; $\Box\exists^E G$ iff ⊇\{A1a,A2,A3,A5\} on T,B,S4,S5,KD45 or +A4 on any frame.
+Varying-domain rigid Scott, 64 subsets of A1a,A1b,A2..A5 $\times$ 9 classes: A1b is never needed; $\exists^E G$ iff ⊇\{A1a,A2,A3,A5\} on T,B,S4,S5 or +A4 on KB; $\Box\exists^E G$ iff ⊇\{A1a,A2,A3,A5\} on T,B,S4,S5,KD45 or +A4 on any frame.
 
 Status: derived · author check only.
 
@@ -211,14 +211,14 @@ Status: derived · author check only.
 \paragraph{Evidence.}
 \begin{itemize}
 \item reasoning: A4 gives inclusion of positivity from w to its successor v, so G at v is contained in G at w. A God-like being at v is therefore God-like at w, and the Scott-essence NE at w (existence at all successors, via the haecceity) puts it in v. Only exclusion (A1a) is used, to make G nonempty and R serial.
-\item citation arxiv:1910.08955 “Computer-supported Analysis of Positive Properties, Ultrafilters and Modal Collapse in Variants of Gödel’s Ontological Argument” — verified
+\item citation arxiv:1910.08955 “Computer-supported Analysis of Positive Properties, Ultrafilters and Modal Collapse in Variants of Gödel’s Ontological Argument” --- verified
 \end{itemize}
 
 \paragraph{Prior art.} Partial prior art.
 
 \subsection*{Claim K21}
 
-Anderson $G_A$, full properties, 64 subsets of A1a,A1b,A2,H,A4,A5 × 9 classes × constant/varying domains: collapse iff ⊇\{A1a,A1b,A2,H\} on B,S5, or +A4 on KB; $\exists G_A$ on KD45 needs A4 or A1b and constant domains; otherwise as K9/K15.
+Anderson $G_A$, full properties, 64 subsets of A1a,A1b,A2,H,A4,A5 $\times$ 9 classes $\times$ constant/varying domains: collapse iff ⊇\{A1a,A1b,A2,H\} on B,S5, or +A4 on KB; $\exists G_A$ on KD45 needs A4 or A1b and constant domains; otherwise as K9/K15.
 
 Status: derived · author check only.
 
@@ -230,14 +230,14 @@ Status: derived · author check only.
 \paragraph{Evidence.}
 \begin{itemize}
 \item reasoning: If x is God-like at w, every property or its complement is positive (A1b), hence necessary for x; applied to world-indicator properties this leaves w at most one successor. On reflexive symmetric frames God-likeness at every world (K9) then isolates each world; on KB a 2-cycle survives unless A4 transfers the indicator of v from w to v.
-\item citation arxiv:1910.08955 “Computer-supported Analysis of Positive Properties, Ultrafilters and Modal Collapse in Variants of Gödel’s Ontological Argument” — verified
+\item citation arxiv:1910.08955 “Computer-supported Analysis of Positive Properties, Ultrafilters and Modal Collapse in Variants of Gödel’s Ontological Argument” --- verified
 \end{itemize}
 
 \paragraph{Prior art.} Partial prior art.
 
 \subsection*{Claim K22}
 
-Full-property Scott, constant or varying domains, 64 subsets of A1a,A1b,A2–A5 × 2 essences × 9 classes: A1b is never needed; $\exists G$ iff ⊇\{A1a,A2,A3,A5\} on B,KB,S5 (box also KD45); collapse iff ⊇\{A1a,A2,A5\} there; Gödel essence with \{A1a,A2,A5\} has no model.
+Full-property Scott, constant or varying domains, 64 subsets of A1a,A1b,A2--A5 $\times$ 2 essences $\times$ 9 classes: A1b is never needed; $\exists G$ iff ⊇\{A1a,A2,A3,A5\} on B,KB,S5 (box also KD45); collapse iff ⊇\{A1a,A2,A5\} there; Gödel essence with \{A1a,A2,A5\} has no model.
 
 Status: derived · author check only.
 
@@ -249,7 +249,7 @@ Status: derived · author check only.
 \paragraph{Evidence.}
 \begin{itemize}
 \item reasoning: T1 needs only that phi and its complement are not both positive: if a positive phi were nowhere exemplified, phi would necessarily entail its complement. Seriality follows the same way from any globally positive property. All later steps (haecceity isolation, symmetric/euclidean transfer) never mention complements. Conversely, making every property positive satisfies A1b and A2-A5 while G is empty.
-\item citation doi:10.3233/978-1-61499-419-0-93 “Automating Gödel's Ontological Proof of God's Existence with Higher-order Automated Theorem Provers” — verified
+\item citation doi:10.3233/978-1-61499-419-0-93 “Automating Gödel's Ontological Proof of God's Existence with Higher-order Automated Theorem Provers” --- verified
 \end{itemize}
 
 \paragraph{Prior art.} Partial prior art.

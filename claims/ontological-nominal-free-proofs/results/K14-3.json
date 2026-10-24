@@ -1,0 +1,12 @@
+{
+  "duration_s": 2.231537342071533,
+  "exit": 0,
+  "figures": [],
+  "path": "checks/K14-hybrid_RigidHF.py",
+  "result": "pass",
+  "run_at": "2026-10-22T13:59:52.118535+00:00",
+  "stderr_head": "",
+  "stderr_tail": "",
+  "stdout_tail": " Nonempty.intro,\n Mexclor,\n Mneg,\n existsAt,\n Or.casesOn,\n instDecidableIff._proof_1,\n Bool.noConfusion,\n Mor,\n Subtype.mk,\n Classical.choose_spec,\n Mallact,\n Mequiv,\n Bool.true,\n _private.Init.Prelude.0.decide_eq_false.match_1_1,\n Classical.indefiniteDescription.match_1,\n Bool.decEq.match_1,\n funext,\n And,\n BEq.beq,\n Unit,\n Ax2b,\n absurd,\n Iff,\n not_false,\n Bool.casesOn,\n Mallposs,\n Exists.casesOn,\n And.right,\n And.left,\n congrFun,\n Decidable.rec,\n PUnit,\n instDecidableEqOfIff._proof_1,\n posGlobal_of,\n G,\n \u03c4,\n And.intro,\n congr,\n True,\n Iff.intro,\n Mtop,\n decidable_of_decidable_of_iff,\n Classical.em,\n Programme.F.RigidHF.guard_pos_hf,\n propext,\n Exists.intro,\n Iff.mp,\n instDecidableFalse,\n eq_true,\n Bool.rec,\n Bool,\n of_eq_true,\n Eq.ndrec,\n Classical.choose,\n Bool.noConfusionType,\n Nonempty,\n Ax2a',\n instDecidableNot.match_1,\n Decidable.byCases,\n Eq.refl,\n Classical.propDecidable._proof_1,\n Mvalid,\n False.rec,\n PUnit.unit,\n Or.inl,\n Or,\n Quot,\n Decidable.isFalse,\n instDecidableNot._proof_1,\n Mnegpred,\n _private.Init.Prelude.0.Bool.ne_true_of_eq_false.match_1_1,\n _private.Init.Classical.0.Classical.em.match_1_3,\n Or.elim,\n PInc,\n Eq.symm,\n not_false_eq_true,\n Bool.false,\n Subtype.val,\n Decidable.decide,\n BEq,\n Eq,\n Bool.Reflects,\n instDecidableIff,\n PosGlobal,\n Not,\n Bool.Internal.and.match_1,\n Mimp,\n Iff.symm,\n Classical.byCases,\n P,\n Exists.rec,\n _private.Init.Prelude.0.of_decide_eq_true.match_1_1,\n Or.inr,\n eq_iff_iff,\n rfl,\n Eq.trans,\n Subtype.property,\n Programme.F.RigidHF.L_R_hf,\n Quot.mk,\n True.intro,\n DecidableEq,\n e]\n== Programme.F.RigidHF: 2 theorems, 0 with flagged witnesses, 0 hybrid, 0 inheriting, 0 connectives at the world type\n== wholeterm Programme.F.RigidHF: 2 theorems, witness-mode hybrid 0 (+0 inheriting), whole-term flagged 0, EXTRA 0\n\nclosure scan clean for 2 theorems against ['L_R', 'RigidPos', 'RigidPos_of_link', 'pos_link', 'Link', 'L_R_rigidpos']\ncontrol Programme.F.RigidHF.ctl flagged as expected\nPASS (full-name match): ['Programme.F.RigidHF.guard_pos_hf', 'Programme.F.RigidHF.L_R_hf']\n",
+  "timeout_s": 120
+}

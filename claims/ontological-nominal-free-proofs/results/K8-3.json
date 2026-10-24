@@ -1,0 +1,12 @@
+{
+  "duration_s": 2.081279993057251,
+  "exit": 0,
+  "figures": [],
+  "path": "checks/K8-hybrid_TwoV3Th4.py",
+  "result": "pass",
+  "run_at": "2026-10-22T13:35:23.969863+00:00",
+  "stderr_head": "",
+  "stderr_tail": "",
+  "stdout_tail": "/tmp/tmp_ly261r9/Programme/F/TwoV3Th4.lean:59:9: warning: Variable name `z1` is not explicitly referenced.\n\nHint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:\n  [apply] _z1\n\nNote: This linter can be disabled with `set_option linter.unusedVariables false`\n/tmp/tmp_ly261r9/Programme/F/TwoV3Th4.lean:60:9: warning: Variable name `z2` is not explicitly referenced.\n\nHint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:\n  [apply] _z2\n\nNote: This linter can be disabled with `set_option linter.unusedVariables false`\n'Programme.F.TwoV3Th4.G_ex_Two_hybrid_hf' depends on axioms: [Ax1GenTwo,\n Ax2a,\n Ax2b,\n Ax3,\n Ax4,\n P,\n R,\n Th4,\n e,\n eNonempty,\n existsAt,\n i,\n propext,\n Classical.choice,\n Quot.sound]\n'Programme.F.TwoV3Th4.AllExist_Two_hf' depends on axioms: [Ax1GenTwo,\n Ax2a,\n Ax3,\n Ax4,\n P,\n R,\n Th4,\n e,\n eNonempty,\n existsAt,\n i,\n iNonempty,\n propext,\n Classical.choice,\n Quot.sound]\n\n'Programme.F.TwoV3Th4.G_ex_Two_hybrid_hf' depends on axioms: [Ax1GenTwo,\n Ax2a,\n Ax2b,\n Ax3,\n Ax4,\n P,\n R,\n Th4,\n e,\n eNonempty,\n existsAt,\n i,\n propext,\n Classical.choice,\n Quot.sound]\n'Programme.F.TwoV3Th4.AllExist_Two_hf' depends on axioms: [Ax1GenTwo,\n Ax2a,\n Ax3,\n Ax4,\n P,\n R,\n Th4,\n e,\n eNonempty,\n existsAt,\n i,\n iNonempty,\n propext,\n Classical.choice,\n Quot.sound]\n== Programme.F.TwoV3Th4: 4 theorems, 0 with flagged witnesses, 0 hybrid, 0 inheriting, 0 connectives at the world type\n== wholeterm Programme.F.TwoV3Th4: 13 theorems, witness-mode hybrid 0 (+0 inheriting), whole-term flagged 0, EXTRA 0\n\ncontrol Programme.F.TwoV3Th4.ctl flagged as expected\nPASS (full-name match): ['Programme.F.TwoV3Th4.G_ex_Two_hybrid_hf', 'Programme.F.TwoV3Th4.AllExist_Two_hf']\n",
+  "timeout_s": 120
+}

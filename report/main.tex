@@ -9,7 +9,7 @@
 \begin{document}
 \maketitle
 \begin{abstract}
-This report collects the findings: A census of modal agents in the prisoner's dilemma; When graded PrudentBots cooperate with graded FairBots; An unexploitable modal agent that defects against itself; Families of unexploitable agents that defect against themselves; A certified map of variants of Gödel's ontological argument; Settling informal claims about modal agents in Chicken; Modal agents in the game of Chicken; Three-player modal agents in a public-goods game; Blending self-defecting modal agents with FairBot: exact laws; How large must a program be to tell graded FairBots apart?; Unexploitable modal agents that cooperate with themselves: a census; Round robins of modal agents in the Stag Hunt; Safe modal agents that coordinate in the Stag Hunt: size 13 is the minimum.
+This report collects the findings: A census of modal agents in the prisoner's dilemma; When graded PrudentBots cooperate with graded FairBots; An unexploitable modal agent that defects against itself; Families of unexploitable agents that defect against themselves; A certified map of variants of Gödel's ontological argument; Settling informal claims about modal agents in Chicken; Modal agents in the game of Chicken; Three-player modal agents in a public-goods game; Blending self-defecting modal agents with FairBot: exact laws; How large must a program be to tell graded FairBots apart?; Unexploitable modal agents that cooperate with themselves: a census; Round robins of modal agents in the Stag Hunt; Safe modal agents that coordinate in the Stag Hunt: size 13 is the minimum; Nominal-free proofs of the theorems Benzmüller's detector flags.
 \end{abstract}
 
 \section{A census of modal agents in the prisoner's dilemma}
@@ -33,7 +33,7 @@ families found in this census; this one reports the census itself.
 \item \textbf{Counts.} Up to size 9 there are 2815 behaviourally distinct agents (new per size 1 to 9: 1, 4, 8, 12, 31, 98, 255, 646, 1760), and every pairwise outcome is solved exactly.
 \item \textbf{No evolutionarily stable agent.} Up to size 9, 180 of the 1335 observational classes are symmetric Nash equilibria, but none is an ESS. Every self-defecting equilibrium is invaded by FairBot, an argument that holds for every modal agent, not only those in the census. Under replicator dynamics from the uniform start, every surviving agent cooperates with itself and the mean payoff tends to 3.
 \item \textbf{The round-robin winner never cooperates.} Up to size 9 the top score belongs to agents that act exactly like DefectBot. Up to size 11 the top 16 agents defect against everyone yet beat DefectBot, because more opponents cooperate with them (9863 against 9688); for example $\Box\Box p \wedge \neg\Box(p \vee \Box\bot)$.
-\item \textbf{Self-defecting cooperators are almost always exploitable.} Among agents that defect against themselves but cooperate with FairBot and CooperateBot (2, 2, 4, …, 2468, 7032 per size 4 to 14), only 3, 19 and 75 at sizes 12, 13 and 14 are unexploitable by every modal opponent. Each of the others is exploited by one of four simple agents: $\Box\neg p$, $\Box p$, $\Box q$ or $\Box\bot$.
+\item \textbf{Self-defecting cooperators are almost always exploitable.} Among agents that defect against themselves but cooperate with FairBot and CooperateBot (2, 2, 4, \ldots{}, 2468, 7032 per size 4 to 14), only 3, 19 and 75 at sizes 12, 13 and 14 are unexploitable by every modal opponent. Each of the others is exploited by one of four simple agents: $\Box\neg p$, $\Box p$, $\Box q$ or $\Box\bot$.
 \item \textbf{A threshold law, and where it breaks.} Up to size 14, every self-defecting agent that cooperates with FairBot cooperates with graded FairBots $F_k = \Box^k p$ exactly for $k \le a$ and with graded PrudentBots $P_i$ exactly for $i \ge b$, for some $a < b$. The law fails at size 17: the agent $Y = \Box(\Box\Box\bot \vee (p \wedge (q \vee \neg\Box(q \wedge \Box\Box\Box\bot))))$ cooperates with $F_1$ and $F_k$ for $k \ge 4$, but not with $F_2$ or $F_3$.
 \end{itemize}
 
@@ -551,13 +551,13 @@ This result extends the single cells and per-proof axiom dependencies of Scott's
 \item Benzmüller \& Scott, ``Notes on Gödel's and Scott's variants of the ontological argument'', Monatshefte für Mathematik (2025), and its Isabelle/HOL development (AFP entry Notes\_On\_Goedels\_Ontological\_Argument, theory outline): per-theorem dependencies; modal collapse for Gödel variants 2 and 3 needs ``only symmetry''; Scott's T3 and MC use Rsymm; Scott's variant fails in K only in the last step; UniqueEss lemmas (an essence of x is necessarily had only by x).
 \item Benzmüller, ``Gödel's and Scott's Variants of the Ontological Argument in Lean 4 and TPTP THF'' (arXiv 2609.26806, Oct 2026): Lean port with \texttt{\#print axioms} dependency tables (Table 4) over S5, S4 and K embeddings, actualist/possibilist/mixed quantifiers; Th4 of Gödel variant 2 does not need Ax4; Scott's T3 and MC depend on symmetry alone; Gödel's 1970 axioms inconsistent in K.
 \item Benzmüller, ``Proofs Without Nominals: Gödel's Ontological Argument, its Shallow Embedding, and the Open Questions of the Monatshefte Notes'' (arXiv 2609.36279, 2026): the conjunction axiom must be emended (two or more conjuncts); collapse in K under the original axiom; in variant 3 an essence of x can only be ``being x''.
-\item Benzmüller \& Woltzenlogel Paleo, automating Gödel's proof (2014–2016, incl. arXiv 1308.4526): KB suffices; Scott's axioms imply collapse; Gödel's original inconsistent.
+\item Benzmüller \& Woltzenlogel Paleo, automating Gödel's proof (2014--2016, incl. arXiv 1308.4526): KB suffices; Scott's axioms imply collapse; Gödel's original inconsistent.
 \item Benzmüller \& Fuenmayor, positive properties, ultrafilters and modal collapse (arXiv 1910.08955): Anderson and Fitting variants avoid collapse.
 \item Benzmüller, ``A (simplified) supreme being necessarily exists'' (arXiv 2001.04701; KR 2020): simplified axioms valid in K and T without collapse.
 \item github.com/drewarrowood/godel-ontological (Lean 4): Scott with frame hypotheses; Symmetric gives local T3, S4 countermodel; rigid (world-independent) positivity makes A4 free but admits a countermodel to global T3; Russell-cut table (dropping A5 or A3).
 \item Fitting, Types, Tableaus and Gödel's God (2002); Sobel, Logic and Theism (2004); Anderson (1990); Wikipedia ``Gödel's ontological proof'' and ``Modal collapse''.
 \item Benzmüller, ``A Comment on Modal Collapse and Ultrafilters in Gödel's Ontological Argument'' (arXiv 2608.07578, 2026), replying to Odifreddi \& Gomes, Logica Universalis (2026).
-\item Benzmüller, Weber \& Woltzenlogel Paleo, ``Computer-Assisted Analysis of the Anderson–Hájek Ontological Controversy'' (Logica Universalis 2017; summary version read).
+\item Benzmüller, Weber \& Woltzenlogel Paleo, ``Computer-Assisted Analysis of the Anderson--Hájek Ontological Controversy'' (Logica Universalis 2017; summary version read).
 \item Anderson \& Gettings, ``Gödel's Ontological Proof Revisited'', in Gödel '96 (abstract only).
 \end{itemize}
 
@@ -580,13 +580,13 @@ Status: derived · author check only.
 
 \subsection*{Claim K7}
 
-Constant domain, rigid properties, Scott/Gödel essence, all 32 subsets × 9 classes certified: no consistent cell forces collapse; $\exists x\,G(x)$ and $\Box\exists x\,G(x)$ hold iff the subset contains A1,A2,A3, or A1,A3,A5 with Scott essence, on every frame.
+Constant domain, rigid properties, Scott/Gödel essence, all 32 subsets $\times$ 9 classes certified: no consistent cell forces collapse; $\exists x\,G(x)$ and $\Box\exists x\,G(x)$ hold iff the subset contains A1,A2,A3, or A1,A3,A5 with Scott essence, on every frame.
 
 Status: derived · author check only.
 
 \paragraph{Verified.}
 \begin{itemize}
-\item \texttt{checks/K7-c009\_rigid\_table.py}: lean --stdin exit 0, no sorry, no axiom decls; A123\_god/box, A135S\_god/box, A12\_A5S, A125G\_no\_world within \{propext, Classical.choice, Quot.sound\}, scott\_rigid\_noncollapse axiom-free; all 576 cells × 4 outcomes certified by a brute-force re-evaluated model or a Lean theorem whose hypotheses ⊆ cell axioms; no pool model contradicts a Lean cell; stated pattern asserted for every cell --- pass
+\item \texttt{checks/K7-c009\_rigid\_table.py}: lean --stdin exit 0, no sorry, no axiom decls; A123\_god/box, A135S\_god/box, A12\_A5S, A125G\_no\_world within \{propext, Classical.choice, Quot.sound\}, scott\_rigid\_noncollapse axiom-free; all 576 cells $\times$ 4 outcomes certified by a brute-force re-evaluated model or a Lean theorem whose hypotheses $\subseteq$ cell axioms; no pool model contradicts a Lean cell; stated pattern asserted for every cell --- pass
 \end{itemize}
 
 \paragraph{Prior art.} Partial prior art.
@@ -606,7 +606,7 @@ Status: derived · author check only.
 
 \subsection*{Claim K13}
 
-Constant-domain extensional Fitting, all subsets of A1a,A1b,A2,H,N × nine frame classes: all 288 cells are consistent and permit noncollapse; both existence conclusions hold exactly for supersets of $\{A1a,A2,H\}$ or $\{A1a,H,N\}$. A1b is unnecessary.
+Constant-domain extensional Fitting, all subsets of A1a,A1b,A2,H,N $\times$ nine frame classes: all 288 cells are consistent and permit noncollapse; both existence conclusions hold exactly for supersets of $\{A1a,A2,H\}$ or $\{A1a,H,N\}$. A1b is unnecessary.
 
 Status: derived · author check only.
 
@@ -619,7 +619,7 @@ Status: derived · author check only.
 
 \subsection*{Claim K15}
 
-Varying-domain (actualist) full-property Anderson, 32 subsets × 9 classes: as in constant domains except $\exists^E x\,G_A(x)$ on KD45 with A4 now fails; a 3-world KD45 model satisfies all five axioms, but its God-like being does not exist at the root.
+Varying-domain (actualist) full-property Anderson, 32 subsets $\times$ 9 classes: as in constant domains except $\exists^E x\,G_A(x)$ on KD45 with A4 now fails; a 3-world KD45 model satisfies all five axioms, but its God-like being does not exist at the root.
 
 Status: derived · author check only.
 
@@ -632,7 +632,7 @@ Status: derived · author check only.
 
 \subsection*{Claim K16}
 
-Varying-domain (actualist) extensional Fitting, 32 subsets of A1a,A1b,A2,H,N × 9 classes: $\exists^E x\,G(x)$ holds iff the subset contains $\{A1a,A2,H,N\}$ on T, B, S4, S5; $\Box\exists^E x\,G(x)$ also on KD45. K13's sets $\{A1a,A2,H\}$ and $\{A1a,H,N\}$ fail in S5.
+Varying-domain (actualist) extensional Fitting, 32 subsets of A1a,A1b,A2,H,N $\times$ 9 classes: $\exists^E x\,G(x)$ holds iff the subset contains $\{A1a,A2,H,N\}$ on T, B, S4, S5; $\Box\exists^E x\,G(x)$ also on KD45. K13's sets $\{A1a,A2,H\}$ and $\{A1a,H,N\}$ fail in S5.
 
 Status: derived · author check only.
 
@@ -645,7 +645,7 @@ Status: derived · author check only.
 
 \subsection*{Claim K18}
 
-Varying-domain rigid Scott, 64 subsets of A1a,A1b,A2..A5 × 9 classes: A1b is never needed; $\exists^E G$ iff ⊇\{A1a,A2,A3,A5\} on T,B,S4,S5 or +A4 on KB; $\Box\exists^E G$ iff ⊇\{A1a,A2,A3,A5\} on T,B,S4,S5,KD45 or +A4 on any frame.
+Varying-domain rigid Scott, 64 subsets of A1a,A1b,A2..A5 $\times$ 9 classes: A1b is never needed; $\exists^E G$ iff ⊇\{A1a,A2,A3,A5\} on T,B,S4,S5 or +A4 on KB; $\Box\exists^E G$ iff ⊇\{A1a,A2,A3,A5\} on T,B,S4,S5,KD45 or +A4 on any frame.
 
 Status: derived · author check only.
 
@@ -659,7 +659,7 @@ Status: derived · author check only.
 
 \subsection*{Claim K21}
 
-Anderson $G_A$, full properties, 64 subsets of A1a,A1b,A2,H,A4,A5 × 9 classes × constant/varying domains: collapse iff ⊇\{A1a,A1b,A2,H\} on B,S5, or +A4 on KB; $\exists G_A$ on KD45 needs A4 or A1b and constant domains; otherwise as K9/K15.
+Anderson $G_A$, full properties, 64 subsets of A1a,A1b,A2,H,A4,A5 $\times$ 9 classes $\times$ constant/varying domains: collapse iff ⊇\{A1a,A1b,A2,H\} on B,S5, or +A4 on KB; $\exists G_A$ on KD45 needs A4 or A1b and constant domains; otherwise as K9/K15.
 
 Status: derived · author check only.
 
@@ -672,7 +672,7 @@ Status: derived · author check only.
 
 \subsection*{Claim K22}
 
-Full-property Scott, constant or varying domains, 64 subsets of A1a,A1b,A2–A5 × 2 essences × 9 classes: A1b is never needed; $\exists G$ iff ⊇\{A1a,A2,A3,A5\} on B,KB,S5 (box also KD45); collapse iff ⊇\{A1a,A2,A5\} there; Gödel essence with \{A1a,A2,A5\} has no model.
+Full-property Scott, constant or varying domains, 64 subsets of A1a,A1b,A2--A5 $\times$ 2 essences $\times$ 9 classes: A1b is never needed; $\exists G$ iff ⊇\{A1a,A2,A3,A5\} on B,KB,S5 (box also KD45); collapse iff ⊇\{A1a,A2,A5\} there; Gödel essence with \{A1a,A2,A5\} has no model.
 
 Status: derived · author check only.
 
@@ -2046,6 +2046,271 @@ coordination properties one wants alongside it.
 
 \paragraph{Provenance.}
 Run \texttt{20261021-0517}, claims K16, K9, K13, K19, run-folder commit \texttt{580565ffd3b3f1a8ca3ffa0407c949c8d724865c}, published 2026-10-21.
+
+\section{Nominal-free proofs of the theorems Benzmüller's detector flags}
+\label{sec:ontological-nominal-free-proofs}
+
+\subsection*{Setting}
+
+Benzmüller and Scott's \emph{Notes} prove variants of Gödel's ontological argument in a shallow
+embedding of higher-order modal logic in classical higher-order logic \cite{benzmueller2025notes}.
+Benzmüller's \emph{Proofs Without Nominals} \cite{benzmueller2026nominals} (v4) points out that the
+embedding's quantifiers also range over \emph{nominals}, properties like $\lambda u.\,u = w$ that pick
+out a single world. A proof that substitutes one proves a theorem of the embedding but not
+necessarily of the modal object language $\mathcal L$. v4 ships a detector that flags such
+``hybrid'' proofs in two modes (witness and whole-term), and lists the theorems of its Lean
+modules it could only prove with a flagged step, among them two of its stated open questions:
+whether the equivalence of the restricted conjunction axiom Ax1GenTwo with the unrestricted
+Ax1Gen has a nominal-free proof in variants 2 and 3$'$, and whether Gödel's lemma L follows under
+the rigid reading Ax1GenR with no condition on positivity.
+
+\subsection*{Result}
+
+For each flagged theorem below we give a new proof of the \emph{identical} statement, from the same
+module's definitions, that v4's own detector passes in both modes (full names):
+
+\begin{itemize}
+\item \textbf{The equivalence question:} \texttt{Ax1Gen\_of\_Two} and \texttt{Two\_equivalent}, with \texttt{P\_of\_conj}, \texttt{loc\_of\_conj} and the related lemmas, in \texttt{Ax1GenTwoVariant2} and \texttt{Ax1GenTwoVariant3Plain} (logic K).
+\item \textbf{The rigid question:} \texttt{L\_R} in \texttt{Ax1GenRigidVariant2}, from Ax2a, Ax2b and Ax4 only, with witness \texttt{PosGlobal} and no condition on positivity.
+\item \textbf{Further flagged theorems:} modal collapse and Th5 in \texttt{Ax1GenBoxVariant3} (the reflexivity hypothesis unused); fourteen theorems of \texttt{GoedelVariantHOML3inS4oneFile} without \texttt{Rrefl} or \texttt{Rtrans}; the one-conjunct theorems of \texttt{Ax1GenOneVariant3}; collapse and the existence theorems of \texttt{Ax1GenTwoVariant3} and \texttt{Ax1GenTwoVariant3Th4}; \texttt{AllExist} and \texttt{MC\_OneWorld} of \texttt{Ax1GenTwoVariant3Plain}; and collapse in its possibilist and Anderson-quantifier versions.
+\item \textbf{A model:} on two worlds with one always-actual entity and a universal frame, Ax1, Ax2a, Ax2b, Ax3, both forms of Ax4, Ax1Gen with its Two, One and Box restrictions, and Th4 hold, and necessary existence holds at both worlds, so \texttt{NoNecExist} fails there; and an abstract Henkin lemma describing what Ax1GenR forces over admitted rigid families.
+\end{itemize}
+
+\subsection*{What is new}
+
+v4 already has nominal-free proofs of two of the lemmas listed first (\texttt{ae\_Two} and
+\texttt{G\_ex\_Two\_unconditional}, under those names), and frame-free \texttt{\_K} versions of most theorems of
+\texttt{GoedelVariantHOML3inS4oneFile}; what this finding adds there are proofs under the original names
+that the detector passes, and nominal-free routes to \texttt{EssSupp}, \texttt{EssDetermined} and \texttt{AllExist}.
+The new results are the equivalence lemmas, which v4 proves only through the nominal arguments
+\texttt{OneWorld} and \texttt{R\_Id} and lists as open, and \texttt{L\_R} with no condition on positivity, also listed
+as open. v4's text and its Lean module disagree on whether the detector flags the witness of its
+own \texttt{L\_R} proof; ours passes either way.
+
+\subsection*{Why it matters}
+
+v4 asks whether these results are theorems of the modal logic or only of its embedding. A
+detector-certified proof answers that for every proof the detector reads correctly. The
+companion findings on this site make the answer semantic: a complete calculus over v4's
+$\mathcal L$-general models, the equivalence and L under the rigid reading proved in every such
+model, and a hole in the detector that shows why the semantic proofs are needed.
+
+\subsection*{Proved vs checked}
+
+Every proof is Lean 4 (core library, axioms propext, Classical.choice and Quot.sound only),
+built in v4's own modules, and was run through v4's \texttt{hybrid\_check.py} in witness and whole-term
+mode with full-name matching. One further claim of the run (a Henkin-model version of the
+equivalence over eleven listed closure terms) was disputed by the run's skeptic and is left out.
+
+This result extends C. Benzmüller, ``Proofs Without Nominals'', arXiv 2609.36279v4, https://arxiv.org/abs/2609.36279: gives detector-certified proofs \texttt{ae\_Two} and \texttt{G\_ex\_Two\_unconditional} of the same statements as \texttt{ae\_Two\_nominal} and \texttt{G\_ex\_Two\_unconditional\_nominal}, in both modules. \texttt{only\_top\_and\_empty\_domain(\_False)} follows directly from \texttt{ae\_Two}, though v4 proves it only through the flagged \texttt{OneWorld}. v4 proves Ax1Gen\_of\_Two, Two\_equivalent, P\_of\_conj and loc\_of\_conj only through the nominal steps OneWorld/R\_Id (flagged), and lists their hybrid-free status as open (sec:plain, sec:open); C. Benzmüller, ``Proofs Without Nominals'', arXiv 2609.36279 v4 (sources/2609.36279/v4): proves every statement in K3--K8 and K12 under the same names, but with nominal or actuality witnesses that its detector flags (audit/report.txt). It states that the hybrid-free versions are open for the Ax1GenOne variant 3 and for dropping (†) (\S{}sec:one, \S{}sec:open). Example ex:separating and Separation.lean give a flip-invariant separating model for the empty theory, which is the same technique K11 uses, applied to a different theory; C. Benzmüller, ``Gödel's and Scott's Variants \ldots{} in Lean 4 and TPTP THF'', arXiv 2609.26806: the Lean port of the Notes. It does not cover the Ax1Gen readings in variant 3 or detector certificates; alozanoroble/godel-ontological-lean and drewarrowood/godel-ontological (GitHub): Lean formalisations of the variants. Neither addresses nominal-free proofs; Benzmüller, Proofs Without Nominals, arXiv 2609.36279 v4 (https://arxiv.org/abs/2609.36279):; Benzmüller \& Scott, Notes on Gödel's and Scott's variants, Monatshefte 2025 (https://link.springer.com/article/10.1007/s00605-025-02078-x): T1, positive properties are possibly exemplified (special case of K13's first half); R. Koons, Sobel on Gödel's Ontological Proof (https://robkoons.net/uploads/1/3/5/2/135276253/art\_koons\_\_sobelongodel\_sontologicalproof\_l.pdf): the standard argument that a positive property is possibly instantiated; alozanoroble/godel-ontological-lean (https://github.com/alozanoroble/godel-ontological-lean): Lean 4 frame-condition table for Gödel, Scott, Anderson, Fitting and Hájek. It does not cover variant 3's essence lemmas. Our prior-art search (2026-10-22) covered:
+
+\begin{itemize}
+\item sources/2609.36279/v4/main.tex: \S{}``Ax1GenTwo: at least two different conjuncts'' (around Corollary cor:gextwo), \S{}``Variant 3: where the non-emptiness clause belongs'' (sec:plain), \S{}``What stays open'' (sec:open), Appendix ``The detector'' (app:detector). Read 2026-10-22.
+\item sources/2609.36279/v4/anc/OpenQuestions/lean/OpenQuestions/Ax1GenTwoVariant2.lean and Ax1GenTwoVariant3Plain.lean. Read 2026-10-22.
+\item sources/2609.36279/v4/anc/OpenQuestions/audit/report.txt, census-openquestions.txt, alt/alt-report-filtered.txt, alt/alt-axioms.txt. Read 2026-10-22.
+\item https://arxiv.org/abs/2609.36279: version history (v1--v4, v4 is the latest, 2026-10-14). Fetched 2026-10-22.
+\item WebSearch: ``Benzmüller ''Proofs Without Nominals`` Ax1GenTwo hybrid-free equivalence Ax1Gen'', 2026-10-22.
+\item WebSearch: ``Gödel ontological argument conjunction axiom ''at least two`` conjuncts nominal accessibility identity Lean formalisation'', 2026-10-22. It returned arXiv 2609.26806, the alozanoroble and drewarrowood repositories, and Odifreddi \& Gomes (Logica Universalis). None of them treats a hybrid-free Ax1GenTwo$\Leftrightarrow$Ax1Gen equivalence.
+\item sources/2609.26806 (Lean/THF port): checked only to identify it. It predates the Ax1GenTwo emendation and has no bearing on the claim.
+\item sources/2609.36279/v4/main.tex: \S{}sec:criterion (def:hybridfree, prop:sound), \S{}sec:v3 (thm:nonecexist, thm:v3), \S{}sec:ax1gentwo (prop:v3two, thm:v3-two), \S{}sec:plain (thm:plain, fig:emended), \S{}sec:one, \S{}sec:box, \S{}sec:boxtwo, \S{}sec:criterion-open (def:lgeneral, prop:lgeneral, ex:separating), \S{}sec:open. Read 2026-10-22.
+\item sources/2609.36279/v4/anc/OpenQuestions/audit/report.txt (per-module detector output). Read 2026-10-22.
+\item sources/2609.36279/v4/anc/OpenQuestions/lean/OpenQuestions/\{Ax1GenBoxVariant3, Ax1GenOneVariant3, Ax1GenTwoVariant3, Ax1GenTwoVariant3Th4, Ax1GenTwoVariant3Plain, Ax1GenTwoVariant3PlainPoss, Ax1GenTwoVariant3PlainAndersonQuant, Ax1GenTwoVariant3Model\}.lean and lean/Separation.lean. Read 2026-10-22.
+\item sources/2609.36279/v4/anc/OpenQuestions/alternatives/README.md. Read 2026-10-22.
+\item sources/2609.26806 (v1, v3): grepped for the theorem names (none present). 2026-10-22.
+\item Web search: ``Gödel ontological argument variant 3 modal collapse ''one world`` nominal hybrid-free proof Lean''. 2026-10-22.
+\item Web search: ``''Proofs Without Nominals`` Benzmüller ontological'' (https://arxiv.org/abs/2609.36279). 2026-10-22.
+\item Web search: ``Gödel ontological argument necessary existence essence every world single world collapse higher-order modal logic general models propositional quantification''. 2026-10-22.
+\item These were search-engine results only. External pages beyond the summaries were not opened.
+\item sources/2609.36279/v4/main.tex: \texttt{sec:v3}, \texttt{thm:nonecexist}, \texttt{thm:v3}, \texttt{lem:serial}, \texttt{lem:reach}, \texttt{thm:uniqueess-k}, \texttt{sec:rigid}, \texttt{def:lgeneral}, \texttt{prop:lgeneral}, \texttt{sec:open} (read 2026-10-22)
+\item sources/2609.36279/v4/anc/OpenQuestions/lean/OpenQuestions/GoedelVariantHOML3inS4oneFile.lean, full K-section and EssSupp/EssDetermined (2026-10-22)
+\item sources/2609.36279/v4/anc/OpenQuestions/lean/OpenQuestions/Ax1GenRigidVariant2.lean: \texttt{P\_succ}, \texttt{L\_R}, \texttt{L\_R\_rigidpos}, \texttt{RigidPos\_of\_link} (2026-10-22)
+\item sources/2609.26806/v3/anc/Notes/*.lean, grep for Th1/T1 and exemplification (2026-10-22)
+\item Web search, ``Gödel ontological argument variant essence modal logic K without reflexivity modal collapse Lean formalisation 2026'' (2026-10-22)
+\item Web search, ``ontological argument Henkin general models rigid sets of properties conjunction axiom positive properties possibly exemplified'' (2026-10-22)
+\item Web search, ``Benzmüller Proofs Without Nominals arXiv'' (2026-10-22): https://arxiv.org/abs/2609.36279
+\item I used only search-result summaries for the web hits and did not open the pages.
+\end{itemize}
+
+The search was run automatically by claude/claude-opus-5-5.
+
+If you know of related work we missed, please open an issue.
+
+We believe this result is new. Our prior-art search (2026-10-22) covered:
+
+\begin{itemize}
+\item sources/2609.36279/v4/main.tex (\S{}sec:rigid, lines \textasciitilde{}1373--1410), read 2026-10-22
+\item sources/2609.36279/v4/anc/OpenQuestions/lean/OpenQuestions/Ax1GenRigidVariant2.lean, read 2026-10-22
+\item sources/2609.36279/v4/anc/OpenQuestions/audit/census-openquestions.txt (grep for L\_R, PosGlobal), read 2026-10-22
+\item sources/2609.26806/v1, v3 (grep for Ax1GenR / PosGlobal / RigidPos: no hits), 2026-10-22
+\item Web search: ``Gödel ontological argument generalised conjunction axiom rigid set of properties ''positive`` Ax1Gen'', 2026-10-22. Results: https://arxiv.org/html/2609.36279v1, https://link.springer.com/article/10.1007/s00605-025-02078-x, https://arxiv.org/html/2609.26806, https://arxiv.org/html/2608.07578, https://link.springer.com/article/10.1007/s11787-026-00409-6, https://www.researchgate.net/publication/402244958
+\item Web search: ``Benzmüller ''Proofs Without Nominals`` ontological argument rigid positivity'', 2026-10-22. Results: https://arxiv.org/abs/2609.36279, https://arxiv.org/pdf/1910.08955, https://arxiv.org/pdf/2608.07578, https://arxiv.org/pdf/2202.06264
+\item I worked only from search-result summaries for the web results. I did not open those pages.
+\end{itemize}
+
+The search was run automatically by claude/claude-opus-5-5.
+
+We found no earlier statement of it, but we can't be certain. If you know of prior work, please open an issue.
+
+This result was found by AI research agents (the autoresearch harness). It was proved in Lean; the proof and check files are included so anyone can re-run them.
+
+\subsection*{Claim K1}
+
+\texttt{In v4's Ax1GenTwoVariant2 (logic K), Ax1Gen\_of\_Two, Two\_equivalent, P\_of\_conj, loc\_of\_conj, ae\_Two\_nominal, G\_ex\_Two\_unconditional\_nominal and only\_top\_and\_empty\_domain(\_False) have proofs of the identical statements that v4's detector passes in witness and whole-term mode.}
+
+Status: proved (axioms: Ax1GenTwo, Ax2a, Ax2b, Ax3, Ax4, P, R, e, eNonempty, existsAt, i, propext, Classical.choice, Quot.sound).
+
+\paragraph{Verified.}
+\begin{itemize}
+\item \texttt{checks/K1-hybrid\_TwoV2.py}: The embedded Lean file compiles against /library with no sorry, and \texttt{python /library/tools/hybrid\_check.py --path \textless{}tmp\textgreater{} Programme.F.TwoV2 \textless{}8 names\textgreater{}} exits 0: no theorem hybrid, inheriting or whole-term flagged. --- pass
+\item \texttt{checks/K1-hybrid\_TwoV2.py}: Strict full-name certification (the skeptic): compiles the embedded, sha-pinned Lean file against /library with no error/sorry; runs v4's HybridAudit (\#hybrid\_audit and \#hybrid\_all) on the module and asserts that no named theorem appears, by FULLY QUALIFIED name, as hybrid, inheriting or EXTRA, that whole-term mode reports and that there is no sorryAx; negative control: a re-export of the library's hybrid \texttt{Two\_equivalent} in the same namespace IS flagged, so the matcher is live. --- pass (Lean-proved, no sorryAx)
+\end{itemize}
+
+\paragraph{Prior art.} Partial prior art.
+
+\subsection*{Claim K2}
+
+\texttt{In v4's Ax1GenTwoVariant3Plain (logic K), Ax1Gen\_of\_Two, Two\_equivalent, P\_of\_conj, loc\_of\_conj, ae\_Two\_nominal, G\_ex\_Two\_unconditional\_nominal and only\_top\_and\_empty\_domain(\_False) have proofs of the identical statements that v4's detector passes in witness and whole-term mode.}
+
+Status: proved (axioms: Ax1GenTwo, Ax2a, Ax2b, Ax3, Ax4, P, R, e, eNonempty, existsAt, i, propext, Classical.choice, Quot.sound).
+
+\paragraph{Verified.}
+\begin{itemize}
+\item \texttt{checks/K2-hybrid\_TwoV3Plain.py}: The embedded Lean file compiles against /library with no sorry, and \texttt{python /library/tools/hybrid\_check.py --path \textless{}tmp\textgreater{} Programme.F.TwoV3Plain \textless{}8 names\textgreater{}} exits 0: no theorem hybrid, inheriting or whole-term flagged. --- pass
+\item \texttt{checks/K2-hybrid\_TwoV3Plain.py}: Strict full-name certification (the skeptic): compiles the embedded, sha-pinned Lean file against /library with no error/sorry; runs v4's HybridAudit (\#hybrid\_audit and \#hybrid\_all) on the module and asserts that no named theorem appears, by FULLY QUALIFIED name, as hybrid, inheriting or EXTRA, that whole-term mode reports and that there is no sorryAx; negative control: a re-export of the library's hybrid \texttt{Two\_equivalent} in the same namespace IS flagged, so the matcher is live. --- pass (Lean-proved, no sorryAx)
+\end{itemize}
+
+\paragraph{Prior art.} Partial prior art.
+
+\subsection*{Claim K3}
+
+\texttt{In v4's Ax1GenBoxVariant3, MC\_S4, Th5\_S4 and Ax1Gen\_of\_refl have proofs of the identical statements that v4's detector passes (witness and whole-term, full names); the reflexivity hypothesis is not used.}
+
+Status: proved (axioms: Ax1GenBox, Ax2a, Ax2b, Ax3, Ax4, P, R, e, eNonempty, existsAt, i, propext, Classical.choice, Quot.sound).
+
+\paragraph{Verified.}
+\begin{itemize}
+\item \texttt{checks/K3-hybrid\_BoxV3.py}: Strict full-name certification (the skeptic): compiles the embedded, sha-pinned Lean file against /library with no error/sorry; runs v4's HybridAudit (\#hybrid\_audit and \#hybrid\_all) on the module and asserts that no named theorem appears, by FULLY QUALIFIED name, as hybrid, inheriting or EXTRA, that whole-term mode reports and that there is no sorryAx; negative control: a re-export of the library's hybrid \texttt{MC\_S4} in the same namespace IS flagged, so the matcher is live. --- pass (Lean-proved, no sorryAx)
+\end{itemize}
+
+\paragraph{Prior art.} Partial prior art.
+
+\subsection*{Claim K4}
+
+\texttt{In v4's GoedelVariantHOML3inS4oneFile, AllExist, Th3, Th5, MC, MCdual, Triv, UniqueEss1/2/3, EssMem, EssMemI, EssSupp, EssDetermined and Ess\_iff\_Ess2 have proofs of the identical statements that v4's detector passes (witness and whole-term, full names), using neither Rrefl nor Rtrans.}
+
+Status: proved (axioms: Ax1Gen, Ax2a, Ax3, Ax4, P, R, e, eNonempty, existsAt, i, propext, Classical.choice, Quot.sound).
+
+\paragraph{Verified.}
+\begin{itemize}
+\item \texttt{checks/K4-hybrid\_HOML3.py}: Strict full-name certification (the skeptic): compiles the embedded, sha-pinned Lean file against /library with no error/sorry; runs v4's HybridAudit (\#hybrid\_audit and \#hybrid\_all) on the module and asserts that no named theorem appears, by FULLY QUALIFIED name, as hybrid, inheriting or EXTRA, that whole-term mode reports and that there is no sorryAx; negative control: a re-export of the library's hybrid \texttt{Th3} in the same namespace IS flagged, so the matcher is live. --- pass (Lean-proved, no sorryAx)
+\item \texttt{checks/K4-hybrid\_HOML3.py}: Compiles the embedded sha-pinned file against /library (no error/sorry); v4's HybridAudit (witness + whole-term) flags none of the 14 theorems by full name (0 hybrid/inheriting/EXTRA); the transitive constant closure of every proof avoids all F\_WORKLIST names of the module incl. ACTUAL-only AllExist and AllExistI; negative control (re-export of Th3) is flagged. --- pass
+\end{itemize}
+
+\paragraph{Prior art.} Partial prior art.
+
+\subsection*{Claim K5}
+
+\texttt{In v4's Ax1GenOneVariant3 (logic K), MC\_unconditional, MC\_One, AllActual\_of\_PBot, NotPBot/PTop/G\_ex/Th4\_One\_deriv, E\_top\_of\_PBot, AllExist\_One, One\_gives\_S, One\_gives\_Box, Box\_gives\_One have proofs of the identical statements that v4's detector passes (full names).}
+
+Status: proved (axioms: Ax1GenOne, Ax2a, Ax2b, Ax3, Ax4, P, R, e, eNonempty, existsAt, i, propext, Classical.choice, Quot.sound).
+
+\paragraph{Verified.}
+\begin{itemize}
+\item \texttt{checks/K5-hybrid\_OneV3.py}: Strict full-name certification (the skeptic): compiles the embedded, sha-pinned Lean file against /library with no error/sorry; runs v4's HybridAudit (\#hybrid\_audit and \#hybrid\_all) on the module and asserts that no named theorem appears, by FULLY QUALIFIED name, as hybrid, inheriting or EXTRA, that whole-term mode reports and that there is no sorryAx; negative control: a re-export of the library's hybrid \texttt{MC\_unconditional} in the same namespace IS flagged, so the matcher is live. --- pass (Lean-proved, no sorryAx)
+\end{itemize}
+
+\paragraph{Prior art.} Partial prior art.
+
+\subsection*{Claim K6}
+
+\texttt{In v4's Ax1GenTwoVariant3PlainPoss and Ax1GenTwoVariant3PlainAndersonQuant, MC\_unconditional has a proof of the identical statement that v4's detector passes (witness and whole-term, full names).}
+
+Status: proved (axioms: Ax1GenTwo, Ax2a, Ax2b, Ax3, Ax4, P, R, e, eNonempty, i, propext, Classical.choice, Quot.sound).
+
+\paragraph{Verified.}
+\begin{itemize}
+\item \texttt{checks/K6-hybrid\_TwoV3PlainPoss.py}: Strict full-name certification (the skeptic): compiles the embedded, sha-pinned Lean file against /library with no error/sorry; runs v4's HybridAudit (\#hybrid\_audit and \#hybrid\_all) on the module and asserts that no named theorem appears, by FULLY QUALIFIED name, as hybrid, inheriting or EXTRA, that whole-term mode reports and that there is no sorryAx; negative control: a re-export of the library's hybrid \texttt{MC\_unconditional} in the same namespace IS flagged, so the matcher is live. --- pass (Lean-proved, no sorryAx)
+\item \texttt{checks/K6-hybrid\_TwoV3PlainAndersonQuant.py}: Strict full-name certification (the skeptic): compiles the embedded, sha-pinned Lean file against /library with no error/sorry; runs v4's HybridAudit (\#hybrid\_audit and \#hybrid\_all) on the module and asserts that no named theorem appears, by FULLY QUALIFIED name, as hybrid, inheriting or EXTRA, that whole-term mode reports and that there is no sorryAx; negative control: a re-export of the library's hybrid \texttt{MC\_unconditional} in the same namespace IS flagged, so the matcher is live. --- pass (Lean-proved, no sorryAx)
+\end{itemize}
+
+\paragraph{Prior art.} Partial prior art.
+
+\subsection*{Claim K7}
+
+In v4's Ax1GenTwoVariant3 (logic K), MC\_unconditional, MC\_Two, L\_Two\_hybrid, G\_ex\_Two\_actual\_hybrid and Th4\_Two\_actual\_hybrid have proofs of the identical statements that v4's detector passes (witness and whole-term, full names), via a hybrid-free lemma that every $\sigma$ is constant.
+
+Status: proved (axioms: Ax1GenTwo, Ax2a, Ax2b, Ax3, Ax4, P, R, e, eNonempty, existsAt, i, propext, Classical.choice, Quot.sound).
+
+\paragraph{Verified.}
+\begin{itemize}
+\item \texttt{checks/K7-hybrid\_TwoV3.py}: Strict full-name certification (the skeptic): compiles the embedded, sha-pinned Lean file against /library with no error/sorry; runs v4's HybridAudit (\#hybrid\_audit and \#hybrid\_all) on the module and asserts that no named theorem appears, by FULLY QUALIFIED name, as hybrid, inheriting or EXTRA, that whole-term mode reports and that there is no sorryAx; negative control: a re-export of the library's hybrid \texttt{MC\_unconditional} in the same namespace IS flagged, so the matcher is live. --- pass (Lean-proved, no sorryAx)
+\end{itemize}
+
+\paragraph{Prior art.} Partial prior art.
+
+\subsection*{Claim K8}
+
+\texttt{In v4's Ax1GenTwoVariant3Th4, G\_ex\_Two\_hybrid and AllExist\_Two have proofs of the identical statements that v4's detector passes (witness and whole-term, full names), with no frame condition.}
+
+Status: proved (axioms: Ax1GenTwo, Ax2a, Ax2b, Ax3, Ax4, P, R, Th4, e, eNonempty, existsAt, i, propext, Classical.choice, Quot.sound).
+
+\paragraph{Verified.}
+\begin{itemize}
+\item \texttt{checks/K8-hybrid\_TwoV3Th4.py}: Strict full-name certification (the skeptic): compiles the embedded, sha-pinned Lean file against /library with no error/sorry; runs v4's HybridAudit (\#hybrid\_audit and \#hybrid\_all) on the module and asserts that no named theorem appears, by FULLY QUALIFIED name, as hybrid, inheriting or EXTRA, that whole-term mode reports and that there is no sorryAx; negative control: a re-export of the library's hybrid \texttt{G\_ex\_Two\_hybrid} in the same namespace IS flagged, so the matcher is live. --- pass (Lean-proved, no sorryAx)
+\end{itemize}
+
+\paragraph{Prior art.} Partial prior art.
+
+\subsection*{Claim K11}
+
+On worlds Bool, one always-actual entity, universal $R$, $P\varphi w:=\varphi()w$, swap-invariant domains closed under all terms of an $\mathcal L$-datatype: Ax1, Ax2a, Ax2b, Ax3, both Ax4, Ax1Gen(Two/One/Box), Th4 hold, $E$ holds at both worlds, so NoNecExist fails.
+
+Status: proved (axioms: propext, Classical.choice, Quot.sound).
+
+\paragraph{Verified.}
+No check scripts.
+
+\paragraph{Prior art.} Partial prior art.
+
+\subsection*{Claim K12}
+
+\texttt{In v4's Ax1GenTwoVariant3Plain (logic K), AllExist and MC\_OneWorld have proofs of the identical statements that v4's detector passes (witness and whole-term, full names).}
+
+Status: proved (axioms: Ax1GenTwo, Ax2a, Ax3, Ax4, P, R, e, eNonempty, existsAt, i, propext, Classical.choice, Quot.sound).
+
+\paragraph{Verified.}
+\begin{itemize}
+\item \texttt{checks/K12-hybrid\_V3PlainExtra.py}: Strict full-name certification: compiles the embedded, sha-pinned Lean file against /library with no error/sorry; runs v4's HybridAudit (\#hybrid\_audit and \#hybrid\_all) on the module and asserts that neither theorem appears, by fully qualified name, as hybrid, inheriting or EXTRA, that whole-term mode reports and that there is no sorryAx; negative control: a re-export of the library's inheriting \texttt{Two\_equivalent} in the same namespace IS flagged. --- pass (Lean-proved, no sorryAx)
+\end{itemize}
+
+\paragraph{Prior art.} Partial prior art.
+
+\subsection*{Claim K13}
+
+Abstract Henkin variant 2, exclusive Ax2a, Ax2b, Ax4, Ax1GenR over admitted rigid families $\mathcal F$, any actuality: each $\Phi\in\mathcal F$ positive at $w$ is realised by an actual entity at an $R$-successor; if $G$ is admitted and $\neg PG\,w$, no $\Phi\in\mathcal F$ equals admitted $P_w$.
+
+Status: proved (axioms: propext, Classical.choice, Quot.sound).
+
+\paragraph{Verified.}
+No check scripts.
+
+\paragraph{Prior art.} Partial prior art.
+
+\subsection*{Claim K14}
+
+In v4's Ax1GenRigidVariant2 (logic K), L\_R ($\mathrm{Ax1GenR}\to\lfloor PG\rfloor$) has a proof of the identical statement that v4's detector passes (witness and whole-term, full names), with witness PosGlobal, from Ax2a, Ax2b, Ax4 only, with no condition on positivity.
+
+Status: proved (axioms: Ax2a, Ax2b, Ax4, P, R, e, existsAt, i, propext, Classical.choice, Quot.sound).
+
+\paragraph{Verified.}
+\begin{itemize}
+\item \texttt{checks/K14-hybrid\_RigidHF.py}: Compiles the embedded sha-pinned file against /library (no error/sorry); v4's HybridAudit (witness + whole-term) flags neither theorem by full name (0 hybrid/inheriting/EXTRA); proof closure avoids L\_R, RigidPos, RigidPos\_of\_link, pos\_link, Link, L\_R\_rigidpos; negative control (re-export of L\_R) is flagged. --- pass
+\end{itemize}
+
+\paragraph{Prior art.} Possibly new: no prior art found in the owner's search.
+
+\paragraph{Provenance.}
+Run \texttt{20261022-1314}, claims K1, K2, K3, K4, K5, K6, K7, K8, K11, K12, K13, K14, run-folder commit \texttt{7e239585d6c77726d88783754d4bfa7d3c3bf197}, published 2026-10-24.
 
 \section{How to verify}
 

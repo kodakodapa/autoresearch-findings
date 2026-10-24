@@ -1,0 +1,22 @@
+{
+  "axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "axioms_output": "'Programme.F.RigidLemma.pos_type_omitted' depends on axioms: [propext, Classical.choice, Quot.sound]\n",
+  "build_log": " 'Programme.F.RigidLemma.no_god_succ' does not depend on any axioms\ninfo: Programme/F/RigidLemma.lean:113:0: 'Programme.F.RigidLemma.pos_type_omitted' depends on axioms: [propext, Classical.choice, Quot.sound]\ninfo: Programme/F/RigidLemma.lean:114:0: 'Programme.F.RigidLemma.pos_type_omitted_of_pred' depends on axioms: [propext, Classical.choice, Quot.sound]\nBuild completed successfully (24 jobs).\n",
+  "duration_s": 1.0933458805084229,
+  "exit": 0,
+  "figures": [],
+  "path": "checks/K13-RigidLemma.lean",
+  "reason": "proof built and axioms verified",
+  "result": "pass",
+  "run_at": "2026-10-22T13:56:56.883008+00:00",
+  "stderr_head": "",
+  "stderr_tail": "",
+  "stdout_tail": "{\"result\": \"pass\", \"reason\": \"proof built and axioms verified\", \"axioms_output\": \"'Programme.F.RigidLemma.pos_type_omitted' depends on axioms: [propext, Classical.choice, Quot.sound]\\n\", \"build_log\": \" 'Programme.F.RigidLemma.no_god_succ' does not depend on any axioms\\ninfo: Programme/F/RigidLemma.lean:113:0: 'Programme.F.RigidLemma.pos_type_omitted' depends on axioms: [propext, Classical.choice, Quot.sound]\\ninfo: Programme/F/RigidLemma.lean:114:0: 'Programme.F.RigidLemma.pos_type_omitted_of_pred' depends on axioms: [propext, Classical.choice, Quot.sound]\\nBuild completed successfully (24 jobs).\\n\"}\n",
+  "theorem": "Programme.F.RigidLemma.pos_type_omitted",
+  "timeout_s": 120,
+  "type": "proof"
+}

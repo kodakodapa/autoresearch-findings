@@ -1,0 +1,30 @@
+{
+  "axioms": [
+    "Ax2a",
+    "Ax2b",
+    "Ax4",
+    "P",
+    "R",
+    "e",
+    "existsAt",
+    "i",
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "axioms_output": "'Programme.F.RigidHF.L_R_hf' depends on axioms: [Ax2a,\n Ax2b,\n Ax4,\n P,\n R,\n e,\n existsAt,\n i,\n propext,\n Classical.choice,\n Quot.sound]\n",
+  "build_log": " 'Programme.F.RigidLemma.no_god_succ' does not depend on any axioms\ninfo: Programme/F/RigidLemma.lean:113:0: 'Programme.F.RigidLemma.pos_type_omitted' depends on axioms: [propext, Classical.choice, Quot.sound]\ninfo: Programme/F/RigidLemma.lean:114:0: 'Programme.F.RigidLemma.pos_type_omitted_of_pred' depends on axioms: [propext, Classical.choice, Quot.sound]\nBuild completed successfully (26 jobs).\n",
+  "duration_s": 1.299067735671997,
+  "exit": 0,
+  "figures": [],
+  "path": "checks/K14-RigidHF.lean",
+  "reason": "proof built and axioms verified",
+  "result": "pass",
+  "run_at": "2026-10-22T13:59:49.801253+00:00",
+  "stderr_head": "",
+  "stderr_tail": "",
+  "stdout_tail": "{\"result\": \"pass\", \"reason\": \"proof built and axioms verified\", \"axioms_output\": \"'Programme.F.RigidHF.L_R_hf' depends on axioms: [Ax2a,\\n Ax2b,\\n Ax4,\\n P,\\n R,\\n e,\\n existsAt,\\n i,\\n propext,\\n Classical.choice,\\n Quot.sound]\\n\", \"build_log\": \" 'Programme.F.RigidLemma.no_god_succ' does not depend on any axioms\\ninfo: Programme/F/RigidLemma.lean:113:0: 'Programme.F.RigidLemma.pos_type_omitted' depends on axioms: [propext, Classical.choice, Quot.sound]\\ninfo: Programme/F/RigidLemma.lean:114:0: 'Programme.F.RigidLemma.pos_type_omitted_of_pred' depends on axioms: [propext, Classical.choice, Quot.sound]\\nBuild completed successfully (26 jobs).\\n\"}\n",
+  "theorem": "Programme.F.RigidHF.L_R_hf",
+  "timeout_s": 120,
+  "type": "proof"
+}

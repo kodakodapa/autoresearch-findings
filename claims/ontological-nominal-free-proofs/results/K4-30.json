@@ -1,0 +1,12 @@
+{
+  "duration_s": 2.4128968715667725,
+  "exit": 0,
+  "figures": [],
+  "path": "checks/K4-hybrid_HOML3.py",
+  "result": "pass",
+  "run_at": "2026-10-22T13:50:12.505044+00:00",
+  "stderr_head": "",
+  "stderr_tail": "",
+  "stdout_tail": "lse,\n Decidable.byContradiction,\n eq_true,\n Bool.rec,\n Bool,\n of_eq_true,\n Eq.ndrec,\n Programme.F.HOML3.AllExist_pt.match_1_5,\n Classical.choose,\n Bool.noConfusionType,\n Nonempty,\n Ax2a',\n instDecidableNot.match_1,\n Decidable.byCases,\n Eq.refl,\n Classical.propDecidable._proof_1,\n Mvalid,\n Programme.F.HOML3.AllExist_pt.match_1_7,\n False.rec,\n PUnit.unit,\n Or.inl,\n Or,\n Quot,\n ConjChi.match_1_1,\n Decidable.isFalse,\n instDecidableNot._proof_1,\n Mnegpred,\n _private.Init.Prelude.0.Bool.ne_true_of_eq_false.match_1_1,\n Programme.F.HOML3.UniqueEss2_hf.match_1_1,\n _private.Init.Classical.0.Classical.em.match_1_3,\n Reach_K.match_1_1,\n Or.elim,\n PInc,\n Eq.symm,\n not_false_eq_true,\n Bool.false,\n Subtype.val,\n Decidable.decide,\n BEq,\n Eq,\n Bool.Reflects,\n instDecidableIff,\n Mexiact,\n Not,\n Bool.Internal.and.match_1,\n Mimp,\n Iff.symm,\n ConjOfPropsFrom,\n P,\n Exists.rec,\n _private.Init.Prelude.0.of_decide_eq_true.match_1_1,\n Or.inr,\n eq_iff_iff,\n rfl,\n ConjChi,\n Eq.trans,\n eNonempty,\n Subtype.property,\n Quot.mk,\n True.intro,\n DecidableEq,\n G_ex,\n e]\n== Programme.F.HOML3: 16 theorems, 0 with flagged witnesses, 0 hybrid, 0 inheriting, 0 connectives at the world type\n== wholeterm Programme.F.HOML3: 26 theorems, witness-mode hybrid 0 (+0 inheriting), whole-term flagged 0, EXTRA 0\n\nclosure scan clean for 14 theorems against ['AllExist', 'NoNecExist', 'OneWorld', 'EssDetermined', 'EssMem', 'EssMemI', 'EssSupp', 'Ess_iff_Ess2', 'MC', 'MCdual', 'Th3', 'Th5', 'Triv', 'UniqueEss1', 'UniqueEss2', 'UniqueEss3', 'AllExistI']\ncontrol Programme.F.HOML3.ctl flagged as expected\nPASS (full-name match): ['Programme.F.HOML3.AllExist_hf', 'Programme.F.HOML3.Th3_hf', 'Programme.F.HOML3.Th5_hf', 'Programme.F.HOML3.MC_hf', 'Programme.F.HOML3.MCdual_hf', 'Programme.F.HOML3.Triv_hf', 'Programme.F.HOML3.UniqueEss3_hf', 'Programme.F.HOML3.EssMemI_hf', 'Programme.F.HOML3.EssMem_hf', 'Programme.F.HOML3.Ess_iff_Ess2_hf', 'Programme.F.HOML3.EssSupp_hf', 'Programme.F.HOML3.EssDetermined_hf', 'Programme.F.HOML3.UniqueEss1_hf', 'Programme.F.HOML3.UniqueEss2_hf']\n",
+  "timeout_s": 120
+}

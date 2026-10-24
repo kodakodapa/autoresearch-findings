@@ -1,0 +1,12 @@
+{
+  "duration_s": 2.3253092765808105,
+  "exit": 0,
+  "figures": [],
+  "path": "checks/K7-hybrid_TwoV3.py",
+  "result": "pass",
+  "run_at": "2026-10-22T13:35:20.004381+00:00",
+  "stderr_head": "",
+  "stderr_tail": "",
+  "stdout_tail": "MC_Two_hf' depends on axioms: [Ax1GenTwo,\n Ax2a,\n Ax2b,\n Ax3,\n Ax4,\n P,\n R,\n e,\n eNonempty,\n existsAt,\n i,\n propext,\n Classical.choice,\n Quot.sound]\n'Programme.F.TwoV3.L_Two_hybrid_hf' depends on axioms: [Ax1GenTwo,\n Ax2a,\n P,\n R,\n e,\n eNonempty,\n existsAt,\n i,\n propext,\n Classical.choice,\n Quot.sound]\n'Programme.F.TwoV3.G_ex_Two_actual_hybrid_hf' depends on axioms: [Ax1GenTwo,\n Ax2a,\n Ax2b,\n Ax3,\n Ax4,\n P,\n R,\n e,\n eNonempty,\n existsAt,\n i,\n propext,\n Classical.choice,\n Quot.sound]\n'Programme.F.TwoV3.Th4_Two_actual_hybrid_hf' depends on axioms: [Ax1GenTwo,\n Ax2a,\n Ax2b,\n Ax3,\n Ax4,\n P,\n R,\n e,\n eNonempty,\n existsAt,\n i,\n propext,\n Classical.choice,\n Quot.sound]\n\n'Programme.F.TwoV3.MC_unconditional_hf' depends on axioms: [Ax1GenTwo,\n Ax2a,\n Ax2b,\n Ax3,\n Ax4,\n P,\n R,\n e,\n eNonempty,\n existsAt,\n i,\n propext,\n Classical.choice,\n Quot.sound]\n'Programme.F.TwoV3.MC_Two_hf' depends on axioms: [Ax1GenTwo,\n Ax2a,\n Ax2b,\n Ax3,\n Ax4,\n P,\n R,\n e,\n eNonempty,\n existsAt,\n i,\n propext,\n Classical.choice,\n Quot.sound]\n'Programme.F.TwoV3.L_Two_hybrid_hf' depends on axioms: [Ax1GenTwo,\n Ax2a,\n P,\n R,\n e,\n eNonempty,\n existsAt,\n i,\n propext,\n Classical.choice,\n Quot.sound]\n'Programme.F.TwoV3.G_ex_Two_actual_hybrid_hf' depends on axioms: [Ax1GenTwo,\n Ax2a,\n Ax2b,\n Ax3,\n Ax4,\n P,\n R,\n e,\n eNonempty,\n existsAt,\n i,\n propext,\n Classical.choice,\n Quot.sound]\n'Programme.F.TwoV3.Th4_Two_actual_hybrid_hf' depends on axioms: [Ax1GenTwo,\n Ax2a,\n Ax2b,\n Ax3,\n Ax4,\n P,\n R,\n e,\n eNonempty,\n existsAt,\n i,\n propext,\n Classical.choice,\n Quot.sound]\n== Programme.F.TwoV3: 6 theorems, 0 with flagged witnesses, 0 hybrid, 0 inheriting, 0 connectives at the world type\n== wholeterm Programme.F.TwoV3: 12 theorems, witness-mode hybrid 0 (+0 inheriting), whole-term flagged 0, EXTRA 0\n\ncontrol Programme.F.TwoV3.ctl flagged as expected\nPASS (full-name match): ['Programme.F.TwoV3.MC_unconditional_hf', 'Programme.F.TwoV3.MC_Two_hf', 'Programme.F.TwoV3.L_Two_hybrid_hf', 'Programme.F.TwoV3.G_ex_Two_actual_hybrid_hf', 'Programme.F.TwoV3.Th4_Two_actual_hybrid_hf']\n",
+  "timeout_s": 120
+}

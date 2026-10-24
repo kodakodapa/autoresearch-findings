@@ -1,0 +1,25 @@
+{
+  "allowed": [
+    "ch. 7"
+  ],
+  "claims": [
+    "K1",
+    "K2",
+    "K3",
+    "K4",
+    "K5",
+    "K6",
+    "K7",
+    "K8",
+    "K11",
+    "K12",
+    "K13",
+    "K14"
+  ],
+  "commit": "7e239585d6c77726d88783754d4bfa7d3c3bf197",
+  "name": "ontological-nominal-free-proofs",
+  "round": 8,
+  "run_label": "20261022-1314",
+  "staged_at": "2026-10-24T10:38:50Z",
+  "title": "Nominal-free proofs of the theorems Benzm\u00fcller's detector flags"
+}

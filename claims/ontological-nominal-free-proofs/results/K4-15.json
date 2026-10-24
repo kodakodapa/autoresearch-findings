@@ -1,0 +1,12 @@
+{
+  "duration_s": 2.5400309562683105,
+  "exit": 0,
+  "figures": [],
+  "path": "checks/K4-hybrid_HOML3.py",
+  "result": "pass",
+  "run_at": "2026-10-22T13:34:53.563635+00:00",
+  "stderr_head": "",
+  "stderr_tail": "",
+  "stdout_tail": "Nonempty,\n existsAt,\n i,\n propext,\n Classical.choice,\n Quot.sound]\n'Programme.F.HOML3.UniqueEss1_hf' depends on axioms: [Ax1Gen,\n Ax2a,\n Ax2b,\n Ax3,\n Ax4,\n P,\n R,\n e,\n eNonempty,\n existsAt,\n i,\n propext,\n Classical.choice,\n Quot.sound]\n'Programme.F.HOML3.UniqueEss2_hf' depends on axioms: [Ax1Gen,\n Ax2a,\n Ax2b,\n Ax3,\n Ax4,\n P,\n R,\n e,\n eNonempty,\n existsAt,\n i,\n propext,\n Classical.choice,\n Quot.sound]\n'Programme.F.HOML3.UniqueEss3_hf' depends on axioms: [R, e, existsAt, i]\n'Programme.F.HOML3.EssMemI_hf' depends on axioms: [Ax1Gen,\n Ax2a,\n Ax3,\n Ax4,\n P,\n R,\n e,\n eNonempty,\n existsAt,\n i,\n propext,\n Classical.choice,\n Quot.sound]\n'Programme.F.HOML3.EssMem_hf' depends on axioms: [Ax1Gen,\n Ax2a,\n Ax3,\n Ax4,\n P,\n R,\n e,\n eNonempty,\n existsAt,\n i,\n propext,\n Classical.choice,\n Quot.sound]\n'Programme.F.HOML3.Ess_iff_Ess2_hf' depends on axioms: [Ax1Gen,\n Ax2a,\n Ax3,\n Ax4,\n P,\n R,\n e,\n eNonempty,\n existsAt,\n i,\n propext,\n Classical.choice,\n Quot.sound]\n'Programme.F.HOML3.EssSupp_hf' depends on axioms: [Ax1Gen,\n Ax2a,\n Ax3,\n Ax4,\n P,\n R,\n e,\n eNonempty,\n existsAt,\n i,\n propext,\n Classical.choice,\n Quot.sound]\n'Programme.F.HOML3.EssDetermined_hf' depends on axioms: [Ax1Gen,\n Ax2a,\n Ax2b,\n Ax3,\n Ax4,\n P,\n R,\n e,\n eNonempty,\n existsAt,\n i,\n propext,\n Classical.choice,\n Quot.sound]\n== Programme.F.HOML3: 15 theorems, 0 with flagged witnesses, 0 hybrid, 0 inheriting, 0 connectives at the world type\n== wholeterm Programme.F.HOML3: 20 theorems, witness-mode hybrid 0 (+0 inheriting), whole-term flagged 0, EXTRA 0\n\ncontrol Programme.F.HOML3.ctl flagged as expected\nPASS (full-name match): ['Programme.F.HOML3.AllExist_hf', 'Programme.F.HOML3.Th3_hf', 'Programme.F.HOML3.Th5_hf', 'Programme.F.HOML3.MC_hf', 'Programme.F.HOML3.MCdual_hf', 'Programme.F.HOML3.Triv_hf', 'Programme.F.HOML3.UniqueEss1_hf', 'Programme.F.HOML3.UniqueEss2_hf', 'Programme.F.HOML3.UniqueEss3_hf', 'Programme.F.HOML3.EssMemI_hf', 'Programme.F.HOML3.EssMem_hf', 'Programme.F.HOML3.Ess_iff_Ess2_hf', 'Programme.F.HOML3.EssSupp_hf', 'Programme.F.HOML3.EssDetermined_hf']\n",
+  "timeout_s": 120
+}

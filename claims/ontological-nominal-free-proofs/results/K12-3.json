@@ -1,0 +1,12 @@
+{
+  "duration_s": 3.5760462284088135,
+  "exit": 0,
+  "figures": [],
+  "path": "checks/K12-hybrid_V3PlainExtra.py",
+  "result": "pass",
+  "run_at": "2026-10-22T13:45:42.610994+00:00",
+  "stderr_head": "",
+  "stderr_tail": "",
+  "stdout_tail": "'Programme.F.V3PlainExtra.AllExist_hf' depends on axioms: [Ax1GenTwo,\n Ax2a,\n Ax3,\n Ax4,\n P,\n R,\n e,\n eNonempty,\n existsAt,\n i,\n propext,\n Classical.choice,\n Quot.sound]\n'Programme.F.V3PlainExtra.MC_OneWorld_hf' depends on axioms: [Ax1GenTwo,\n Ax2a,\n Ax2b,\n Ax3,\n Ax4,\n P,\n R,\n e,\n eNonempty,\n existsAt,\n i,\n propext,\n Classical.choice,\n Quot.sound]\n\n'Programme.F.V3PlainExtra.AllExist_hf' depends on axioms: [Ax1GenTwo,\n Ax2a,\n Ax3,\n Ax4,\n P,\n R,\n e,\n eNonempty,\n existsAt,\n i,\n propext,\n Classical.choice,\n Quot.sound]\n'Programme.F.V3PlainExtra.MC_OneWorld_hf' depends on axioms: [Ax1GenTwo,\n Ax2a,\n Ax2b,\n Ax3,\n Ax4,\n P,\n R,\n e,\n eNonempty,\n existsAt,\n i,\n propext,\n Classical.choice,\n Quot.sound]\n== Programme.F.V3PlainExtra: 3 theorems, 0 with flagged witnesses, 0 hybrid, 0 inheriting, 0 connectives at the world type\n== wholeterm Programme.F.V3PlainExtra: 8 theorems, witness-mode hybrid 0 (+0 inheriting), whole-term flagged 0, EXTRA 0\n\ncontrol Programme.F.V3PlainExtra.ctl flagged as expected\nPASS (full-name match): ['Programme.F.V3PlainExtra.AllExist_hf', 'Programme.F.V3PlainExtra.MC_OneWorld_hf']\n",
+  "timeout_s": 120
+}

@@ -1,0 +1,33 @@
+{
+  "axioms": [
+    "Ax1GenBox",
+    "Ax2a",
+    "Ax2b",
+    "Ax3",
+    "Ax4",
+    "P",
+    "R",
+    "e",
+    "eNonempty",
+    "existsAt",
+    "i",
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "axioms_output": "'Programme.F.BoxV3.MC_S4_hf' depends on axioms: [Ax1GenBox,\n Ax2a,\n Ax2b,\n Ax3,\n Ax4,\n P,\n R,\n e,\n eNonempty,\n existsAt,\n i,\n propext,\n Classical.choice,\n Quot.sound]\n",
+  "build_log": "st_hf' depends on axioms: [Ax1GenTwo,\n Ax2a,\n Ax3,\n Ax4,\n P,\n R,\n e,\n eNonempty,\n existsAt,\n i,\n propext,\n Classical.choice,\n Quot.sound]\ninfo: Programme/F/V3PlainExtra.lean:33:0: 'Programme.F.V3PlainExtra.MC_OneWorld_hf' depends on axioms: [Ax1GenTwo,\n Ax2a,\n Ax2b,\n Ax3,\n Ax4,\n P,\n R,\n e,\n eNonempty,\n existsAt,\n i,\n propext,\n Classical.choice,\n Quot.sound]\nBuild completed successfully (22 jobs).\n",
+  "duration_s": 1.573693037033081,
+  "exit": 0,
+  "figures": [],
+  "path": "checks/K3-BoxV3.lean",
+  "reason": "proof built and axioms verified",
+  "result": "pass",
+  "run_at": "2026-10-22T13:34:33.064669+00:00",
+  "stderr_head": "",
+  "stderr_tail": "",
+  "stdout_tail": "{\"result\": \"pass\", \"reason\": \"proof built and axioms verified\", \"axioms_output\": \"'Programme.F.BoxV3.MC_S4_hf' depends on axioms: [Ax1GenBox,\\n Ax2a,\\n Ax2b,\\n Ax3,\\n Ax4,\\n P,\\n R,\\n e,\\n eNonempty,\\n existsAt,\\n i,\\n propext,\\n Classical.choice,\\n Quot.sound]\\n\", \"build_log\": \"st_hf' depends on axioms: [Ax1GenTwo,\\n Ax2a,\\n Ax3,\\n Ax4,\\n P,\\n R,\\n e,\\n eNonempty,\\n existsAt,\\n i,\\n propext,\\n Classical.choice,\\n Quot.sound]\\ninfo: Programme/F/V3PlainExtra.lean:33:0: 'Programme.F.V3PlainExtra.MC_OneWorld_hf' depends on axioms: [Ax1GenTwo,\\n Ax2a,\\n Ax2b,\\n Ax3,\\n Ax4,\\n P,\\n R,\\n e,\\n eNonempty,\\n existsAt,\\n i,\\n propext,\\n Classical.choice,\\n Quot.sound]\\nBuild completed successfully (22 jobs).\\n\"}\n",
+  "theorem": "Programme.F.BoxV3.MC_S4_hf",
+  "timeout_s": 120,
+  "type": "proof"
+}
