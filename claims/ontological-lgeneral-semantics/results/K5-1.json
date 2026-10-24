@@ -1,0 +1,13 @@
+{
+  "duration_s": 1.8111302852630615,
+  "exit": 0,
+  "figures": [],
+  "path": "checks/K5-witness_gap.py",
+  "result": "pass",
+  "run_at": "2026-10-22T18:43:30.053460+00:00",
+  "stderr_head": "",
+  "stderr_tail": "",
+  "stdout_sha256": "cd82302006b69938fd4616cfe669865588cf0e99be1128e4e647d0c850cfade7",
+  "stdout_tail": "'ThWitnessGap.separating_closed' depends on axioms: [i, propext, Classical.choice, Quot.sound]\n'ThWitnessGap.separating' depends on axioms: [i, propext, Classical.choice, Quot.sound]\n\n== ThProbe.WitnessGap: 3 theorems, 0 with flagged witnesses, 0 hybrid, 0 inheriting, 0 connectives at the world type\n== wholeterm ThProbe.WitnessGap: 3 theorems, witness-mode hybrid 0 (+0 inheriting), whole-term flagged 0, EXTRA 0\nPASS: ThWitnessGap.separating_closed, ThWitnessGap.separating, ThWitnessGap.nominal_body hybrid-free (witness and whole-term mode)\n \nOK: detector (both modes) accepts a proof of the separating sentence\n",
+  "timeout_s": 120
+}

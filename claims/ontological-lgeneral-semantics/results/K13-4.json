@@ -1,0 +1,21 @@
+{
+  "axioms": [
+    "propext"
+  ],
+  "axioms_output": "'Programme.ThCanon.Deriv.finite' depends on axioms: [propext]\n",
+  "build_log": "g can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:\n  [apply] _h\n\nNote: This linter can be disabled with `set_option linter.unusedVariables false`\ninfo: Programme/Run3/SepLS.lean:7202:0: 'Programme.Run3.SepLS.sep_threshold' depends on axioms: [propext, Classical.choice, Quot.sound]\nBuild completed successfully (13 jobs).\n",
+  "duration_s": 73.89088082313538,
+  "exit": 0,
+  "figures": [],
+  "path": "checks/K13-LS.lean",
+  "reason": "proof built and axioms verified",
+  "result": "pass",
+  "run_at": "2026-10-22T20:25:21.753548+00:00",
+  "stderr_head": "",
+  "stderr_tail": "",
+  "stdout_sha256": "43701d0a41989e0652c68e492c92849ac2e09fcc4b7f338709036502307c7a95",
+  "stdout_tail": "{\"result\": \"pass\", \"reason\": \"proof built and axioms verified\", \"axioms_output\": \"'Programme.ThCanon.Deriv.finite' depends on axioms: [propext]\\n\", \"build_log\": \"g can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:\\n  [apply] _h\\n\\nNote: This linter can be disabled with `set_option linter.unusedVariables false`\\ninfo: Programme/Run3/SepLS.lean:7202:0: 'Programme.Run3.SepLS.sep_threshold' depends on axioms: [propext, Classical.choice, Quot.sound]\\nBuild completed successfully (13 jobs).\\n\"}\n",
+  "theorem": "Programme.ThCanon.Deriv.finite",
+  "timeout_s": 120,
+  "type": "proof"
+}

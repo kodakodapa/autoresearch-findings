@@ -1,0 +1,32 @@
+{
+  "allowed": [
+    "Ch. 15",
+    "ch. 7"
+  ],
+  "claims": [
+    "K1",
+    "K2",
+    "K3",
+    "K4",
+    "K6",
+    "K7",
+    "K8",
+    "K9",
+    "K10",
+    "K11",
+    "K12",
+    "K13",
+    "K14",
+    "K15",
+    "K16",
+    "K17",
+    "K18",
+    "K5"
+  ],
+  "commit": "2537c3c1e409694e656412ead00d75260626d0fb",
+  "name": "ontological-lgeneral-semantics",
+  "round": 13,
+  "run_label": "20261022-1724",
+  "staged_at": "2026-10-24T10:38:51Z",
+  "title": "A complete calculus for the \u2112-general models of the ontological argument"
+}

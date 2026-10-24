@@ -1,0 +1,23 @@
+{
+  "axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "axioms_output": "'Programme.ThCanon.sound_complete_str' depends on axioms: [propext, Classical.choice, Quot.sound]\n",
+  "build_log": "me.Run3.V4.two_of_gen_v4' depends on axioms: [propext, Classical.choice, Quot.sound]\ninfo: Programme/Run3/DeepE.lean:4465:0: 'Programme.Run3.V4.two_equivalent_v2' depends on axioms: [propext, Classical.choice, Quot.sound]\ninfo: Programme/Run3/DeepE.lean:4466:0: 'Programme.Run3.V4.two_equivalent_v3p' depends on axioms: [propext, Classical.choice, Quot.sound]\nBuild completed successfully (11 jobs).\n",
+  "duration_s": 47.17860412597656,
+  "exit": 0,
+  "figures": [],
+  "path": "checks/K12-Canon.lean",
+  "reason": "proof built and axioms verified",
+  "result": "pass",
+  "run_at": "2026-10-22T20:08:16.447419+00:00",
+  "stderr_head": "",
+  "stderr_tail": "",
+  "stdout_sha256": "3692f597a01cc8d4d38925e7e499a27c6b24be3b6f19d54226146e6b801069b9",
+  "stdout_tail": "{\"result\": \"pass\", \"reason\": \"proof built and axioms verified\", \"axioms_output\": \"'Programme.ThCanon.sound_complete_str' depends on axioms: [propext, Classical.choice, Quot.sound]\\n\", \"build_log\": \"me.Run3.V4.two_of_gen_v4' depends on axioms: [propext, Classical.choice, Quot.sound]\\ninfo: Programme/Run3/DeepE.lean:4465:0: 'Programme.Run3.V4.two_equivalent_v2' depends on axioms: [propext, Classical.choice, Quot.sound]\\ninfo: Programme/Run3/DeepE.lean:4466:0: 'Programme.Run3.V4.two_equivalent_v3p' depends on axioms: [propext, Classical.choice, Quot.sound]\\nBuild completed successfully (11 jobs).\\n\"}\n",
+  "theorem": "Programme.ThCanon.sound_complete_str",
+  "timeout_s": 120,
+  "type": "proof"
+}

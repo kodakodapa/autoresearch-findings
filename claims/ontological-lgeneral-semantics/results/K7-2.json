@@ -1,0 +1,23 @@
+{
+  "axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "axioms_output": "'Programme.Run3.SepV2.V2.sep_not_derivable' depends on axioms: [propext, Classical.choice, Quot.sound]\n",
+  "build_log": ":2373:0: 'Programme.Run3.Deep.Sem.k14_derivations' depends on axioms: [propext, Quot.sound]\ninfo: Programme/Run3/DeepK.lean:2374:0: 'Programme.Run3.Deep.Sem.k1_valid' depends on axioms: [propext, Classical.choice, Quot.sound]\ninfo: Programme/Run3/DeepK.lean:2375:0: 'Programme.Run3.Deep.Sem.k14_valid' depends on axioms: [propext, Classical.choice, Quot.sound]\nBuild completed successfully (7 jobs).\n",
+  "duration_s": 20.397997617721558,
+  "exit": 0,
+  "figures": [],
+  "path": "checks/K7-SepV2.lean",
+  "reason": "proof built and axioms verified",
+  "result": "pass",
+  "run_at": "2026-10-22T18:59:41.003113+00:00",
+  "stderr_head": "",
+  "stderr_tail": "",
+  "stdout_sha256": "e445b337a6241e05a2bf767d82ee714ec2cdf576474dfb0f95d91e69698d01fc",
+  "stdout_tail": "{\"result\": \"pass\", \"reason\": \"proof built and axioms verified\", \"axioms_output\": \"'Programme.Run3.SepV2.V2.sep_not_derivable' depends on axioms: [propext, Classical.choice, Quot.sound]\\n\", \"build_log\": \":2373:0: 'Programme.Run3.Deep.Sem.k14_derivations' depends on axioms: [propext, Quot.sound]\\ninfo: Programme/Run3/DeepK.lean:2374:0: 'Programme.Run3.Deep.Sem.k1_valid' depends on axioms: [propext, Classical.choice, Quot.sound]\\ninfo: Programme/Run3/DeepK.lean:2375:0: 'Programme.Run3.Deep.Sem.k14_valid' depends on axioms: [propext, Classical.choice, Quot.sound]\\nBuild completed successfully (7 jobs).\\n\"}\n",
+  "theorem": "Programme.Run3.SepV2.V2.sep_not_derivable",
+  "timeout_s": 120,
+  "type": "proof"
+}

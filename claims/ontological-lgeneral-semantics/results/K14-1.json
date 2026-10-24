@@ -1,0 +1,23 @@
+{
+  "axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "axioms_output": "'Programme.Run3.SepLS.sep_threshold' depends on axioms: [propext, Classical.choice, Quot.sound]\n",
+  "build_log": "g can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:\n  [apply] _h\n\nNote: This linter can be disabled with `set_option linter.unusedVariables false`\ninfo: Programme/Run3/SepLS.lean:7202:0: 'Programme.Run3.SepLS.sep_threshold' depends on axioms: [propext, Classical.choice, Quot.sound]\nBuild completed successfully (13 jobs).\n",
+  "duration_s": 73.76973485946655,
+  "exit": 0,
+  "figures": [],
+  "path": "checks/K14-SepLS.lean",
+  "reason": "proof built and axioms verified",
+  "result": "pass",
+  "run_at": "2026-10-22T20:26:35.651481+00:00",
+  "stderr_head": "",
+  "stderr_tail": "",
+  "stdout_sha256": "3a478450e889014b80af9be8106d30de6b967c0324d57dfd7d622aff760cabb1",
+  "stdout_tail": "{\"result\": \"pass\", \"reason\": \"proof built and axioms verified\", \"axioms_output\": \"'Programme.Run3.SepLS.sep_threshold' depends on axioms: [propext, Classical.choice, Quot.sound]\\n\", \"build_log\": \"g can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:\\n  [apply] _h\\n\\nNote: This linter can be disabled with `set_option linter.unusedVariables false`\\ninfo: Programme/Run3/SepLS.lean:7202:0: 'Programme.Run3.SepLS.sep_threshold' depends on axioms: [propext, Classical.choice, Quot.sound]\\nBuild completed successfully (13 jobs).\\n\"}\n",
+  "theorem": "Programme.Run3.SepLS.sep_threshold",
+  "timeout_s": 120,
+  "type": "proof"
+}

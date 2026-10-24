@@ -1,0 +1,23 @@
+{
+  "axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "axioms_output": "'Programme.Run3.V4.k1_valid_v4' depends on axioms: [propext, Classical.choice, Quot.sound]\n",
+  "build_log": "mme.Run3.V4.k14_valid_v4' depends on axioms: [propext, Classical.choice, Quot.sound]\ninfo: Programme/Run3/DeepV4.lean:4092:0: 'Programme.Run3.SepV2.V2.sep_v4' depends on axioms: [propext, Classical.choice, Quot.sound]\ninfo: Programme/Run3/DeepV4.lean:4093:0: 'Programme.Run3.SepV2.V2.sep_not_valid_v4' depends on axioms: [propext, Classical.choice, Quot.sound]\nBuild completed successfully (8 jobs).\n",
+  "duration_s": 26.782580852508545,
+  "exit": 0,
+  "figures": [],
+  "path": "checks/K8-DeepV4.lean",
+  "reason": "proof built and axioms verified",
+  "result": "pass",
+  "run_at": "2026-10-22T19:10:36.000519+00:00",
+  "stderr_head": "",
+  "stderr_tail": "",
+  "stdout_sha256": "470ca46d084f241bc395e1f7dd60f476f140647e5f754827f17863e18a4aa641",
+  "stdout_tail": "{\"result\": \"pass\", \"reason\": \"proof built and axioms verified\", \"axioms_output\": \"'Programme.Run3.V4.k1_valid_v4' depends on axioms: [propext, Classical.choice, Quot.sound]\\n\", \"build_log\": \"mme.Run3.V4.k14_valid_v4' depends on axioms: [propext, Classical.choice, Quot.sound]\\ninfo: Programme/Run3/DeepV4.lean:4092:0: 'Programme.Run3.SepV2.V2.sep_v4' depends on axioms: [propext, Classical.choice, Quot.sound]\\ninfo: Programme/Run3/DeepV4.lean:4093:0: 'Programme.Run3.SepV2.V2.sep_not_valid_v4' depends on axioms: [propext, Classical.choice, Quot.sound]\\nBuild completed successfully (8 jobs).\\n\"}\n",
+  "theorem": "Programme.Run3.V4.k1_valid_v4",
+  "timeout_s": 120,
+  "type": "proof"
+}

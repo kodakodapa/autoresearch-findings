@@ -1,0 +1,22 @@
+{
+  "axioms": [
+    "propext",
+    "Quot.sound"
+  ],
+  "axioms_output": "'Programme.ThWhole.cong' depends on axioms: [propext, Quot.sound]\n",
+  "build_log": "g can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:\n  [apply] _h\n\nNote: This linter can be disabled with `set_option linter.unusedVariables false`\ninfo: Programme/Run3/SepLS.lean:7202:0: 'Programme.Run3.SepLS.sep_threshold' depends on axioms: [propext, Classical.choice, Quot.sound]\nBuild completed successfully (14 jobs).\n",
+  "duration_s": 68.42839097976685,
+  "exit": 0,
+  "figures": [],
+  "path": "checks/K15-WholeTerm.lean",
+  "reason": "proof built and axioms verified",
+  "result": "pass",
+  "run_at": "2026-10-22T20:44:37.063837+00:00",
+  "stderr_head": "",
+  "stderr_tail": "",
+  "stdout_sha256": "daa05c5277f9a508966ddfcd75e10cb6ead70211f9f194a795f491d94c9e19af",
+  "stdout_tail": "{\"result\": \"pass\", \"reason\": \"proof built and axioms verified\", \"axioms_output\": \"'Programme.ThWhole.cong' depends on axioms: [propext, Quot.sound]\\n\", \"build_log\": \"g can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:\\n  [apply] _h\\n\\nNote: This linter can be disabled with `set_option linter.unusedVariables false`\\ninfo: Programme/Run3/SepLS.lean:7202:0: 'Programme.Run3.SepLS.sep_threshold' depends on axioms: [propext, Classical.choice, Quot.sound]\\nBuild completed successfully (14 jobs).\\n\"}\n",
+  "theorem": "Programme.ThWhole.cong",
+  "timeout_s": 120,
+  "type": "proof"
+}

@@ -1,0 +1,23 @@
+{
+  "axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "axioms_output": "'Programme.Run3.HOL.soundness' depends on axioms: [propext, Classical.choice, Quot.sound]\n",
+  "build_log": "3/DeepND.lean:1569:0: 'Programme.Run3.HOL.soundness' depends on axioms: [propext, Classical.choice, Quot.sound]\ninfo: Programme/Run3/DeepND.lean:1570:0: 'Programme.Run3.HOL.valid_of_deriv' depends on axioms: [propext, Classical.choice, Quot.sound]\ninfo: Programme/Run3/DeepND.lean:1571:0: 'Programme.Run3.HOL.heval_emb' depends on axioms: [propext, Quot.sound]\nBuild completed successfully (3 jobs).\n",
+  "duration_s": 5.024893283843994,
+  "exit": 0,
+  "figures": [],
+  "path": "checks/K1-DeepND.lean",
+  "reason": "proof built and axioms verified",
+  "result": "pass",
+  "run_at": "2026-10-22T18:09:02.851197+00:00",
+  "stderr_head": "",
+  "stderr_tail": "",
+  "stdout_sha256": "167d36d4ed443bcd19c55a31a6b6a61cef0332c8cd7aa26b3716ba183745d48e",
+  "stdout_tail": "{\"result\": \"pass\", \"reason\": \"proof built and axioms verified\", \"axioms_output\": \"'Programme.Run3.HOL.soundness' depends on axioms: [propext, Classical.choice, Quot.sound]\\n\", \"build_log\": \"3/DeepND.lean:1569:0: 'Programme.Run3.HOL.soundness' depends on axioms: [propext, Classical.choice, Quot.sound]\\ninfo: Programme/Run3/DeepND.lean:1570:0: 'Programme.Run3.HOL.valid_of_deriv' depends on axioms: [propext, Classical.choice, Quot.sound]\\ninfo: Programme/Run3/DeepND.lean:1571:0: 'Programme.Run3.HOL.heval_emb' depends on axioms: [propext, Quot.sound]\\nBuild completed successfully (3 jobs).\\n\"}\n",
+  "theorem": "Programme.Run3.HOL.soundness",
+  "timeout_s": 120,
+  "type": "proof"
+}

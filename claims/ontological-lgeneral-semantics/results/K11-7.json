@@ -1,0 +1,23 @@
+{
+  "axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "axioms_output": "'Programme.Run3.SepR.sep_example_v4' depends on axioms: [propext, Classical.choice, Quot.sound]\n",
+  "build_log": "g can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:\n  [apply] _h\n\nNote: This linter can be disabled with `set_option linter.unusedVariables false`\ninfo: Programme/Run3/SepLS.lean:7202:0: 'Programme.Run3.SepLS.sep_threshold' depends on axioms: [propext, Classical.choice, Quot.sound]\nBuild completed successfully (13 jobs).\n",
+  "duration_s": 54.49944090843201,
+  "exit": 0,
+  "figures": [],
+  "path": "checks/K11-DeepSep.lean",
+  "reason": "proof built and axioms verified",
+  "result": "pass",
+  "run_at": "2026-10-22T20:20:26.434427+00:00",
+  "stderr_head": "",
+  "stderr_tail": "",
+  "stdout_sha256": "80dc7f8d06f9f72a1887f76f9054ee49450728e69938a03ba6bc08549251f5a4",
+  "stdout_tail": "{\"result\": \"pass\", \"reason\": \"proof built and axioms verified\", \"axioms_output\": \"'Programme.Run3.SepR.sep_example_v4' depends on axioms: [propext, Classical.choice, Quot.sound]\\n\", \"build_log\": \"g can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:\\n  [apply] _h\\n\\nNote: This linter can be disabled with `set_option linter.unusedVariables false`\\ninfo: Programme/Run3/SepLS.lean:7202:0: 'Programme.Run3.SepLS.sep_threshold' depends on axioms: [propext, Classical.choice, Quot.sound]\\nBuild completed successfully (13 jobs).\\n\"}\n",
+  "theorem": "Programme.Run3.SepR.sep_example_v4",
+  "timeout_s": 120,
+  "type": "proof"
+}

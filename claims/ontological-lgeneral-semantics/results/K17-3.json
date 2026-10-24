@@ -1,0 +1,21 @@
+{
+  "axioms": [
+    "propext"
+  ],
+  "axioms_output": "'Programme.ThWit.step_profile' depends on axioms: [propext]\n",
+  "build_log": " Programme/Run3/WitnessDeep.lean:7909:0: 'Programme.ThWit.sep_deep' depends on axioms: [propext, Quot.sound]\ninfo: Programme/Run3/WitnessDeep.lean:7910:0: 'Programme.ThWit.step_profile' depends on axioms: [propext]\ninfo: Programme/Run3/WitnessDeep.lean:7911:0: 'Programme.ThWit.witness_alone_unsound' depends on axioms: [propext, Classical.choice, Quot.sound]\nBuild completed successfully (15 jobs).\n",
+  "duration_s": 94.67263889312744,
+  "exit": 0,
+  "figures": [],
+  "path": "checks/K17-WitnessDeep.lean",
+  "reason": "proof built and axioms verified",
+  "result": "pass",
+  "run_at": "2026-10-22T20:56:06.384664+00:00",
+  "stderr_head": "",
+  "stderr_tail": "",
+  "stdout_sha256": "6b7ae27617c1a67dde95c86182b8c6219985d48da99aa3ec769e2be898741321",
+  "stdout_tail": "{\"result\": \"pass\", \"reason\": \"proof built and axioms verified\", \"axioms_output\": \"'Programme.ThWit.step_profile' depends on axioms: [propext]\\n\", \"build_log\": \" Programme/Run3/WitnessDeep.lean:7909:0: 'Programme.ThWit.sep_deep' depends on axioms: [propext, Quot.sound]\\ninfo: Programme/Run3/WitnessDeep.lean:7910:0: 'Programme.ThWit.step_profile' depends on axioms: [propext]\\ninfo: Programme/Run3/WitnessDeep.lean:7911:0: 'Programme.ThWit.witness_alone_unsound' depends on axioms: [propext, Classical.choice, Quot.sound]\\nBuild completed successfully (15 jobs).\\n\"}\n",
+  "theorem": "Programme.ThWit.step_profile",
+  "timeout_s": 120,
+  "type": "proof"
+}

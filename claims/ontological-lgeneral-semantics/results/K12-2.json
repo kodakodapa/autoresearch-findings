@@ -1,0 +1,23 @@
+{
+  "axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "axioms_output": "'Programme.ThCanon.completeness' depends on axioms: [propext, Classical.choice, Quot.sound]\n",
+  "build_log": "universal_trivial' depends on axioms: [propext, Classical.choice, Quot.sound]\ninfo: Programme/Run3/DeepSep.lean:4692:0: 'Programme.Run3.SepR.not_v2_of_contingent' depends on axioms: [propext, Classical.choice, Quot.sound]\ninfo: Programme/Run3/DeepSep.lean:4693:0: 'Programme.Run3.SepR.sep_example_v4' depends on axioms: [propext, Classical.choice, Quot.sound]\nBuild completed successfully (11 jobs).\n",
+  "duration_s": 43.6690890789032,
+  "exit": 0,
+  "figures": [],
+  "path": "checks/K12-Canon.lean",
+  "reason": "proof built and axioms verified",
+  "result": "pass",
+  "run_at": "2026-10-22T20:07:32.772712+00:00",
+  "stderr_head": "",
+  "stderr_tail": "",
+  "stdout_sha256": "de40f348b6d9530c2f220c40b76417d5b5fbce0660820b12f0f87966e5a50219",
+  "stdout_tail": "{\"result\": \"pass\", \"reason\": \"proof built and axioms verified\", \"axioms_output\": \"'Programme.ThCanon.completeness' depends on axioms: [propext, Classical.choice, Quot.sound]\\n\", \"build_log\": \"universal_trivial' depends on axioms: [propext, Classical.choice, Quot.sound]\\ninfo: Programme/Run3/DeepSep.lean:4692:0: 'Programme.Run3.SepR.not_v2_of_contingent' depends on axioms: [propext, Classical.choice, Quot.sound]\\ninfo: Programme/Run3/DeepSep.lean:4693:0: 'Programme.Run3.SepR.sep_example_v4' depends on axioms: [propext, Classical.choice, Quot.sound]\\nBuild completed successfully (11 jobs).\\n\"}\n",
+  "theorem": "Programme.ThCanon.completeness",
+  "timeout_s": 120,
+  "type": "proof"
+}

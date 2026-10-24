@@ -1,0 +1,21 @@
+{
+  "axioms": [
+    "propext"
+  ],
+  "axioms_output": "'Programme.Run3.HOLX.leib_derivable' depends on axioms: [propext]\n",
+  "build_log": ":2373:0: 'Programme.Run3.Deep.Sem.k14_derivations' depends on axioms: [propext, Quot.sound]\ninfo: Programme/Run3/DeepK.lean:2374:0: 'Programme.Run3.Deep.Sem.k1_valid' depends on axioms: [propext, Classical.choice, Quot.sound]\ninfo: Programme/Run3/DeepK.lean:2375:0: 'Programme.Run3.Deep.Sem.k14_valid' depends on axioms: [propext, Classical.choice, Quot.sound]\nBuild completed successfully (6 jobs).\n",
+  "duration_s": 15.650720119476318,
+  "exit": 0,
+  "figures": [],
+  "path": "checks/K4-DeepLeib.lean",
+  "reason": "proof built and axioms verified",
+  "result": "pass",
+  "run_at": "2026-10-22T18:42:42.084474+00:00",
+  "stderr_head": "",
+  "stderr_tail": "",
+  "stdout_sha256": "a057843789a2eb71ec4c59f37f4024d620cb494e831d93ed28b8c260c9a29ec7",
+  "stdout_tail": "{\"result\": \"pass\", \"reason\": \"proof built and axioms verified\", \"axioms_output\": \"'Programme.Run3.HOLX.leib_derivable' depends on axioms: [propext]\\n\", \"build_log\": \":2373:0: 'Programme.Run3.Deep.Sem.k14_derivations' depends on axioms: [propext, Quot.sound]\\ninfo: Programme/Run3/DeepK.lean:2374:0: 'Programme.Run3.Deep.Sem.k1_valid' depends on axioms: [propext, Classical.choice, Quot.sound]\\ninfo: Programme/Run3/DeepK.lean:2375:0: 'Programme.Run3.Deep.Sem.k14_valid' depends on axioms: [propext, Classical.choice, Quot.sound]\\nBuild completed successfully (6 jobs).\\n\"}\n",
+  "theorem": "Programme.Run3.HOLX.leib_derivable",
+  "timeout_s": 120,
+  "type": "proof"
+}

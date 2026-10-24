@@ -1,0 +1,21 @@
+{
+  "axioms": [
+    "Quot.sound"
+  ],
+  "axioms_output": "'Programme.Run3.HOLX.full_closed_resp' depends on axioms: [Quot.sound]\n",
+  "build_log": ":2373:0: 'Programme.Run3.Deep.Sem.k14_derivations' depends on axioms: [propext, Quot.sound]\ninfo: Programme/Run3/DeepK.lean:2374:0: 'Programme.Run3.Deep.Sem.k1_valid' depends on axioms: [propext, Classical.choice, Quot.sound]\ninfo: Programme/Run3/DeepK.lean:2375:0: 'Programme.Run3.Deep.Sem.k14_valid' depends on axioms: [propext, Classical.choice, Quot.sound]\nBuild completed successfully (6 jobs).\n",
+  "duration_s": 16.376534938812256,
+  "exit": 0,
+  "figures": [],
+  "path": "checks/K4-DeepLeib.lean",
+  "reason": "proof built and axioms verified",
+  "result": "pass",
+  "run_at": "2026-10-22T18:43:13.672475+00:00",
+  "stderr_head": "",
+  "stderr_tail": "",
+  "stdout_sha256": "235a9fa1a279c47c1889c1d919a30d8696f9b104c61aa0962150a18fb5d9d2fd",
+  "stdout_tail": "{\"result\": \"pass\", \"reason\": \"proof built and axioms verified\", \"axioms_output\": \"'Programme.Run3.HOLX.full_closed_resp' depends on axioms: [Quot.sound]\\n\", \"build_log\": \":2373:0: 'Programme.Run3.Deep.Sem.k14_derivations' depends on axioms: [propext, Quot.sound]\\ninfo: Programme/Run3/DeepK.lean:2374:0: 'Programme.Run3.Deep.Sem.k1_valid' depends on axioms: [propext, Classical.choice, Quot.sound]\\ninfo: Programme/Run3/DeepK.lean:2375:0: 'Programme.Run3.Deep.Sem.k14_valid' depends on axioms: [propext, Classical.choice, Quot.sound]\\nBuild completed successfully (6 jobs).\\n\"}\n",
+  "theorem": "Programme.Run3.HOLX.full_closed_resp",
+  "timeout_s": 120,
+  "type": "proof"
+}

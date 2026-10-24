@@ -1,0 +1,23 @@
+{
+  "axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "axioms_output": "'Programme.Run3.SepR.sep_example_v4' depends on axioms: [propext, Classical.choice, Quot.sound]\n",
+  "build_log": "me.Run3.V4.two_of_gen_v4' depends on axioms: [propext, Classical.choice, Quot.sound]\ninfo: Programme/Run3/DeepE.lean:4465:0: 'Programme.Run3.V4.two_equivalent_v2' depends on axioms: [propext, Classical.choice, Quot.sound]\ninfo: Programme/Run3/DeepE.lean:4466:0: 'Programme.Run3.V4.two_equivalent_v3p' depends on axioms: [propext, Classical.choice, Quot.sound]\nBuild completed successfully (10 jobs).\n",
+  "duration_s": 39.617790937423706,
+  "exit": 0,
+  "figures": [],
+  "path": "checks/K11-DeepSep.lean",
+  "reason": "proof built and axioms verified",
+  "result": "pass",
+  "run_at": "2026-10-22T19:59:21.571767+00:00",
+  "stderr_head": "",
+  "stderr_tail": "",
+  "stdout_sha256": "10ddf9dc2136c2b8616c49ca436e48e8ecc173aad5cb6bf859b4e564a5e0515c",
+  "stdout_tail": "{\"result\": \"pass\", \"reason\": \"proof built and axioms verified\", \"axioms_output\": \"'Programme.Run3.SepR.sep_example_v4' depends on axioms: [propext, Classical.choice, Quot.sound]\\n\", \"build_log\": \"me.Run3.V4.two_of_gen_v4' depends on axioms: [propext, Classical.choice, Quot.sound]\\ninfo: Programme/Run3/DeepE.lean:4465:0: 'Programme.Run3.V4.two_equivalent_v2' depends on axioms: [propext, Classical.choice, Quot.sound]\\ninfo: Programme/Run3/DeepE.lean:4466:0: 'Programme.Run3.V4.two_equivalent_v3p' depends on axioms: [propext, Classical.choice, Quot.sound]\\nBuild completed successfully (10 jobs).\\n\"}\n",
+  "theorem": "Programme.Run3.SepR.sep_example_v4",
+  "timeout_s": 120,
+  "type": "proof"
+}

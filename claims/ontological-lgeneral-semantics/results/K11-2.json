@@ -1,0 +1,23 @@
+{
+  "axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "axioms_output": "'Programme.Run3.SepR.sep_singletons' depends on axioms: [propext, Classical.choice, Quot.sound]\n",
+  "build_log": "universal_trivial' depends on axioms: [propext, Classical.choice, Quot.sound]\ninfo: Programme/Run3/DeepSep.lean:4692:0: 'Programme.Run3.SepR.not_v2_of_contingent' depends on axioms: [propext, Classical.choice, Quot.sound]\ninfo: Programme/Run3/DeepSep.lean:4693:0: 'Programme.Run3.SepR.sep_example_v4' depends on axioms: [propext, Classical.choice, Quot.sound]\nBuild completed successfully (10 jobs).\n",
+  "duration_s": 40.36666512489319,
+  "exit": 0,
+  "figures": [],
+  "path": "checks/K11-DeepSep.lean",
+  "reason": "proof built and axioms verified",
+  "result": "pass",
+  "run_at": "2026-10-22T19:57:24.681147+00:00",
+  "stderr_head": "",
+  "stderr_tail": "",
+  "stdout_sha256": "9b95aabe029132b96cb1bde4459f2149ed65163cba8263998facefcaf6c539b0",
+  "stdout_tail": "{\"result\": \"pass\", \"reason\": \"proof built and axioms verified\", \"axioms_output\": \"'Programme.Run3.SepR.sep_singletons' depends on axioms: [propext, Classical.choice, Quot.sound]\\n\", \"build_log\": \"universal_trivial' depends on axioms: [propext, Classical.choice, Quot.sound]\\ninfo: Programme/Run3/DeepSep.lean:4692:0: 'Programme.Run3.SepR.not_v2_of_contingent' depends on axioms: [propext, Classical.choice, Quot.sound]\\ninfo: Programme/Run3/DeepSep.lean:4693:0: 'Programme.Run3.SepR.sep_example_v4' depends on axioms: [propext, Classical.choice, Quot.sound]\\nBuild completed successfully (10 jobs).\\n\"}\n",
+  "theorem": "Programme.Run3.SepR.sep_singletons",
+  "timeout_s": 120,
+  "type": "proof"
+}

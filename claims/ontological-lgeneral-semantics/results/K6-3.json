@@ -1,0 +1,22 @@
+{
+  "axioms": [
+    "propext",
+    "Quot.sound"
+  ],
+  "axioms_output": "'Programme.Run3.Respect.lgenFR_of_sym' depends on axioms: [propext, Quot.sound]\n",
+  "build_log": "me.Run3.Respect.lgenFR_of_sym' depends on axioms: [propext, Quot.sound]\ninfo: Programme/Run3/Respect.lean:660:0: 'Programme.Run3.Respect.Sep.separating_all_types' depends on axioms: [propext, Classical.choice, Quot.sound]\ninfo: Programme/Run3/Respect.lean:661:0: 'Programme.Run3.Respect.Sep.phi_false' depends on axioms: [propext, Classical.choice, Quot.sound]\nBuild completed successfully (3 jobs).\n",
+  "duration_s": 0.8804931640625,
+  "exit": 0,
+  "figures": [],
+  "path": "checks/K6-Respect.lean",
+  "reason": "proof built and axioms verified",
+  "result": "pass",
+  "run_at": "2026-10-22T18:43:33.744574+00:00",
+  "stderr_head": "",
+  "stderr_tail": "",
+  "stdout_sha256": "76b0146cff706280787b0cb5f8ab85aca8e8390bc18d641e0a687ba735f36f95",
+  "stdout_tail": "{\"result\": \"pass\", \"reason\": \"proof built and axioms verified\", \"axioms_output\": \"'Programme.Run3.Respect.lgenFR_of_sym' depends on axioms: [propext, Quot.sound]\\n\", \"build_log\": \"me.Run3.Respect.lgenFR_of_sym' depends on axioms: [propext, Quot.sound]\\ninfo: Programme/Run3/Respect.lean:660:0: 'Programme.Run3.Respect.Sep.separating_all_types' depends on axioms: [propext, Classical.choice, Quot.sound]\\ninfo: Programme/Run3/Respect.lean:661:0: 'Programme.Run3.Respect.Sep.phi_false' depends on axioms: [propext, Classical.choice, Quot.sound]\\nBuild completed successfully (3 jobs).\\n\"}\n",
+  "theorem": "Programme.Run3.Respect.lgenFR_of_sym",
+  "timeout_s": 120,
+  "type": "proof"
+}
