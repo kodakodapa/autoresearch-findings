@@ -1,0 +1,23 @@
+{
+  "axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "axioms_output": "'Programme.Run5.G.RigidDeep.l_r_semantic' depends on axioms: [propext, Classical.choice, Quot.sound]\n",
+  "build_log": "5.G.RigidMatch.L_R_PosGlobal_of_deep' depends on axioms: [Ax2a,\n Ax2b,\n Ax4,\n P,\n R,\n e,\n eNonempty,\n existsAt,\n i,\n propext,\n Classical.choice,\n Quot.sound]\ninfo: Programme/G/RigidDeep.lean:8168:0: 'Programme.Run5.G.RigidMatch.L_R_of_deep' depends on axioms: [Ax2a,\n Ax2b,\n Ax4,\n P,\n R,\n e,\n eNonempty,\n existsAt,\n i,\n propext,\n Classical.choice,\n Quot.sound]\nBuild completed successfully (5 jobs).\n",
+  "duration_s": 2.8670949935913086,
+  "exit": 0,
+  "figures": [],
+  "path": "checks/K1-RigidDeep.lean",
+  "reason": "proof built and axioms verified",
+  "result": "pass",
+  "run_at": "2026-10-23T05:31:53.857683+00:00",
+  "stderr_head": "",
+  "stderr_tail": "",
+  "stdout_sha256": "2ac31f687d45c6f92534b3bc3839e5d7525bdbe72852813d1b9f2bdb46d13b70",
+  "stdout_tail": "{\"result\": \"pass\", \"reason\": \"proof built and axioms verified\", \"axioms_output\": \"'Programme.Run5.G.RigidDeep.l_r_semantic' depends on axioms: [propext, Classical.choice, Quot.sound]\\n\", \"build_log\": \"5.G.RigidMatch.L_R_PosGlobal_of_deep' depends on axioms: [Ax2a,\\n Ax2b,\\n Ax4,\\n P,\\n R,\\n e,\\n eNonempty,\\n existsAt,\\n i,\\n propext,\\n Classical.choice,\\n Quot.sound]\\ninfo: Programme/G/RigidDeep.lean:8168:0: 'Programme.Run5.G.RigidMatch.L_R_of_deep' depends on axioms: [Ax2a,\\n Ax2b,\\n Ax4,\\n P,\\n R,\\n e,\\n eNonempty,\\n existsAt,\\n i,\\n propext,\\n Classical.choice,\\n Quot.sound]\\nBuild completed successfully (5 jobs).\\n\"}\n",
+  "theorem": "Programme.Run5.G.RigidDeep.l_r_semantic",
+  "timeout_s": 120,
+  "type": "proof"
+}

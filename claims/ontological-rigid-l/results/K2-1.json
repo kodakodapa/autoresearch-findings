@@ -1,0 +1,13 @@
+{
+  "duration_s": 1.3523261547088623,
+  "exit": 0,
+  "figures": [],
+  "path": "checks/K2-lr_instance_needed.py",
+  "result": "pass",
+  "run_at": "2026-10-23T05:35:10.097183+00:00",
+  "stderr_head": "",
+  "stderr_tail": "",
+  "stdout_sha256": "16207204669bfe73e63debf5e702a686bec0cf2a087b9ce81a0b91ba4f39204c",
+  "stdout_tail": "OK: Ax2a+Ax2b+Ax4 hold, P G fails (3-world S5 majority model); TR consistent; small exhaustive agrees with K1\n",
+  "timeout_s": 120
+}

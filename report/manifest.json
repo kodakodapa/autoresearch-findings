@@ -425,6 +425,25 @@
         "C"
       ],
       "title": "A complete calculus for the \u2112-general models of the ontological argument"
+    },
+    {
+      "allowed": [
+        "ch. 7"
+      ],
+      "claims": [
+        "K1",
+        "K3",
+        "K2"
+      ],
+      "commit": "2e2df987b9201fdce33786411f4136a4bc241629",
+      "date": "2026-10-24",
+      "pdf": true,
+      "run_label": "20261023-0519",
+      "slug": "ontological-rigid-l",
+      "threads": [
+        "G"
+      ],
+      "title": "G\u00f6del's lemma L under the rigid reading, with no condition on positivity"
     }
   ]
 }
