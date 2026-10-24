@@ -2927,17 +2927,18 @@ other axioms do not suffice.
 \subsection*{Proved vs checked}
 
 The first two claims are Lean 4 theorems (core library, axioms propext, Classical.choice and
-Quot.sound only), kernel-checked in the library build. The third rests on an explicit finite model
-that the run checked by argument, not in Lean; its status is \emph{derived}.
+Quot.sound only), kernel-checked in the library build. The third is an explicit finite model,
+checked by a script (\texttt{checks/K2-lr\_instance\_needed.py}, re-run at publication) and re-derived by
+the run's skeptic, but not in Lean; its status is \emph{derived}.
 
 This result extends:
 
 \begin{itemize}
-\item Benzmüller, ``Proofs Without Nominals'', arXiv 2609.36279 v4, \S{}sec:rigid: Ax1GenR. It has L\_R in K from Ax2a and Ax2b via the hybrid witness @\_w P. L\_R\_rigidpos derives L from \{$\psi$ \textbar{} A(P$\psi$)\} only under rigid positivity. It leaves open the case without that condition, which is the case K1 addresses. prop:lgeneral gives shallow soundness over $\mathcal{L}$-general models.
+\item Benzmüller, ``Proofs Without Nominals'', arXiv 2609.36279 v4, \S{}sec:rigid: Ax1GenR. It has L\_R in K from Ax2a and Ax2b via the hybrid witness @\_w P. L\_R\_rigidpos derives L from \{$\psi$ $\mid$ A(P$\psi$)\} only under rigid positivity. It leaves open the case without that condition, which is the case K1 addresses. prop:lgeneral gives shallow soundness over $\mathcal{L}$-general models.
 \item Benzmüller \& Scott, Notes (Monatshefte 2025), and Benzmüller, arXiv 2609.26806: L (P G) from the world-dependent Ax1Gen, by the instance $\Phi$ = P.
 \item Kanckos \& Woltzenlogel Paleo, ``Variants of Gödel's Ontological Proof in a Natural Deduction Calculus'', Studia Logica 105 (2017): explicit derivations in a rigid higher-order modal logic, but with P G (A3) as an axiom, not derived from a conjunction schema.
 \item Benzmüller \& Woltzenlogel Paleo, arXiv 1308.4526: says A3 is derivable from Axiom 1 and D1 given infinitary conjunction. This is an informal remark, with no rigid schema and no general-model semantics.
-\item Benzmüller, ``Proofs Without Nominals'', arXiv 2609.36279 (sources/2609.36279/v4/main.tex): defines rigid L-conditions (def:hybridfree) and Ax1GenR (sec:rigid). Instantiates Ax1GenR with the L-condition \{$\psi$ \textbar{} A(Pos $\psi$)\} in the shallow embedding (\texttt{L\_R\_rigidpos}). Gives soundness over L-general and standard models (prop:lgeneral). Deep embedding only for the propositional part (Separation). No general deep-instance lemma.
+\item Benzmüller, ``Proofs Without Nominals'', arXiv 2609.36279 (sources/2609.36279/v4/main.tex): defines rigid L-conditions (def:hybridfree) and Ax1GenR (sec:rigid). Instantiates Ax1GenR with the L-condition \{$\psi$ $\mid$ A(Pos $\psi$)\} in the shallow embedding (\texttt{L\_R\_rigidpos}). Gives soundness over L-general and standard models (prop:lgeneral). Deep embedding only for the propositional part (Separation). No general deep-instance lemma.
 \item Benzmüller \& Kirchner, ``Monadic Second-Order Logic in HOL: Deep and Shallow with Automated Faithfulness'', arXiv 2609.07345 / AFP MSOinHOL: deep$\leftrightarrow$shallow faithfulness for MSO under standard (full) and Henkin readings, with comprehension. Same mechanism as K3, different logic.
 \item Benzmüller \& Kirchner, ``First-Order Modal Logic in HOL\ldots{}'', arXiv 2607.10880: deep$\leftrightarrow$shallow faithfulness for first-order modal logic only (no quantification over properties or sets of properties).
 \item Benzmüller, ``Faithful Logic Embeddings in HOL --- Deep and Shallow'', arXiv 2502.19311 (CADE-30): the same for propositional modal logic.
@@ -2985,7 +2986,7 @@ No check scripts.
 
 Variant-2 Ax2a, Ax2b, Ax4 do not derive $P\,G$: a full S5 model with 3 worlds, one always-actual entity and $P\varphi$ iff $\varphi a$ holds at $\ge 2$ worlds satisfies them, while $P\,G$ and the $\mathrm{Ax1GenR}$ instance for $\{\psi\mid P\psi=\top\}$ fail at every world.
 
-Status: derived · independently re-derived (sk/claude).
+Status: derived · independently re-derived (skeptic/claude).
 
 \paragraph{Verified.}
 \begin{itemize}

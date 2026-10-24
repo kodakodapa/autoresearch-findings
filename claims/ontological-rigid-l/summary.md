@@ -40,5 +40,6 @@ other axioms do not suffice.
 ## Proved vs checked
 
 The first two claims are Lean 4 theorems (core library, axioms propext, Classical.choice and
-Quot.sound only), kernel-checked in the library build. The third rests on an explicit finite model
-that the run checked by argument, not in Lean; its status is *derived*.
+Quot.sound only), kernel-checked in the library build. The third is an explicit finite model,
+checked by a script (`checks/K2-lr_instance_needed.py`, re-run at publication) and re-derived by
+the run's skeptic, but not in Lean; its status is *derived*.

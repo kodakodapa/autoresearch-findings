@@ -486,6 +486,10 @@
         {
           "date": "2026-10-24",
           "reason": "readable prior-art section"
+        },
+        {
+          "date": "2026-10-24",
+          "reason": "K2 checked by script; table glitch"
         }
       ],
       "run_label": "20261023-0519",

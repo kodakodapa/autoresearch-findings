@@ -49,17 +49,18 @@ other axioms do not suffice.
 ## Proved vs checked
 
 The first two claims are Lean 4 theorems (core library, axioms propext, Classical.choice and
-Quot.sound only), kernel-checked in the library build. The third rests on an explicit finite model
-that the run checked by argument, not in Lean; its status is *derived*.
+Quot.sound only), kernel-checked in the library build. The third is an explicit finite model,
+checked by a script (`checks/K2-lr_instance_needed.py`, re-run at publication) and re-derived by
+the run's skeptic, but not in Lean; its status is *derived*.
 <!-- /owner-summary -->
 
 This result extends:
 
-- Benzmüller, "Proofs Without Nominals", arXiv 2609.36279 v4, §sec:rigid: Ax1GenR. It has L_R in K from Ax2a and Ax2b via the hybrid witness @_w P. L_R_rigidpos derives L from {ψ | A(Pψ)} only under rigid positivity. It leaves open the case without that condition, which is the case K1 addresses. prop:lgeneral gives shallow soundness over 𝓛-general models.
+- Benzmüller, "Proofs Without Nominals", arXiv 2609.36279 v4, §sec:rigid: Ax1GenR. It has L_R in K from Ax2a and Ax2b via the hybrid witness @_w P. L_R_rigidpos derives L from {ψ ∣ A(Pψ)} only under rigid positivity. It leaves open the case without that condition, which is the case K1 addresses. prop:lgeneral gives shallow soundness over 𝓛-general models.
 - Benzmüller & Scott, Notes (Monatshefte 2025), and Benzmüller, arXiv 2609.26806: L (P G) from the world-dependent Ax1Gen, by the instance Φ = P.
 - Kanckos & Woltzenlogel Paleo, "Variants of Gödel's Ontological Proof in a Natural Deduction Calculus", Studia Logica 105 (2017): explicit derivations in a rigid higher-order modal logic, but with P G (A3) as an axiom, not derived from a conjunction schema.
 - Benzmüller & Woltzenlogel Paleo, arXiv 1308.4526: says A3 is derivable from Axiom 1 and D1 given infinitary conjunction. This is an informal remark, with no rigid schema and no general-model semantics.
-- Benzmüller, "Proofs Without Nominals", arXiv 2609.36279 (sources/2609.36279/v4/main.tex): defines rigid L-conditions (def:hybridfree) and Ax1GenR (sec:rigid). Instantiates Ax1GenR with the L-condition {ψ | A(Pos ψ)} in the shallow embedding (`L_R_rigidpos`). Gives soundness over L-general and standard models (prop:lgeneral). Deep embedding only for the propositional part (Separation). No general deep-instance lemma.
+- Benzmüller, "Proofs Without Nominals", arXiv 2609.36279 (sources/2609.36279/v4/main.tex): defines rigid L-conditions (def:hybridfree) and Ax1GenR (sec:rigid). Instantiates Ax1GenR with the L-condition {ψ ∣ A(Pos ψ)} in the shallow embedding (`L_R_rigidpos`). Gives soundness over L-general and standard models (prop:lgeneral). Deep embedding only for the propositional part (Separation). No general deep-instance lemma.
 - Benzmüller & Kirchner, "Monadic Second-Order Logic in HOL: Deep and Shallow with Automated Faithfulness", arXiv 2609.07345 / AFP MSOinHOL: deep↔shallow faithfulness for MSO under standard (full) and Henkin readings, with comprehension. Same mechanism as K3, different logic.
 - Benzmüller & Kirchner, "First-Order Modal Logic in HOL…", arXiv 2607.10880: deep↔shallow faithfulness for first-order modal logic only (no quantification over properties or sets of properties).
 - Benzmüller, "Faithful Logic Embeddings in HOL — Deep and Shallow", arXiv 2502.19311 (CADE-30): the same for propositional modal logic.
@@ -127,7 +128,7 @@ Prior art: partial prior art (answer: `prior-art/R2.md`)
 
 Variant-2 Ax2a, Ax2b, Ax4 do not derive $P\,G$: a full S5 model with 3 worlds, one always-actual entity and $P\varphi$ iff $\varphi a$ holds at $\ge 2$ worlds satisfies them, while $P\,G$ and the $\mathrm{Ax1GenR}$ instance for $\lbrace \psi\mid P\psi=\top\rbrace $ fail at every world.
 
-Status: derived · independently re-derived (sk/claude)
+Status: derived · independently re-derived (skeptic/claude)
 
 Kind: model
 
@@ -153,3 +154,4 @@ Prior art: unchecked
 ## Revisions
 
 - 2026-10-24 — readable prior-art section
+- 2026-10-24 — K2 checked by script; table glitch
