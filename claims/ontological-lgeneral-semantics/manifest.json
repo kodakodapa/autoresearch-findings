@@ -25,8 +25,14 @@
   ],
   "commit": "2537c3c1e409694e656412ead00d75260626d0fb",
   "name": "ontological-lgeneral-semantics",
+  "revisions": [
+    {
+      "date": "2026-10-24",
+      "reason": "readable prior-art section"
+    }
+  ],
   "round": 13,
   "run_label": "20261022-1724",
-  "staged_at": "2026-10-24T10:38:51Z",
+  "staged_at": "2026-10-24T16:08:59Z",
   "title": "A complete calculus for the \u2112-general models of the ontological argument"
 }
