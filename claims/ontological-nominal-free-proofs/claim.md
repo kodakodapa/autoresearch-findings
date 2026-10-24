@@ -62,48 +62,36 @@ mode with full-name matching. One further claim of the run (a Henkin-model versi
 equivalence over eleven listed closure terms) was disputed by the run's skeptic and is left out.
 <!-- /owner-summary -->
 
-This result extends C. Benzmüller, "Proofs Without Nominals", arXiv 2609.36279v4, https://arxiv.org/abs/2609.36279: gives detector-certified proofs `ae_Two` and `G_ex_Two_unconditional` of the same statements as `ae_Two_nominal` and `G_ex_Two_unconditional_nominal`, in both modules. `only_top_and_empty_domain(_False)` follows directly from `ae_Two`, though v4 proves it only through the flagged `OneWorld`. v4 proves Ax1Gen_of_Two, Two_equivalent, P_of_conj and loc_of_conj only through the nominal steps OneWorld/R_Id (flagged), and lists their hybrid-free status as open (sec:plain, sec:open); C. Benzmüller, "Proofs Without Nominals", arXiv 2609.36279 v4 (sources/2609.36279/v4): proves every statement in K3–K8 and K12 under the same names, but with nominal or actuality witnesses that its detector flags (audit/report.txt). It states that the hybrid-free versions are open for the Ax1GenOne variant 3 and for dropping (†) (§sec:one, §sec:open). Example ex:separating and Separation.lean give a flip-invariant separating model for the empty theory, which is the same technique K11 uses, applied to a different theory; C. Benzmüller, "Gödel's and Scott's Variants … in Lean 4 and TPTP THF", arXiv 2609.26806: the Lean port of the Notes. It does not cover the Ax1Gen readings in variant 3 or detector certificates; alozanoroble/godel-ontological-lean and drewarrowood/godel-ontological (GitHub): Lean formalisations of the variants. Neither addresses nominal-free proofs; Benzmüller, Proofs Without Nominals, arXiv 2609.36279 v4 (https://arxiv.org/abs/2609.36279):; Benzmüller & Scott, Notes on Gödel's and Scott's variants, Monatshefte 2025 (https://link.springer.com/article/10.1007/s00605-025-02078-x): T1, positive properties are possibly exemplified (special case of K13's first half); R. Koons, Sobel on Gödel's Ontological Proof (https://robkoons.net/uploads/1/3/5/2/135276253/art_koons__sobelongodel_sontologicalproof_l.pdf): the standard argument that a positive property is possibly instantiated; alozanoroble/godel-ontological-lean (https://github.com/alozanoroble/godel-ontological-lean): Lean 4 frame-condition table for Gödel, Scott, Anderson, Fitting and Hájek. It does not cover variant 3's essence lemmas. Our prior-art search (2026-10-22) covered:
+This result extends:
 
-- sources/2609.36279/v4/main.tex: §"Ax1GenTwo: at least two different conjuncts" (around Corollary cor:gextwo), §"Variant 3: where the non-emptiness clause belongs" (sec:plain), §"What stays open" (sec:open), Appendix "The detector" (app:detector). Read 2026-10-22.
-- sources/2609.36279/v4/anc/OpenQuestions/lean/OpenQuestions/Ax1GenTwoVariant2.lean and Ax1GenTwoVariant3Plain.lean. Read 2026-10-22.
-- sources/2609.36279/v4/anc/OpenQuestions/audit/report.txt, census-openquestions.txt, alt/alt-report-filtered.txt, alt/alt-axioms.txt. Read 2026-10-22.
+- C. Benzmüller, "Proofs Without Nominals", arXiv 2609.36279v4, https://arxiv.org/abs/2609.36279: gives detector-certified proofs `ae_Two` and `G_ex_Two_unconditional` of the same statements as `ae_Two_nominal` and `G_ex_Two_unconditional_nominal`, in both modules. `only_top_and_empty_domain(_False)` follows directly from `ae_Two`, though v4 proves it only through the flagged `OneWorld`. v4 proves Ax1Gen_of_Two, Two_equivalent, P_of_conj and loc_of_conj only through the nominal steps OneWorld/R_Id (flagged), and lists their hybrid-free status as open (sec:plain, sec:open).
+- C. Benzmüller, "Proofs Without Nominals", arXiv 2609.36279 v4 (sources/2609.36279/v4): proves every statement in K3–K8 and K12 under the same names, but with nominal or actuality witnesses that its detector flags (audit/report.txt). It states that the hybrid-free versions are open for the Ax1GenOne variant 3 and for dropping (†) (§sec:one, §sec:open). Example ex:separating and Separation.lean give a flip-invariant separating model for the empty theory, which is the same technique K11 uses, applied to a different theory.
+- C. Benzmüller, "Gödel's and Scott's Variants … in Lean 4 and TPTP THF", arXiv 2609.26806: the Lean port of the Notes. It does not cover the Ax1Gen readings in variant 3 or detector certificates.
+- alozanoroble/godel-ontological-lean and drewarrowood/godel-ontological (GitHub): Lean formalisations of the variants. Neither addresses nominal-free proofs.
+- Benzmüller, Proofs Without Nominals, arXiv 2609.36279 v4 (https://arxiv.org/abs/2609.36279):.
+- Benzmüller & Scott, Notes on Gödel's and Scott's variants, Monatshefte 2025 (https://link.springer.com/article/10.1007/s00605-025-02078-x): T1, positive properties are possibly exemplified (special case of K13's first half).
+- R. Koons, Sobel on Gödel's Ontological Proof (https://robkoons.net/uploads/1/3/5/2/135276253/art_koons__sobelongodel_sontologicalproof_l.pdf): the standard argument that a positive property is possibly instantiated.
+- alozanoroble/godel-ontological-lean (https://github.com/alozanoroble/godel-ontological-lean): Lean 4 frame-condition table for Gödel, Scott, Anderson, Fitting and Hájek. It does not cover variant 3's essence lemmas.
+
+Our prior-art search (2026-10-22) covered:
+
 - https://arxiv.org/abs/2609.36279: version history (v1–v4, v4 is the latest, 2026-10-14). Fetched 2026-10-22.
-- WebSearch: "Benzmüller "Proofs Without Nominals" Ax1GenTwo hybrid-free equivalence Ax1Gen", 2026-10-22.
-- WebSearch: "Gödel ontological argument conjunction axiom "at least two" conjuncts nominal accessibility identity Lean formalisation", 2026-10-22. It returned arXiv 2609.26806, the alozanoroble and drewarrowood repositories, and Odifreddi & Gomes (Logica Universalis). None of them treats a hybrid-free Ax1GenTwo⇔Ax1Gen equivalence.
-- sources/2609.26806 (Lean/THF port): checked only to identify it. It predates the Ax1GenTwo emendation and has no bearing on the claim.
-- sources/2609.36279/v4/main.tex: §sec:criterion (def:hybridfree, prop:sound), §sec:v3 (thm:nonecexist, thm:v3), §sec:ax1gentwo (prop:v3two, thm:v3-two), §sec:plain (thm:plain, fig:emended), §sec:one, §sec:box, §sec:boxtwo, §sec:criterion-open (def:lgeneral, prop:lgeneral, ex:separating), §sec:open. Read 2026-10-22.
-- sources/2609.36279/v4/anc/OpenQuestions/audit/report.txt (per-module detector output). Read 2026-10-22.
-- sources/2609.36279/v4/anc/OpenQuestions/lean/OpenQuestions/{Ax1GenBoxVariant3, Ax1GenOneVariant3, Ax1GenTwoVariant3, Ax1GenTwoVariant3Th4, Ax1GenTwoVariant3Plain, Ax1GenTwoVariant3PlainPoss, Ax1GenTwoVariant3PlainAndersonQuant, Ax1GenTwoVariant3Model}.lean and lean/Separation.lean. Read 2026-10-22.
-- sources/2609.36279/v4/anc/OpenQuestions/alternatives/README.md. Read 2026-10-22.
-- sources/2609.26806 (v1, v3): grepped for the theorem names (none present). 2026-10-22.
-- Web search: "Gödel ontological argument variant 3 modal collapse "one world" nominal hybrid-free proof Lean". 2026-10-22.
-- Web search: ""Proofs Without Nominals" Benzmüller ontological" (https://arxiv.org/abs/2609.36279). 2026-10-22.
-- Web search: "Gödel ontological argument necessary existence essence every world single world collapse higher-order modal logic general models propositional quantification". 2026-10-22.
 - These were search-engine results only. External pages beyond the summaries were not opened.
-- sources/2609.36279/v4/main.tex: `sec:v3`, `thm:nonecexist`, `thm:v3`, `lem:serial`, `lem:reach`, `thm:uniqueess-k`, `sec:rigid`, `def:lgeneral`, `prop:lgeneral`, `sec:open` (read 2026-10-22)
-- sources/2609.36279/v4/anc/OpenQuestions/lean/OpenQuestions/GoedelVariantHOML3inS4oneFile.lean, full K-section and EssSupp/EssDetermined (2026-10-22)
-- sources/2609.36279/v4/anc/OpenQuestions/lean/OpenQuestions/Ax1GenRigidVariant2.lean: `P_succ`, `L_R`, `L_R_rigidpos`, `RigidPos_of_link` (2026-10-22)
-- sources/2609.26806/v3/anc/Notes/*.lean, grep for Th1/T1 and exemplification (2026-10-22)
-- Web search, "Gödel ontological argument variant essence modal logic K without reflexivity modal collapse Lean formalisation 2026" (2026-10-22)
-- Web search, "ontological argument Henkin general models rigid sets of properties conjunction axiom positive properties possibly exemplified" (2026-10-22)
-- Web search, "Benzmüller Proofs Without Nominals arXiv" (2026-10-22): https://arxiv.org/abs/2609.36279
 - I used only search-result summaries for the web hits and did not open the pages.
 
 The search was run automatically by claude/claude-opus-5-5.
+
+The checkers' full answers, with every query and file they searched, are published with this finding (`prior-art/`).
 
 If you know of related work we missed, please open an issue.
 
 We believe this result is new. Our prior-art search (2026-10-22) covered:
 
-- sources/2609.36279/v4/main.tex (§sec:rigid, lines ~1373–1410), read 2026-10-22
-- sources/2609.36279/v4/anc/OpenQuestions/lean/OpenQuestions/Ax1GenRigidVariant2.lean, read 2026-10-22
-- sources/2609.36279/v4/anc/OpenQuestions/audit/census-openquestions.txt (grep for L_R, PosGlobal), read 2026-10-22
-- sources/2609.26806/v1, v3 (grep for Ax1GenR / PosGlobal / RigidPos: no hits), 2026-10-22
-- Web search: "Gödel ontological argument generalised conjunction axiom rigid set of properties "positive" Ax1Gen", 2026-10-22. Results: https://arxiv.org/html/2609.36279v1, https://link.springer.com/article/10.1007/s00605-025-02078-x, https://arxiv.org/html/2609.26806, https://arxiv.org/html/2608.07578, https://link.springer.com/article/10.1007/s11787-026-00409-6, https://www.researchgate.net/publication/402244958
-- Web search: "Benzmüller "Proofs Without Nominals" ontological argument rigid positivity", 2026-10-22. Results: https://arxiv.org/abs/2609.36279, https://arxiv.org/pdf/1910.08955, https://arxiv.org/pdf/2608.07578, https://arxiv.org/pdf/2202.06264
 - I worked only from search-result summaries for the web results. I did not open those pages.
 
 The search was run automatically by claude/claude-opus-5-5.
+
+The checkers' full answers, with every query and file they searched, are published with this finding (`prior-art/`).
 
 We found no earlier statement of it, but we can't be certain. If you know of prior work, please open an issue.
 
@@ -442,3 +430,8 @@ Prior art: possibly new: no prior art found in the owner's search (answer: `prio
 
 1. <!-- cite:benzmueller2025notes --> Benzm\"uller, Christoph and Scott, Dana S.. 2025. Notes on G\"odel's and Scott's variants of the ontological argument. Monatshefte f\"ur Mathematik. [Link](https://link.springer.com/article/10.1007/s00605-025-02078-x)
 2. <!-- cite:benzmueller2026nominals --> Benzm\"uller, Christoph. 2026. Proofs Without Nominals: G\"odel's Ontological Argument, its Shallow Embedding, and the Open Questions of the Monatshefte Notes. [Link](https://arxiv.org/abs/2609.36279v4)
+
+<!-- autoresearch:revisions -->
+## Revisions
+
+- 2026-10-24 — readable prior-art section

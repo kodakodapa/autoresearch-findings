@@ -365,34 +365,6 @@
     },
     {
       "allowed": [
-        "ch. 7"
-      ],
-      "claims": [
-        "K1",
-        "K2",
-        "K3",
-        "K4",
-        "K5",
-        "K6",
-        "K7",
-        "K8",
-        "K11",
-        "K12",
-        "K13",
-        "K14"
-      ],
-      "commit": "7e239585d6c77726d88783754d4bfa7d3c3bf197",
-      "date": "2026-10-24",
-      "pdf": true,
-      "run_label": "20261022-1314",
-      "slug": "ontological-nominal-free-proofs",
-      "threads": [
-        "*"
-      ],
-      "title": "Nominal-free proofs of the theorems Benzm\u00fcller's detector flags"
-    },
-    {
-      "allowed": [
         "Ch. 15",
         "ch. 7"
       ],
@@ -476,6 +448,40 @@
         "H"
       ],
       "title": "From Lean proofs to certified derivations in the ontological embedding"
+    },
+    {
+      "allowed": [
+        "ch. 7"
+      ],
+      "claims": [
+        "K1",
+        "K2",
+        "K3",
+        "K4",
+        "K5",
+        "K6",
+        "K7",
+        "K8",
+        "K11",
+        "K12",
+        "K13",
+        "K14"
+      ],
+      "commit": "7e239585d6c77726d88783754d4bfa7d3c3bf197",
+      "date": "2026-10-24",
+      "pdf": true,
+      "revisions": [
+        {
+          "date": "2026-10-24",
+          "reason": "readable prior-art section"
+        }
+      ],
+      "run_label": "20261022-1314",
+      "slug": "ontological-nominal-free-proofs",
+      "threads": [
+        "*"
+      ],
+      "title": "Nominal-free proofs of the theorems Benzm\u00fcller's detector flags"
     }
   ]
 }

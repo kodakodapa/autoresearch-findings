@@ -35,10 +35,10 @@ How large must a program be to tell graded FairBots apart?: This result was foun
 Unexploitable modal agents that cooperate with themselves: a census: This result was found by AI research agents (the autoresearch harness). It was partly checked by scripts that run Lean proofs (claims K11, K18) and partly checked by script (claims K51, K53, K2); the proof and check files are included so anyone can re-run them.
 Round robins of modal agents in the Stag Hunt: This result was found by AI research agents (the autoresearch harness). It was partly checked by scripts that run Lean proofs (claims K8, K3) and partly checked by script (claims K15, K6, K14, K5, K7, K4, K17, K18); the proof and check files are included so anyone can re-run them.
 Safe modal agents that coordinate in the Stag Hunt: size 13 is the minimum: This result was found by AI research agents (the autoresearch harness). It was partly checked by scripts that run Lean proofs (claims K9) and partly checked by script (claims K16, K13, K19); the proof and check files are included so anyone can re-run them.
-Nominal-free proofs of the theorems Benzmüller's detector flags: This result was found by AI research agents (the autoresearch harness). It was proved in Lean; the proof and check files are included so anyone can re-run them.
 A complete calculus for the ℒ-general models of the ontological argument: This result was found by AI research agents (the autoresearch harness). It was partly proved in Lean (claims K1, K2, K3, K4, K6, K7, K8, K9, K10, K11, K12, K13, K14, K15, K16, K17, K18) and partly checked by scripts that run Lean proofs (claims K5); the proof and check files are included so anyone can re-run them.
 Gödel's lemma L under the rigid reading, with no condition on positivity: This result was found by AI research agents (the autoresearch harness). It was partly proved in Lean (claims K1, K3) and partly checked by script (claims K2); the proof and check files are included so anyone can re-run them.
 From Lean proofs to certified derivations in the ontological embedding: This result was found by AI research agents (the autoresearch harness). It was proved in Lean; the proof and check files are included so anyone can re-run them.
+Nominal-free proofs of the theorems Benzmüller's detector flags: This result was found by AI research agents (the autoresearch harness). It was proved in Lean; the proof and check files are included so anyone can re-run them.
 Site: https://kodakodapa.github.io/autoresearch-findings/
 - [A census of modal agents in the prisoner's dilemma paper](claims/modal-agent-census/paper.pdf)
 - [When graded PrudentBots cooperate with graded FairBots paper](claims/graded-prudent-fair/paper.pdf)
@@ -53,7 +53,7 @@ Site: https://kodakodapa.github.io/autoresearch-findings/
 - [Unexploitable modal agents that cooperate with themselves: a census paper](claims/only-one-fairbot-census/paper.pdf)
 - [Round robins of modal agents in the Stag Hunt paper](claims/staghunt-round-robin/paper.pdf)
 - [Safe modal agents that coordinate in the Stag Hunt: size 13 is the minimum paper](claims/staghunt-safe-coordinators/paper.pdf)
-- [Nominal-free proofs of the theorems Benzmüller's detector flags paper](claims/ontological-nominal-free-proofs/paper.pdf)
 - [A complete calculus for the ℒ-general models of the ontological argument paper](claims/ontological-lgeneral-semantics/paper.pdf)
 - [Gödel's lemma L under the rigid reading, with no condition on positivity paper](claims/ontological-rigid-l/paper.pdf)
 - [From Lean proofs to certified derivations in the ontological embedding paper](claims/ontological-proof-translation/paper.pdf)
+- [Nominal-free proofs of the theorems Benzmüller's detector flags paper](claims/ontological-nominal-free-proofs/paper.pdf)
