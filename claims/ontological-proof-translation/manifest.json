@@ -22,8 +22,14 @@
   ],
   "commit": "ade4f20858f2a3b683193e13de0d89273d57c4c9",
   "name": "ontological-proof-translation",
+  "revisions": [
+    {
+      "date": "2026-10-24",
+      "reason": "readable prior-art section"
+    }
+  ],
   "round": 21,
   "run_label": "20261023-0556",
-  "staged_at": "2026-10-24T10:38:57Z",
+  "staged_at": "2026-10-24T16:20:23Z",
   "title": "From Lean proofs to certified derivations in the ontological embedding"
 }

@@ -59,19 +59,20 @@ the reflexive–transitive and five-edge counterexamples, the general countermod
 the sufficiency direction, and the exact condition.
 <!-- /owner-summary -->
 
-This result extends C. Benzmüller, "Proofs Without Nominals …", arXiv 2609.36279 v4 (https://arxiv.org/abs/2609.36279):; C. Benzmüller, "Gödel's and Scott's Variants … in Lean 4 and TPTP THF", arXiv 2609.26806 v3 (https://arxiv.org/abs/2609.26806): the port the developments build on. It points to 2609.36279 for nominals and the open questions, and has no general-model results; C. Benzmüller, "A Comment on Modal Collapse and Ultrafilters", arXiv 2608.07578 (https://arxiv.org/pdf/2608.07578): rigidity of positivity as the driver of collapse. It is background for K1's proviso question and does not address general models. Our prior-art search (2026-10-23) covered:
+This result extends:
 
-- sources/2609.36279/v4/main.tex (read: §§ sec:criterion, prop:sound, sec:ax1gentwo, thm:gextwo, sec:plain/thm:plain, sec:rigid, sec:boxtwo, sec:criterion-open incl. def:lgeneral, prop:lgeneral, ex:separating, sec:open), 2026-10-23
-- sources/2609.26806/v3/main.tex, lean.tex (grep for general models / Ax1GenR / Ax1GenTwo / nominals), 2026-10-23
-- WebSearch: "Benzmüller "Proofs Without Nominals" ontological argument Ax1GenTwo", 2026-10-23 (hits: https://arxiv.org/abs/2609.36279, https://arxiv.org/html/2609.36279v2, https://arxiv.org/html/2609.26806)
-- WebSearch: "Gödel ontological argument general models propositional quantification nominals Henkin semantics conjunction axiom 2026", 2026-10-23 (hits incl. https://link.springer.com/article/10.1007/s11787-026-00409-6, https://d-nb.info/136998622X/34)
-- WebSearch: "Fraenkel-Mostowski model propositional quantifiers atomless "global modality" ontological argument", 2026-10-23 (hits incl. https://arxiv.org/html/2409.14211v2, Fritz JSL axiomatizability paper on cambridge.org)
-- WebSearch: ""Ax1GenR" OR "rigid positivity" ontological argument positivity "satisfaction operator" Pos G", 2026-10-23 (hits incl. https://arxiv.org/pdf/2608.07578, https://arxiv.org/pdf/1910.08955)
-- WebSearch: "Gödel ontological argument modal collapse model without atoms propositional domain infinite worlds non-standard general frame", 2026-10-23 (hits incl. https://philpapers.org/archive/KOVMCI.pdf, https://apcz.umk.pl/LLP/article/view/55901)
+- C. Benzmüller, "Proofs Without Nominals …", arXiv 2609.36279 v4 (https://arxiv.org/abs/2609.36279):.
+- C. Benzmüller, "Gödel's and Scott's Variants … in Lean 4 and TPTP THF", arXiv 2609.26806 v3 (https://arxiv.org/abs/2609.26806): the port the developments build on. It points to 2609.36279 for nominals and the open questions, and has no general-model results.
+- C. Benzmüller, "A Comment on Modal Collapse and Ultrafilters", arXiv 2608.07578 (https://arxiv.org/pdf/2608.07578): rigidity of positivity as the driver of collapse. It is background for K1's proviso question and does not address general models.
+
+Our prior-art search (2026-10-23) covered:
+
 - WebFetch: https://arxiv.org/a/benzmuller_c_1 (author listing, 2026 papers), 2026-10-23
 - Web pages other than the arXiv listing were seen through search-result summaries only. The Springer and LLP papers were not opened.
 
 The search was run automatically by claude/claude-opus-5-5.
+
+The checkers' full answers, with every query and file they searched, are published with this finding (`prior-art/`).
 
 If you know of related work we missed, please open an issue.
 
@@ -497,3 +498,8 @@ Prior art: unchecked
 ## References
 
 1. <!-- cite:benzmueller2026nominals --> Benzm\"uller, Christoph. 2026. Proofs Without Nominals: G\"odel's Ontological Argument, its Shallow Embedding, and the Open Questions of the Monatshefte Notes. [Link](https://arxiv.org/abs/2609.36279v4)
+
+<!-- autoresearch:revisions -->
+## Revisions
+
+- 2026-10-24 — readable prior-art section

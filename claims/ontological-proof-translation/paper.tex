@@ -47,21 +47,24 @@ the sufficiency direction, and the exact condition.
 
 \subsection*{Novelty statement}
 
-This result extends C. Benzmüller, ``Proofs Without Nominals \ldots{}'', arXiv 2609.36279 v4 (https://arxiv.org/abs/2609.36279):; C. Benzmüller, ``Gödel's and Scott's Variants \ldots{} in Lean 4 and TPTP THF'', arXiv 2609.26806 v3 (https://arxiv.org/abs/2609.26806): the port the developments build on. It points to 2609.36279 for nominals and the open questions, and has no general-model results; C. Benzmüller, ``A Comment on Modal Collapse and Ultrafilters'', arXiv 2608.07578 (https://arxiv.org/pdf/2608.07578): rigidity of positivity as the driver of collapse. It is background for K1's proviso question and does not address general models. Our prior-art search (2026-10-23) covered:
+This result extends:
 
 \begin{itemize}
-\item sources/2609.36279/v4/main.tex (read: \S{}\S{} sec:criterion, prop:sound, sec:ax1gentwo, thm:gextwo, sec:plain/thm:plain, sec:rigid, sec:boxtwo, sec:criterion-open incl. def:lgeneral, prop:lgeneral, ex:separating, sec:open), 2026-10-23
-\item sources/2609.26806/v3/main.tex, lean.tex (grep for general models / Ax1GenR / Ax1GenTwo / nominals), 2026-10-23
-\item WebSearch: ``Benzmüller ''Proofs Without Nominals`` ontological argument Ax1GenTwo'', 2026-10-23 (hits: https://arxiv.org/abs/2609.36279, https://arxiv.org/html/2609.36279v2, https://arxiv.org/html/2609.26806)
-\item WebSearch: ``Gödel ontological argument general models propositional quantification nominals Henkin semantics conjunction axiom 2026'', 2026-10-23 (hits incl. https://link.springer.com/article/10.1007/s11787-026-00409-6, https://d-nb.info/136998622X/34)
-\item WebSearch: ``Fraenkel-Mostowski model propositional quantifiers atomless ''global modality`` ontological argument'', 2026-10-23 (hits incl. https://arxiv.org/html/2409.14211v2, Fritz JSL axiomatizability paper on cambridge.org)
-\item WebSearch: ``''Ax1GenR`` OR ''rigid positivity`` ontological argument positivity ''satisfaction operator`` Pos G'', 2026-10-23 (hits incl. https://arxiv.org/pdf/2608.07578, https://arxiv.org/pdf/1910.08955)
-\item WebSearch: ``Gödel ontological argument modal collapse model without atoms propositional domain infinite worlds non-standard general frame'', 2026-10-23 (hits incl. https://philpapers.org/archive/KOVMCI.pdf, https://apcz.umk.pl/LLP/article/view/55901)
+\item C. Benzmüller, ``Proofs Without Nominals \ldots{}'', arXiv 2609.36279 v4 (https://arxiv.org/abs/2609.36279):.
+\item C. Benzmüller, ``Gödel's and Scott's Variants \ldots{} in Lean 4 and TPTP THF'', arXiv 2609.26806 v3 (https://arxiv.org/abs/2609.26806): the port the developments build on. It points to 2609.36279 for nominals and the open questions, and has no general-model results.
+\item C. Benzmüller, ``A Comment on Modal Collapse and Ultrafilters'', arXiv 2608.07578 (https://arxiv.org/pdf/2608.07578): rigidity of positivity as the driver of collapse. It is background for K1's proviso question and does not address general models.
+\end{itemize}
+
+Our prior-art search (2026-10-23) covered:
+
+\begin{itemize}
 \item WebFetch: https://arxiv.org/a/benzmuller\_c\_1 (author listing, 2026 papers), 2026-10-23
 \item Web pages other than the arXiv listing were seen through search-result summaries only. The Springer and LLP papers were not opened.
 \end{itemize}
 
 The search was run automatically by claude/claude-opus-5-5.
+
+The checkers' full answers, with every query and file they searched, are published with this finding (\texttt{prior-art/}).
 
 If you know of related work we missed, please open an issue.
 
@@ -398,6 +401,12 @@ Run \texttt{20261023-0556}, claims K1, K3, K4, K5, K6, K7, K8, K9, K10, K11, K12
 \section{How to verify}
 
 Each finding has its check scripts in \texttt{claims/ontological-proof-translation/checks/} of the findings repository. Run each with \texttt{python -I <script>}; it passes if it exits with status 0. The checks are Python scripts and need the packages of the research image (the image's \texttt{requirements.txt}); the Lean checks also need \texttt{lean}.
+
+\section{Revisions}
+
+\begin{itemize}
+\item 2026-10-24 --- readable prior-art section
+\end{itemize}
 
 \nocite{*}
 \bibliographystyle{plain}
