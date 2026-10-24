@@ -1,0 +1,23 @@
+{
+  "axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "axioms_output": "'Programme.Run6.H.LR.valid_god' depends on axioms: [propext, Classical.choice, Quot.sound]\n",
+  "build_log": "' depends on axioms: [Ax1GenTwo,\n Ax2a,\n Ax2b,\n Ax3,\n Ax4,\n P,\n R,\n e,\n eNonempty,\n existsAt,\n i,\n propext,\n Classical.choice,\n Quot.sound]\ninfo: Programme/Run6/H/TranslateKB.lean:10999:0: 'Programme.Run6.H.MCK.of_struct' depends on axioms: [Ax1GenTwo,\n Ax2a,\n Ax2b,\n Ax3,\n Ax4,\n P,\n R,\n e,\n eNonempty,\n existsAt,\n i,\n propext,\n Classical.choice,\n Quot.sound]\nBuild completed successfully (13 jobs).\n",
+  "duration_s": 1.4104840755462646,
+  "exit": 0,
+  "figures": [],
+  "path": "checks/K1-TranslateRigid.lean",
+  "reason": "proof built and axioms verified",
+  "result": "pass",
+  "run_at": "2026-10-23T14:13:51.874759+00:00",
+  "stderr_head": "",
+  "stderr_tail": "",
+  "stdout_sha256": "e0b0a1969f8189226a3ca210687bcf5ec273f6af80778fc0ecd5b18369cdf884",
+  "stdout_tail": "{\"result\": \"pass\", \"reason\": \"proof built and axioms verified\", \"axioms_output\": \"'Programme.Run6.H.LR.valid_god' depends on axioms: [propext, Classical.choice, Quot.sound]\\n\", \"build_log\": \"' depends on axioms: [Ax1GenTwo,\\n Ax2a,\\n Ax2b,\\n Ax3,\\n Ax4,\\n P,\\n R,\\n e,\\n eNonempty,\\n existsAt,\\n i,\\n propext,\\n Classical.choice,\\n Quot.sound]\\ninfo: Programme/Run6/H/TranslateKB.lean:10999:0: 'Programme.Run6.H.MCK.of_struct' depends on axioms: [Ax1GenTwo,\\n Ax2a,\\n Ax2b,\\n Ax3,\\n Ax4,\\n P,\\n R,\\n e,\\n eNonempty,\\n existsAt,\\n i,\\n propext,\\n Classical.choice,\\n Quot.sound]\\nBuild completed successfully (13 jobs).\\n\"}\n",
+  "theorem": "Programme.Run6.H.LR.valid_god",
+  "timeout_s": 120,
+  "type": "proof"
+}

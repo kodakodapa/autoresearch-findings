@@ -160,7 +160,7 @@ Prior art: partial prior art (answer: `prior-art/R8.md`)
 
 ## K13
 
-Constant-domain extensional Fitting, all subsets of A1a,A1b,A2,H,N × nine frame classes: all 288 cells are consistent and permit noncollapse; both existence conclusions hold exactly for supersets of $\{A1a,A2,H\}$ or $\{A1a,H,N\}$. A1b is unnecessary.
+Constant-domain extensional Fitting, all subsets of A1a,A1b,A2,H,N × nine frame classes: all 288 cells are consistent and permit noncollapse; both existence conclusions hold exactly for supersets of $\lbrace A1a,A2,H\rbrace $ or $\lbrace A1a,H,N\rbrace $. A1b is unnecessary.
 
 Status: derived · author check only
 
@@ -207,7 +207,7 @@ Prior art: partial prior art (answer: `prior-art/R12.md`)
 
 ## K16
 
-Varying-domain (actualist) extensional Fitting, 32 subsets of A1a,A1b,A2,H,N × 9 classes: $\exists^E x\,G(x)$ holds iff the subset contains $\{A1a,A2,H,N\}$ on T, B, S4, S5; $\Box\exists^E x\,G(x)$ also on KD45. K13's sets $\{A1a,A2,H\}$ and $\{A1a,H,N\}$ fail in S5.
+Varying-domain (actualist) extensional Fitting, 32 subsets of A1a,A1b,A2,H,N × 9 classes: $\exists^E x\,G(x)$ holds iff the subset contains $\lbrace A1a,A2,H,N\rbrace $ on T, B, S4, S5; $\Box\exists^E x\,G(x)$ also on KD45. K13's sets $\lbrace A1a,A2,H\rbrace $ and $\lbrace A1a,H,N\rbrace $ fail in S5.
 
 Status: derived · author check only
 

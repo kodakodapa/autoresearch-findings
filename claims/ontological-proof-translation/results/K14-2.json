@@ -1,0 +1,21 @@
+{
+  "axioms": [
+    "propext"
+  ],
+  "axioms_output": "'Programme.Run6.H.F4.F4_Qt' depends on axioms: [propext]\n",
+  "build_log": "' depends on axioms: [Ax1GenTwo,\n Ax2a,\n Ax2b,\n Ax3,\n Ax4,\n P,\n R,\n e,\n eNonempty,\n existsAt,\n i,\n propext,\n Classical.choice,\n Quot.sound]\ninfo: Programme/Run6/H/TranslateKB.lean:10999:0: 'Programme.Run6.H.MCK.of_struct' depends on axioms: [Ax1GenTwo,\n Ax2a,\n Ax2b,\n Ax3,\n Ax4,\n P,\n R,\n e,\n eNonempty,\n existsAt,\n i,\n propext,\n Classical.choice,\n Quot.sound]\nBuild completed successfully (18 jobs).\n",
+  "duration_s": 2.4603469371795654,
+  "exit": 0,
+  "figures": [],
+  "path": "checks/K14-TranslateKBF4.lean",
+  "reason": "proof built and axioms verified",
+  "result": "pass",
+  "run_at": "2026-10-23T17:31:11.844127+00:00",
+  "stderr_head": "",
+  "stderr_tail": "",
+  "stdout_sha256": "78610ac0eaedf7c7437ca8af6ffe83bbafd9b58ec074447771e3d3ae30bb967c",
+  "stdout_tail": "{\"result\": \"pass\", \"reason\": \"proof built and axioms verified\", \"axioms_output\": \"'Programme.Run6.H.F4.F4_Qt' depends on axioms: [propext]\\n\", \"build_log\": \"' depends on axioms: [Ax1GenTwo,\\n Ax2a,\\n Ax2b,\\n Ax3,\\n Ax4,\\n P,\\n R,\\n e,\\n eNonempty,\\n existsAt,\\n i,\\n propext,\\n Classical.choice,\\n Quot.sound]\\ninfo: Programme/Run6/H/TranslateKB.lean:10999:0: 'Programme.Run6.H.MCK.of_struct' depends on axioms: [Ax1GenTwo,\\n Ax2a,\\n Ax2b,\\n Ax3,\\n Ax4,\\n P,\\n R,\\n e,\\n eNonempty,\\n existsAt,\\n i,\\n propext,\\n Classical.choice,\\n Quot.sound]\\nBuild completed successfully (18 jobs).\\n\"}\n",
+  "theorem": "Programme.Run6.H.F4.F4_Qt",
+  "timeout_s": 120,
+  "type": "proof"
+}

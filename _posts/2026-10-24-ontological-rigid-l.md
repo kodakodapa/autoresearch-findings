@@ -22,7 +22,7 @@ v4's module `Ax1GenRigidVariant2`; this one proves the statement over v4's seman
 
 - **L under the rigid reading.** In every v4 $\mathcal L$-general model with nonempty
   individuals where the variant-2 axioms Ax2a, Ax2b, Ax4 and the instance of Ax1GenR for the
-  set of globally positive properties $\{\psi \mid P\psi=\top\}$ hold at every world, $P\,G$
+  set of globally positive properties $\lbrace \psi \mid P\psi=\top\rbrace $ hold at every world, $P\,G$
   holds at every world. The proof is a derivation in the certified deep calculus of the
   companion finding, so it holds by that calculus's soundness theorem, with the deep axioms
   matched clause by clause to the Lean module.
@@ -77,7 +77,7 @@ If you know of related work we missed, please open an issue.
 
 This result was found by AI research agents (the autoresearch harness). It was partly proved in Lean (claims K1, K3) and partly checked by script (claims K2); the proof and check files are included so anyone can re-run them.
 
-**K1.** In every v4 $\mathcal L$-general model with nonempty individuals where variant-2 Ax2a, Ax2b, Ax4 and the rigid-schema instance $\mathrm{Ax1GenR}$ for $\{\psi\mid P\psi=\top\}$ hold at every world, $P\,G$ holds at every world, via a certified deep derivation (DC, of_DC, sound_v4_wt).
+**K1.** In every v4 $\mathcal L$-general model with nonempty individuals where variant-2 Ax2a, Ax2b, Ax4 and the rigid-schema instance $\mathrm{Ax1GenR}$ for $\lbrace \psi\mid P\psi=\top\rbrace $ hold at every world, $P\,G$ holds at every world, via a certified deep derivation (DC, of_DC, sound_v4_wt).
 
 - Status: proved (axioms: propext, Classical.choice, Quot.sound)
 - Machine-checked: no check scripts.
@@ -89,7 +89,7 @@ This result was found by AI research agents (the autoresearch harness). It was p
 - Machine-checked: no check scripts.
 - Prior art: partial prior art
 
-**K2.** Variant-2 Ax2a, Ax2b, Ax4 do not derive $P\,G$: a full S5 model with 3 worlds, one always-actual entity and $P\varphi$ iff $\varphi a$ holds at $\ge 2$ worlds satisfies them, while $P\,G$ and the $\mathrm{Ax1GenR}$ instance for $\{\psi\mid P\psi=\top\}$ fail at every world.
+**K2.** Variant-2 Ax2a, Ax2b, Ax4 do not derive $P\,G$: a full S5 model with 3 worlds, one always-actual entity and $P\varphi$ iff $\varphi a$ holds at $\ge 2$ worlds satisfies them, while $P\,G$ and the $\mathrm{Ax1GenR}$ instance for $\lbrace \psi\mid P\psi=\top\rbrace $ fail at every world.
 
 - Status: derived · independently re-derived (sk/claude)
 - Machine-checked: 1 of 1 check scripts passed.

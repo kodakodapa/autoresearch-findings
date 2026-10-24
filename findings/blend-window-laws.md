@@ -29,8 +29,8 @@ DefectBot or CooperateBot.
 ## Result
 
 - **FairBot-type blends.** For a graded-FairBot blend with finitely many selected heights:
-  - a $W_n$ blend cooperates with itself exactly when $S$ meets $\{k, \dots, n-1\}$;
-  - a $J_{a,b,j}$ blend exactly when $k \le j$ and $S$ contains all of $\{j, \dots, a+b\}$;
+  - a $W_n$ blend cooperates with itself exactly when $S$ meets $\lbrace k, \dots, n-1\rbrace $;
+  - a $J_{a,b,j}$ blend exactly when $k \le j$ and $S$ contains all of $\lbrace j, \dots, a+b\rbrace $;
   - for $V_{n,r}$ the condition is a window determined by the blend's DefectBot trace, and it is
     not monotone: for $V_{3,2}$, selecting height 2 makes the blend cooperate with itself, while
     selecting heights 2 and 3 does not.
@@ -39,7 +39,7 @@ DefectBot or CooperateBot.
 - **DefectBot blends.** Playing DefectBot at even one height rules out mutual cooperation with
   FairBot and with every $F_k$, because an agent ends in mutual cooperation with $F_k$ exactly
   when it cooperates at every height of that game. A DefectBot blend of $W_n$ still cooperates
-  with itself exactly when $S$ is a non-empty subset of $\{0, \dots, n-1\}$; for $J_{a,b,j}$
+  with itself exactly when $S$ is a non-empty subset of $\lbrace 0, \dots, n-1\rbrace $; for $J_{a,b,j}$
   never.
 - **CooperateBot blends** cooperate with themselves only when CooperateBot is played at all but
   finitely many heights, and then DefectBot exploits them.
@@ -91,7 +91,7 @@ This result was found by AI research agents (the autoresearch harness). It was c
 
 ## K14
 
-For $n\ge2,k\ge1$, an $F_k$ height blend of $W_n$ with finite $S$ self-cooperates iff $S\cap\{k,\ldots,n-1\}\ne\varnothing$; all such blends remain unexploitable and cooperate with FairBot and CooperateBot.
+For $n\ge2,k\ge1$, an $F_k$ height blend of $W_n$ with finite $S$ self-cooperates iff $S\cap\lbrace k,\ldots,n-1\rbrace \ne\varnothing$; all such blends remain unexploitable and cooperate with FairBot and CooperateBot.
 
 Status: derived · author check only
 
@@ -140,7 +140,7 @@ Prior art: possibly new: no prior art found in the owner's search (answer: `prio
 
 ## K16
 
-For an $F_k$ height blend of $V_{n,r}$, let $d$ be its DefectBot trace, $t$ its first false height and $E=\{g\ge n:\neg d(g),\ g<t+r\}$. Self-play cooperates iff every height above every $g\in E$ is selected; for finite $S$, iff $E=\varnothing$.
+For an $F_k$ height blend of $V_{n,r}$, let $d$ be its DefectBot trace, $t$ its first false height and $E=\lbrace g\ge n:\neg d(g),\ g<t+r\rbrace $. Self-play cooperates iff every height above every $g\in E$ is selected; for finite $S$, iff $E=\varnothing$.
 
 Status: derived · author check only
 
@@ -164,7 +164,7 @@ Prior art: possibly new: no prior art found in the owner's search (answer: `prio
 
 ## K19
 
-For $1\le j\le a+b$ and $k\ge1$, an $F_k$ height blend of $J_{a,b,j}$ with finite $S$ self-cooperates iff $k\le j$ and $\{j,\ldots,a+b\}\subseteq S$; all such blends are unexploitable and cooperate with FairBot and CooperateBot.
+For $1\le j\le a+b$ and $k\ge1$, an $F_k$ height blend of $J_{a,b,j}$ with finite $S$ self-cooperates iff $k\le j$ and $\lbrace j,\ldots,a+b\rbrace \subseteq S$; all such blends are unexploitable and cooperate with FairBot and CooperateBot.
 
 Status: derived · author check only
 
@@ -188,7 +188,7 @@ Prior art: possibly new: no prior art found in the owner's search (answer: `prio
 
 ## K9
 
-A DefectBot height blend of $W_n$ ($n\ge2$) self-cooperates iff $\varnothing\ne S\subseteq\{0,\ldots,n-1\}$; a CooperateBot blend self-cooperates iff $S$ is cofinite.
+A DefectBot height blend of $W_n$ ($n\ge2$) self-cooperates iff $\varnothing\ne S\subseteq\lbrace 0,\ldots,n-1\rbrace $; a CooperateBot blend self-cooperates iff $S$ is cofinite.
 
 Status: derived · author check only
 
@@ -212,7 +212,7 @@ Prior art: partial prior art (answer: `prior-art/R60.md`)
 
 ## K25
 
-For $r\ge1$, a DefectBot height blend of $V_{n,r}$ self-cooperates iff $S\subseteq\{0,\ldots,n-1\}$ and some $s\in S$ satisfies $s+r\le n+1$; all remain unexploitable. CooperateBot blends self-cooperate iff $S$ is cofinite, when DefectBot exploits them.
+For $r\ge1$, a DefectBot height blend of $V_{n,r}$ self-cooperates iff $S\subseteq\lbrace 0,\ldots,n-1\rbrace $ and some $s\in S$ satisfies $s+r\le n+1$; all remain unexploitable. CooperateBot blends self-cooperate iff $S$ is cofinite, when DefectBot exploits them.
 
 Status: derived · author check only
 

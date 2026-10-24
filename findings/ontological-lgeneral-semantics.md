@@ -26,7 +26,7 @@ axiom sets. This finding makes that semantics machine-checked.
   substitution at every type of $\mathcal L$, is sound over v4's $\mathcal L$-general models
   with nonempty individuals, and complete: for every $\mathcal L$-theory $T$ and sentence
   $\varphi$, $\varphi$ holds in all such models of $T$ exactly when the calculus derives it from
-  $T\cup\{\exists x.\top\}$. Löwenheim–Skolem and compactness follow: for theories containing
+  $T\cup\lbrace \exists x.\top\rbrace $. Löwenheim–Skolem and compactness follow: for theories containing
   $\exists x.\top$, a failure has a countermodel with countably many worlds and countable
   carriers, and every consequence follows from a finite sub-theory.
 - **prop:lgeneral in deep form.** Leibniz with whole-term motives and $\mathcal L$-term sides
@@ -415,7 +415,7 @@ Prior art: partial prior art (answer: `prior-art/R7.md`)
 
 ## K12
 
-For every $\mathcal L$-theory $T$ and $\mathcal L$-sentence $\varphi$: $\varphi$ holds in all v4 $\mathcal L$-general models of $T$ with nonempty individuals iff K4's certified calculus derives $[\![\varphi]\!]$ at a world variable from $T\cup\{\exists x.\top\}$.
+For every $\mathcal L$-theory $T$ and $\mathcal L$-sentence $\varphi$: $\varphi$ holds in all v4 $\mathcal L$-general models of $T$ with nonempty individuals iff K4's certified calculus derives $[\![\varphi]\!]$ at a world variable from $T\cup\lbrace \exists x.\top\rbrace $.
 
 Status: proved (axioms: propext, Classical.choice, Quot.sound)
 

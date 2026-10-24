@@ -1,0 +1,23 @@
+{
+  "axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "axioms_output": "'Programme.Run6.H.LR.valid_god' depends on axioms: [propext, Classical.choice, Quot.sound]\n",
+  "build_log": "6.H.CFOK.valid' depends on axioms: [propext, Classical.choice, Quot.sound]\ninfo: Programme/Run6/H/TranslateTwo.lean:10703:0: 'Programme.Run6.H.NOK.valid' depends on axioms: [propext, Classical.choice, Quot.sound]\ninfo: Programme/Run6/H/TranslateTwo.lean:10733:0: 'Programme.Run6.H.Audit.sep_v4_ax1gen' depends on axioms: [propext, Classical.choice, Quot.sound]\nBuild completed successfully (9 jobs).\n",
+  "duration_s": 2.973581075668335,
+  "exit": 0,
+  "figures": [],
+  "path": "checks/K1-TranslateRigid.lean",
+  "reason": "proof built and axioms verified",
+  "result": "pass",
+  "run_at": "2026-10-23T08:48:24.146381+00:00",
+  "stderr_head": "",
+  "stderr_tail": "",
+  "stdout_sha256": "80c83c8fb943a958c2417f63bbbf8542ee16c0cf2c76df42d717f242dfca12a7",
+  "stdout_tail": "{\"result\": \"pass\", \"reason\": \"proof built and axioms verified\", \"axioms_output\": \"'Programme.Run6.H.LR.valid_god' depends on axioms: [propext, Classical.choice, Quot.sound]\\n\", \"build_log\": \"6.H.CFOK.valid' depends on axioms: [propext, Classical.choice, Quot.sound]\\ninfo: Programme/Run6/H/TranslateTwo.lean:10703:0: 'Programme.Run6.H.NOK.valid' depends on axioms: [propext, Classical.choice, Quot.sound]\\ninfo: Programme/Run6/H/TranslateTwo.lean:10733:0: 'Programme.Run6.H.Audit.sep_v4_ax1gen' depends on axioms: [propext, Classical.choice, Quot.sound]\\nBuild completed successfully (9 jobs).\\n\"}\n",
+  "theorem": "Programme.Run6.H.LR.valid_god",
+  "timeout_s": 120,
+  "type": "proof"
+}
