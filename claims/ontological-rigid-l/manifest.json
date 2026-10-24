@@ -9,8 +9,14 @@
   ],
   "commit": "2e2df987b9201fdce33786411f4136a4bc241629",
   "name": "ontological-rigid-l",
+  "revisions": [
+    {
+      "date": "2026-10-24",
+      "reason": "readable prior-art section"
+    }
+  ],
   "round": 3,
   "run_label": "20261023-0519",
-  "staged_at": "2026-10-24T10:38:56Z",
+  "staged_at": "2026-10-24T16:09:01Z",
   "title": "G\u00f6del's lemma L under the rigid reading, with no condition on positivity"
 }

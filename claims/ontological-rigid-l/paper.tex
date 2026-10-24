@@ -50,26 +50,30 @@ that the run checked by argument, not in Lean; its status is \emph{derived}.
 
 \subsection*{Novelty statement}
 
-This result extends Benzmüller, ``Proofs Without Nominals'', arXiv 2609.36279 v4, \S{}sec:rigid: Ax1GenR. It has L\_R in K from Ax2a and Ax2b via the hybrid witness @\_w P. L\_R\_rigidpos derives L from \{$\psi$ \textbar{} A(P$\psi$)\} only under rigid positivity. It leaves open the case without that condition, which is the case K1 addresses. prop:lgeneral gives shallow soundness over $\mathcal{L}$-general models; Benzmüller \& Scott, Notes (Monatshefte 2025), and Benzmüller, arXiv 2609.26806: L (P G) from the world-dependent Ax1Gen, by the instance $\Phi$ = P; Kanckos \& Woltzenlogel Paleo, ``Variants of Gödel's Ontological Proof in a Natural Deduction Calculus'', Studia Logica 105 (2017): explicit derivations in a rigid higher-order modal logic, but with P G (A3) as an axiom, not derived from a conjunction schema; Benzmüller \& Woltzenlogel Paleo, arXiv 1308.4526: says A3 is derivable from Axiom 1 and D1 given infinitary conjunction. This is an informal remark, with no rigid schema and no general-model semantics; Benzmüller, ``Proofs Without Nominals'', arXiv 2609.36279 (sources/2609.36279/v4/main.tex): defines rigid L-conditions (def:hybridfree) and Ax1GenR (sec:rigid). Instantiates Ax1GenR with the L-condition \{$\psi$ \textbar{} A(Pos $\psi$)\} in the shallow embedding (\texttt{L\_R\_rigidpos}). Gives soundness over L-general and standard models (prop:lgeneral). Deep embedding only for the propositional part (Separation). No general deep-instance lemma; Benzmüller \& Kirchner, ``Monadic Second-Order Logic in HOL: Deep and Shallow with Automated Faithfulness'', arXiv 2609.07345 / AFP MSOinHOL: deep$\leftrightarrow$shallow faithfulness for MSO under standard (full) and Henkin readings, with comprehension. Same mechanism as K3, different logic; Benzmüller \& Kirchner, ``First-Order Modal Logic in HOL\ldots{}'', arXiv 2607.10880: deep$\leftrightarrow$shallow faithfulness for first-order modal logic only (no quantification over properties or sets of properties); Benzmüller, ``Faithful Logic Embeddings in HOL --- Deep and Shallow'', arXiv 2502.19311 (CADE-30): the same for propositional modal logic; Benzmüller, ``A Comment on Modal Collapse and Ultrafilters'', arXiv 2608.07578: names a deep embedding of higher-order modal logic as the natural setting for definability questions, i.e. future work; drewarrowood/godel-ontological PR \#1 (GitHub): tests a rigid-$\Phi$ repair of Ax1Gen in Lean through countermodels. Nothing on deep instances. Our prior-art search (2026-10-23) covered:
+This result extends:
 
 \begin{itemize}
-\item sources/2609.36279/v4/main.tex (sec:rigid, sec:criterion, def:lgeneral, prop:lgeneral, sec:criterion-open, open questions), read 2026-10-23
-\item sources/2609.26806/v1 and v3 (main.tex, lean.tex, tab-frames.tex), grep for Ax1Gen/rigid/general model, 2026-10-23
+\item Benzmüller, ``Proofs Without Nominals'', arXiv 2609.36279 v4, \S{}sec:rigid: Ax1GenR. It has L\_R in K from Ax2a and Ax2b via the hybrid witness @\_w P. L\_R\_rigidpos derives L from \{$\psi$ \textbar{} A(P$\psi$)\} only under rigid positivity. It leaves open the case without that condition, which is the case K1 addresses. prop:lgeneral gives shallow soundness over $\mathcal{L}$-general models.
+\item Benzmüller \& Scott, Notes (Monatshefte 2025), and Benzmüller, arXiv 2609.26806: L (P G) from the world-dependent Ax1Gen, by the instance $\Phi$ = P.
+\item Kanckos \& Woltzenlogel Paleo, ``Variants of Gödel's Ontological Proof in a Natural Deduction Calculus'', Studia Logica 105 (2017): explicit derivations in a rigid higher-order modal logic, but with P G (A3) as an axiom, not derived from a conjunction schema.
+\item Benzmüller \& Woltzenlogel Paleo, arXiv 1308.4526: says A3 is derivable from Axiom 1 and D1 given infinitary conjunction. This is an informal remark, with no rigid schema and no general-model semantics.
+\item Benzmüller, ``Proofs Without Nominals'', arXiv 2609.36279 (sources/2609.36279/v4/main.tex): defines rigid L-conditions (def:hybridfree) and Ax1GenR (sec:rigid). Instantiates Ax1GenR with the L-condition \{$\psi$ \textbar{} A(Pos $\psi$)\} in the shallow embedding (\texttt{L\_R\_rigidpos}). Gives soundness over L-general and standard models (prop:lgeneral). Deep embedding only for the propositional part (Separation). No general deep-instance lemma.
+\item Benzmüller \& Kirchner, ``Monadic Second-Order Logic in HOL: Deep and Shallow with Automated Faithfulness'', arXiv 2609.07345 / AFP MSOinHOL: deep$\leftrightarrow$shallow faithfulness for MSO under standard (full) and Henkin readings, with comprehension. Same mechanism as K3, different logic.
+\item Benzmüller \& Kirchner, ``First-Order Modal Logic in HOL\ldots{}'', arXiv 2607.10880: deep$\leftrightarrow$shallow faithfulness for first-order modal logic only (no quantification over properties or sets of properties).
+\item Benzmüller, ``Faithful Logic Embeddings in HOL --- Deep and Shallow'', arXiv 2502.19311 (CADE-30): the same for propositional modal logic.
+\item Benzmüller, ``A Comment on Modal Collapse and Ultrafilters'', arXiv 2608.07578: names a deep embedding of higher-order modal logic as the natural setting for definability questions, i.e. future work.
+\item drewarrowood/godel-ontological PR \#1 (GitHub): tests a rigid-$\Phi$ repair of Ax1Gen in Lean through countermodels. Nothing on deep instances.
+\end{itemize}
+
+Our prior-art search (2026-10-23) covered:
+
+\begin{itemize}
 \item https://arxiv.org/abs/2609.36279 (versions v1--v4; v4 dated 2026-10-14 is latest), 2026-10-23
-\item WebSearch: ``\textbackslash{}''Ax1Gen\textbackslash{}`` rigid positive properties God-like positive ontological argument'', 2026-10-23
-\item WebSearch: ``Gödel ontological \textbackslash{}''any number of summands\textbackslash{}`` conjunction positive properties \textbackslash{}''positivity of being God-like\textbackslash{}`` derived without axiom'', 2026-10-23
-\item WebSearch: ``Kanckos Paleo rigid higher-order modal logic ontological proof natural deduction God-like positive'', 2026-10-23
-\item WebSearch: ``ontological argument \textbackslash{}''general models\textbackslash{}`` deep embedding derivation \textbackslash{}''positive\textbackslash{}`` God-like rigid conjunction axiom Lean 2026'', 2026-10-23
-\item Results seen in search listings only, not opened: arXiv 2608.07578, 2001.04701, 1308.4526, 1910.08955, 2605.27246; Springer 10.1007/s00605-025-02078-x, 10.1007/s11787-026-00409-6; GitHub drewarrowood/godel-ontological, alozanoroble/godel-ontological-lean
-\item Local: sources/2609.36279/v4/main.tex (sec:criterion, def:hybridfree, prop:sound, sec:rigid, def:lgeneral, prop:lgeneral, ex:separating), anc/OpenQuestions/README.md, anc/OpenQuestions/lean/OpenQuestions/Ax1GenRigidVariant2.lean, 2026-10-23
-\item Local: sources/2609.26806/v1 and v3 (grep for Ax1Gen/Ax1GenR in main.tex, lean.tex, anc/Notes), 2026-10-23
-\item Web search (search-engine results only; no pages opened): ``deep embedding shallow embedding higher-order modal logic faithfulness comprehension instance ontological argument'', 2026-10-23
-\item Web search: ``rigid set of properties conjunction axiom Gödel ontological argument Ax1Gen rigid'', 2026-10-23
-\item Web search: ``Henkin general models higher-order modal logic comprehension schema standard model full structure deep shallow agreement Benzmüller'', 2026-10-23
-\item Result URLs seen: https://arxiv.org/html/2609.36279v2 ; https://arxiv.org/html/2608.07578 ; https://arxiv.org/pdf/2607.10880 ; https://arxiv.org/abs/2609.07345 ; https://isa-afp.org/browser\_info/current/AFP/MSOinHOL/outline.pdf ; https://arxiv.org/pdf/2502.19311 ; https://isa-afp.org/browser\_info/current/AFP/FaithfulPMLinHOL/outline.pdf ; https://github.com/drewarrowood/godel-ontological/pull/1 ; https://link.springer.com/article/10.1007/s00605-025-02078-x ; https://www.researchgate.net/publication/38338872\_Higher-Order\_Semantics\_and\_Extensionality ; https://philarchive.org/archive/MUSHOM (all 2026-10-23)
 \end{itemize}
 
 The search was run automatically by claude/claude-opus-5-5.
+
+The checkers' full answers, with every query and file they searched, are published with this finding (\texttt{prior-art/}).
 
 If you know of related work we missed, please open an issue.
 
@@ -131,6 +135,12 @@ Run \texttt{20261023-0519}, claims K1, K3, K2, run-folder commit \texttt{2e2df98
 \section{How to verify}
 
 Each finding has its check scripts in \texttt{claims/ontological-rigid-l/checks/} of the findings repository. Run each with \texttt{python -I <script>}; it passes if it exits with status 0. The checks are Python scripts and need the packages of the research image (the image's \texttt{requirements.txt}); the Lean checks also need \texttt{lean}.
+
+\section{Revisions}
+
+\begin{itemize}
+\item 2026-10-24 --- readable prior-art section
+\end{itemize}
 
 \nocite{*}
 \bibliographystyle{plain}
