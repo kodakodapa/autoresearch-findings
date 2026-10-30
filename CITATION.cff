@@ -3,6 +3,6 @@ message: "If you use these findings, please cite them as below."
 title: "autoresearch-findings"
 abstract: "Machine-checked findings: modal-agent-census, graded-prudent-fair, wn-gate-family, gate-families, ontological-variant-map, chicken-informal-claims, chicken-modal-agents, three-player-modal-agents, blend-window-laws, graded-fairbot-separators, only-one-fairbot-census, staghunt-round-robin, staghunt-safe-coordinators, ontological-nominal-free-proofs, ontological-lgeneral-semantics, ontological-rigid-l, ontological-proof-translation"
 authors:
-  - name: "Kodakodapa"
+  - name: "Björn Lindheim"
 date-released: "2026-10-24"
 repository-code: "https://github.com/kodakodapa/autoresearch-findings"
