@@ -22,5 +22,8 @@
   "round": 3,
   "run_label": "20261023-0519",
   "staged_at": "2026-10-24T16:20:21Z",
-  "title": "G\u00f6del's lemma L under the rigid reading, with no condition on positivity"
+  "title": "G\u00f6del's lemma L under the rigid reading, with no condition on positivity",
+  "doi": "10.5281/zenodo.23795777",
+  "concept_doi": "10.5281/zenodo.23795776",
+  "zenodo_record_id": "23795777"
 }

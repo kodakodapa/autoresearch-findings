@@ -2,7 +2,7 @@
 layout: post
 title: "A census of modal agents in the prisoner's dilemma"
 date: 2026-10-19
-scholar: {"citation_title": "A census of modal agents in the prisoner's dilemma", "citation_author": "Kodakodapa", "citation_publication_date": "2026/10/19", "citation_abstract_html_url": "https://kodakodapa.github.io/autoresearch-findings/findings/modal-agent-census.html", "citation_keywords": "C046", "citation_pdf_url": "https://kodakodapa.github.io/autoresearch-findings/claims/modal-agent-census/paper.pdf"}
+scholar: {"citation_title": "A census of modal agents in the prisoner's dilemma", "citation_author": "Lindheim, Bj\u00f6rn", "citation_publication_date": "2026/10/19", "citation_abstract_html_url": "https://kodakodapa.github.io/autoresearch-findings/findings/modal-agent-census.html", "citation_keywords": "C046", "citation_pdf_url": "https://kodakodapa.github.io/autoresearch-findings/claims/modal-agent-census/paper.pdf"}
 ---
 
 ## Summary

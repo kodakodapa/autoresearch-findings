@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Families of unexploitable agents that defect against themselves"
-scholar: {"citation_title": "Families of unexploitable agents that defect against themselves", "citation_author": "Kodakodapa", "citation_publication_date": "2026/10/18", "citation_abstract_html_url": "https://kodakodapa.github.io/autoresearch-findings/findings/gate-families.html", "citation_keywords": "C046", "citation_pdf_url": "https://kodakodapa.github.io/autoresearch-findings/claims/gate-families/paper.pdf"}
+scholar: {"citation_title": "Families of unexploitable agents that defect against themselves", "citation_author": "Lindheim, Bj\u00f6rn", "citation_publication_date": "2026/10/18", "citation_abstract_html_url": "https://kodakodapa.github.io/autoresearch-findings/findings/gate-families.html", "citation_keywords": "C046", "citation_pdf_url": "https://kodakodapa.github.io/autoresearch-findings/claims/gate-families/paper.pdf"}
 ---
 
 # Families of unexploitable agents that defect against themselves

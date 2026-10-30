@@ -2,10 +2,12 @@
 layout: post
 title: "G\u00f6del's lemma L under the rigid reading, with no condition on positivity"
 date: 2026-10-24
-scholar: {"citation_title": "G\u00f6del's lemma L under the rigid reading, with no condition on positivity", "citation_author": "Kodakodapa", "citation_publication_date": "2026/10/24", "citation_abstract_html_url": "https://kodakodapa.github.io/autoresearch-findings/findings/ontological-rigid-l.html", "citation_keywords": "G", "citation_pdf_url": "https://kodakodapa.github.io/autoresearch-findings/claims/ontological-rigid-l/paper.pdf"}
+scholar: {"citation_title": "G\u00f6del's lemma L under the rigid reading, with no condition on positivity", "citation_author": "Lindheim, Bj\u00f6rn", "citation_publication_date": "2026/10/24", "citation_abstract_html_url": "https://kodakodapa.github.io/autoresearch-findings/findings/ontological-rigid-l.html", "citation_keywords": "G", "citation_pdf_url": "https://kodakodapa.github.io/autoresearch-findings/claims/ontological-rigid-l/paper.pdf", "citation_doi": "10.5281/zenodo.23795777"}
 ---
 
 ## Summary
+
+Cite as: https://doi.org/10.5281/zenodo.23795777
 
 <!-- owner-summary -->
 ## Setting

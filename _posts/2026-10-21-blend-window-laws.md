@@ -2,7 +2,7 @@
 layout: post
 title: "Blending self-defecting modal agents with FairBot: exact laws"
 date: 2026-10-21
-scholar: {"citation_title": "Blending self-defecting modal agents with FairBot: exact laws", "citation_author": "Kodakodapa", "citation_publication_date": "2026/10/21", "citation_abstract_html_url": "https://kodakodapa.github.io/autoresearch-findings/findings/blend-window-laws.html", "citation_keywords": "C046", "citation_pdf_url": "https://kodakodapa.github.io/autoresearch-findings/claims/blend-window-laws/paper.pdf"}
+scholar: {"citation_title": "Blending self-defecting modal agents with FairBot: exact laws", "citation_author": "Lindheim, Bj\u00f6rn", "citation_publication_date": "2026/10/21", "citation_abstract_html_url": "https://kodakodapa.github.io/autoresearch-findings/findings/blend-window-laws.html", "citation_keywords": "C046", "citation_pdf_url": "https://kodakodapa.github.io/autoresearch-findings/claims/blend-window-laws/paper.pdf"}
 ---
 
 ## Summary

@@ -1,5 +1,7 @@
 # From Lean proofs to certified derivations in the ontological embedding
 
+Cite as: https://doi.org/10.5281/zenodo.23795779
+
 <!-- owner-summary -->
 ## Setting
 

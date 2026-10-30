@@ -2,7 +2,7 @@
 layout: post
 title: "How large must a program be to tell graded FairBots apart?"
 date: 2026-10-21
-scholar: {"citation_title": "How large must a program be to tell graded FairBots apart?", "citation_author": "Kodakodapa", "citation_publication_date": "2026/10/21", "citation_abstract_html_url": "https://kodakodapa.github.io/autoresearch-findings/findings/graded-fairbot-separators.html", "citation_keywords": "C046", "citation_pdf_url": "https://kodakodapa.github.io/autoresearch-findings/claims/graded-fairbot-separators/paper.pdf"}
+scholar: {"citation_title": "How large must a program be to tell graded FairBots apart?", "citation_author": "Lindheim, Bj\u00f6rn", "citation_publication_date": "2026/10/21", "citation_abstract_html_url": "https://kodakodapa.github.io/autoresearch-findings/findings/graded-fairbot-separators.html", "citation_keywords": "C046", "citation_pdf_url": "https://kodakodapa.github.io/autoresearch-findings/claims/graded-fairbot-separators/paper.pdf"}
 ---
 
 ## Summary

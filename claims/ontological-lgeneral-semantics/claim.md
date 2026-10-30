@@ -1,5 +1,7 @@
 # A complete calculus for the ℒ-general models of the ontological argument
 
+Cite as: https://doi.org/10.5281/zenodo.23795768
+
 <!-- owner-summary -->
 ## Setting
 

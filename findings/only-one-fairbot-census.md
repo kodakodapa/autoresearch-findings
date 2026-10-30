@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Unexploitable modal agents that cooperate with themselves: a census"
-scholar: {"citation_title": "Unexploitable modal agents that cooperate with themselves: a census", "citation_author": "Kodakodapa", "citation_publication_date": "2026/10/21", "citation_abstract_html_url": "https://kodakodapa.github.io/autoresearch-findings/findings/only-one-fairbot-census.html", "citation_keywords": "C046", "citation_pdf_url": "https://kodakodapa.github.io/autoresearch-findings/claims/only-one-fairbot-census/paper.pdf"}
+scholar: {"citation_title": "Unexploitable modal agents that cooperate with themselves: a census", "citation_author": "Lindheim, Bj\u00f6rn", "citation_publication_date": "2026/10/21", "citation_abstract_html_url": "https://kodakodapa.github.io/autoresearch-findings/findings/only-one-fairbot-census.html", "citation_keywords": "C046", "citation_pdf_url": "https://kodakodapa.github.io/autoresearch-findings/claims/only-one-fairbot-census/paper.pdf"}
 ---
 
 # Unexploitable modal agents that cooperate with themselves: a census

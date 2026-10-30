@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "A certified map of variants of G\u00f6del's ontological argument"
-scholar: {"citation_title": "A certified map of variants of G\u00f6del's ontological argument", "citation_author": "Kodakodapa", "citation_publication_date": "2026/10/19", "citation_abstract_html_url": "https://kodakodapa.github.io/autoresearch-findings/findings/ontological-variant-map.html", "citation_keywords": "C009", "citation_pdf_url": "https://kodakodapa.github.io/autoresearch-findings/claims/ontological-variant-map/paper.pdf"}
+scholar: {"citation_title": "A certified map of variants of G\u00f6del's ontological argument", "citation_author": "Lindheim, Bj\u00f6rn", "citation_publication_date": "2026/10/19", "citation_abstract_html_url": "https://kodakodapa.github.io/autoresearch-findings/findings/ontological-variant-map.html", "citation_keywords": "C009", "citation_pdf_url": "https://kodakodapa.github.io/autoresearch-findings/claims/ontological-variant-map/paper.pdf"}
 ---
 
 # A certified map of variants of Gödel's ontological argument

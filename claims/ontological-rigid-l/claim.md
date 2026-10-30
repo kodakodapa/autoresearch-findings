@@ -1,5 +1,7 @@
 # Gödel's lemma L under the rigid reading, with no condition on positivity
 
+Cite as: https://doi.org/10.5281/zenodo.23795777
+
 <!-- owner-summary -->
 ## Setting
 

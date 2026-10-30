@@ -1,5 +1,7 @@
 # Nominal-free proofs of the theorems Benzmüller's detector flags
 
+Cite as: https://doi.org/10.5281/zenodo.23795772
+
 <!-- owner-summary -->
 ## Setting
 

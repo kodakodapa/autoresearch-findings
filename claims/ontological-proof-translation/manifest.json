@@ -31,5 +31,8 @@
   "round": 21,
   "run_label": "20261023-0556",
   "staged_at": "2026-10-24T16:20:23Z",
-  "title": "From Lean proofs to certified derivations in the ontological embedding"
+  "title": "From Lean proofs to certified derivations in the ontological embedding",
+  "doi": "10.5281/zenodo.23795779",
+  "concept_doi": "10.5281/zenodo.23795778",
+  "zenodo_record_id": "23795779"
 }

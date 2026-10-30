@@ -2,10 +2,12 @@
 layout: post
 title: "A complete calculus for the \u2112-general models of the ontological argument"
 date: 2026-10-24
-scholar: {"citation_title": "A complete calculus for the \u2112-general models of the ontological argument", "citation_author": "Kodakodapa", "citation_publication_date": "2026/10/24", "citation_abstract_html_url": "https://kodakodapa.github.io/autoresearch-findings/findings/ontological-lgeneral-semantics.html", "citation_keywords": "C", "citation_pdf_url": "https://kodakodapa.github.io/autoresearch-findings/claims/ontological-lgeneral-semantics/paper.pdf"}
+scholar: {"citation_title": "A complete calculus for the \u2112-general models of the ontological argument", "citation_author": "Lindheim, Bj\u00f6rn", "citation_publication_date": "2026/10/24", "citation_abstract_html_url": "https://kodakodapa.github.io/autoresearch-findings/findings/ontological-lgeneral-semantics.html", "citation_keywords": "C", "citation_pdf_url": "https://kodakodapa.github.io/autoresearch-findings/claims/ontological-lgeneral-semantics/paper.pdf", "citation_doi": "10.5281/zenodo.23795768"}
 ---
 
 ## Summary
+
+Cite as: https://doi.org/10.5281/zenodo.23795768
 
 <!-- owner-summary -->
 ## Setting

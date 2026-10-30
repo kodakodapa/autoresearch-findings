@@ -1,10 +1,12 @@
 ---
 layout: default
 title: "From Lean proofs to certified derivations in the ontological embedding"
-scholar: {"citation_title": "From Lean proofs to certified derivations in the ontological embedding", "citation_author": "Kodakodapa", "citation_publication_date": "2026/10/24", "citation_abstract_html_url": "https://kodakodapa.github.io/autoresearch-findings/findings/ontological-proof-translation.html", "citation_keywords": "H", "citation_pdf_url": "https://kodakodapa.github.io/autoresearch-findings/claims/ontological-proof-translation/paper.pdf"}
+scholar: {"citation_title": "From Lean proofs to certified derivations in the ontological embedding", "citation_author": "Lindheim, Bj\u00f6rn", "citation_publication_date": "2026/10/24", "citation_abstract_html_url": "https://kodakodapa.github.io/autoresearch-findings/findings/ontological-proof-translation.html", "citation_keywords": "H", "citation_pdf_url": "https://kodakodapa.github.io/autoresearch-findings/claims/ontological-proof-translation/paper.pdf", "citation_doi": "10.5281/zenodo.23795779"}
 ---
 
 # From Lean proofs to certified derivations in the ontological embedding
+
+Cite as: https://doi.org/10.5281/zenodo.23795779
 
 <!-- owner-summary -->
 ## Setting

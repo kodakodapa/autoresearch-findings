@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Safe modal agents that coordinate in the Stag Hunt: size 13 is the minimum"
-scholar: {"citation_title": "Safe modal agents that coordinate in the Stag Hunt: size 13 is the minimum", "citation_author": "Kodakodapa", "citation_publication_date": "2026/10/21", "citation_abstract_html_url": "https://kodakodapa.github.io/autoresearch-findings/findings/staghunt-safe-coordinators.html", "citation_keywords": "C046", "citation_pdf_url": "https://kodakodapa.github.io/autoresearch-findings/claims/staghunt-safe-coordinators/paper.pdf"}
+scholar: {"citation_title": "Safe modal agents that coordinate in the Stag Hunt: size 13 is the minimum", "citation_author": "Lindheim, Bj\u00f6rn", "citation_publication_date": "2026/10/21", "citation_abstract_html_url": "https://kodakodapa.github.io/autoresearch-findings/findings/staghunt-safe-coordinators.html", "citation_keywords": "C046", "citation_pdf_url": "https://kodakodapa.github.io/autoresearch-findings/claims/staghunt-safe-coordinators/paper.pdf"}
 ---
 
 # Safe modal agents that coordinate in the Stag Hunt: size 13 is the minimum

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "When graded PrudentBots cooperate with graded FairBots"
-scholar: {"citation_title": "When graded PrudentBots cooperate with graded FairBots", "citation_author": "Kodakodapa", "citation_publication_date": "2026/10/18", "citation_abstract_html_url": "https://kodakodapa.github.io/autoresearch-findings/findings/graded-prudent-fair.html", "citation_keywords": "C046", "citation_pdf_url": "https://kodakodapa.github.io/autoresearch-findings/claims/graded-prudent-fair/paper.pdf"}
+scholar: {"citation_title": "When graded PrudentBots cooperate with graded FairBots", "citation_author": "Lindheim, Bj\u00f6rn", "citation_publication_date": "2026/10/18", "citation_abstract_html_url": "https://kodakodapa.github.io/autoresearch-findings/findings/graded-prudent-fair.html", "citation_keywords": "C046", "citation_pdf_url": "https://kodakodapa.github.io/autoresearch-findings/claims/graded-prudent-fair/paper.pdf"}
 ---
 
 # When graded PrudentBots cooperate with graded FairBots

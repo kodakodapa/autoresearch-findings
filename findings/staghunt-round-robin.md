@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Round robins of modal agents in the Stag Hunt"
-scholar: {"citation_title": "Round robins of modal agents in the Stag Hunt", "citation_author": "Kodakodapa", "citation_publication_date": "2026/10/21", "citation_abstract_html_url": "https://kodakodapa.github.io/autoresearch-findings/findings/staghunt-round-robin.html", "citation_keywords": "C046", "citation_pdf_url": "https://kodakodapa.github.io/autoresearch-findings/claims/staghunt-round-robin/paper.pdf"}
+scholar: {"citation_title": "Round robins of modal agents in the Stag Hunt", "citation_author": "Lindheim, Bj\u00f6rn", "citation_publication_date": "2026/10/21", "citation_abstract_html_url": "https://kodakodapa.github.io/autoresearch-findings/findings/staghunt-round-robin.html", "citation_keywords": "C046", "citation_pdf_url": "https://kodakodapa.github.io/autoresearch-findings/claims/staghunt-round-robin/paper.pdf"}
 ---
 
 # Round robins of modal agents in the Stag Hunt

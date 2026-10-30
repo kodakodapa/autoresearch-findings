@@ -2,10 +2,12 @@
 layout: post
 title: "Nominal-free proofs of the theorems Benzm\u00fcller's detector flags"
 date: 2026-10-24
-scholar: {"citation_title": "Nominal-free proofs of the theorems Benzm\u00fcller's detector flags", "citation_author": "Kodakodapa", "citation_publication_date": "2026/10/24", "citation_abstract_html_url": "https://kodakodapa.github.io/autoresearch-findings/findings/ontological-nominal-free-proofs.html", "citation_keywords": "*", "citation_pdf_url": "https://kodakodapa.github.io/autoresearch-findings/claims/ontological-nominal-free-proofs/paper.pdf"}
+scholar: {"citation_title": "Nominal-free proofs of the theorems Benzm\u00fcller's detector flags", "citation_author": "Lindheim, Bj\u00f6rn", "citation_publication_date": "2026/10/24", "citation_abstract_html_url": "https://kodakodapa.github.io/autoresearch-findings/findings/ontological-nominal-free-proofs.html", "citation_keywords": "*", "citation_pdf_url": "https://kodakodapa.github.io/autoresearch-findings/claims/ontological-nominal-free-proofs/paper.pdf", "citation_doi": "10.5281/zenodo.23795772"}
 ---
 
 ## Summary
+
+Cite as: https://doi.org/10.5281/zenodo.23795772
 
 <!-- owner-summary -->
 ## Setting
