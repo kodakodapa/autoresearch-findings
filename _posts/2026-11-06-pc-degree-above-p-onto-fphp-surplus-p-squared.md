@@ -102,7 +102,8 @@ The declaring Lean sources are in `checks/library/`.
 
 - Status: proved (axioms: propext, Classical.choice, Quot.sound) · independently re-proved (skeptic/codex)
 - Machine-checked: no check scripts.
-- Independent reproofs: 1, published in `claims/pc-degree-above-p-onto-fphp-surplus-p-squared/checks/reproofs/`.
+- Second-agent re-proofs: 1, published in `claims/pc-degree-above-p-onto-fphp-surplus-p-squared/checks/reproofs/`.
+- reproof `checks/reproofs/K1-Reproof.lean` by the skeptic (codex): `Work.UniformC3.squareLiftAssumption` — pass (`checks/reproofs/K1-Reproof.json`)
 - Re-checked at publication on 2026-11-06: pass (`results/publication/lean-K1.json`)
 - Prior art: partial prior art
 
@@ -110,7 +111,8 @@ The declaring Lean sources are in `checks/library/`.
 
 - Status: proved (axioms: propext, Classical.choice, Quot.sound) · independently re-proved (skeptic/codex)
 - Machine-checked: no check scripts.
-- Independent reproofs: 1, published in `claims/pc-degree-above-p-onto-fphp-surplus-p-squared/checks/reproofs/`.
+- Second-agent re-proofs: 1, published in `claims/pc-degree-above-p-onto-fphp-surplus-p-squared/checks/reproofs/`.
+- reproof `checks/reproofs/K2-Reproof.lean` by the skeptic (codex): `Work.UniformC3.uniform_unit_design_unconditional` — pass (`checks/reproofs/K2-Reproof.json`)
 - Re-checked at publication on 2026-11-06: pass (`results/publication/lean-K2.json`)
 - Prior art: partial prior art
 
@@ -118,7 +120,8 @@ The declaring Lean sources are in `checks/library/`.
 
 - Status: proved (axioms: propext, Classical.choice, Quot.sound) · independently re-proved (skeptic/codex)
 - Machine-checked: no check scripts.
-- Independent reproofs: 1, published in `claims/pc-degree-above-p-onto-fphp-surplus-p-squared/checks/reproofs/`.
+- Second-agent re-proofs: 1, published in `claims/pc-degree-above-p-onto-fphp-surplus-p-squared/checks/reproofs/`.
+- reproof `checks/reproofs/K3-Reproof.lean` by the skeptic (codex): `Work.UniformC3.uniform_no_degree_p_unconditional` — pass (`checks/reproofs/K3-Reproof.json`)
 - Re-checked at publication on 2026-11-06: pass (`results/publication/lean-K3.json`)
 - Prior art: partial prior art
 
@@ -126,7 +129,8 @@ The declaring Lean sources are in `checks/library/`.
 
 - Status: proved (axioms: propext, Classical.choice, Quot.sound) · independently re-proved (skeptic/codex)
 - Machine-checked: no check scripts.
-- Independent reproofs: 1, published in `claims/pc-degree-above-p-onto-fphp-surplus-p-squared/checks/reproofs/`.
+- Second-agent re-proofs: 1, published in `claims/pc-degree-above-p-onto-fphp-surplus-p-squared/checks/reproofs/`.
+- reproof `checks/reproofs/K4-Reproof.lean` by the skeptic (codex): `Work.UniformC3.uniform_no_standard_degree_p_unconditional` — pass (`checks/reproofs/K4-Reproof.json`)
 - Re-checked at publication on 2026-11-06: pass (`results/publication/lean-K4.json`)
 - Prior art: partial prior art
 
@@ -134,7 +138,8 @@ The declaring Lean sources are in `checks/library/`.
 
 - Status: proved (axioms: propext, Classical.choice, Quot.sound) · independently re-proved (skeptic/codex)
 - Machine-checked: no check scripts.
-- Independent reproofs: 1, published in `claims/pc-degree-above-p-onto-fphp-surplus-p-squared/checks/reproofs/`.
+- Second-agent re-proofs: 1, published in `claims/pc-degree-above-p-onto-fphp-surplus-p-squared/checks/reproofs/`.
+- reproof `checks/reproofs/K5-Reproof.lean` by the skeptic (codex): `Work.UniformC3.no_standard_degree_two` — pass (`checks/reproofs/K5-Reproof.json`)
 - Re-checked at publication on 2026-11-06: pass (`results/publication/lean-K5.json`)
 - Prior art: partial prior art
 
@@ -142,7 +147,8 @@ The declaring Lean sources are in `checks/library/`.
 
 - Status: proved (axioms: propext, Classical.choice, Quot.sound) · independently re-proved (skeptic/codex)
 - Machine-checked: no check scripts.
-- Independent reproofs: 1, published in `claims/pc-degree-above-p-onto-fphp-surplus-p-squared/checks/reproofs/`.
+- Second-agent re-proofs: 1, published in `claims/pc-degree-above-p-onto-fphp-surplus-p-squared/checks/reproofs/`.
+- reproof `checks/reproofs/K6-Reproof.lean` by the skeptic (codex): `Work.UniformC3.no_standard_degree_three` — pass (`checks/reproofs/K6-Reproof.json`)
 - Re-checked at publication on 2026-11-06: pass (`results/publication/lean-K6.json`)
 - Prior art: partial prior art
 

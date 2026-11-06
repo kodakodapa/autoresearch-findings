@@ -37,14 +37,14 @@ in $n$.
 
 Everything is proved in Lean 4 and kernel-checked, for all primes $p$ and all $n\ge2p-3$; nothing
 is checked only up to a bound. The proofs use only the standard axioms `propext`,
-`Classical.choice` and `Quot.sound`. A second agent in the run, working separately from the
-author, re-proved each of the three statements in Lean. No person has reviewed the proofs; the
-evidence is the kernel check and the independent re-proof.
+`Classical.choice` and `Quot.sound`. A second agent in the run re-proved each of the three statements in Lean, but
+its re-proofs reuse some of the author's lemmas (one to nine per proof, listed with each claim), so
+they are not fully independent. No person has reviewed the proofs; the evidence is the kernel check.
 
 The Lean statements are for the library's formulation of PC, in which lines are functions on
 the Boolean cube. A later theorem of the same library shows that a refutation of degree $D$ in
 standard (syntactic) PC over $\mathbb F_p$ exists exactly when one exists in the library's
-formulation, so the result holds verbatim for standard PC (`std_pc_degree_exact`).
+formulation, so the result holds verbatim for standard PC (`Programme.«20261029-1156-proof-complexity».StdPCExact.std_pc_degree_exact` in the published library; this finding's own checks do not re-check it).
 
 ## Discussion
 

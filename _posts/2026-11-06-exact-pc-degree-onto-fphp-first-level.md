@@ -49,14 +49,14 @@ in $n$.
 
 Everything is proved in Lean 4 and kernel-checked, for all primes $p$ and all $n\ge2p-3$; nothing
 is checked only up to a bound. The proofs use only the standard axioms `propext`,
-`Classical.choice` and `Quot.sound`. A second agent in the run, working separately from the
-author, re-proved each of the three statements in Lean. No person has reviewed the proofs; the
-evidence is the kernel check and the independent re-proof.
+`Classical.choice` and `Quot.sound`. A second agent in the run re-proved each of the three statements in Lean, but
+its re-proofs reuse some of the author's lemmas (one to nine per proof, listed with each claim), so
+they are not fully independent. No person has reviewed the proofs; the evidence is the kernel check.
 
 The Lean statements are for the library's formulation of PC, in which lines are functions on
 the Boolean cube. A later theorem of the same library shows that a refutation of degree $D$ in
 standard (syntactic) PC over $\mathbb F\_p$ exists exactly when one exists in the library's
-formulation, so the result holds verbatim for standard PC (`std_pc_degree_exact`).
+formulation, so the result holds verbatim for standard PC (`Programme.«20261029-1156-proof-complexity».StdPCExact.std_pc_degree_exact` in the published library; this finding's own checks do not re-check it).
 <!-- /owner-summary -->
 
 This result extends:
@@ -104,25 +104,34 @@ The declaring Lean sources are in `checks/library/`.
 
 **K13.** `Work.Lucas.pc_degree_exact`: for every prime $p$ (`IsPrime p`), every $c$ with $p\nmid c$, every $n\ge2p-3$ and every $D$: `ontoFPHP n (p*c)` has a degree-$D$ `PPCRefutation p` iff $p\le D$ (PC degree over $\mathbb Z/p$ of onto-FPHP$^{n+pc}\_n$ is exactly $p$).
 
-- Status: proved (axioms: propext, Classical.choice, Quot.sound) · independently re-proved (skeptic/codex)
-- Machine-checked: no check scripts.
-- Independent reproofs: 1, published in `claims/exact-pc-degree-onto-fphp-first-level/checks/reproofs/`.
+Lean: `Programme.«20261027-0607-proof-complexity».Lucas.pc_degree_exact`
+
+- Status: proved (axioms: propext, Classical.choice, Quot.sound) · second-agent re-proof (skeptic/codex)
+- Machine-checked: `checks/lean-K13.py` (library theorem `Programme.«20261027-0607-proof-complexity».Lucas.pc_degree_exact`)
+- Second-agent re-proofs: 1, published in `claims/exact-pc-degree-onto-fphp-first-level/checks/reproofs/`.
+- reproof `checks/reproofs/K13-ExactReproof.lean` by the skeptic (codex): `Work.Lucas.pc_degree_exact` — pass (`checks/reproofs/K13-ExactReproof.json`); second-agent re-proof; uses 2 lemmas from the author's package; re-proof by a second agent; imports the run's private packages (not rebuildable from this repo)
 - Re-checked at publication on 2026-11-06: pass (`results/publication/lean-K13.json`)
 - Prior art: partial prior art
 
 **K14.** `Work.Peel.pc_degree_ge_p`: for every prime $p$ (`IsPrime p`), every $k$ with $p\mid k$ and every $n\ge2p-3$, `ontoFPHP n k` (onto-FPHP$^{n+k}\_n$, functional encoding) has no `PPCRefutation p` of degree $p-1$ (polynomial calculus over $\mathbb Z/p$).
 
-- Status: proved (axioms: propext, Classical.choice, Quot.sound) · independently re-proved (skeptic/codex)
-- Machine-checked: no check scripts.
-- Independent reproofs: 1, published in `claims/exact-pc-degree-onto-fphp-first-level/checks/reproofs/`.
+Lean: `Programme.«20261027-0607-proof-complexity».Peel.pc_degree_ge_p`
+
+- Status: proved (axioms: propext, Classical.choice, Quot.sound) · second-agent re-proof (skeptic/codex)
+- Machine-checked: `checks/lean-K14.py` (library theorem `Programme.«20261027-0607-proof-complexity».Peel.pc_degree_ge_p`)
+- Second-agent re-proofs: 1, published in `claims/exact-pc-degree-onto-fphp-first-level/checks/reproofs/`.
+- reproof `checks/reproofs/K14-LowerReproof.lean` by the skeptic (codex): `Work.Peel.pc_degree_ge_p` — pass (`checks/reproofs/K14-LowerReproof.json`); second-agent re-proof; uses 9 lemmas from the author's package; re-proof by a second agent; imports the run's private packages (not rebuildable from this repo)
 - Re-checked at publication on 2026-11-06: pass (`results/publication/lean-K14.json`)
 - Prior art: partial prior art
 
 **K15.** `Work.Lucas.separation`: for primes $p,q$, $p\nmid c$, $q\nmid pc$, $n\ge2p-3$: `ontoFPHP n (p*c)` has a degree-$D$ `PPCRefutation p` iff $p\le D$, and has a degree-1 `PPCRefutation q`.
 
-- Status: proved (axioms: propext, Classical.choice, Quot.sound) · independently re-proved (skeptic/codex)
-- Machine-checked: no check scripts.
-- Independent reproofs: 1, published in `claims/exact-pc-degree-onto-fphp-first-level/checks/reproofs/`.
+Lean: `Programme.«20261027-0607-proof-complexity».Lucas.separation`
+
+- Status: proved (axioms: propext, Classical.choice, Quot.sound) · second-agent re-proof (skeptic/codex)
+- Machine-checked: `checks/lean-K15.py` (library theorem `Programme.«20261027-0607-proof-complexity».Lucas.separation`)
+- Second-agent re-proofs: 1, published in `claims/exact-pc-degree-onto-fphp-first-level/checks/reproofs/`.
+- reproof `checks/reproofs/K15-SeparationReproof.lean` by the skeptic (codex): `Work.Lucas.separation` — pass (`checks/reproofs/K15-SeparationReproof.json`); second-agent re-proof; uses 1 lemmas from the author's package; re-proof by a second agent; imports the run's private packages (not rebuildable from this repo)
 - Re-checked at publication on 2026-11-06: pass (`results/publication/lean-K15.json`)
 - Prior art: partial prior art
 
@@ -137,17 +146,19 @@ Beame and Riis [1] is multiplier degree, one less than the line degree used here
 
 ## How to verify
 
-Lean toolchain: `leanprover/lean4:v4.35.0`. [Programme library at the recorded commit](https://github.com/kodakodapa/autoresearch-findings/tree/2abad0979eeb03ede3a77490f45a4f381119ff02/programmes/proof-complexity). Install elan, then pin the library subtree while keeping the finding checks:
+Lean toolchain: `leanprover/lean4:v4.35.0`. [Programme library at the recorded commit](https://github.com/kodakodapa/autoresearch-findings/tree/2abad0979eeb03ede3a77490f45a4f381119ff02/programmes/proof-complexity). Install elan and open a new shell after installing elan, then pin the library subtree while keeping the finding checks:
 
 ```sh
 git clone https://github.com/kodakodapa/autoresearch-findings.git
 cd autoresearch-findings
 git checkout 2abad0979eeb03ede3a77490f45a4f381119ff02 -- programmes/proof-complexity
-cd programmes/proof-complexity && lake build
+cd programmes/proof-complexity && lake build 'Programme.«20261027-0607-proof-complexity».Lucas' 'Programme.«20261027-0607-proof-complexity».Peel'
 AR_LIBRARY=$PWD python -I ../../claims/exact-pc-degree-onto-fphp-first-level/checks/lean-K13.py
 AR_LIBRARY=$PWD python -I ../../claims/exact-pc-degree-onto-fphp-first-level/checks/lean-K14.py
 AR_LIBRARY=$PWD python -I ../../claims/exact-pc-degree-onto-fphp-first-level/checks/lean-K15.py
 ```
+
+A full `lake build` builds the whole library. The named targets build only the claim modules and their dependencies. Indicative measurements from the 2026-11-06 reproduction on 2 cores / 7.8 GB: K13–K15 90 s; K1–K6 440 s; K18 87 min (90 certificate modules). Peak memory was 4.7 GB for one Lean process. Build times depend on hardware and cached dependencies.
 
 `checks/run-copies/`: the author's working copies from the run; they import the run's private `Work` package and are not built standalone.
 
@@ -176,3 +187,4 @@ The output of the checks re-run at publication is in `claims/exact-pc-degree-ont
 - 2026-11-06 — Library published buildable; verification steps; run copies labelled
 - 2026-11-06 — Verification steps; stale run copies removed; encoding stated
 - 2026-11-06 — Publication re-checks and reproofs published; prior art extended; texts corrected
+- 2026-11-06 — Library theorem names and checked statements shown; reproof wording corrected; build cost

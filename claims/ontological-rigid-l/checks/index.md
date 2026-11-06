@@ -5,7 +5,7 @@ title: "Checks: G\u00f6del's lemma L under the rigid reading, with no condition 
 
 # Checks: [Gödel's lemma L under the rigid reading, with no condition on positivity]({{ "/findings/ontological-rigid-l.html" | relative_url }})
 
-For plain scripts, the claim id is the file name's prefix. Generated `lean-K*.py` files check promoted claims; `library/` holds declaring sources; `run-copies/` holds private Work working copies, not standalone builds; `reproofs/` holds the independent reproofs with their recorded results.
+For plain scripts, the claim id is the file name's prefix. Generated `lean-K*.py` files check promoted claims; `library/` holds declaring sources; `run-copies/` holds private Work working copies, not standalone builds; `reproofs/` holds the second-agent re-proofs with their recorded results.
 
 {% for f in site.static_files %}{% if f.path contains "/claims/ontological-rigid-l/checks/" %}
 - [{{ f.name }}]({{ f.path | relative_url }})
