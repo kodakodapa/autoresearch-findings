@@ -7,7 +7,7 @@ scholar: {"citation_title": "Polynomial calculus degree at least 5 over F2 for t
 
 ## Summary
 
-Cite as: https://doi.org/10.5281/zenodo.24008746
+Cite as: https://doi.org/10.5281/zenodo.23996615 (all versions; this version: https://doi.org/10.5281/zenodo.24008746)
 
 <!-- owner-summary -->
 ## Setting
@@ -16,7 +16,7 @@ The onto functional pigeonhole principle $\mathrm{onto\text{-}FPHP}^{n+k}\_n$ sa
 pigeons can be mapped one-to-one onto $n$ holes; it is false for every $k\ge1$. In Boolean
 variables $x\_{ij}$ (pigeon $i$ in hole $j$) its axioms are $\sum\_j x\_{ij}-1$,
 $\sum\_i x\_{ij}-1$, $x\_{ij}x\_{i'j}$ and $x\_{ij}x\_{ij'}$, the linear encoding used for this family
-[1, 2]. A polynomial calculus (PC) refutation over
+[1, 2]. These results are for the linear encoding only: translating the CNF clause by clause instead turns each pigeon clause into a polynomial of degree $n$ [2], so degree bounds below $n$ say nothing about that encoding. A polynomial calculus (PC) refutation over
 $\mathbb F\_2$ derives $1$ from the axioms and the Boolean axioms $x^2-x$ by linear combinations
 and multiplication by a variable; its degree is the largest degree of a line.
 
@@ -90,11 +90,18 @@ $k=8$ the degree lies between 5 and 8 for $n\ge7$. This is one case, not a growt
 $\ell$. We have not checked the proof of Theorem 33 and cite it for comparison only.
 
 ## How to verify
-Promoted declaring sources are included under `checks/library/`; publication checks import their library modules and inspect each theorem with `#print axioms`.
 
-Run each script in `claims/pc-degree-5-onto-fphp-surplus-8/checks/` with `python -I <script>`; it passes if it
-exits with status 0. The results recorded in the original run are in
-`claims/pc-degree-5-onto-fphp-surplus-8/results/`; the full claim text is in `claims/pc-degree-5-onto-fphp-surplus-8/claim.md`.
+Lean toolchain: `leanprover/lean4:v4.35.0`. [Programme library at the recorded commit](https://github.com/kodakodapa/autoresearch-findings/tree/2abad0979eeb03ede3a77490f45a4f381119ff02/programmes/proof-complexity). Install elan, then pin the library subtree while keeping the finding checks:
+
+```sh
+git clone https://github.com/kodakodapa/autoresearch-findings.git
+cd autoresearch-findings
+git checkout 2abad0979eeb03ede3a77490f45a4f381119ff02 -- programmes/proof-complexity
+cd programmes/proof-complexity && lake build
+AR_LIBRARY=$PWD python -I ../../claims/pc-degree-5-onto-fphp-surplus-8/checks/lean-K18.py
+```
+
+`checks/run-copies/`: the author's working copies from the run; they import the run's private `Work` package and are not built standalone.
 
 ## Provenance
 
@@ -115,3 +122,4 @@ exits with status 0. The results recorded in the original run are in
 
 - 2026-11-06 — Math rendering on the site; paper lists only cited references
 - 2026-11-06 — Library published buildable; verification steps; run copies labelled
+- 2026-11-06 — Verification steps; stale run copies removed; encoding stated
