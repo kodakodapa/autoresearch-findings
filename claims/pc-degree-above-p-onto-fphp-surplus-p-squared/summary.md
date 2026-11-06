@@ -4,7 +4,7 @@ The onto functional pigeonhole principle $\mathrm{onto\text{-}FPHP}^{n+k}_n$ say
 pigeons can be mapped one-to-one onto $n$ holes; it is false for every $k\ge1$. In Boolean
 variables $x_{ij}$ (pigeon $i$ in hole $j$) its axioms are $\sum_j x_{ij}-1$,
 $\sum_i x_{ij}-1$, $x_{ij}x_{i'j}$ and $x_{ij}x_{ij'}$, the linear encoding used for this family
-[@beame1998counting; @razborov2001php]. A polynomial calculus (PC) refutation over
+[@beame1998counting; @razborov2001php]. These results are for the linear encoding only: translating the CNF clause by clause instead turns each pigeon clause into a polynomial of degree $n$ [@razborov2001php], so degree bounds below $n$ say nothing about that encoding. A polynomial calculus (PC) refutation over
 $\mathbb F_p$ derives $1$ from the axioms and the Boolean axioms $x^2-x$ by linear combinations
 and multiplication by a variable; its degree is the largest degree of a line.
 

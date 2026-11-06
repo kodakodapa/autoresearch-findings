@@ -27,11 +27,15 @@
     {
       "date": "2026-11-06",
       "reason": "Library published buildable; verification steps; run copies labelled"
+    },
+    {
+      "date": "2026-11-06",
+      "reason": "Verification steps; stale run copies removed; encoding stated"
     }
   ],
   "round": 9,
   "run_label": "20261102-1249",
-  "staged_at": "2026-11-06T10:57:17Z",
+  "staged_at": "2026-11-06T13:39:18Z",
   "title": "Polynomial calculus degree above p for the onto functional pigeonhole principle with surplus divisible by p squared",
   "zenodo_record_id": "24008706"
 }

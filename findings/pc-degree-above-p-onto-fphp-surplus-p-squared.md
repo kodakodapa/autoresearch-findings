@@ -6,7 +6,7 @@ scholar: {"citation_title": "Polynomial calculus degree above p for the onto fun
 
 # Polynomial calculus degree above p for the onto functional pigeonhole principle with surplus divisible by p squared
 
-Cite as: https://doi.org/10.5281/zenodo.24008706
+Cite as: https://doi.org/10.5281/zenodo.23996585 (all versions; this version: https://doi.org/10.5281/zenodo.24008706)
 
 <!-- owner-summary -->
 ## Setting
@@ -15,7 +15,7 @@ The onto functional pigeonhole principle $\mathrm{onto\text{-}FPHP}^{n+k}\_n$ sa
 pigeons can be mapped one-to-one onto $n$ holes; it is false for every $k\ge1$. In Boolean
 variables $x\_{ij}$ (pigeon $i$ in hole $j$) its axioms are $\sum\_j x\_{ij}-1$,
 $\sum\_i x\_{ij}-1$, $x\_{ij}x\_{i'j}$ and $x\_{ij}x\_{ij'}$, the linear encoding used for this family
-[1, 2]. A polynomial calculus (PC) refutation over
+[1, 2]. These results are for the linear encoding only: translating the CNF clause by clause instead turns each pigeon clause into a polynomial of degree $n$ [2], so degree bounds below $n$ say nothing about that encoding. A polynomial calculus (PC) refutation over
 $\mathbb F\_p$ derives $1$ from the axioms and the Boolean axioms $x^2-x$ by linear combinations
 and multiplication by a variable; its degree is the largest degree of a line.
 
@@ -230,8 +230,30 @@ comparison only.
 3. <!-- cite:riis1997nonconstant --> Riis, Søren and Sitharam, Meera. 1997. Non-constant degree lower bounds imply linear degree lower bounds. [Link](https://eccc.weizmann.ac.il/report/1997/048/)
 4. <!-- cite:riis1993independence --> Riis, Søren. 1993. Independence in Bounded Arithmetic
 
+<!-- programme verification -->
+## How to verify
+
+Lean toolchain: `leanprover/lean4:v4.35.0`. [Programme library at the recorded commit](https://github.com/kodakodapa/autoresearch-findings/tree/2abad0979eeb03ede3a77490f45a4f381119ff02/programmes/proof-complexity). Install elan, then pin the library subtree while keeping the finding checks:
+
+```sh
+git clone https://github.com/kodakodapa/autoresearch-findings.git
+cd autoresearch-findings
+git checkout 2abad0979eeb03ede3a77490f45a4f381119ff02 -- programmes/proof-complexity
+cd programmes/proof-complexity && lake build
+AR_LIBRARY=$PWD python -I ../../claims/pc-degree-above-p-onto-fphp-surplus-p-squared/checks/lean-K1.py
+AR_LIBRARY=$PWD python -I ../../claims/pc-degree-above-p-onto-fphp-surplus-p-squared/checks/lean-K2.py
+AR_LIBRARY=$PWD python -I ../../claims/pc-degree-above-p-onto-fphp-surplus-p-squared/checks/lean-K3.py
+AR_LIBRARY=$PWD python -I ../../claims/pc-degree-above-p-onto-fphp-surplus-p-squared/checks/lean-K4.py
+AR_LIBRARY=$PWD python -I ../../claims/pc-degree-above-p-onto-fphp-surplus-p-squared/checks/lean-K5.py
+AR_LIBRARY=$PWD python -I ../../claims/pc-degree-above-p-onto-fphp-surplus-p-squared/checks/lean-K6.py
+```
+
+`checks/run-copies/`: the author's working copies from the run; they import the run's private `Work` package and are not built standalone.
+<!-- /programme verification -->
+
 <!-- autoresearch:revisions -->
 ## Revisions
 
 - 2026-11-06 — Math rendering on the site; paper lists only cited references
 - 2026-11-06 — Library published buildable; verification steps; run copies labelled
+- 2026-11-06 — Verification steps; stale run copies removed; encoding stated
