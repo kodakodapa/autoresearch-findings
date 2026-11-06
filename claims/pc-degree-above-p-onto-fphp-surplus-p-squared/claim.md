@@ -1,6 +1,6 @@
 # Polynomial calculus degree above p for the onto functional pigeonhole principle with surplus divisible by p squared
 
-Cite as: https://doi.org/10.5281/zenodo.23996586
+Cite as: https://doi.org/10.5281/zenodo.23999623
 
 <!-- owner-summary -->
 ## Setting
