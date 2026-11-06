@@ -10,7 +10,7 @@
   "exit": 0,
   "figures": [],
   "matches": null,
-  "path": "checks/K13-Lucas.lean",
+  "path": "checks/run-copies/K13-Lucas.lean",
   "reason": "proof built and axioms verified",
   "result": "pass",
   "run_at": "2026-10-27T07:19:11.483850+00:00",

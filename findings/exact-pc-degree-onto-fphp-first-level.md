@@ -80,7 +80,7 @@ The checkers' full answers, with every query and file they searched, are publish
 
 If you know of related work we missed, please open an issue.
 
-This result was found by AI research agents (the autoresearch harness). It was proved in Lean; the proof and check files are included so anyone can re-run them.
+This result was found by AI research agents (the autoresearch harness). It was proved in Lean; the verification steps below build the published programme library.
 
 Promoted declaring sources are included under `checks/library/`.
 
@@ -93,7 +93,7 @@ Status: proved (axioms: propext, Classical.choice, Quot.sound) · independently 
 Kind: theorem
 
 Evidence:
-- proof `checks/K13-Lucas.lean`: Work.Lucas.pc\_degree\_exact — pass (`results/K13-2.json`)
+- proof `checks/run-copies/K13-Lucas.lean`: Work.Lucas.pc\_degree\_exact — pass (`results/K13-2.json`)
 - reasoning: Lower bound: K14 (no degree $p-1$) plus monotonicity of PPCDerivable in the degree. Upper bound: library OntoLucas.ontoFPHP\_upper at $t=p$, whose unit hypothesis is $\binom{n+pc}{p}-\binom np\equiv c\not\equiv0$ mod $p$; proved by $p\mid\binom pr$ for $0<r<p$, Pascal's rule and telescoping in $c$. Convention: PC line degree, functional encoding. This agrees with Beame-Riis Lemma 8.7: their NS degree $p^l-1$ counts multiplier degree, and the products have degree $p^l$, which is line degree $p$ at $l=1$.
 
 Prior art: partial prior art (answer: `prior-art/R13.md`)
@@ -116,7 +116,7 @@ Status: proved (axioms: propext, Classical.choice, Quot.sound) · independently 
 Kind: theorem
 
 Evidence:
-- proof `checks/K14-Peel.lean`: Work.Peel.pc\_degree\_ge\_p — pass (`results/K14-2.json`)
+- proof `checks/run-copies/K14-Peel.lean`: Work.Peel.pc\_degree\_ge\_p — pass (`results/K14-2.json`)
 - reasoning: Paper proof (mirrors the Lean chain). Library criterion K4: if $\mathrm{EXT}\_p(n\_0,k,d)$ holds for all $d\le p-2$ then no degree-$(p-1)$ refutation for any $n\ge n\_0$. EXT at level $d$ is proved by peeling: the flag lemma (K8) turns a balanced $f$ into a tower of links; at level 0 subtract a symmetric window, and at level $j$ subtract a block-product window ($j$ rectangles $\times$ unit blocks $\times$ a symmetric degree-$(d-j+1)$ design on a rest block), which equals $(d-j+1)!\cdot RP$ on $j$-matchings. The residual has zero links, so S\_j (K10) puts it in the span of rectangle products. Every factorial used is at most $(p-1)!$, a unit mod prime $p$; the blocks fit when $2d+1\le n$, i.e. $n\ge2p-3$. ExtLin.EXT\_of\_span (K5) closes the step.
 
 Prior art: partial prior art (answer: `prior-art/R13.md`)
@@ -139,7 +139,7 @@ Status: proved (axioms: propext, Classical.choice, Quot.sound) · independently 
 Kind: theorem
 
 Evidence:
-- proof `checks/K13-Lucas.lean`: Work.Lucas.separation — pass (`results/K15-2.json`)
+- proof `checks/run-copies/K13-Lucas.lean`: Work.Lucas.separation — pass (`results/K15-2.json`)
 - reasoning: Over $\mathbb F\_p$: K13. Over $\mathbb F\_q$ with $q\nmid pc$: library OntoFPHP.ontoFPHP\_deg1 needs a unit $k^{-1}$ mod $q$, supplied by Bezout. The gap is $p$ versus 1 and is constant in $n$ for fixed $p$, so this separates characteristics along the parameter $p$, not asymptotically in $n$.
 
 Prior art: partial prior art (answer: `prior-art/R13.md`)
@@ -175,3 +175,4 @@ Beame and Riis [1] is multiplier degree, one less than the line degree used here
 ## Revisions
 
 - 2026-11-06 — Math rendering on the site; paper lists only cited references
+- 2026-11-06 — Library published buildable; verification steps; run copies labelled

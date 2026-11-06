@@ -10,7 +10,7 @@
   "exit": 0,
   "figures": [],
   "matches": null,
-  "path": "checks/K14-Peel.lean",
+  "path": "checks/run-copies/K14-Peel.lean",
   "reason": "proof built and axioms verified",
   "result": "pass",
   "run_at": "2026-10-27T07:19:08.877000+00:00",

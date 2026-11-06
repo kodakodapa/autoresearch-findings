@@ -90,7 +90,7 @@ The checkers' full answers, with every query and file they searched, are publish
 
 If you know of related work we missed, please open an issue.
 
-This result was found by AI research agents (the autoresearch harness). It was proved in Lean; the proof and check files are included so anyone can re-run them.
+This result was found by AI research agents (the autoresearch harness). It was proved in Lean; the verification steps below build the published programme library.
 
 \subsection*{How it was produced}
 
@@ -109,7 +109,7 @@ No check scripts.
 
 \paragraph{Evidence.}
 \begin{itemize}
-\item proof \texttt{checks/K13-Lucas.lean}: Work.Lucas.pc\textbackslash{}\_degree\textbackslash{}\_exact --- pass (\texttt{results/K13-2.json})
+\item proof \texttt{checks/run-copies/K13-Lucas.lean}: Work.Lucas.pc\textbackslash{}\_degree\textbackslash{}\_exact --- pass (\texttt{results/K13-2.json})
 \item reasoning: Lower bound: K14 (no degree $p-1$) plus monotonicity of PPCDerivable in the degree. Upper bound: library OntoLucas.ontoFPHP\textbackslash{}\_upper at $t=p$, whose unit hypothesis is $\binom{n+pc}{p}-\binom np\equiv c\not\equiv0$ mod $p$; proved by $p\mid\binom pr$ for $0<r<p$, Pascal's rule and telescoping in $c$. Convention: PC line degree, functional encoding. This agrees with Beame-Riis Lemma 8.7: their NS degree $p^l-1$ counts multiplier degree, and the products have degree $p^l$, which is line degree $p$ at $l=1$.
 \end{itemize}
 
@@ -126,7 +126,7 @@ No check scripts.
 
 \paragraph{Evidence.}
 \begin{itemize}
-\item proof \texttt{checks/K14-Peel.lean}: Work.Peel.pc\textbackslash{}\_degree\textbackslash{}\_ge\textbackslash{}\_p --- pass (\texttt{results/K14-2.json})
+\item proof \texttt{checks/run-copies/K14-Peel.lean}: Work.Peel.pc\textbackslash{}\_degree\textbackslash{}\_ge\textbackslash{}\_p --- pass (\texttt{results/K14-2.json})
 \item reasoning: Paper proof (mirrors the Lean chain). Library criterion K4: if $\mathrm{EXT}_p(n_0,k,d)$ holds for all $d\le p-2$ then no degree-$(p-1)$ refutation for any $n\ge n_0$. EXT at level $d$ is proved by peeling: the flag lemma (K8) turns a balanced $f$ into a tower of links; at level 0 subtract a symmetric window, and at level $j$ subtract a block-product window ($j$ rectangles $\times$ unit blocks $\times$ a symmetric degree-$(d-j+1)$ design on a rest block), which equals $(d-j+1)!\cdot RP$ on $j$-matchings. The residual has zero links, so S\textbackslash{}\_j (K10) puts it in the span of rectangle products. Every factorial used is at most $(p-1)!$, a unit mod prime $p$; the blocks fit when $2d+1\le n$, i.e. $n\ge2p-3$. ExtLin.EXT\textbackslash{}\_of\textbackslash{}\_span (K5) closes the step.
 \end{itemize}
 
@@ -143,7 +143,7 @@ No check scripts.
 
 \paragraph{Evidence.}
 \begin{itemize}
-\item proof \texttt{checks/K13-Lucas.lean}: Work.Lucas.separation --- pass (\texttt{results/K15-2.json})
+\item proof \texttt{checks/run-copies/K13-Lucas.lean}: Work.Lucas.separation --- pass (\texttt{results/K15-2.json})
 \item reasoning: Over $\mathbb F_p$: K13. Over $\mathbb F_q$ with $q\nmid pc$: library OntoFPHP.ontoFPHP\textbackslash{}\_deg1 needs a unit $k^{-1}$ mod $q$, supplied by Bezout. The gap is $p$ versus 1 and is constant in $n$ for fixed $p$, so this separates characteristics along the parameter $p$, not asymptotically in $n$.
 \end{itemize}
 
@@ -170,6 +170,7 @@ Each finding has its check scripts in \texttt{claims/exact-pc-degree-onto-fphp-f
 
 \begin{itemize}
 \item 2026-11-06 --- Math rendering on the site; paper lists only cited references
+\item 2026-11-06 --- Library published buildable; verification steps; run copies labelled
 \end{itemize}
 
 \bibliographystyle{plain}
