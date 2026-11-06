@@ -1,12 +1,12 @@
 ---
 layout: default
 title: "Exact polynomial calculus degree p for the onto functional pigeonhole principle with surplus divisible by p"
-scholar: {"citation_title": "Exact polynomial calculus degree p for the onto functional pigeonhole principle with surplus divisible by p", "citation_author": "Lindheim, Bj\u00f6rn", "citation_publication_date": "2026/11/06", "citation_abstract_html_url": "https://kodakodapa.github.io/autoresearch-findings/findings/exact-pc-degree-onto-fphp-first-level.html", "citation_keywords": "C3", "citation_pdf_url": "https://kodakodapa.github.io/autoresearch-findings/claims/exact-pc-degree-onto-fphp-first-level/paper.pdf", "citation_doi": "10.5281/zenodo.23999597"}
+scholar: {"citation_title": "Exact polynomial calculus degree p for the onto functional pigeonhole principle with surplus divisible by p", "citation_author": "Lindheim, Bj\u00f6rn", "citation_publication_date": "2026/11/06", "citation_abstract_html_url": "https://kodakodapa.github.io/autoresearch-findings/findings/exact-pc-degree-onto-fphp-first-level.html", "citation_keywords": "C3", "citation_pdf_url": "https://kodakodapa.github.io/autoresearch-findings/claims/exact-pc-degree-onto-fphp-first-level/paper.pdf", "citation_doi": "10.5281/zenodo.24008682"}
 ---
 
 # Exact polynomial calculus degree p for the onto functional pigeonhole principle with surplus divisible by p
 
-Cite as: https://doi.org/10.5281/zenodo.23999597
+Cite as: https://doi.org/10.5281/zenodo.24008682
 
 <!-- owner-summary -->
 ## Setting
