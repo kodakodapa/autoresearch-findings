@@ -1,10 +1,12 @@
 ---
 layout: default
 title: "Polynomial calculus degree above p for the onto functional pigeonhole principle with surplus divisible by p squared"
-scholar: {"citation_title": "Polynomial calculus degree above p for the onto functional pigeonhole principle with surplus divisible by p squared", "citation_author": "Lindheim, Bj\u00f6rn", "citation_publication_date": "2026/11/06", "citation_abstract_html_url": "https://kodakodapa.github.io/autoresearch-findings/findings/pc-degree-above-p-onto-fphp-surplus-p-squared.html", "citation_keywords": "C3", "citation_pdf_url": "https://kodakodapa.github.io/autoresearch-findings/claims/pc-degree-above-p-onto-fphp-surplus-p-squared/paper.pdf"}
+scholar: {"citation_title": "Polynomial calculus degree above p for the onto functional pigeonhole principle with surplus divisible by p squared", "citation_author": "Lindheim, Bj\u00f6rn", "citation_publication_date": "2026/11/06", "citation_abstract_html_url": "https://kodakodapa.github.io/autoresearch-findings/findings/pc-degree-above-p-onto-fphp-surplus-p-squared.html", "citation_keywords": "C3", "citation_pdf_url": "https://kodakodapa.github.io/autoresearch-findings/claims/pc-degree-above-p-onto-fphp-surplus-p-squared/paper.pdf", "citation_doi": "10.5281/zenodo.23996586"}
 ---
 
 # Polynomial calculus degree above p for the onto functional pigeonhole principle with surplus divisible by p squared
+
+Cite as: https://doi.org/10.5281/zenodo.23996586
 
 <!-- owner-summary -->
 ## Setting
