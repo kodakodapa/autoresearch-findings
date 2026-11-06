@@ -12,7 +12,7 @@
   ],
   "commit": "359fa20477b8d26a5d2ef8a16e5465474e74b452",
   "concept_doi": "10.5281/zenodo.23996585",
-  "doi": "10.5281/zenodo.23999623",
+  "doi": "10.5281/zenodo.24008706",
   "library": {
     "commit": "2abad0979eeb03ede3a77490f45a4f381119ff02",
     "path": "programmes/proof-complexity",
@@ -33,5 +33,5 @@
   "run_label": "20261102-1249",
   "staged_at": "2026-11-06T10:57:17Z",
   "title": "Polynomial calculus degree above p for the onto functional pigeonhole principle with surplus divisible by p squared",
-  "zenodo_record_id": "23999623"
+  "zenodo_record_id": "24008706"
 }
