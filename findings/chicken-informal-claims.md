@@ -13,27 +13,27 @@ Modal agents play one-shot games by asking what can be proved about each other, 
 provability box $\Box$ of the logic GL [1]. Two informal posts made claims about
 specific agents that were never checked. "Modal Chicken" [2] introduced
 CarefulBot and AstuteBot for the game of Chicken, and its comments proposed graded variants:
-$C_n = \neg\Box(\Box^n\bot \vee p)$ ("swerve unless the opponent provably swerves", with proof
-strength $n$) and BoldBots $B_n = \Box(\Box^n\bot \vee \neg p)$, the name a commenter gave to the
-post's original CarefulBot ($B_0$); here $p$ means "the opponent swerves against me". "Yet More Modal Combat" [3] proposed, for the prisoner's
+$C\_n = \neg\Box(\Box^n\bot \vee p)$ ("swerve unless the opponent provably swerves", with proof
+strength $n$) and BoldBots $B\_n = \Box(\Box^n\bot \vee \neg p)$, the name a commenter gave to the
+post's original CarefulBot ($B\_0$); here $p$ means "the opponent swerves against me". "Yet More Modal Combat" [3] proposed, for the prisoner's
 dilemma, a bot that defects if a weak system proves the opponent cooperates and otherwise acts like
-FairBot with a strong system; in graded form $H_{a,b} = \neg P_a(p) \wedge P_b(p)$ with
-$P_a(z) = \Box(\Box^a\bot \vee z)$, $a < b$.
+FairBot with a strong system; in graded form $H\_{a,b} = \neg P\_a(p) \wedge P\_b(p)$ with
+$P\_a(z) = \Box(\Box^a\bot \vee z)$, $a < b$.
 
 ## Result
 
-- **Graded CarefulBots and BoldBots, for all grades:** $C_n$ swerves against $C_m$ exactly when
-  $n \le m$, while $B_n$ swerves against $B_m$ exactly when $n > m$. A CarefulBot against a BoldBot
+- **Graded CarefulBots and BoldBots, for all grades:** $C\_n$ swerves against $C\_m$ exactly when
+  $n \le m$, while $B\_n$ swerves against $B\_m$ exactly when $n > m$. A CarefulBot against a BoldBot
   always goes straight while the BoldBot swerves, so the pair always ends at payoffs $(4, 1)$,
   whatever the grades.
 - **The named agents:** a certified table of all 64 pairings of SwerveBot, NerveBot, the
-  original CarefulBot $B_0$, $C_0$, AstuteBot as displayed in the post, the FairBots $P_0(p) = \Box p$
-  and $P_1(p)$, and Hobson's bot $H_{0,1}$ (which cooperates with itself but ends in mutual
+  original CarefulBot $B\_0$, $C\_0$, AstuteBot as displayed in the post, the FairBots $P\_0(p) = \Box p$
+  and $P\_1(p)$, and Hobson's bot $H\_{0,1}$ (which cooperates with itself but ends in mutual
   defection with both FairBots). The original CarefulBot crashes against itself, as a comment pointed out; the
   displayed AstuteBot swerves against itself, as the post claimed.
-- **Hobson's bot, for all grades:** $H_{a,b}$ and $H_{c,d}$ end in mutual cooperation exactly when
+- **Hobson's bot, for all grades:** $H\_{a,b}$ and $H\_{c,d}$ end in mutual cooperation exactly when
   their weak grades agree ($a = c$), and otherwise in mutual defection. Against any FairBot of the
-  form $P_e(p)$ it ends in mutual defection, for every $e$.
+  form $P\_e(p)$ it ends in mutual defection, for every $e$.
 
 ## Why it matters
 
@@ -64,7 +64,7 @@ This result was found by AI research agents (the autoresearch harness). It was p
 
 ## K5
 
-For all $n,m\ge0$, $C_n=\neg P_n(p)$ swerves against $C_m$ iff $n\le m$, while $B_n=P_n(\neg p)$ swerves against $B_m$ iff $n>m$, where $P_n(a)=\Box(\Box^n\bot\lor a)$. Exact height laws are Lean-proved.
+For all $n,m\ge0$, $C\_n=\neg P\_n(p)$ swerves against $C\_m$ iff $n\le m$, while $B\_n=P\_n(\neg p)$ swerves against $B\_m$ iff $n>m$, where $P\_n(a)=\Box(\Box^n\bot\lor a)$. Exact height laws are Lean-proved.
 
 Status: derived · author check only
 
@@ -87,7 +87,7 @@ Prior art: partial prior art (answer: `prior-art/R4.md`)
 
 ## K6
 
-The 64-cell GL table for $S,N,B_0,C_0,A,H,F_0,F_1$ is certified: original CarefulBot $B_0$ self-crashes; displayed AstuteBot $A$ self-swerves; $H=\neg\Box p\land\Box(\Box\bot\lor p)$ self-cooperates but mutually defects with $F_0,F_1$.
+The 64-cell GL table for $S,N,B\_0,C\_0,A,H,F\_0,F\_1$ is certified: original CarefulBot $B\_0$ self-crashes; displayed AstuteBot $A$ self-swerves; $H=\neg\Box p\land\Box(\Box\bot\lor p)$ self-cooperates but mutually defects with $F\_0,F\_1$.
 
 Status: derived · author check only
 
@@ -110,7 +110,7 @@ Prior art: partial prior art (answer: `prior-art/R4.md`)
 
 ## K11
 
-For all $n,m\ge0$, $C_n=\neg P_n(p)$ goes straight and $B_m=P_m(\neg p)$ swerves against it at every height, where $P_k(a)=\Box(\Box^k\bot\lor a)$. The mixed pair always yields Chicken payoffs $(4,1)$, independent of grades (Lean).
+For all $n,m\ge0$, $C\_n=\neg P\_n(p)$ goes straight and $B\_m=P\_m(\neg p)$ swerves against it at every height, where $P\_k(a)=\Box(\Box^k\bot\lor a)$. The mixed pair always yields Chicken payoffs $(4,1)$, independent of grades (Lean).
 
 Status: derived · author check only
 
@@ -132,7 +132,7 @@ Prior art: partial prior art (answer: `prior-art/R4.md`)
 
 ## K12
 
-For $H_{a,b}=\neg P_a(p)\land P_b(p)$, $P_a(z)=\Box(\Box^a\bot\lor z)$, all $a<b,c<d$ give eventual mutual action 1 iff $a=c$, else mutual action 2. Every pairing with $P_e(p)$ eventually gives mutual action 2, for all $e$ (Lean).
+For $H\_{a,b}=\neg P\_a(p)\land P\_b(p)$, $P\_a(z)=\Box(\Box^a\bot\lor z)$, all $a<b,c<d$ give eventual mutual action 1 iff $a=c$, else mutual action 2. Every pairing with $P\_e(p)$ eventually gives mutual action 2, for all $e$ (Lean).
 
 Status: derived · author check only
 

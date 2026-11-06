@@ -12,15 +12,15 @@ Cite as: https://doi.org/10.5281/zenodo.23996565
 <!-- owner-summary -->
 ## Setting
 
-The onto functional pigeonhole principle $\mathrm{onto\text{-}FPHP}^{n+k}_n$ says that $n+k$
+The onto functional pigeonhole principle $\mathrm{onto\text{-}FPHP}^{n+k}\_n$ says that $n+k$
 pigeons can be mapped one-to-one onto $n$ holes. It is false for every $k\ge1$. As a system of
-polynomial equations in Boolean variables $x_{ij}$ (pigeon $i$ sits in hole $j$) it has the
-axioms $\sum_j x_{ij}-1$ (each pigeon sits in a hole), $\sum_i x_{ij}-1$ (each hole holds exactly
-one pigeon), $x_{ij}x_{i'j}$ (no two pigeons share a hole) and $x_{ij}x_{ij'}$ (no pigeon sits in
+polynomial equations in Boolean variables $x\_{ij}$ (pigeon $i$ sits in hole $j$) it has the
+axioms $\sum\_j x\_{ij}-1$ (each pigeon sits in a hole), $\sum\_i x\_{ij}-1$ (each hole holds exactly
+one pigeon), $x\_{ij}x\_{i'j}$ (no two pigeons share a hole) and $x\_{ij}x\_{ij'}$ (no pigeon sits in
 two holes). This is the linear encoding used in the literature on this family
 [1, 2].
 
-A polynomial calculus (PC) refutation over the field $\mathbb F_p$ derives the polynomial $1$
+A polynomial calculus (PC) refutation over the field $\mathbb F\_p$ derives the polynomial $1$
 from the axioms and the Boolean axioms $x^2-x$, using linear combinations and multiplication by a
 variable. Its degree is the largest degree of a line. The PC degree of the principle is the least
 degree of a refutation. When $p$ does not divide $k$, summing the pigeon axioms and subtracting
@@ -30,14 +30,14 @@ $p$ divides $k$.
 ## Result
 
 For every prime $p$, every $c$ not divisible by $p$, and every $n\ge 2p-3$, the PC degree of
-$\mathrm{onto\text{-}FPHP}^{n+pc}_n$ over $\mathbb F_p$ is exactly $p$: there is a refutation of
+$\mathrm{onto\text{-}FPHP}^{n+pc}\_n$ over $\mathbb F\_p$ is exactly $p$: there is a refutation of
 degree $p$, and none of degree $p-1$. More generally, whenever $p$ divides $k$ and $n\ge2p-3$,
 there is no refutation of degree $p-1$. The same formula therefore has PC degree $p$ over
-$\mathbb F_p$ and PC degree $1$ over $\mathbb F_q$ for every prime $q$ not dividing $pc$.
+$\mathbb F\_p$ and PC degree $1$ over $\mathbb F\_q$ for every prime $q$ not dividing $pc$.
 
 ## Why it matters
 
-Razborov's survey asks (Question 7) whether $\mathrm{onto\text{-}FPHP}^{n+p^\ell}_n$ has
+Razborov's survey asks (Question 7) whether $\mathrm{onto\text{-}FPHP}^{n+p^\ell}\_n$ has
 bounded-degree PC refutations in characteristic $p$ [2]. The upper bound $p$ at
 the first level comes from Riis's criterion [3]. The known lower bounds are
 for the weaker Nullstellensatz system [1] and, for PC, a bound that grows with
@@ -55,7 +55,7 @@ evidence is the kernel check and the independent re-proof.
 
 The Lean statements are for the library's formulation of PC, in which lines are functions on
 the Boolean cube. A later theorem of the same library shows that a refutation of degree $D$ in
-standard (syntactic) PC over $\mathbb F_p$ exists exactly when one exists in the library's
+standard (syntactic) PC over $\mathbb F\_p$ exists exactly when one exists in the library's
 formulation, so the result holds verbatim for standard PC (`std_pc_degree_exact`).
 <!-- /owner-summary -->
 
@@ -85,13 +85,13 @@ This result was found by AI research agents (the autoresearch harness). It was p
 
 Promoted declaring sources are included under `checks/library/`.
 
-**K13.** `Work.Lucas.pc_degree_exact`: for every prime $p$ (`IsPrime p`), every $c$ with $p\nmid c$, every $n\ge2p-3$ and every $D$: `ontoFPHP n (p*c)` has a degree-$D$ `PPCRefutation p` iff $p\le D$ (PC degree over $\mathbb Z/p$ of onto-FPHP$^{n+pc}_n$ is exactly $p$).
+**K13.** `Work.Lucas.pc_degree_exact`: for every prime $p$ (`IsPrime p`), every $c$ with $p\nmid c$, every $n\ge2p-3$ and every $D$: `ontoFPHP n (p*c)` has a degree-$D$ `PPCRefutation p` iff $p\le D$ (PC degree over $\mathbb Z/p$ of onto-FPHP$^{n+pc}\_n$ is exactly $p$).
 
 - Status: proved (axioms: propext, Classical.choice, Quot.sound) · independently re-proved (skeptic/codex)
 - Machine-checked: no check scripts.
 - Prior art: partial prior art
 
-**K14.** `Work.Peel.pc_degree_ge_p`: for every prime $p$ (`IsPrime p`), every $k$ with $p\mid k$ and every $n\ge2p-3$, `ontoFPHP n k` (onto-FPHP$^{n+k}_n$, functional encoding) has no `PPCRefutation p` of degree $p-1$ (polynomial calculus over $\mathbb Z/p$).
+**K14.** `Work.Peel.pc_degree_ge_p`: for every prime $p$ (`IsPrime p`), every $k$ with $p\mid k$ and every $n\ge2p-3$, `ontoFPHP n k` (onto-FPHP$^{n+k}\_n$, functional encoding) has no `PPCRefutation p` of degree $p-1$ (polynomial calculus over $\mathbb Z/p$).
 
 - Status: proved (axioms: propext, Classical.choice, Quot.sound) · independently re-proved (skeptic/codex)
 - Machine-checked: no check scripts.
@@ -134,3 +134,8 @@ exits with status 0. The results recorded in the original run are in
 2. <!-- cite:razborov2001php --> Razborov, Alexander A.. 2002. Proof complexity of pigeonhole principles. Developments in Language Theory (DLT 2001). [Link](https://people.cs.uchicago.edu/~razborov/files/php_survey.pdf)
 3. <!-- cite:riis1993independence --> Riis, Søren. 1993. Independence in Bounded Arithmetic
 4. <!-- cite:riis1997nonconstant --> Riis, Søren and Sitharam, Meera. 1997. Non-constant degree lower bounds imply linear degree lower bounds. [Link](https://eccc.weizmann.ac.il/report/1997/048/)
+
+<!-- autoresearch:revisions -->
+## Revisions
+
+- 2026-11-06 — Math rendering on the site; paper lists only cited references

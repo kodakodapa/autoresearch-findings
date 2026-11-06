@@ -17,23 +17,23 @@ asking what can be proved about the opponent, written with the provability box $
 logic GL: $p$ means "the opponent hunts stag against me" and $q$ "the opponent hunts stag against
 HareBot", the agent that always hunts hare. Call an agent *safe* if no modal opponent ever ends up
 hunting hare while the agent hunts stag (the Stag Hunt reading of unexploitability). Two simple
-probes test willingness to coordinate: $E_1 = \neg\Box\bot$, which hunts stag unconditionally in
-practice, and $N_1 = \Box(\Box\bot \vee \neg q)$, which hunts stag against agents that do not
+probes test willingness to coordinate: $E\_1 = \neg\Box\bot$, which hunts stag unconditionally in
+practice, and $N\_1 = \Box(\Box\bot \vee \neg q)$, which hunts stag against agents that do not
 hunt stag against HareBot. We take guarded formulas built from $p$, $q$, $\bot$, $\neg$,
 $\wedge$, $\vee$, $\Box$ and measure size as the number of nodes.
 
 ## Result
 
 - **No small safe coordinator.** Among the 56,503 agent classes of size at most 12, exactly 356
-  reach stag/stag with themselves, with $E_1$ and with $N_1$, and every one of them is exploited
+  reach stag/stag with themselves, with $E\_1$ and with $N\_1$, and every one of them is exploited
   by some opponent of size at most 10. So no safe agent of size at most 12 has all three
   coordination properties.
-- **Size 13 is enough.** The agent $X_1 = \Box(p \vee \Box p) \wedge (\Box\bot \vee \neg\Box\neg p)$
+- **Size 13 is enough.** The agent $X\_1 = \Box(p \vee \Box p) \wedge (\Box\bot \vee \neg\Box\neg p)$
   of size 13 is safe against every modal opponent and reaches stag/stag with itself, with FairBot,
-  with $E_1$ and with $N_1$. More generally, the family
-  $X_k = \Box(p \vee \Box^k p) \wedge (\Box\bot \vee \neg\Box\neg p)$ is safe for every $k \ge 1$,
-  coordinates with itself and with FairBot, with $E_j$ exactly when $j \le k$, and with every
-  $N_n$, $n \ge 1$.
+  with $E\_1$ and with $N\_1$. More generally, the family
+  $X\_k = \Box(p \vee \Box^k p) \wedge (\Box\bot \vee \neg\Box\neg p)$ is safe for every $k \ge 1$,
+  coordinates with itself and with FairBot, with $E\_j$ exactly when $j \le k$, and with every
+  $N\_n$, $n \ge 1$.
 - **Census safety counts.** Among the 7,561 classes of size at most 10, exactly 1,693 avoid being
   left hunting stag alone against every agent in that census, and 517 of these hunt stag with
   themselves; tested against all opponents of size at most 12, only one of the 517,
@@ -42,13 +42,13 @@ $\wedge$, $\vee$, $\Box$ and measure size as the number of nodes.
 ## Why it matters
 
 Safe agents in the Stag Hunt must refuse to hunt stag unless they can be sure of a partner, which
-pulls against coordinating with simple partners such as $E_1$ and $N_1$. The result locates the
+pulls against coordinating with simple partners such as $E\_1$ and $N\_1$. The result locates the
 smallest size at which safety and these coordination properties can be combined, and gives an
 explicit infinite family that does it.
 
 ## Proved vs checked
 
-The laws for $X_k$, including safety against every modal opponent, are proved for all $k$ in
+The laws for $X\_k$, including safety against every modal opponent, are proved for all $k$ in
 Lean 4, in the height semantics of closed GL fixed points; the link to provability in arithmetic
 is Solovay's theorem [2], cited, not formalised (see also
 [3]). The non-existence below size 13 and the census counts are exhaustive
@@ -68,13 +68,13 @@ We found no earlier statement of it, but we can't be certain. If you know of pri
 
 This result was found by AI research agents (the autoresearch harness). It was partly checked by scripts that run Lean proofs (claims K9) and partly checked by script (claims K16, K13, K19); the proof and check files are included so anyone can re-run them.
 
-**K16.** In guarded $L$ of syntax-node size $\le12$, exactly 356 of 56,503 classes get stag/stag with self, $E_1$, and $N_1$; every one is exploited by a size-$\le10$ opponent. Hence no universally safe agent of size $\le12$ has all three coordination properties.
+**K16.** In guarded $L$ of syntax-node size $\le12$, exactly 356 of 56,503 classes get stag/stag with self, $E\_1$, and $N\_1$; every one is exploited by a size-$\le10$ opponent. Hence no universally safe agent of size $\le12$ has all three coordination properties.
 
 - Status: derived · author check only
 - Machine-checked: 1 of 1 check scripts passed.
 - Prior art: possibly new: no prior art found in the owner's search
 
-**K9.** For all $k\ge1$, $X_k=\Box(p\lor\Box^kp)\land(\Box\bot\lor\neg\Box\neg p)$ never ends hunting stag against an eventual hare hunter, ends stag/stag with itself, FairBot and every $R_m$, $D_m$, $X_m$, with $E_j$ ($j\ge1$) iff $j\le k$ and with $N_n$ iff $n\ge1$.
+**K9.** For all $k\ge1$, $X\_k=\Box(p\lor\Box^kp)\land(\Box\bot\lor\neg\Box\neg p)$ never ends hunting stag against an eventual hare hunter, ends stag/stag with itself, FairBot and every $R\_m$, $D\_m$, $X\_m$, with $E\_j$ ($j\ge1$) iff $j\le k$ and with $N\_n$ iff $n\ge1$.
 
 - Status: derived · author check only
 - Machine-checked: 1 of 1 check scripts passed.

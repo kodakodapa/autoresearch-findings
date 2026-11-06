@@ -38,7 +38,7 @@ force collapse.
   A5 (with Scott's essence). With varying domains existence needs A1a, A2, A3 and A5 on
   reflexive frames (T, B, S4, S5), or A4 as well on KB; with A4 added, necessary existence holds
   on every frame.
-- **Anderson's variant** (with $H = P(G_A)$): existence needs A1a, A2 and H on B, KB or S5, and
+- **Anderson's variant** (with $H = P(G\_A)$): existence needs A1a, A2 and H on B, KB or S5, and
   on KD45 only with A4 or A1b, and only with constant domains. A5 follows from A2 and H. Adding A1b, the
   direction Anderson removed, brings collapse back on B and S5, and on KB only together with A4.
 - **Fitting's extensional variant** ($H = P(G)$, $N = P(NE)$): with constant domains no cell forces
@@ -102,7 +102,7 @@ This result was found by AI research agents (the autoresearch harness). It was c
 - Machine-checked: 1 of 1 check scripts passed.
 - Prior art: partial prior art
 
-**K9.** Constant-domain full-property Anderson slice: $\exists x\,G_A(x)$ holds iff the subset contains A1a, A2, H and the class is B, KB, S5, or KD45 with A4; $\Box\exists x\,G_A(x)$ iff it contains A1a, A2, H on B, KB, KD45, S5. A5 is derivable from A2 and H.
+**K9.** Constant-domain full-property Anderson slice: $\exists x\,G\_A(x)$ holds iff the subset contains A1a, A2, H and the class is B, KB, S5, or KD45 with A4; $\Box\exists x\,G\_A(x)$ iff it contains A1a, A2, H on B, KB, KD45, S5. A5 is derivable from A2 and H.
 
 - Status: derived · author check only
 - Machine-checked: 1 of 1 check scripts passed.
@@ -114,7 +114,7 @@ This result was found by AI research agents (the autoresearch harness). It was c
 - Machine-checked: 1 of 1 check scripts passed.
 - Prior art: partial prior art
 
-**K15.** Varying-domain (actualist) full-property Anderson, 32 subsets × 9 classes: as in constant domains except $\exists^E x\,G_A(x)$ on KD45 with A4 now fails; a 3-world KD45 model satisfies all five axioms, but its God-like being does not exist at the root.
+**K15.** Varying-domain (actualist) full-property Anderson, 32 subsets × 9 classes: as in constant domains except $\exists^E x\,G\_A(x)$ on KD45 with A4 now fails; a 3-world KD45 model satisfies all five axioms, but its God-like being does not exist at the root.
 
 - Status: derived · author check only
 - Machine-checked: 1 of 1 check scripts passed.
@@ -132,7 +132,7 @@ This result was found by AI research agents (the autoresearch harness). It was c
 - Machine-checked: 2 of 2 check scripts passed.
 - Prior art: partial prior art
 
-**K21.** Anderson $G_A$, full properties, 64 subsets of A1a,A1b,A2,H,A4,A5 × 9 classes × constant/varying domains: collapse iff ⊇{A1a,A1b,A2,H} on B,S5, or +A4 on KB; $\exists G_A$ on KD45 needs A4 or A1b and constant domains; otherwise as K9/K15.
+**K21.** Anderson $G\_A$, full properties, 64 subsets of A1a,A1b,A2,H,A4,A5 × 9 classes × constant/varying domains: collapse iff ⊇{A1a,A1b,A2,H} on B,S5, or +A4 on KB; $\exists G\_A$ on KD45 needs A4 or A1b and constant domains; otherwise as K9/K15.
 
 - Status: derived · author check only
 - Machine-checked: 1 of 1 check scripts passed.

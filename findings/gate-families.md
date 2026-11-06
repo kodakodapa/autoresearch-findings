@@ -13,33 +13,33 @@ Two programs play a one-shot prisoner's dilemma, and each can read the other's s
 Following Barasz et al. [1], a *modal agent* decides by asking what can be proved
 about the opponent, written with the provability box $\Box$ of the logic GL. $p$ means "the
 opponent cooperates with me" and $q$ means "the opponent cooperates with DefectBot". FairBot is
-$\Box p$, graded FairBots are $F_k = \Box^k p$, graded PrudentBots are
-$P_j = \Box p \wedge \Box(\neg\Box^j\bot \to \neg q)$, and ConBot is $\neg\Box\bot$. An agent is
+$\Box p$, graded FairBots are $F\_k = \Box^k p$, graded PrudentBots are
+$P\_j = \Box p \wedge \Box(\neg\Box^j\bot \to \neg q)$, and ConBot is $\neg\Box\bot$. An agent is
 *unexploitable* if no modal opponent ever gets it to cooperate while the opponent defects.
 
-An earlier finding on this site described $W_n = \Box(\Box^n\bot \vee (p \wedge (q \vee \neg\Box q)))$: unexploitable, cooperative with FairBot and CooperateBot, yet defecting against
+An earlier finding on this site described $W\_n = \Box(\Box^n\bot \vee (p \wedge (q \vee \neg\Box q)))$: unexploitable, cooperative with FairBot and CooperateBot, yet defecting against
 its own copy. This finding describes four further families of unexploitable agents that defect against
 themselves, and how they relate.
 
 ## Result
 
-- **Gate families $V_{n,r} = \Box(\Box^n\bot \vee (p \wedge (q \vee \neg\Box^r q)))$**, which
-  contain $W_n = V_{n,1}$. $V_{n,r}$ and $F_k$ cooperate exactly when $k + r \le n$; $V_{n,r}$ and
-  $P_j$ exactly when $r < n < j$; any two members defect against each other. For $r < n$ every
+- **Gate families $V\_{n,r} = \Box(\Box^n\bot \vee (p \wedge (q \vee \neg\Box^r q)))$**, which
+  contain $W\_n = V\_{n,1}$. $V\_{n,r}$ and $F\_k$ cooperate exactly when $k + r \le n$; $V\_{n,r}$ and
+  $P\_j$ exactly when $r < n < j$; any two members defect against each other. For $r < n$ every
   member is unexploitable, and these members are pairwise distinct.
-- **Prudent families $G_{m,j} = \Box(\Box^m p \wedge (q \vee \Box(\Box^j\bot \vee \neg q)))$
-  and $H_{m,j} = \Box^{m+1}(p \wedge (q \vee \Box(\Box^j\bot \vee \neg q)))$**, $m \ge j \ge 1$.
+- **Prudent families $G\_{m,j} = \Box(\Box^m p \wedge (q \vee \Box(\Box^j\bot \vee \neg q)))$
+  and $H\_{m,j} = \Box^{m+1}(p \wedge (q \vee \Box(\Box^j\bot \vee \neg q)))$**, $m \ge j \ge 1$.
   Both are unexploitable, cooperate with FairBot and CooperateBot, defect against themselves, and
-  cooperate with $F_k$ exactly when $k \le j$ and with $P_i$ exactly when $i > m$. So $G_{m,j}$
-  and $H_{m,j}$ cannot be told apart by graded FairBots or PrudentBots; the agent
-  $S_j = \Box^{j+1}(p \vee \neg\Box^{j+1} q)$ separates them ($H_{m,j}$ defects against it
-  while it cooperates; against $G_{m,j}$ both defect). ConBot separates the two kinds of family:
-  $G_{m,j}$ defects against it, every $V_{n,r}$ with $n \ge 1$ does not.
-- **A common family $J_{a,b,j} = \Box^{a+1}(\Box^b p \wedge (q \vee \Box(\Box^j\bot \vee \neg q)))$**, which contains $G$ ($a = 0$) and $H$ ($b = 0$). Checked for $a, b \le 5$,
-  $j \le 6$: $J_{a,b,j}$ cooperates with $F_k$ exactly when $k \le j$ and with $P_i$ exactly when
+  cooperate with $F\_k$ exactly when $k \le j$ and with $P\_i$ exactly when $i > m$. So $G\_{m,j}$
+  and $H\_{m,j}$ cannot be told apart by graded FairBots or PrudentBots; the agent
+  $S\_j = \Box^{j+1}(p \vee \neg\Box^{j+1} q)$ separates them ($H\_{m,j}$ defects against it
+  while it cooperates; against $G\_{m,j}$ both defect). ConBot separates the two kinds of family:
+  $G\_{m,j}$ defects against it, every $V\_{n,r}$ with $n \ge 1$ does not.
+- **A common family $J\_{a,b,j} = \Box^{a+1}(\Box^b p \wedge (q \vee \Box(\Box^j\bot \vee \neg q)))$**, which contains $G$ ($a = 0$) and $H$ ($b = 0$). Checked for $a, b \le 5$,
+  $j \le 6$: $J\_{a,b,j}$ cooperates with $F\_k$ exactly when $k \le j$ and with $P\_i$ exactly when
   $i > a + b$, and exact laws hold against a two-parameter family of separating probes; the 70
-  members with $j \le a + b \le 5$ are pairwise distinct. The size-13 member $J_{1,1,1}$ has the
-  same outcomes as $G_{2,1}$ and $H_{2,1}$ against $F_1, \dots, F_4$ and $P_0, \dots, P_5$, yet
+  members with $j \le a + b \le 5$ are pairwise distinct. The size-13 member $J\_{1,1,1}$ has the
+  same outcomes as $G\_{2,1}$ and $H\_{2,1}$ against $F\_1, \dots, F\_4$ and $P\_0, \dots, P\_5$, yet
   two opponents of size at most 9 distinguish all three.
 
 ## Why it matters
@@ -55,12 +55,12 @@ to be told apart.
 
 ## Proved vs checked
 
-The laws for $V_{n,r}$, $G_{m,j}$ and $H_{m,j}$ (including the separations by ConBot and $S_j$)
+The laws for $V\_{n,r}$, $G\_{m,j}$ and $H\_{m,j}$ (including the separations by ConBot and $S\_j$)
 are proved for all indices in Lean 4, in the height semantics of closed GL fixed points; the link
 to provability in arithmetic is Solovay's theorem [3], cited, not
-formalised (see also [4]). The statements about $J_{a,b,j}$ and $J_{1,1,1}$ are
+formalised (see also [4]). The statements about $J\_{a,b,j}$ and $J\_{1,1,1}$ are
 checked, not proved: exact tables for the stated parameter ranges, with every member of size at
-most 15 independently certified by GL fixed-point solving. The unexploitability of $J_{a,b,j}$ is
+most 15 independently certified by GL fixed-point solving. The unexploitability of $J\_{a,b,j}$ is
 supported by a short argument (the agent implies $\Box^{a+b+1}p$) and randomised safety tests,
 not by a proof for all indices.
 <!-- /owner-summary -->
@@ -208,7 +208,7 @@ Prior art: possibly new: no prior art found in the owner's search (answer: `prio
 
 ## K23
 
-For $J_{a,b,j}=\Box^{a+1}(\Box^b p\wedge(q\vee\Box(\Box^jF\vee\neg q)))$, $0\le a,b\le5$, $1\le j\le6$: CC with $F_k$ ($k\le9$) iff $k\le j$, $P_i$ ($i\le9$) iff $i>a+b$; vs $S_{u,t}$ ($u,t\le8$): CC if $u\le j$, else D/C iff $t+b\le u$, else DD. The 70 with $j\le a+b\le5$ are distinct.
+For $J\_{a,b,j}=\Box^{a+1}(\Box^b p\wedge(q\vee\Box(\Box^jF\vee\neg q)))$, $0\le a,b\le5$, $1\le j\le6$: CC with $F\_k$ ($k\le9$) iff $k\le j$, $P\_i$ ($i\le9$) iff $i>a+b$; vs $S\_{u,t}$ ($u,t\le8$): CC if $u\le j$, else D/C iff $t+b\le u$, else DD. The 70 with $j\le a+b\le5$ are distinct.
 
 Status: derived · author check only
 

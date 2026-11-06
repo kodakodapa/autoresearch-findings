@@ -22,18 +22,18 @@ agent, itself included, with equal weight (a round robin).
 
 - **FairBot never wins.** Normalising $a = 1$, $s = 0$, the triangle of strict Stag Hunts
   $0 < d < t < 1$ splits into exactly six regions, each won by a single agent, and FairBot wins
-  none of them. The agent $A_3 = \Box(p \vee \Box^3\neg(p \vee q))$ wins on 44.6% of the area,
+  none of them. The agent $A\_3 = \Box(p \vee \Box^3\neg(p \vee q))$ wins on 44.6% of the area,
   including every game with payoffs $(4, 0, t, 2)$ for $2 < t < 4$ and the game $(3, 0, 2, 1)$.
   At $(4, 0, 3, 2)$ it scores 23,411 against FairBot's 21,719.
-- **Why it beats FairBot.** $A_3$ reaches stag/stag with 4,444 of the 4,459 agents that hunt stag
+- **Why it beats FairBot.** $A\_3$ reaches stag/stag with 4,444 of the 4,459 agents that hunt stag
   against StagBot and with none of the others; it gains on the first group and loses on the
   second, for a net gain of 1,692 points over FairBot at $(4, 0, 3, 2)$.
-- **Families behind the winners.** For every $k$, $A_k = \Box(p \vee \Box^k\neg(p \vee q))$ hunts
-  stag against HareBot (and is left alone there), coordinates with StagBot, with every $A_m$ and
-  with every $F_j = \Box(\Box^j\bot \vee p)$ (FairBot over a stronger system); the lenient FairBots $R_k = \Box(p \vee \Box^k p)$ are safe and
+- **Families behind the winners.** For every $k$, $A\_k = \Box(p \vee \Box^k\neg(p \vee q))$ hunts
+  stag against HareBot (and is left alone there), coordinates with StagBot, with every $A\_m$ and
+  with every $F\_j = \Box(\Box^j\bot \vee p)$ (FairBot over a stronger system); the lenient FairBots $R\_k = \Box(p \vee \Box^k p)$ are safe and
   coordinate with $\neg\Box^j\bot$ exactly when $j \le k$.
-- **The winner depends on the size bound.** In the same census the score of $R_k$ rises strictly
-  with $k$ up to $k = 8$ and that of $A_k$ up to $k = 5$, so longer members of both families score
+- **The winner depends on the size bound.** In the same census the score of $R\_k$ rises strictly
+  with $k$ up to $k = 8$ and that of $A\_k$ up to $k = 5$, so longer members of both families score
   higher than the census winners. The specific winners above are therefore artefacts of the size
   bound; what holds across the families is that lenient agents beat FairBot in this round robin.
 
@@ -47,7 +47,7 @@ agent takes over.
 
 ## Proved vs checked
 
-The laws for $A_k$ and $R_k$ are proved for all indices in Lean 4, in the height semantics of
+The laws for $A\_k$ and $R\_k$ are proved for all indices in Lean 4, in the height semantics of
 closed GL fixed points; the link to provability in arithmetic is Solovay's theorem
 [2], cited, not formalised (see also [3]). Scores, regions
 and breakpoints are exact rational computations over the stated census.
@@ -68,7 +68,7 @@ This result was found by AI research agents (the autoresearch harness). It was p
 
 ## K15
 
-Normalising $a=1,s=0$, the strict Stag Hunt triangle $0<d<t<1$ splits into exactly 6 census (size $\le10$) round-robin winner regions, each one agent; $A_3$ wins on 44.6% of the area and $R_6=\Box(p\lor\Box^6p)$ near $t,d\to1$; FairBot nowhere.
+Normalising $a=1,s=0$, the strict Stag Hunt triangle $0<d<t<1$ splits into exactly 6 census (size $\le10$) round-robin winner regions, each one agent; $A\_3$ wins on 44.6% of the area and $R\_6=\Box(p\lor\Box^6p)$ near $t,d\to1$; FairBot nowhere.
 
 Status: derived · author check only
 
@@ -91,7 +91,7 @@ Prior art: possibly new: no prior art found in the owner's search (answer: `prio
 
 ## K6
 
-In the 7,561-class guarded-language census of size $\le10$, $A_3=\Box(p\lor\Box^3\neg(p\lor q))$ uniquely maximizes round-robin score $21950+487t$ for every $2<t<4$, with payoffs $(SS,SH,HS,HH)=(4,0,t,2)$.
+In the 7,561-class guarded-language census of size $\le10$, $A\_3=\Box(p\lor\Box^3\neg(p\lor q))$ uniquely maximizes round-robin score $21950+487t$ for every $2<t<4$, with payoffs $(SS,SH,HS,HH)=(4,0,t,2)$.
 
 Status: derived · author check only
 
@@ -113,7 +113,7 @@ Prior art: possibly new: no prior art found in the owner's search (answer: `prio
 
 ## K14
 
-At $(SS,SH,HS,HH)=(3,0,2,1)$, $A_3=\Box(p\lor\Box^3\neg(p\lor q))$ uniquely maximizes the equally weighted round robin over the 7561 guarded size-$\le10$ census classes, scoring 16393 versus FairBot's 14158.
+At $(SS,SH,HS,HH)=(3,0,2,1)$, $A\_3=\Box(p\lor\Box^3\neg(p\lor q))$ uniquely maximizes the equally weighted round robin over the 7561 guarded size-$\le10$ census classes, scoring 16393 versus FairBot's 14158.
 
 Status: derived · author check only
 
@@ -157,7 +157,7 @@ Prior art: possibly new: no prior art found in the owner's search (answer: `prio
 
 ## K7
 
-In L up to size 10 with Stag Hunt $(4,0,3,2)$, $A_3=\Box(p\lor\Box^3\neg(p\lor q))$ ends stag/stag with exactly 4444 of the 4459 opponents that hunt stag vs StagBot and with none of the other 3102; vs FairBot it gains $+3848$ on the first group and loses $2156$ on the second.
+In L up to size 10 with Stag Hunt $(4,0,3,2)$, $A\_3=\Box(p\lor\Box^3\neg(p\lor q))$ ends stag/stag with exactly 4444 of the 4459 opponents that hunt stag vs StagBot and with none of the other 3102; vs FairBot it gains $+3848$ on the first group and loses $2156$ on the second.
 
 Status: derived · author check only
 
@@ -179,7 +179,7 @@ Prior art: possibly new: no prior art found in the owner's search (answer: `prio
 
 ## K4
 
-At Stag Hunt payoffs $(4,0,3,2)$ in the size-$\le10$ census, $A_3$ gains 1,692 points over FairBot: 1,643 opponents change $HH\to SS$ and 562 change $HS\to SS$, offset by other outcome changes.
+At Stag Hunt payoffs $(4,0,3,2)$ in the size-$\le10$ census, $A\_3$ gains 1,692 points over FairBot: 1,643 opponents change $HH\to SS$ and 562 change $HS\to SS$, offset by other outcome changes.
 
 Status: derived · author check only
 
@@ -201,7 +201,7 @@ Prior art: possibly new: no prior art found in the owner's search (answer: `prio
 
 ## K8
 
-For all $k,j,m\ge0$, $A_k$ plays stag/hare vs HareBot and stag/stag vs StagBot, $A_m$, and $F_j=\Box(\Box^j\bot\lor p)$. Against $PB_j=\Box p\land\Box(\Box^{j+1}\bot\lor\neg q)$, it plays stag/hare for $k=0$ and hare/hare for $k\ge1$.
+For all $k,j,m\ge0$, $A\_k$ plays stag/hare vs HareBot and stag/stag vs StagBot, $A\_m$, and $F\_j=\Box(\Box^j\bot\lor p)$. Against $PB\_j=\Box p\land\Box(\Box^{j+1}\bot\lor\neg q)$, it plays stag/hare for $k=0$ and hare/hare for $k\ge1$.
 
 Status: derived · author check only
 
@@ -224,7 +224,7 @@ Prior art: possibly new: no prior art found in the owner's search (answer: `prio
 
 ## K3
 
-For all $k\ge0$, $R_k=\Box(p\lor\Box^kp)$ ($R_0$ = FairBot) never ends hunting stag against an opponent that ends hunting hare, and in the Stag Hunt ends stag/stag with $E_j=\neg\Box^j\bot$ iff $j\le k$ (else hare vs stag) and with $N_n=\Box(\Box^n\bot\lor\neg q)$ iff $n>k$ (else hare/hare).
+For all $k\ge0$, $R\_k=\Box(p\lor\Box^kp)$ ($R\_0$ = FairBot) never ends hunting stag against an opponent that ends hunting hare, and in the Stag Hunt ends stag/stag with $E\_j=\neg\Box^j\bot$ iff $j\le k$ (else hare vs stag) and with $N\_n=\Box(\Box^n\bot\lor\neg q)$ iff $n>k$ (else hare/hare).
 
 Status: derived · author check only
 
@@ -248,7 +248,7 @@ Prior art: possibly new: no prior art found in the owner's search (answer: `prio
 
 ## K17
 
-Against the 7561 size-$\\le10$ census agents, $R_k=\\Box(p\\lor\\Box^kp)$ has round-robin score strictly increasing in $k$ for $0\\le k\\le8$ and constant for $8\\le k\\le12$, for all payoffs with $a>t,a>d$; so $R_6$'s K15 region reflects the size bound (size $k+4$).
+Against the 7561 size-$\\\\le10$ census agents, $R\_k=\\\\Box(p\\\\lor\\\\Box^kp)$ has round-robin score strictly increasing in $k$ for $0\\\\le k\\\\le8$ and constant for $8\\\\le k\\\\le12$, for all payoffs with $a>t,a>d$; so $R\_6$'s K15 region reflects the size bound (size $k+4$).
 
 Status: derived · author check only
 
@@ -271,7 +271,7 @@ Prior art: possibly new: no prior art found in the owner's search (answer: `prio
 
 ## K18
 
-Against the 7561 size-$\le10$ census agents, $A_k=\Box(p\lor\Box^k\neg(p\lor q))$ (size $k+7$) has 543 SH and 2087 HH for $1\le k\le10$; its score rises strictly for $k\le5$ (by $\Delta SS(a-t)$) and is constant after, so $A_5-A_3=15(a-t)$ whenever $a>t$.
+Against the 7561 size-$\le10$ census agents, $A\_k=\Box(p\lor\Box^k\neg(p\lor q))$ (size $k+7$) has 543 SH and 2087 HH for $1\le k\le10$; its score rises strictly for $k\le5$ (by $\Delta SS(a-t)$) and is constant after, so $A\_5-A\_3=15(a-t)$ whenever $a>t$.
 
 Status: derived · author check only
 
@@ -298,7 +298,7 @@ Prior art: possibly new: no prior art found in the owner's search (answer: `prio
 Round-robin results depend on the opponent population: here all small formulas with equal
 weight, which over-represents some behaviours. The scores are aggregate quantities, not
 equilibrium thresholds; they are not comparable to the learning-dynamics threshold of Todorov et
-al. for parametric (non-modal) agents [4]. Open: whether the scores of $A_k$ and $R_k$ keep their
+al. for parametric (non-modal) agents [4]. Open: whether the scores of $A\_k$ and $R\_k$ keep their
 order in larger censuses, and which agent wins in the limit.
 <!-- /owner-discussion -->
 

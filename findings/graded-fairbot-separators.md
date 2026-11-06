@@ -13,7 +13,7 @@ Two programs play a one-shot prisoner's dilemma, and each can read the other's s
 Following Barasz et al. [1], a *modal agent* decides by asking what can be proved
 about the opponent, written with the provability box $\Box$ of the logic GL: $p$ means "the
 opponent cooperates with me" and $q$ "the opponent cooperates with DefectBot". Graded FairBots
-are $F_k = \Box^k p$ ($F_1$ is FairBot). They are all unexploitable and cooperate with themselves
+are $F\_k = \Box^k p$ ($F\_1$ is FairBot). They are all unexploitable and cooperate with themselves
 and with each other, and a LessWrong discussion [2] lists them among the agents
 that share these properties with FairBot without being FairBot. We take guarded formulas built
 from $p$, $q$, $\bot$, $\neg$, $\wedge$, $\vee$, $\Box$ and measure size as the number of nodes. An
@@ -21,12 +21,12 @@ opponent *separates* two agents if it gets a different outcome against them.
 
 ## Result
 
-- **Smallest separators.** Every opponent that separates $F_k$ from $F_{k+1}$ has size at least
-  $k+5$, and the only one of size $k+5$ is $S_k = \Box(\neg q \vee \Box^k\bot)$ (up to the order
-  of the disjuncts): it cooperates with $F_k$ and mutually defects with $F_{k+1}$. Without $q$ the
-  minimum is $k+6$, attained by $T_k = \neg\Box(\neg p \vee \Box^k\bot)$.
-- **Depth.** Every opponent of modal depth at most $k$ gets the same outcome against $F_k$ and
-  $F_{k+1}$, so a separator needs depth at least $k+1$; $S_k$ and $T_k$ show this is tight.
+- **Smallest separators.** Every opponent that separates $F\_k$ from $F\_{k+1}$ has size at least
+  $k+5$, and the only one of size $k+5$ is $S\_k = \Box(\neg q \vee \Box^k\bot)$ (up to the order
+  of the disjuncts): it cooperates with $F\_k$ and mutually defects with $F\_{k+1}$. Without $q$ the
+  minimum is $k+6$, attained by $T\_k = \neg\Box(\neg p \vee \Box^k\bot)$.
+- **Depth.** Every opponent of modal depth at most $k$ gets the same outcome against $F\_k$ and
+  $F\_{k+1}$, so a separator needs depth at least $k+1$; $S\_k$ and $T\_k$ show this is tight.
 - **Ingredients.** An opponent with no negation, or with no $\wedge$/$\vee$, gets the same outcome
   against every graded FairBot; without $q$ the same holds for every boxed opponent and every
   opponent with at most one negation and at most one binary connective.
@@ -41,7 +41,7 @@ ones apart, and that the cost grows linearly with the grade.
 
 All statements are proved for every $k$ in Lean 4, in the height semantics of closed GL fixed
 points; the link to provability in arithmetic is Solovay's theorem [3],
-cited, not formalised (see also [4]). The uniqueness of $T_k$ among $q$-free
+cited, not formalised (see also [4]). The uniqueness of $T\_k$ among $q$-free
 separators of size $k+6$ is proved only for $k \le 22$, by exhaustive search; the lower bound
 $k+6$ holds for all $k$.
 <!-- /owner-summary -->
@@ -73,7 +73,7 @@ This result was found by AI research agents (the autoresearch harness). It was c
 
 ## K49
 
-For all $k\ge1$, every guarded separator of $F_k=\Box^kp$ and $F_{k+1}$ has size $\ge k+5$, and every size-$(k+5)$ one is $S_k=\Box(\neg q\vee\Box^k\bot)$ up to disjunct order (CC with $F_k$, DD with $F_{k+1}$).
+For all $k\ge1$, every guarded separator of $F\_k=\Box^kp$ and $F\_{k+1}$ has size $\ge k+5$, and every size-$(k+5)$ one is $S\_k=\Box(\neg q\vee\Box^k\bot)$ up to disjunct order (CC with $F\_k$, DD with $F\_{k+1}$).
 
 Status: derived · author check only
 
@@ -101,7 +101,7 @@ Prior art: possibly new: no prior art found in the owner's search (answer: `prio
 
 ## K56
 
-For all $k\ge1$, every $q$-free guarded separator of $F_k=\Box^kp$ and $F_{k+1}$ has size $\ge k+6$, attained by $T_k=\neg\Box(\neg p\lor\Box^k\bot)$ (DD with $F_k$, exploited by $F_{k+1}$); for $k\le22$ every size-$(k+6)$ one is $T_k$ up to disjunct order.
+For all $k\ge1$, every $q$-free guarded separator of $F\_k=\Box^kp$ and $F\_{k+1}$ has size $\ge k+6$, attained by $T\_k=\neg\Box(\neg p\lor\Box^k\bot)$ (DD with $F\_k$, exploited by $F\_{k+1}$); for $k\le22$ every size-$(k+6)$ one is $T\_k$ up to disjunct order.
 
 Status: derived · author check only
 
@@ -126,7 +126,7 @@ Prior art: possibly new: no prior art found in the owner's search (answer: `prio
 
 ## K58
 
-For every $k\ge1$, every guarded opponent $O$ in $p,q$ of modal depth $\le k$ gets the same eventual outcome against $F_k=\Box^kp$ and $F_{k+1}$; so every separator has depth $\ge k+1$ (size $\ge k+2$), tight for $S_k$ (K49) and $T_k$ (K56).
+For every $k\ge1$, every guarded opponent $O$ in $p,q$ of modal depth $\le k$ gets the same eventual outcome against $F\_k=\Box^kp$ and $F\_{k+1}$; so every separator has depth $\ge k+1$ (size $\ge k+2$), tight for $S\_k$ (K49) and $T\_k$ (K56).
 
 Status: derived · author check only
 
@@ -148,7 +148,7 @@ Prior art: partial prior art (answer: `prior-art/R54.md`)
 
 ## K59
 
-For guarded $O$ in $p,q$ with no negation, or with no $\land/\lor$, and all $j,j'\ge1$: $O$ gets the same eventual outcome against $F_j=\Box^jp$ and $F_{j'}$ (Lean, height semantics).
+For guarded $O$ in $p,q$ with no negation, or with no $\land/\lor$, and all $j,j'\ge1$: $O$ gets the same eventual outcome against $F\_j=\Box^jp$ and $F\_{j'}$ (Lean, height semantics).
 
 Status: derived · author check only
 
@@ -170,7 +170,7 @@ Prior art: possibly new: no prior art found in the owner's search (answer: `prio
 
 ## K60
 
-In $L$ without $q$ (guarded), every boxed opponent $\Box W$, and every opponent with at most one $\neg$ and at most one $\land/\lor$, gets the same eventual outcome against $F_j=\Box^jp$ and $F_{j'}$ for all $j,j'\ge1$ (Lean, height semantics).
+In $L$ without $q$ (guarded), every boxed opponent $\Box W$, and every opponent with at most one $\neg$ and at most one $\land/\lor$, gets the same eventual outcome against $F\_j=\Box^jp$ and $F\_{j'}$ for all $j,j'\ge1$ (Lean, height semantics).
 
 Status: derived · author check only
 

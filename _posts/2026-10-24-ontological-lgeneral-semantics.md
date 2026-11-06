@@ -178,13 +178,13 @@ This result was found by AI research agents (the autoresearch harness). It was p
 - Machine-checked: no check scripts.
 - Prior art: partial prior art
 
-**K2.** Run 2's K1 (TwoClosed: Ax2a, Ax2b, Ax3, Ax4, Ax1GenTwo, $\exists x.\top$ give Ax1Gen, MC, $\exists^E G$) and K14 (GexL: Ax2a, Ax2b, Ax4, $P E_3$, $P G$ give $\exists^E G$, MC) have deep derivations with only 𝓛-term ∀E/∃I instances, so hold in every 𝓛-closed structure admitting all entities.
+**K2.** Run 2's K1 (TwoClosed: Ax2a, Ax2b, Ax3, Ax4, Ax1GenTwo, $\exists x.\top$ give Ax1Gen, MC, $\exists^E G$) and K14 (GexL: Ax2a, Ax2b, Ax4, $P E\_3$, $P G$ give $\exists^E G$, MC) have deep derivations with only 𝓛-term ∀E/∃I instances, so hold in every 𝓛-closed structure admitting all entities.
 
 - Status: proved (axioms: propext, Quot.sound)
 - Machine-checked: no check scripts.
 - Prior art: partial prior art
 
-**K3.** There is a closed structure ($W=2^{\mathbb N}$, one entity, identity frame) where $\forall f_1f_2{:}\sigma\to\sigma\,\forall F.\,f_1=f_2\to Ff_1=Ff_2$ fails, so K1's Deriv T Cert does not derive it from the empty theory; it holds in every structure whose admitted functions respect eqT.
+**K3.** There is a closed structure ($W=2^{\mathbb N}$, one entity, identity frame) where $\forall f\_1f\_2{:}\sigma\to\sigma\,\forall F.\,f\_1=f\_2\to Ff\_1=Ff\_2$ fails, so K1's Deriv T Cert does not derive it from the empty theory; it holds in every structure whose admitted functions respect eqT.
 
 - Status: proved (axioms: propext, Classical.choice, Quot.sound)
 - Machine-checked: no check scripts.
@@ -226,7 +226,7 @@ This result was found by AI research agents (the autoresearch harness). It was p
 - Machine-checked: no check scripts.
 - Prior art: partial prior art
 
-**K11.** $\mathsf A\exists p.(\mathsf{Atom}\,p\wedge p)$ holds in v4 $\mathcal L$-general models with finitely many worlds or all singletons; universal frame plus $T_2$ gives only $\emptyset,W$; a flip model (universal frame, one entity, empty Pos, K6 carriers mod eqT) is $\mathcal L$-general, refutes both.
+**K11.** $\mathsf A\exists p.(\mathsf{Atom}\,p\wedge p)$ holds in v4 $\mathcal L$-general models with finitely many worlds or all singletons; universal frame plus $T\_2$ gives only $\emptyset,W$; a flip model (universal frame, one entity, empty Pos, K6 carriers mod eqT) is $\mathcal L$-general, refutes both.
 
 - Status: proved (axioms: propext, Classical.choice, Quot.sound)
 - Machine-checked: no check scripts.
@@ -238,7 +238,7 @@ This result was found by AI research agents (the autoresearch harness). It was p
 - Machine-checked: no check scripts.
 - Prior art: partial prior art
 
-**K13.** Over v4 $\mathcal L$-general models with nonempty individuals: if $\exists x.\top\in T$ and $\varphi$ fails in a model of $T$, it fails in one with countably many worlds and countable carriers at every type; and if $T\models\varphi$, then $T_0\models\varphi$ for some finite $T_0\subseteq T$.
+**K13.** Over v4 $\mathcal L$-general models with nonempty individuals: if $\exists x.\top\in T$ and $\varphi$ fails in a model of $T$, it fails in one with countably many worlds and countable carriers at every type; and if $T\models\varphi$, then $T\_0\models\varphi$ for some finite $T\_0\subseteq T$.
 
 - Status: proved (axioms: propext, Classical.choice, Quot.sound)
 - Machine-checked: no check scripts.
@@ -268,7 +268,7 @@ This result was found by AI research agents (the autoresearch harness). It was p
 - Machine-checked: no check scripts.
 - Prior art: partial prior art
 
-**K18.** v4's flip model (total frame on $2^{\mathbb N}$, one individual, empty Pos, hereditarily FS carriers $P_\tau$, every type of $\mathcal L$) is $\mathcal L$-general; $P_\sigma$ = finitary sets, has no singletons, and $\mathsf A\exists p.(\mathsf{Atom}\,p\wedge p)$ fails at every world.
+**K18.** v4's flip model (total frame on $2^{\mathbb N}$, one individual, empty Pos, hereditarily FS carriers $P\_\tau$, every type of $\mathcal L$) is $\mathcal L$-general; $P\_\sigma$ = finitary sets, has no singletons, and $\mathsf A\exists p.(\mathsf{Atom}\,p\wedge p)$ fails at every world.
 
 - Status: proved (axioms: propext, Classical.choice, Quot.sound)
 - Machine-checked: no check scripts.

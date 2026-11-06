@@ -14,8 +14,8 @@ Following Barasz et al. [1], a *modal agent* decides by asking what can be prove
 opponent in Peano arithmetic, written with the provability box $\Box$ of the logic GL. FairBot,
 $\Box p$, cooperates exactly when it can prove that the opponent cooperates with it
 ($p$); CooperateBot always cooperates; DefectBot always defects. An agent is *unexploitable* if
-no modal opponent ever gets it to cooperate while the opponent defects. Graded FairBots are $F_k = \Box^k p$ and graded PrudentBots are
-$P_j = \Box p \wedge \Box(\neg\Box^j\bot \to \neg q)$. We consider agents
+no modal opponent ever gets it to cooperate while the opponent defects. Graded FairBots are $F\_k = \Box^k p$ and graded PrudentBots are
+$P\_j = \Box p \wedge \Box(\neg\Box^j\bot \to \neg q)$. We consider agents
 built from $p$, from $q$ ("the opponent cooperates with DefectBot"), $\bot$, $\neg$, $\wedge$,
 $\vee$ and $\Box$, with every atom under a box, and measure size as the number of nodes in the
 formula.
@@ -26,22 +26,22 @@ The agent $W = \Box(\Box\Box\bot \vee (p \wedge (q \vee \neg\Box q)))$ is unexpl
 cooperates with FairBot and with CooperateBot, yet defects against an exact copy of itself. An
 exhaustive search shows that no agent of size 11 or less has this combination of properties, and
 $W$ (size 12) is one of the three smallest. It is the first member of an infinite family
-$W_n = \Box(\Box^n\bot \vee (p \wedge (q \vee \neg\Box q)))$, $n \ge 2$, all with the same four
-properties, with exact laws for how $W_n$ plays against graded FairBots $\Box^k p$, graded
+$W\_n = \Box(\Box^n\bot \vee (p \wedge (q \vee \neg\Box q)))$, $n \ge 2$, all with the same four
+properties, with exact laws for how $W\_n$ plays against graded FairBots $\Box^k p$, graded
 PrudentBots and other members of the family.
 
 ## Why it matters
 
 Every unexploitable agent in the literature we checked (FairBot, PrudentBot, CliqueBot)
-cooperates with its own copy. $W_n$ shows that unexploitability, cooperation with FairBot and
+cooperates with its own copy. $W\_n$ shows that unexploitability, cooperation with FairBot and
 generosity towards CooperateBot do not force self-cooperation: the delayed "gate"
 $\Box^n\bot$ lets the agent tolerate FairBot's failure to prove anything about DefectBot, while
-two copies of $W_n$ end in mutual defection (both defect above height $n+1$).
+two copies of $W\_n$ end in mutual defection (both defect above height $n+1$).
 
 ## Proved vs checked
 
-The properties of $W_n$ and its laws against graded FairBots, graded PrudentBots and other
-$W_m$ are proved for all indices in Lean 4 (height semantics of closed GL fixed points; the link
+The properties of $W\_n$ and its laws against graded FairBots, graded PrudentBots and other
+$W\_m$ are proved for all indices in Lean 4 (height semantics of closed GL fixed points; the link
 to provability in arithmetic is Solovay's theorem [2], cited, not formalised; see also [3]). The minimality of size
 12 is an exhaustive computation over all agents up to size 12 in the stated language.
 <!-- /owner-summary -->

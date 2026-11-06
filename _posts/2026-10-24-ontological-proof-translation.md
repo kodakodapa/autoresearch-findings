@@ -153,7 +153,7 @@ This result was found by AI research agents (the autoresearch harness). It was p
 - Machine-checked: no check scripts.
 - Prior art: unchecked
 
-**K14.** Let $T$ = Ax3, Ax2b, Ax2a of OpenQuestions.Ax1GenTwoVariant2 (K7's Th3K) and $\varphi$ = Th3. For every list $F_s$ of frame formulas true on F4 $=\lbrace 01,03,31,12,21\rbrace $, $\varphi$ is not valid in all v4 $\mathcal L$-general models of $T$ with nonempty individuals whose $R$ satisfies $F_s$.
+**K14.** Let $T$ = Ax3, Ax2b, Ax2a of OpenQuestions.Ax1GenTwoVariant2 (K7's Th3K) and $\varphi$ = Th3. For every list $F\_s$ of frame formulas true on F4 $=\lbrace 01,03,31,12,21\rbrace $, $\varphi$ is not valid in all v4 $\mathcal L$-general models of $T$ with nonempty individuals whose $R$ satisfies $F\_s$.
 
 - Status: analogy: a resemblance, not an established result
 - Machine-checked: no check scripts.
@@ -165,7 +165,7 @@ This result was found by AI research agents (the autoresearch harness). It was p
 - Machine-checked: no check scripts.
 - Prior art: unchecked
 
-**K16.** Let $T$ = Ax3, Ax2b, Ax2a of OpenQuestions.Ax1GenTwoVariant2. On any frame $(W,R)$ with $Q_L$ (no world outside an $R$-closed $B$ sees a member and a non-member of $B$), $\Diamond\exists^E G\to\Box\exists^E G$ holds everywhere in every v4 $\mathcal L$-general model of $T$ with nonempty individuals.
+**K16.** Let $T$ = Ax3, Ax2b, Ax2a of OpenQuestions.Ax1GenTwoVariant2. On any frame $(W,R)$ with $Q\_L$ (no world outside an $R$-closed $B$ sees a member and a non-member of $B$), $\Diamond\exists^E G\to\Box\exists^E G$ holds everywhere in every v4 $\mathcal L$-general model of $T$ with nonempty individuals.
 
 - Status: analogy: a resemblance, not an established result
 - Machine-checked: no check scripts.

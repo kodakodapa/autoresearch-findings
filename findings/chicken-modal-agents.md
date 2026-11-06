@@ -32,13 +32,13 @@ Chicken concretely.
 - **Safe and fair.** Exactly 4 census agents never crash against a census agent, go straight against
   SwerveBot and swerve together with FairBot, and all 4 never crash against any modal opponent at
   all. The smallest, of size 9, is the $k=2$ member of a family
-  $Q_k = \Box^k\bot \vee \neg\Box(p \wedge q)$ with exact laws for every $k$: $Q_k$ never crashes,
+  $Q\_k = \Box^k\bot \vee \neg\Box(p \wedge q)$ with exact laws for every $k$: $Q\_k$ never crashes,
   beats SwerveBot, swerves against itself, swerves together with $\Box^j p$ exactly when $j < k$
-  and with $\Box(\Box^j\bot \vee p)$ exactly when $j + 2 \le k$, and goes straight against $Q_m$
+  and with $\Box(\Box^j\bot \vee p)$ exactly when $j + 2 \le k$, and goes straight against $Q\_m$
   for $m > k$.
 - **A limit for every two-action game.** If an agent of modal depth $d$ exploits the
   always-cooperating bot, then graded FairBots $\Box^j p$ with $j \ge d$ end up playing action 2
-  against it, and the two never settle on mutual action 1. The $Q_k$ family shows the bound is
+  against it, and the two never settle on mutual action 1. The $Q\_k$ family shows the bound is
   tight.
 - **Tournaments and evolution.** In a round robin the top Chicken agent is
   $\neg\Box p \wedge \Box(\neg p \vee \Box p)$, which crashes against itself. Under replicator
@@ -55,7 +55,7 @@ a general depth bound limits how such agents can coexist with graded FairBots.
 
 ## Proved vs checked
 
-The laws for $Q_k$ and the depth bound are proved for all indices in Lean 4, in the height
+The laws for $Q\_k$ and the depth bound are proved for all indices in Lean 4, in the height
 semantics of closed GL fixed points (see [3]; the link to provability is Solovay's
 theorem [4]). The census results (equilibria, smallest agents, the four safe
 agents, round robin, replicator dynamics) hold for all agents up to size 10, computed exactly and
@@ -167,7 +167,7 @@ Prior art: possibly new: no prior art found in the owner's search (answer: `prio
 
 ## K7
 
-For all $k\ge0$, $Q_k=\Box^k\bot\vee\neg\Box(p\wedge q)$ never crashes vs any opponent, beats SwerveBot, self-swerves; it mutually swerves with $\Box^jp$ ($j\ge1$) iff $j<k$ and with $\Box(\Box^j\bot\vee p)$ iff $j+2\le k$, else is exploited; vs $Q_m$, $m>k$, $Q_k$ goes straight. Lean.
+For all $k\ge0$, $Q\_k=\Box^k\bot\vee\neg\Box(p\wedge q)$ never crashes vs any opponent, beats SwerveBot, self-swerves; it mutually swerves with $\Box^jp$ ($j\ge1$) iff $j<k$ and with $\Box(\Box^j\bot\vee p)$ iff $j+2\le k$, else is exploited; vs $Q\_m$, $m>k$, $Q\_k$ goes straight. Lean.
 
 Status: derived · author check only
 
@@ -213,7 +213,7 @@ Prior art: possibly new: no prior art found in the owner's search (answer: `prio
 
 ## K10
 
-For every guarded agent $A$ of modal depth $d$ playing action 2 vs the constant action-1 bot: $\Box^jp$ ($j\ge d$) plays 2 vs $A$ from height $d+j$, and $\Box(\Box^j\bot\vee p)$ ($j\ge d-1$) from height $j+2$; never mutual action 1 (any 2-action game; Lean). Both tight via $Q_k$.
+For every guarded agent $A$ of modal depth $d$ playing action 2 vs the constant action-1 bot: $\Box^jp$ ($j\ge d$) plays 2 vs $A$ from height $d+j$, and $\Box(\Box^j\bot\vee p)$ ($j\ge d-1$) from height $j+2$; never mutual action 1 (any 2-action game; Lean). Both tight via $Q\_k$.
 
 Status: derived · author check only
 

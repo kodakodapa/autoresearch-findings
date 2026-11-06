@@ -19,17 +19,17 @@ cooperates with it. PrudentBot adds a safety test: it also requires a proof, in 
 system PA+1, that the opponent would not cooperate with DefectBot, so it does not reward an
 opponent that cooperates with everyone.
 
-We study two graded families. The graded FairBot $F_k = \Box^k p$ ($k \ge 1$) asks for $k$
-nested layers of provability; $F_1$ is FairBot. The graded PrudentBot
-$P_j = \Box p \wedge \Box(\neg\Box^j\bot \rightarrow \neg q)$ ($j \ge 0$) runs its safety test
-in PA+$j$, since $\neg\Box^{j}\bot$ expresses the consistency of PA+$(j-1)$; $P_1$ is
+We study two graded families. The graded FairBot $F\_k = \Box^k p$ ($k \ge 1$) asks for $k$
+nested layers of provability; $F\_1$ is FairBot. The graded PrudentBot
+$P\_j = \Box p \wedge \Box(\neg\Box^j\bot \rightarrow \neg q)$ ($j \ge 0$) runs its safety test
+in PA+$j$, since $\neg\Box^{j}\bot$ expresses the consistency of PA+$(j-1)$; $P\_1$ is
 PrudentBot.
 
 ## Result
 
-$P_j$ and $F_k$ cooperate with each other exactly when $k \le j$; when $k > j$, both defect.
+$P\_j$ and $F\_k$ cooperate with each other exactly when $k \le j$; when $k > j$, both defect.
 In words: a PrudentBot that runs its safety test in a stronger system can afford to cooperate
-with FairBots that demand more nested proof, and the exchange rate is one for one. Every $P_j$
+with FairBots that demand more nested proof, and the exchange rate is one for one. Every $P\_j$
 still defects against CooperateBot, so the extra cooperation costs nothing in safety.
 
 ## Why it matters

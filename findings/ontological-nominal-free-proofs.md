@@ -387,7 +387,7 @@ Prior art: partial prior art (answer: `prior-art/R3.md`)
 
 ## K13
 
-Abstract Henkin variant 2, exclusive Ax2a, Ax2b, Ax4, Ax1GenR over admitted rigid families $\mathcal F$, any actuality: each $\Phi\in\mathcal F$ positive at $w$ is realised by an actual entity at an $R$-successor; if $G$ is admitted and $\neg PG\,w$, no $\Phi\in\mathcal F$ equals admitted $P_w$.
+Abstract Henkin variant 2, exclusive Ax2a, Ax2b, Ax4, Ax1GenR over admitted rigid families $\mathcal F$, any actuality: each $\Phi\in\mathcal F$ positive at $w$ is realised by an actual entity at an $R$-successor; if $G$ is admitted and $\neg PG\,w$, no $\Phi\in\mathcal F$ equals admitted $P\_w$.
 
 Status: proved (axioms: propext, Classical.choice, Quot.sound)
 

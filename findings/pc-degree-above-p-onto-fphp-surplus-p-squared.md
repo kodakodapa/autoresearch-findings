@@ -11,12 +11,12 @@ Cite as: https://doi.org/10.5281/zenodo.23996586
 <!-- owner-summary -->
 ## Setting
 
-The onto functional pigeonhole principle $\mathrm{onto\text{-}FPHP}^{n+k}_n$ says that $n+k$
+The onto functional pigeonhole principle $\mathrm{onto\text{-}FPHP}^{n+k}\_n$ says that $n+k$
 pigeons can be mapped one-to-one onto $n$ holes; it is false for every $k\ge1$. In Boolean
-variables $x_{ij}$ (pigeon $i$ in hole $j$) its axioms are $\sum_j x_{ij}-1$,
-$\sum_i x_{ij}-1$, $x_{ij}x_{i'j}$ and $x_{ij}x_{ij'}$, the linear encoding used for this family
+variables $x\_{ij}$ (pigeon $i$ in hole $j$) its axioms are $\sum\_j x\_{ij}-1$,
+$\sum\_i x\_{ij}-1$, $x\_{ij}x\_{i'j}$ and $x\_{ij}x\_{ij'}$, the linear encoding used for this family
 [1, 2]. A polynomial calculus (PC) refutation over
-$\mathbb F_p$ derives $1$ from the axioms and the Boolean axioms $x^2-x$ by linear combinations
+$\mathbb F\_p$ derives $1$ from the axioms and the Boolean axioms $x^2-x$ by linear combinations
 and multiplication by a variable; its degree is the largest degree of a line.
 
 When $p$ does not divide $k$ there is a degree-1 refutation. When $p$ divides $k$ but $p^2$ does
@@ -25,10 +25,10 @@ is about surplus divisible by $p^2$.
 
 ## Result
 
-For every prime $p$, every $c\ge1$, and every $n\ge2p-1$, $\mathrm{onto\text{-}FPHP}^{n+cp^2}_n$ has
-no PC refutation over $\mathbb F_p$ of degree at most $p$. Its PC degree is therefore at least
+For every prime $p$, every $c\ge1$, and every $n\ge2p-1$, $\mathrm{onto\text{-}FPHP}^{n+cp^2}\_n$ has
+no PC refutation over $\mathbb F\_p$ of degree at most $p$. Its PC degree is therefore at least
 $p+1$. With the companion result, surplus divisible by $p^2$ is strictly harder for PC over
-$\mathbb F_p$ than surplus divisible only by $p$, for every prime and from a linear threshold in
+$\mathbb F\_p$ than surplus divisible only by $p$, for every prime and from a linear threshold in
 $n$.
 
 The proof constructs, for every prime $p$, an explicit integer matrix on $2p-1$ rows and columns

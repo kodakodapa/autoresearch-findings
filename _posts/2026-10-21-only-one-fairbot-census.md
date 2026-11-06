@@ -41,7 +41,7 @@ no from depth 2, with examples such as $\Box\Box p$, FairBot over PA+1 and $\Box
   behaviourally FairBot.
 - **A small example that is not FairBot.** $\neg\Box\bot \wedge \Box(p \vee \Box\bot)$ (size 9)
   is unexploitable and cooperates with itself and with CooperateBot, yet mutually defects with
-  FairBot; it is the agent WaitFairBot$_1$ of Barasz et al. Every smaller rank-0 agent that is
+  FairBot; it is the agent WaitFairBot$\_1$ of Barasz et al. Every smaller rank-0 agent that is
   unexploitable and self-cooperating cooperates with FairBot.
 
 ## Why it matters

@@ -39,8 +39,8 @@ families found in this census; this one reports the census itself.
   of the others is exploited by one of four simple agents: $\Box\neg p$, $\Box p$, $\Box q$ or
   $\Box\bot$.
 - **A threshold law, and where it breaks.** Up to size 14, every self-defecting agent that
-  cooperates with FairBot cooperates with graded FairBots $F_k = \Box^k p$ exactly for $k \le a$
-  and with graded PrudentBots $P_i$ exactly for $i \ge b$, for some $a < b$. The law fails at size
+  cooperates with FairBot cooperates with graded FairBots $F\_k = \Box^k p$ exactly for $k \le a$
+  and with graded PrudentBots $P\_i$ exactly for $i \ge b$, for some $a < b$. The law fails at size
   17: the agent $Y = \Box(\Box\Box\bot \vee (p \wedge (q \vee \neg\Box(q \wedge
   \Box\Box\Box\bot))))$ cooperates with $F_1$ and $F_k$ for $k \ge 4$, but not with $F_2$ or $F_3$.
 

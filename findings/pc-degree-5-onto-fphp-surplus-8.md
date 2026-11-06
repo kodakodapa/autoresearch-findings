@@ -11,20 +11,20 @@ Cite as: https://doi.org/10.5281/zenodo.23996616
 <!-- owner-summary -->
 ## Setting
 
-The onto functional pigeonhole principle $\mathrm{onto\text{-}FPHP}^{n+k}_n$ says that $n+k$
+The onto functional pigeonhole principle $\mathrm{onto\text{-}FPHP}^{n+k}\_n$ says that $n+k$
 pigeons can be mapped one-to-one onto $n$ holes; it is false for every $k\ge1$. In Boolean
-variables $x_{ij}$ (pigeon $i$ in hole $j$) its axioms are $\sum_j x_{ij}-1$,
-$\sum_i x_{ij}-1$, $x_{ij}x_{i'j}$ and $x_{ij}x_{ij'}$, the linear encoding used for this family
+variables $x\_{ij}$ (pigeon $i$ in hole $j$) its axioms are $\sum\_j x\_{ij}-1$,
+$\sum\_i x\_{ij}-1$, $x\_{ij}x\_{i'j}$ and $x\_{ij}x\_{ij'}$, the linear encoding used for this family
 [1, 2]. A polynomial calculus (PC) refutation over
-$\mathbb F_2$ derives $1$ from the axioms and the Boolean axioms $x^2-x$ by linear combinations
+$\mathbb F\_2$ derives $1$ from the axioms and the Boolean axioms $x^2-x$ by linear combinations
 and multiplication by a variable; its degree is the largest degree of a line.
 
-Over $\mathbb F_2$, with surplus $k=2^\ell$, the PC degree is exactly 2 at $k=2$ and exactly 4 at
+Over $\mathbb F\_2$, with surplus $k=2^\ell$, the PC degree is exactly 2 at $k=2$ and exactly 4 at
 $k=4$ (companion results in the same library). This finding is about $k=8$.
 
 ## Result
 
-For every $n\ge7$, $\mathrm{onto\text{-}FPHP}^{n+8}_n$ has no PC refutation over $\mathbb F_2$ of
+For every $n\ge7$, $\mathrm{onto\text{-}FPHP}^{n+8}\_n$ has no PC refutation over $\mathbb F\_2$ of
 degree 4. Its PC degree is therefore at least 5, while the general bound for surplus divisible
 by $p^2$ (companion finding) gives only 3 at $p=2$. So at $p=2$ the third level is strictly
 harder than the second for every $n\ge7$.
@@ -78,7 +78,7 @@ Promoted declaring sources are included under `checks/library/`.
 
 ## K18
 
-Lean `Work.L3.Main.no_deg4`: for every $n\ge7$, `ontoFPHP n 8` (onto-FPHP$^{n+8}_n$, functional encoding) has no degree-4 `PPCRefutation 2` (polynomial calculus over $\mathbb Z/2$, line degree 4). Unconditional.
+Lean `Work.L3.Main.no_deg4`: for every $n\ge7$, `ontoFPHP n 8` (onto-FPHP$^{n+8}\_n$, functional encoding) has no degree-4 `PPCRefutation 2` (polynomial calculus over $\mathbb Z/2$, line degree 4). Unconditional.
 
 Status: proved (axioms: propext, Classical.choice, Quot.sound)
 

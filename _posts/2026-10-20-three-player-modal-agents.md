@@ -13,25 +13,25 @@ scholar: {"citation_title": "Three-player modal agents in a public-goods game", 
 Modal agents decide what to do by asking what can be proved about the other players, written with
 the provability box $\Box$ of the logic GL [1]. Mennen [2] set up a
 framework for more than two players; here we study three players concretely. The game is a
-public-goods game: each player contributes ($a_i = 1$) or not, and earns
-$u_i = 2\sum_j a_j - 3a_i$, so contributing costs 1 net but gives each other player 2. An agent sees
-$p_1, p_2$ ("opponent $j$ contributes in this game") and probes $q_1, q_2$ ("opponent $j$
+public-goods game: each player contributes ($a\_i = 1$) or not, and earns
+$u\_i = 2\sum\_j a\_j - 3a\_i$, so contributing costs 1 net but gives each other player 2. An agent sees
+$p\_1, p\_2$ ("opponent $j$ contributes in this game") and probes $q\_1, q\_2$ ("opponent $j$
 contributes when I am replaced by a defector"). Behaviour is read off in the long run (tail
 semantics). An agent is *safe* if it never earns less than either opponent, whoever they are.
 
 ## Result
 
-- **The three-player FairBot is safe.** $F = \Box(p_1 \wedge p_2)$ (contribute iff it is provable
+- **The three-player FairBot is safe.** $F = \Box(p\_1 \wedge p\_2)$ (contribute iff it is provable
   that both others contribute) never earns less than either opponent against any two modal
   opponents, contributes with two copies of itself and defects against a defector.
 - **It is the smallest.** No agent smaller than $F$ (size 4) both cooperates with copies of itself
   and is safe.
 - **All small safe cooperators are FairBot-like.** Exactly 66 agents up to size 6 cooperate with
   themselves and are safe; none of them uses the probes, and for each GL proves that it contributes
-  only if $\Box^3(p_1 \wedge p_2)$. Every other agent of that size fails against some pair of
+  only if $\Box^3(p\_1 \wedge p\_2)$. Every other agent of that size fails against some pair of
   opponents of size at most 3.
 - **A prudent three-player agent needs the probe.**
-  $E = \Box((p_1 \wedge p_2) \wedge (\Box\bot \vee \neg q_1))$ (size 10) cooperates with itself,
+  $E = \Box((p\_1 \wedge p\_2) \wedge (\Box\bot \vee \neg q\_1))$ (size 10) cooperates with itself,
   is safe, and defects against two unconditional contributors; no agent of size at most 7 has all
   three properties.
 - **The definition of the probe matters.** For five basic three-player bots we certify all 125
@@ -77,31 +77,31 @@ If you know of related work we missed, please open an issue.
 
 This result was found by AI research agents (the autoresearch harness). It was partly checked by scripts that run Lean proofs (claims K14, K16, K18, K19) and partly checked by script (claims K13, K21); the proof and check files are included so anyone can re-run them.
 
-**K13.** For five three-player bots $D,C,F=\Box(p_1\land p_2),O=\Box(p_1\lor p_2),Q=\Box(q_1\land q_2)$, 125 triples are GL-certified under evaluator-replacement probes: $FFF=111$, $FFD=000$, $QQQ=000$; exactly $D,F,Q$ never earn less than either opponent within this five-bot set.
+**K13.** For five three-player bots $D,C,F=\Box(p\_1\land p\_2),O=\Box(p\_1\lor p\_2),Q=\Box(q\_1\land q\_2)$, 125 triples are GL-certified under evaluator-replacement probes: $FFF=111$, $FFD=000$, $QQQ=000$; exactly $D,F,Q$ never earn less than either opponent within this five-bot set.
 
 - Status: derived · author check only
 - Machine-checked: 2 of 2 check scripts passed.
 - Prior art: possibly new: no prior art found in the owner's search
 
-**K14.** In the three-player public-goods game $u_i=2\sum_j a_j-3a_i$, $F=\Box(p_1\land p_2)$ never earns less than either opponent against any two modal opponents (Lean, tail semantics), while cooperating with two copies and defecting against a defector.
+**K14.** In the three-player public-goods game $u\_i=2\sum\_j a\_j-3a\_i$, $F=\Box(p\_1\land p\_2)$ never earns less than either opponent against any two modal opponents (Lean, tail semantics), while cooperating with two copies and defecting against a defector.
 
 - Status: derived · author check only
 - Machine-checked: 1 of 1 check scripts passed.
 - Prior art: possibly new: no prior art found in the owner's search
 
-**K16.** In the guarded three-player language with node-count size and evaluator-replacement probes, size 4 is minimal for self-cooperation plus never earning less than either opponent in $u_i=2\sum_j a_j-3a_i$: $F=\Box(p_1\land p_2)$ attains it (tail semantics).
+**K16.** In the guarded three-player language with node-count size and evaluator-replacement probes, size 4 is minimal for self-cooperation plus never earning less than either opponent in $u\_i=2\sum\_j a\_j-3a\_i$: $F=\Box(p\_1\land p\_2)$ attains it (tail semantics).
 
 - Status: derived · author check only
 - Machine-checked: 2 of 2 check scripts passed.
 - Prior art: possibly new: no prior art found in the owner's search
 
-**K18.** In the guarded three-player language (evaluator-replacement probes, $u_i=2\sum_j a_j-3a_i$), exactly 66 trees of size $\le6$ self-cooperate and never earn less than either opponent; all are $q$-free and GL proves $A\to\Box^3(p_1\land p_2)$; others fail vs size-$\le3$ pairs.
+**K18.** In the guarded three-player language (evaluator-replacement probes, $u\_i=2\sum\_j a\_j-3a\_i$), exactly 66 trees of size $\le6$ self-cooperate and never earn less than either opponent; all are $q$-free and GL proves $A\to\Box^3(p\_1\land p\_2)$; others fail vs size-$\le3$ pairs.
 
 - Status: derived · author check only
 - Machine-checked: 1 of 1 check scripts passed.
 - Prior art: possibly new: no prior art found in the owner's search
 
-**K19.** In K18's three-player language, $E=\Box((p_1\land p_2)\land(\Box\bot\lor\neg q_1))$ (size 10) self-cooperates, defects against two constant contributors (payoffs 4,1,1) and never earns less than either opponent; no tree of size $\le7$ has all three properties.
+**K19.** In K18's three-player language, $E=\Box((p\_1\land p\_2)\land(\Box\bot\lor\neg q\_1))$ (size 10) self-cooperates, defects against two constant contributors (payoffs 4,1,1) and never earns less than either opponent; no tree of size $\le7$ has all three properties.
 
 - Status: derived · author check only
 - Machine-checked: 2 of 2 check scripts passed.

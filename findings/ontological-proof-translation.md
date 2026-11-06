@@ -394,7 +394,7 @@ Prior art: unchecked
 
 ## K14
 
-Let $T$ = Ax3, Ax2b, Ax2a of OpenQuestions.Ax1GenTwoVariant2 (K7's Th3K) and $\varphi$ = Th3. For every list $F_s$ of frame formulas true on F4 $=\lbrace 01,03,31,12,21\rbrace $, $\varphi$ is not valid in all v4 $\mathcal L$-general models of $T$ with nonempty individuals whose $R$ satisfies $F_s$.
+Let $T$ = Ax3, Ax2b, Ax2a of OpenQuestions.Ax1GenTwoVariant2 (K7's Th3K) and $\varphi$ = Th3. For every list $F\_s$ of frame formulas true on F4 $=\lbrace 01,03,31,12,21\rbrace $, $\varphi$ is not valid in all v4 $\mathcal L$-general models of $T$ with nonempty individuals whose $R$ satisfies $F\_s$.
 
 **Status: analogy: a resemblance, not an established result**
 
@@ -442,7 +442,7 @@ Prior art: unchecked
 
 ## K16
 
-Let $T$ = Ax3, Ax2b, Ax2a of OpenQuestions.Ax1GenTwoVariant2. On any frame $(W,R)$ with $Q_L$ (no world outside an $R$-closed $B$ sees a member and a non-member of $B$), $\Diamond\exists^E G\to\Box\exists^E G$ holds everywhere in every v4 $\mathcal L$-general model of $T$ with nonempty individuals.
+Let $T$ = Ax3, Ax2b, Ax2a of OpenQuestions.Ax1GenTwoVariant2. On any frame $(W,R)$ with $Q\_L$ (no world outside an $R$-closed $B$ sees a member and a non-member of $B$), $\Diamond\exists^E G\to\Box\exists^E G$ holds everywhere in every v4 $\mathcal L$-general model of $T$ with nonempty individuals.
 
 **Status: analogy: a resemblance, not an established result**
 
@@ -453,7 +453,7 @@ Evidence:
 - proof `checks/K16-TranslateKBQLi.lean`: Programme.Run6.H.Th2X.valid — pass (`results/K16-2.json`)
 - proof `checks/K16-TranslateKBQLi.lean`: Programme.Run6.H.QLi.validOn\_symm — pass (`results/K16-3.json`)
 - proof `checks/K16-TranslateKBQLi.lean`: Programme.Run6.H.QLi.validOn\_eucl — pass (`results/K16-4.json`)
-- reasoning: Th2X.valid gives $\psi_G\to\Box\psi_G$ at every world of every L-general model of Th3K.T (T\_eq, th2\_eq by rfl). Then the extension $B$ of $\psi_G$ is R-closed. If $w\models\Diamond\psi_G$, some $b\in B$ with $Rwb$. If $w\in B$, closure gives $\Box\psi_G$; otherwise $Q_L$ puts every successor $u$ of $w$ in $B$. Only the LGen clauses imp, neg, box are used (th3\_of\_th2). th3\_eq identifies the result with Th3K.φ by rfl.
+- reasoning: Th2X.valid gives $\psi\_G\to\Box\psi\_G$ at every world of every L-general model of Th3K.T (T\_eq, th2\_eq by rfl). Then the extension $B$ of $\psi\_G$ is R-closed. If $w\models\Diamond\psi\_G$, some $b\in B$ with $Rwb$. If $w\in B$, closure gives $\Box\psi\_G$; otherwise $Q\_L$ puts every successor $u$ of $w$ in $B$. Only the LGen clauses imp, neg, box are used (th3\_of\_th2). th3\_eq identifies the result with Th3K.φ by rfl.
 
 Prior art: unchecked
 
@@ -480,11 +480,11 @@ Evidence:
 - proof `checks/K17-TranslateKBQU.lean`: Programme.Run6.H.QU.F5\_not\_QL — pass (`results/K17-3.json`)
 - proof `checks/K17-TranslateKBQU.lean`: Programme.Run6.H.DPos.valid — pass (`results/K17-4.json`)
 - proof `checks/K17-TranslateKBQU.lean`: Programme.Run6.H.DRigN.valid — pass (`results/K17-5.json`)
-- reasoning: If: from Th2X.valid, DPos.valid, DRig.valid, DRigN.valid (kernel-checked derivations, sound\_v4\_wt) the four sentences $\psi\to\Box\psi$, $\psi\to(\Box\bot\leftrightarrow\rho)$, $\rho\to\Box\rho$, $\neg\rho\to\Box\neg\rho$ hold everywhere ($\psi=\exists^E G$, $\rho=P(\lambda z.\Box\bot)$, all matched by rfl). Then $B=\lbrace v\mid\psi v\wedge(\rho v\leftrightarrow\rho b)\rbrace $ is R-closed and uniform, and $Q_U$ gives $\Box\psi$ (th3\_of\_unif). Only if: a closed uniform violating $B$ gives K15's refuting model (collapse plus pull-back).
+- reasoning: If: from Th2X.valid, DPos.valid, DRig.valid, DRigN.valid (kernel-checked derivations, sound\_v4\_wt) the four sentences $\psi\to\Box\psi$, $\psi\to(\Box\bot\leftrightarrow\rho)$, $\rho\to\Box\rho$, $\neg\rho\to\Box\neg\rho$ hold everywhere ($\psi=\exists^E G$, $\rho=P(\lambda z.\Box\bot)$, all matched by rfl). Then $B=\lbrace v\mid\psi v\wedge(\rho v\leftrightarrow\rho b)\rbrace $ is R-closed and uniform, and $Q\_U$ gives $\Box\psi$ (th3\_of\_unif). Only if: a closed uniform violating $B$ gives K15's refuting model (collapse plus pull-back).
 - proof `checks/K17-TranslateKBQC.lean`: Programme.Run6.H.QC.validOn\_iff\_QC — pass (`results/K17-6.json`)
 - proof `checks/K17-TranslateKBQC.lean`: Programme.Run6.H.QC.QU\_iff\_QC — pass (`results/K17-7.json`)
 - proof `checks/K17-TranslateKBQC.lean`: Programme.Run6.H.QC.dead\_only\_of\_validOn — pass (`results/K17-8.json`)
-- reasoning: the theorist's ThH18 (verbatim). For $Q_U\to Q_C$, take $B=R^*(b)$, which is closed. If $w\in R^*(b)$, closure gives $u\in R^*(b)$; otherwise $Q_U$ applies. For $Q_C\to Q_U$, a closed $B\ni b$ contains $R^*(b)$, so uniformity of $B$ passes to the cone, and then $u\in R^*(b)\subseteq B$.
+- reasoning: the theorist's ThH18 (verbatim). For $Q\_U\to Q\_C$, take $B=R^\*(b)$, which is closed. If $w\in R^\*(b)$, closure gives $u\in R^\*(b)$; otherwise $Q\_U$ applies. For $Q\_C\to Q\_U$, a closed $B\ni b$ contains $R^\*(b)$, so uniformity of $B$ passes to the cone, and then $u\in R^\*(b)\subseteq B$.
 
 Prior art: unchecked
 
