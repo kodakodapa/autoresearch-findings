@@ -1,12 +1,12 @@
 ---
 layout: default
 title: "Polynomial calculus degree at least 5 over F2 for the onto functional pigeonhole principle with surplus 8"
-scholar: {"citation_title": "Polynomial calculus degree at least 5 over F2 for the onto functional pigeonhole principle with surplus 8", "citation_author": "Lindheim, Bj\u00f6rn", "citation_publication_date": "2026/11/06", "citation_abstract_html_url": "https://kodakodapa.github.io/autoresearch-findings/findings/pc-degree-5-onto-fphp-surplus-8.html", "citation_keywords": "C3", "citation_pdf_url": "https://kodakodapa.github.io/autoresearch-findings/claims/pc-degree-5-onto-fphp-surplus-8/paper.pdf", "citation_doi": "10.5281/zenodo.24008746"}
+scholar: {"citation_title": "Polynomial calculus degree at least 5 over F2 for the onto functional pigeonhole principle with surplus 8", "citation_author": "Lindheim, Bj\u00f6rn", "citation_publication_date": "2026/11/06", "citation_abstract_html_url": "https://kodakodapa.github.io/autoresearch-findings/findings/pc-degree-5-onto-fphp-surplus-8.html", "citation_keywords": "C3", "citation_pdf_url": "https://kodakodapa.github.io/autoresearch-findings/claims/pc-degree-5-onto-fphp-surplus-8/paper.pdf", "citation_doi": "10.5281/zenodo.24012251"}
 ---
 
 # Polynomial calculus degree at least 5 over F2 for the onto functional pigeonhole principle with surplus 8
 
-Cite as: https://doi.org/10.5281/zenodo.23996615 (all versions; this version: https://doi.org/10.5281/zenodo.24008746)
+Cite as: https://doi.org/10.5281/zenodo.23996615 (all versions; this version: https://doi.org/10.5281/zenodo.24012251)
 
 <!-- owner-summary -->
 ## Setting
