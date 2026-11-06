@@ -6,7 +6,7 @@ polynomial equations in Boolean variables $x_{ij}$ (pigeon $i$ sits in hole $j$)
 axioms $\sum_j x_{ij}-1$ (each pigeon sits in a hole), $\sum_i x_{ij}-1$ (each hole holds exactly
 one pigeon), $x_{ij}x_{i'j}$ (no two pigeons share a hole) and $x_{ij}x_{ij'}$ (no pigeon sits in
 two holes). This is the linear encoding used in the literature on this family
-[@beame1998counting; @razborov2001php].
+[@beame1998counting; @razborov2001php]. These results are for the linear encoding only: translating the CNF clause by clause instead turns each pigeon clause into a polynomial of degree $n$ [@razborov2001php], so degree bounds below $n$ say nothing about that encoding.
 
 A polynomial calculus (PC) refutation over the field $\mathbb F_p$ derives the polynomial $1$
 from the axioms and the Boolean axioms $x^2-x$, using linear combinations and multiplication by a

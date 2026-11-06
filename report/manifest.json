@@ -514,36 +514,6 @@
         "ch. 7"
       ],
       "claims": [
-        "K13",
-        "K14",
-        "K15"
-      ],
-      "commit": "908b30496168c757d5eba6ba4ba761dbab7933b8",
-      "date": "2026-11-06",
-      "doi": "10.5281/zenodo.24008682",
-      "pdf": true,
-      "revisions": [
-        {
-          "date": "2026-11-06",
-          "reason": "Math rendering on the site; paper lists only cited references"
-        },
-        {
-          "date": "2026-11-06",
-          "reason": "Library published buildable; verification steps; run copies labelled"
-        }
-      ],
-      "run_label": "20261027-0607",
-      "slug": "exact-pc-degree-onto-fphp-first-level",
-      "threads": [
-        "C3"
-      ],
-      "title": "Exact polynomial calculus degree p for the onto functional pigeonhole principle with surplus divisible by p"
-    },
-    {
-      "allowed": [
-        "ch. 7"
-      ],
-      "claims": [
         "K1",
         "K2",
         "K3",
@@ -599,6 +569,40 @@
         "C3"
       ],
       "title": "Polynomial calculus degree at least 5 over F2 for the onto functional pigeonhole principle with surplus 8"
+    },
+    {
+      "allowed": [
+        "ch. 7"
+      ],
+      "claims": [
+        "K13",
+        "K14",
+        "K15"
+      ],
+      "commit": "908b30496168c757d5eba6ba4ba761dbab7933b8",
+      "date": "2026-11-06",
+      "doi": "10.5281/zenodo.24008682",
+      "pdf": true,
+      "revisions": [
+        {
+          "date": "2026-11-06",
+          "reason": "Math rendering on the site; paper lists only cited references"
+        },
+        {
+          "date": "2026-11-06",
+          "reason": "Library published buildable; verification steps; run copies labelled"
+        },
+        {
+          "date": "2026-11-06",
+          "reason": "Verification steps; stale run copies removed; encoding stated"
+        }
+      ],
+      "run_label": "20261027-0607",
+      "slug": "exact-pc-degree-onto-fphp-first-level",
+      "threads": [
+        "C3"
+      ],
+      "title": "Exact polynomial calculus degree p for the onto functional pigeonhole principle with surplus divisible by p"
     }
   ]
 }

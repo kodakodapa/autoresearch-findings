@@ -12,7 +12,7 @@
 \section{Introduction}
 \label{sec:exact-pc-degree-onto-fphp-first-level}
 
-Cite as: https://doi.org/10.5281/zenodo.24008682
+Cite as: https://doi.org/10.5281/zenodo.23996564 (all versions; this version: https://doi.org/10.5281/zenodo.24008682)
 
 \subsection*{Setting}
 
@@ -22,7 +22,7 @@ polynomial equations in Boolean variables $x_{ij}$ (pigeon $i$ sits in hole $j$)
 axioms $\sum_j x_{ij}-1$ (each pigeon sits in a hole), $\sum_i x_{ij}-1$ (each hole holds exactly
 one pigeon), $x_{ij}x_{i'j}$ (no two pigeons share a hole) and $x_{ij}x_{ij'}$ (no pigeon sits in
 two holes). This is the linear encoding used in the literature on this family
-\cite{beame1998counting,razborov2001php}.
+\cite{beame1998counting,razborov2001php}. These results are for the linear encoding only: translating the CNF clause by clause instead turns each pigeon clause into a polynomial of degree $n$ \cite{razborov2001php}, so degree bounds below $n$ say nothing about that encoding.
 
 A polynomial calculus (PC) refutation over the field $\mathbb F_p$ derives the polynomial $1$
 from the axioms and the Boolean axioms $x^2-x$, using linear combinations and multiplication by a
@@ -96,6 +96,22 @@ This result was found by AI research agents (the autoresearch harness). It was p
 
 Promoted declaring sources are included under \texttt{checks/library/}.
 
+\subsection*{How to verify}
+
+Lean toolchain: \texttt{leanprover/lean4:v4.35.0}. \url{https://github.com/kodakodapa/autoresearch-findings/tree/2abad0979eeb03ede3a77490f45a4f381119ff02/programmes/proof-complexity}. Install elan, then pin the library subtree while keeping the finding checks:
+
+\begin{verbatim}
+git clone https://github.com/kodakodapa/autoresearch-findings.git
+cd autoresearch-findings
+git checkout 2abad0979eeb03ede3a77490f45a4f381119ff02 -- programmes/proof-complexity
+cd programmes/proof-complexity && lake build
+AR_LIBRARY=$PWD python -I ../../claims/exact-pc-degree-onto-fphp-first-level/checks/lean-K13.py
+AR_LIBRARY=$PWD python -I ../../claims/exact-pc-degree-onto-fphp-first-level/checks/lean-K14.py
+AR_LIBRARY=$PWD python -I ../../claims/exact-pc-degree-onto-fphp-first-level/checks/lean-K15.py
+\end{verbatim}
+
+\texttt{checks/run-copies/}: the author's working copies from the run; they import the run's private \texttt{Work} package and are not built standalone.
+
 \section{Claims}
 
 \subsection*{Claim K13}
@@ -164,13 +180,14 @@ Beame and Riis \cite{beame1998counting} is multiplier degree, one less than the 
 
 \section{How to verify}
 
-Each finding has its check scripts in \texttt{claims/exact-pc-degree-onto-fphp-first-level/checks/} of the findings repository. Run each with \texttt{python -I <script>}; it passes if it exits with status 0. Promoted declaring sources are included under \texttt{checks/library/}; publication checks import their modules and inspect theorem axioms. The checks are Python scripts and need the packages of the research image (the image's \texttt{requirements.txt}); the Lean checks also need \texttt{lean}.
+For programme findings, follow the clone, build and run steps in each finding. Each finding has its check scripts in \texttt{claims/exact-pc-degree-onto-fphp-first-level/checks/} of the findings repository. Run each with \texttt{python -I <script>}; it passes if it exits with status 0. Promoted declaring sources are included under \texttt{checks/library/}; publication checks import their modules and inspect theorem axioms. The checks are Python scripts and need the packages of the research image (the image's \texttt{requirements.txt}); the Lean checks also need \texttt{lean}.
 
 \section{Revisions}
 
 \begin{itemize}
 \item 2026-11-06 --- Math rendering on the site; paper lists only cited references
 \item 2026-11-06 --- Library published buildable; verification steps; run copies labelled
+\item 2026-11-06 --- Verification steps; stale run copies removed; encoding stated
 \end{itemize}
 
 \bibliographystyle{plain}

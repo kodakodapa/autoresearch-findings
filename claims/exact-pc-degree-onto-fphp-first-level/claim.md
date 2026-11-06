@@ -1,6 +1,6 @@
 # Exact polynomial calculus degree p for the onto functional pigeonhole principle with surplus divisible by p
 
-Cite as: https://doi.org/10.5281/zenodo.24008682
+Cite as: https://doi.org/10.5281/zenodo.23996564 (all versions; this version: https://doi.org/10.5281/zenodo.24008682)
 
 <!-- owner-summary -->
 ## Setting
@@ -11,7 +11,7 @@ polynomial equations in Boolean variables $x_{ij}$ (pigeon $i$ sits in hole $j$)
 axioms $\sum_j x_{ij}-1$ (each pigeon sits in a hole), $\sum_i x_{ij}-1$ (each hole holds exactly
 one pigeon), $x_{ij}x_{i'j}$ (no two pigeons share a hole) and $x_{ij}x_{ij'}$ (no pigeon sits in
 two holes). This is the linear encoding used in the literature on this family
-[1, 2].
+[1, 2]. These results are for the linear encoding only: translating the CNF clause by clause instead turns each pigeon clause into a polynomial of degree $n$ [2], so degree bounds below $n$ say nothing about that encoding.
 
 A polynomial calculus (PC) refutation over the field $\mathbb F_p$ derives the polynomial $1$
 from the axioms and the Boolean axioms $x^2-x$, using linear combinations and multiplication by a
@@ -165,8 +165,27 @@ Beame and Riis [1] is multiplier degree, one less than the line degree used here
 3. <!-- cite:riis1993independence --> Riis, Søren. 1993. Independence in Bounded Arithmetic
 4. <!-- cite:riis1997nonconstant --> Riis, Søren and Sitharam, Meera. 1997. Non-constant degree lower bounds imply linear degree lower bounds. [Link](https://eccc.weizmann.ac.il/report/1997/048/)
 
+<!-- programme verification -->
+## How to verify
+
+Lean toolchain: `leanprover/lean4:v4.35.0`. [Programme library at the recorded commit](https://github.com/kodakodapa/autoresearch-findings/tree/2abad0979eeb03ede3a77490f45a4f381119ff02/programmes/proof-complexity). Install elan, then pin the library subtree while keeping the finding checks:
+
+```sh
+git clone https://github.com/kodakodapa/autoresearch-findings.git
+cd autoresearch-findings
+git checkout 2abad0979eeb03ede3a77490f45a4f381119ff02 -- programmes/proof-complexity
+cd programmes/proof-complexity && lake build
+AR_LIBRARY=$PWD python -I ../../claims/exact-pc-degree-onto-fphp-first-level/checks/lean-K13.py
+AR_LIBRARY=$PWD python -I ../../claims/exact-pc-degree-onto-fphp-first-level/checks/lean-K14.py
+AR_LIBRARY=$PWD python -I ../../claims/exact-pc-degree-onto-fphp-first-level/checks/lean-K15.py
+```
+
+`checks/run-copies/`: the author's working copies from the run; they import the run's private `Work` package and are not built standalone.
+<!-- /programme verification -->
+
 <!-- autoresearch:revisions -->
 ## Revisions
 
 - 2026-11-06 — Math rendering on the site; paper lists only cited references
 - 2026-11-06 — Library published buildable; verification steps; run copies labelled
+- 2026-11-06 — Verification steps; stale run copies removed; encoding stated

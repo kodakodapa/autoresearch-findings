@@ -7,7 +7,7 @@ scholar: {"citation_title": "Exact polynomial calculus degree p for the onto fun
 
 ## Summary
 
-Cite as: https://doi.org/10.5281/zenodo.24008682
+Cite as: https://doi.org/10.5281/zenodo.23996564 (all versions; this version: https://doi.org/10.5281/zenodo.24008682)
 
 <!-- owner-summary -->
 ## Setting
@@ -18,7 +18,7 @@ polynomial equations in Boolean variables $x\_{ij}$ (pigeon $i$ sits in hole $j$
 axioms $\sum\_j x\_{ij}-1$ (each pigeon sits in a hole), $\sum\_i x\_{ij}-1$ (each hole holds exactly
 one pigeon), $x\_{ij}x\_{i'j}$ (no two pigeons share a hole) and $x\_{ij}x\_{ij'}$ (no pigeon sits in
 two holes). This is the linear encoding used in the literature on this family
-[1, 2].
+[1, 2]. These results are for the linear encoding only: translating the CNF clause by clause instead turns each pigeon clause into a polynomial of degree $n$ [2], so degree bounds below $n$ say nothing about that encoding.
 
 A polynomial calculus (PC) refutation over the field $\mathbb F\_p$ derives the polynomial $1$
 from the axioms and the Boolean axioms $x^2-x$, using linear combinations and multiplication by a
@@ -113,11 +113,20 @@ Theorem 33. Below $n=2p-3$ the degree is not determined here. The Nullstellensat
 Beame and Riis [1] is multiplier degree, one less than the line degree used here.
 
 ## How to verify
-Promoted declaring sources are included under `checks/library/`; publication checks import their library modules and inspect each theorem with `#print axioms`.
 
-Run each script in `claims/exact-pc-degree-onto-fphp-first-level/checks/` with `python -I <script>`; it passes if it
-exits with status 0. The results recorded in the original run are in
-`claims/exact-pc-degree-onto-fphp-first-level/results/`; the full claim text is in `claims/exact-pc-degree-onto-fphp-first-level/claim.md`.
+Lean toolchain: `leanprover/lean4:v4.35.0`. [Programme library at the recorded commit](https://github.com/kodakodapa/autoresearch-findings/tree/2abad0979eeb03ede3a77490f45a4f381119ff02/programmes/proof-complexity). Install elan, then pin the library subtree while keeping the finding checks:
+
+```sh
+git clone https://github.com/kodakodapa/autoresearch-findings.git
+cd autoresearch-findings
+git checkout 2abad0979eeb03ede3a77490f45a4f381119ff02 -- programmes/proof-complexity
+cd programmes/proof-complexity && lake build
+AR_LIBRARY=$PWD python -I ../../claims/exact-pc-degree-onto-fphp-first-level/checks/lean-K13.py
+AR_LIBRARY=$PWD python -I ../../claims/exact-pc-degree-onto-fphp-first-level/checks/lean-K14.py
+AR_LIBRARY=$PWD python -I ../../claims/exact-pc-degree-onto-fphp-first-level/checks/lean-K15.py
+```
+
+`checks/run-copies/`: the author's working copies from the run; they import the run's private `Work` package and are not built standalone.
 
 ## Provenance
 
@@ -140,3 +149,4 @@ exits with status 0. The results recorded in the original run are in
 
 - 2026-11-06 — Math rendering on the site; paper lists only cited references
 - 2026-11-06 — Library published buildable; verification steps; run copies labelled
+- 2026-11-06 — Verification steps; stale run copies removed; encoding stated
