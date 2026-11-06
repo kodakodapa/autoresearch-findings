@@ -26,11 +26,15 @@
     {
       "date": "2026-11-06",
       "reason": "Verification steps; stale run copies removed; encoding stated"
+    },
+    {
+      "date": "2026-11-06",
+      "reason": "Publication re-checks and reproofs published; prior art extended; texts corrected"
     }
   ],
   "round": 11,
   "run_label": "20261028-0841",
-  "staged_at": "2026-11-06T13:40:18Z",
+  "staged_at": "2026-11-06T14:39:33Z",
   "title": "Polynomial calculus degree at least 5 over F2 for the onto functional pigeonhole principle with surplus 8",
   "zenodo_record_id": "24012251"
 }

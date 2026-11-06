@@ -514,38 +514,6 @@
         "ch. 7"
       ],
       "claims": [
-        "K18"
-      ],
-      "commit": "19b6167239a90c29b4a3f0ff0f64c79016faf2f8",
-      "date": "2026-11-06",
-      "doi": "10.5281/zenodo.24012251",
-      "pdf": true,
-      "revisions": [
-        {
-          "date": "2026-11-06",
-          "reason": "Math rendering on the site; paper lists only cited references"
-        },
-        {
-          "date": "2026-11-06",
-          "reason": "Library published buildable; verification steps; run copies labelled"
-        },
-        {
-          "date": "2026-11-06",
-          "reason": "Verification steps; stale run copies removed; encoding stated"
-        }
-      ],
-      "run_label": "20261028-0841",
-      "slug": "pc-degree-5-onto-fphp-surplus-8",
-      "threads": [
-        "C3"
-      ],
-      "title": "Polynomial calculus degree at least 5 over F2 for the onto functional pigeonhole principle with surplus 8"
-    },
-    {
-      "allowed": [
-        "ch. 7"
-      ],
-      "claims": [
         "K13",
         "K14",
         "K15"
@@ -619,6 +587,42 @@
         "C3"
       ],
       "title": "Polynomial calculus degree above p for the onto functional pigeonhole principle with surplus divisible by p squared"
+    },
+    {
+      "allowed": [
+        "ch. 7"
+      ],
+      "claims": [
+        "K18"
+      ],
+      "commit": "19b6167239a90c29b4a3f0ff0f64c79016faf2f8",
+      "date": "2026-11-06",
+      "doi": "10.5281/zenodo.24012251",
+      "pdf": true,
+      "revisions": [
+        {
+          "date": "2026-11-06",
+          "reason": "Math rendering on the site; paper lists only cited references"
+        },
+        {
+          "date": "2026-11-06",
+          "reason": "Library published buildable; verification steps; run copies labelled"
+        },
+        {
+          "date": "2026-11-06",
+          "reason": "Verification steps; stale run copies removed; encoding stated"
+        },
+        {
+          "date": "2026-11-06",
+          "reason": "Publication re-checks and reproofs published; prior art extended; texts corrected"
+        }
+      ],
+      "run_label": "20261028-0841",
+      "slug": "pc-degree-5-onto-fphp-surplus-8",
+      "threads": [
+        "C3"
+      ],
+      "title": "Polynomial calculus degree at least 5 over F2 for the onto functional pigeonhole principle with surplus 8"
     }
   ]
 }
