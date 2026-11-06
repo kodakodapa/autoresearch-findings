@@ -72,7 +72,7 @@ The checkers' full answers, with every query and file they searched, are publish
 
 If you know of related work we missed, please open an issue.
 
-This result was found by AI research agents (the autoresearch harness). It was proved in Lean; the proof and check files are included so anyone can re-run them.
+This result was found by AI research agents (the autoresearch harness). It was proved in Lean; the verification steps below build the published programme library.
 
 Promoted declaring sources are included under `checks/library/`.
 
@@ -85,7 +85,7 @@ Status: proved (axioms: propext, Classical.choice, Quot.sound)
 Kind: theorem
 
 Evidence:
-- proof `checks/K18-Main.lean`: Work.L3.Main.no\_deg4 — pass (`results/K18-4.json`)
+- proof `checks/run-copies/K18-Main.lean`: Work.L3.Main.no\_deg4 — pass (`results/K18-4.json`)
 
 Prior art: partial prior art (answer: `prior-art/R9.md`)
 
@@ -117,3 +117,4 @@ $\ell$. We have not checked the proof of Theorem 33 and cite it for comparison o
 ## Revisions
 
 - 2026-11-06 — Math rendering on the site; paper lists only cited references
+- 2026-11-06 — Library published buildable; verification steps; run copies labelled

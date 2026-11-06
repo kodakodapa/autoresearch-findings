@@ -10,7 +10,7 @@
   "exit": 0,
   "figures": [],
   "matches": null,
-  "path": "checks/K18-Main.lean",
+  "path": "checks/run-copies/K18-Main.lean",
   "reason": "proof built and axioms verified",
   "result": "pass",
   "run_at": "2026-10-28T15:56:22.594867+00:00",
