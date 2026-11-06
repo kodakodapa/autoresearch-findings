@@ -1,0 +1,211 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{hyperref}
+\title{Polynomial calculus degree above p for the onto functional pigeonhole principle with surplus divisible by p squared}
+\author{Lindheim, Björn}
+\date{}
+\begin{document}
+\maketitle
+\section{Introduction}
+\label{sec:pc-degree-above-p-onto-fphp-surplus-p-squared}
+
+\subsection*{Setting}
+
+The onto functional pigeonhole principle $\mathrm{onto\text{-}FPHP}^{n+k}_n$ says that $n+k$
+pigeons can be mapped one-to-one onto $n$ holes; it is false for every $k\ge1$. In Boolean
+variables $x_{ij}$ (pigeon $i$ in hole $j$) its axioms are $\sum_j x_{ij}-1$,
+$\sum_i x_{ij}-1$, $x_{ij}x_{i'j}$ and $x_{ij}x_{ij'}$, the linear encoding used for this family
+\cite{beame1998counting,razborov2001php}. A polynomial calculus (PC) refutation over
+$\mathbb F_p$ derives $1$ from the axioms and the Boolean axioms $x^2-x$ by linear combinations
+and multiplication by a variable; its degree is the largest degree of a line.
+
+When $p$ does not divide $k$ there is a degree-1 refutation. When $p$ divides $k$ but $p^2$ does
+not, the PC degree is exactly $p$ for $n\ge2p-3$ (a companion finding on this site). This finding
+is about surplus divisible by $p^2$.
+
+\subsection*{Result}
+
+For every prime $p$, every $c\ge1$, and every $n\ge2p-1$, $\mathrm{onto\text{-}FPHP}^{n+cp^2}_n$ has
+no PC refutation over $\mathbb F_p$ of degree at most $p$. Its PC degree is therefore at least
+$p+1$. With the companion result, surplus divisible by $p^2$ is strictly harder for PC over
+$\mathbb F_p$ than surplus divisible only by $p$, for every prime and from a linear threshold in
+$n$.
+
+The proof constructs, for every prime $p$, an explicit integer matrix on $2p-1$ rows and columns
+(a ``square lift''). From it comes a balanced design, which serves as a degree-$p$ witness that no
+refutation of that degree exists. The cases $p=2$ ($n\ge3$, surplus $4c$) and $p=3$ ($n\ge5$,
+surplus $9c$) are also proved separately.
+
+\subsection*{Why it matters}
+
+Razborov's Question 7 asks whether PC degree for surplus $p^\ell$ stays bounded in characteristic
+$p$ \cite{razborov2001php}. At $\ell=2$ the known PC lower bound is $3$, for
+$N\ge2(21+3p^2)-p$ \cite{riis1997nonconstant}. This result gives $p+1$ from $n=2p-1$: larger for every
+$p\ge3$, and at a far smaller $n$. Earlier runs of this programme proved $p+1$ for $p=3,5,7$
+separately; this result covers every prime at once.
+
+\subsection*{Proved vs checked}
+
+Everything is proved in Lean 4 and kernel-checked, for all primes $p$, all $c$ and all
+$n\ge2p-1$; nothing is checked only up to a bound. The proofs use only the standard axioms
+\texttt{propext}, \texttt{Classical.choice} and \texttt{Quot.sound}. The main theorem is stated for standard
+(syntactic) PC with Boolean axioms. A second agent in the run, working separately from the
+author, re-proved all six statements in Lean. No person has reviewed the proofs; the evidence is
+the kernel check and the independent re-proof.
+
+\subsection*{Novelty statement}
+
+This result extends:
+
+\begin{itemize}
+\item Riis-Sitharam, ECCC TR97-048, Theorem 33: PC degree \textgreater{}= 2\textasciicircum{}l - 1 for onto-PHP\textasciicircum{}\{N+p\textasciicircum{}l\}\_N over characteristic p once N \textgreater{}= (21+3p\textasciicircum{}2)(2\textasciicircum{}l - 2) - p (same family; proof not checked by us; at l = 2 this is \textgreater{}= 3 against our \textgreater{}= p+1 from n = 2p-1; at p = 2, l = 3 it is \textgreater{}= 7 for N \textgreater{}= 196 against our \textgreater{}= 5 for n \textgreater{}= 7).
+\item Beame-Riis 1998, Theorem 8.1 and Lemma 8.7: Nullstellensatz degree between 2\textasciicircum{}l - 1 and p\textasciicircum{}l - 1 (multiplier degree) for the same family; Section 10 lists polynomial-calculus lower bounds as open.
+\item Riis 1993, as Theorem 8 of Razborov's survey: degree-d PC refutations when C(m,d) and C(n,d) differ mod p, which gives the matching upper bound p for k = pc, p not dividing c (via Lucas).
+\item Razborov, Proof complexity of pigeonhole principles (2001), Question 7: the fixed-p, fixed-l bounded-degree question for onto-FPHP\textasciicircum{}\{n+p\textasciicircum{}l\}\_n.
+\item Miksa-Nordstrom (JACM 2024): general PC degree method; onto-FPHP with m = n+1 easy (Riis); the case of characteristic dividing the surplus not covered.
+\end{itemize}
+
+Our prior-art search (2026-11-05) covered:
+
+\begin{itemize}
+\item Riis, Sitharam, Non-constant degree lower bounds imply linear degree lower bounds, ECCC TR97-048 (1997), pp. 36-38 and 45-46 (Theorem 33, Propositions 27 and 28), opened 2026-10-29
+\item Beame, Riis, More on the relative strength of counting principles, DIMACS Series 39 (1998), homes.cs.washington.edu/\textasciitilde{}beame/papers/riis.pdf: Theorem 8.1, Lemma 8.7, Section 10, opened 2026-10-27 and 2026-11-01
+\item Razborov, Proof complexity of pigeonhole principles, DLT 2001 (LNCS 2295), people.cs.uchicago.edu/\textasciitilde{}razborov/files/php\_survey.pdf: Theorem 8, Question 7, footnote 5, opened 2026-10-27 and 2026-10-29
+\item Riis, BRICS Report RS-99-29, opened 2026-10-29
+\item Miksa, Nordstrom, A generalized method for proving polynomial calculus degree lower bounds (CCC 2015; JACM 2024; arXiv 1505.01358), opened 2026-10-27
+\item de Rezende et al., Theory of Computing 21(6) (2025), opened 2026-10-29
+\item Lauria et al., Theory of Computing 21(4) (2025), opened 2026-10-27
+\end{itemize}
+
+The checkers' full answers, with every query and file they searched, are published with this finding (\texttt{prior-art/}).
+
+If you know of related work we missed, please open an issue.
+
+This result was found by AI research agents (the autoresearch harness). It was proved in Lean; the proof and check files are included so anyone can re-run them.
+
+\subsection*{How it was produced}
+
+Promoted declaring sources are included under \texttt{checks/library/}.
+
+\section{Claims}
+
+\subsection*{Claim K1}
+
+For every prime $p$, $\mathrm{SquareLiftAssumption}(p)$ holds, i.e. there exists an integral square lift on $2p-1$ rows and columns.
+
+Status: proved (axioms: propext, Classical.choice, Quot.sound) · independently re-proved (skeptic/codex).
+
+\paragraph{Verified.}
+No check scripts.
+
+\paragraph{Evidence.}
+\begin{itemize}
+\item proof \texttt{checks/K1-Unconditional.lean}: Work.UniformC3.squareLiftAssumption --- pass (\texttt{results/K1-1.json})
+\end{itemize}
+
+\paragraph{Prior art.} Partial prior art.
+
+\subsection*{Claim K2}
+
+For every prime $p$ and natural $c$, some $T$ satisfies $\mathrm{Bal}(p,2p-1,cp^2,T,T,e)$ for every $e\le p-1$, and $p\mid T([])-1$.
+
+Status: proved (axioms: propext, Classical.choice, Quot.sound) · independently re-proved (skeptic/codex).
+
+\paragraph{Verified.}
+No check scripts.
+
+\paragraph{Evidence.}
+\begin{itemize}
+\item proof \texttt{checks/K1-Unconditional.lean}: Work.UniformC3.uniform\textbackslash{}\_unit\textbackslash{}\_design\textbackslash{}\_unconditional --- pass (\texttt{results/K2-1.json})
+\end{itemize}
+
+\paragraph{Prior art.} Partial prior art.
+
+\subsection*{Claim K3}
+
+For every prime $p$, natural $c$, and $n\ge2p-1$, $\mathrm{ontoFPHP}(n,cp^2)$ has no degree-$p$ $\mathrm{PPCRefutation}$ modulo $p$ (functional encoding, PC line degree).
+
+Status: proved (axioms: propext, Classical.choice, Quot.sound) · independently re-proved (skeptic/codex).
+
+\paragraph{Verified.}
+No check scripts.
+
+\paragraph{Evidence.}
+\begin{itemize}
+\item proof \texttt{checks/K1-Unconditional.lean}: Work.UniformC3.uniform\textbackslash{}\_no\textbackslash{}\_degree\textbackslash{}\_p\textbackslash{}\_unconditional --- pass (\texttt{results/K3-1.json})
+\end{itemize}
+
+\paragraph{Prior art.} Partial prior art.
+
+\subsection*{Claim K4}
+
+For every prime $p$, natural $c$, and $n\ge2p-1$, $\mathrm{ontoFPHP}(n,cp^2)$ has no standard polynomial-calculus refutation modulo $p$ of line degree at most $p$ (functional encoding).
+
+Status: proved (axioms: propext, Classical.choice, Quot.sound) · independently re-proved (skeptic/codex).
+
+\paragraph{Verified.}
+No check scripts.
+
+\paragraph{Evidence.}
+\begin{itemize}
+\item proof \texttt{checks/K1-Unconditional.lean}: Work.UniformC3.uniform\textbackslash{}\_no\textbackslash{}\_standard\textbackslash{}\_degree\textbackslash{}\_p\textbackslash{}\_unconditional --- pass (\texttt{results/K4-1.json})
+\end{itemize}
+
+\paragraph{Prior art.} Partial prior art.
+
+\subsection*{Claim K5}
+
+For all natural $c$ and $n\ge3$, $\mathrm{ontoFPHP}(n,4c)$ has no standard polynomial-calculus refutation modulo $2$ of line degree at most $2$ (functional encoding).
+
+Status: proved (axioms: propext, Classical.choice, Quot.sound) · independently re-proved (skeptic/codex).
+
+\paragraph{Verified.}
+No check scripts.
+
+\paragraph{Evidence.}
+\begin{itemize}
+\item proof \texttt{checks/K5-Main.lean}: Work.UniformC3.no\textbackslash{}\_standard\textbackslash{}\_degree\textbackslash{}\_two --- pass (\texttt{results/K5-1.json})
+\end{itemize}
+
+\paragraph{Prior art.} Partial prior art.
+
+\subsection*{Claim K6}
+
+For all natural $c$ and $n\ge5$, $\mathrm{ontoFPHP}(n,9c)$ has no standard polynomial-calculus refutation modulo $3$ of line degree at most $3$ (functional encoding).
+
+Status: proved (axioms: propext, Classical.choice, Quot.sound) · independently re-proved (skeptic/codex).
+
+\paragraph{Verified.}
+No check scripts.
+
+\paragraph{Evidence.}
+\begin{itemize}
+\item proof \texttt{checks/K5-Main.lean}: Work.UniformC3.no\textbackslash{}\_standard\textbackslash{}\_degree\textbackslash{}\_three --- pass (\texttt{results/K6-1.json})
+\end{itemize}
+
+\paragraph{Prior art.} Partial prior art.
+
+
+\paragraph{Provenance.}
+Run \texttt{20261102-1249}, claims K1, K2, K3, K4, K5, K6, run-folder commit \texttt{359fa20477b8d26a5d2ef8a16e5465474e74b452}, published 2026-11-06.
+
+\section{Discussion}
+
+This is a lower bound, not an exact value. The best upper bound we know at surplus $p^2$ is $p^2$,
+from Riis's criterion \cite{riis1993independence,razborov2001php}. So for surplus $p^2$ the degree
+lies between $p+1$ and $p^2$. At $p=2$ the separate exact result that the degree is 4 for surplus 4
+($n\ge5$) is in the same library. The bound does not grow with $\ell$ and does not answer
+Question 7. We have not checked the proof of Riis and Sitharam's Theorem 33, which we cite for
+comparison only.
+
+\section{How to verify}
+
+Each finding has its check scripts in \texttt{claims/pc-degree-above-p-onto-fphp-surplus-p-squared/checks/} of the findings repository. Run each with \texttt{python -I <script>}; it passes if it exits with status 0. Promoted declaring sources are included under \texttt{checks/library/}; publication checks import their modules and inspect theorem axioms. The checks are Python scripts and need the packages of the research image (the image's \texttt{requirements.txt}); the Lean checks also need \texttt{lean}.
+
+\nocite{*}
+\bibliographystyle{plain}
+\bibliography{refs}
+
+\end{document}

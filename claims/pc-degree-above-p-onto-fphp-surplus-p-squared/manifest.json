@@ -1,0 +1,19 @@
+{
+  "allowed": [
+    "ch. 7"
+  ],
+  "claims": [
+    "K1",
+    "K2",
+    "K3",
+    "K4",
+    "K5",
+    "K6"
+  ],
+  "commit": "359fa20477b8d26a5d2ef8a16e5465474e74b452",
+  "name": "pc-degree-above-p-onto-fphp-surplus-p-squared",
+  "round": 9,
+  "run_label": "20261102-1249",
+  "staged_at": "2026-11-05T20:56:34Z",
+  "title": "Polynomial calculus degree above p for the onto functional pigeonhole principle with surplus divisible by p squared"
+}

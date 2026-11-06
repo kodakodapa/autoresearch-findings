@@ -1,0 +1,24 @@
+{
+  "axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "axioms_output": "nds on axioms: [propext, Classical.choice, Quot.sound]\ninfo: Work/UniformC3/Main.lean:87:0: 'Work.UniformC3.no_standard_degree_two' depends on axioms: [propext, Classical.choice, Quot.sound]\ninfo: Work/UniformC3/Main.lean:88:0: 'Work.UniformC3.no_standard_degree_three' depends on axioms: [propext, Classical.choice, Quot.sound]\n? [95/95] Built Work.ArAxiomse1671b67cc9341cf87782db5f30a948f (365ms)\ninfo: Work/ArAxiomse1671b67cc9341cf87782db5f30a948f.lean:2:0: 'Work.UniformC3.no_standard_degree_two' depends on axioms: [propext, Classical.choice, Quot.sound]\nBuild completed successfully (95 jobs).\n",
+  "build_log": "ical.choice, Quot.sound]\n? [105/106] Built Work.UniformC3.ExplicitSeven (212s)\ninfo: Work/UniformC3/ExplicitSeven.lean:20:0: 'Work.UniformC3.Block.explicitIdentities7' depends on axioms: [propext, Quot.sound]\ninfo: Work/UniformC3/ExplicitSeven.lean:21:0: 'Work.UniformC3.Block.squareLiftAssumption7' depends on axioms: [propext, Classical.choice, Quot.sound]\nBuild completed successfully (106 jobs).\n",
+  "duration_s": 217.87766218185425,
+  "exit": 0,
+  "figures": [],
+  "matches": "Work.UniformC3.no_standard_degree_two",
+  "path": "checks/K5-Main.lean",
+  "reason": "proof built and axioms verified",
+  "result": "pass",
+  "run_at": "2026-11-02T13:19:09.933450+00:00",
+  "stderr_head": "",
+  "stderr_tail": "",
+  "stdout_sha256": "d84c9ba583a3617c72c01a827a628624431553fe6ff40d25a22a118da2f099dc",
+  "stdout_tail": "{\"result\": \"pass\", \"reason\": \"proof built and axioms verified\", \"axioms_output\": \"nds on axioms: [propext, Classical.choice, Quot.sound]\\ninfo: Work/UniformC3/Main.lean:87:0: 'Work.UniformC3.no_standard_degree_two' depends on axioms: [propext, Classical.choice, Quot.sound]\\ninfo: Work/UniformC3/Main.lean:88:0: 'Work.UniformC3.no_standard_degree_three' depends on axioms: [propext, Classical.choice, Quot.sound]\\n? [95/95] Built Work.ArAxiomse1671b67cc9341cf87782db5f30a948f (365ms)\\ninfo: Work/ArAxiomse1671b67cc9341cf87782db5f30a948f.lean:2:0: 'Work.UniformC3.no_standard_degree_two' depends on axioms: [propext, Classical.choice, Quot.sound]\\nBuild completed successfully (95 jobs).\\n\", \"build_log\": \"ical.choice, Quot.sound]\\n? [105/106] Built Work.UniformC3.ExplicitSeven (212s)\\ninfo: Work/UniformC3/ExplicitSeven.lean:20:0: 'Work.UniformC3.Block.explicitIdentities7' depends on axioms: [propext, Quot.sound]\\ninfo: Work/UniformC3/ExplicitSeven.lean:21:0: 'Work.UniformC3.Block.squareLiftAssumption7' depends on axioms: [propext, Classical.choice, Quot.sound]\\nBuild completed successfully (106 jobs).\\n\"}\n",
+  "theorem": "Work.UniformC3.no_standard_degree_two",
+  "timeout_s": 1800.0,
+  "type": "proof"
+}
