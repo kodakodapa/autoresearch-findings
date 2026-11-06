@@ -229,3 +229,8 @@ comparison only.
 2. <!-- cite:razborov2001php --> Razborov, Alexander A.. 2002. Proof complexity of pigeonhole principles. Developments in Language Theory (DLT 2001). [Link](https://people.cs.uchicago.edu/~razborov/files/php_survey.pdf)
 3. <!-- cite:riis1997nonconstant --> Riis, Søren and Sitharam, Meera. 1997. Non-constant degree lower bounds imply linear degree lower bounds. [Link](https://eccc.weizmann.ac.il/report/1997/048/)
 4. <!-- cite:riis1993independence --> Riis, Søren. 1993. Independence in Bounded Arithmetic
+
+<!-- autoresearch:revisions -->
+## Revisions
+
+- 2026-11-06 — Math rendering on the site; paper lists only cited references

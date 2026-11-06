@@ -514,29 +514,6 @@
         "ch. 7"
       ],
       "claims": [
-        "K1",
-        "K2",
-        "K3",
-        "K4",
-        "K5",
-        "K6"
-      ],
-      "commit": "359fa20477b8d26a5d2ef8a16e5465474e74b452",
-      "date": "2026-11-06",
-      "doi": "10.5281/zenodo.23996586",
-      "pdf": true,
-      "run_label": "20261102-1249",
-      "slug": "pc-degree-above-p-onto-fphp-surplus-p-squared",
-      "threads": [
-        "C3"
-      ],
-      "title": "Polynomial calculus degree above p for the onto functional pigeonhole principle with surplus divisible by p squared"
-    },
-    {
-      "allowed": [
-        "ch. 7"
-      ],
-      "claims": [
         "K18"
       ],
       "commit": "19b6167239a90c29b4a3f0ff0f64c79016faf2f8",
@@ -575,6 +552,35 @@
         "C3"
       ],
       "title": "Exact polynomial calculus degree p for the onto functional pigeonhole principle with surplus divisible by p"
+    },
+    {
+      "allowed": [
+        "ch. 7"
+      ],
+      "claims": [
+        "K1",
+        "K2",
+        "K3",
+        "K4",
+        "K5",
+        "K6"
+      ],
+      "commit": "359fa20477b8d26a5d2ef8a16e5465474e74b452",
+      "date": "2026-11-06",
+      "doi": "10.5281/zenodo.23996586",
+      "pdf": true,
+      "revisions": [
+        {
+          "date": "2026-11-06",
+          "reason": "Math rendering on the site; paper lists only cited references"
+        }
+      ],
+      "run_label": "20261102-1249",
+      "slug": "pc-degree-above-p-onto-fphp-surplus-p-squared",
+      "threads": [
+        "C3"
+      ],
+      "title": "Polynomial calculus degree above p for the onto functional pigeonhole principle with surplus divisible by p squared"
     }
   ]
 }
