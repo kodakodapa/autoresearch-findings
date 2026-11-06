@@ -6,12 +6,18 @@
     "K18"
   ],
   "commit": "19b6167239a90c29b4a3f0ff0f64c79016faf2f8",
+  "concept_doi": "10.5281/zenodo.23996615",
+  "doi": "10.5281/zenodo.23996616",
   "name": "pc-degree-5-onto-fphp-surplus-8",
+  "revisions": [
+    {
+      "date": "2026-11-06",
+      "reason": "Math rendering on the site; paper lists only cited references"
+    }
+  ],
   "round": 11,
   "run_label": "20261028-0841",
-  "staged_at": "2026-11-05T20:57:07Z",
+  "staged_at": "2026-11-06T07:06:46Z",
   "title": "Polynomial calculus degree at least 5 over F2 for the onto functional pigeonhole principle with surplus 8",
-  "doi": "10.5281/zenodo.23996616",
-  "concept_doi": "10.5281/zenodo.23996615",
   "zenodo_record_id": "23996616"
 }
