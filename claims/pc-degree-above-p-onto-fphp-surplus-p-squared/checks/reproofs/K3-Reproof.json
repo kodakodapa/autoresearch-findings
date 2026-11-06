@@ -1,0 +1,25 @@
+{
+  "axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "axioms_output": ".sound]\ninfo: Work/Reproof.lean:88:0: 'Work.SkReproof.standard' depends on axioms: [propext, Classical.choice, Quot.sound]\ninfo: Work/Reproof.lean:89:0: 'Work.SkReproof.two' depends on axioms: [propext, Classical.choice, Quot.sound]\ninfo: Work/Reproof.lean:90:0: 'Work.SkReproof.three' depends on axioms: [propext, Classical.choice, Quot.sound]\n? [104/104] Built Work.ArAxiomsc3e73aab212e463a8d01b33ed0962c71 (225ms)\ninfo: Work/ArAxiomsc3e73aab212e463a8d01b33ed0962c71.lean:3:0: 'Work.SkReproof.ppc' depends on axioms: [propext, Classical.choice, Quot.sound]\nBuild completed successfully (104 jobs).\n",
+  "build_log": "l.choice, Quot.sound]\ninfo: Work/Reproof.lean:88:0: 'Work.SkReproof.standard' depends on axioms: [propext, Classical.choice, Quot.sound]\ninfo: Work/Reproof.lean:89:0: 'Work.SkReproof.two' depends on axioms: [propext, Classical.choice, Quot.sound]\ninfo: Work/Reproof.lean:90:0: 'Work.SkReproof.three' depends on axioms: [propext, Classical.choice, Quot.sound]\nBuild completed successfully (105 jobs).\nUniformC3/Unconditional.lean:85:0: 'Peer.pr.UniformC3.uniform_no_standard_degree_p_unconditional' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\nBuild completed successfully (101 jobs).\n",
+  "duration_s": 107.31863403320312,
+  "exit": 0,
+  "figures": [],
+  "matches": "Work.UniformC3.uniform_no_degree_p_unconditional",
+  "matches_as": "Peer.pr.UniformC3.uniform_no_degree_p_unconditional",
+  "path": "checks/reproofs/K3-Reproof.lean",
+  "reason": "proof built and axioms verified",
+  "result": "pass",
+  "run_at": "2026-11-02T13:46:39.112136+00:00",
+  "stderr_head": "",
+  "stderr_tail": "",
+  "stdout_sha256": "52c16d1a587ee7be2fa41ee49798407e487f6b4e64d9149e0d719472efcc7ca9",
+  "stdout_tail": "{\"result\": \"pass\", \"reason\": \"proof built and axioms verified\", \"axioms_output\": \".sound]\\ninfo: Work/Reproof.lean:88:0: 'Work.SkReproof.standard' depends on axioms: [propext, Classical.choice, Quot.sound]\\ninfo: Work/Reproof.lean:89:0: 'Work.SkReproof.two' depends on axioms: [propext, Classical.choice, Quot.sound]\\ninfo: Work/Reproof.lean:90:0: 'Work.SkReproof.three' depends on axioms: [propext, Classical.choice, Quot.sound]\\n? [104/104] Built Work.ArAxiomsc3e73aab212e463a8d01b33ed0962c71 (225ms)\\ninfo: Work/ArAxiomsc3e73aab212e463a8d01b33ed0962c71.lean:3:0: 'Work.SkReproof.ppc' depends on axioms: [propext, Classical.choice, Quot.sound]\\nBuild completed successfully (104 jobs).\\n\", \"build_log\": \"l.choice, Quot.sound]\\ninfo: Work/Reproof.lean:88:0: 'Work.SkReproof.standard' depends on axioms: [propext, Classical.choice, Quot.sound]\\ninfo: Work/Reproof.lean:89:0: 'Work.SkReproof.two' depends on axioms: [propext, Classical.choice, Quot.sound]\\ninfo: Work/Reproof.lean:90:0: 'Work.SkReproof.three' depends on axioms: [propext, Classical.choice, Quot.sound]\\nBuild completed successfully (105 jobs).\\nUniformC3/Unconditional.lean:85:0: 'Peer.pr.UniformC3.uniform_no_standard_degree_p_unconditional' depends on axioms: [propext,\\n Classical.choice,\\n Quot.sound]\\nBuild completed successfully (101 jobs).\\n\"}\n",
+  "theorem": "Work.SkReproof.ppc",
+  "timeout_s": 1800.0,
+  "type": "proof"
+}

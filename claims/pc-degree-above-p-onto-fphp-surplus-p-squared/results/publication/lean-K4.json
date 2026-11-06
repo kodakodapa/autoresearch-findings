@@ -1,0 +1,13 @@
+{
+  "axioms": "'Programme.\u00ab20261102-1249-proof-complexity\u00bb.UniformC3.uniform_no_standard_degree_p_unconditional' depends on axioms: [propext,",
+  "check": "checks/lean-K4.py",
+  "date": "2026-11-06",
+  "exit": 0,
+  "image": "ar-research-proof-complexity:92f4db65082f2d4a",
+  "output_tail": "'Programme.\u00ab20261102-1249-proof-complexity\u00bb.UniformC3.uniform_no_standard_degree_p_unconditional' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]",
+  "published": true,
+  "result": "pass",
+  "stderr_tail": "",
+  "tool": "lean",
+  "toolchain": "leanprover/lean4:v4.35.0"
+}
