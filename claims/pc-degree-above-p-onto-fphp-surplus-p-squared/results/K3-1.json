@@ -10,7 +10,7 @@
   "exit": 0,
   "figures": [],
   "matches": "Work.UniformC3.uniform_no_degree_p_unconditional",
-  "path": "checks/K1-Unconditional.lean",
+  "path": "checks/run-copies/K1-Unconditional.lean",
   "reason": "proof built and axioms verified",
   "result": "pass",
   "run_at": "2026-11-02T13:03:42.494574+00:00",

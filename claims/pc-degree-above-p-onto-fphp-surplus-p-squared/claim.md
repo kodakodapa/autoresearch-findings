@@ -70,7 +70,7 @@ The checkers' full answers, with every query and file they searched, are publish
 
 If you know of related work we missed, please open an issue.
 
-This result was found by AI research agents (the autoresearch harness). It was proved in Lean; the proof and check files are included so anyone can re-run them.
+This result was found by AI research agents (the autoresearch harness). It was proved in Lean; the verification steps below build the published programme library.
 
 Promoted declaring sources are included under `checks/library/`.
 
@@ -83,7 +83,7 @@ Status: proved (axioms: propext, Classical.choice, Quot.sound) · independently 
 Kind: theorem
 
 Evidence:
-- proof `checks/K1-Unconditional.lean`: Work.UniformC3.squareLiftAssumption — pass (`results/K1-1.json`)
+- proof `checks/run-copies/K1-Unconditional.lean`: Work.UniformC3.squareLiftAssumption — pass (`results/K1-1.json`)
 
 Prior art: partial prior art (answer: `prior-art/R6.md`)
 
@@ -105,7 +105,7 @@ Status: proved (axioms: propext, Classical.choice, Quot.sound) · independently 
 Kind: theorem
 
 Evidence:
-- proof `checks/K1-Unconditional.lean`: Work.UniformC3.uniform\_unit\_design\_unconditional — pass (`results/K2-1.json`)
+- proof `checks/run-copies/K1-Unconditional.lean`: Work.UniformC3.uniform\_unit\_design\_unconditional — pass (`results/K2-1.json`)
 
 Prior art: partial prior art (answer: `prior-art/R6.md`)
 
@@ -127,7 +127,7 @@ Status: proved (axioms: propext, Classical.choice, Quot.sound) · independently 
 Kind: theorem
 
 Evidence:
-- proof `checks/K1-Unconditional.lean`: Work.UniformC3.uniform\_no\_degree\_p\_unconditional — pass (`results/K3-1.json`)
+- proof `checks/run-copies/K1-Unconditional.lean`: Work.UniformC3.uniform\_no\_degree\_p\_unconditional — pass (`results/K3-1.json`)
 
 Prior art: partial prior art (answer: `prior-art/R6.md`)
 
@@ -149,7 +149,7 @@ Status: proved (axioms: propext, Classical.choice, Quot.sound) · independently 
 Kind: theorem
 
 Evidence:
-- proof `checks/K1-Unconditional.lean`: Work.UniformC3.uniform\_no\_standard\_degree\_p\_unconditional — pass (`results/K4-1.json`)
+- proof `checks/run-copies/K1-Unconditional.lean`: Work.UniformC3.uniform\_no\_standard\_degree\_p\_unconditional — pass (`results/K4-1.json`)
 
 Prior art: partial prior art (answer: `prior-art/R6.md`)
 
@@ -171,7 +171,7 @@ Status: proved (axioms: propext, Classical.choice, Quot.sound) · independently 
 Kind: theorem
 
 Evidence:
-- proof `checks/K5-Main.lean`: Work.UniformC3.no\_standard\_degree\_two — pass (`results/K5-1.json`)
+- proof `checks/run-copies/K5-Main.lean`: Work.UniformC3.no\_standard\_degree\_two — pass (`results/K5-1.json`)
 
 Prior art: partial prior art (answer: `prior-art/R6.md`)
 
@@ -193,7 +193,7 @@ Status: proved (axioms: propext, Classical.choice, Quot.sound) · independently 
 Kind: theorem
 
 Evidence:
-- proof `checks/K5-Main.lean`: Work.UniformC3.no\_standard\_degree\_three — pass (`results/K6-1.json`)
+- proof `checks/run-copies/K5-Main.lean`: Work.UniformC3.no\_standard\_degree\_three — pass (`results/K6-1.json`)
 
 Prior art: partial prior art (answer: `prior-art/R6.md`)
 
@@ -228,3 +228,4 @@ comparison only.
 ## Revisions
 
 - 2026-11-06 — Math rendering on the site; paper lists only cited references
+- 2026-11-06 — Library published buildable; verification steps; run copies labelled

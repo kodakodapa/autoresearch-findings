@@ -86,7 +86,7 @@ The checkers' full answers, with every query and file they searched, are publish
 
 If you know of related work we missed, please open an issue.
 
-This result was found by AI research agents (the autoresearch harness). It was proved in Lean; the proof and check files are included so anyone can re-run them.
+This result was found by AI research agents (the autoresearch harness). It was proved in Lean; the verification steps below build the published programme library.
 
 \subsection*{How it was produced}
 
@@ -105,7 +105,7 @@ No check scripts.
 
 \paragraph{Evidence.}
 \begin{itemize}
-\item proof \texttt{checks/K1-Unconditional.lean}: Work.UniformC3.squareLiftAssumption --- pass (\texttt{results/K1-1.json})
+\item proof \texttt{checks/run-copies/K1-Unconditional.lean}: Work.UniformC3.squareLiftAssumption --- pass (\texttt{results/K1-1.json})
 \end{itemize}
 
 \paragraph{Prior art.} Partial prior art.
@@ -121,7 +121,7 @@ No check scripts.
 
 \paragraph{Evidence.}
 \begin{itemize}
-\item proof \texttt{checks/K1-Unconditional.lean}: Work.UniformC3.uniform\textbackslash{}\_unit\textbackslash{}\_design\textbackslash{}\_unconditional --- pass (\texttt{results/K2-1.json})
+\item proof \texttt{checks/run-copies/K1-Unconditional.lean}: Work.UniformC3.uniform\textbackslash{}\_unit\textbackslash{}\_design\textbackslash{}\_unconditional --- pass (\texttt{results/K2-1.json})
 \end{itemize}
 
 \paragraph{Prior art.} Partial prior art.
@@ -137,7 +137,7 @@ No check scripts.
 
 \paragraph{Evidence.}
 \begin{itemize}
-\item proof \texttt{checks/K1-Unconditional.lean}: Work.UniformC3.uniform\textbackslash{}\_no\textbackslash{}\_degree\textbackslash{}\_p\textbackslash{}\_unconditional --- pass (\texttt{results/K3-1.json})
+\item proof \texttt{checks/run-copies/K1-Unconditional.lean}: Work.UniformC3.uniform\textbackslash{}\_no\textbackslash{}\_degree\textbackslash{}\_p\textbackslash{}\_unconditional --- pass (\texttt{results/K3-1.json})
 \end{itemize}
 
 \paragraph{Prior art.} Partial prior art.
@@ -153,7 +153,7 @@ No check scripts.
 
 \paragraph{Evidence.}
 \begin{itemize}
-\item proof \texttt{checks/K1-Unconditional.lean}: Work.UniformC3.uniform\textbackslash{}\_no\textbackslash{}\_standard\textbackslash{}\_degree\textbackslash{}\_p\textbackslash{}\_unconditional --- pass (\texttt{results/K4-1.json})
+\item proof \texttt{checks/run-copies/K1-Unconditional.lean}: Work.UniformC3.uniform\textbackslash{}\_no\textbackslash{}\_standard\textbackslash{}\_degree\textbackslash{}\_p\textbackslash{}\_unconditional --- pass (\texttt{results/K4-1.json})
 \end{itemize}
 
 \paragraph{Prior art.} Partial prior art.
@@ -169,7 +169,7 @@ No check scripts.
 
 \paragraph{Evidence.}
 \begin{itemize}
-\item proof \texttt{checks/K5-Main.lean}: Work.UniformC3.no\textbackslash{}\_standard\textbackslash{}\_degree\textbackslash{}\_two --- pass (\texttt{results/K5-1.json})
+\item proof \texttt{checks/run-copies/K5-Main.lean}: Work.UniformC3.no\textbackslash{}\_standard\textbackslash{}\_degree\textbackslash{}\_two --- pass (\texttt{results/K5-1.json})
 \end{itemize}
 
 \paragraph{Prior art.} Partial prior art.
@@ -185,7 +185,7 @@ No check scripts.
 
 \paragraph{Evidence.}
 \begin{itemize}
-\item proof \texttt{checks/K5-Main.lean}: Work.UniformC3.no\textbackslash{}\_standard\textbackslash{}\_degree\textbackslash{}\_three --- pass (\texttt{results/K6-1.json})
+\item proof \texttt{checks/run-copies/K5-Main.lean}: Work.UniformC3.no\textbackslash{}\_standard\textbackslash{}\_degree\textbackslash{}\_three --- pass (\texttt{results/K6-1.json})
 \end{itemize}
 
 \paragraph{Prior art.} Partial prior art.
@@ -211,6 +211,7 @@ Each finding has its check scripts in \texttt{claims/pc-degree-above-p-onto-fphp
 
 \begin{itemize}
 \item 2026-11-06 --- Math rendering on the site; paper lists only cited references
+\item 2026-11-06 --- Library published buildable; verification steps; run copies labelled
 \end{itemize}
 
 \bibliographystyle{plain}

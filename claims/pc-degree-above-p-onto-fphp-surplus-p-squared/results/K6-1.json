@@ -10,7 +10,7 @@
   "exit": 0,
   "figures": [],
   "matches": "Work.UniformC3.no_standard_degree_three",
-  "path": "checks/K5-Main.lean",
+  "path": "checks/run-copies/K5-Main.lean",
   "reason": "proof built and axioms verified",
   "result": "pass",
   "run_at": "2026-11-02T13:22:47.844794+00:00",

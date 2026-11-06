@@ -77,7 +77,7 @@ The checkers' full answers, with every query and file they searched, are publish
 
 If you know of related work we missed, please open an issue.
 
-This result was found by AI research agents (the autoresearch harness). It was proved in Lean; the proof and check files are included so anyone can re-run them.
+This result was found by AI research agents (the autoresearch harness). It was proved in Lean; the verification steps below build the published programme library.
 
 Promoted declaring sources are included under `checks/library/`.
 
@@ -156,3 +156,4 @@ exits with status 0. The results recorded in the original run are in
 ## Revisions
 
 - 2026-11-06 — Math rendering on the site; paper lists only cited references
+- 2026-11-06 — Library published buildable; verification steps; run copies labelled
