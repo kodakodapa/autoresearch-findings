@@ -1,0 +1,124 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{hyperref}
+\title{Polynomial calculus degree at least 5 over F2 for the onto functional pigeonhole principle with surplus 8}
+\author{Lindheim, Björn}
+\date{}
+\begin{document}
+\maketitle
+\section{Introduction}
+\label{sec:pc-degree-5-onto-fphp-surplus-8}
+
+\subsection*{Setting}
+
+The onto functional pigeonhole principle $\mathrm{onto\text{-}FPHP}^{n+k}_n$ says that $n+k$
+pigeons can be mapped one-to-one onto $n$ holes; it is false for every $k\ge1$. In Boolean
+variables $x_{ij}$ (pigeon $i$ in hole $j$) its axioms are $\sum_j x_{ij}-1$,
+$\sum_i x_{ij}-1$, $x_{ij}x_{i'j}$ and $x_{ij}x_{ij'}$, the linear encoding used for this family
+\cite{beame1998counting,razborov2001php}. A polynomial calculus (PC) refutation over
+$\mathbb F_2$ derives $1$ from the axioms and the Boolean axioms $x^2-x$ by linear combinations
+and multiplication by a variable; its degree is the largest degree of a line.
+
+Over $\mathbb F_2$, with surplus $k=2^\ell$, the PC degree is exactly 2 at $k=2$ and exactly 4 at
+$k=4$ (companion results in the same library). This finding is about $k=8$.
+
+\subsection*{Result}
+
+For every $n\ge7$, $\mathrm{onto\text{-}FPHP}^{n+8}_n$ has no PC refutation over $\mathbb F_2$ of
+degree 4. Its PC degree is therefore at least 5, while the general bound for surplus divisible
+by $p^2$ (companion finding) gives only 3 at $p=2$. So at $p=2$ the third level is strictly
+harder than the second for every $n\ge7$.
+
+The proof combines a general argument with a finite certificate of 95,550 steps, each checked by
+the Lean kernel.
+
+\subsection*{Why it matters}
+
+Razborov's Question 7 asks whether PC degree for surplus $p^\ell$ stays bounded in characteristic
+$p$ \cite{razborov2001php}. Riis and Sitharam's Theorem 33 gives degree at least 7 for $k=8$ once
+$N\ge196$ \cite{riis1997nonconstant}, which is stronger than this result for large $n$. The range
+$7\le n<196$ is not covered by that theorem. This result covers it, and it is machine-checked.
+
+\subsection*{Proved vs checked}
+
+The result is proved in Lean 4 for every $n\ge7$; the certificate is part of the proof, not a
+separate check up to a bound. The proof uses only the standard axioms \texttt{propext},
+\texttt{Classical.choice} and \texttt{Quot.sound}. A second agent in the run checked the certificate
+independently, with its own program written from the Lean definitions, not from the author's
+code. That is an independent check of the certificate, not an independent Lean re-proof. No
+person has reviewed the proof. The same library also states the result for standard (syntactic)
+PC (\texttt{std\_no\_deg4\_k8}).
+
+\subsection*{Novelty statement}
+
+This result extends:
+
+\begin{itemize}
+\item Riis-Sitharam, ECCC TR97-048, Theorem 33: PC degree \textgreater{}= 2\textasciicircum{}l - 1 for onto-PHP\textasciicircum{}\{N+p\textasciicircum{}l\}\_N over characteristic p once N \textgreater{}= (21+3p\textasciicircum{}2)(2\textasciicircum{}l - 2) - p (same family; proof not checked by us; at l = 2 this is \textgreater{}= 3 against our \textgreater{}= p+1 from n = 2p-1; at p = 2, l = 3 it is \textgreater{}= 7 for N \textgreater{}= 196 against our \textgreater{}= 5 for n \textgreater{}= 7).
+\item Beame-Riis 1998, Theorem 8.1 and Lemma 8.7: Nullstellensatz degree between 2\textasciicircum{}l - 1 and p\textasciicircum{}l - 1 (multiplier degree) for the same family; Section 10 lists polynomial-calculus lower bounds as open.
+\item Riis 1993, as Theorem 8 of Razborov's survey: degree-d PC refutations when C(m,d) and C(n,d) differ mod p, which gives the matching upper bound p for k = pc, p not dividing c (via Lucas).
+\item Razborov, Proof complexity of pigeonhole principles (2001), Question 7: the fixed-p, fixed-l bounded-degree question for onto-FPHP\textasciicircum{}\{n+p\textasciicircum{}l\}\_n.
+\item Miksa-Nordstrom (JACM 2024): general PC degree method; onto-FPHP with m = n+1 easy (Riis); the case of characteristic dividing the surplus not covered.
+\end{itemize}
+
+Our prior-art search (2026-11-05) covered:
+
+\begin{itemize}
+\item Riis, Sitharam, Non-constant degree lower bounds imply linear degree lower bounds, ECCC TR97-048 (1997), pp. 36-38 and 45-46 (Theorem 33, Propositions 27 and 28), opened 2026-10-29
+\item Beame, Riis, More on the relative strength of counting principles, DIMACS Series 39 (1998), homes.cs.washington.edu/\textasciitilde{}beame/papers/riis.pdf: Theorem 8.1, Lemma 8.7, Section 10, opened 2026-10-27 and 2026-11-01
+\item Razborov, Proof complexity of pigeonhole principles, DLT 2001 (LNCS 2295), people.cs.uchicago.edu/\textasciitilde{}razborov/files/php\_survey.pdf: Theorem 8, Question 7, footnote 5, opened 2026-10-27 and 2026-10-29
+\item Riis, BRICS Report RS-99-29, opened 2026-10-29
+\item Miksa, Nordstrom, A generalized method for proving polynomial calculus degree lower bounds (CCC 2015; JACM 2024; arXiv 1505.01358), opened 2026-10-27
+\item de Rezende et al., Theory of Computing 21(6) (2025), opened 2026-10-29
+\item Lauria et al., Theory of Computing 21(4) (2025), opened 2026-10-27
+\end{itemize}
+
+The checkers' full answers, with every query and file they searched, are published with this finding (\texttt{prior-art/}).
+
+If you know of related work we missed, please open an issue.
+
+This result was found by AI research agents (the autoresearch harness). It was proved in Lean; the proof and check files are included so anyone can re-run them.
+
+\subsection*{How it was produced}
+
+Promoted declaring sources are included under \texttt{checks/library/}.
+
+\section{Claims}
+
+\subsection*{Claim K18}
+
+Lean \texttt{Work.L3.Main.no\_deg4}: for every $n\ge7$, \texttt{ontoFPHP n 8} (onto-FPHP$^{n+8}_n$, functional encoding) has no degree-4 \texttt{PPCRefutation 2} (polynomial calculus over $\mathbb Z/2$, line degree 4). Unconditional.
+
+Status: proved (axioms: propext, Classical.choice, Quot.sound).
+
+\paragraph{Verified.}
+No check scripts.
+
+\paragraph{Evidence.}
+\begin{itemize}
+\item proof \texttt{checks/K18-Main.lean}: Work.L3.Main.no\textbackslash{}\_deg4 --- pass (\texttt{results/K18-4.json})
+\end{itemize}
+
+\paragraph{Prior art.} Partial prior art.
+
+
+\paragraph{Provenance.}
+Run \texttt{20261028-0841}, claims K18, run-folder commit \texttt{19b6167239a90c29b4a3f0ff0f64c79016faf2f8}, published 2026-11-06.
+
+\section{Discussion}
+
+The upper bound from Riis's criterion is 8 \cite{riis1993independence,razborov2001php}, so for
+$k=8$ the degree lies between 5 and 8 for $n\ge7$. This is one case, not a growth result in
+$\ell$. We have not checked the proof of Theorem 33 and cite it for comparison only.
+
+\section{How to verify}
+
+Each finding has its check scripts in \texttt{claims/pc-degree-5-onto-fphp-surplus-8/checks/} of the findings repository. Run each with \texttt{python -I <script>}; it passes if it exits with status 0. Promoted declaring sources are included under \texttt{checks/library/}; publication checks import their modules and inspect theorem axioms. The checks are Python scripts and need the packages of the research image (the image's \texttt{requirements.txt}); the Lean checks also need \texttt{lean}.
+
+\nocite{*}
+\bibliographystyle{plain}
+\bibliography{refs}
+
+\end{document}

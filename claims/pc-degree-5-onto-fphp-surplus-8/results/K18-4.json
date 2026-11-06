@@ -1,0 +1,24 @@
+{
+  "axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "axioms_output": "'Work.L3.Main.no_deg4' depends on axioms: [propext, Classical.choice, Quot.sound]\n",
+  "build_log": "ard_of_run' depends on axioms: [propext, Classical.choice, Quot.sound]\n? [399/401] Replayed Work.L3.Main\ninfo: Work/L3/Main.lean:295:0: 'Work.L3.Main.no_deg4' depends on axioms: [propext, Classical.choice, Quot.sound]\n? [400/401] Replayed Work.L3.Q7\ninfo: Work/L3/Q7.lean:17:0: 'Work.L3.Q7.hard_ge3' depends on axioms: [propext, Classical.choice, Quot.sound]\nBuild completed successfully (401 jobs).\n",
+  "duration_s": 8.396027088165283,
+  "exit": 0,
+  "figures": [],
+  "matches": null,
+  "path": "checks/K18-Main.lean",
+  "reason": "proof built and axioms verified",
+  "result": "pass",
+  "run_at": "2026-10-28T17:36:04.674332+00:00",
+  "stderr_head": "",
+  "stderr_tail": "",
+  "stdout_sha256": "bd2dea9a2a4488f4ae27573d00020c2eaf50aab4481307f5d2df891c9a32aca1",
+  "stdout_tail": "{\"result\": \"pass\", \"reason\": \"proof built and axioms verified\", \"axioms_output\": \"'Work.L3.Main.no_deg4' depends on axioms: [propext, Classical.choice, Quot.sound]\\n\", \"build_log\": \"ard_of_run' depends on axioms: [propext, Classical.choice, Quot.sound]\\n? [399/401] Replayed Work.L3.Main\\ninfo: Work/L3/Main.lean:295:0: 'Work.L3.Main.no_deg4' depends on axioms: [propext, Classical.choice, Quot.sound]\\n? [400/401] Replayed Work.L3.Q7\\ninfo: Work/L3/Q7.lean:17:0: 'Work.L3.Q7.hard_ge3' depends on axioms: [propext, Classical.choice, Quot.sound]\\nBuild completed successfully (401 jobs).\\n\"}\n",
+  "theorem": "Work.L3.Main.no_deg4",
+  "timeout_s": 1800.0,
+  "type": "proof"
+}

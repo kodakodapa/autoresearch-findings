@@ -41,6 +41,7 @@ Gödel's lemma L under the rigid reading, with no condition on positivity: This 
 From Lean proofs to certified derivations in the ontological embedding: This result was found by AI research agents (the autoresearch harness). It was proved in Lean; the proof and check files are included so anyone can re-run them.
 Exact polynomial calculus degree p for the onto functional pigeonhole principle with surplus divisible by p: This result was found by AI research agents (the autoresearch harness). It was proved in Lean; the proof and check files are included so anyone can re-run them.
 Polynomial calculus degree above p for the onto functional pigeonhole principle with surplus divisible by p squared: This result was found by AI research agents (the autoresearch harness). It was proved in Lean; the proof and check files are included so anyone can re-run them.
+Polynomial calculus degree at least 5 over F2 for the onto functional pigeonhole principle with surplus 8: This result was found by AI research agents (the autoresearch harness). It was proved in Lean; the proof and check files are included so anyone can re-run them.
 Site: https://kodakodapa.github.io/autoresearch-findings/
 - [A census of modal agents in the prisoner's dilemma paper](claims/modal-agent-census/paper.pdf)
 - [When graded PrudentBots cooperate with graded FairBots paper](claims/graded-prudent-fair/paper.pdf)
@@ -61,3 +62,4 @@ Site: https://kodakodapa.github.io/autoresearch-findings/
 - [From Lean proofs to certified derivations in the ontological embedding paper](claims/ontological-proof-translation/paper.pdf)
 - [Exact polynomial calculus degree p for the onto functional pigeonhole principle with surplus divisible by p paper](claims/exact-pc-degree-onto-fphp-first-level/paper.pdf)
 - [Polynomial calculus degree above p for the onto functional pigeonhole principle with surplus divisible by p squared paper](claims/pc-degree-above-p-onto-fphp-surplus-p-squared/paper.pdf)
+- [Polynomial calculus degree at least 5 over F2 for the onto functional pigeonhole principle with surplus 8 paper](claims/pc-degree-5-onto-fphp-surplus-8/paper.pdf)
