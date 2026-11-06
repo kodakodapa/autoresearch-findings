@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "A certified map of variants of G\u00f6del's ontological argument"
-scholar: {"citation_title": "A certified map of variants of G\u00f6del's ontological argument", "citation_author": "Lindheim, Bj\u00f6rn", "citation_publication_date": "2026/10/19", "citation_abstract_html_url": "https://kodakodapa.github.io/autoresearch-findings/findings/ontological-variant-map.html", "citation_keywords": "C009", "citation_pdf_url": "https://kodakodapa.github.io/autoresearch-findings/claims/ontological-variant-map/paper.pdf"}
+scholar: {"citation_title": "A certified map of variants of G\u00f6del's ontological argument", "citation_author": "Lindheim, Bj\u00f6rn", "citation_publication_date": "2026/10/19", "citation_abstract_html_url": "https://kodakodapa.github.io/autoresearch-findings/findings/ontological-variant-map.html", "citation_pdf_url": "https://kodakodapa.github.io/autoresearch-findings/claims/ontological-variant-map/paper.pdf"}
 ---
 
 # A certified map of variants of Gödel's ontological argument
@@ -108,7 +108,6 @@ Prior art: partial prior art (answer: `prior-art/R1.md`)
 - run: 20261018-1933
 - claim: K2
 - author: r1 (claude)
-- round: 1
 - run-folder commit: 338871c09385f72bc0f657c9a639ef6a3c825566
 - check results: K2-1.json
 
@@ -131,7 +130,6 @@ Prior art: partial prior art (answer: `prior-art/R5.md`)
 - run: 20261018-1933
 - claim: K7
 - author: r1 (claude)
-- round: 3
 - run-folder commit: 338871c09385f72bc0f657c9a639ef6a3c825566
 - check results: K7-1.json
 
@@ -154,7 +152,6 @@ Prior art: partial prior art (answer: `prior-art/R8.md`)
 - run: 20261018-1933
 - claim: K9
 - author: r1 (claude)
-- round: 4
 - run-folder commit: 338871c09385f72bc0f657c9a639ef6a3c825566
 - check results: K9-1.json
 
@@ -177,7 +174,6 @@ Prior art: partial prior art (answer: `prior-art/R10.md`)
 - run: 20261018-1933
 - claim: K13
 - author: r2 (codex)
-- round: 7
 - run-folder commit: 338871c09385f72bc0f657c9a639ef6a3c825566
 - check results: K13-1.json
 
@@ -201,7 +197,6 @@ Prior art: partial prior art (answer: `prior-art/R12.md`)
 - run: 20261018-1933
 - claim: K15
 - author: r1 (claude)
-- round: 20
 - run-folder commit: 338871c09385f72bc0f657c9a639ef6a3c825566
 - check results: K15-1.json
 
@@ -225,7 +220,6 @@ Prior art: partial prior art (answer: `prior-art/R10.md`)
 - run: 20261018-1933
 - claim: K16
 - author: r1 (claude)
-- round: 20
 - run-folder commit: 338871c09385f72bc0f657c9a639ef6a3c825566
 - check results: K16-1.json
 
@@ -250,7 +244,6 @@ Prior art: partial prior art (answer: `prior-art/R9.md`)
 - run: 20261018-1933
 - claim: K18
 - author: r1 (claude)
-- round: 20
 - run-folder commit: 338871c09385f72bc0f657c9a639ef6a3c825566
 - check results: K18-2.json
 
@@ -274,7 +267,6 @@ Prior art: partial prior art (answer: `prior-art/R7.md`)
 - run: 20261018-1933
 - claim: K21
 - author: r1 (claude)
-- round: 20
 - run-folder commit: 338871c09385f72bc0f657c9a639ef6a3c825566
 - check results: K21-1.json
 
@@ -298,7 +290,6 @@ Prior art: partial prior art (answer: `prior-art/R9.md`)
 - run: 20261018-1933
 - claim: K22
 - author: r1 (claude)
-- round: 20
 - run-folder commit: 338871c09385f72bc0f657c9a639ef6a3c825566
 - check results: K22-1.json
 
@@ -320,7 +311,6 @@ Prior art: partial prior art (answer: `prior-art/R11.md`)
 - run: 20261018-1933
 - claim: K24
 - author: r2 (codex)
-- round: 21
 - run-folder commit: 338871c09385f72bc0f657c9a639ef6a3c825566
 - check results: K24-1.json
 
@@ -342,7 +332,6 @@ Prior art: partial prior art (answer: `prior-art/R11.md`)
 - run: 20261018-1933
 - claim: K28
 - author: r2 (codex)
-- round: 26
 - run-folder commit: 338871c09385f72bc0f657c9a639ef6a3c825566
 - check results: K28-1.json
 

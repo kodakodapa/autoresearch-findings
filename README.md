@@ -6,9 +6,28 @@ answer, and has one post in `blog/`.
 
 ## How to verify a finding
 
-Run each script in `claims/<slug>/checks/` with `python -I <script>`. A script
-passes if it exits with status 0. `claims/<slug>/results/` holds results recorded in the
-run that produced the finding; every script was run again before it was pushed here.
+Each finding's post has a "How to verify" section giving the steps for that finding;
+a programme finding also has it on its page and in `claims/<slug>/claim.md`.
+In general:
+
+- A finding checked by scripts: run each script in `claims/<slug>/checks/` with
+  `python -I <script>`; it passes if it exits with status 0.
+- A programme finding (one with `checks/library/`): install elan, check out the
+  programme library at the commit its "How to verify" section records, build it and
+  run the generated checks:
+
+```sh
+git clone https://github.com/kodakodapa/autoresearch-findings.git
+cd autoresearch-findings
+git checkout <commit> -- programmes/<programme>
+cd programmes/<programme> && lake build
+AR_LIBRARY=$PWD python -I ../../claims/<slug>/checks/lean-K<n>.py
+```
+
+`claims/<slug>/results/` holds the results recorded in the run that produced the
+finding. Checks re-run when a finding was pushed have their output in
+`claims/<slug>/results/publication/`; a finding without that folder was published before
+these records were kept.
 
 
 
@@ -39,27 +58,27 @@ Nominal-free proofs of the theorems Benzmüller's detector flags: This result wa
 A complete calculus for the ℒ-general models of the ontological argument: This result was found by AI research agents (the autoresearch harness). It was partly proved in Lean (claims K1, K2, K3, K4, K6, K7, K8, K9, K10, K11, K12, K13, K14, K15, K16, K17, K18) and partly checked by scripts that run Lean proofs (claims K5); the proof and check files are included so anyone can re-run them.
 Gödel's lemma L under the rigid reading, with no condition on positivity: This result was found by AI research agents (the autoresearch harness). It was partly proved in Lean (claims K1, K3) and partly checked by script (claims K2); the proof and check files are included so anyone can re-run them.
 From Lean proofs to certified derivations in the ontological embedding: This result was found by AI research agents (the autoresearch harness). It was proved in Lean; the proof and check files are included so anyone can re-run them.
-Exact polynomial calculus degree p for the onto functional pigeonhole principle with surplus divisible by p: This result was found by AI research agents (the autoresearch harness). It was proved in Lean; the verification steps below build the published programme library.
 Polynomial calculus degree above p for the onto functional pigeonhole principle with surplus divisible by p squared: This result was found by AI research agents (the autoresearch harness). It was proved in Lean; the verification steps below build the published programme library.
 Polynomial calculus degree at least 5 over F2 for the onto functional pigeonhole principle with surplus 8: This result was found by AI research agents (the autoresearch harness). It was proved in Lean; the verification steps below build the published programme library.
+Exact polynomial calculus degree p for the onto functional pigeonhole principle with surplus divisible by p: This result was found by AI research agents (the autoresearch harness). It was proved in Lean; the verification steps below build the published programme library.
 Site: https://kodakodapa.github.io/autoresearch-findings/
-- [A census of modal agents in the prisoner's dilemma paper](claims/modal-agent-census/paper.pdf)
-- [When graded PrudentBots cooperate with graded FairBots paper](claims/graded-prudent-fair/paper.pdf)
-- [An unexploitable modal agent that defects against itself paper](claims/wn-gate-family/paper.pdf)
-- [Families of unexploitable agents that defect against themselves paper](claims/gate-families/paper.pdf)
-- [A certified map of variants of Gödel's ontological argument paper](claims/ontological-variant-map/paper.pdf)
-- [Settling informal claims about modal agents in Chicken paper](claims/chicken-informal-claims/paper.pdf)
-- [Modal agents in the game of Chicken paper](claims/chicken-modal-agents/paper.pdf)
-- [Three-player modal agents in a public-goods game paper](claims/three-player-modal-agents/paper.pdf)
-- [Blending self-defecting modal agents with FairBot: exact laws paper](claims/blend-window-laws/paper.pdf)
-- [How large must a program be to tell graded FairBots apart? paper](claims/graded-fairbot-separators/paper.pdf)
-- [Unexploitable modal agents that cooperate with themselves: a census paper](claims/only-one-fairbot-census/paper.pdf)
-- [Round robins of modal agents in the Stag Hunt paper](claims/staghunt-round-robin/paper.pdf)
-- [Safe modal agents that coordinate in the Stag Hunt: size 13 is the minimum paper](claims/staghunt-safe-coordinators/paper.pdf)
-- [Nominal-free proofs of the theorems Benzmüller's detector flags paper](claims/ontological-nominal-free-proofs/paper.pdf)
-- [A complete calculus for the ℒ-general models of the ontological argument paper](claims/ontological-lgeneral-semantics/paper.pdf)
-- [Gödel's lemma L under the rigid reading, with no condition on positivity paper](claims/ontological-rigid-l/paper.pdf)
-- [From Lean proofs to certified derivations in the ontological embedding paper](claims/ontological-proof-translation/paper.pdf)
-- [Exact polynomial calculus degree p for the onto functional pigeonhole principle with surplus divisible by p paper](claims/exact-pc-degree-onto-fphp-first-level/paper.pdf)
-- [Polynomial calculus degree above p for the onto functional pigeonhole principle with surplus divisible by p squared paper](claims/pc-degree-above-p-onto-fphp-surplus-p-squared/paper.pdf)
-- [Polynomial calculus degree at least 5 over F2 for the onto functional pigeonhole principle with surplus 8 paper](claims/pc-degree-5-onto-fphp-surplus-8/paper.pdf)
+- [A census of modal agents in the prisoner's dilemma — Finding report](claims/modal-agent-census/paper.pdf)
+- [When graded PrudentBots cooperate with graded FairBots — Finding report](claims/graded-prudent-fair/paper.pdf)
+- [An unexploitable modal agent that defects against itself — Finding report](claims/wn-gate-family/paper.pdf)
+- [Families of unexploitable agents that defect against themselves — Finding report](claims/gate-families/paper.pdf)
+- [A certified map of variants of Gödel's ontological argument — Finding report](claims/ontological-variant-map/paper.pdf)
+- [Settling informal claims about modal agents in Chicken — Finding report](claims/chicken-informal-claims/paper.pdf)
+- [Modal agents in the game of Chicken — Finding report](claims/chicken-modal-agents/paper.pdf)
+- [Three-player modal agents in a public-goods game — Finding report](claims/three-player-modal-agents/paper.pdf)
+- [Blending self-defecting modal agents with FairBot: exact laws — Finding report](claims/blend-window-laws/paper.pdf)
+- [How large must a program be to tell graded FairBots apart? — Finding report](claims/graded-fairbot-separators/paper.pdf)
+- [Unexploitable modal agents that cooperate with themselves: a census — Finding report](claims/only-one-fairbot-census/paper.pdf)
+- [Round robins of modal agents in the Stag Hunt — Finding report](claims/staghunt-round-robin/paper.pdf)
+- [Safe modal agents that coordinate in the Stag Hunt: size 13 is the minimum — Finding report](claims/staghunt-safe-coordinators/paper.pdf)
+- [Nominal-free proofs of the theorems Benzmüller's detector flags — Finding report](claims/ontological-nominal-free-proofs/paper.pdf)
+- [A complete calculus for the ℒ-general models of the ontological argument — Finding report](claims/ontological-lgeneral-semantics/paper.pdf)
+- [Gödel's lemma L under the rigid reading, with no condition on positivity — Finding report](claims/ontological-rigid-l/paper.pdf)
+- [From Lean proofs to certified derivations in the ontological embedding — Finding report](claims/ontological-proof-translation/paper.pdf)
+- [Polynomial calculus degree above p for the onto functional pigeonhole principle with surplus divisible by p squared — Finding report](claims/pc-degree-above-p-onto-fphp-surplus-p-squared/paper.pdf)
+- [Polynomial calculus degree at least 5 over F2 for the onto functional pigeonhole principle with surplus 8 — Finding report](claims/pc-degree-5-onto-fphp-surplus-8/paper.pdf)
+- [Exact polynomial calculus degree p for the onto functional pigeonhole principle with surplus divisible by p — Finding report](claims/exact-pc-degree-onto-fphp-first-level/paper.pdf)

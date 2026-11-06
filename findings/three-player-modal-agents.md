@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Three-player modal agents in a public-goods game"
-scholar: {"citation_title": "Three-player modal agents in a public-goods game", "citation_author": "Lindheim, Bj\u00f6rn", "citation_publication_date": "2026/10/20", "citation_abstract_html_url": "https://kodakodapa.github.io/autoresearch-findings/findings/three-player-modal-agents.html", "citation_keywords": "C046", "citation_pdf_url": "https://kodakodapa.github.io/autoresearch-findings/claims/three-player-modal-agents/paper.pdf"}
+scholar: {"citation_title": "Three-player modal agents in a public-goods game", "citation_author": "Lindheim, Bj\u00f6rn", "citation_publication_date": "2026/10/20", "citation_abstract_html_url": "https://kodakodapa.github.io/autoresearch-findings/findings/three-player-modal-agents.html", "citation_pdf_url": "https://kodakodapa.github.io/autoresearch-findings/claims/three-player-modal-agents/paper.pdf"}
 ---
 
 # Three-player modal agents in a public-goods game
@@ -95,7 +95,6 @@ Prior art: possibly new: no prior art found in the owner's search (answer: `prio
 - run: 20261019-1400
 - claim: K13
 - author: r2 (codex)
-- round: 5
 - run-folder commit: 24c2a64bf8b8cb8be184b4d449ce11068d8270ea
 - check results: K13-1.json, K13-2.json
 
@@ -118,7 +117,6 @@ Prior art: possibly new: no prior art found in the owner's search (answer: `prio
 - run: 20261019-1400
 - claim: K14
 - author: r1 (claude)
-- round: 6
 - run-folder commit: 24c2a64bf8b8cb8be184b4d449ce11068d8270ea
 - check results: K14-1.json
 
@@ -142,7 +140,6 @@ Prior art: possibly new: no prior art found in the owner's search (answer: `prio
 - run: 20261019-1400
 - claim: K16
 - author: r2 (codex)
-- round: 8
 - run-folder commit: 24c2a64bf8b8cb8be184b4d449ce11068d8270ea
 - check results: K16-2.json
 
@@ -165,7 +162,6 @@ Prior art: possibly new: no prior art found in the owner's search (answer: `prio
 - run: 20261019-1400
 - claim: K18
 - author: r1 (claude)
-- round: 13
 - run-folder commit: 24c2a64bf8b8cb8be184b4d449ce11068d8270ea
 - check results: K18-1.json
 
@@ -189,7 +185,6 @@ Prior art: possibly new: no prior art found in the owner's search (answer: `prio
 - run: 20261019-1400
 - claim: K19
 - author: r1 (claude)
-- round: 14
 - run-folder commit: 24c2a64bf8b8cb8be184b4d449ce11068d8270ea
 - check results: K19-1.json, K19-2.json
 
@@ -211,7 +206,6 @@ Prior art: partial prior art (answer: `prior-art/R2.md`)
 - run: 20261019-1400
 - claim: K21
 - author: r2 (codex)
-- round: 15
 - run-folder commit: 24c2a64bf8b8cb8be184b4d449ce11068d8270ea
 - check results: K13-2.json
 

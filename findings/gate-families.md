@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Families of unexploitable agents that defect against themselves"
-scholar: {"citation_title": "Families of unexploitable agents that defect against themselves", "citation_author": "Lindheim, Bj\u00f6rn", "citation_publication_date": "2026/10/18", "citation_abstract_html_url": "https://kodakodapa.github.io/autoresearch-findings/findings/gate-families.html", "citation_keywords": "C046", "citation_pdf_url": "https://kodakodapa.github.io/autoresearch-findings/claims/gate-families/paper.pdf"}
+scholar: {"citation_title": "Families of unexploitable agents that defect against themselves", "citation_author": "Lindheim, Bj\u00f6rn", "citation_publication_date": "2026/10/18", "citation_abstract_html_url": "https://kodakodapa.github.io/autoresearch-findings/findings/gate-families.html", "citation_pdf_url": "https://kodakodapa.github.io/autoresearch-findings/claims/gate-families/paper.pdf"}
 ---
 
 # Families of unexploitable agents that defect against themselves
@@ -106,7 +106,6 @@ Prior art: possibly new: no prior art found in the owner's search (answer: `prio
 - run: 20261017-1126
 - claim: K14
 - author: r1 (claude)
-- round: 29
 - run-folder commit: 662166ecff0651902cc5fcb04bf747c62d795af2
 - check results: K14-2.json
 
@@ -131,7 +130,6 @@ Prior art: possibly new: no prior art found in the owner's search (answer: `prio
 - run: 20261017-1126
 - claim: K18
 - author: r1 (claude)
-- round: 29
 - run-folder commit: 662166ecff0651902cc5fcb04bf747c62d795af2
 - check results: K18-1.json
 
@@ -154,7 +152,6 @@ Prior art: possibly new: no prior art found in the owner's search (answer: `prio
 - run: 20261017-1126
 - claim: K20
 - author: r2 (codex)
-- round: 14
 - run-folder commit: 662166ecff0651902cc5fcb04bf747c62d795af2
 - check results: K20-1.json
 
@@ -179,7 +176,6 @@ Prior art: possibly new: no prior art found in the owner's search (answer: `prio
 - run: 20261017-1126
 - claim: K21
 - author: r1 (claude)
-- round: 23
 - run-folder commit: 662166ecff0651902cc5fcb04bf747c62d795af2
 - check results: K21-1.json
 
@@ -202,7 +198,6 @@ Prior art: possibly new: no prior art found in the owner's search (answer: `prio
 - run: 20261017-1126
 - claim: K22
 - author: r2 (codex)
-- round: 15
 - run-folder commit: 662166ecff0651902cc5fcb04bf747c62d795af2
 - check results: K22-1.json
 
@@ -227,7 +222,6 @@ Prior art: possibly new: no prior art found in the owner's search (answer: `prio
 - run: 20261017-1126
 - claim: K23
 - author: r1 (claude)
-- round: 22
 - run-folder commit: 662166ecff0651902cc5fcb04bf747c62d795af2
 - check results: K23-1.json, K23-2.json
 

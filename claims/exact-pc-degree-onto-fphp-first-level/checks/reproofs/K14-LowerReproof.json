@@ -1,0 +1,24 @@
+{
+  "axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "axioms_output": "'Work.LowerReproof.bridge' depends on axioms: [propext, Classical.choice, Quot.sound]\n",
+  "build_log": " Quot.sound]\ninfo: Work/Audit.lean:6:0: 'Peer.th.Peel.pc_degree_ge_p' depends on axioms: [propext, Classical.choice, Quot.sound]\ninfo: Work/Audit.lean:7:0: 'Peer.th.Lucas.pc_degree_exact' depends on axioms: [propext, Classical.choice, Quot.sound]\ninfo: Work/Audit.lean:8:0: 'Peer.th.Lucas.separation' depends on axioms: [propext, Classical.choice, Quot.sound]\nBuild completed successfully (52 jobs).\n",
+  "duration_s": 19.175964832305908,
+  "exit": 0,
+  "figures": [],
+  "matches": "Work.Peel.pc_degree_ge_p",
+  "path": "checks/reproofs/K14-LowerReproof.lean",
+  "reason": "proof built and axioms verified",
+  "result": "pass",
+  "run_at": "2026-10-27T10:09:07.776013+00:00",
+  "stderr_head": "",
+  "stderr_tail": "",
+  "stdout_sha256": "42b527744296cc5f0e68c67cf1ab4886204fbb4931b2cff70af71ba866c04366",
+  "stdout_tail": "{\"result\": \"pass\", \"reason\": \"proof built and axioms verified\", \"axioms_output\": \"'Work.LowerReproof.bridge' depends on axioms: [propext, Classical.choice, Quot.sound]\\n\", \"build_log\": \" Quot.sound]\\ninfo: Work/Audit.lean:6:0: 'Peer.th.Peel.pc_degree_ge_p' depends on axioms: [propext, Classical.choice, Quot.sound]\\ninfo: Work/Audit.lean:7:0: 'Peer.th.Lucas.pc_degree_exact' depends on axioms: [propext, Classical.choice, Quot.sound]\\ninfo: Work/Audit.lean:8:0: 'Peer.th.Lucas.separation' depends on axioms: [propext, Classical.choice, Quot.sound]\\nBuild completed successfully (52 jobs).\\n\"}\n",
+  "theorem": "Work.LowerReproof.bridge",
+  "timeout_s": 1800.0,
+  "type": "proof"
+}

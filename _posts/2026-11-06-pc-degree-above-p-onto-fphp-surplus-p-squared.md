@@ -2,7 +2,7 @@
 layout: post
 title: "Polynomial calculus degree above p for the onto functional pigeonhole principle with surplus divisible by p squared"
 date: 2026-11-06
-scholar: {"citation_title": "Polynomial calculus degree above p for the onto functional pigeonhole principle with surplus divisible by p squared", "citation_author": "Lindheim, Bj\u00f6rn", "citation_publication_date": "2026/11/06", "citation_abstract_html_url": "https://kodakodapa.github.io/autoresearch-findings/findings/pc-degree-above-p-onto-fphp-surplus-p-squared.html", "citation_keywords": "C3", "citation_pdf_url": "https://kodakodapa.github.io/autoresearch-findings/claims/pc-degree-above-p-onto-fphp-surplus-p-squared/paper.pdf", "citation_doi": "10.5281/zenodo.24012220"}
+scholar: {"citation_title": "Polynomial calculus degree above p for the onto functional pigeonhole principle with surplus divisible by p squared", "citation_author": "Lindheim, Bj\u00f6rn", "citation_publication_date": "2026/11/06", "citation_abstract_html_url": "https://kodakodapa.github.io/autoresearch-findings/findings/pc-degree-above-p-onto-fphp-surplus-p-squared.html", "citation_pdf_url": "https://kodakodapa.github.io/autoresearch-findings/claims/pc-degree-above-p-onto-fphp-surplus-p-squared/paper.pdf", "citation_doi": "10.5281/zenodo.24012220"}
 ---
 
 ## Summary
@@ -79,7 +79,7 @@ If you know of related work we missed, please open an issue.
 
 This result was found by AI research agents (the autoresearch harness). It was proved in Lean; the verification steps below build the published programme library.
 
-Promoted declaring sources are included under `checks/library/`.
+The declaring Lean sources are in `checks/library/`.
 
 **K1.** For every prime $p$, $\mathrm{SquareLiftAssumption}(p)$ holds, i.e. there exists an integral square lift on $2p-1$ rows and columns.
 

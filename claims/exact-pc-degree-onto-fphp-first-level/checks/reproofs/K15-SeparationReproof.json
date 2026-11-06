@@ -1,0 +1,24 @@
+{
+  "axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "axioms_output": "'Work.SeparationReproof.bridge' depends on axioms: [propext, Classical.choice, Quot.sound]\n",
+  "build_log": "0: 'Peer.th.Lucas.pc_degree_exact' depends on axioms: [propext, Classical.choice, Quot.sound]\ninfo: Work/Audit.lean:8:0: 'Peer.th.Lucas.separation' depends on axioms: [propext, Classical.choice, Quot.sound]\n? [56/57] Built Work.F3Reproof (1.2s)\ninfo: Work/F3Reproof.lean:27:0: 'Work.F3Reproof.bridge' depends on axioms: [propext, Classical.choice, Quot.sound]\nBuild completed successfully (57 jobs).\n",
+  "duration_s": 19.170926809310913,
+  "exit": 0,
+  "figures": [],
+  "matches": "Work.Lucas.separation",
+  "path": "checks/reproofs/K15-SeparationReproof.lean",
+  "reason": "proof built and axioms verified",
+  "result": "pass",
+  "run_at": "2026-10-27T11:51:14.133935+00:00",
+  "stderr_head": "",
+  "stderr_tail": "",
+  "stdout_sha256": "338eac07510d51f61635b8fa4e8680c477db4c084a1fdb7147b0daa5f591d5e7",
+  "stdout_tail": "{\"result\": \"pass\", \"reason\": \"proof built and axioms verified\", \"axioms_output\": \"'Work.SeparationReproof.bridge' depends on axioms: [propext, Classical.choice, Quot.sound]\\n\", \"build_log\": \"0: 'Peer.th.Lucas.pc_degree_exact' depends on axioms: [propext, Classical.choice, Quot.sound]\\ninfo: Work/Audit.lean:8:0: 'Peer.th.Lucas.separation' depends on axioms: [propext, Classical.choice, Quot.sound]\\n? [56/57] Built Work.F3Reproof (1.2s)\\ninfo: Work/F3Reproof.lean:27:0: 'Work.F3Reproof.bridge' depends on axioms: [propext, Classical.choice, Quot.sound]\\nBuild completed successfully (57 jobs).\\n\"}\n",
+  "theorem": "Work.SeparationReproof.bridge",
+  "timeout_s": 1800.0,
+  "type": "proof"
+}

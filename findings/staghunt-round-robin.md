@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Round robins of modal agents in the Stag Hunt"
-scholar: {"citation_title": "Round robins of modal agents in the Stag Hunt", "citation_author": "Lindheim, Bj\u00f6rn", "citation_publication_date": "2026/10/21", "citation_abstract_html_url": "https://kodakodapa.github.io/autoresearch-findings/findings/staghunt-round-robin.html", "citation_keywords": "C046", "citation_pdf_url": "https://kodakodapa.github.io/autoresearch-findings/claims/staghunt-round-robin/paper.pdf"}
+scholar: {"citation_title": "Round robins of modal agents in the Stag Hunt", "citation_author": "Lindheim, Bj\u00f6rn", "citation_publication_date": "2026/10/21", "citation_abstract_html_url": "https://kodakodapa.github.io/autoresearch-findings/findings/staghunt-round-robin.html", "citation_pdf_url": "https://kodakodapa.github.io/autoresearch-findings/claims/staghunt-round-robin/paper.pdf"}
 ---
 
 # Round robins of modal agents in the Stag Hunt
@@ -85,7 +85,6 @@ Prior art: possibly new: no prior art found in the owner's search (answer: `prio
 - run: 20261021-0517
 - claim: K15
 - author: r1 (claude)
-- round: 6
 - run-folder commit: 580565ffd3b3f1a8ca3ffa0407c949c8d724865c
 - check results: K15-1.json
 
@@ -107,7 +106,6 @@ Prior art: possibly new: no prior art found in the owner's search (answer: `prio
 - run: 20261021-0517
 - claim: K6
 - author: r2 (codex)
-- round: 1
 - run-folder commit: 580565ffd3b3f1a8ca3ffa0407c949c8d724865c
 - check results: K6-1.json
 
@@ -129,7 +127,6 @@ Prior art: possibly new: no prior art found in the owner's search (answer: `prio
 - run: 20261021-0517
 - claim: K14
 - author: r2 (codex)
-- round: 5
 - run-folder commit: 580565ffd3b3f1a8ca3ffa0407c949c8d724865c
 - check results: K14-1.json
 
@@ -151,7 +148,6 @@ Prior art: possibly new: no prior art found in the owner's search (answer: `prio
 - run: 20261021-0517
 - claim: K5
 - author: r2 (codex)
-- round: 1
 - run-folder commit: 580565ffd3b3f1a8ca3ffa0407c949c8d724865c
 - check results: K6-1.json
 
@@ -173,7 +169,6 @@ Prior art: possibly new: no prior art found in the owner's search (answer: `prio
 - run: 20261021-0517
 - claim: K7
 - author: r1 (claude)
-- round: 2
 - run-folder commit: 580565ffd3b3f1a8ca3ffa0407c949c8d724865c
 - check results: K7-1.json
 
@@ -195,7 +190,6 @@ Prior art: possibly new: no prior art found in the owner's search (answer: `prio
 - run: 20261021-0517
 - claim: K4
 - author: r2 (codex)
-- round: 1
 - run-folder commit: 580565ffd3b3f1a8ca3ffa0407c949c8d724865c
 - check results: K6-1.json
 
@@ -218,7 +212,6 @@ Prior art: possibly new: no prior art found in the owner's search (answer: `prio
 - run: 20261021-0517
 - claim: K8
 - author: r2 (codex)
-- round: 2
 - run-folder commit: 580565ffd3b3f1a8ca3ffa0407c949c8d724865c
 - check results: K8-2.json
 
@@ -242,7 +235,6 @@ Prior art: possibly new: no prior art found in the owner's search (answer: `prio
 - run: 20261021-0517
 - claim: K3
 - author: r1 (claude)
-- round: 1
 - run-folder commit: 580565ffd3b3f1a8ca3ffa0407c949c8d724865c
 - check results: K2-2.json, K3-2.json
 
@@ -265,7 +257,6 @@ Prior art: possibly new: no prior art found in the owner's search (answer: `prio
 - run: 20261021-0517
 - claim: K17
 - author: r1 (claude)
-- round: 8
 - run-folder commit: 580565ffd3b3f1a8ca3ffa0407c949c8d724865c
 - check results: K17-1.json
 
@@ -288,7 +279,6 @@ Prior art: possibly new: no prior art found in the owner's search (answer: `prio
 - run: 20261021-0517
 - claim: K18
 - author: r1 (claude)
-- round: 9
 - run-folder commit: 580565ffd3b3f1a8ca3ffa0407c949c8d724865c
 - check results: K18-1.json
 

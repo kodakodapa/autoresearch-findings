@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Polynomial calculus degree above p for the onto functional pigeonhole principle with surplus divisible by p squared"
-scholar: {"citation_title": "Polynomial calculus degree above p for the onto functional pigeonhole principle with surplus divisible by p squared", "citation_author": "Lindheim, Bj\u00f6rn", "citation_publication_date": "2026/11/06", "citation_abstract_html_url": "https://kodakodapa.github.io/autoresearch-findings/findings/pc-degree-above-p-onto-fphp-surplus-p-squared.html", "citation_keywords": "C3", "citation_pdf_url": "https://kodakodapa.github.io/autoresearch-findings/claims/pc-degree-above-p-onto-fphp-surplus-p-squared/paper.pdf", "citation_doi": "10.5281/zenodo.24012220"}
+scholar: {"citation_title": "Polynomial calculus degree above p for the onto functional pigeonhole principle with surplus divisible by p squared", "citation_author": "Lindheim, Bj\u00f6rn", "citation_publication_date": "2026/11/06", "citation_abstract_html_url": "https://kodakodapa.github.io/autoresearch-findings/findings/pc-degree-above-p-onto-fphp-surplus-p-squared.html", "citation_pdf_url": "https://kodakodapa.github.io/autoresearch-findings/claims/pc-degree-above-p-onto-fphp-surplus-p-squared/paper.pdf", "citation_doi": "10.5281/zenodo.24012220"}
 ---
 
 # Polynomial calculus degree above p for the onto functional pigeonhole principle with surplus divisible by p squared
@@ -78,7 +78,7 @@ If you know of related work we missed, please open an issue.
 
 This result was found by AI research agents (the autoresearch harness). It was proved in Lean; the verification steps below build the published programme library.
 
-Promoted declaring sources are included under `checks/library/`.
+The declaring Lean sources are in `checks/library/`.
 
 ## K1
 
@@ -98,7 +98,6 @@ Prior art: partial prior art (answer: `prior-art/R6.md`)
 - run: 20261102-1249
 - claim: K1
 - author: pr (codex)
-- round: 1
 - run-folder commit: 359fa20477b8d26a5d2ef8a16e5465474e74b452
 - check results: K1-1.json
 
@@ -120,7 +119,6 @@ Prior art: partial prior art (answer: `prior-art/R6.md`)
 - run: 20261102-1249
 - claim: K2
 - author: pr (codex)
-- round: 1
 - run-folder commit: 359fa20477b8d26a5d2ef8a16e5465474e74b452
 - check results: K2-1.json
 
@@ -142,7 +140,6 @@ Prior art: partial prior art (answer: `prior-art/R6.md`)
 - run: 20261102-1249
 - claim: K3
 - author: pr (codex)
-- round: 1
 - run-folder commit: 359fa20477b8d26a5d2ef8a16e5465474e74b452
 - check results: K3-1.json
 
@@ -164,7 +161,6 @@ Prior art: partial prior art (answer: `prior-art/R6.md`)
 - run: 20261102-1249
 - claim: K4
 - author: pr (codex)
-- round: 1
 - run-folder commit: 359fa20477b8d26a5d2ef8a16e5465474e74b452
 - check results: K4-1.json
 
@@ -186,7 +182,6 @@ Prior art: partial prior art (answer: `prior-art/R6.md`)
 - run: 20261102-1249
 - claim: K5
 - author: pr (codex)
-- round: 1
 - run-folder commit: 359fa20477b8d26a5d2ef8a16e5465474e74b452
 - check results: K5-1.json
 
@@ -208,7 +203,6 @@ Prior art: partial prior art (answer: `prior-art/R6.md`)
 - run: 20261102-1249
 - claim: K6
 - author: pr (codex)
-- round: 1
 - run-folder commit: 359fa20477b8d26a5d2ef8a16e5465474e74b452
 - check results: K6-1.json
 

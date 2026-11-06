@@ -1,0 +1,24 @@
+{
+  "axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "axioms_output": "'Work.ExactReproof.bridge' depends on axioms: [propext, Classical.choice, Quot.sound]\n",
+  "build_log": " Quot.sound]\ninfo: Work/Audit.lean:6:0: 'Peer.th.Peel.pc_degree_ge_p' depends on axioms: [propext, Classical.choice, Quot.sound]\ninfo: Work/Audit.lean:7:0: 'Peer.th.Lucas.pc_degree_exact' depends on axioms: [propext, Classical.choice, Quot.sound]\ninfo: Work/Audit.lean:8:0: 'Peer.th.Lucas.separation' depends on axioms: [propext, Classical.choice, Quot.sound]\nBuild completed successfully (52 jobs).\n",
+  "duration_s": 22.12797498703003,
+  "exit": 0,
+  "figures": [],
+  "matches": "Work.Lucas.pc_degree_exact",
+  "path": "checks/reproofs/K13-ExactReproof.lean",
+  "reason": "proof built and axioms verified",
+  "result": "pass",
+  "run_at": "2026-10-27T10:08:45.637681+00:00",
+  "stderr_head": "",
+  "stderr_tail": "",
+  "stdout_sha256": "63c68e03091e7ea9cabd98a75d6e71530f9bb7386490fea2d791f4659ba27235",
+  "stdout_tail": "{\"result\": \"pass\", \"reason\": \"proof built and axioms verified\", \"axioms_output\": \"'Work.ExactReproof.bridge' depends on axioms: [propext, Classical.choice, Quot.sound]\\n\", \"build_log\": \" Quot.sound]\\ninfo: Work/Audit.lean:6:0: 'Peer.th.Peel.pc_degree_ge_p' depends on axioms: [propext, Classical.choice, Quot.sound]\\ninfo: Work/Audit.lean:7:0: 'Peer.th.Lucas.pc_degree_exact' depends on axioms: [propext, Classical.choice, Quot.sound]\\ninfo: Work/Audit.lean:8:0: 'Peer.th.Lucas.separation' depends on axioms: [propext, Classical.choice, Quot.sound]\\nBuild completed successfully (52 jobs).\\n\"}\n",
+  "theorem": "Work.ExactReproof.bridge",
+  "timeout_s": 1800.0,
+  "type": "proof"
+}

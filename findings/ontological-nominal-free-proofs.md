@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Nominal-free proofs of the theorems Benzm\u00fcller's detector flags"
-scholar: {"citation_title": "Nominal-free proofs of the theorems Benzm\u00fcller's detector flags", "citation_author": "Lindheim, Bj\u00f6rn", "citation_publication_date": "2026/10/24", "citation_abstract_html_url": "https://kodakodapa.github.io/autoresearch-findings/findings/ontological-nominal-free-proofs.html", "citation_keywords": "*", "citation_pdf_url": "https://kodakodapa.github.io/autoresearch-findings/claims/ontological-nominal-free-proofs/paper.pdf", "citation_doi": "10.5281/zenodo.23795772"}
+scholar: {"citation_title": "Nominal-free proofs of the theorems Benzm\u00fcller's detector flags", "citation_author": "Lindheim, Bj\u00f6rn", "citation_publication_date": "2026/10/24", "citation_abstract_html_url": "https://kodakodapa.github.io/autoresearch-findings/findings/ontological-nominal-free-proofs.html", "citation_pdf_url": "https://kodakodapa.github.io/autoresearch-findings/claims/ontological-nominal-free-proofs/paper.pdf", "citation_doi": "10.5281/zenodo.23795772"}
 ---
 
 # Nominal-free proofs of the theorems Benzmüller's detector flags
@@ -132,7 +132,6 @@ Prior art: partial prior art (answer: `prior-art/R2.md`)
 - run: 20261022-1314
 - claim: K1
 - author: pr (claude)
-- round: 1
 - run-folder commit: 7e239585d6c77726d88783754d4bfa7d3c3bf197
 - check results: K1-1.json, K1-11.json, K1-2.json, K1-3.json, K1-4.json, K1-5.json, K1-6.json, K1-7.json, K1-8.json
 
@@ -163,7 +162,6 @@ Prior art: partial prior art (answer: `prior-art/R2.md`)
 - run: 20261022-1314
 - claim: K2
 - author: pr (claude)
-- round: 1
 - run-folder commit: 7e239585d6c77726d88783754d4bfa7d3c3bf197
 - check results: K2-1.json, K2-11.json, K2-2.json, K2-3.json, K2-4.json, K2-5.json, K2-6.json, K2-7.json, K2-8.json
 
@@ -188,7 +186,6 @@ Prior art: partial prior art (answer: `prior-art/R3.md`)
 - run: 20261022-1314
 - claim: K3
 - author: pr (claude)
-- round: 2
 - run-folder commit: 7e239585d6c77726d88783754d4bfa7d3c3bf197
 - check results: K3-1.json, K3-2.json, K3-3.json, K3-4.json
 
@@ -225,7 +222,6 @@ Prior art: partial prior art (answer: `prior-art/R4.md`)
 - run: 20261022-1314
 - claim: K4
 - author: pr (claude)
-- round: 5
 - run-folder commit: 7e239585d6c77726d88783754d4bfa7d3c3bf197
 - check results: K4-16.json, K4-17.json, K4-18.json, K4-19.json, K4-20.json, K4-21.json, K4-22.json, K4-23.json, K4-24.json, K4-25.json, K4-26.json, K4-27.json, K4-28.json, K4-29.json, K4-30.json
 
@@ -259,7 +255,6 @@ Prior art: partial prior art (answer: `prior-art/R3.md`)
 - run: 20261022-1314
 - claim: K5
 - author: pr (claude)
-- round: 2
 - run-folder commit: 7e239585d6c77726d88783754d4bfa7d3c3bf197
 - check results: K5-1.json, K5-10.json, K5-11.json, K5-12.json, K5-13.json, K5-2.json, K5-3.json, K5-4.json, K5-5.json, K5-6.json, K5-7.json, K5-8.json, K5-9.json
 
@@ -284,7 +279,6 @@ Prior art: partial prior art (answer: `prior-art/R3.md`)
 - run: 20261022-1314
 - claim: K6
 - author: pr (claude)
-- round: 2
 - run-folder commit: 7e239585d6c77726d88783754d4bfa7d3c3bf197
 - check results: K6-1.json, K6-2.json, K6-3.json, K6-4.json
 
@@ -311,7 +305,6 @@ Prior art: partial prior art (answer: `prior-art/R3.md`)
 - run: 20261022-1314
 - claim: K7
 - author: pr (claude)
-- round: 2
 - run-folder commit: 7e239585d6c77726d88783754d4bfa7d3c3bf197
 - check results: K7-1.json, K7-2.json, K7-3.json, K7-4.json, K7-5.json, K7-6.json
 
@@ -335,7 +328,6 @@ Prior art: partial prior art (answer: `prior-art/R3.md`)
 - run: 20261022-1314
 - claim: K8
 - author: pr (claude)
-- round: 2
 - run-folder commit: 7e239585d6c77726d88783754d4bfa7d3c3bf197
 - check results: K8-1.json, K8-2.json, K8-3.json
 
@@ -357,7 +349,6 @@ Prior art: partial prior art (answer: `prior-art/R3.md`)
 - run: 20261022-1314
 - claim: K11
 - author: pr (claude)
-- round: 3
 - run-folder commit: 7e239585d6c77726d88783754d4bfa7d3c3bf197
 - check results: K11-1.json
 
@@ -381,7 +372,6 @@ Prior art: partial prior art (answer: `prior-art/R3.md`)
 - run: 20261022-1314
 - claim: K12
 - author: pr (claude)
-- round: 3
 - run-folder commit: 7e239585d6c77726d88783754d4bfa7d3c3bf197
 - check results: K12-1.json, K12-2.json, K12-3.json
 
@@ -406,7 +396,6 @@ Prior art: partial prior art (answer: `prior-art/R4.md`)
 - run: 20261022-1314
 - claim: K13
 - author: pr (claude)
-- round: 5
 - run-folder commit: 7e239585d6c77726d88783754d4bfa7d3c3bf197
 - check results: K13-1.json, K13-2.json, K13-3.json, K13-4.json
 
@@ -430,7 +419,6 @@ Prior art: possibly new: no prior art found in the owner's search (answer: `prio
 - run: 20261022-1314
 - claim: K14
 - author: pr (claude)
-- round: 6
 - run-folder commit: 7e239585d6c77726d88783754d4bfa7d3c3bf197
 - check results: K14-1.json, K14-2.json, K14-3.json
 

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "From Lean proofs to certified derivations in the ontological embedding"
-scholar: {"citation_title": "From Lean proofs to certified derivations in the ontological embedding", "citation_author": "Lindheim, Bj\u00f6rn", "citation_publication_date": "2026/10/24", "citation_abstract_html_url": "https://kodakodapa.github.io/autoresearch-findings/findings/ontological-proof-translation.html", "citation_keywords": "H", "citation_pdf_url": "https://kodakodapa.github.io/autoresearch-findings/claims/ontological-proof-translation/paper.pdf", "citation_doi": "10.5281/zenodo.23795779"}
+scholar: {"citation_title": "From Lean proofs to certified derivations in the ontological embedding", "citation_author": "Lindheim, Bj\u00f6rn", "citation_publication_date": "2026/10/24", "citation_abstract_html_url": "https://kodakodapa.github.io/autoresearch-findings/findings/ontological-proof-translation.html", "citation_pdf_url": "https://kodakodapa.github.io/autoresearch-findings/claims/ontological-proof-translation/paper.pdf", "citation_doi": "10.5281/zenodo.23795779"}
 ---
 
 # From Lean proofs to certified derivations in the ontological embedding
@@ -92,7 +92,7 @@ Evidence:
 - proof `checks/K1-TranslateRigid.lean`: Programme.Run6.H.LR.valid\_god — pass (`results/K1-4.json`)
 - proof `checks/K1-TranslateRigid.lean`: Programme.Run6.H.LR.of\_deep — pass (`results/K1-5.json`)
 - proof `checks/K1-TranslateRigid.lean`: Programme.Run6.H.LR.of\_struct — pass (`results/K1-6.json`)
-- reasoning: Structural image check (the theorist's C8). For each sentence of $T$ read off module axiom $X$ with $n$ outer binders the file proves `N.struct<k>: type_of% @X = shV R existsAt P n N.ax<k> ()`, and `N.struct_φ` for the statement, by `rfl` after δ-unfolding the module side; the only rewrites allowed are `(a ↔ b) = ((a → b) ∧ (b → a))` and `(∃ v, R w v ∧ B v) = ¬∀ v, R w v → ¬B v`, identities of Lean propositions. `shR` is the unguarded structural reading, one Lean connective per constructor, so an extra conjunct (the theorist's `phiSep` mutant, rejected by a `fail_if_success` test in TranslateV2Mod.lean), a dropped guard or a swapped quantifier fails. `N.of_struct` re-proves the module statement from the deep certificate through `of_valid_full`, `shV_iff` and these equations only, so $T$ and $\varphi$ are the module's sentences up to definitional unfolding, not just up to full-structure equivalence (the theorist's `full_check_blind`).
+- reasoning: Structural image check (the theorist's C8). For each sentence of $T$ read off module axiom $X$ with $n$ outer binders the file proves `N.struct<k>: type_of% @X = shV R existsAt P n N.ax<k> `, and `N.struct_φ` for the statement, by `rfl` after δ-unfolding the module side; the only rewrites allowed are `(a ↔ b) = ((a → b) ∧ (b → a))` and `(∃ v, R w v ∧ B v) = ¬∀ v, R w v → ¬B v`, identities of Lean propositions. `shR` is the unguarded structural reading, one Lean connective per constructor, so an extra conjunct (the theorist's `phiSep` mutant, rejected by a `fail_if_success` test in TranslateV2Mod.lean), a dropped guard or a swapped quantifier fails. `N.of_struct` re-proves the module statement from the deep certificate through `of_valid_full`, `shV_iff` and these equations only, so $T$ and $\varphi$ are the module's sentences up to definitional unfolding, not just up to full-structure equivalence (the theorist's `full_check_blind`).
 
 Prior art: partial prior art (answer: `prior-art/R1.md`)
 
@@ -101,7 +101,6 @@ Prior art: partial prior art (answer: `prior-art/R1.md`)
 - run: 20261023-0556
 - claim: K1
 - author: pr (claude)
-- round: 6
 - run-folder commit: ade4f20858f2a3b683193e13de0d89273d57c4c9
 - check results: K1-4.json, K1-5.json, K1-6.json
 
@@ -117,7 +116,7 @@ Evidence:
 - proof `checks/K3-TranslateTwo.lean`: Programme.Run6.H.A1G.valid\_ax1gen — pass (`results/K3-4.json`)
 - proof `checks/K3-TranslateTwo.lean`: Programme.Run6.H.A1G.of\_deep — pass (`results/K3-3.json`)
 - proof `checks/K3-TranslateTwo.lean`: Programme.Run6.H.A1G.of\_struct — pass (`results/K3-5.json`)
-- reasoning: Structural image check (the theorist's C8). For each sentence of $T$ read off module axiom $X$ with $n$ outer binders the file proves `N.struct<k>: type_of% @X = shV R existsAt P n N.ax<k> ()`, and `N.struct_φ` for the statement, by `rfl` after δ-unfolding the module side; the only rewrites allowed are `(a ↔ b) = ((a → b) ∧ (b → a))` and `(∃ v, R w v ∧ B v) = ¬∀ v, R w v → ¬B v`, identities of Lean propositions. `shR` is the unguarded structural reading, one Lean connective per constructor, so an extra conjunct (the theorist's `phiSep` mutant, rejected by a `fail_if_success` test in TranslateV2Mod.lean), a dropped guard or a swapped quantifier fails. `N.of_struct` re-proves the module statement from the deep certificate through `of_valid_full`, `shV_iff` and these equations only, so $T$ and $\varphi$ are the module's sentences up to definitional unfolding, not just up to full-structure equivalence (the theorist's `full_check_blind`).
+- reasoning: Structural image check (the theorist's C8). For each sentence of $T$ read off module axiom $X$ with $n$ outer binders the file proves `N.struct<k>: type_of% @X = shV R existsAt P n N.ax<k> `, and `N.struct_φ` for the statement, by `rfl` after δ-unfolding the module side; the only rewrites allowed are `(a ↔ b) = ((a → b) ∧ (b → a))` and `(∃ v, R w v ∧ B v) = ¬∀ v, R w v → ¬B v`, identities of Lean propositions. `shR` is the unguarded structural reading, one Lean connective per constructor, so an extra conjunct (the theorist's `phiSep` mutant, rejected by a `fail_if_success` test in TranslateV2Mod.lean), a dropped guard or a swapped quantifier fails. `N.of_struct` re-proves the module statement from the deep certificate through `of_valid_full`, `shV_iff` and these equations only, so $T$ and $\varphi$ are the module's sentences up to definitional unfolding, not just up to full-structure equivalence (the theorist's `full_check_blind`).
 
 Prior art: partial prior art (answer: `prior-art/R1.md`)
 
@@ -126,7 +125,6 @@ Prior art: partial prior art (answer: `prior-art/R1.md`)
 - run: 20261023-0556
 - claim: K3
 - author: pr (claude)
-- round: 3
 - run-folder commit: ade4f20858f2a3b683193e13de0d89273d57c4c9
 - check results: K3-3.json, K3-4.json, K3-5.json
 
@@ -142,7 +140,7 @@ Evidence:
 - proof `checks/K4-TranslateV3.lean`: Programme.Run6.H.A1G3.valid\_ax1gen — pass (`results/K4-4.json`)
 - proof `checks/K4-TranslateV3.lean`: Programme.Run6.H.A1G3.of\_deep — pass (`results/K4-3.json`)
 - proof `checks/K4-TranslateV3.lean`: Programme.Run6.H.A1G3.of\_struct — pass (`results/K4-5.json`)
-- reasoning: Structural image check (the theorist's C8). For each sentence of $T$ read off module axiom $X$ with $n$ outer binders the file proves `N.struct<k>: type_of% @X = shV R existsAt P n N.ax<k> ()`, and `N.struct_φ` for the statement, by `rfl` after δ-unfolding the module side; the only rewrites allowed are `(a ↔ b) = ((a → b) ∧ (b → a))` and `(∃ v, R w v ∧ B v) = ¬∀ v, R w v → ¬B v`, identities of Lean propositions. `shR` is the unguarded structural reading, one Lean connective per constructor, so an extra conjunct (the theorist's `phiSep` mutant, rejected by a `fail_if_success` test in TranslateV2Mod.lean), a dropped guard or a swapped quantifier fails. `N.of_struct` re-proves the module statement from the deep certificate through `of_valid_full`, `shV_iff` and these equations only, so $T$ and $\varphi$ are the module's sentences up to definitional unfolding, not just up to full-structure equivalence (the theorist's `full_check_blind`).
+- reasoning: Structural image check (the theorist's C8). For each sentence of $T$ read off module axiom $X$ with $n$ outer binders the file proves `N.struct<k>: type_of% @X = shV R existsAt P n N.ax<k> `, and `N.struct_φ` for the statement, by `rfl` after δ-unfolding the module side; the only rewrites allowed are `(a ↔ b) = ((a → b) ∧ (b → a))` and `(∃ v, R w v ∧ B v) = ¬∀ v, R w v → ¬B v`, identities of Lean propositions. `shR` is the unguarded structural reading, one Lean connective per constructor, so an extra conjunct (the theorist's `phiSep` mutant, rejected by a `fail_if_success` test in TranslateV2Mod.lean), a dropped guard or a swapped quantifier fails. `N.of_struct` re-proves the module statement from the deep certificate through `of_valid_full`, `shV_iff` and these equations only, so $T$ and $\varphi$ are the module's sentences up to definitional unfolding, not just up to full-structure equivalence (the theorist's `full_check_blind`).
 
 Prior art: partial prior art (answer: `prior-art/R1.md`)
 
@@ -151,7 +149,6 @@ Prior art: partial prior art (answer: `prior-art/R1.md`)
 - run: 20261023-0556
 - claim: K4
 - author: pr (claude)
-- round: 3
 - run-folder commit: ade4f20858f2a3b683193e13de0d89273d57c4c9
 - check results: K4-3.json, K4-4.json, K4-5.json
 
@@ -167,7 +164,7 @@ Evidence:
 - proof `checks/K5-TranslateV2Mod.lean`: Programme.Run6.H.MCU.valid — pass (`results/K5-3.json`)
 - proof `checks/K5-TranslateV2Mod.lean`: Programme.Run6.H.MCU.of\_deep — pass (`results/K5-2.json`)
 - proof `checks/K5-TranslateV2Mod.lean`: Programme.Run6.H.MCU.of\_struct — pass (`results/K5-4.json`)
-- reasoning: Structural image check (the theorist's C8). For each sentence of $T$ read off module axiom $X$ with $n$ outer binders the file proves `N.struct<k>: type_of% @X = shV R existsAt P n N.ax<k> ()`, and `N.struct_φ` for the statement, by `rfl` after δ-unfolding the module side; the only rewrites allowed are `(a ↔ b) = ((a → b) ∧ (b → a))` and `(∃ v, R w v ∧ B v) = ¬∀ v, R w v → ¬B v`, identities of Lean propositions. `shR` is the unguarded structural reading, one Lean connective per constructor, so an extra conjunct (the theorist's `phiSep` mutant, rejected by a `fail_if_success` test in TranslateV2Mod.lean), a dropped guard or a swapped quantifier fails. `N.of_struct` re-proves the module statement from the deep certificate through `of_valid_full`, `shV_iff` and these equations only, so $T$ and $\varphi$ are the module's sentences up to definitional unfolding, not just up to full-structure equivalence (the theorist's `full_check_blind`).
+- reasoning: Structural image check (the theorist's C8). For each sentence of $T$ read off module axiom $X$ with $n$ outer binders the file proves `N.struct<k>: type_of% @X = shV R existsAt P n N.ax<k> `, and `N.struct_φ` for the statement, by `rfl` after δ-unfolding the module side; the only rewrites allowed are `(a ↔ b) = ((a → b) ∧ (b → a))` and `(∃ v, R w v ∧ B v) = ¬∀ v, R w v → ¬B v`, identities of Lean propositions. `shR` is the unguarded structural reading, one Lean connective per constructor, so an extra conjunct (the theorist's `phiSep` mutant, rejected by a `fail_if_success` test in TranslateV2Mod.lean), a dropped guard or a swapped quantifier fails. `N.of_struct` re-proves the module statement from the deep certificate through `of_valid_full`, `shV_iff` and these equations only, so $T$ and $\varphi$ are the module's sentences up to definitional unfolding, not just up to full-structure equivalence (the theorist's `full_check_blind`).
 
 Prior art: unchecked
 
@@ -176,7 +173,6 @@ Prior art: unchecked
 - run: 20261023-0556
 - claim: K5
 - author: pr (claude)
-- round: 7
 - run-folder commit: ade4f20858f2a3b683193e13de0d89273d57c4c9
 - check results: K5-2.json, K5-3.json, K5-4.json
 
@@ -195,7 +191,7 @@ Evidence:
 - proof `checks/K5-TranslateV2Mod.lean`: Programme.Run6.H.Th4.of\_deep — pass (`results/K6-4.json`)
 - proof `checks/K5-TranslateV2Mod.lean`: Programme.Run6.H.Th5U.of\_struct — pass (`results/K6-7.json`)
 - proof `checks/K5-TranslateV2Mod.lean`: Programme.Run6.H.Th4.of\_struct — pass (`results/K6-8.json`)
-- reasoning: Structural image check (the theorist's C8). For each sentence of $T$ read off module axiom $X$ with $n$ outer binders the file proves `N.struct<k>: type_of% @X = shV R existsAt P n N.ax<k> ()`, and `N.struct_φ` for the statement, by `rfl` after δ-unfolding the module side; the only rewrites allowed are `(a ↔ b) = ((a → b) ∧ (b → a))` and `(∃ v, R w v ∧ B v) = ¬∀ v, R w v → ¬B v`, identities of Lean propositions. `shR` is the unguarded structural reading, one Lean connective per constructor, so an extra conjunct (the theorist's `phiSep` mutant, rejected by a `fail_if_success` test in TranslateV2Mod.lean), a dropped guard or a swapped quantifier fails. `N.of_struct` re-proves the module statement from the deep certificate through `of_valid_full`, `shV_iff` and these equations only, so $T$ and $\varphi$ are the module's sentences up to definitional unfolding, not just up to full-structure equivalence (the theorist's `full_check_blind`).
+- reasoning: Structural image check (the theorist's C8). For each sentence of $T$ read off module axiom $X$ with $n$ outer binders the file proves `N.struct<k>: type_of% @X = shV R existsAt P n N.ax<k> `, and `N.struct_φ` for the statement, by `rfl` after δ-unfolding the module side; the only rewrites allowed are `(a ↔ b) = ((a → b) ∧ (b → a))` and `(∃ v, R w v ∧ B v) = ¬∀ v, R w v → ¬B v`, identities of Lean propositions. `shR` is the unguarded structural reading, one Lean connective per constructor, so an extra conjunct (the theorist's `phiSep` mutant, rejected by a `fail_if_success` test in TranslateV2Mod.lean), a dropped guard or a swapped quantifier fails. `N.of_struct` re-proves the module statement from the deep certificate through `of_valid_full`, `shV_iff` and these equations only, so $T$ and $\varphi$ are the module's sentences up to definitional unfolding, not just up to full-structure equivalence (the theorist's `full_check_blind`).
 
 Prior art: unchecked
 
@@ -204,7 +200,6 @@ Prior art: unchecked
 - run: 20261023-0556
 - claim: K6
 - author: pr (claude)
-- round: 7
 - run-folder commit: ade4f20858f2a3b683193e13de0d89273d57c4c9
 - check results: K6-3.json, K6-4.json, K6-5.json, K6-6.json, K6-7.json, K6-8.json
 
@@ -228,7 +223,6 @@ Prior art: unchecked
 - run: 20261023-0556
 - claim: K7
 - author: pr (claude)
-- round: 6
 - run-folder commit: ade4f20858f2a3b683193e13de0d89273d57c4c9
 - check results: K7-1.json, K7-2.json
 
@@ -252,7 +246,6 @@ Prior art: unchecked
 - run: 20261023-0556
 - claim: K8
 - author: pr (claude)
-- round: 7
 - run-folder commit: ade4f20858f2a3b683193e13de0d89273d57c4c9
 - check results: K8-1.json, K8-2.json
 
@@ -281,7 +274,6 @@ Prior art: unchecked
 - run: 20261023-0556
 - claim: K9
 - author: pr (claude)
-- round: 7
 - run-folder commit: ade4f20858f2a3b683193e13de0d89273d57c4c9
 - check results: K9-1.json, K9-2.json, K9-3.json, K9-4.json, K9-5.json, K9-6.json
 
@@ -296,7 +288,7 @@ Kind: theorem
 Evidence:
 - proof `checks/K10-TranslateKBNec.lean`: Programme.Run6.H.NecSymm.not\_validFs\_S4 — pass (`results/K10-1.json`)
 - proof `checks/K10-TranslateKBNec.lean`: Programme.Run6.H.NecSymm.not\_valid — pass (`results/K10-2.json`)
-- reasoning: the theorist's two-world S4 model ThH7: R = {00,01,11}, one always-actual entity, positivity P phi w:= phi () 1. Its full structure is L-general (of\_validFs\_full). Th3K.ax0..2 (Ax3, Ax2b, Ax2a, the very terms emitted for K7) hold there by definitional unfolding of shR (NecSymm.hT uses `exact ThH7.Ax3 w` etc., no rewriting); the closed frame formulas for reflexivity and transitivity hold (NecSymm.frames). So ValidV4Fs \[refl, trans\] Th3K.T Th3K.phi would give Th3 at world 0, contradicting ThH7.Th3\_fails; ValidV4 implies ValidV4Fs for any frame list, giving not\_valid. World 0 sees world 1 but not conversely, which is exactly where symmetry fails.
+- reasoning: the theorist's two-world S4 model ThH7: R = {00,01,11}, one always-actual entity, positivity P phi w:= phi 1. Its full structure is L-general (of\_validFs\_full). Th3K.ax0..2 (Ax3, Ax2b, Ax2a, the very terms emitted for K7) hold there by definitional unfolding of shR (NecSymm.hT uses `exact ThH7.Ax3 w` etc., no rewriting); the closed frame formulas for reflexivity and transitivity hold (NecSymm.frames). So ValidV4Fs \[refl, trans\] Th3K.T Th3K.phi would give Th3 at world 0, contradicting ThH7.Th3\_fails; ValidV4 implies ValidV4Fs for any frame list, giving not\_valid. World 0 sees world 1 but not conversely, which is exactly where symmetry fails.
 - reasoning: Unchanged proof (ThH7 two-world S4 model R = {00,01,11}). The model is neither symmetric nor Euclidean (R00, R01 hold, R10 fails), consistent with K7 and with the Euclidean result; no claim that symmetry is necessary.
 
 Prior art: unchecked
@@ -306,7 +298,6 @@ Prior art: unchecked
 - run: 20261023-0556
 - claim: K10
 - author: pr (claude)
-- round: 10
 - run-folder commit: ade4f20858f2a3b683193e13de0d89273d57c4c9
 - check results: K10-1.json, K10-2.json
 
@@ -334,7 +325,6 @@ Prior art: unchecked
 - run: 20261023-0556
 - claim: K11
 - author: pr (claude)
-- round: 9
 - run-folder commit: ade4f20858f2a3b683193e13de0d89273d57c4c9
 - check results: K11-1.json, K11-2.json, K11-3.json, K11-4.json, K11-5.json, K11-6.json
 
@@ -358,7 +348,6 @@ Prior art: unchecked
 - run: 20261023-0556
 - claim: K12
 - author: pr (claude)
-- round: 11
 - run-folder commit: ade4f20858f2a3b683193e13de0d89273d57c4c9
 - check results: K12-1.json, K12-2.json
 
@@ -388,7 +377,6 @@ Prior art: unchecked
 - run: 20261023-0556
 - claim: K13
 - author: pr (claude)
-- round: 12
 - run-folder commit: ade4f20858f2a3b683193e13de0d89273d57c4c9
 - check results: K13-1.json, K13-2.json, K13-3.json, K13-4.json, K13-5.json, K13-6.json, K13-7.json, K13-8.json
 
@@ -412,7 +400,6 @@ Prior art: unchecked
 - run: 20261023-0556
 - claim: K14
 - author: pr (claude)
-- round: 14
 - run-folder commit: ade4f20858f2a3b683193e13de0d89273d57c4c9
 - check results: K14-1.json, K14-2.json
 
@@ -427,7 +414,7 @@ Kind: theorem
 Evidence:
 - proof `checks/K15-TranslateKBQL.lean`: Programme.Run6.H.QL.not\_validOn — pass (`results/K15-1.json`)
 - proof `checks/K15-TranslateKBQL.lean`: Programme.Run6.H.QL.not\_validFs — pass (`results/K15-2.json`)
-- reasoning: col B is a surjective bounded morphism from (W,R) onto RC R B when B is nonempty, R-closed and uniform (col\_back). Pulling an L-general model back along a surjective bounded morphism keeps it L-general with the same evaluation (pullL, the theorist's ThH13), and its accessibility is R by definition. The full model on RC R B with P phi:= phi () (inr ()) satisfies Ax3 because inr () is quasi-terminal (pt\_qt), satisfies Ax2a/Ax2b trivially, and refutes Th3 at col w.
+- reasoning: col B is a surjective bounded morphism from (W,R) onto RC R B when B is nonempty, R-closed and uniform (col\_back). Pulling an L-general model back along a surjective bounded morphism keeps it L-general with the same evaluation (pullL, the theorist's ThH13), and its accessibility is R by definition. The full model on RC R B with P phi:= phi (inr ) satisfies Ax3 because inr is quasi-terminal (pt\_qt), satisfies Ax2a/Ax2b trivially, and refutes Th3 at col w.
 
 Prior art: unchecked
 
@@ -436,7 +423,6 @@ Prior art: unchecked
 - run: 20261023-0556
 - claim: K15
 - author: pr (claude)
-- round: 15
 - run-folder commit: ade4f20858f2a3b683193e13de0d89273d57c4c9
 - check results: K15-1.json, K15-2.json
 
@@ -462,7 +448,6 @@ Prior art: unchecked
 - run: 20261023-0556
 - claim: K16
 - author: pr (claude)
-- round: 16
 - run-folder commit: ade4f20858f2a3b683193e13de0d89273d57c4c9
 - check results: K16-1.json, K16-2.json, K16-3.json, K16-4.json
 
@@ -493,7 +478,6 @@ Prior art: unchecked
 - run: 20261023-0556
 - claim: K17
 - author: pr (claude)
-- round: 17
 - run-folder commit: ade4f20858f2a3b683193e13de0d89273d57c4c9
 - check results: K17-1.json, K17-2.json, K17-3.json, K17-4.json, K17-5.json, K17-6.json, K17-7.json, K17-8.json
 

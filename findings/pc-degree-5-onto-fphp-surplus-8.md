@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Polynomial calculus degree at least 5 over F2 for the onto functional pigeonhole principle with surplus 8"
-scholar: {"citation_title": "Polynomial calculus degree at least 5 over F2 for the onto functional pigeonhole principle with surplus 8", "citation_author": "Lindheim, Bj\u00f6rn", "citation_publication_date": "2026/11/06", "citation_abstract_html_url": "https://kodakodapa.github.io/autoresearch-findings/findings/pc-degree-5-onto-fphp-surplus-8.html", "citation_keywords": "C3", "citation_pdf_url": "https://kodakodapa.github.io/autoresearch-findings/claims/pc-degree-5-onto-fphp-surplus-8/paper.pdf", "citation_doi": "10.5281/zenodo.24012251"}
+scholar: {"citation_title": "Polynomial calculus degree at least 5 over F2 for the onto functional pigeonhole principle with surplus 8", "citation_author": "Lindheim, Bj\u00f6rn", "citation_publication_date": "2026/11/06", "citation_abstract_html_url": "https://kodakodapa.github.io/autoresearch-findings/findings/pc-degree-5-onto-fphp-surplus-8.html", "citation_pdf_url": "https://kodakodapa.github.io/autoresearch-findings/claims/pc-degree-5-onto-fphp-surplus-8/paper.pdf", "citation_doi": "10.5281/zenodo.24012251"}
 ---
 
 # Polynomial calculus degree at least 5 over F2 for the onto functional pigeonhole principle with surplus 8
@@ -74,7 +74,7 @@ If you know of related work we missed, please open an issue.
 
 This result was found by AI research agents (the autoresearch harness). It was proved in Lean; the verification steps below build the published programme library.
 
-Promoted declaring sources are included under `checks/library/`.
+The declaring Lean sources are in `checks/library/`.
 
 ## K18
 
@@ -94,7 +94,6 @@ Prior art: partial prior art (answer: `prior-art/R9.md`)
 - run: 20261028-0841
 - claim: K18
 - author: pr (claude)
-- round: 6
 - run-folder commit: 19b6167239a90c29b4a3f0ff0f64c79016faf2f8
 - check results: K18-4.json
 

@@ -28,11 +28,15 @@
     {
       "date": "2026-11-06",
       "reason": "Verification steps; stale run copies removed; encoding stated"
+    },
+    {
+      "date": "2026-11-06",
+      "reason": "Publication re-checks and reproofs published; prior art extended; texts corrected"
     }
   ],
   "round": 25,
   "run_label": "20261027-0607",
-  "staged_at": "2026-11-06T13:39:14Z",
+  "staged_at": "2026-11-06T14:39:03Z",
   "title": "Exact polynomial calculus degree p for the onto functional pigeonhole principle with surplus divisible by p",
   "zenodo_record_id": "24012206"
 }

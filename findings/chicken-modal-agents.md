@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Modal agents in the game of Chicken"
-scholar: {"citation_title": "Modal agents in the game of Chicken", "citation_author": "Lindheim, Bj\u00f6rn", "citation_publication_date": "2026/10/20", "citation_abstract_html_url": "https://kodakodapa.github.io/autoresearch-findings/findings/chicken-modal-agents.html", "citation_keywords": "C046", "citation_pdf_url": "https://kodakodapa.github.io/autoresearch-findings/claims/chicken-modal-agents/paper.pdf"}
+scholar: {"citation_title": "Modal agents in the game of Chicken", "citation_author": "Lindheim, Bj\u00f6rn", "citation_publication_date": "2026/10/20", "citation_abstract_html_url": "https://kodakodapa.github.io/autoresearch-findings/findings/chicken-modal-agents.html", "citation_pdf_url": "https://kodakodapa.github.io/autoresearch-findings/claims/chicken-modal-agents/paper.pdf"}
 ---
 
 # Modal agents in the game of Chicken
@@ -94,7 +94,6 @@ Prior art: possibly new: no prior art found in the owner's search (answer: `prio
 - run: 20261019-1400
 - claim: K1
 - author: r1 (claude)
-- round: 1
 - run-folder commit: 24c2a64bf8b8cb8be184b4d449ce11068d8270ea
 - check results: K1-1.json
 
@@ -116,7 +115,6 @@ Prior art: possibly new: no prior art found in the owner's search (answer: `prio
 - run: 20261019-1400
 - claim: K2
 - author: r1 (claude)
-- round: 1
 - run-folder commit: 24c2a64bf8b8cb8be184b4d449ce11068d8270ea
 - check results: K1-1.json
 
@@ -138,7 +136,6 @@ Prior art: possibly new: no prior art found in the owner's search (answer: `prio
 - run: 20261019-1400
 - claim: K3
 - author: r1 (claude)
-- round: 1
 - run-folder commit: 24c2a64bf8b8cb8be184b4d449ce11068d8270ea
 - check results: K3-1.json
 
@@ -161,7 +158,6 @@ Prior art: possibly new: no prior art found in the owner's search (answer: `prio
 - run: 20261019-1400
 - claim: K4
 - author: r1 (claude)
-- round: 1
 - run-folder commit: 24c2a64bf8b8cb8be184b4d449ce11068d8270ea
 - check results: K1-1.json
 
@@ -184,7 +180,6 @@ Prior art: possibly new: no prior art found in the owner's search (answer: `prio
 - run: 20261019-1400
 - claim: K7
 - author: r1 (claude)
-- round: 2
 - run-folder commit: 24c2a64bf8b8cb8be184b4d449ce11068d8270ea
 - check results: K7-1.json
 
@@ -207,7 +202,6 @@ Prior art: possibly new: no prior art found in the owner's search (answer: `prio
 - run: 20261019-1400
 - claim: K8
 - author: r1 (claude)
-- round: 2
 - run-folder commit: 24c2a64bf8b8cb8be184b4d449ce11068d8270ea
 - check results: K7-1.json
 
@@ -232,7 +226,6 @@ Prior art: possibly new: no prior art found in the owner's search (answer: `prio
 - run: 20261019-1400
 - claim: K10
 - author: r1 (claude)
-- round: 3
 - run-folder commit: 24c2a64bf8b8cb8be184b4d449ce11068d8270ea
 - check results: K10-1.json, K10-2.json
 

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Unexploitable modal agents that cooperate with themselves: a census"
-scholar: {"citation_title": "Unexploitable modal agents that cooperate with themselves: a census", "citation_author": "Lindheim, Bj\u00f6rn", "citation_publication_date": "2026/10/21", "citation_abstract_html_url": "https://kodakodapa.github.io/autoresearch-findings/findings/only-one-fairbot-census.html", "citation_keywords": "C046", "citation_pdf_url": "https://kodakodapa.github.io/autoresearch-findings/claims/only-one-fairbot-census/paper.pdf"}
+scholar: {"citation_title": "Unexploitable modal agents that cooperate with themselves: a census", "citation_author": "Lindheim, Bj\u00f6rn", "citation_publication_date": "2026/10/21", "citation_abstract_html_url": "https://kodakodapa.github.io/autoresearch-findings/findings/only-one-fairbot-census.html", "citation_pdf_url": "https://kodakodapa.github.io/autoresearch-findings/claims/only-one-fairbot-census/paper.pdf"}
 ---
 
 # Unexploitable modal agents that cooperate with themselves: a census
@@ -104,7 +104,6 @@ Prior art: partial prior art (answer: `prior-art/R57.md`)
 - run: 20261020-1600
 - claim: K51
 - author: r1 (claude)
-- round: 35
 - run-folder commit: e3d59e30bce37b58223f480d4f0d5a79bbff59ce
 - check results: K51-1.json, K51-2.json
 
@@ -126,7 +125,6 @@ Prior art: partial prior art (answer: `prior-art/R58.md`)
 - run: 20261020-1600
 - claim: K53
 - author: r1 (claude)
-- round: 39
 - run-folder commit: e3d59e30bce37b58223f480d4f0d5a79bbff59ce
 - check results: K53-1.json
 
@@ -148,7 +146,6 @@ Prior art: possibly new: no prior art found in the owner's search (answer: `prio
 - run: 20261020-1600
 - claim: K11
 - author: r1 (claude)
-- round: 3
 - run-folder commit: e3d59e30bce37b58223f480d4f0d5a79bbff59ce
 - check results: K11-1.json
 
@@ -162,7 +159,7 @@ Kind: model
 
 Evidence:
 - check `checks/K18-c046_realizable_lean.py`: Lean 4 core theorems game\_exists, inputs\_realizable, same\_behaviour, separation, behaviour\_iff, X\_beheq\_FB; SHA-pinned source; no sorryAx; 4 mutations rejected — pass (`results/K18-1.json`)
-- check `checks/K18-c046_qfull12.py`: behav() realizable-word machines: 2574 classes, FairBot class has 86 machine classes with identical realizable-word machine to \[\]p (consequence: FairBot behaviour against every opponent via same\_behaviour) — pass (`results/K18-2.json`)
+- check `checks/K18-c046_qfull12.py`: behav realizable-word machines: 2574 classes, FairBot class has 86 machine classes with identical realizable-word machine to \[\]p (consequence: FairBot behaviour against every opponent via same\_behaviour) — pass (`results/K18-2.json`)
 - reasoning: In any game the opponent's inputs are all-false until the agent or its DefectBot trace cooperates, so by causality its play equals its DefectBot play there; hence inputs are realizable, and by induction equal realizable behaviour gives equal games.
 
 Prior art: possibly new: no prior art found in the owner's search (answer: `prior-art/R38.md`)
@@ -172,7 +169,6 @@ Prior art: possibly new: no prior art found in the owner's search (answer: `prio
 - run: 20261020-1600
 - claim: K18
 - author: r1 (claude)
-- round: 7
 - run-folder commit: e3d59e30bce37b58223f480d4f0d5a79bbff59ce
 - check results: K18-1.json, K18-2.json
 
@@ -195,7 +191,6 @@ Prior art: partial prior art (answer: `prior-art/R59.md`)
 - run: 20261020-1600
 - claim: K2
 - author: r1 (claude)
-- round: 1
 - run-folder commit: e3d59e30bce37b58223f480d4f0d5a79bbff59ce
 - check results: K2-1.json
 

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "G\u00f6del's lemma L under the rigid reading, with no condition on positivity"
-scholar: {"citation_title": "G\u00f6del's lemma L under the rigid reading, with no condition on positivity", "citation_author": "Lindheim, Bj\u00f6rn", "citation_publication_date": "2026/10/24", "citation_abstract_html_url": "https://kodakodapa.github.io/autoresearch-findings/findings/ontological-rigid-l.html", "citation_keywords": "G", "citation_pdf_url": "https://kodakodapa.github.io/autoresearch-findings/claims/ontological-rigid-l/paper.pdf", "citation_doi": "10.5281/zenodo.23795777"}
+scholar: {"citation_title": "G\u00f6del's lemma L under the rigid reading, with no condition on positivity", "citation_author": "Lindheim, Bj\u00f6rn", "citation_publication_date": "2026/10/24", "citation_abstract_html_url": "https://kodakodapa.github.io/autoresearch-findings/findings/ontological-rigid-l.html", "citation_pdf_url": "https://kodakodapa.github.io/autoresearch-findings/claims/ontological-rigid-l/paper.pdf", "citation_doi": "10.5281/zenodo.23795777"}
 ---
 
 # Gödel's lemma L under the rigid reading, with no condition on positivity
@@ -100,7 +100,6 @@ Prior art: partial prior art (answer: `prior-art/R1.md`)
 - run: 20261023-0519
 - claim: K1
 - author: pr (claude)
-- round: 1
 - run-folder commit: 2e2df987b9201fdce33786411f4136a4bc241629
 - check results: K1-1.json, K1-2.json
 
@@ -122,7 +121,6 @@ Prior art: partial prior art (answer: `prior-art/R2.md`)
 - run: 20261023-0519
 - claim: K3
 - author: pr (claude)
-- round: 3
 - run-folder commit: 2e2df987b9201fdce33786411f4136a4bc241629
 - check results: K3-1.json
 
@@ -144,7 +142,6 @@ Prior art: unchecked
 - run: 20261023-0519
 - claim: K2
 - author: pr (claude)
-- round: 2
 - run-folder commit: 2e2df987b9201fdce33786411f4136a4bc241629
 - check results: K2-1.json
 

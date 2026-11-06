@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How large must a program be to tell graded FairBots apart?"
-scholar: {"citation_title": "How large must a program be to tell graded FairBots apart?", "citation_author": "Lindheim, Bj\u00f6rn", "citation_publication_date": "2026/10/21", "citation_abstract_html_url": "https://kodakodapa.github.io/autoresearch-findings/findings/graded-fairbot-separators.html", "citation_keywords": "C046", "citation_pdf_url": "https://kodakodapa.github.io/autoresearch-findings/claims/graded-fairbot-separators/paper.pdf"}
+scholar: {"citation_title": "How large must a program be to tell graded FairBots apart?", "citation_author": "Lindheim, Bj\u00f6rn", "citation_publication_date": "2026/10/21", "citation_abstract_html_url": "https://kodakodapa.github.io/autoresearch-findings/findings/graded-fairbot-separators.html", "citation_pdf_url": "https://kodakodapa.github.io/autoresearch-findings/claims/graded-fairbot-separators/paper.pdf"}
 ---
 
 # How large must a program be to tell graded FairBots apart?
@@ -95,7 +95,6 @@ Prior art: possibly new: no prior art found in the owner's search (answer: `prio
 - run: 20261020-1600
 - claim: K49
 - author: r1 (claude)
-- round: 33
 - run-folder commit: e3d59e30bce37b58223f480d4f0d5a79bbff59ce
 - check results: K49-1.json, K49-2.json, K49-3.json, K49-4.json, K49-5.json, K49-6.json, K49-7.json
 
@@ -120,7 +119,6 @@ Prior art: possibly new: no prior art found in the owner's search (answer: `prio
 - run: 20261020-1600
 - claim: K56
 - author: r1 (claude)
-- round: 44
 - run-folder commit: e3d59e30bce37b58223f480d4f0d5a79bbff59ce
 - check results: K49-4.json, K49-5.json, K56-1.json, K56-4.json
 
@@ -142,7 +140,6 @@ Prior art: partial prior art (answer: `prior-art/R54.md`)
 - run: 20261020-1600
 - claim: K58
 - author: r1 (claude)
-- round: 46
 - run-folder commit: e3d59e30bce37b58223f480d4f0d5a79bbff59ce
 - check results: K49-5.json
 
@@ -164,7 +161,6 @@ Prior art: possibly new: no prior art found in the owner's search (answer: `prio
 - run: 20261020-1600
 - claim: K59
 - author: r1 (claude)
-- round: 48
 - run-folder commit: e3d59e30bce37b58223f480d4f0d5a79bbff59ce
 - check results: K49-6.json
 
@@ -186,7 +182,6 @@ Prior art: possibly new: no prior art found in the owner's search (answer: `prio
 - run: 20261020-1600
 - claim: K60
 - author: r1 (claude)
-- round: 49
 - run-folder commit: e3d59e30bce37b58223f480d4f0d5a79bbff59ce
 - check results: K56-4.json
 

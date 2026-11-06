@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Safe modal agents that coordinate in the Stag Hunt: size 13 is the minimum"
-scholar: {"citation_title": "Safe modal agents that coordinate in the Stag Hunt: size 13 is the minimum", "citation_author": "Lindheim, Bj\u00f6rn", "citation_publication_date": "2026/10/21", "citation_abstract_html_url": "https://kodakodapa.github.io/autoresearch-findings/findings/staghunt-safe-coordinators.html", "citation_keywords": "C046", "citation_pdf_url": "https://kodakodapa.github.io/autoresearch-findings/claims/staghunt-safe-coordinators/paper.pdf"}
+scholar: {"citation_title": "Safe modal agents that coordinate in the Stag Hunt: size 13 is the minimum", "citation_author": "Lindheim, Bj\u00f6rn", "citation_publication_date": "2026/10/21", "citation_abstract_html_url": "https://kodakodapa.github.io/autoresearch-findings/findings/staghunt-safe-coordinators.html", "citation_pdf_url": "https://kodakodapa.github.io/autoresearch-findings/claims/staghunt-safe-coordinators/paper.pdf"}
 ---
 
 # Safe modal agents that coordinate in the Stag Hunt: size 13 is the minimum
@@ -85,7 +85,6 @@ Prior art: possibly new: no prior art found in the owner's search (answer: `prio
 - run: 20261021-0517
 - claim: K16
 - author: r2 (codex)
-- round: 7
 - run-folder commit: 580565ffd3b3f1a8ca3ffa0407c949c8d724865c
 - check results: K16-1.json
 
@@ -108,7 +107,6 @@ Prior art: possibly new: no prior art found in the owner's search (answer: `prio
 - run: 20261021-0517
 - claim: K9
 - author: r1 (claude)
-- round: 3
 - run-folder commit: 580565ffd3b3f1a8ca3ffa0407c949c8d724865c
 - check results: K9-1.json
 
@@ -130,7 +128,6 @@ Prior art: possibly new: no prior art found in the owner's search (answer: `prio
 - run: 20261021-0517
 - claim: K13
 - author: r2 (codex)
-- round: 5
 - run-folder commit: 580565ffd3b3f1a8ca3ffa0407c949c8d724865c
 - check results: K14-1.json
 
@@ -152,7 +149,6 @@ Prior art: possibly new: no prior art found in the owner's search (answer: `prio
 - run: 20261021-0517
 - claim: K19
 - author: r2 (codex)
-- round: 9
 - run-folder commit: 580565ffd3b3f1a8ca3ffa0407c949c8d724865c
 - check results: K19-1.json
 

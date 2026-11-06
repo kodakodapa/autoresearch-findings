@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Blending self-defecting modal agents with FairBot: exact laws"
-scholar: {"citation_title": "Blending self-defecting modal agents with FairBot: exact laws", "citation_author": "Lindheim, Bj\u00f6rn", "citation_publication_date": "2026/10/21", "citation_abstract_html_url": "https://kodakodapa.github.io/autoresearch-findings/findings/blend-window-laws.html", "citation_keywords": "C046", "citation_pdf_url": "https://kodakodapa.github.io/autoresearch-findings/claims/blend-window-laws/paper.pdf"}
+scholar: {"citation_title": "Blending self-defecting modal agents with FairBot: exact laws", "citation_author": "Lindheim, Bj\u00f6rn", "citation_publication_date": "2026/10/21", "citation_abstract_html_url": "https://kodakodapa.github.io/autoresearch-findings/findings/blend-window-laws.html", "citation_pdf_url": "https://kodakodapa.github.io/autoresearch-findings/claims/blend-window-laws/paper.pdf"}
 ---
 
 # Blending self-defecting modal agents with FairBot: exact laws
@@ -109,7 +109,6 @@ Prior art: possibly new: no prior art found in the owner's search (answer: `prio
 - run: 20261020-1600
 - claim: K14
 - author: r2 (codex)
-- round: 5
 - run-folder commit: e3d59e30bce37b58223f480d4f0d5a79bbff59ce
 - check results: K14-1.json, K14-2.json, K14-3.json
 
@@ -134,7 +133,6 @@ Prior art: possibly new: no prior art found in the owner's search (answer: `prio
 - run: 20261020-1600
 - claim: K6
 - author: r2 (codex)
-- round: 3
 - run-folder commit: e3d59e30bce37b58223f480d4f0d5a79bbff59ce
 - check results: K14-3.json, K6-1.json, K6-2.json
 
@@ -158,7 +156,6 @@ Prior art: possibly new: no prior art found in the owner's search (answer: `prio
 - run: 20261020-1600
 - claim: K16
 - author: r2 (codex)
-- round: 6
 - run-folder commit: e3d59e30bce37b58223f480d4f0d5a79bbff59ce
 - check results: K17-1.json, K17-2.json, K25-3.json
 
@@ -182,7 +179,6 @@ Prior art: possibly new: no prior art found in the owner's search (answer: `prio
 - run: 20261020-1600
 - claim: K19
 - author: r2 (codex)
-- round: 7
 - run-folder commit: e3d59e30bce37b58223f480d4f0d5a79bbff59ce
 - check results: K19-3.json, K21-3.json, K23-3.json
 
@@ -206,7 +202,6 @@ Prior art: partial prior art (answer: `prior-art/R60.md`)
 - run: 20261020-1600
 - claim: K9
 - author: r2 (codex)
-- round: 4
 - run-folder commit: e3d59e30bce37b58223f480d4f0d5a79bbff59ce
 - check results: K9-1.json, K9-2.json
 
@@ -230,7 +225,6 @@ Prior art: possibly new: no prior art found in the owner's search (answer: `prio
 - run: 20261020-1600
 - claim: K25
 - author: r2 (codex)
-- round: 10
 - run-folder commit: e3d59e30bce37b58223f480d4f0d5a79bbff59ce
 - check results: K25-1.json, K25-2.json, K25-3.json
 
@@ -254,7 +248,6 @@ Prior art: possibly new: no prior art found in the owner's search (answer: `prio
 - run: 20261020-1600
 - claim: K23
 - author: r2 (codex)
-- round: 9
 - run-folder commit: e3d59e30bce37b58223f480d4f0d5a79bbff59ce
 - check results: K23-1.json, K23-2.json, K23-3.json
 
@@ -277,7 +270,6 @@ Prior art: partial prior art (answer: `prior-art/R61.md`)
 - run: 20261020-1600
 - claim: K28
 - author: r1 (claude)
-- round: 13
 - run-folder commit: e3d59e30bce37b58223f480d4f0d5a79bbff59ce
 - check results: K28-1.json
 
@@ -300,7 +292,6 @@ Prior art: possibly new: no prior art found in the owner's search (answer: `prio
 - run: 20261020-1600
 - claim: K20
 - author: r1 (claude)
-- round: 8
 - run-folder commit: e3d59e30bce37b58223f480d4f0d5a79bbff59ce
 - check results: K20-1.json
 
@@ -323,7 +314,6 @@ Prior art: possibly new: no prior art found in the owner's search (answer: `prio
 - run: 20261020-1600
 - claim: K22
 - author: r1 (claude)
-- round: 9
 - run-folder commit: e3d59e30bce37b58223f480d4f0d5a79bbff59ce
 - check results: K22-1.json
 
@@ -346,7 +336,6 @@ Prior art: possibly new: no prior art found in the owner's search (answer: `prio
 - run: 20261020-1600
 - claim: K24
 - author: r1 (claude)
-- round: 10
 - run-folder commit: e3d59e30bce37b58223f480d4f0d5a79bbff59ce
 - check results: K24-1.json
 
@@ -369,7 +358,6 @@ Prior art: possibly new: no prior art found in the owner's search (answer: `prio
 - run: 20261020-1600
 - claim: K26
 - author: r1 (claude)
-- round: 11
 - run-folder commit: e3d59e30bce37b58223f480d4f0d5a79bbff59ce
 - check results: K26-1.json
 

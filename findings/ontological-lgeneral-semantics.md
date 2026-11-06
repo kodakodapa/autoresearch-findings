@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "A complete calculus for the \u2112-general models of the ontological argument"
-scholar: {"citation_title": "A complete calculus for the \u2112-general models of the ontological argument", "citation_author": "Lindheim, Bj\u00f6rn", "citation_publication_date": "2026/10/24", "citation_abstract_html_url": "https://kodakodapa.github.io/autoresearch-findings/findings/ontological-lgeneral-semantics.html", "citation_keywords": "C", "citation_pdf_url": "https://kodakodapa.github.io/autoresearch-findings/claims/ontological-lgeneral-semantics/paper.pdf", "citation_doi": "10.5281/zenodo.23795768"}
+scholar: {"citation_title": "A complete calculus for the \u2112-general models of the ontological argument", "citation_author": "Lindheim, Bj\u00f6rn", "citation_publication_date": "2026/10/24", "citation_abstract_html_url": "https://kodakodapa.github.io/autoresearch-findings/findings/ontological-lgeneral-semantics.html", "citation_pdf_url": "https://kodakodapa.github.io/autoresearch-findings/claims/ontological-lgeneral-semantics/paper.pdf", "citation_doi": "10.5281/zenodo.23795768"}
 ---
 
 # A complete calculus for the ℒ-general models of the ontological argument
@@ -189,7 +189,6 @@ Prior art: partial prior art (answer: `prior-art/R1.md`)
 - run: 20261022-1724
 - claim: K1
 - author: pr (claude)
-- round: 1
 - run-folder commit: 2537c3c1e409694e656412ead00d75260626d0fb
 - check results: K1-1.json
 
@@ -214,7 +213,6 @@ Prior art: partial prior art (answer: `prior-art/R2.md`)
 - run: 20261022-1724
 - claim: K2
 - author: pr (claude)
-- round: 2
 - run-folder commit: 2537c3c1e409694e656412ead00d75260626d0fb
 - check results: K2-1.json, K2-2.json, K2-3.json, K2-4.json
 
@@ -239,7 +237,6 @@ Prior art: partial prior art (answer: `prior-art/R3.md`)
 - run: 20261022-1724
 - claim: K3
 - author: pr (claude)
-- round: 3
 - run-folder commit: 2537c3c1e409694e656412ead00d75260626d0fb
 - check results: K3-1.json, K3-2.json, K3-3.json, K3-4.json
 
@@ -265,7 +262,6 @@ Prior art: partial prior art (answer: `prior-art/R3.md`)
 - run: 20261022-1724
 - claim: K4
 - author: pr (claude)
-- round: 3
 - run-folder commit: 2537c3c1e409694e656412ead00d75260626d0fb
 - check results: K4-1.json, K4-2.json, K4-3.json, K4-4.json, K4-5.json
 
@@ -290,7 +286,6 @@ Prior art: partial prior art (answer: `prior-art/R3.md`)
 - run: 20261022-1724
 - claim: K6
 - author: r1 (claude)
-- round: 3
 - run-folder commit: 2537c3c1e409694e656412ead00d75260626d0fb
 - check results: K6-1.json, K6-2.json, K6-3.json, K6-4.json
 
@@ -314,7 +309,6 @@ Prior art: partial prior art (answer: `prior-art/R4.md`)
 - run: 20261022-1724
 - claim: K7
 - author: pr (claude)
-- round: 4
 - run-folder commit: 2537c3c1e409694e656412ead00d75260626d0fb
 - check results: K7-1.json, K7-2.json, K7-3.json
 
@@ -337,7 +331,6 @@ Prior art: partial prior art (answer: `prior-art/R5.md`)
 - run: 20261022-1724
 - claim: K8
 - author: pr (claude)
-- round: 5
 - run-folder commit: 2537c3c1e409694e656412ead00d75260626d0fb
 - check results: K8-1.json, K8-2.json
 
@@ -362,7 +355,6 @@ Prior art: partial prior art (answer: `prior-art/R5.md`)
 - run: 20261022-1724
 - claim: K9
 - author: pr (claude)
-- round: 5
 - run-folder commit: 2537c3c1e409694e656412ead00d75260626d0fb
 - check results: K9-1.json, K9-2.json, K9-3.json, K9-4.json
 
@@ -387,7 +379,6 @@ Prior art: partial prior art (answer: `prior-art/R6.md`)
 - run: 20261022-1724
 - claim: K10
 - author: pr (claude)
-- round: 6
 - run-folder commit: 2537c3c1e409694e656412ead00d75260626d0fb
 - check results: K10-1.json, K10-2.json, K10-3.json, K10-4.json
 
@@ -414,7 +405,6 @@ Prior art: partial prior art (answer: `prior-art/R7.md`)
 - run: 20261022-1724
 - claim: K11
 - author: pr (claude)
-- round: 10
 - run-folder commit: 2537c3c1e409694e656412ead00d75260626d0fb
 - check results: K11-1.json, K11-2.json, K11-3.json, K11-4.json, K11-7.json
 
@@ -438,7 +428,6 @@ Prior art: partial prior art (answer: `prior-art/R8.md`)
 - run: 20261022-1724
 - claim: K12
 - author: pr (claude)
-- round: 8
 - run-folder commit: 2537c3c1e409694e656412ead00d75260626d0fb
 - check results: K12-1.json, K12-2.json, K12-3.json
 
@@ -463,7 +452,6 @@ Prior art: partial prior art (answer: `prior-art/R9.md`)
 - run: 20261022-1724
 - claim: K13
 - author: pr (claude)
-- round: 9
 - run-folder commit: 2537c3c1e409694e656412ead00d75260626d0fb
 - check results: K13-1.json, K13-2.json, K13-3.json, K13-4.json
 
@@ -485,7 +473,6 @@ Prior art: partial prior art (answer: `prior-art/R9.md`)
 - run: 20261022-1724
 - claim: K14
 - author: pr (claude)
-- round: 9
 - run-folder commit: 2537c3c1e409694e656412ead00d75260626d0fb
 - check results: K14-1.json
 
@@ -510,7 +497,6 @@ Prior art: partial prior art (answer: `prior-art/R10.md`)
 - run: 20261022-1724
 - claim: K15
 - author: pr (claude)
-- round: 10
 - run-folder commit: 2537c3c1e409694e656412ead00d75260626d0fb
 - check results: K15-1.json, K15-2.json, K15-3.json
 
@@ -534,7 +520,6 @@ Prior art: partial prior art (answer: `prior-art/R10.md`)
 - run: 20261022-1724
 - claim: K16
 - author: pr (claude)
-- round: 10
 - run-folder commit: 2537c3c1e409694e656412ead00d75260626d0fb
 - check results: K16-1.json
 
@@ -558,7 +543,6 @@ Prior art: partial prior art (answer: `prior-art/R11.md`)
 - run: 20261022-1724
 - claim: K17
 - author: pr (claude)
-- round: 11
 - run-folder commit: 2537c3c1e409694e656412ead00d75260626d0fb
 - check results: K17-1.json, K17-2.json, K17-3.json
 
@@ -583,7 +567,6 @@ Prior art: partial prior art (answer: `prior-art/R12.md`)
 - run: 20261022-1724
 - claim: K18
 - author: pr (claude)
-- round: 12
 - run-folder commit: 2537c3c1e409694e656412ead00d75260626d0fb
 - check results: K18-1.json, K18-2.json, K18-3.json, K18-4.json
 
@@ -605,7 +588,6 @@ Prior art: unchecked
 - run: 20261022-1724
 - claim: K5
 - author: pr (claude)
-- round: 3
 - run-folder commit: 2537c3c1e409694e656412ead00d75260626d0fb
 - check results: K5-1.json
 

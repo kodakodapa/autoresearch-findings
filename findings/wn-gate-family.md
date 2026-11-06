@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "An unexploitable modal agent that defects against itself"
-scholar: {"citation_title": "An unexploitable modal agent that defects against itself", "citation_author": "Lindheim, Bj\u00f6rn", "citation_publication_date": "2026/10/18", "citation_abstract_html_url": "https://kodakodapa.github.io/autoresearch-findings/findings/wn-gate-family.html", "citation_keywords": "C046", "citation_pdf_url": "https://kodakodapa.github.io/autoresearch-findings/claims/wn-gate-family/paper.pdf"}
+scholar: {"citation_title": "An unexploitable modal agent that defects against itself", "citation_author": "Lindheim, Bj\u00f6rn", "citation_publication_date": "2026/10/18", "citation_abstract_html_url": "https://kodakodapa.github.io/autoresearch-findings/findings/wn-gate-family.html", "citation_pdf_url": "https://kodakodapa.github.io/autoresearch-findings/claims/wn-gate-family/paper.pdf"}
 ---
 
 # An unexploitable modal agent that defects against itself
@@ -79,7 +79,6 @@ Prior art: possibly new: no prior art found in the owner's search (answer: `prio
 - run: 20261017-1126
 - claim: K6
 - author: r1 (claude)
-- round: 3
 - run-folder commit: 662166ecff0651902cc5fcb04bf747c62d795af2
 - check results: K6-1.json
 
@@ -102,7 +101,6 @@ Prior art: possibly new: no prior art found in the owner's search (answer: `prio
 - run: 20261017-1126
 - claim: K9
 - author: r1 (claude)
-- round: 5
 - run-folder commit: 662166ecff0651902cc5fcb04bf747c62d795af2
 - check results: K9-1.json
 
@@ -125,7 +123,6 @@ Prior art: possibly new: no prior art found in the owner's search (answer: `prio
 - run: 20261017-1126
 - claim: K11
 - author: r1 (claude)
-- round: 6
 - run-folder commit: 662166ecff0651902cc5fcb04bf747c62d795af2
 - check results: K11-1.json
 

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Settling informal claims about modal agents in Chicken"
-scholar: {"citation_title": "Settling informal claims about modal agents in Chicken", "citation_author": "Lindheim, Bj\u00f6rn", "citation_publication_date": "2026/10/20", "citation_abstract_html_url": "https://kodakodapa.github.io/autoresearch-findings/findings/chicken-informal-claims.html", "citation_keywords": "C046", "citation_pdf_url": "https://kodakodapa.github.io/autoresearch-findings/claims/chicken-informal-claims/paper.pdf"}
+scholar: {"citation_title": "Settling informal claims about modal agents in Chicken", "citation_author": "Lindheim, Bj\u00f6rn", "citation_publication_date": "2026/10/20", "citation_abstract_html_url": "https://kodakodapa.github.io/autoresearch-findings/findings/chicken-informal-claims.html", "citation_pdf_url": "https://kodakodapa.github.io/autoresearch-findings/claims/chicken-informal-claims/paper.pdf"}
 ---
 
 # Settling informal claims about modal agents in Chicken
@@ -81,7 +81,6 @@ Prior art: partial prior art (answer: `prior-art/R4.md`)
 - run: 20261019-1400
 - claim: K5
 - author: r2 (codex)
-- round: 1
 - run-folder commit: 24c2a64bf8b8cb8be184b4d449ce11068d8270ea
 - check results: K5-2.json, K6-2.json
 
@@ -104,7 +103,6 @@ Prior art: partial prior art (answer: `prior-art/R4.md`)
 - run: 20261019-1400
 - claim: K6
 - author: r2 (codex)
-- round: 1
 - run-folder commit: 24c2a64bf8b8cb8be184b4d449ce11068d8270ea
 - check results: K6-2.json
 
@@ -126,7 +124,6 @@ Prior art: partial prior art (answer: `prior-art/R4.md`)
 - run: 20261019-1400
 - claim: K11
 - author: r2 (codex)
-- round: 3
 - run-folder commit: 24c2a64bf8b8cb8be184b4d449ce11068d8270ea
 - check results: K11-1.json
 
@@ -149,7 +146,6 @@ Prior art: partial prior art (answer: `prior-art/R4.md`)
 - run: 20261019-1400
 - claim: K12
 - author: r2 (codex)
-- round: 4
 - run-folder commit: 24c2a64bf8b8cb8be184b4d449ce11068d8270ea
 - check results: K12-1.json, K12-2.json
 

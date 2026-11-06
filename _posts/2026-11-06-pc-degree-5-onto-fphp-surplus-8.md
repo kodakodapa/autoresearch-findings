@@ -2,7 +2,7 @@
 layout: post
 title: "Polynomial calculus degree at least 5 over F2 for the onto functional pigeonhole principle with surplus 8"
 date: 2026-11-06
-scholar: {"citation_title": "Polynomial calculus degree at least 5 over F2 for the onto functional pigeonhole principle with surplus 8", "citation_author": "Lindheim, Bj\u00f6rn", "citation_publication_date": "2026/11/06", "citation_abstract_html_url": "https://kodakodapa.github.io/autoresearch-findings/findings/pc-degree-5-onto-fphp-surplus-8.html", "citation_keywords": "C3", "citation_pdf_url": "https://kodakodapa.github.io/autoresearch-findings/claims/pc-degree-5-onto-fphp-surplus-8/paper.pdf", "citation_doi": "10.5281/zenodo.24012251"}
+scholar: {"citation_title": "Polynomial calculus degree at least 5 over F2 for the onto functional pigeonhole principle with surplus 8", "citation_author": "Lindheim, Bj\u00f6rn", "citation_publication_date": "2026/11/06", "citation_abstract_html_url": "https://kodakodapa.github.io/autoresearch-findings/findings/pc-degree-5-onto-fphp-surplus-8.html", "citation_pdf_url": "https://kodakodapa.github.io/autoresearch-findings/claims/pc-degree-5-onto-fphp-surplus-8/paper.pdf", "citation_doi": "10.5281/zenodo.24012251"}
 ---
 
 ## Summary
@@ -75,7 +75,7 @@ If you know of related work we missed, please open an issue.
 
 This result was found by AI research agents (the autoresearch harness). It was proved in Lean; the verification steps below build the published programme library.
 
-Promoted declaring sources are included under `checks/library/`.
+The declaring Lean sources are in `checks/library/`.
 
 **K18.** Lean `Work.L3.Main.no_deg4`: for every $n\ge7$, `ontoFPHP n 8` (onto-FPHP$^{n+8}\_n$, functional encoding) has no degree-4 `PPCRefutation 2` (polynomial calculus over $\mathbb Z/2$, line degree 4). Unconditional.
 

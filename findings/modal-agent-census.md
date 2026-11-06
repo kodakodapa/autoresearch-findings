@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "A census of modal agents in the prisoner's dilemma"
-scholar: {"citation_title": "A census of modal agents in the prisoner's dilemma", "citation_author": "Lindheim, Bj\u00f6rn", "citation_publication_date": "2026/10/19", "citation_abstract_html_url": "https://kodakodapa.github.io/autoresearch-findings/findings/modal-agent-census.html", "citation_keywords": "C046", "citation_pdf_url": "https://kodakodapa.github.io/autoresearch-findings/claims/modal-agent-census/paper.pdf"}
+scholar: {"citation_title": "A census of modal agents in the prisoner's dilemma", "citation_author": "Lindheim, Bj\u00f6rn", "citation_publication_date": "2026/10/19", "citation_abstract_html_url": "https://kodakodapa.github.io/autoresearch-findings/findings/modal-agent-census.html", "citation_pdf_url": "https://kodakodapa.github.io/autoresearch-findings/claims/modal-agent-census/paper.pdf"}
 ---
 
 # A census of modal agents in the prisoner's dilemma
@@ -103,7 +103,6 @@ Prior art: possibly new: no prior art found in the owner's search (answer: `prio
 - run: 20261017-1126
 - claim: K1
 - author: r1 (claude)
-- round: 1
 - run-folder commit: 662166ecff0651902cc5fcb04bf747c62d795af2
 - check results: K1-1.json
 
@@ -127,7 +126,6 @@ Prior art: possibly new: no prior art found in the owner's search (answer: `prio
 - run: 20261017-1126
 - claim: K12
 - author: r1 (claude)
-- round: 7
 - run-folder commit: 662166ecff0651902cc5fcb04bf747c62d795af2
 - check results: K12-1.json, K12-2.json
 
@@ -150,7 +148,6 @@ Prior art: possibly new: no prior art found in the owner's search (answer: `prio
 - run: 20261017-1126
 - claim: K15
 - author: r1 (claude)
-- round: 29
 - run-folder commit: 662166ecff0651902cc5fcb04bf747c62d795af2
 - check results: K15-1.json
 
@@ -173,7 +170,6 @@ Prior art: possibly new: no prior art found in the owner's search (answer: `prio
 - run: 20261017-1126
 - claim: K17
 - author: r1 (claude)
-- round: 29
 - run-folder commit: 662166ecff0651902cc5fcb04bf747c62d795af2
 - check results: K17-1.json
 
@@ -196,7 +192,6 @@ Prior art: possibly new: no prior art found in the owner's search (answer: `prio
 - run: 20261017-1126
 - claim: K19
 - author: r1 (claude)
-- round: 14
 - run-folder commit: 662166ecff0651902cc5fcb04bf747c62d795af2
 - check results: K19-1.json
 
