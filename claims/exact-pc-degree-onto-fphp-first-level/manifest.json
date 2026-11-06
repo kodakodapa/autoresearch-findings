@@ -9,7 +9,7 @@
   ],
   "commit": "908b30496168c757d5eba6ba4ba761dbab7933b8",
   "concept_doi": "10.5281/zenodo.23996564",
-  "doi": "10.5281/zenodo.23996565",
+  "doi": "10.5281/zenodo.23999597",
   "name": "exact-pc-degree-onto-fphp-first-level",
   "revisions": [
     {
@@ -21,5 +21,5 @@
   "run_label": "20261027-0607",
   "staged_at": "2026-11-06T07:06:02Z",
   "title": "Exact polynomial calculus degree p for the onto functional pigeonhole principle with surplus divisible by p",
-  "zenodo_record_id": "23996565"
+  "zenodo_record_id": "23999597"
 }
