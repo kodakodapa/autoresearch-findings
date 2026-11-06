@@ -1,5 +1,7 @@
 # Exact polynomial calculus degree p for the onto functional pigeonhole principle with surplus divisible by p
 
+Cite as: https://doi.org/10.5281/zenodo.23996565
+
 <!-- owner-summary -->
 ## Setting
 
