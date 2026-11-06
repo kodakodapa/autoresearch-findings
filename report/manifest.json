@@ -508,6 +508,25 @@
         "H"
       ],
       "title": "From Lean proofs to certified derivations in the ontological embedding"
+    },
+    {
+      "allowed": [
+        "ch. 7"
+      ],
+      "claims": [
+        "K13",
+        "K14",
+        "K15"
+      ],
+      "commit": "908b30496168c757d5eba6ba4ba761dbab7933b8",
+      "date": "2026-11-06",
+      "pdf": true,
+      "run_label": "20261027-0607",
+      "slug": "exact-pc-degree-onto-fphp-first-level",
+      "threads": [
+        "C3"
+      ],
+      "title": "Exact polynomial calculus degree p for the onto functional pigeonhole principle with surplus divisible by p"
     }
   ]
 }

@@ -1,0 +1,170 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{hyperref}
+\title{Exact polynomial calculus degree p for the onto functional pigeonhole principle with surplus divisible by p}
+\author{Lindheim, Björn}
+\date{}
+\begin{document}
+\maketitle
+\section{Introduction}
+\label{sec:exact-pc-degree-onto-fphp-first-level}
+
+\subsection*{Setting}
+
+The onto functional pigeonhole principle $\mathrm{onto\text{-}FPHP}^{n+k}_n$ says that $n+k$
+pigeons can be mapped one-to-one onto $n$ holes. It is false for every $k\ge1$. As a system of
+polynomial equations in Boolean variables $x_{ij}$ (pigeon $i$ sits in hole $j$) it has the
+axioms $\sum_j x_{ij}-1$ (each pigeon sits in a hole), $\sum_i x_{ij}-1$ (each hole holds exactly
+one pigeon), $x_{ij}x_{i'j}$ (no two pigeons share a hole) and $x_{ij}x_{ij'}$ (no pigeon sits in
+two holes). This is the linear encoding used in the literature on this family
+\cite{beame1998counting,razborov2001php}.
+
+A polynomial calculus (PC) refutation over the field $\mathbb F_p$ derives the polynomial $1$
+from the axioms and the Boolean axioms $x^2-x$, using linear combinations and multiplication by a
+variable. Its degree is the largest degree of a line. The PC degree of the principle is the least
+degree of a refutation. When $p$ does not divide $k$, summing the pigeon axioms and subtracting
+the hole axioms gives the constant $-k$, a degree-1 refutation. The question is what happens when
+$p$ divides $k$.
+
+\subsection*{Result}
+
+For every prime $p$, every $c$ not divisible by $p$, and every $n\ge 2p-3$, the PC degree of
+$\mathrm{onto\text{-}FPHP}^{n+pc}_n$ over $\mathbb F_p$ is exactly $p$: there is a refutation of
+degree $p$, and none of degree $p-1$. More generally, whenever $p$ divides $k$ and $n\ge2p-3$,
+there is no refutation of degree $p-1$. The same formula therefore has PC degree $p$ over
+$\mathbb F_p$ and PC degree $1$ over $\mathbb F_q$ for every prime $q$ not dividing $pc$.
+
+\subsection*{Why it matters}
+
+Razborov's survey asks (Question 7) whether $\mathrm{onto\text{-}FPHP}^{n+p^\ell}_n$ has
+bounded-degree PC refutations in characteristic $p$ \cite{razborov2001php}. The upper bound $p$ at
+the first level comes from Riis's criterion \cite{riis1993independence}. The known lower bounds are
+for the weaker Nullstellensatz system \cite{beame1998counting} and, for PC, a bound that grows with
+$\ell$ for large $n$ \cite{riis1997nonconstant}. This result fixes the degree exactly at the first
+level (surplus divisible by $p$ but not by $p^2$), for every prime, from a small linear threshold
+in $n$.
+
+\subsection*{Proved vs checked}
+
+Everything is proved in Lean 4 and kernel-checked, for all primes $p$ and all $n\ge2p-3$; nothing
+is checked only up to a bound. The proofs use only the standard axioms \texttt{propext},
+\texttt{Classical.choice} and \texttt{Quot.sound}. A second agent in the run, working separately from the
+author, re-proved each of the three statements in Lean. No person has reviewed the proofs; the
+evidence is the kernel check and the independent re-proof.
+
+The Lean statements are for the library's formulation of PC, in which lines are functions on
+the Boolean cube. A later theorem of the same library shows that a refutation of degree $D$ in
+standard (syntactic) PC over $\mathbb F_p$ exists exactly when one exists in the library's
+formulation, so the result holds verbatim for standard PC (\texttt{std\_pc\_degree\_exact}).
+
+\subsection*{Novelty statement}
+
+This result extends:
+
+\begin{itemize}
+\item Riis-Sitharam, ECCC TR97-048, Theorem 33: PC degree \textgreater{}= 2\textasciicircum{}l - 1 for onto-PHP\textasciicircum{}\{N+p\textasciicircum{}l\}\_N over characteristic p once N \textgreater{}= (21+3p\textasciicircum{}2)(2\textasciicircum{}l - 2) - p (same family; proof not checked by us; at l = 2 this is \textgreater{}= 3 against our \textgreater{}= p+1 from n = 2p-1; at p = 2, l = 3 it is \textgreater{}= 7 for N \textgreater{}= 196 against our \textgreater{}= 5 for n \textgreater{}= 7).
+\item Beame-Riis 1998, Theorem 8.1 and Lemma 8.7: Nullstellensatz degree between 2\textasciicircum{}l - 1 and p\textasciicircum{}l - 1 (multiplier degree) for the same family; Section 10 lists polynomial-calculus lower bounds as open.
+\item Riis 1993, as Theorem 8 of Razborov's survey: degree-d PC refutations when C(m,d) and C(n,d) differ mod p, which gives the matching upper bound p for k = pc, p not dividing c (via Lucas).
+\item Razborov, Proof complexity of pigeonhole principles (2001), Question 7: the fixed-p, fixed-l bounded-degree question for onto-FPHP\textasciicircum{}\{n+p\textasciicircum{}l\}\_n.
+\item Miksa-Nordstrom (JACM 2024): general PC degree method; onto-FPHP with m = n+1 easy (Riis); the case of characteristic dividing the surplus not covered.
+\end{itemize}
+
+Our prior-art search (2026-11-05) covered:
+
+\begin{itemize}
+\item Riis, Sitharam, Non-constant degree lower bounds imply linear degree lower bounds, ECCC TR97-048 (1997), pp. 36-38 and 45-46 (Theorem 33, Propositions 27 and 28), opened 2026-10-29
+\item Beame, Riis, More on the relative strength of counting principles, DIMACS Series 39 (1998), homes.cs.washington.edu/\textasciitilde{}beame/papers/riis.pdf: Theorem 8.1, Lemma 8.7, Section 10, opened 2026-10-27 and 2026-11-01
+\item Razborov, Proof complexity of pigeonhole principles, DLT 2001 (LNCS 2295), people.cs.uchicago.edu/\textasciitilde{}razborov/files/php\_survey.pdf: Theorem 8, Question 7, footnote 5, opened 2026-10-27 and 2026-10-29
+\item Riis, BRICS Report RS-99-29, opened 2026-10-29
+\item Miksa, Nordstrom, A generalized method for proving polynomial calculus degree lower bounds (CCC 2015; JACM 2024; arXiv 1505.01358), opened 2026-10-27
+\item de Rezende et al., Theory of Computing 21(6) (2025), opened 2026-10-29
+\item Lauria et al., Theory of Computing 21(4) (2025), opened 2026-10-27
+\end{itemize}
+
+The checkers' full answers, with every query and file they searched, are published with this finding (\texttt{prior-art/}).
+
+If you know of related work we missed, please open an issue.
+
+This result was found by AI research agents (the autoresearch harness). It was proved in Lean; the proof and check files are included so anyone can re-run them.
+
+\subsection*{How it was produced}
+
+Promoted declaring sources are included under \texttt{checks/library/}.
+
+\section{Claims}
+
+\subsection*{Claim K13}
+
+\texttt{Work.Lucas.pc\_degree\_exact}: for every prime $p$ (\texttt{IsPrime p}), every $c$ with $p\nmid c$, every $n\ge2p-3$ and every $D$: \texttt{ontoFPHP n (p*c)} has a degree-$D$ \texttt{PPCRefutation p} iff $p\le D$ (PC degree over $\mathbb Z/p$ of onto-FPHP$^{n+pc}_n$ is exactly $p$).
+
+Status: proved (axioms: propext, Classical.choice, Quot.sound) · independently re-proved (skeptic/codex).
+
+\paragraph{Verified.}
+No check scripts.
+
+\paragraph{Evidence.}
+\begin{itemize}
+\item proof \texttt{checks/K13-Lucas.lean}: Work.Lucas.pc\textbackslash{}\_degree\textbackslash{}\_exact --- pass (\texttt{results/K13-2.json})
+\item reasoning: Lower bound: K14 (no degree $p-1$) plus monotonicity of PPCDerivable in the degree. Upper bound: library OntoLucas.ontoFPHP\textbackslash{}\_upper at $t=p$, whose unit hypothesis is $\binom{n+pc}{p}-\binom np\equiv c\not\equiv0$ mod $p$; proved by $p\mid\binom pr$ for $0<r<p$, Pascal's rule and telescoping in $c$. Convention: PC line degree, functional encoding. This agrees with Beame-Riis Lemma 8.7: their NS degree $p^l-1$ counts multiplier degree, and the products have degree $p^l$, which is line degree $p$ at $l=1$.
+\end{itemize}
+
+\paragraph{Prior art.} Partial prior art.
+
+\subsection*{Claim K14}
+
+\texttt{Work.Peel.pc\_degree\_ge\_p}: for every prime $p$ (\texttt{IsPrime p}), every $k$ with $p\mid k$ and every $n\ge2p-3$, \texttt{ontoFPHP n k} (onto-FPHP$^{n+k}_n$, functional encoding) has no \texttt{PPCRefutation p} of degree $p-1$ (polynomial calculus over $\mathbb Z/p$).
+
+Status: proved (axioms: propext, Classical.choice, Quot.sound) · independently re-proved (skeptic/codex).
+
+\paragraph{Verified.}
+No check scripts.
+
+\paragraph{Evidence.}
+\begin{itemize}
+\item proof \texttt{checks/K14-Peel.lean}: Work.Peel.pc\textbackslash{}\_degree\textbackslash{}\_ge\textbackslash{}\_p --- pass (\texttt{results/K14-2.json})
+\item reasoning: Paper proof (mirrors the Lean chain). Library criterion K4: if $\mathrm{EXT}_p(n_0,k,d)$ holds for all $d\le p-2$ then no degree-$(p-1)$ refutation for any $n\ge n_0$. EXT at level $d$ is proved by peeling: the flag lemma (K8) turns a balanced $f$ into a tower of links; at level 0 subtract a symmetric window, and at level $j$ subtract a block-product window ($j$ rectangles $\times$ unit blocks $\times$ a symmetric degree-$(d-j+1)$ design on a rest block), which equals $(d-j+1)!\cdot RP$ on $j$-matchings. The residual has zero links, so S\textbackslash{}\_j (K10) puts it in the span of rectangle products. Every factorial used is at most $(p-1)!$, a unit mod prime $p$; the blocks fit when $2d+1\le n$, i.e. $n\ge2p-3$. ExtLin.EXT\textbackslash{}\_of\textbackslash{}\_span (K5) closes the step.
+\end{itemize}
+
+\paragraph{Prior art.} Partial prior art.
+
+\subsection*{Claim K15}
+
+\texttt{Work.Lucas.separation}: for primes $p,q$, $p\nmid c$, $q\nmid pc$, $n\ge2p-3$: \texttt{ontoFPHP n (p*c)} has a degree-$D$ \texttt{PPCRefutation p} iff $p\le D$, and has a degree-1 \texttt{PPCRefutation q}.
+
+Status: proved (axioms: propext, Classical.choice, Quot.sound) · independently re-proved (skeptic/codex).
+
+\paragraph{Verified.}
+No check scripts.
+
+\paragraph{Evidence.}
+\begin{itemize}
+\item proof \texttt{checks/K13-Lucas.lean}: Work.Lucas.separation --- pass (\texttt{results/K15-2.json})
+\item reasoning: Over $\mathbb F_p$: K13. Over $\mathbb F_q$ with $q\nmid pc$: library OntoFPHP.ontoFPHP\textbackslash{}\_deg1 needs a unit $k^{-1}$ mod $q$, supplied by Bezout. The gap is $p$ versus 1 and is constant in $n$ for fixed $p$, so this separates characteristics along the parameter $p$, not asymptotically in $n$.
+\end{itemize}
+
+\paragraph{Prior art.} Partial prior art.
+
+
+\paragraph{Provenance.}
+Run \texttt{20261027-0607}, claims K13, K14, K15, run-folder commit \texttt{908b30496168c757d5eba6ba4ba761dbab7933b8}, published 2026-11-06.
+
+\section{Discussion}
+
+The degree here is a constant, $p$. The result says nothing about growth with $\ell$, which is
+what Question 7 is about. Riis and Sitharam's Theorem 33 gives degree at least $2^\ell-1$ for
+surplus $p^\ell$ once $N\ge(21+3p^2)(2^\ell-2)-p$ \cite{riis1997nonconstant}. At $\ell=1$ that bound
+is 1, and surplus $pc$ with $c>1$ is outside its family. We have not checked the proof of
+Theorem 33. Below $n=2p-3$ the degree is not determined here. The Nullstellensatz degree of
+Beame and Riis \cite{beame1998counting} is multiplier degree, one less than the line degree used here.
+
+\section{How to verify}
+
+Each finding has its check scripts in \texttt{claims/exact-pc-degree-onto-fphp-first-level/checks/} of the findings repository. Run each with \texttt{python -I <script>}; it passes if it exits with status 0. Promoted declaring sources are included under \texttt{checks/library/}; publication checks import their modules and inspect theorem axioms. The checks are Python scripts and need the packages of the research image (the image's \texttt{requirements.txt}); the Lean checks also need \texttt{lean}.
+
+\nocite{*}
+\bibliographystyle{plain}
+\bibliography{refs}
+
+\end{document}

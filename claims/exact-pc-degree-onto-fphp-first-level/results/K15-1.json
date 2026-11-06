@@ -1,0 +1,24 @@
+{
+  "axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "axioms_output": "'Work.Lucas.separation' depends on axioms: [propext, Classical.choice, Quot.sound]\n",
+  "build_log": "only [Nat.mul_add, Nat.add_mul, Nat.one_mul] at *\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`\ninfo: Work/Lucas.lean:172:0: 'Work.Lucas.pc_degree_exact' depends on axioms: [propext, Classical.choice, Quot.sound]\ninfo: Work/Lucas.lean:173:0: 'Work.Lucas.separation' depends on axioms: [propext, Classical.choice, Quot.sound]\nBuild completed successfully (46 jobs).\n",
+  "duration_s": 3.6271378993988037,
+  "exit": 0,
+  "figures": [],
+  "matches": null,
+  "path": "checks/K13-Lucas.lean",
+  "reason": "proof built and axioms verified",
+  "result": "pass",
+  "run_at": "2026-10-27T07:14:02.146050+00:00",
+  "stderr_head": "",
+  "stderr_tail": "",
+  "stdout_sha256": "d8535762dfec0c7299fc37956a4b0f2d516ebe011cea7837780ef42650018ea1",
+  "stdout_tail": "{\"result\": \"pass\", \"reason\": \"proof built and axioms verified\", \"axioms_output\": \"'Work.Lucas.separation' depends on axioms: [propext, Classical.choice, Quot.sound]\\n\", \"build_log\": \"only [Nat.mul_add, Nat.add_mul, Nat.one_mul] at *\\n\\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`\\ninfo: Work/Lucas.lean:172:0: 'Work.Lucas.pc_degree_exact' depends on axioms: [propext, Classical.choice, Quot.sound]\\ninfo: Work/Lucas.lean:173:0: 'Work.Lucas.separation' depends on axioms: [propext, Classical.choice, Quot.sound]\\nBuild completed successfully (46 jobs).\\n\"}\n",
+  "theorem": "Work.Lucas.separation",
+  "timeout_s": 1800.0,
+  "type": "proof"
+}

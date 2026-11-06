@@ -1,0 +1,16 @@
+{
+  "allowed": [
+    "ch. 7"
+  ],
+  "claims": [
+    "K13",
+    "K14",
+    "K15"
+  ],
+  "commit": "908b30496168c757d5eba6ba4ba761dbab7933b8",
+  "name": "exact-pc-degree-onto-fphp-first-level",
+  "round": 25,
+  "run_label": "20261027-0607",
+  "staged_at": "2026-11-05T20:56:32Z",
+  "title": "Exact polynomial calculus degree p for the onto functional pigeonhole principle with surplus divisible by p"
+}
