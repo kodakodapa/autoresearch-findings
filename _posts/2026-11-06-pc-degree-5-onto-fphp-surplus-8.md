@@ -96,8 +96,10 @@ The declaring Lean sources are in `checks/library/`.
 
 **K18.** Lean `Work.L3.Main.no_deg4`: for every $n\ge7$, `ontoFPHP n 8` (onto-FPHP$^{n+8}\_n$, functional encoding) has no degree-4 `PPCRefutation 2` (polynomial calculus over $\mathbb Z/2$, line degree 4). Unconditional.
 
+Lean: `Programme.«20261028-0841-proof-complexity».L3.Main.no_deg4`
+
 - Status: proved (axioms: propext, Classical.choice, Quot.sound)
-- Machine-checked: no check scripts.
+- Machine-checked: `checks/lean-K18.py` (library theorem `Programme.«20261028-0841-proof-complexity».L3.Main.no_deg4`)
 - Re-checked at publication on 2026-11-06: pass (`results/publication/lean-K18.json`)
 - Prior art: partial prior art
 
@@ -109,15 +111,17 @@ $\ell$. We have not checked the proof of Theorem 33 and cite it for comparison o
 
 ## How to verify
 
-Lean toolchain: `leanprover/lean4:v4.35.0`. [Programme library at the recorded commit](https://github.com/kodakodapa/autoresearch-findings/tree/2abad0979eeb03ede3a77490f45a4f381119ff02/programmes/proof-complexity). Install elan, then pin the library subtree while keeping the finding checks:
+Lean toolchain: `leanprover/lean4:v4.35.0`. [Programme library at the recorded commit](https://github.com/kodakodapa/autoresearch-findings/tree/2abad0979eeb03ede3a77490f45a4f381119ff02/programmes/proof-complexity). Install elan and open a new shell after installing elan, then pin the library subtree while keeping the finding checks:
 
 ```sh
 git clone https://github.com/kodakodapa/autoresearch-findings.git
 cd autoresearch-findings
 git checkout 2abad0979eeb03ede3a77490f45a4f381119ff02 -- programmes/proof-complexity
-cd programmes/proof-complexity && lake build
+cd programmes/proof-complexity && lake build 'Programme.«20261028-0841-proof-complexity».L3.Main'
 AR_LIBRARY=$PWD python -I ../../claims/pc-degree-5-onto-fphp-surplus-8/checks/lean-K18.py
 ```
+
+A full `lake build` builds the whole library. The named targets build only the claim modules and their dependencies. Indicative measurements from the 2026-11-06 reproduction on 2 cores / 7.8 GB: K13–K15 90 s; K1–K6 440 s; K18 87 min (90 certificate modules). Peak memory was 4.7 GB for one Lean process. Build times depend on hardware and cached dependencies.
 
 `checks/run-copies/`: the author's working copies from the run; they import the run's private `Work` package and are not built standalone.
 
@@ -144,3 +148,4 @@ The output of the checks re-run at publication is in `claims/pc-degree-5-onto-fp
 - 2026-11-06 — Library published buildable; verification steps; run copies labelled
 - 2026-11-06 — Verification steps; stale run copies removed; encoding stated
 - 2026-11-06 — Publication re-checks and reproofs published; prior art extended; texts corrected
+- 2026-11-06 — Library theorem names and checked statements shown; reproof wording corrected; build cost
