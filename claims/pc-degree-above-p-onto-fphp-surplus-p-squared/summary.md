@@ -38,9 +38,9 @@ separately; this result covers every prime at once.
 Everything is proved in Lean 4 and kernel-checked, for all primes $p$, all $c$ and all
 $n\ge2p-1$; nothing is checked only up to a bound. The proofs use only the standard axioms
 `propext`, `Classical.choice` and `Quot.sound`. The main theorem is stated for standard
-(syntactic) PC with Boolean axioms. A second agent in the run, working separately from the
-author, re-proved all six statements in Lean. No person has reviewed the proofs; the evidence is
-the kernel check and the independent re-proof.
+(syntactic) PC with Boolean axioms. A second agent in the run re-proved all six statements in Lean, but its
+re-proofs reuse six of the author's lemmas each, so they are not fully independent. No person has
+reviewed the proofs; the evidence is the kernel check.
 
 ## Discussion
 

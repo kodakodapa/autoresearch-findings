@@ -2,7 +2,7 @@
 # The embedded import Programme selects the full library mount in ProgrammeCheckRunner.
 import os, re, subprocess, tempfile
 from pathlib import Path
-SOURCE = 'import Programme.«20261102-1249-proof-complexity».UniformC3.Main\n#print axioms Programme.«20261102-1249-proof-complexity».UniformC3.no_standard_degree_three\n'
+SOURCE = 'import Programme.«20261102-1249-proof-complexity».UniformC3.Main\n#eval IO.println "AR_STATEMENT_BEGIN"\n#check @Programme.«20261102-1249-proof-complexity».UniformC3.no_standard_degree_three\n#eval IO.println "AR_STATEMENT_END"\n#print axioms Programme.«20261102-1249-proof-complexity».UniformC3.no_standard_degree_three\n'
 THEOREMS = ['Programme.«20261102-1249-proof-complexity».UniformC3.no_standard_degree_three']
 with tempfile.TemporaryDirectory() as d:
     path = os.path.join(d, "Check.lean")
@@ -17,7 +17,7 @@ with tempfile.TemporaryDirectory() as d:
     cwd = library if (root / "lean-toolchain").is_file() else d
     result = subprocess.run(["lean", path], cwd=cwd, capture_output=True, text=True, env=env)
 output = result.stdout + result.stderr
-print(output[-3000:])
+print(output)
 assert result.returncode == 0, "Lean compilation failed"
 assert "error:" not in output and "sorryAx" not in output
 for name in THEOREMS:

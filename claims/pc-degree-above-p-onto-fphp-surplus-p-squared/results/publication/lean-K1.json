@@ -4,9 +4,10 @@
   "date": "2026-11-06",
   "exit": 0,
   "image": "ar-research-proof-complexity:92f4db65082f2d4a",
-  "output_tail": "'Programme.\u00ab20261102-1249-proof-complexity\u00bb.UniformC3.squareLiftAssumption' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]",
+  "output_tail": "AR_STATEMENT_BEGIN\nProgramme.\u00ab20261102-1249-proof-complexity\u00bb.UniformC3.squareLiftAssumption : \u2200 (p : Nat),\n  Programme.\u00ab20261027-0607-proof-complexity\u00bb.Peel.IsPrime p \u2192\n    Programme.\u00ab20261102-1249-proof-complexity\u00bb.UniformC3.SquareLiftAssumption p\nAR_STATEMENT_END\n'Programme.\u00ab20261102-1249-proof-complexity\u00bb.UniformC3.squareLiftAssumption' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]",
   "published": true,
   "result": "pass",
+  "statement": "Programme.\u00ab20261102-1249-proof-complexity\u00bb.UniformC3.squareLiftAssumption : \u2200 (p : Nat),\n  Programme.\u00ab20261027-0607-proof-complexity\u00bb.Peel.IsPrime p \u2192\n    Programme.\u00ab20261102-1249-proof-complexity\u00bb.UniformC3.SquareLiftAssumption p",
   "stderr_tail": "",
   "tool": "lean",
   "toolchain": "leanprover/lean4:v4.35.0"

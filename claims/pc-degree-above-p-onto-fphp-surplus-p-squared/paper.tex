@@ -54,9 +54,9 @@ separately; this result covers every prime at once.
 Everything is proved in Lean 4 and kernel-checked, for all primes $p$, all $c$ and all
 $n\ge2p-1$; nothing is checked only up to a bound. The proofs use only the standard axioms
 \texttt{propext}, \texttt{Classical.choice} and \texttt{Quot.sound}. The main theorem is stated for standard
-(syntactic) PC with Boolean axioms. A second agent in the run, working separately from the
-author, re-proved all six statements in Lean. No person has reviewed the proofs; the evidence is
-the kernel check and the independent re-proof.
+(syntactic) PC with Boolean axioms. A second agent in the run re-proved all six statements in Lean, but its
+re-proofs reuse six of the author's lemmas each, so they are not fully independent. No person has
+reviewed the proofs; the evidence is the kernel check.
 
 \subsection*{Novelty statement}
 
@@ -111,13 +111,13 @@ The declaring Lean sources are in \texttt{checks/library/}.
 
 \subsection*{How to verify}
 
-Lean toolchain: \texttt{leanprover/lean4:v4.35.0}. \url{https://github.com/kodakodapa/autoresearch-findings/tree/2abad0979eeb03ede3a77490f45a4f381119ff02/programmes/proof-complexity}. Install elan, then pin the library subtree while keeping the finding checks:
+Lean toolchain: \texttt{leanprover/lean4:v4.35.0}. \url{https://github.com/kodakodapa/autoresearch-findings/tree/2abad0979eeb03ede3a77490f45a4f381119ff02/programmes/proof-complexity}. Install elan and open a new shell after installing elan, then pin the library subtree while keeping the finding checks:
 
 \begin{verbatim}
 git clone https://github.com/kodakodapa/autoresearch-findings.git
 cd autoresearch-findings
 git checkout 2abad0979eeb03ede3a77490f45a4f381119ff02 -- programmes/proof-complexity
-cd programmes/proof-complexity && lake build
+cd programmes/proof-complexity && lake build 'Programme.«20261102-1249-proof-complexity».UniformC3.Main' 'Programme.«20261102-1249-proof-complexity».UniformC3.Unconditional'
 AR_LIBRARY=$PWD python -I ../../claims/pc-degree-above-p-onto-fphp-surplus-p-squared/checks/lean-K1.py
 AR_LIBRARY=$PWD python -I ../../claims/pc-degree-above-p-onto-fphp-surplus-p-squared/checks/lean-K2.py
 AR_LIBRARY=$PWD python -I ../../claims/pc-degree-above-p-onto-fphp-surplus-p-squared/checks/lean-K3.py
@@ -125,6 +125,8 @@ AR_LIBRARY=$PWD python -I ../../claims/pc-degree-above-p-onto-fphp-surplus-p-squ
 AR_LIBRARY=$PWD python -I ../../claims/pc-degree-above-p-onto-fphp-surplus-p-squared/checks/lean-K5.py
 AR_LIBRARY=$PWD python -I ../../claims/pc-degree-above-p-onto-fphp-surplus-p-squared/checks/lean-K6.py
 \end{verbatim}
+
+A full \texttt{lake build} builds the whole library. The named targets build only the claim modules and their dependencies. Indicative measurements from the 2026-11-06 reproduction on 2 cores / 7.8 GB: K13--K15 90 s; K1--K6 440 s; K18 87 min (90 certificate modules). Peak memory was 4.7 GB for one Lean process. Build times depend on hardware and cached dependencies.
 
 \texttt{checks/run-copies/}: the author's working copies from the run; they import the run's private \texttt{Work} package and are not built standalone.
 
@@ -134,7 +136,7 @@ AR_LIBRARY=$PWD python -I ../../claims/pc-degree-above-p-onto-fphp-surplus-p-squ
 
 For every prime $p$, $\mathrm{SquareLiftAssumption}(p)$ holds, i.e. there exists an integral square lift on $2p-1$ rows and columns.
 
-Status: proved (axioms: propext, Classical.choice, Quot.sound) · independently re-proved (skeptic/codex).
+Status: proved (axioms: propext, Classical.choice, Quot.sound) · second-agent re-proof (skeptic/codex).
 
 Re-checked at publication on 2026-11-06: pass (\texttt{results/publication/lean-K1.json}).
 
@@ -143,8 +145,9 @@ No check scripts.
 
 \paragraph{Evidence.}
 \begin{itemize}
+\item library check \texttt{checks/lean-K1.py} (library theorem \texttt{Programme.«20261102-1249-proof-complexity».UniformC3.squareLiftAssumption})
 \item proof \texttt{checks/run-copies/K1-Unconditional.lean}: Work.UniformC3.squareLiftAssumption --- pass (\texttt{results/K1-1.json})
-\item reproof \texttt{checks/reproofs/K1-Reproof.lean} by the skeptic (codex): \texttt{Work.UniformC3.squareLiftAssumption} --- pass (\texttt{checks/reproofs/K1-Reproof.json})
+\item reproof \texttt{checks/reproofs/K1-Reproof.lean} by the skeptic (codex): \texttt{Work.UniformC3.squareLiftAssumption} --- pass (\texttt{checks/reproofs/K1-Reproof.json}); second-agent re-proof; uses 6 lemmas from the author's package; re-proof by a second agent; imports the run's private packages (not rebuildable from this repo)
 \end{itemize}
 
 \paragraph{Prior art.} Partial prior art.
@@ -153,7 +156,7 @@ No check scripts.
 
 For every prime $p$ and natural $c$, some $T$ satisfies $\mathrm{Bal}(p,2p-1,cp^2,T,T,e)$ for every $e\le p-1$, and $p\mid T([])-1$.
 
-Status: proved (axioms: propext, Classical.choice, Quot.sound) · independently re-proved (skeptic/codex).
+Status: proved (axioms: propext, Classical.choice, Quot.sound) · second-agent re-proof (skeptic/codex).
 
 Re-checked at publication on 2026-11-06: pass (\texttt{results/publication/lean-K2.json}).
 
@@ -162,8 +165,9 @@ No check scripts.
 
 \paragraph{Evidence.}
 \begin{itemize}
+\item library check \texttt{checks/lean-K2.py} (library theorem \texttt{Programme.«20261102-1249-proof-complexity».UniformC3.uniform\_unit\_design\_unconditional})
 \item proof \texttt{checks/run-copies/K1-Unconditional.lean}: Work.UniformC3.uniform\textbackslash{}\_unit\textbackslash{}\_design\textbackslash{}\_unconditional --- pass (\texttt{results/K2-1.json})
-\item reproof \texttt{checks/reproofs/K2-Reproof.lean} by the skeptic (codex): \texttt{Work.UniformC3.uniform\_unit\_design\_unconditional} --- pass (\texttt{checks/reproofs/K2-Reproof.json})
+\item reproof \texttt{checks/reproofs/K2-Reproof.lean} by the skeptic (codex): \texttt{Work.UniformC3.uniform\_unit\_design\_unconditional} --- pass (\texttt{checks/reproofs/K2-Reproof.json}); second-agent re-proof; uses 6 lemmas from the author's package; re-proof by a second agent; imports the run's private packages (not rebuildable from this repo)
 \end{itemize}
 
 \paragraph{Prior art.} Partial prior art.
@@ -172,7 +176,7 @@ No check scripts.
 
 For every prime $p$, natural $c$, and $n\ge2p-1$, $\mathrm{ontoFPHP}(n,cp^2)$ has no degree-$p$ $\mathrm{PPCRefutation}$ modulo $p$ (functional encoding, PC line degree).
 
-Status: proved (axioms: propext, Classical.choice, Quot.sound) · independently re-proved (skeptic/codex).
+Status: proved (axioms: propext, Classical.choice, Quot.sound) · second-agent re-proof (skeptic/codex).
 
 Re-checked at publication on 2026-11-06: pass (\texttt{results/publication/lean-K3.json}).
 
@@ -181,8 +185,9 @@ No check scripts.
 
 \paragraph{Evidence.}
 \begin{itemize}
+\item library check \texttt{checks/lean-K3.py} (library theorem \texttt{Programme.«20261102-1249-proof-complexity».UniformC3.uniform\_no\_degree\_p\_unconditional})
 \item proof \texttt{checks/run-copies/K1-Unconditional.lean}: Work.UniformC3.uniform\textbackslash{}\_no\textbackslash{}\_degree\textbackslash{}\_p\textbackslash{}\_unconditional --- pass (\texttt{results/K3-1.json})
-\item reproof \texttt{checks/reproofs/K3-Reproof.lean} by the skeptic (codex): \texttt{Work.UniformC3.uniform\_no\_degree\_p\_unconditional} --- pass (\texttt{checks/reproofs/K3-Reproof.json})
+\item reproof \texttt{checks/reproofs/K3-Reproof.lean} by the skeptic (codex): \texttt{Work.UniformC3.uniform\_no\_degree\_p\_unconditional} --- pass (\texttt{checks/reproofs/K3-Reproof.json}); second-agent re-proof; uses 6 lemmas from the author's package; re-proof by a second agent; imports the run's private packages (not rebuildable from this repo)
 \end{itemize}
 
 \paragraph{Prior art.} Partial prior art.
@@ -191,7 +196,7 @@ No check scripts.
 
 For every prime $p$, natural $c$, and $n\ge2p-1$, $\mathrm{ontoFPHP}(n,cp^2)$ has no standard polynomial-calculus refutation modulo $p$ of line degree at most $p$ (functional encoding).
 
-Status: proved (axioms: propext, Classical.choice, Quot.sound) · independently re-proved (skeptic/codex).
+Status: proved (axioms: propext, Classical.choice, Quot.sound) · second-agent re-proof (skeptic/codex).
 
 Re-checked at publication on 2026-11-06: pass (\texttt{results/publication/lean-K4.json}).
 
@@ -200,8 +205,9 @@ No check scripts.
 
 \paragraph{Evidence.}
 \begin{itemize}
+\item library check \texttt{checks/lean-K4.py} (library theorem \texttt{Programme.«20261102-1249-proof-complexity».UniformC3.uniform\_no\_standard\_degree\_p\_unconditional})
 \item proof \texttt{checks/run-copies/K1-Unconditional.lean}: Work.UniformC3.uniform\textbackslash{}\_no\textbackslash{}\_standard\textbackslash{}\_degree\textbackslash{}\_p\textbackslash{}\_unconditional --- pass (\texttt{results/K4-1.json})
-\item reproof \texttt{checks/reproofs/K4-Reproof.lean} by the skeptic (codex): \texttt{Work.UniformC3.uniform\_no\_standard\_degree\_p\_unconditional} --- pass (\texttt{checks/reproofs/K4-Reproof.json})
+\item reproof \texttt{checks/reproofs/K4-Reproof.lean} by the skeptic (codex): \texttt{Work.UniformC3.uniform\_no\_standard\_degree\_p\_unconditional} --- pass (\texttt{checks/reproofs/K4-Reproof.json}); second-agent re-proof; uses 6 lemmas from the author's package; re-proof by a second agent; imports the run's private packages (not rebuildable from this repo)
 \end{itemize}
 
 \paragraph{Prior art.} Partial prior art.
@@ -210,7 +216,7 @@ No check scripts.
 
 For all natural $c$ and $n\ge3$, $\mathrm{ontoFPHP}(n,4c)$ has no standard polynomial-calculus refutation modulo $2$ of line degree at most $2$ (functional encoding).
 
-Status: proved (axioms: propext, Classical.choice, Quot.sound) · independently re-proved (skeptic/codex).
+Status: proved (axioms: propext, Classical.choice, Quot.sound) · second-agent re-proof (skeptic/codex).
 
 Re-checked at publication on 2026-11-06: pass (\texttt{results/publication/lean-K5.json}).
 
@@ -219,8 +225,9 @@ No check scripts.
 
 \paragraph{Evidence.}
 \begin{itemize}
+\item library check \texttt{checks/lean-K5.py} (library theorem \texttt{Programme.«20261102-1249-proof-complexity».UniformC3.no\_standard\_degree\_two})
 \item proof \texttt{checks/run-copies/K5-Main.lean}: Work.UniformC3.no\textbackslash{}\_standard\textbackslash{}\_degree\textbackslash{}\_two --- pass (\texttt{results/K5-1.json})
-\item reproof \texttt{checks/reproofs/K5-Reproof.lean} by the skeptic (codex): \texttt{Work.UniformC3.no\_standard\_degree\_two} --- pass (\texttt{checks/reproofs/K5-Reproof.json})
+\item reproof \texttt{checks/reproofs/K5-Reproof.lean} by the skeptic (codex): \texttt{Work.UniformC3.no\_standard\_degree\_two} --- pass (\texttt{checks/reproofs/K5-Reproof.json}); second-agent re-proof; uses 6 lemmas from the author's package; re-proof by a second agent; imports the run's private packages (not rebuildable from this repo)
 \end{itemize}
 
 \paragraph{Prior art.} Partial prior art.
@@ -229,7 +236,7 @@ No check scripts.
 
 For all natural $c$ and $n\ge5$, $\mathrm{ontoFPHP}(n,9c)$ has no standard polynomial-calculus refutation modulo $3$ of line degree at most $3$ (functional encoding).
 
-Status: proved (axioms: propext, Classical.choice, Quot.sound) · independently re-proved (skeptic/codex).
+Status: proved (axioms: propext, Classical.choice, Quot.sound) · second-agent re-proof (skeptic/codex).
 
 Re-checked at publication on 2026-11-06: pass (\texttt{results/publication/lean-K6.json}).
 
@@ -238,8 +245,9 @@ No check scripts.
 
 \paragraph{Evidence.}
 \begin{itemize}
+\item library check \texttt{checks/lean-K6.py} (library theorem \texttt{Programme.«20261102-1249-proof-complexity».UniformC3.no\_standard\_degree\_three})
 \item proof \texttt{checks/run-copies/K5-Main.lean}: Work.UniformC3.no\textbackslash{}\_standard\textbackslash{}\_degree\textbackslash{}\_three --- pass (\texttt{results/K6-1.json})
-\item reproof \texttt{checks/reproofs/K6-Reproof.lean} by the skeptic (codex): \texttt{Work.UniformC3.no\_standard\_degree\_three} --- pass (\texttt{checks/reproofs/K6-Reproof.json})
+\item reproof \texttt{checks/reproofs/K6-Reproof.lean} by the skeptic (codex): \texttt{Work.UniformC3.no\_standard\_degree\_three} --- pass (\texttt{checks/reproofs/K6-Reproof.json}); second-agent re-proof; uses 6 lemmas from the author's package; re-proof by a second agent; imports the run's private packages (not rebuildable from this repo)
 \end{itemize}
 
 \paragraph{Prior art.} Partial prior art.
@@ -268,6 +276,7 @@ For programme findings, follow the clone, build and run steps in each finding. T
 \item 2026-11-06 --- Library published buildable; verification steps; run copies labelled
 \item 2026-11-06 --- Verification steps; stale run copies removed; encoding stated
 \item 2026-11-06 --- Publication re-checks and reproofs published; prior art extended; texts corrected
+\item 2026-11-06 --- Library theorem names and checked statements shown; reproof wording corrected; build cost
 \end{itemize}
 
 \bibliographystyle{plain}
