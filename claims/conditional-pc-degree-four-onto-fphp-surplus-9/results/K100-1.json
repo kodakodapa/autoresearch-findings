@@ -1,0 +1,24 @@
+{
+  "axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "axioms_output": "iant' depends on axioms: [propext, Classical.choice, Quot.sound]\ninfo: Work/ConcreteDegreeFour.lean:84:0: 'Work.ConcreteDegreeFour.no_stdpc' depends on axioms: [propext, Classical.choice, Quot.sound]\ninfo: Work/ConcreteDegreeFour.lean:86:0: 'Work.ConcreteDegreeFour.no_ppc' depends on axioms: [propext, Classical.choice, Quot.sound]\n? [173/173] Built Work.ArAxiomsef9b829fe58446428e0ce3cd2cb8fe6b (239ms)\ninfo: Work/ArAxiomsef9b829fe58446428e0ce3cd2cb8fe6b.lean:2:0: 'Work.ConcreteDegreeFour.nodrop' depends on axioms: [propext, Classical.choice, Quot.sound]\nBuild completed successfully (173 jobs).\n",
+  "build_log": "k.ConcreteDegreeFour.invariant' depends on axioms: [propext, Classical.choice, Quot.sound]\ninfo: Work/ConcreteDegreeFour.lean:84:0: 'Work.ConcreteDegreeFour.no_stdpc' depends on axioms: [propext, Classical.choice, Quot.sound]\ninfo: Work/ConcreteDegreeFour.lean:86:0: 'Work.ConcreteDegreeFour.no_ppc' depends on axioms: [propext, Classical.choice, Quot.sound]\nBuild completed successfully (326 jobs).\n",
+  "duration_s": 11.867051839828491,
+  "exit": 0,
+  "figures": [],
+  "matches": null,
+  "path": "checks/run-copies/K100-ConcreteDegreeFour.lean",
+  "reason": "proof built and axioms verified",
+  "result": "pass",
+  "run_at": "2026-11-05T17:27:15.643953+00:00",
+  "stderr_head": "",
+  "stderr_tail": "",
+  "stdout_sha256": "14d0ea3fbd42825e73bc042d568931be2f5bf8cb4e72ae56e34bdd3817baf872",
+  "stdout_tail": "{\"result\": \"pass\", \"reason\": \"proof built and axioms verified\", \"axioms_output\": \"iant' depends on axioms: [propext, Classical.choice, Quot.sound]\\ninfo: Work/ConcreteDegreeFour.lean:84:0: 'Work.ConcreteDegreeFour.no_stdpc' depends on axioms: [propext, Classical.choice, Quot.sound]\\ninfo: Work/ConcreteDegreeFour.lean:86:0: 'Work.ConcreteDegreeFour.no_ppc' depends on axioms: [propext, Classical.choice, Quot.sound]\\n? [173/173] Built Work.ArAxiomsef9b829fe58446428e0ce3cd2cb8fe6b (239ms)\\ninfo: Work/ArAxiomsef9b829fe58446428e0ce3cd2cb8fe6b.lean:2:0: 'Work.ConcreteDegreeFour.nodrop' depends on axioms: [propext, Classical.choice, Quot.sound]\\nBuild completed successfully (173 jobs).\\n\", \"build_log\": \"k.ConcreteDegreeFour.invariant' depends on axioms: [propext, Classical.choice, Quot.sound]\\ninfo: Work/ConcreteDegreeFour.lean:84:0: 'Work.ConcreteDegreeFour.no_stdpc' depends on axioms: [propext, Classical.choice, Quot.sound]\\ninfo: Work/ConcreteDegreeFour.lean:86:0: 'Work.ConcreteDegreeFour.no_ppc' depends on axioms: [propext, Classical.choice, Quot.sound]\\nBuild completed successfully (326 jobs).\\n\"}\n",
+  "theorem": "Work.ConcreteDegreeFour.nodrop",
+  "timeout_s": 1800.0,
+  "type": "proof"
+}

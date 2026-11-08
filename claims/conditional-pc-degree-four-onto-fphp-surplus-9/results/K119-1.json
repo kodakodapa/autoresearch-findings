@@ -1,0 +1,43 @@
+{
+  "duration_s": 1.1991219520568848,
+  "exit": 0,
+  "figures": [],
+  "path": "checks/run-copies/K119-spanning_16_7_two.py",
+  "result": "pass",
+  "run_at": "2026-11-07T12:27:52.531116+00:00",
+  "stderr_head": "",
+  "stderr_tail": "",
+  "stdout_sha256": "0f9c1956022da92448d7e6dcf398b8bb99c86933be24f7e1512b73b3bd975b9f",
+  "stdout_tail": "# ar-table\nm|n|r|field|labels|top_rows|top_rank|kernel_dimension|generators|generator_rank|holds\n16|7|2|F3|2352|5040|2009|343|366|343|True\n",
+  "table": {
+    "header": [
+      "m",
+      "n",
+      "r",
+      "field",
+      "labels",
+      "top_rows",
+      "top_rank",
+      "kernel_dimension",
+      "generators",
+      "generator_rank",
+      "holds"
+    ],
+    "rows": [
+      [
+        "16",
+        "7",
+        "2",
+        "F3",
+        "2352",
+        "5040",
+        "2009",
+        "343",
+        "366",
+        "343",
+        "True"
+      ]
+    ]
+  },
+  "timeout_s": 1800.0
+}

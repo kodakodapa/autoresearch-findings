@@ -1,7 +1,7 @@
 cff-version: 1.2.0
 message: "If you use these findings, please cite them as below."
 title: "autoresearch-findings"
-abstract: "Machine-checked findings: modal-agent-census, graded-prudent-fair, wn-gate-family, gate-families, ontological-variant-map, chicken-informal-claims, chicken-modal-agents, three-player-modal-agents, blend-window-laws, graded-fairbot-separators, only-one-fairbot-census, staghunt-round-robin, staghunt-safe-coordinators, ontological-nominal-free-proofs, ontological-lgeneral-semantics, ontological-rigid-l, ontological-proof-translation, exact-pc-degree-onto-fphp-first-level, pc-degree-above-p-onto-fphp-surplus-p-squared, pc-degree-5-onto-fphp-surplus-8"
+abstract: "Machine-checked findings: modal-agent-census, graded-prudent-fair, wn-gate-family, gate-families, ontological-variant-map, chicken-informal-claims, chicken-modal-agents, three-player-modal-agents, blend-window-laws, graded-fairbot-separators, only-one-fairbot-census, staghunt-round-robin, staghunt-safe-coordinators, ontological-nominal-free-proofs, ontological-lgeneral-semantics, ontological-rigid-l, ontological-proof-translation, exact-pc-degree-onto-fphp-first-level, pc-degree-above-p-onto-fphp-surplus-p-squared, pc-degree-5-onto-fphp-surplus-8, conditional-pc-degree-four-onto-fphp-surplus-9"
 authors:
   - name: "Lindheim, Bj\u00f6rn"
 date-released: "2026-11-08"

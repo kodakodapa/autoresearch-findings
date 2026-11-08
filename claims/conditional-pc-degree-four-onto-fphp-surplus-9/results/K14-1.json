@@ -1,0 +1,24 @@
+{
+  "axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "axioms_output": "_row_edge' depends on axioms: [propext, Classical.choice, Quot.sound]\ninfo: Work/RectangularOne.lean:281:0: 'Work.MatchingLabels.top_one_edge' depends on axioms: [propext, Classical.choice, Quot.sound]\ninfo: Work/RectangularOne.lean:283:0: 'Work.MatchingLabels.spanning_one' depends on axioms: [propext, Classical.choice, Quot.sound]\n? [17/17] Built Work.ArAxioms28410cb36c4243ce91ee157ac9824cfb (173ms)\ninfo: Work/ArAxioms28410cb36c4243ce91ee157ac9824cfb.lean:2:0: 'Work.MatchingLabels.spanning_one' depends on axioms: [propext, Classical.choice, Quot.sound]\nBuild completed successfully (17 jobs).\n",
+  "build_log": "ctangularOne.lean:281:0: 'Work.MatchingLabels.top_one_edge' depends on axioms: [propext, Classical.choice, Quot.sound]\ninfo: Work/RectangularOne.lean:283:0: 'Work.MatchingLabels.spanning_one' depends on axioms: [propext, Classical.choice, Quot.sound]\nBuild completed successfully (55 jobs).\ninfo: agent: no previous manifest, creating one from scratch\ninfo: toolchain not updated; already up-to-date\n",
+  "duration_s": 3.6953349113464355,
+  "exit": 0,
+  "figures": [],
+  "matches": null,
+  "path": "checks/run-copies/K14-RectangularOne.lean",
+  "reason": "proof built and axioms verified",
+  "result": "pass",
+  "run_at": "2026-11-04T17:12:35.489338+00:00",
+  "stderr_head": "",
+  "stderr_tail": "",
+  "stdout_sha256": "99d64282a4c1065d7794e9518ff6ca5297aa9034bd6ab930bdc79bebfa581c83",
+  "stdout_tail": "{\"result\": \"pass\", \"reason\": \"proof built and axioms verified\", \"axioms_output\": \"_row_edge' depends on axioms: [propext, Classical.choice, Quot.sound]\\ninfo: Work/RectangularOne.lean:281:0: 'Work.MatchingLabels.top_one_edge' depends on axioms: [propext, Classical.choice, Quot.sound]\\ninfo: Work/RectangularOne.lean:283:0: 'Work.MatchingLabels.spanning_one' depends on axioms: [propext, Classical.choice, Quot.sound]\\n? [17/17] Built Work.ArAxioms28410cb36c4243ce91ee157ac9824cfb (173ms)\\ninfo: Work/ArAxioms28410cb36c4243ce91ee157ac9824cfb.lean:2:0: 'Work.MatchingLabels.spanning_one' depends on axioms: [propext, Classical.choice, Quot.sound]\\nBuild completed successfully (17 jobs).\\n\", \"build_log\": \"ctangularOne.lean:281:0: 'Work.MatchingLabels.top_one_edge' depends on axioms: [propext, Classical.choice, Quot.sound]\\ninfo: Work/RectangularOne.lean:283:0: 'Work.MatchingLabels.spanning_one' depends on axioms: [propext, Classical.choice, Quot.sound]\\nBuild completed successfully (55 jobs).\\ninfo: agent: no previous manifest, creating one from scratch\\ninfo: toolchain not updated; already up-to-date\\n\"}\n",
+  "theorem": "Work.MatchingLabels.spanning_one",
+  "timeout_s": 1800.0,
+  "type": "proof"
+}

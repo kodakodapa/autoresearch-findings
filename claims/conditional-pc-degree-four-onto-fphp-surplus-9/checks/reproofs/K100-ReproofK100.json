@@ -1,0 +1,25 @@
+{
+  "axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "axioms_output": "nomial' depends on axioms: [propext, Quot.sound]\n? [179/180] Replayed Work.ReproofK100\ninfo: Work/ReproofK100.lean:106:0: 'Work.ReproofK100.invariant' depends on axioms: [propext, Classical.choice, Quot.sound]\ninfo: Work/ReproofK100.lean:107:0: 'Work.ReproofK100.no_stdpc_le' depends on axioms: [propext, Classical.choice, Quot.sound]\n? [180/180] Built Work.ArAxioms89d144eceaba4f5fa98e2c71cad33324 (316ms)\ninfo: Work/ArAxioms89d144eceaba4f5fa98e2c71cad33324.lean:3:0: 'Work.ReproofK100.no_stdpc_le' depends on axioms: [propext, Classical.choice, Quot.sound]\nBuild completed successfully (180 jobs).\n",
+  "build_log": "e68_9.entry' depends on axioms: [propext, Classical.choice, Quot.sound]\n? [266/267] Built Work.SquareRowOne68_10 (7.0s)\ninfo: Work/SquareRowOne68_10.lean:19:0: 'Work.SquareRowOne68_10.entry' depends on axioms: [propext, Classical.choice, Quot.sound]\nBuild completed successfully (267 jobs).\ninfo: agent: no previous manifest, creating one from scratch\ninfo: toolchain not updated; already up-to-date\nice, Quot.sound]\ninfo: Peer/th/RemainingSpanning.lean:35:0: 'Peer.th.RemainingSpanning.no_stdpc_le' depends on axioms: [propext, Classical.choice, Quot.sound]\nBuild completed successfully (173 jobs).\n",
+  "duration_s": 238.03183507919312,
+  "exit": 0,
+  "figures": [],
+  "matches": "Work.RemainingSpanning.no_stdpc_le",
+  "matches_as": "Peer.th.RemainingSpanning.no_stdpc_le",
+  "path": "checks/reproofs/K100-ReproofK100.lean",
+  "reason": "proof built and axioms verified",
+  "result": "pass",
+  "run_at": "2026-11-06T14:45:42.331755+00:00",
+  "stderr_head": "",
+  "stderr_tail": "",
+  "stdout_sha256": "fe6c339289aa1a17f465f59978d4079bc6bb35c131079d7f5d0e6259c00a24a4",
+  "stdout_tail": "{\"result\": \"pass\", \"reason\": \"proof built and axioms verified\", \"axioms_output\": \"nomial' depends on axioms: [propext, Quot.sound]\\n? [179/180] Replayed Work.ReproofK100\\ninfo: Work/ReproofK100.lean:106:0: 'Work.ReproofK100.invariant' depends on axioms: [propext, Classical.choice, Quot.sound]\\ninfo: Work/ReproofK100.lean:107:0: 'Work.ReproofK100.no_stdpc_le' depends on axioms: [propext, Classical.choice, Quot.sound]\\n? [180/180] Built Work.ArAxioms89d144eceaba4f5fa98e2c71cad33324 (316ms)\\ninfo: Work/ArAxioms89d144eceaba4f5fa98e2c71cad33324.lean:3:0: 'Work.ReproofK100.no_stdpc_le' depends on axioms: [propext, Classical.choice, Quot.sound]\\nBuild completed successfully (180 jobs).\\n\", \"build_log\": \"e68_9.entry' depends on axioms: [propext, Classical.choice, Quot.sound]\\n? [266/267] Built Work.SquareRowOne68_10 (7.0s)\\ninfo: Work/SquareRowOne68_10.lean:19:0: 'Work.SquareRowOne68_10.entry' depends on axioms: [propext, Classical.choice, Quot.sound]\\nBuild completed successfully (267 jobs).\\ninfo: agent: no previous manifest, creating one from scratch\\ninfo: toolchain not updated; already up-to-date\\nice, Quot.sound]\\ninfo: Peer/th/RemainingSpanning.lean:35:0: 'Peer.th.RemainingSpanning.no_stdpc_le' depends on axioms: [propext, Classical.choice, Quot.sound]\\nBuild completed successfully (173 jobs).\\n\"}\n",
+  "theorem": "Work.ReproofK100.no_stdpc_le",
+  "timeout_s": 1800.0,
+  "type": "proof"
+}

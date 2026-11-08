@@ -61,6 +61,7 @@ From Lean proofs to certified derivations in the ontological embedding: This res
 Exact polynomial calculus degree p for the onto functional pigeonhole principle with surplus divisible by p: This result was found by AI research agents (the autoresearch harness). It was proved in Lean; the verification steps below build the published programme library.
 Polynomial calculus degree above p for the onto functional pigeonhole principle with surplus divisible by p squared: This result was found by AI research agents (the autoresearch harness). It was proved in Lean; the verification steps below build the published programme library.
 Polynomial calculus degree at least 5 over F2 for the onto functional pigeonhole principle with surplus 8: This result was found by AI research agents (the autoresearch harness). It was proved in Lean; the verification steps below build the published programme library.
+Polynomial calculus degree above 4 over F3 for the onto functional pigeonhole principle with surplus divisible by 9, conditional on a spanning statement: This result was found by AI research agents (the autoresearch harness). It was partly proved in Lean (claims K14, K100) and partly checked by script (claims K119, K120); the verification steps below build the published programme library.
 Site: https://kodakodapa.github.io/autoresearch-findings/
 - [A census of modal agents in the prisoner's dilemma — Finding report](claims/modal-agent-census/paper.pdf)
 - [When graded PrudentBots cooperate with graded FairBots — Finding report](claims/graded-prudent-fair/paper.pdf)
@@ -82,3 +83,4 @@ Site: https://kodakodapa.github.io/autoresearch-findings/
 - [Exact polynomial calculus degree p for the onto functional pigeonhole principle with surplus divisible by p — Finding report](claims/exact-pc-degree-onto-fphp-first-level/paper.pdf)
 - [Polynomial calculus degree above p for the onto functional pigeonhole principle with surplus divisible by p squared — Finding report](claims/pc-degree-above-p-onto-fphp-surplus-p-squared/paper.pdf)
 - [Polynomial calculus degree at least 5 over F2 for the onto functional pigeonhole principle with surplus 8 — Finding report](claims/pc-degree-5-onto-fphp-surplus-8/paper.pdf)
+- [Polynomial calculus degree above 4 over F3 for the onto functional pigeonhole principle with surplus divisible by 9, conditional on a spanning statement — Finding report](claims/conditional-pc-degree-four-onto-fphp-surplus-9/paper.pdf)

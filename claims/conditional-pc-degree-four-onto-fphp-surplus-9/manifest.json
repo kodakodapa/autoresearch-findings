@@ -1,0 +1,22 @@
+{
+  "allowed": [
+    "ch. 7"
+  ],
+  "claims": [
+    "K14",
+    "K100",
+    "K119",
+    "K120"
+  ],
+  "commit": "ec49de5e279909aace60ec48cf1d9c3545b6502c",
+  "name": "conditional-pc-degree-four-onto-fphp-surplus-9",
+  "round": 87,
+  "run_label": "20261104-1627",
+  "staged_at": "2026-11-08T16:20:37Z",
+  "title": "Polynomial calculus degree above 4 over F3 for the onto functional pigeonhole principle with surplus divisible by 9, conditional on a spanning statement",
+  "library": {
+    "programme": "proof-complexity",
+    "commit": "ad1259e5894f224a3d1eda62a1914da4b4dd699e",
+    "path": "programmes/proof-complexity"
+  }
+}

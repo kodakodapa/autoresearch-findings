@@ -1,0 +1,13 @@
+{
+  "axioms": null,
+  "check": "checks/run-copies/K120-spanning_16_7_three.py",
+  "date": "2026-11-08",
+  "exit": 0,
+  "image": "ar-research-proof-complexity:92f4db65082f2d4a",
+  "output_tail": "top 81000 52514 7.28\ntop 82000 53029 7.47\ntop 83000 53535 7.66\ntop 84000 54020 7.85\ntop 85000 54535 8.04\ntop 86000 55045 8.23\ntop 87000 55553 8.42\ntop 88000 56044 8.62\ntop 89000 56551 8.82\ntop 90000 57061 9.02\ntop 91000 57574 9.23\ntop 92000 58068 9.44\ntop 93000 58567 9.66\ntop 94000 59082 9.86\ntop 95000 59592 10.08\ntop 96000 60092 10.3\ntop 97000 60588 10.52\ntop 98000 61098 10.74\ntop 99000 61608 10.97\ntop 100000 62116 11.21\ntop 101000 62604 11.44\ntop 102000 63114 11.68\ntop 103000 63629 11.91\ntop 104000 64135 12.15\ntop 105000 64620 12.41\ntop 106000 65135 12.65\ntop 107000 65645 12.9\ntop 108000 66153 13.15\ntop 109000 66644 13.42\ntop 110000 67151 13.68\ntop 111000 67661 13.95\ntop 112000 68174 14.22\ntop 113000 68668 14.53\ntop 114000 69167 14.86\ntop 115000 69682 15.19\ntop 116000 70192 15.52\ntop 117000 70692 15.88\n# ar-table\nm|n|r|field|labels|top_rows|top_rank|kernel_dimension|generators|generator_rank|holds\n16|7|3|F3|95760|117600|70980|24780|28673|24780|True",
+  "published": true,
+  "result": "pass",
+  "stderr_tail": "",
+  "tool": "python",
+  "toolchain": "leanprover/lean4:v4.35.0"
+}

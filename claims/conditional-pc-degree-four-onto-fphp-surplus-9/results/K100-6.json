@@ -1,0 +1,24 @@
+{
+  "axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "axioms_output": "e, Quot.sound]\n? [173/174] Replayed Work.RemainingSpanning\ninfo: Work/RemainingSpanning.lean:34:0: 'Work.RemainingSpanning.invariant' depends on axioms: [propext, Classical.choice, Quot.sound]\ninfo: Work/RemainingSpanning.lean:35:0: 'Work.RemainingSpanning.no_stdpc_le' depends on axioms: [propext, Classical.choice, Quot.sound]\n? [174/174] Built Work.ArAxiomsa06ed5fcf1474da68d92788708ceb73b (240ms)\ninfo: Work/ArAxiomsa06ed5fcf1474da68d92788708ceb73b.lean:2:0: 'Work.RemainingSpanning.no_stdpc_le' depends on axioms: [propext, Classical.choice, Quot.sound]\nBuild completed successfully (174 jobs).\n",
+  "build_log": "oms: [propext, Classical.choice, Quot.sound]\n? [326/327] Replayed Work.RemainingSpanning\ninfo: Work/RemainingSpanning.lean:34:0: 'Work.RemainingSpanning.invariant' depends on axioms: [propext, Classical.choice, Quot.sound]\ninfo: Work/RemainingSpanning.lean:35:0: 'Work.RemainingSpanning.no_stdpc_le' depends on axioms: [propext, Classical.choice, Quot.sound]\nBuild completed successfully (327 jobs).\n",
+  "duration_s": 10.61110806465149,
+  "exit": 0,
+  "figures": [],
+  "matches": null,
+  "path": "checks/run-copies/K100-RemainingSpanning.lean",
+  "reason": "proof built and axioms verified",
+  "result": "pass",
+  "run_at": "2026-11-05T17:56:37.229513+00:00",
+  "stderr_head": "",
+  "stderr_tail": "",
+  "stdout_sha256": "bc2163b226b46164e5c24bf213888314cddcb22afdf43f6aabe7ad1f94a0280a",
+  "stdout_tail": "{\"result\": \"pass\", \"reason\": \"proof built and axioms verified\", \"axioms_output\": \"e, Quot.sound]\\n? [173/174] Replayed Work.RemainingSpanning\\ninfo: Work/RemainingSpanning.lean:34:0: 'Work.RemainingSpanning.invariant' depends on axioms: [propext, Classical.choice, Quot.sound]\\ninfo: Work/RemainingSpanning.lean:35:0: 'Work.RemainingSpanning.no_stdpc_le' depends on axioms: [propext, Classical.choice, Quot.sound]\\n? [174/174] Built Work.ArAxiomsa06ed5fcf1474da68d92788708ceb73b (240ms)\\ninfo: Work/ArAxiomsa06ed5fcf1474da68d92788708ceb73b.lean:2:0: 'Work.RemainingSpanning.no_stdpc_le' depends on axioms: [propext, Classical.choice, Quot.sound]\\nBuild completed successfully (174 jobs).\\n\", \"build_log\": \"oms: [propext, Classical.choice, Quot.sound]\\n? [326/327] Replayed Work.RemainingSpanning\\ninfo: Work/RemainingSpanning.lean:34:0: 'Work.RemainingSpanning.invariant' depends on axioms: [propext, Classical.choice, Quot.sound]\\ninfo: Work/RemainingSpanning.lean:35:0: 'Work.RemainingSpanning.no_stdpc_le' depends on axioms: [propext, Classical.choice, Quot.sound]\\nBuild completed successfully (327 jobs).\\n\"}\n",
+  "theorem": "Work.RemainingSpanning.no_stdpc_le",
+  "timeout_s": 1800.0,
+  "type": "proof"
+}

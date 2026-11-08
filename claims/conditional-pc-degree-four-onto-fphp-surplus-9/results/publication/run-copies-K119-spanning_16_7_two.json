@@ -1,0 +1,13 @@
+{
+  "axioms": null,
+  "check": "checks/run-copies/K119-spanning_16_7_two.py",
+  "date": "2026-11-08",
+  "exit": 0,
+  "image": "ar-research-proof-complexity:92f4db65082f2d4a",
+  "output_tail": "# ar-table\nm|n|r|field|labels|top_rows|top_rank|kernel_dimension|generators|generator_rank|holds\n16|7|2|F3|2352|5040|2009|343|366|343|True",
+  "published": true,
+  "result": "pass",
+  "stderr_tail": "",
+  "tool": "python",
+  "toolchain": "leanprover/lean4:v4.35.0"
+}

@@ -1,0 +1,25 @@
+{
+  "axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "axioms_output": "e' depends on axioms: [propext, Classical.choice, Quot.sound]\ninfo: Peer/pr/RectangularOne.lean:281:0: 'Peer.pr.MatchingLabels.top_one_edge' depends on axioms: [propext, Classical.choice, Quot.sound]\ninfo: Peer/pr/RectangularOne.lean:283:0: 'Peer.pr.MatchingLabels.spanning_one' depends on axioms: [propext, Classical.choice, Quot.sound]\n? [20/20] Built Work.ArAxiomse95fcf7ea0f440a9ba2f15c685f07330 (175ms)\ninfo: Work/ArAxiomse95fcf7ea0f440a9ba2f15c685f07330.lean:3:0: 'Work.ReproofK14.spanning_one' depends on axioms: [propext, Classical.choice, Quot.sound]\nBuild completed successfully (20 jobs).\n",
+  "build_log": "23: `if_true` has been deprecated: Use `ite_true` instead\n\nHint: Replace the deprecated name:\n  i?f?_?t?r?u?e?i?t?e?_?t?r?u?e?\ninfo: Work/ReproofK14.lean:258:0: 'Work.ReproofK14.spanning_one' depends on axioms: [propext, Classical.choice, Quot.sound]\nBuild completed successfully (68 jobs).\ninfo: agent: no previous manifest, creating one from scratch\ninfo: toolchain not updated; already up-to-date\nl.choice, Quot.sound]\ninfo: Peer/pr/RectangularOne.lean:283:0: 'Peer.pr.MatchingLabels.spanning_one' depends on axioms: [propext, Classical.choice, Quot.sound]\nBuild completed successfully (16 jobs).\n",
+  "duration_s": 5.354661226272583,
+  "exit": 0,
+  "figures": [],
+  "matches": "Work.MatchingLabels.spanning_one",
+  "matches_as": "Peer.pr.MatchingLabels.spanning_one",
+  "path": "checks/reproofs/K14-ReproofK14.lean",
+  "reason": "proof built and axioms verified",
+  "result": "pass",
+  "run_at": "2026-11-04T17:23:24.088840+00:00",
+  "stderr_head": "",
+  "stderr_tail": "",
+  "stdout_sha256": "c9e70b5746e6767adfcc6048b0ac0714b5850903eac26e4f4483aade476d42d9",
+  "stdout_tail": "{\"result\": \"pass\", \"reason\": \"proof built and axioms verified\", \"axioms_output\": \"e' depends on axioms: [propext, Classical.choice, Quot.sound]\\ninfo: Peer/pr/RectangularOne.lean:281:0: 'Peer.pr.MatchingLabels.top_one_edge' depends on axioms: [propext, Classical.choice, Quot.sound]\\ninfo: Peer/pr/RectangularOne.lean:283:0: 'Peer.pr.MatchingLabels.spanning_one' depends on axioms: [propext, Classical.choice, Quot.sound]\\n? [20/20] Built Work.ArAxiomse95fcf7ea0f440a9ba2f15c685f07330 (175ms)\\ninfo: Work/ArAxiomse95fcf7ea0f440a9ba2f15c685f07330.lean:3:0: 'Work.ReproofK14.spanning_one' depends on axioms: [propext, Classical.choice, Quot.sound]\\nBuild completed successfully (20 jobs).\\n\", \"build_log\": \"23: `if_true` has been deprecated: Use `ite_true` instead\\n\\nHint: Replace the deprecated name:\\n  i?f?_?t?r?u?e?i?t?e?_?t?r?u?e?\\ninfo: Work/ReproofK14.lean:258:0: 'Work.ReproofK14.spanning_one' depends on axioms: [propext, Classical.choice, Quot.sound]\\nBuild completed successfully (68 jobs).\\ninfo: agent: no previous manifest, creating one from scratch\\ninfo: toolchain not updated; already up-to-date\\nl.choice, Quot.sound]\\ninfo: Peer/pr/RectangularOne.lean:283:0: 'Peer.pr.MatchingLabels.spanning_one' depends on axioms: [propext, Classical.choice, Quot.sound]\\nBuild completed successfully (16 jobs).\\n\"}\n",
+  "theorem": "Work.ReproofK14.spanning_one",
+  "timeout_s": 1800.0,
+  "type": "proof"
+}

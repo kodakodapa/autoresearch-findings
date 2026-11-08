@@ -1,0 +1,14 @@
+{
+  "ended": "2026-11-07T10:24:52.622417+00:00",
+  "exit": 0,
+  "hours": 1,
+  "log": "results/job-R44.log",
+  "memory_mb": 4096,
+  "peak_rss_mb": 892.3,
+  "request": "R44",
+  "script": "checks/run-copies/K120-spanning_16_7_three.py",
+  "sha256": "5f0b509403edccbb37511e6f219d7dd37c9f737e8ccfee99ac01af05f110798b",
+  "started": "2026-11-07T10:24:14.498801+00:00",
+  "status": "exited",
+  "wall_s": 38.1
+}

@@ -1,0 +1,25 @@
+{
+  "axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "axioms_output": "ound]\n? [175/176] Replayed Peer.th.RemainingSpanning\ninfo: Peer/th/RemainingSpanning.lean:34:0: 'Peer.th.RemainingSpanning.invariant' depends on axioms: [propext, Classical.choice, Quot.sound]\ninfo: Peer/th/RemainingSpanning.lean:35:0: 'Peer.th.RemainingSpanning.no_stdpc_le' depends on axioms: [propext, Classical.choice, Quot.sound]\n? [176/176] Built Work.ArAxiomsb7706f8d411045c091e6a338dcf344a5 (234ms)\ninfo: Work/ArAxiomsb7706f8d411045c091e6a338dcf344a5.lean:3:0: 'Work.K100Reproof.no_stdpc_le' depends on axioms: [propext, Classical.choice, Quot.sound]\nBuild completed successfully (176 jobs).\n",
+  "build_log": "ernel_lowering' depends on axioms: [propext, Classical.choice, Quot.sound]\n? [220/221] Replayed Work.K100Reproof\ninfo: Work/K100Reproof.lean:77:0: 'Work.K100Reproof.invariant' depends on axioms: [propext, Classical.choice, Quot.sound]\ninfo: Work/K100Reproof.lean:78:0: 'Work.K100Reproof.no_stdpc_le' depends on axioms: [propext, Classical.choice, Quot.sound]\nBuild completed successfully (221 jobs).\nice, Quot.sound]\ninfo: Peer/th/RemainingSpanning.lean:35:0: 'Peer.th.RemainingSpanning.no_stdpc_le' depends on axioms: [propext, Classical.choice, Quot.sound]\nBuild completed successfully (173 jobs).\n",
+  "duration_s": 17.07024097442627,
+  "exit": 0,
+  "figures": [],
+  "matches": "Work.RemainingSpanning.no_stdpc_le",
+  "matches_as": "Peer.th.RemainingSpanning.no_stdpc_le",
+  "path": "checks/reproofs/K100-K100Reproof.lean",
+  "reason": "proof built and axioms verified",
+  "result": "pass",
+  "run_at": "2026-11-05T18:26:50.929290+00:00",
+  "stderr_head": "",
+  "stderr_tail": "",
+  "stdout_sha256": "4736059ae4e6481a4f5af52697e6f0a3132c5ca04e991b2a402727f094b48e03",
+  "stdout_tail": "{\"result\": \"pass\", \"reason\": \"proof built and axioms verified\", \"axioms_output\": \"ound]\\n? [175/176] Replayed Peer.th.RemainingSpanning\\ninfo: Peer/th/RemainingSpanning.lean:34:0: 'Peer.th.RemainingSpanning.invariant' depends on axioms: [propext, Classical.choice, Quot.sound]\\ninfo: Peer/th/RemainingSpanning.lean:35:0: 'Peer.th.RemainingSpanning.no_stdpc_le' depends on axioms: [propext, Classical.choice, Quot.sound]\\n? [176/176] Built Work.ArAxiomsb7706f8d411045c091e6a338dcf344a5 (234ms)\\ninfo: Work/ArAxiomsb7706f8d411045c091e6a338dcf344a5.lean:3:0: 'Work.K100Reproof.no_stdpc_le' depends on axioms: [propext, Classical.choice, Quot.sound]\\nBuild completed successfully (176 jobs).\\n\", \"build_log\": \"ernel_lowering' depends on axioms: [propext, Classical.choice, Quot.sound]\\n? [220/221] Replayed Work.K100Reproof\\ninfo: Work/K100Reproof.lean:77:0: 'Work.K100Reproof.invariant' depends on axioms: [propext, Classical.choice, Quot.sound]\\ninfo: Work/K100Reproof.lean:78:0: 'Work.K100Reproof.no_stdpc_le' depends on axioms: [propext, Classical.choice, Quot.sound]\\nBuild completed successfully (221 jobs).\\nice, Quot.sound]\\ninfo: Peer/th/RemainingSpanning.lean:35:0: 'Peer.th.RemainingSpanning.no_stdpc_le' depends on axioms: [propext, Classical.choice, Quot.sound]\\nBuild completed successfully (173 jobs).\\n\"}\n",
+  "theorem": "Work.K100Reproof.no_stdpc_le",
+  "timeout_s": 1800.0,
+  "type": "proof"
+}
