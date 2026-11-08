@@ -7,7 +7,7 @@
   ],
   "commit": "19b6167239a90c29b4a3f0ff0f64c79016faf2f8",
   "concept_doi": "10.5281/zenodo.23996615",
-  "doi": "10.5281/zenodo.24017445",
+  "doi": "10.5281/zenodo.24056805",
   "library": {
     "commit": "ad1259e5894f224a3d1eda62a1914da4b4dd699e",
     "path": "programmes/proof-complexity",
@@ -44,5 +44,5 @@
   "run_label": "20261028-0841",
   "staged_at": "2026-11-08T16:20:00Z",
   "title": "Polynomial calculus degree at least 5 over F2 for the onto functional pigeonhole principle with surplus 8",
-  "zenodo_record_id": "24017445"
+  "zenodo_record_id": "24056805"
 }
