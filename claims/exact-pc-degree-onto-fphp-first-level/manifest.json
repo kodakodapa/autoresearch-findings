@@ -9,7 +9,7 @@
   ],
   "commit": "908b30496168c757d5eba6ba4ba761dbab7933b8",
   "concept_doi": "10.5281/zenodo.23996564",
-  "doi": "10.5281/zenodo.24017401",
+  "doi": "10.5281/zenodo.24056788",
   "library": {
     "commit": "ad1259e5894f224a3d1eda62a1914da4b4dd699e",
     "path": "programmes/proof-complexity",
@@ -46,5 +46,5 @@
   "run_label": "20261027-0607",
   "staged_at": "2026-11-08T16:19:30Z",
   "title": "Exact polynomial calculus degree p for the onto functional pigeonhole principle with surplus divisible by p",
-  "zenodo_record_id": "24017401"
+  "zenodo_record_id": "24056788"
 }
