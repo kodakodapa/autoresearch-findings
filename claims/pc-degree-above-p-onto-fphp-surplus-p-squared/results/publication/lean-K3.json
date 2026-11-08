@@ -1,7 +1,7 @@
 {
   "axioms": "'Programme.\u00ab20261102-1249-proof-complexity\u00bb.UniformC3.uniform_no_degree_p_unconditional' depends on axioms: [propext,",
   "check": "checks/lean-K3.py",
-  "date": "2026-11-06",
+  "date": "2026-11-08",
   "exit": 0,
   "image": "ar-research-proof-complexity:92f4db65082f2d4a",
   "output_tail": "AR_STATEMENT_BEGIN\n@Programme.\u00ab20261102-1249-proof-complexity\u00bb.UniformC3.uniform_no_degree_p_unconditional : \u2200 {p : Nat},\n  Programme.\u00ab20261027-0607-proof-complexity\u00bb.Peel.IsPrime p \u2192\n    \u2200 (c n : Nat),\n      2 * p - 1 \u2264 n \u2192\n        \u00acProgramme.\u00ab20261025-0459-proof-complexity\u00bb.OntoFPHP.PPCRefutation p\n            (Programme.\u00ab20261025-0459-proof-complexity\u00bb.OntoFPHP.ontoFPHP n (c * p * p)) p\nAR_STATEMENT_END\n'Programme.\u00ab20261102-1249-proof-complexity\u00bb.UniformC3.uniform_no_degree_p_unconditional' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]",

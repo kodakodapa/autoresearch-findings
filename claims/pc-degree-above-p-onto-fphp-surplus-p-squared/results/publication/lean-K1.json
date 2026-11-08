@@ -1,7 +1,7 @@
 {
   "axioms": "'Programme.\u00ab20261102-1249-proof-complexity\u00bb.UniformC3.squareLiftAssumption' depends on axioms: [propext,",
   "check": "checks/lean-K1.py",
-  "date": "2026-11-06",
+  "date": "2026-11-08",
   "exit": 0,
   "image": "ar-research-proof-complexity:92f4db65082f2d4a",
   "output_tail": "AR_STATEMENT_BEGIN\nProgramme.\u00ab20261102-1249-proof-complexity\u00bb.UniformC3.squareLiftAssumption : \u2200 (p : Nat),\n  Programme.\u00ab20261027-0607-proof-complexity\u00bb.Peel.IsPrime p \u2192\n    Programme.\u00ab20261102-1249-proof-complexity\u00bb.UniformC3.SquareLiftAssumption p\nAR_STATEMENT_END\n'Programme.\u00ab20261102-1249-proof-complexity\u00bb.UniformC3.squareLiftAssumption' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]",

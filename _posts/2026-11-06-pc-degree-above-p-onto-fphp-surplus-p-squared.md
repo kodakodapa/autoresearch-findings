@@ -53,6 +53,10 @@ $n\ge2p-1$; nothing is checked only up to a bound. The proofs use only the stand
 (syntactic) PC with Boolean axioms. A second agent in the run re-proved all six statements in Lean, but its
 re-proofs reuse six of the author's lemmas each, so they are not fully independent. No person has
 reviewed the proofs; the evidence is the kernel check.
+
+The Lean theorems exclude refutations of degree exactly $p$; refutations of smaller degree are excluded by
+monotonicity in the degree bound, which the library states separately
+(`Programme.«maintenance-20261108».DegreeMono.uniform_no_degree_le_p` and `uniform_no_standard_degree_le_p`).
 <!-- /owner-summary -->
 
 This result extends:
@@ -106,7 +110,7 @@ Lean: `Programme.«20261102-1249-proof-complexity».UniformC3.squareLiftAssumpti
 - Machine-checked: `checks/lean-K1.py` (library theorem `Programme.«20261102-1249-proof-complexity».UniformC3.squareLiftAssumption`)
 - Second-agent re-proofs: 1, published in `claims/pc-degree-above-p-onto-fphp-surplus-p-squared/checks/reproofs/`.
 - reproof `checks/reproofs/K1-Reproof.lean` by the skeptic (codex): `Work.UniformC3.squareLiftAssumption` — pass (`checks/reproofs/K1-Reproof.json`); second-agent re-proof; uses 6 lemmas from the author's package; re-proof by a second agent; imports the run's private packages (not rebuildable from this repo)
-- Re-checked at publication on 2026-11-06: pass (`results/publication/lean-K1.json`)
+- Re-checked at publication on 2026-11-08: pass (`results/publication/lean-K1.json`)
 - Prior art: partial prior art
 
 **K2.** For every prime $p$ and natural $c$, some $T$ satisfies $\mathrm{Bal}(p,2p-1,cp^2,T,T,e)$ for every $e\le p-1$, and $p\mid T([])-1$.
@@ -117,7 +121,7 @@ Lean: `Programme.«20261102-1249-proof-complexity».UniformC3.uniform_unit_desig
 - Machine-checked: `checks/lean-K2.py` (library theorem `Programme.«20261102-1249-proof-complexity».UniformC3.uniform_unit_design_unconditional`)
 - Second-agent re-proofs: 1, published in `claims/pc-degree-above-p-onto-fphp-surplus-p-squared/checks/reproofs/`.
 - reproof `checks/reproofs/K2-Reproof.lean` by the skeptic (codex): `Work.UniformC3.uniform_unit_design_unconditional` — pass (`checks/reproofs/K2-Reproof.json`); second-agent re-proof; uses 6 lemmas from the author's package; re-proof by a second agent; imports the run's private packages (not rebuildable from this repo)
-- Re-checked at publication on 2026-11-06: pass (`results/publication/lean-K2.json`)
+- Re-checked at publication on 2026-11-08: pass (`results/publication/lean-K2.json`)
 - Prior art: partial prior art
 
 **K3.** For every prime $p$, natural $c$, and $n\ge2p-1$, $\mathrm{ontoFPHP}(n,cp^2)$ has no degree-$p$ $\mathrm{PPCRefutation}$ modulo $p$ (functional encoding, PC line degree).
@@ -128,7 +132,7 @@ Lean: `Programme.«20261102-1249-proof-complexity».UniformC3.uniform_no_degree_
 - Machine-checked: `checks/lean-K3.py` (library theorem `Programme.«20261102-1249-proof-complexity».UniformC3.uniform_no_degree_p_unconditional`)
 - Second-agent re-proofs: 1, published in `claims/pc-degree-above-p-onto-fphp-surplus-p-squared/checks/reproofs/`.
 - reproof `checks/reproofs/K3-Reproof.lean` by the skeptic (codex): `Work.UniformC3.uniform_no_degree_p_unconditional` — pass (`checks/reproofs/K3-Reproof.json`); second-agent re-proof; uses 6 lemmas from the author's package; re-proof by a second agent; imports the run's private packages (not rebuildable from this repo)
-- Re-checked at publication on 2026-11-06: pass (`results/publication/lean-K3.json`)
+- Re-checked at publication on 2026-11-08: pass (`results/publication/lean-K3.json`)
 - Prior art: partial prior art
 
 **K4.** For every prime $p$, natural $c$, and $n\ge2p-1$, $\mathrm{ontoFPHP}(n,cp^2)$ has no standard polynomial-calculus refutation modulo $p$ of line degree at most $p$ (functional encoding).
@@ -139,7 +143,7 @@ Lean: `Programme.«20261102-1249-proof-complexity».UniformC3.uniform_no_standar
 - Machine-checked: `checks/lean-K4.py` (library theorem `Programme.«20261102-1249-proof-complexity».UniformC3.uniform_no_standard_degree_p_unconditional`)
 - Second-agent re-proofs: 1, published in `claims/pc-degree-above-p-onto-fphp-surplus-p-squared/checks/reproofs/`.
 - reproof `checks/reproofs/K4-Reproof.lean` by the skeptic (codex): `Work.UniformC3.uniform_no_standard_degree_p_unconditional` — pass (`checks/reproofs/K4-Reproof.json`); second-agent re-proof; uses 6 lemmas from the author's package; re-proof by a second agent; imports the run's private packages (not rebuildable from this repo)
-- Re-checked at publication on 2026-11-06: pass (`results/publication/lean-K4.json`)
+- Re-checked at publication on 2026-11-08: pass (`results/publication/lean-K4.json`)
 - Prior art: partial prior art
 
 **K5.** For all natural $c$ and $n\ge3$, $\mathrm{ontoFPHP}(n,4c)$ has no standard polynomial-calculus refutation modulo $2$ of line degree at most $2$ (functional encoding).
@@ -150,7 +154,7 @@ Lean: `Programme.«20261102-1249-proof-complexity».UniformC3.no_standard_degree
 - Machine-checked: `checks/lean-K5.py` (library theorem `Programme.«20261102-1249-proof-complexity».UniformC3.no_standard_degree_two`)
 - Second-agent re-proofs: 1, published in `claims/pc-degree-above-p-onto-fphp-surplus-p-squared/checks/reproofs/`.
 - reproof `checks/reproofs/K5-Reproof.lean` by the skeptic (codex): `Work.UniformC3.no_standard_degree_two` — pass (`checks/reproofs/K5-Reproof.json`); second-agent re-proof; uses 6 lemmas from the author's package; re-proof by a second agent; imports the run's private packages (not rebuildable from this repo)
-- Re-checked at publication on 2026-11-06: pass (`results/publication/lean-K5.json`)
+- Re-checked at publication on 2026-11-08: pass (`results/publication/lean-K5.json`)
 - Prior art: partial prior art
 
 **K6.** For all natural $c$ and $n\ge5$, $\mathrm{ontoFPHP}(n,9c)$ has no standard polynomial-calculus refutation modulo $3$ of line degree at most $3$ (functional encoding).
@@ -161,7 +165,7 @@ Lean: `Programme.«20261102-1249-proof-complexity».UniformC3.no_standard_degree
 - Machine-checked: `checks/lean-K6.py` (library theorem `Programme.«20261102-1249-proof-complexity».UniformC3.no_standard_degree_three`)
 - Second-agent re-proofs: 1, published in `claims/pc-degree-above-p-onto-fphp-surplus-p-squared/checks/reproofs/`.
 - reproof `checks/reproofs/K6-Reproof.lean` by the skeptic (codex): `Work.UniformC3.no_standard_degree_three` — pass (`checks/reproofs/K6-Reproof.json`); second-agent re-proof; uses 6 lemmas from the author's package; re-proof by a second agent; imports the run's private packages (not rebuildable from this repo)
-- Re-checked at publication on 2026-11-06: pass (`results/publication/lean-K6.json`)
+- Re-checked at publication on 2026-11-08: pass (`results/publication/lean-K6.json`)
 - Prior art: partial prior art
 
 ## Discussion
@@ -175,12 +179,12 @@ comparison only.
 
 ## How to verify
 
-Lean toolchain: `leanprover/lean4:v4.35.0`. [Programme library at the recorded commit](https://github.com/kodakodapa/autoresearch-findings/tree/2abad0979eeb03ede3a77490f45a4f381119ff02/programmes/proof-complexity). Install elan and open a new shell after installing elan, then pin the library subtree while keeping the finding checks:
+Lean toolchain: `leanprover/lean4:v4.35.0`. [Programme library at the recorded commit](https://github.com/kodakodapa/autoresearch-findings/tree/ad1259e5894f224a3d1eda62a1914da4b4dd699e/programmes/proof-complexity). Install elan and open a new shell after installing elan, then pin the library subtree while keeping the finding checks:
 
 ```sh
 git clone https://github.com/kodakodapa/autoresearch-findings.git
 cd autoresearch-findings
-git checkout 2abad0979eeb03ede3a77490f45a4f381119ff02 -- programmes/proof-complexity
+git checkout ad1259e5894f224a3d1eda62a1914da4b4dd699e -- programmes/proof-complexity
 cd programmes/proof-complexity && lake build 'Programme.«20261102-1249-proof-complexity».UniformC3.Main' 'Programme.«20261102-1249-proof-complexity».UniformC3.Unconditional'
 AR_LIBRARY=$PWD python -I ../../claims/pc-degree-above-p-onto-fphp-surplus-p-squared/checks/lean-K1.py
 AR_LIBRARY=$PWD python -I ../../claims/pc-degree-above-p-onto-fphp-surplus-p-squared/checks/lean-K2.py
@@ -223,3 +227,4 @@ The output of the checks re-run at publication is in `claims/pc-degree-above-p-o
 - 2026-11-06 — Verification steps; stale run copies removed; encoding stated
 - 2026-11-06 — Publication re-checks and reproofs published; prior art extended; texts corrected
 - 2026-11-06 — Library theorem names and checked statements shown; reproof wording corrected; build cost
+- 2026-11-08 — Degree-monotonicity theorems named (degree <= p)

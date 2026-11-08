@@ -1,7 +1,7 @@
 {
   "axioms": "'Programme.\u00ab20261102-1249-proof-complexity\u00bb.UniformC3.no_standard_degree_three' depends on axioms: [propext,",
   "check": "checks/lean-K6.py",
-  "date": "2026-11-06",
+  "date": "2026-11-08",
   "exit": 0,
   "image": "ar-research-proof-complexity:92f4db65082f2d4a",
   "output_tail": "AR_STATEMENT_BEGIN\nProgramme.\u00ab20261102-1249-proof-complexity\u00bb.UniformC3.no_standard_degree_three : \u2200 (c n : Nat),\n  5 \u2264 n \u2192\n    \u00acProgramme.\u00ab20261029-1156-proof-complexity\u00bb.StdPC.Refutes 3\n        (Programme.\u00ab20261025-0459-proof-complexity\u00bb.OntoFPHP.ontoFPHP n (c * 3 * 3)) 3\nAR_STATEMENT_END\n'Programme.\u00ab20261102-1249-proof-complexity\u00bb.UniformC3.no_standard_degree_three' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]",

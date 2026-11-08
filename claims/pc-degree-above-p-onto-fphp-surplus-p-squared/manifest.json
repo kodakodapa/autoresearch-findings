@@ -14,7 +14,7 @@
   "concept_doi": "10.5281/zenodo.23996585",
   "doi": "10.5281/zenodo.24017415",
   "library": {
-    "commit": "2abad0979eeb03ede3a77490f45a4f381119ff02",
+    "commit": "ad1259e5894f224a3d1eda62a1914da4b4dd699e",
     "path": "programmes/proof-complexity",
     "programme": "proof-complexity"
   },
@@ -39,11 +39,15 @@
     {
       "date": "2026-11-06",
       "reason": "Library theorem names and checked statements shown; reproof wording corrected; build cost"
+    },
+    {
+      "date": "2026-11-08",
+      "reason": "Degree-monotonicity theorems named (degree <= p)"
     }
   ],
   "round": 9,
   "run_label": "20261102-1249",
-  "staged_at": "2026-11-06T17:41:31Z",
+  "staged_at": "2026-11-08T16:19:31Z",
   "title": "Polynomial calculus degree above p for the onto functional pigeonhole principle with surplus divisible by p squared",
   "zenodo_record_id": "24017415"
 }

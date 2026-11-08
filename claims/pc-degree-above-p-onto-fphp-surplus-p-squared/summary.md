@@ -42,6 +42,10 @@ $n\ge2p-1$; nothing is checked only up to a bound. The proofs use only the stand
 re-proofs reuse six of the author's lemmas each, so they are not fully independent. No person has
 reviewed the proofs; the evidence is the kernel check.
 
+The Lean theorems exclude refutations of degree exactly $p$; refutations of smaller degree are excluded by
+monotonicity in the degree bound, which the library states separately
+(`Programme.«maintenance-20261108».DegreeMono.uniform_no_degree_le_p` and `uniform_no_standard_degree_le_p`).
+
 ## Discussion
 
 This is a lower bound, not an exact value. The best upper bound we know at surplus $p^2$ is $p^2$,

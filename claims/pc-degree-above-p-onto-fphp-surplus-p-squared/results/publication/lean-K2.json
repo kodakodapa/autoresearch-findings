@@ -1,7 +1,7 @@
 {
   "axioms": "'Programme.\u00ab20261102-1249-proof-complexity\u00bb.UniformC3.uniform_unit_design_unconditional' depends on axioms: [propext,",
   "check": "checks/lean-K2.py",
-  "date": "2026-11-06",
+  "date": "2026-11-08",
   "exit": 0,
   "image": "ar-research-proof-complexity:92f4db65082f2d4a",
   "output_tail": "AR_STATEMENT_BEGIN\n@Programme.\u00ab20261102-1249-proof-complexity\u00bb.UniformC3.uniform_unit_design_unconditional : \u2200 {p : Nat},\n  Programme.\u00ab20261027-0607-proof-complexity\u00bb.Peel.IsPrime p \u2192\n    \u2200 (c : Nat),\n      \u2203 T,\n        (\u2200 (e : Nat),\n            e \u2264 p - 1 \u2192 Programme.\u00ab20261026-1402-proof-complexity\u00bb.ExtLemma.Bal p (2 * p - 1) (c * p * p) T T e) \u2227\n          \u2191p \u2223 T [] - 1\nAR_STATEMENT_END\n'Programme.\u00ab20261102-1249-proof-complexity\u00bb.UniformC3.uniform_unit_design_unconditional' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]",
