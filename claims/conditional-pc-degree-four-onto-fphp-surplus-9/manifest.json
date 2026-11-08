@@ -18,5 +18,8 @@
     "programme": "proof-complexity",
     "commit": "ad1259e5894f224a3d1eda62a1914da4b4dd699e",
     "path": "programmes/proof-complexity"
-  }
+  },
+  "doi": "10.5281/zenodo.24056820",
+  "concept_doi": "10.5281/zenodo.24056819",
+  "zenodo_record_id": "24056820"
 }

@@ -1,5 +1,7 @@
 # Polynomial calculus degree above 4 over F3 for the onto functional pigeonhole principle with surplus divisible by 9, conditional on a spanning statement
 
+Cite as: https://doi.org/10.5281/zenodo.24056819 (all versions; this version: https://doi.org/10.5281/zenodo.24056820)
+
 <!-- owner-summary -->
 ## Setting
 

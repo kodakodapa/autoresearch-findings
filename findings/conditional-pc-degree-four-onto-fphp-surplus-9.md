@@ -1,10 +1,12 @@
 ---
 layout: default
 title: "Polynomial calculus degree above 4 over F3 for the onto functional pigeonhole principle with surplus divisible by 9, conditional on a spanning statement"
-scholar: {"citation_title": "Polynomial calculus degree above 4 over F3 for the onto functional pigeonhole principle with surplus divisible by 9, conditional on a spanning statement", "citation_author": "Lindheim, Bj\u00f6rn", "citation_publication_date": "2026/11/08", "citation_abstract_html_url": "https://kodakodapa.github.io/autoresearch-findings/findings/conditional-pc-degree-four-onto-fphp-surplus-9.html", "citation_pdf_url": "https://kodakodapa.github.io/autoresearch-findings/claims/conditional-pc-degree-four-onto-fphp-surplus-9/paper.pdf"}
+scholar: {"citation_title": "Polynomial calculus degree above 4 over F3 for the onto functional pigeonhole principle with surplus divisible by 9, conditional on a spanning statement", "citation_author": "Lindheim, Bj\u00f6rn", "citation_publication_date": "2026/11/08", "citation_abstract_html_url": "https://kodakodapa.github.io/autoresearch-findings/findings/conditional-pc-degree-four-onto-fphp-surplus-9.html", "citation_pdf_url": "https://kodakodapa.github.io/autoresearch-findings/claims/conditional-pc-degree-four-onto-fphp-surplus-9/paper.pdf", "citation_doi": "10.5281/zenodo.24056820"}
 ---
 
 # Polynomial calculus degree above 4 over F3 for the onto functional pigeonhole principle with surplus divisible by 9, conditional on a spanning statement
+
+Cite as: https://doi.org/10.5281/zenodo.24056819 (all versions; this version: https://doi.org/10.5281/zenodo.24056820)
 
 <!-- owner-summary -->
 ## Setting
