@@ -9,7 +9,7 @@
 \begin{document}
 \maketitle
 \begin{abstract}
-This report collects the findings: A census of modal agents in the prisoner's dilemma; When graded PrudentBots cooperate with graded FairBots; An unexploitable modal agent that defects against itself; Families of unexploitable agents that defect against themselves; A certified map of variants of Gödel's ontological argument; Settling informal claims about modal agents in Chicken; Modal agents in the game of Chicken; Three-player modal agents in a public-goods game; Blending self-defecting modal agents with FairBot: exact laws; How large must a program be to tell graded FairBots apart?; Unexploitable modal agents that cooperate with themselves: a census; Round robins of modal agents in the Stag Hunt; Safe modal agents that coordinate in the Stag Hunt: size 13 is the minimum; Nominal-free proofs of the theorems Benzmüller's detector flags; A complete calculus for the $\mathcal{L}$-general models of the ontological argument; Gödel's lemma L under the rigid reading, with no condition on positivity; From Lean proofs to certified derivations in the ontological embedding; Polynomial calculus degree at least 5 over F2 for the onto functional pigeonhole principle with surplus 8; Exact polynomial calculus degree p for the onto functional pigeonhole principle with surplus divisible by p; Polynomial calculus degree above p for the onto functional pigeonhole principle with surplus divisible by p squared.
+This report collects the findings: A census of modal agents in the prisoner's dilemma; When graded PrudentBots cooperate with graded FairBots; An unexploitable modal agent that defects against itself; Families of unexploitable agents that defect against themselves; A certified map of variants of Gödel's ontological argument; Settling informal claims about modal agents in Chicken; Modal agents in the game of Chicken; Three-player modal agents in a public-goods game; Blending self-defecting modal agents with FairBot: exact laws; How large must a program be to tell graded FairBots apart?; Unexploitable modal agents that cooperate with themselves: a census; Round robins of modal agents in the Stag Hunt; Safe modal agents that coordinate in the Stag Hunt: size 13 is the minimum; Nominal-free proofs of the theorems Benzmüller's detector flags; A complete calculus for the $\mathcal{L}$-general models of the ontological argument; Gödel's lemma L under the rigid reading, with no condition on positivity; From Lean proofs to certified derivations in the ontological embedding; Exact polynomial calculus degree p for the onto functional pigeonhole principle with surplus divisible by p; Polynomial calculus degree above p for the onto functional pigeonhole principle with surplus divisible by p squared; Polynomial calculus degree at least 5 over F2 for the onto functional pigeonhole principle with surplus 8.
 \end{abstract}
 
 \section{A census of modal agents in the prisoner's dilemma}
@@ -3009,136 +3009,6 @@ No check scripts.
 \paragraph{Provenance.}
 Run \texttt{20261023-0556}, claims K1, K3, K4, K5, K6, K7, K8, K9, K10, K11, K12, K13, K14, K15, K16, K17, run-folder commit \texttt{ade4f20858f2a3b683193e13de0d89273d57c4c9}, published 2026-10-24.
 
-\section{Polynomial calculus degree at least 5 over F2 for the onto functional pigeonhole principle with surplus 8}
-\label{sec:pc-degree-5-onto-fphp-surplus-8}
-
-Cite as: https://doi.org/10.5281/zenodo.23996615 (all versions; this version: https://doi.org/10.5281/zenodo.24017445)
-
-\subsection*{Setting}
-
-The onto functional pigeonhole principle $\mathrm{onto\text{-}FPHP}^{n+k}_n$ says that $n+k$
-pigeons can be mapped one-to-one onto $n$ holes; it is false for every $k\ge1$. In Boolean
-variables $x_{ij}$ (pigeon $i$ in hole $j$) its axioms are $\sum_j x_{ij}-1$,
-$\sum_i x_{ij}-1$, $x_{ij}x_{i'j}$ and $x_{ij}x_{ij'}$, the linear encoding used for this family
-\cite{beame1998counting,razborov2001php}. These results are for the linear encoding only: translating the CNF clause by clause instead turns each pigeon clause into a polynomial of degree $n$ \cite{razborov2001php}, so degree bounds below $n$ say nothing about that encoding. A polynomial calculus (PC) refutation over
-$\mathbb F_2$ derives $1$ from the axioms and the Boolean axioms $x^2-x$ by linear combinations
-and multiplication by a variable; its degree is the largest degree of a line.
-
-Over $\mathbb F_2$, with surplus $k=2^\ell$, the PC degree is exactly 2 at $k=2$ and exactly 4 at
-$k=4$ (companion results in the same library). This finding is about $k=8$.
-
-\subsection*{Result}
-
-For every $n\ge7$, $\mathrm{onto\text{-}FPHP}^{n+8}_n$ has no PC refutation over $\mathbb F_2$ of
-degree 4. Its PC degree is therefore at least 5, while the general bound for surplus divisible
-by $p^2$ (companion finding) gives only 3 at $p=2$. So at $p=2$ the third level is strictly
-harder than the second for every $n\ge7$.
-
-The proof combines a general argument with a finite certificate of 95,550 steps, each checked by
-the Lean kernel.
-
-\subsection*{Why it matters}
-
-Razborov's Question 7 asks whether PC degree for surplus $p^\ell$ stays bounded in characteristic
-$p$ \cite{razborov2001php}. Riis and Sitharam's Theorem 33 gives degree at least 7 for $k=8$ once
-$N\ge196$ \cite{riis1997nonconstant}, which is stronger than this result for large $n$. The range
-$7\le n<196$ is not covered by that theorem. This result covers it, and it is machine-checked.
-
-\subsection*{Proved vs checked}
-
-The result is proved in Lean 4 for every $n\ge7$; the certificate is part of the proof, not a
-separate check up to a bound. The proof uses only the standard axioms \texttt{propext},
-\texttt{Classical.choice} and \texttt{Quot.sound}. A second agent in the run checked the certificate
-independently, with its own program written from the Lean definitions, not from the author's
-code. That is an independent check of the certificate, not an independent Lean re-proof. No
-person has reviewed the proof. The same library also states the result for standard (syntactic)
-PC (\texttt{std\_no\_deg4\_k8}).
-
-This result extends:
-
-\begin{itemize}
-\item Riis-Sitharam, ECCC TR97-048, Theorem 33: PC degree \textgreater{}= 2\textasciicircum{}l - 1 for onto-PHP\textasciicircum{}\{N+p\textasciicircum{}l\}\_N over characteristic p once N \textgreater{}= (21+3p\textasciicircum{}2)(2\textasciicircum{}l - 2) - p (same family; proof not checked by us; at l = 2 this is \textgreater{}= 3 against our \textgreater{}= p+1 from n = 2p-1; at p = 2, l = 3 it is \textgreater{}= 7 for N \textgreater{}= 196 against our \textgreater{}= 5 for n \textgreater{}= 7).
-\item Beame-Riis 1998, Theorem 8.1 and Lemma 8.7: Nullstellensatz degree between 2\textasciicircum{}l - 1 and p\textasciicircum{}l - 1 (multiplier degree) for the same family; Section 10 lists polynomial-calculus lower bounds as open.
-\item Riis 1993, as Theorem 8 of Razborov's survey: degree-d PC refutations when C(m,d) and C(n,d) differ mod p, which gives the matching upper bound p for k = pc, p not dividing c (via Lucas).
-\item Razborov, Proof complexity of pigeonhole principles (2001), Question 7: the fixed-p, fixed-l bounded-degree question for onto-FPHP\textasciicircum{}\{n+p\textasciicircum{}l\}\_n.
-\item Miksa-Nordstrom (JACM 2024): general PC degree method; onto-FPHP with m = n+1 easy (Riis); the case of characteristic dividing the surplus not covered.
-\item BGIP 2001: proves linear PC degree for Tseitin mod p over characteristic q containing a primitive root of unity of order p (Thm 15) and for MOD\_p\textasciicircum{}n over F\_q, q not dividing p (Cor 20: ``requires degree \textgreater{} delta n''). This is the cross-characteristic regime. Our results concern the same-characteristic regime p $\mid$ k, so there is no overlap. The paper does not treat onto-PHP.
-\item Alekhnovich-Razborov 2003: ``immunity'' method giving linear PC degree bounds for mod\_p Tseitin over characteristic different from p, for flow tautologies and for random k-CNF in characteristic 2 (abstract only). No PHP or onto-PHP result. The method is relevant only as possible technique.
-\item Impagliazzo-Pudlak-Sgall 1999: simpler proof of Razborov's ceil(n/2)+1 PC lower bound for (injective, non-onto) PHP\textasciicircum{}m\_n over any field, plus an upper bound in large characteristic (abstract). This is a different principle: without the onto and functional axioms the bound is independent of p. It does not transfer to the exact degree p or p+1 for onto-FPHP.
-\item BIKPRS 1996/97: Nullstellensatz lower bounds for Count\_q over Z\_m with q not dividing m (Thm 3.2) and over Q (Thm 4.6), plus the PC-to-NS simulation (Thm 5.4). This is Nullstellensatz and Count, not PC degree for onto-FPHP, and the paper excludes the case q $\mid$ m.
-\item Grigoriev FOCS 1998 (snippet only, not opened): Nullstellensatz degree for Tseitin mod p over other characteristics. It is a predecessor of BGIP; NS, not PC, and a different principle.
-\item Filmus-Lauria-Mikša-Nordström-Vinyals 2025: PC space and separations. It mentions the functional PHP only for space limits, not for characteristic-dependent degree.
-\item Ken 2022/2024: restates Razborov's injPHP bound ``no PC-refutation ... with degree \textless{}= m/2'' (Thm 24) and extends it to NS over finite rings (Cor 25). Onto-PHP appears only in reductions (Props 12, 15), and no degree bound for it is proved.
-\item Reduction transfer: none of the opened sources gives a low-degree reduction from Count\_q, Tseitin mod q or Mod\_q (q != p) to onto-FPHP\textasciicircum{}\{n+k\}\_n with p $\mid$ k over F\_p. Since the cross-characteristic lower bounds need q != p, they do not yield results 1-3 directly.
-\end{itemize}
-
-Our prior-art search (2026-11-06) covered:
-
-\begin{itemize}
-\item Riis, Sitharam, Non-constant degree lower bounds imply linear degree lower bounds, ECCC TR97-048 (1997), pp. 36-38 and 45-46 (Theorem 33, Propositions 27 and 28), opened 2026-10-29
-\item Beame, Riis, More on the relative strength of counting principles, DIMACS Series 39 (1998), homes.cs.washington.edu/\textasciitilde{}beame/papers/riis.pdf: Theorem 8.1, Lemma 8.7, Section 10, opened 2026-10-27 and 2026-11-01
-\item Razborov, Proof complexity of pigeonhole principles, DLT 2001 (LNCS 2295), people.cs.uchicago.edu/\textasciitilde{}razborov/files/php\_survey.pdf: Theorem 8, Question 7, footnote 5, opened 2026-10-27 and 2026-10-29
-\item Riis, BRICS Report RS-99-29, opened 2026-10-29
-\item Miksa, Nordstrom, A generalized method for proving polynomial calculus degree lower bounds (CCC 2015; JACM 2024; arXiv 1505.01358), opened 2026-10-27
-\item de Rezende et al., Theory of Computing 21(6) (2025), opened 2026-10-29
-\item Lauria et al., Theory of Computing 21(4) (2025), opened 2026-10-27
-\item Buss, Grigoriev, Impagliazzo, Pitassi, ``Linear gaps between degrees for the polynomial calculus modulo distinct primes'', JCSS 62(2):267-289, 2001 (STOC 1999). Opened: journal final PDF, https://mathweb.ucsd.edu/\textasciitilde{}sbuss/ResearchWeb/lineargaps/journalfinal.pdf
-\item Alekhnovich, Razborov, ``Lower bounds for polynomial calculus: non-binomial case'', Proc. Steklov Inst. Math. 242 (2003) 18-35 (FOCS 2001). Opened: abstract only, https://mathnet.ru/eng/tm403 (full text not opened).
-\item Impagliazzo, Pudlak, Sgall, ``Lower bounds for the polynomial calculus and the Groebner basis algorithm'', Computational Complexity 8(2):127-144, 1999 (ECCC TR97-042). Opened: ECCC abstract only, https://eccc.weizmann.ac.il/report/1997/042/
-\item Buss, Impagliazzo, Krajicek, Pudlak, Razborov, Sgall, ``Proof complexity in algebraic systems and bounded depth Frege systems with modular counting'', Computational Complexity 6(3):256-298, 1996/97. Opened: full PDF, https://mathweb.ucsd.edu/\textasciitilde{}sbuss/ResearchWeb/nullstellensatz/token.pdf
-\item Grigoriev, ``Tseitin's tautologies and lower bounds for Nullstellensatz proofs'', FOCS 1998, pp. 648-652. Snippet only, not opened (dblp/researchr entries).
-\item Mikša, Nordström, ``A generalized method for proving polynomial calculus degree lower bounds'', CCC 2015 (arXiv 1505.01358). Already credited. Seen in search results; not re-opened here.
-\item Filmus, Lauria, Mikša, Nordström, Vinyals, ``Towards an understanding of polynomial calculus: new separations and lower bounds'', Theory of Computing 21(4), 2025 (ICALP 2013). Opened: abstract page, https://zesty2.cs.uchicago.edu/articles/v021a004
-\item Eitetsu Ken, ``On some Sigma\_0\textasciicircum{}B-formulae generalizing counting principles over V\textasciicircum{}0'', arXiv 2203.10237 (2022; a journal version appears to be Arch. Math. Logic 2024, https://link.springer.com/article/10.1007/s00153-024-00938-1). Opened: ar5iv HTML and Springer page, first \textasciitilde{}100k characters of each.
-\item Web searches for 2000-2026 papers on PC degree of onto-PHP or Count where the characteristic divides the surplus: no further hits beyond the items above.
-\end{itemize}
-
-Prior-art answer recorded by the owner (basis stated in the file); published in \texttt{prior-art/}.
-
-If you know of related work we missed, please open an issue.
-
-This result was found by AI research agents (the autoresearch harness). It was proved in Lean; the verification steps below build the published programme library.
-
-The declaring Lean sources are in \texttt{checks/library/}.
-
-\subsection*{How to verify}
-
-Lean toolchain: \texttt{leanprover/lean4:v4.35.0}. \url{https://github.com/kodakodapa/autoresearch-findings/tree/2abad0979eeb03ede3a77490f45a4f381119ff02/programmes/proof-complexity}. Install elan and open a new shell after installing elan, then pin the library subtree while keeping the finding checks:
-
-\begin{verbatim}
-git clone https://github.com/kodakodapa/autoresearch-findings.git
-cd autoresearch-findings
-git checkout 2abad0979eeb03ede3a77490f45a4f381119ff02 -- programmes/proof-complexity
-cd programmes/proof-complexity && lake build 'Programme.«20261028-0841-proof-complexity».L3.Main'
-AR_LIBRARY=$PWD python -I ../../claims/pc-degree-5-onto-fphp-surplus-8/checks/lean-K18.py
-\end{verbatim}
-
-A full \texttt{lake build} builds the whole library. The named targets build only the claim modules and their dependencies. Indicative measurements from the 2026-11-06 reproduction on 2 cores / 7.8 GB: K13--K15 90 s; K1--K6 440 s; K18 87 min (90 certificate modules). Peak memory was 4.7 GB for one Lean process. Build times depend on hardware and cached dependencies.
-
-\texttt{checks/run-copies/}: the author's working copies from the run; they import the run's private \texttt{Work} package and are not built standalone.
-
-\subsection*{Claim K18}
-
-Lean \texttt{Work.L3.Main.no\_deg4}: for every $n\ge7$, \texttt{ontoFPHP n 8} (onto-FPHP$^{n+8}_n$, functional encoding) has no degree-4 \texttt{PPCRefutation 2} (polynomial calculus over $\mathbb Z/2$, line degree 4). Unconditional.
-
-Status: proved (axioms: propext, Classical.choice, Quot.sound).
-
-Re-checked at publication on 2026-11-06: pass (\texttt{results/publication/lean-K18.json}).
-
-\paragraph{Verified.}
-No check scripts.
-
-\paragraph{Prior art.} Partial prior art.
-
-\subsection*{Discussion}
-
-The upper bound from Riis's criterion is 8 \cite{riis1993independence,razborov2001php}, so for
-$k=8$ the degree lies between 5 and 8 for $n\ge7$. This is one case, not a growth result in
-$\ell$. We have not checked the proof of Theorem 33 and cite it for comparison only.
-
-\paragraph{Provenance.}
-Run \texttt{20261028-0841}, claims K18, run-folder commit \texttt{19b6167239a90c29b4a3f0ff0f64c79016faf2f8}, published 2026-11-06.
-
 \section{Exact polynomial calculus degree p for the onto functional pigeonhole principle with surplus divisible by p}
 \label{sec:exact-pc-degree-onto-fphp-first-level}
 
@@ -3311,7 +3181,7 @@ Run \texttt{20261027-0607}, claims K13, K14, K15, run-folder commit \texttt{908b
 \section{Polynomial calculus degree above p for the onto functional pigeonhole principle with surplus divisible by p squared}
 \label{sec:pc-degree-above-p-onto-fphp-surplus-p-squared}
 
-Cite as: https://doi.org/10.5281/zenodo.23996585 (all versions; this version: https://doi.org/10.5281/zenodo.24017415)
+Cite as: https://doi.org/10.5281/zenodo.23996585 (all versions; this version: https://doi.org/10.5281/zenodo.24056795)
 
 \subsection*{Setting}
 
@@ -3518,6 +3388,139 @@ comparison only.
 
 \paragraph{Provenance.}
 Run \texttt{20261102-1249}, claims K1, K2, K3, K4, K5, K6, run-folder commit \texttt{359fa20477b8d26a5d2ef8a16e5465474e74b452}, published 2026-11-06.
+
+\section{Polynomial calculus degree at least 5 over F2 for the onto functional pigeonhole principle with surplus 8}
+\label{sec:pc-degree-5-onto-fphp-surplus-8}
+
+Cite as: https://doi.org/10.5281/zenodo.23996615 (all versions; this version: https://doi.org/10.5281/zenodo.24017445)
+
+\subsection*{Setting}
+
+The onto functional pigeonhole principle $\mathrm{onto\text{-}FPHP}^{n+k}_n$ says that $n+k$
+pigeons can be mapped one-to-one onto $n$ holes; it is false for every $k\ge1$. In Boolean
+variables $x_{ij}$ (pigeon $i$ in hole $j$) its axioms are $\sum_j x_{ij}-1$,
+$\sum_i x_{ij}-1$, $x_{ij}x_{i'j}$ and $x_{ij}x_{ij'}$, the linear encoding used for this family
+\cite{beame1998counting,razborov2001php}. These results are for the linear encoding only: translating the CNF clause by clause instead turns each pigeon clause into a polynomial of degree $n$ \cite{razborov2001php}, so degree bounds below $n$ say nothing about that encoding. A polynomial calculus (PC) refutation over
+$\mathbb F_2$ derives $1$ from the axioms and the Boolean axioms $x^2-x$ by linear combinations
+and multiplication by a variable; its degree is the largest degree of a line.
+
+Over $\mathbb F_2$, with surplus $k=2^\ell$, the PC degree is exactly 2 at $k=2$ and exactly 4 at
+$k=4$ (companion results in the same library). This finding is about $k=8$.
+
+\subsection*{Result}
+
+For every $n\ge7$, $\mathrm{onto\text{-}FPHP}^{n+8}_n$ has no PC refutation over $\mathbb F_2$ of
+degree 4. Its PC degree is therefore at least 5, while the general bound for surplus divisible
+by $p^2$ (companion finding) gives only 3 at $p=2$. So at $p=2$ the third level is strictly
+harder than the second for every $n\ge7$.
+
+The proof combines a general reduction with finite certificates: small ones for levels 0--2 and,
+for level 3, one of 95,550 steps that the Lean kernel checks in 2,154 pieces, plus 60 coverage checks.
+
+\subsection*{Why it matters}
+
+Razborov's Question 7 asks whether PC degree for surplus $p^\ell$ stays bounded in characteristic
+$p$ \cite{razborov2001php}. Riis and Sitharam's Theorem 33 gives degree at least 7 for $k=8$ once
+$N\ge196$ \cite{riis1997nonconstant}, which is stronger than this result for large $n$. The range
+$7\le n<196$ is not covered by that theorem. This result covers it, and it is machine-checked.
+
+\subsection*{Proved vs checked}
+
+The result is proved in Lean 4 for every $n\ge7$; the certificate is part of the proof, not a
+separate check up to a bound. The proof uses only the standard axioms \texttt{propext},
+\texttt{Classical.choice} and \texttt{Quot.sound}. A second agent in the run checked the certificate
+independently, with its own program written from the Lean definitions, not from the author's
+code. That is an independent check of the certificate, not an independent Lean re-proof. No
+person has reviewed the proof. The same library also states the result for standard (syntactic)
+PC (\texttt{std\_no\_deg4\_k8}).
+
+The Lean theorem excludes refutations of degree exactly 4; smaller degrees are excluded by monotonicity in
+the degree bound, stated in the library as \texttt{Programme.«maintenance-20261108».DegreeMono.no\_deg\_le4} (and \texttt{deg\_ge5}).
+
+This result extends:
+
+\begin{itemize}
+\item Riis-Sitharam, ECCC TR97-048, Theorem 33: PC degree \textgreater{}= 2\textasciicircum{}l - 1 for onto-PHP\textasciicircum{}\{N+p\textasciicircum{}l\}\_N over characteristic p once N \textgreater{}= (21+3p\textasciicircum{}2)(2\textasciicircum{}l - 2) - p (same family; proof not checked by us; at l = 2 this is \textgreater{}= 3 against our \textgreater{}= p+1 from n = 2p-1; at p = 2, l = 3 it is \textgreater{}= 7 for N \textgreater{}= 196 against our \textgreater{}= 5 for n \textgreater{}= 7).
+\item Beame-Riis 1998, Theorem 8.1 and Lemma 8.7: Nullstellensatz degree between 2\textasciicircum{}l - 1 and p\textasciicircum{}l - 1 (multiplier degree) for the same family; Section 10 lists polynomial-calculus lower bounds as open.
+\item Riis 1993, as Theorem 8 of Razborov's survey: degree-d PC refutations when C(m,d) and C(n,d) differ mod p, which gives the matching upper bound p for k = pc, p not dividing c (via Lucas).
+\item Razborov, Proof complexity of pigeonhole principles (2001), Question 7: the fixed-p, fixed-l bounded-degree question for onto-FPHP\textasciicircum{}\{n+p\textasciicircum{}l\}\_n.
+\item Miksa-Nordstrom (JACM 2024): general PC degree method; onto-FPHP with m = n+1 easy (Riis); the case of characteristic dividing the surplus not covered.
+\item BGIP 2001: proves linear PC degree for Tseitin mod p over characteristic q containing a primitive root of unity of order p (Thm 15) and for MOD\_p\textasciicircum{}n over F\_q, q not dividing p (Cor 20: ``requires degree \textgreater{} delta n''). This is the cross-characteristic regime. Our results concern the same-characteristic regime p $\mid$ k, so there is no overlap. The paper does not treat onto-PHP.
+\item Alekhnovich-Razborov 2003: ``immunity'' method giving linear PC degree bounds for mod\_p Tseitin over characteristic different from p, for flow tautologies and for random k-CNF in characteristic 2 (abstract only). No PHP or onto-PHP result. The method is relevant only as possible technique.
+\item Impagliazzo-Pudlak-Sgall 1999: simpler proof of Razborov's ceil(n/2)+1 PC lower bound for (injective, non-onto) PHP\textasciicircum{}m\_n over any field, plus an upper bound in large characteristic (abstract). This is a different principle: without the onto and functional axioms the bound is independent of p. It does not transfer to the exact degree p or p+1 for onto-FPHP.
+\item BIKPRS 1996/97: Nullstellensatz lower bounds for Count\_q over Z\_m with q not dividing m (Thm 3.2) and over Q (Thm 4.6), plus the PC-to-NS simulation (Thm 5.4). This is Nullstellensatz and Count, not PC degree for onto-FPHP, and the paper excludes the case q $\mid$ m.
+\item Grigoriev FOCS 1998 (snippet only, not opened): Nullstellensatz degree for Tseitin mod p over other characteristics. It is a predecessor of BGIP; NS, not PC, and a different principle.
+\item Filmus-Lauria-Mikša-Nordström-Vinyals 2025: PC space and separations. It mentions the functional PHP only for space limits, not for characteristic-dependent degree.
+\item Ken 2022/2024: restates Razborov's injPHP bound ``no PC-refutation ... with degree \textless{}= m/2'' (Thm 24) and extends it to NS over finite rings (Cor 25). Onto-PHP appears only in reductions (Props 12, 15), and no degree bound for it is proved.
+\item Reduction transfer: none of the opened sources gives a low-degree reduction from Count\_q, Tseitin mod q or Mod\_q (q != p) to onto-FPHP\textasciicircum{}\{n+k\}\_n with p $\mid$ k over F\_p. Since the cross-characteristic lower bounds need q != p, they do not yield results 1-3 directly.
+\end{itemize}
+
+Our prior-art search (2026-11-06) covered:
+
+\begin{itemize}
+\item Riis, Sitharam, Non-constant degree lower bounds imply linear degree lower bounds, ECCC TR97-048 (1997), pp. 36-38 and 45-46 (Theorem 33, Propositions 27 and 28), opened 2026-10-29
+\item Beame, Riis, More on the relative strength of counting principles, DIMACS Series 39 (1998), homes.cs.washington.edu/\textasciitilde{}beame/papers/riis.pdf: Theorem 8.1, Lemma 8.7, Section 10, opened 2026-10-27 and 2026-11-01
+\item Razborov, Proof complexity of pigeonhole principles, DLT 2001 (LNCS 2295), people.cs.uchicago.edu/\textasciitilde{}razborov/files/php\_survey.pdf: Theorem 8, Question 7, footnote 5, opened 2026-10-27 and 2026-10-29
+\item Riis, BRICS Report RS-99-29, opened 2026-10-29
+\item Miksa, Nordstrom, A generalized method for proving polynomial calculus degree lower bounds (CCC 2015; JACM 2024; arXiv 1505.01358), opened 2026-10-27
+\item de Rezende et al., Theory of Computing 21(6) (2025), opened 2026-10-29
+\item Lauria et al., Theory of Computing 21(4) (2025), opened 2026-10-27
+\item Buss, Grigoriev, Impagliazzo, Pitassi, ``Linear gaps between degrees for the polynomial calculus modulo distinct primes'', JCSS 62(2):267-289, 2001 (STOC 1999). Opened: journal final PDF, https://mathweb.ucsd.edu/\textasciitilde{}sbuss/ResearchWeb/lineargaps/journalfinal.pdf
+\item Alekhnovich, Razborov, ``Lower bounds for polynomial calculus: non-binomial case'', Proc. Steklov Inst. Math. 242 (2003) 18-35 (FOCS 2001). Opened: abstract only, https://mathnet.ru/eng/tm403 (full text not opened).
+\item Impagliazzo, Pudlak, Sgall, ``Lower bounds for the polynomial calculus and the Groebner basis algorithm'', Computational Complexity 8(2):127-144, 1999 (ECCC TR97-042). Opened: ECCC abstract only, https://eccc.weizmann.ac.il/report/1997/042/
+\item Buss, Impagliazzo, Krajicek, Pudlak, Razborov, Sgall, ``Proof complexity in algebraic systems and bounded depth Frege systems with modular counting'', Computational Complexity 6(3):256-298, 1996/97. Opened: full PDF, https://mathweb.ucsd.edu/\textasciitilde{}sbuss/ResearchWeb/nullstellensatz/token.pdf
+\item Grigoriev, ``Tseitin's tautologies and lower bounds for Nullstellensatz proofs'', FOCS 1998, pp. 648-652. Snippet only, not opened (dblp/researchr entries).
+\item Mikša, Nordström, ``A generalized method for proving polynomial calculus degree lower bounds'', CCC 2015 (arXiv 1505.01358). Already credited. Seen in search results; not re-opened here.
+\item Filmus, Lauria, Mikša, Nordström, Vinyals, ``Towards an understanding of polynomial calculus: new separations and lower bounds'', Theory of Computing 21(4), 2025 (ICALP 2013). Opened: abstract page, https://zesty2.cs.uchicago.edu/articles/v021a004
+\item Eitetsu Ken, ``On some Sigma\_0\textasciicircum{}B-formulae generalizing counting principles over V\textasciicircum{}0'', arXiv 2203.10237 (2022; a journal version appears to be Arch. Math. Logic 2024, https://link.springer.com/article/10.1007/s00153-024-00938-1). Opened: ar5iv HTML and Springer page, first \textasciitilde{}100k characters of each.
+\item Web searches for 2000-2026 papers on PC degree of onto-PHP or Count where the characteristic divides the surplus: no further hits beyond the items above.
+\end{itemize}
+
+Prior-art answer recorded by the owner (basis stated in the file); published in \texttt{prior-art/}.
+
+If you know of related work we missed, please open an issue.
+
+This result was found by AI research agents (the autoresearch harness). It was proved in Lean; the verification steps below build the published programme library.
+
+The declaring Lean sources are in \texttt{checks/library/}.
+
+\subsection*{How to verify}
+
+Lean toolchain: \texttt{leanprover/lean4:v4.35.0}. \url{https://github.com/kodakodapa/autoresearch-findings/tree/ad1259e5894f224a3d1eda62a1914da4b4dd699e/programmes/proof-complexity}. Install elan and open a new shell after installing elan, then pin the library subtree while keeping the finding checks:
+
+\begin{verbatim}
+git clone https://github.com/kodakodapa/autoresearch-findings.git
+cd autoresearch-findings
+git checkout ad1259e5894f224a3d1eda62a1914da4b4dd699e -- programmes/proof-complexity
+cd programmes/proof-complexity && lake build 'Programme.«20261028-0841-proof-complexity».L3.Main'
+AR_LIBRARY=$PWD python -I ../../claims/pc-degree-5-onto-fphp-surplus-8/checks/lean-K18.py
+\end{verbatim}
+
+A full \texttt{lake build} builds the whole library. The named targets build only the claim modules and their dependencies. Indicative measurements from the 2026-11-06 reproduction on 2 cores / 7.8 GB: K13--K15 90 s; K1--K6 440 s; K18 87 min (90 certificate modules). Peak memory was 4.7 GB for one Lean process. Build times depend on hardware and cached dependencies.
+
+\texttt{checks/run-copies/}: the author's working copies from the run; they import the run's private \texttt{Work} package and are not built standalone.
+
+\subsection*{Claim K18}
+
+Lean \texttt{Work.L3.Main.no\_deg4}: for every $n\ge7$, \texttt{ontoFPHP n 8} (onto-FPHP$^{n+8}_n$, functional encoding) has no degree-4 \texttt{PPCRefutation 2} (polynomial calculus over $\mathbb Z/2$, line degree 4). Unconditional.
+
+Status: proved (axioms: propext, Classical.choice, Quot.sound).
+
+Re-checked at publication on 2026-11-08: pass (\texttt{results/publication/lean-K18.json}).
+
+\paragraph{Verified.}
+No check scripts.
+
+\paragraph{Prior art.} Partial prior art.
+
+\subsection*{Discussion}
+
+The upper bound from Riis's criterion is 8 \cite{riis1993independence,razborov2001php}, so for
+$k=8$ the degree lies between 5 and 8 for $n\ge7$. This is one case, not a growth result in
+$\ell$. We have not checked the proof of Theorem 33 and cite it for comparison only.
+
+\paragraph{Provenance.}
+Run \texttt{20261028-0841}, claims K18, run-folder commit \texttt{19b6167239a90c29b4a3f0ff0f64c79016faf2f8}, published 2026-11-06.
 
 \section{How to verify}
 

@@ -30,8 +30,8 @@ degree 4. Its PC degree is therefore at least 5, while the general bound for sur
 by $p^2$ (companion finding) gives only 3 at $p=2$. So at $p=2$ the third level is strictly
 harder than the second for every $n\ge7$.
 
-The proof combines a general argument with a finite certificate of 95,550 steps, each checked by
-the Lean kernel.
+The proof combines a general reduction with finite certificates: small ones for levels 0–2 and,
+for level 3, one of 95,550 steps that the Lean kernel checks in 2,154 pieces, plus 60 coverage checks.
 
 ## Why it matters
 
@@ -49,6 +49,9 @@ independently, with its own program written from the Lean definitions, not from 
 code. That is an independent check of the certificate, not an independent Lean re-proof. No
 person has reviewed the proof. The same library also states the result for standard (syntactic)
 PC (`std_no_deg4_k8`).
+
+The Lean theorem excludes refutations of degree exactly 4; smaller degrees are excluded by monotonicity in
+the degree bound, stated in the library as `Programme.«maintenance-20261108».DegreeMono.no_deg_le4` (and `deg_ge5`).
 <!-- /owner-summary -->
 
 This result extends:
@@ -100,7 +103,7 @@ Lean: `Programme.«20261028-0841-proof-complexity».L3.Main.no_deg4`
 
 - Status: proved (axioms: propext, Classical.choice, Quot.sound)
 - Machine-checked: `checks/lean-K18.py` (library theorem `Programme.«20261028-0841-proof-complexity».L3.Main.no_deg4`)
-- Re-checked at publication on 2026-11-06: pass (`results/publication/lean-K18.json`)
+- Re-checked at publication on 2026-11-08: pass (`results/publication/lean-K18.json`)
 - Prior art: partial prior art
 
 ## Discussion
@@ -111,12 +114,12 @@ $\ell$. We have not checked the proof of Theorem 33 and cite it for comparison o
 
 ## How to verify
 
-Lean toolchain: `leanprover/lean4:v4.35.0`. [Programme library at the recorded commit](https://github.com/kodakodapa/autoresearch-findings/tree/2abad0979eeb03ede3a77490f45a4f381119ff02/programmes/proof-complexity). Install elan and open a new shell after installing elan, then pin the library subtree while keeping the finding checks:
+Lean toolchain: `leanprover/lean4:v4.35.0`. [Programme library at the recorded commit](https://github.com/kodakodapa/autoresearch-findings/tree/ad1259e5894f224a3d1eda62a1914da4b4dd699e/programmes/proof-complexity). Install elan and open a new shell after installing elan, then pin the library subtree while keeping the finding checks:
 
 ```sh
 git clone https://github.com/kodakodapa/autoresearch-findings.git
 cd autoresearch-findings
-git checkout 2abad0979eeb03ede3a77490f45a4f381119ff02 -- programmes/proof-complexity
+git checkout ad1259e5894f224a3d1eda62a1914da4b4dd699e -- programmes/proof-complexity
 cd programmes/proof-complexity && lake build 'Programme.«20261028-0841-proof-complexity».L3.Main'
 AR_LIBRARY=$PWD python -I ../../claims/pc-degree-5-onto-fphp-surplus-8/checks/lean-K18.py
 ```
@@ -149,3 +152,4 @@ The output of the checks re-run at publication is in `claims/pc-degree-5-onto-fp
 - 2026-11-06 — Verification steps; stale run copies removed; encoding stated
 - 2026-11-06 — Publication re-checks and reproofs published; prior art extended; texts corrected
 - 2026-11-06 — Library theorem names and checked statements shown; reproof wording corrected; build cost
+- 2026-11-08 — Certificate wording; degree-monotonicity theorems named (degree >= 5)

@@ -18,8 +18,8 @@ degree 4. Its PC degree is therefore at least 5, while the general bound for sur
 by $p^2$ (companion finding) gives only 3 at $p=2$. So at $p=2$ the third level is strictly
 harder than the second for every $n\ge7$.
 
-The proof combines a general argument with a finite certificate of 95,550 steps, each checked by
-the Lean kernel.
+The proof combines a general reduction with finite certificates: small ones for levels 0–2 and,
+for level 3, one of 95,550 steps that the Lean kernel checks in 2,154 pieces, plus 60 coverage checks.
 
 ## Why it matters
 
@@ -37,6 +37,9 @@ independently, with its own program written from the Lean definitions, not from 
 code. That is an independent check of the certificate, not an independent Lean re-proof. No
 person has reviewed the proof. The same library also states the result for standard (syntactic)
 PC (`std_no_deg4_k8`).
+
+The Lean theorem excludes refutations of degree exactly 4; smaller degrees are excluded by monotonicity in
+the degree bound, stated in the library as `Programme.«maintenance-20261108».DegreeMono.no_deg_le4` (and `deg_ge5`).
 
 ## Discussion
 

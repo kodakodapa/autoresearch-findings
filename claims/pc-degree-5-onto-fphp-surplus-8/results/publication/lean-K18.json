@@ -1,7 +1,7 @@
 {
   "axioms": "'Programme.\u00ab20261028-0841-proof-complexity\u00bb.L3.Main.no_deg4' depends on axioms: [propext, Classical.choice, Quot.sound]",
   "check": "checks/lean-K18.py",
-  "date": "2026-11-06",
+  "date": "2026-11-08",
   "exit": 0,
   "image": "ar-research-proof-complexity:92f4db65082f2d4a",
   "output_tail": "AR_STATEMENT_BEGIN\nProgramme.\u00ab20261028-0841-proof-complexity\u00bb.L3.Main.no_deg4 : \u2200 (n : Nat),\n  7 \u2264 n \u2192\n    \u00acProgramme.\u00ab20261025-0459-proof-complexity\u00bb.OntoFPHP.PPCRefutation 2\n        (Programme.\u00ab20261025-0459-proof-complexity\u00bb.OntoFPHP.ontoFPHP n 8) 4\nAR_STATEMENT_END\n'Programme.\u00ab20261028-0841-proof-complexity\u00bb.L3.Main.no_deg4' depends on axioms: [propext, Classical.choice, Quot.sound]",
