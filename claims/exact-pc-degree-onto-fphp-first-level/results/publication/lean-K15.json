@@ -1,7 +1,7 @@
 {
   "axioms": "'Programme.\u00ab20261027-0607-proof-complexity\u00bb.Lucas.separation' depends on axioms: [propext, Classical.choice, Quot.sound]",
   "check": "checks/lean-K15.py",
-  "date": "2026-11-06",
+  "date": "2026-11-08",
   "exit": 0,
   "image": "ar-research-proof-complexity:92f4db65082f2d4a",
   "output_tail": "AR_STATEMENT_BEGIN\n@Programme.\u00ab20261027-0607-proof-complexity\u00bb.Lucas.separation : \u2200 {p q c : Nat},\n  Programme.\u00ab20261027-0607-proof-complexity\u00bb.Peel.IsPrime p \u2192\n    Programme.\u00ab20261027-0607-proof-complexity\u00bb.Peel.IsPrime q \u2192\n      \u00acp \u2223 c \u2192\n        \u00acq \u2223 p * c \u2192\n          \u2200 (n : Nat),\n            2 * p - 3 \u2264 n \u2192\n              (\u2200 (D : Nat),\n                  Programme.\u00ab20261025-0459-proof-complexity\u00bb.OntoFPHP.PPCRefutation p\n                      (Programme.\u00ab20261025-0459-proof-complexity\u00bb.OntoFPHP.ontoFPHP n (p * c)) D \u2194\n                    p \u2264 D) \u2227\n                Programme.\u00ab20261025-0459-proof-complexity\u00bb.OntoFPHP.PPCRefutation q\n                  (Programme.\u00ab20261025-0459-proof-complexity\u00bb.OntoFPHP.ontoFPHP n (p * c)) 1\nAR_STATEMENT_END\n'Programme.\u00ab20261027-0607-proof-complexity\u00bb.Lucas.separation' depends on axioms: [propext, Classical.choice, Quot.sound]",

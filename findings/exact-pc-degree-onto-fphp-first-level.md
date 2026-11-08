@@ -117,7 +117,7 @@ Evidence:
 - reasoning: Lower bound: K14 (no degree $p-1$) plus monotonicity of PPCDerivable in the degree. Upper bound: library OntoLucas.ontoFPHP\_upper at $t=p$, whose unit hypothesis is $\binom{n+pc}{p}-\binom np\equiv c\not\equiv0$ mod $p$; proved by $p\mid\binom pr$ for $0<r<p$, Pascal's rule and telescoping in $c$. Convention: PC line degree, functional encoding. This agrees with Beame-Riis Lemma 8.7: their NS degree $p^l-1$ counts multiplier degree, and the products have degree $p^l$, which is line degree $p$ at $l=1$.
 - reproof `checks/reproofs/K13-ExactReproof.lean` by the skeptic (codex): `Work.Lucas.pc_degree_exact` — pass (`checks/reproofs/K13-ExactReproof.json`); second-agent re-proof; uses 2 lemmas from the author's package; re-proof by a second agent; imports the run's private packages (not rebuildable from this repo)
 
-Re-checked at publication on 2026-11-06: pass (`results/publication/lean-K13.json`)
+Re-checked at publication on 2026-11-08: pass (`results/publication/lean-K13.json`)
 
 <details>
 <summary>Lean statement as checked</summary>
@@ -159,7 +159,7 @@ Evidence:
 - reasoning: Paper proof (mirrors the Lean chain). Library criterion K4: if $\mathrm{EXT}\_p(n\_0,k,d)$ holds for all $d\le p-2$ then no degree-$(p-1)$ refutation for any $n\ge n\_0$. EXT at level $d$ is proved by peeling: the flag lemma (K8) turns a balanced $f$ into a tower of links; at level 0 subtract a symmetric window, and at level $j$ subtract a block-product window ($j$ rectangles $\times$ unit blocks $\times$ a symmetric degree-$(d-j+1)$ design on a rest block), which equals $(d-j+1)!\cdot RP$ on $j$-matchings. The residual has zero links, so S\_j (K10) puts it in the span of rectangle products. Every factorial used is at most $(p-1)!$, a unit mod prime $p$; the blocks fit when $2d+1\le n$, i.e. $n\ge2p-3$. ExtLin.EXT\_of\_span (K5) closes the step.
 - reproof `checks/reproofs/K14-LowerReproof.lean` by the skeptic (codex): `Work.Peel.pc_degree_ge_p` — pass (`checks/reproofs/K14-LowerReproof.json`); second-agent re-proof; uses 9 lemmas from the author's package; re-proof by a second agent; imports the run's private packages (not rebuildable from this repo)
 
-Re-checked at publication on 2026-11-06: pass (`results/publication/lean-K14.json`)
+Re-checked at publication on 2026-11-08: pass (`results/publication/lean-K14.json`)
 
 <details>
 <summary>Lean statement as checked</summary>
@@ -199,7 +199,7 @@ Evidence:
 - reasoning: Over $\mathbb F\_p$: K13. Over $\mathbb F\_q$ with $q\nmid pc$: library OntoFPHP.ontoFPHP\_deg1 needs a unit $k^{-1}$ mod $q$, supplied by Bezout. The gap is $p$ versus 1 and is constant in $n$ for fixed $p$, so this separates characteristics along the parameter $p$, not asymptotically in $n$.
 - reproof `checks/reproofs/K15-SeparationReproof.lean` by the skeptic (codex): `Work.Lucas.separation` — pass (`checks/reproofs/K15-SeparationReproof.json`); second-agent re-proof; uses 1 lemmas from the author's package; re-proof by a second agent; imports the run's private packages (not rebuildable from this repo)
 
-Re-checked at publication on 2026-11-06: pass (`results/publication/lean-K15.json`)
+Re-checked at publication on 2026-11-08: pass (`results/publication/lean-K15.json`)
 
 <details>
 <summary>Lean statement as checked</summary>
@@ -250,12 +250,12 @@ Beame and Riis [1] is multiplier degree, one less than the line degree used here
 <!-- programme verification -->
 ## How to verify
 
-Lean toolchain: `leanprover/lean4:v4.35.0`. [Programme library at the recorded commit](https://github.com/kodakodapa/autoresearch-findings/tree/2abad0979eeb03ede3a77490f45a4f381119ff02/programmes/proof-complexity). Install elan and open a new shell after installing elan, then pin the library subtree while keeping the finding checks:
+Lean toolchain: `leanprover/lean4:v4.35.0`. [Programme library at the recorded commit](https://github.com/kodakodapa/autoresearch-findings/tree/ad1259e5894f224a3d1eda62a1914da4b4dd699e/programmes/proof-complexity). Install elan and open a new shell after installing elan, then pin the library subtree while keeping the finding checks:
 
 ```sh
 git clone https://github.com/kodakodapa/autoresearch-findings.git
 cd autoresearch-findings
-git checkout 2abad0979eeb03ede3a77490f45a4f381119ff02 -- programmes/proof-complexity
+git checkout ad1259e5894f224a3d1eda62a1914da4b4dd699e -- programmes/proof-complexity
 cd programmes/proof-complexity && lake build 'Programme.«20261027-0607-proof-complexity».Lucas' 'Programme.«20261027-0607-proof-complexity».Peel'
 AR_LIBRARY=$PWD python -I ../../claims/exact-pc-degree-onto-fphp-first-level/checks/lean-K13.py
 AR_LIBRARY=$PWD python -I ../../claims/exact-pc-degree-onto-fphp-first-level/checks/lean-K14.py
@@ -275,3 +275,4 @@ A full `lake build` builds the whole library. The named targets build only the c
 - 2026-11-06 — Verification steps; stale run copies removed; encoding stated
 - 2026-11-06 — Publication re-checks and reproofs published; prior art extended; texts corrected
 - 2026-11-06 — Library theorem names and checked statements shown; reproof wording corrected; build cost
+- 2026-11-08 — Prior-art wording; library names; monotonicity

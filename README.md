@@ -58,9 +58,9 @@ Nominal-free proofs of the theorems Benzmüller's detector flags: This result wa
 A complete calculus for the ℒ-general models of the ontological argument: This result was found by AI research agents (the autoresearch harness). It was partly proved in Lean (claims K1, K2, K3, K4, K6, K7, K8, K9, K10, K11, K12, K13, K14, K15, K16, K17, K18) and partly checked by scripts that run Lean proofs (claims K5); the proof and check files are included so anyone can re-run them.
 Gödel's lemma L under the rigid reading, with no condition on positivity: This result was found by AI research agents (the autoresearch harness). It was partly proved in Lean (claims K1, K3) and partly checked by script (claims K2); the proof and check files are included so anyone can re-run them.
 From Lean proofs to certified derivations in the ontological embedding: This result was found by AI research agents (the autoresearch harness). It was proved in Lean; the proof and check files are included so anyone can re-run them.
-Exact polynomial calculus degree p for the onto functional pigeonhole principle with surplus divisible by p: This result was found by AI research agents (the autoresearch harness). It was proved in Lean; the verification steps below build the published programme library.
 Polynomial calculus degree above p for the onto functional pigeonhole principle with surplus divisible by p squared: This result was found by AI research agents (the autoresearch harness). It was proved in Lean; the verification steps below build the published programme library.
 Polynomial calculus degree at least 5 over F2 for the onto functional pigeonhole principle with surplus 8: This result was found by AI research agents (the autoresearch harness). It was proved in Lean; the verification steps below build the published programme library.
+Exact polynomial calculus degree p for the onto functional pigeonhole principle with surplus divisible by p: This result was found by AI research agents (the autoresearch harness). It was proved in Lean; the verification steps below build the published programme library.
 Site: https://kodakodapa.github.io/autoresearch-findings/
 - [A census of modal agents in the prisoner's dilemma — Finding report](claims/modal-agent-census/paper.pdf)
 - [When graded PrudentBots cooperate with graded FairBots — Finding report](claims/graded-prudent-fair/paper.pdf)
@@ -79,6 +79,6 @@ Site: https://kodakodapa.github.io/autoresearch-findings/
 - [A complete calculus for the ℒ-general models of the ontological argument — Finding report](claims/ontological-lgeneral-semantics/paper.pdf)
 - [Gödel's lemma L under the rigid reading, with no condition on positivity — Finding report](claims/ontological-rigid-l/paper.pdf)
 - [From Lean proofs to certified derivations in the ontological embedding — Finding report](claims/ontological-proof-translation/paper.pdf)
-- [Exact polynomial calculus degree p for the onto functional pigeonhole principle with surplus divisible by p — Finding report](claims/exact-pc-degree-onto-fphp-first-level/paper.pdf)
 - [Polynomial calculus degree above p for the onto functional pigeonhole principle with surplus divisible by p squared — Finding report](claims/pc-degree-above-p-onto-fphp-surplus-p-squared/paper.pdf)
 - [Polynomial calculus degree at least 5 over F2 for the onto functional pigeonhole principle with surplus 8 — Finding report](claims/pc-degree-5-onto-fphp-surplus-8/paper.pdf)
+- [Exact polynomial calculus degree p for the onto functional pigeonhole principle with surplus divisible by p — Finding report](claims/exact-pc-degree-onto-fphp-first-level/paper.pdf)
