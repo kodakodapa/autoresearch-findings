@@ -1,0 +1,202 @@
+% sec1-introduction.tex -- Section 1 of the C3 paper (draft 2026-11-08).
+% Sources: OUTLINE.md; publish/summaries/c3-*.md; requests-20261106/c3-publication-prior-art-v2.md;
+% notes-20261025/c3-sources.md; codex-20261104-runB-adjudication/00, 01, 05; notes-20261104/referee-runB-*.md;
+% PLAN.md rows G-C3.1--G-C3.3.  Every tier and threshold below was checked against those files on 2026-11-08.
+
+\section{Introduction}\label{sec:intro}
+
+\subsection{The principle and the question}\label{sec:intro-question}
+
+The onto functional pigeonhole principle $\mathrm{onto\text{-}FPHP}^{n+k}_n$ states that
+$n+k$ pigeons can be mapped bijectively onto $n$ holes.  It is false for every $k\ge1$.
+We use the \emph{linear encoding}: Boolean variables $x_{ij}$ (pigeon $i$ sits in hole $j$)
+and the axioms
+\[
+  \textstyle\sum_{j}x_{ij}-1,\qquad \sum_{i}x_{ij}-1,\qquad x_{ij}x_{i'j}\ (i\ne i'),\qquad x_{ij}x_{ij'}\ (j\ne j'),
+\]
+saying that every pigeon sits in a hole, every hole holds exactly one pigeon, no two
+pigeons share a hole and no pigeon sits in two holes.  This is the system of Beame and
+Riis~\cite[Def.~7.2]{beame1998counting}, also used in Razborov's
+survey~\cite{razborov2001php}.  All results of this paper are for this encoding.
+Translating the CNF clause by clause instead turns each pigeon clause into a polynomial of
+degree $n$~\cite[footnote~5]{razborov2001php}, so degree bounds below $n$ say nothing about
+that encoding.
+
+We measure refutations in the polynomial calculus (PC) over a field of characteristic
+$p$: from the axioms and the Boolean axioms $x^2-x$, derive $1$ by linear combinations and
+multiplication by a variable.  The \emph{degree} of a refutation is the largest degree of
+a line, and the \emph{PC degree} of a system is the least degree of a refutation.
+Section~\ref{sec:defs} fixes the conventions exactly.
+
+If $p\nmid k$, summing the pigeon axioms and subtracting the hole axioms gives the constant
+$-k$, a refutation of degree~$1$.  The question is what happens when $p$ divides $k$.
+There the system has a refutation of degree $p^{v}$, where $v=v_p(k)$ is the exponent of
+$p$ in $k$: Riis's criterion~\cite{riis1993independence} (Theorem~8 in
+\cite{razborov2001php}) gives a refutation of degree $d$ whenever $\binom{n+k}{d}$ and
+$\binom nd$ differ mod $p$, and by Lucas's theorem
+$\binom{n+k}{p^v}-\binom{n}{p^v}\equiv k/p^v\not\equiv0\pmod p$.  The criterion cannot give
+a smaller degree.  So for fixed $p$ and $k$ the PC degree is bounded independently of $n$,
+and the questions are its exact value and how it grows with $v$.
+
+\subsection{What was known}\label{sec:intro-known}
+
+\paragraph{Nullstellensatz.}  Beame and Riis~\cite[Thm.~8.1, Lemma~8.7]{beame1998counting}
+prove, for surplus $k=p^\ell$, that the Nullstellensatz degree is at least $2^\ell-1$ for
+$n\ge((p+2)^\ell-p^\ell)/2$ (Theorem~8.1) and at most $p^\ell-1$ for $n\ge p^\ell$
+(Lemma~8.7).  Their degree measures the multipliers.  PC line degree is at most
+Nullstellensatz \emph{product} degree; for this encoding a certificate of multiplier degree
+$d$ gives a PC refutation of degree at most $d+2$.  Nullstellensatz lower bounds alone
+therefore do not give PC lower bounds.  Beame and Riis list non-trivial PC
+lower bounds for this family as open~\cite[\S10]{beame1998counting}.
+
+\paragraph{Razborov's Question~7.}  Razborov's survey~\cite[\S7, Question~7]{razborov2001php}
+asks, for fixed $p$, whether $\mathrm{onto\text{-}FPHP}^{n+p^\ell}_n$ has no bounded-degree
+PC refutations in characteristic $p$, noting that the Nullstellensatz analogue is known.
+As printed, the question fixes $p$ and $\ell$ and lets $n$ grow.  For fixed $p$ and $\ell$,
+Riis's upper bound $p^\ell$ above is independent of $n$.  We also consider the distinct
+question of growth as $\ell$ varies.  We state both readings and say which one each result addresses; none of
+our results settles the question in a sense we would call an answer, and we do not claim
+one.
+
+\paragraph{Riis and Sitharam.}  Theorem~33 of the technical report of Riis and
+Sitharam~\cite{riis1997nonconstant} states a PC lower bound for the same family: degree at
+least $2^\ell-1$ for surplus $p^\ell$ once
+$N\ge(21+3p^2)(2^\ell-2)-p$.  This is growth in $\ell$.  We cite it for comparison only:
+we have read its statement and the surrounding lemmas~\cite[pp.~36--38]{riis1997nonconstant}
+but have not checked its proof, which delegates to an earlier tree construction.
+
+\paragraph{Other work.}  General PC degree methods~\cite{miksa2015generalized} and the
+cross-characteristic lower bounds for Tseitin and counting principles~\cite{bgip2001,alekhnovich2003nonbinomial,bikprs1996}
+concern regimes in which the characteristic does not divide the relevant modulus;
+Impagliazzo, Pudl\'ak and Sgall~\cite{ips1999} treat the injective principle without the
+onto and functional axioms, where the bound does not depend on $p$.  None of them gives a
+low-degree reduction to $\mathrm{onto\text{-}FPHP}^{n+k}_n$ with $p\mid k$.
+Section~\ref{sec:literature} gives the details and the search behind this paragraph.
+
+\subsection{Results}\label{sec:intro-results}
+
+Table~\ref{tab:results} lists the results with the evidence behind each.
+The tiers are defined in Section~\ref{sec:intro-tiers}; in short, T-LEAN means
+kernel-checked in Lean~4, T-WRITTEN means a written proof checked by AI reviewers, and
+T-MEASURED means an exact finite computation.  No person has reviewed any of the proofs.
+
+\begin{table}[ht]
+\centering\small
+\renewcommand{\arraystretch}{1.25}
+\begin{tabular}{@{}p{0.03\textwidth}p{0.57\textwidth}>{\raggedright\arraybackslash}p{0.24\textwidth}p{0.06\textwidth}@{}}
+\toprule
+ & Statement (characteristic $p$ prime, surplus $k$) & Tier & Where \\
+\midrule
+A & $k=pc$, $p\nmid c$, $n\ge2p-3$: PC degree exactly $p$.  Hence the same formula has PC
+    degree $p$ over $\mathbb F_p$ and $1$ over $\mathbb F_q$ for every prime $q\nmid pc$.
+  & T-LEAN & \S\ref{sec:lean-A} \\
+B & $k=cp^2$, $c\ge1$, $n\ge2p-1$: no refutation of degree $\le p$, so PC degree
+    $\ge p+1$.  At $p=2$, $k=4$, $n\ge5$: exactly $4$.
+  & T-LEAN & \S\ref{sec:lean-B} \\
+C & $p=2$, $k=8$, $n\ge7$: no refutation of degree $\le4$, so PC degree $\ge5$
+    (the upper bound is $8$).
+  & T-LEAN; certificate re-checked independently & \S\ref{sec:lean-C} \\
+D & Growth.  $k=p^\ell$, $\ell\ge1$,
+    $n\ge\frac{(p+2)^\ell-p^\ell}{2}+2^{\ell+1}-4$: PC degree $\ge2^\ell$, over every field of
+    characteristic $p$.
+  & T-WRITTEN; inputs \cite{churchellenberg,rhoades2024,beame1998counting} & \S\ref{sec:growth} \\
+E & Exact degree.  For every $k\ge1$, with $q=p^{v_p(k)}$: PC degree exactly $q$ for
+    $n\ge2q-1$; for $n\ge2q-2$ conditionally on \cite[Thm.~8.4.5]{hone2025}, whose
+    published proof is incomplete (\S\ref{sec:errata}).  Mechanism: for $q>D$ and
+    $m\equiv m'\pmod q$ large, degree-$\le D$ refutability of
+    $\mathrm{onto\text{-}FPHP}^{m}_n$ and $\mathrm{onto\text{-}FPHP}^{m'}_n$ agree.
+  & T-WRITTEN; inputs \cite{harman2015} and tilting theory (App.~\ref{app:tilting}) & \S\ref{sec:periodicity} \\
+F & Bands.  $q=p^{v_p(k)}$, $1\le D<\min(q,p^2)$, $n\ge2D-1$: no refutation of degree
+    $\le D$.  Hence, if $v_p(k)=2$ and $n\ge2p^2-3$: PC degree exactly $p^2$.
+    Case $p=3$, $D=4$: $9\mid k$, $n\ge7$, no refutation of degree $\le4$ (a second
+    route through finite certificates).
+  & T-WRITTEN; inputs \cite{shareshianwachs,yalcin2016,miller2024};
+    $p=3$, $D=4$: Lean conditional (K100) & \S\ref{sec:bands} \\
+G & Three points in Harman~\cite{harman2015} and two in Hone et
+    al.~\cite{hone2025}; our proofs avoid each.
+  & T-WRITTEN & \S\ref{sec:errata} \\
+\bottomrule
+\end{tabular}
+\caption{Results.  ``Inputs'' are published theorems the written proofs use and do not
+re-prove.  Where the statement says ``no refutation'' the system is unsatisfiable and has a
+refutation of degree $p^{v_p(k)}$ by Riis's criterion.  Throughout, lower-bound and
+exact-degree statements assume $n\ge1$ and $k\ge1$.}
+\label{tab:results}
+\end{table}
+
+\paragraph{The exact degree (E, with A and F).}  Result E says that Riis's upper bound is
+attained: for every $k$, the PC degree is exactly $p^{v_p(k)}$ once $n\ge2p^{v_p(k)}-1$.  In
+particular, for surplus $p^\ell$ it is $p^\ell$, so the degree grows with $\ell$ as fast as
+it can.  E is the strongest statement in the paper and rests on the deepest inputs: Harman's
+stable equivalences, with the repairs of Section~\ref{sec:errata}, and classical tilting
+theory (Appendix~\ref{app:tilting}).  A shorter proof through the semisimplification
+functors of Hone et al.\ would give the threshold one lower, but it uses their
+Theorem~8.4.5, and while checking that theorem we found that its published proof is
+incomplete (Sections~\ref{sec:periodicity} and~\ref{sec:errata}); we present that proof as
+conditional.  The other results confirm parts of E on other inputs.  At the Lean tier,
+A gives the exact degree $p$ when $v_p(k)=1$, from $n=2p-3$; B gives at least $p+1$ when
+$p^2\mid k$, from $n=2p-1$; C gives at least $5$ for $p=2$, $k=8$, from $n=7$.  At the
+written tier, F gives the exact degree $p^2$ when $v_p(k)=2$, from $n=2p^2-3$, using neither
+of E's inputs.  For comparison, Theorem~33 of \cite{riis1997nonconstant} gives
+$2^\ell-1$ for $N\ge(21+3p^2)(2^\ell-2)-p$.
+
+\paragraph{Growth from Nullstellensatz designs (D).}  D gives the weaker bound $2^\ell$ with
+explicit thresholds, by a transfer from Nullstellensatz designs to PC that uses neither E's
+inputs nor F's.  Its degree bound is one more than the bound $2^\ell-1$ of
+\cite[Thm.~33]{riis1997nonconstant}, and its threshold in $n$ is smaller for small $\ell$ and
+larger for large $\ell$ (for $p=3$: $12$ against $93$ at $\ell=2$, $1501$ against $1437$ at
+$\ell=5$).  At $p=2$ its bound meets Riis's, so D gives the exact degree $2^\ell$ over
+$\mathbb F_2$ independently of E, from $n\ge(4^\ell-2^\ell)/2+2^{\ell+1}-4$.  None of D, E, F
+is formalised in Lean.
+
+\paragraph{The bands (F).}  F is not a proof of growth: a bound that stops at $p^2$
+cannot give unbounded growth at fixed $p$.  It gives the fixed-valuation and fixed-degree
+statements above.  Its F$_3$ case ($9\mid k$, degree $\le4$, all $n\ge7$) has a Lean
+counterpart that is conditional on a finite-looking spanning statement for every board
+(Section~\ref{sec:bands}); that condition is verified by exact computation on the smallest
+board at two of the three levels it needs.
+
+\paragraph{Errata (G).}  Checking the sources of E led to five points in two recent
+sources: in Harman's paper, a statement that is false at $p=2$, a misprinted modulus and an
+omitted justification; in Hone et al., a theorem that is false at the boundary of its
+hypotheses, and a lemma that is false as stated, on which the proof of their Theorem~8.4.5
+depends.  We sent the first four to the authors on 8 November 2026.  Our proofs avoid each
+defect.
+
+\subsection{Evidence tiers}\label{sec:intro-tiers}
+
+Every statement in this paper carries one of three tiers.
+\begin{description}
+\item[T-LEAN] The stated formal theorem is kernel-checked in Lean~4, using only the axioms
+  \texttt{propext}, \texttt{Classical.choice} and \texttt{Quot.sound}.  Additional model
+  re-proofs and independent certificate checks are described separately for each result
+  (Section~\ref{sec:process}).
+\item[T-WRITTEN] There is a written proof.  At least one AI model other than its author
+  reconstructed it, and a separate AI adjudicator (Astra, a Codex model that took no part
+  in the run) checked it against the primary sources.  Author and reconstructor are named
+  per result; they are not always of different vendors.  Published theorems that the proof uses are named as
+  inputs and are not re-proved.
+\item[T-MEASURED] An exact finite computation, with a reproducible script; a second,
+  independently written implementation where we say so.
+\end{description}
+The tiers are not equally strong.  A T-LEAN statement is as reliable as the Lean kernel
+and the match between the Lean definitions and the mathematics, which
+Section~\ref{sec:defs} states in full.  A T-WRITTEN statement is as reliable as its
+model review and its inputs; we name, for each such result, the input we consider most
+exposed.  No human expert has reviewed any proof in this paper.
+
+The results were produced by AI research agents working in a harness that records every
+claim, review and computation; Section~\ref{sec:process} describes this and what was
+checked.  The Lean library and the checks are public with the four findings behind A, B, C and the
+$\mathbb F_3$ target (Zenodo DOIs 10.5281/zenodo.23996564, 10.5281/zenodo.23996585,
+10.5281/zenodo.23996615 and 10.5281/zenodo.24056819).
+
+\subsection{Organisation}
+
+Section~\ref{sec:defs} defines the two formulations of PC used here and proves that
+they have the same refutations, and sets up the duality between refutations and designs.
+Section~\ref{sec:lean} gives prose proofs of A, B and C.  Sections~\ref{sec:growth},
+\ref{sec:periodicity} and~\ref{sec:bands} prove D, E and F.  Section~\ref{sec:errata}
+records the errata, Section~\ref{sec:literature} the relation to the literature, and
+Section~\ref{sec:process} how the results were produced and checked.
+Section~\ref{sec:open} lists open problems.

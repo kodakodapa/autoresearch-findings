@@ -1,0 +1,284 @@
+% appA-tilting.tex -- Appendix A of the C3 paper (draft 2026-11-08): the second proof of Theorem 5.1(a).
+% Sources: claude-20261104-c3-closure/01-PC-CLOSURE-PERIODICITY.md (c1: sections 1-2, Lemma B, repairs R1-R3);
+% notes-20261104-referee-c3-closure.md (cold referee, incl. the p=2 counterexample and the fixes);
+% notes-20261104-referee-c3-closure-x2.md (x2: scalar extension); Astra
+% codex-20261104-runB-adjudication/03-C1-INTERFACES-AND-ERRATA.txt section 4. Harman statements checked against
+% arXiv:1509.06414v3 (harman-local.txt) on 2026-11-08.
+
+\section{The second proof of periodicity}\label{app:tilting}
+
+This appendix proves Theorem~\ref{thm:periodicity}(a), for $m,m'>2D$.  It is the proof on
+which part (a), and hence the exact degree for $n\ge2q-1$, rests; it does not use
+\cite{hone2025}.  It extends natural isomorphisms only between exact functors, so the flaw in
+\cite[Lemma~8.2.1]{hone2025} (Section~\ref{sec:errata}), which concerns additive functors, does
+not affect it.  It transports the closure of Section~\ref{sec:periodicity-closure} along
+Harman's stable equivalences~\cite{harman2015}.  Those equivalences are compatible with
+induction and restriction of permutation modules; the closure needs compatibility for
+\emph{arbitrary} submodules, which we prove on the Schur-algebra side with standard facts on
+tilting modules (Lemma~\ref{lem:B}).
+
+\paragraph{Status.}  T-WRITTEN.  The proof was written by a Claude agent (c1) in run
+20261104-0759, reviewed by a model referee with no contact with the run (who found the
+characteristic-$2$ error of Section~\ref{sec:errata} and supplied the replacement argument of
+Lemma~\ref{lem:R1}) and by a Codex agent (x2, who supplied the two-way scalar extension), and
+adjudicated by Astra, who accepted the coherence argument of Section~\ref{app:coherence}
+conditional on the named inputs and without re-proving their foundations.  The inputs are:
+Harman's Theorem~2.5 with the corrected modulus and his Corollary~1.6 and Proposition~2.7
+(for $\ell=1$, which the referee checked directly); Ringel duality and the equivalence
+$K^b(\mathrm{Tilt})\simeq D^b$ for highest-weight categories with finitely many
+weights~\cite{ringel1991,happel1988}; the facts that tensor products of tilting modules for
+$GL_N$ are tilting and that restriction to a Levi subgroup preserves tilting
+modules~\cite{wang1982,donkin1998,mathieu1990}; the Hom-dimension formula for permutation
+modules~\cite[13.19]{james1978}; and standard properties of the Schur
+functor~\cite{green1980}.
+
+Throughout, $k=\overline{\mathbb F}_p$ (Section~\ref{sec:periodicity-closure} reduces to this
+case), $q$ is a power of $p$ with $q>D$, and $m\equiv m'\pmod q$ with $m,m'>2D$.  For a
+partition $\lambda$ and $m\ge|\lambda|+\lambda_1$ put $\lambda(m)=(m-|\lambda|,\lambda)$.
+
+\subsection{Harman's equivalences, corrected}\label{app:harman}
+
+\paragraph{Permutation and Young modules.}  Let $\mathrm{Perm}^{\le r}_m$ be the category of
+direct sums of permutation modules $M(\lambda(m))$ of $S_m$ with $|\lambda|\le r$, and
+$\mathrm{Young}^{\le r}_m$ its Karoubi envelope, the direct sums of Young modules
+$Y(\lambda(m))$.  Homomorphisms between permutation modules have the stable Carter--Lusztig
+bases of \cite[\S2]{harman2015}; a \emph{stable map} is one whose coefficients in these bases do
+not depend on $m$.
+
+\begin{theorem}[Harman~{\cite[Thm.~2.5, Cor.~2.6]{harman2015}}, modulus corrected]\label{thm:harman25}
+Let $r\ge0$ and let $q$ be a power of $p$ with $q>r$.  (For $r=0$ the categories consist of
+sums of the trivial module and the equivalence is the evident one.)  For $m,m'>2r$ with $m\equiv m'\pmod q$,
+sending $M(\lambda(m))$ to $M(\lambda(m'))$ and each stable map to the stable map with the
+same coefficients defines an equivalence
+$E^{\mathrm{P}}\colon\mathrm{Perm}^{\le r}_m\to\mathrm{Perm}^{\le r}_{m'}$, and hence an
+equivalence $E^{\mathrm Y}$ of Young categories.
+\end{theorem}
+
+The structure constants of composition are binomial coefficients in $m$ of degree at most
+$r$, and $\binom md\bmod p$ depends on $m$ only modulo the least power of $p$ above $d$
+(Lucas).  The printed modulus $p^{\lceil\log_pr\rceil}$ is too small when $r$ is a power of
+$p$ (Section~\ref{sec:errata}); with $q>r$ the proof of \cite{harman2015} applies unchanged.
+For $\ell=1$, \cite[Prop.~2.7]{harman2015} states that $E^{\mathrm P}$ commutes with
+restriction to $S_{m-1}$ and induction from $S_{m-1}$, up to natural isomorphism, on permutation
+modules.  The relevant maps are explicit: restriction sends the basis element $h_\tau$ to
+$\sum h_{\tau-e_{ij}}$ and induction adjoins a singleton block, with coefficients $0$ and $1$
+that do not depend on $m$; so this can be checked directly.
+
+\paragraph{Schur algebras.}  For $N\ge m$ let $S(N,m)$ be the Schur algebra, so that
+$S(N,m)$-modules are the polynomial representations of $GL_N$ of degree $m$, and let
+$\mathcal S^{\le r}(N,m)$ be the Serre subcategory generated by the simples
+$L(\lambda(m)')$, $|\lambda|\le r$.  It is a highest-weight category whose tilting objects
+are the $T(\lambda(m)')$~\cite[Prop.~1.3 and proof of Thm.~2.8]{harman2015}.  Let $\mathcal F$
+be the Schur functor and $\tilde{\mathcal F}=\mathcal F(-)\otimes\mathrm{sgn}$; it is exact and
+$\tilde{\mathcal F}(T(\lambda'))=Y(\lambda)$~\cite[Cor.~1.8(1),(2)]{harman2015}.
+
+\begin{lemma}[full faithfulness on tilting modules]\label{lem:R1}
+In every characteristic, $\tilde{\mathcal F}$ restricts to an equivalence
+$\mathrm{Tilt}(\mathcal S^{\le r}(N,m))\to\mathrm{Young}^{\le r}_m$.
+\end{lemma}
+
+\begin{proof}
+Harman deduces this from \cite[Cor.~1.8(4)]{harman2015}, which is false at $p=2$
+(Section~\ref{sec:errata}); here is a proof that does not use it.  The exterior powers
+$\Lambda^\mu V=\Lambda^{\mu_1}V\otimes\Lambda^{\mu_2}V\otimes\cdots$ are tilting, and
+$T(\mu')$ is a summand of $\Lambda^\mu V$ with multiplicity one; so the tilting objects of
+$\mathcal S^{\le r}(N,m)$ are the summands of the $\Lambda^{\lambda(m)}V$, $|\lambda|\le r$,
+and $\tilde{\mathcal F}(\Lambda^\mu V)=M(\mu)$.
+
+\emph{Dimensions.}  Since $\Lambda^\lambda V$ has a Weyl filtration and $\Lambda^\mu V$ a
+good filtration,
+$\dim\mathrm{Hom}(\Lambda^\lambda V,\Lambda^\mu V)=\sum_\nu(\Lambda^\lambda V:\Delta(\nu))
+(\Lambda^\mu V:\nabla(\nu))=\sum_\rho K_{\rho\lambda}K_{\rho\mu}$, the number of
+$(S_\lambda,S_\mu)$ double cosets in $S_m$, which is
+$\dim\mathrm{Hom}_{S_m}(M(\lambda),M(\mu))$ in every
+characteristic~\cite[13.19]{james1978}.
+
+\emph{Faithfulness.}  $\Lambda^\mu V$ embeds in $V^{\otimes m}$ (antisymmetrisation is injective
+in every characteristic).  For $N\ge m$, $V^{\otimes m}$ is projective and injective, and every
+simple submodule $L$ of it has $\mathcal F(L)\ne0$~\cite[\S6]{green1980}.  If
+$f\colon\Lambda^\lambda V\to\Lambda^\mu V$ is non-zero, its image is a non-zero submodule of
+$V^{\otimes m}$, so it contains such an $L$, and since $\mathcal F$ is exact,
+$\mathcal F(\operatorname{im}f)\ne0$, so $\tilde{\mathcal F}(f)\ne0$.
+
+A faithful functor between Hom spaces of equal finite dimension is bijective on them.  So
+$\tilde{\mathcal F}$ is fully faithful on the $\Lambda^{\lambda(m)}V$, hence on their summands;
+its essential image is $\mathrm{Young}^{\le r}_m$.
+\end{proof}
+
+\begin{proposition}[Harman's Theorems~2.8 and~2.9, with the repairs]\label{prop:harman-eq}
+Let $N\ge m$, $N'\ge m'$.  There is an equivalence of highest-weight categories
+$\Theta\colon\mathcal S^{\le r}(N,m)\to\mathcal S^{\le r}(N',m')$ with
+$\Theta(T(\lambda(m)'))\cong T(\lambda(m')')$, together with a natural isomorphism
+$\zeta\colon\tilde{\mathcal F}\Theta\cong E^{\mathrm Y}\tilde{\mathcal F}$ on tilting objects.
+$\Theta$ descends to an equivalence of abelian categories
+$E\colon\mathcal R^{\le r}_m\to\mathcal R^{\le r}_{m'}$ between the essential images
+$\mathcal R^{\le r}_m=\tilde{\mathcal F}(\mathcal S^{\le r}(N,m))\subseteq\mathrm{Rep}(S_m)$,
+whose kernels, cokernels and subobjects are the ordinary ones, and $E$ restricts to
+$E^{\mathrm P}$ on permutation modules up to the isomorphisms $\zeta$.
+\end{proposition}
+
+\begin{proof}
+By Lemma~\ref{lem:R1} and Theorem~\ref{thm:harman25}, composing $\tilde{\mathcal F}$, then
+$E^{\mathrm Y}$, then a quasi-inverse of $\tilde{\mathcal F}$ at $(N',m')$ gives an equivalence
+$\mathrm{Tilt}(\mathcal S^{\le r}(N,m))\to\mathrm{Tilt}(\mathcal S^{\le r}(N',m'))$ that
+preserves labels.  Ringel duality~\cite[Cor.~1.6]{harman2015} extends it to $\Theta$; on
+tilting objects $\Theta$ agrees with the given equivalence up to natural isomorphism, since
+both are determined by the image of a full tilting object and its endomorphism ring.  (This is
+a property of the construction, not its definition; we use only this property.)
+
+For $|\lambda|\le r<m/2$ the first part $m-|\lambda|$ of $\lambda(m)$ exceeds every other
+part, so $\lambda(m)$ is $p$-singular if and only if $\lambda(m')$ is.  Hence $\Theta$ maps the
+Serre subcategory generated by the $p$-singular simples, which is the kernel of
+$\tilde{\mathcal F}$, onto its counterpart.  It remains to identify the Serre quotient
+$\mathcal S^{\le r}/\ker\tilde{\mathcal F}$ with $\mathcal R^{\le r}_m$.  Harman applies
+Gabriel's lemma to $\mathcal S^{\le r}$, which needs a right adjoint landing in
+$\mathcal S^{\le r}$; that is not shown (Section~\ref{sec:errata}).  Instead: the right adjoint
+$\tilde{\mathcal G}$ of $\tilde{\mathcal F}$ on all of $S(N,m)$-mod has invertible counit, so
+$S(N,m)\text{-mod}/\ker\tilde{\mathcal F}\simeq\mathrm{Rep}(S_m)$ by Gabriel's
+lemma~\cite{gabriel1962}; and since $\mathcal S^{\le r}$ is a Serre subcategory, for
+$X\in\mathcal S^{\le r}$ and $T\le\tilde{\mathcal F}X$ the pullback
+$X_T=X\times_{\tilde{\mathcal G}\tilde{\mathcal F}X}\tilde{\mathcal G}T$ is a subobject of $X$
+in $\mathcal S^{\le r}$ with $\tilde{\mathcal F}X_T=T$, and lifting graphs the same way gives
+every morphism as a roof inside $\mathcal S^{\le r}$.  So the quotient is the full subcategory
+$\mathcal R^{\le r}_m$, closed under submodules and quotients in $\mathrm{Rep}(S_m)$.  The
+exact equivalence $\Theta$ descends to an exact equivalence $E$.
+\end{proof}
+
+\subsection{Compatibility with induction and restriction}\label{app:lemmaB}
+
+Write $E_m$ for the equivalence of Proposition~\ref{prop:harman-eq} at weight $\le D$ between
+$S_m$ and $S_{m'}$, and $E'_{m-1}$ for the one at weight $\le D-1$ between $S_{m-1}$ and
+$S_{m'-1}$ (note $m-1>2(D-1)$ and $m-1\equiv m'-1$).
+
+\begin{lemma}[B]\label{lem:B}
+There are natural isomorphisms
+\[
+  E_m\circ\mathrm{Ind}\cong\mathrm{Ind}\circ E'_{m-1}\ \text{ on }\mathcal R^{\le D-1}_{m-1},\qquad
+  E'_{m-1}\circ\mathrm{Res}\cong\mathrm{Res}\circ E_m\ \text{ on }\mathcal R^{\le D-1}_{m},
+\]
+which on permutation modules are the isomorphisms of \cite[Prop.~2.7]{harman2015} with
+$\ell=1$.
+\end{lemma}
+
+\begin{proof}
+Fix $N\ge\max(m,m')+1$.  On the Schur side take
+$\Phi_{\mathrm{Ind}}=-\otimes V\colon S(N,m-1)\text{-mod}\to S(N,m)\text{-mod}$ and let
+$\Phi_{\mathrm{Res}}\colon S(N,m)\text{-mod}\to S(N-1,m-1)\text{-mod}$ be the part of weight
+$1$ for the last factor of the Levi subgroup $GL_{N-1}\times GL_1$.
+
+\emph{(i)}  $\tilde{\mathcal F}(M\otimes V)\cong\mathrm{Ind}\,\tilde{\mathcal F}(M)$ and
+$\tilde{\mathcal F}(\Phi_{\mathrm{Res}}M)\cong\mathrm{Res}\,\tilde{\mathcal F}(M)$, naturally:
+the $(1^m)$-weight space of $M\otimes V$ is $\bigoplus_i M_{(1^m)-\varepsilon_i}$, which is
+the induced module, and the transposition $(m\ N)$ carries the $(1^m)$-weight space of $M$ to
+the weight $(1^{m-1},0,\dots,0,1)$, $S_{m-1}$-equivariantly; the sign twist commutes with both.
+\emph{(ii)}  Both functors are exact and send tilting modules to tilting
+modules~\cite{wang1982,donkin1998,mathieu1990}; a weight summand of a tilting module for the
+Levi subgroup is tilting.
+\emph{(iii)}  By branching, $-\otimes V$ maps $\mathcal S^{\le D-1}(N,m-1)$ into
+$\mathcal S^{\le D}(N,m)$ (composition factors of $\Delta(\mu)\otimes V$ lie below
+$\mu+\varepsilon_i$), and $\Phi_{\mathrm{Res}}$ maps $\mathcal S^{\le D-1}(N,m)$ into
+$\mathcal S^{\le D-1}(N-1,m-1)$.
+\emph{(iv)}  By (i), both functors preserve the kernels of $\tilde{\mathcal F}$.
+
+\emph{Step 1 (tilting level).}  Let $\phi\in\{\mathrm{Ind},\mathrm{Res}\}$ with Schur-side
+partner $\Phi$, and $T$ a tilting object.  Then, naturally in $T$,
+\[
+  \tilde{\mathcal F}\Theta\Phi T\cong E^{\mathrm Y}\tilde{\mathcal F}\Phi T
+  \cong E^{\mathrm Y}\phi\tilde{\mathcal F}T\cong\phi E^{\mathrm Y}\tilde{\mathcal F}T
+  \cong\phi\tilde{\mathcal F}\Theta T\cong\tilde{\mathcal F}\Phi\Theta T,
+\]
+using $\zeta$, (i), \cite[Prop.~2.7]{harman2015} (on permutation modules, hence on their
+summands), $\zeta$ again, and (i).  Both $\Theta\Phi T$ and $\Phi\Theta T$ are tilting by
+(ii), and $\tilde{\mathcal F}$ is fully faithful on tilting objects (Lemma~\ref{lem:R1}), so
+$\Theta\Phi\cong\Phi\Theta$ naturally on tilting objects.
+
+\emph{Step 2 (all objects).}  The categories involved are highest-weight with finitely many
+weights, so $K^b(\mathrm{Tilt})\to D^b$ is an equivalence~\cite{ringel1991,happel1988}.  An
+exact functor induces a functor on $D^b$ computed termwise on tilting complexes, and the natural
+isomorphism of Step~1 applied termwise gives one on $K^b(\mathrm{Tilt})$, hence on $D^b$.
+Taking $H^0$ on the heart gives $\Theta\Phi\cong\Phi\Theta$ on all objects, restricting to the
+isomorphism of Step~1 on tilting objects.
+
+\emph{Step 2$'$ (restriction in weight).}  The same argument shows that $\Theta$ at weight
+$\le D$, restricted to weight $\le D-1$, is isomorphic to $\Theta$ at weight $\le D-1$: both
+are exact and agree with the same Young-module equivalence on tilting objects.  This is needed
+because $C_t\cap F_{D-1}$ is transported at weight $D$ and then restricted.
+
+\emph{Step 3 (descent).}  By (iv) and the universal property of Serre quotients for exact
+functors and natural transformations, the isomorphism descends to $E\circ\phi\cong\phi\circ E$
+on the image categories.  On permutation modules it is the isomorphism of Step~1, that is,
+Harman's.
+\end{proof}
+
+\subsection{Coherence}\label{app:coherence}
+
+Two points make the isomorphisms usable for subobjects; Astra accepted both, conditional on the
+inputs above.
+
+\emph{Independence of $N$.}  Induction uses $S(N,m-1)$ and restriction lands in
+$S(N-1,m-1)$.  Truncation to the weights with last coordinate $0$ is an exact Morita
+equivalence $S(N,m-1)\text{-mod}\to S(N-1,m-1)\text{-mod}$ for $N-1\ge m-1$; it preserves
+tilting objects and labels and commutes with $\tilde{\mathcal F}$.  Applying Step~2 to
+$\Theta^{(N)}$ and to $\Theta^{(N-1)}$ conjugated by truncation (both exact, both isomorphic
+to the same Young functor on tilting objects) gives a natural isomorphism between them that is
+the identity on Young modules.  So $E'_{m-1}$ does not depend on $N$, and the output of
+restriction can be fed into induction.
+
+\emph{Fixed identifications.}  Fix, on each side, the descent isomorphism
+$\delta\colon E\tilde{\mathcal F}\to\tilde{\mathcal F}\Theta$ and the tilting comparison
+$\alpha\colon\tilde{\mathcal F}\Theta\to E^{\mathrm Y}\tilde{\mathcal F}$ of
+Proposition~\ref{prop:harman-eq}.  On tilting objects their composite descends, by full
+faithfulness of $\tilde{\mathcal F}$ there (Lemma~\ref{lem:R1}), to a natural isomorphism
+$\eta\colon E|_{\mathrm{Young}}\to E^{\mathrm Y}$; write $\eta'$ for the same at $m-1$.  The same
+$\delta$ and $\alpha$ are used in constructing the isomorphisms of Lemma~\ref{lem:B}.  Let
+$c\colon E^{\mathrm P}_m\mathrm{Ind}\to\mathrm{Ind}\,E^{\mathrm P}_{m-1}$ and
+$c'\colon E^{\mathrm P}_{m-1}\mathrm{Res}\to\mathrm{Res}\,E^{\mathrm P}_m$ be Harman's
+isomorphisms on permutation modules.  Unwinding the descended isomorphisms $\beta$ (induction)
+and $\gamma$ (restriction), the Schur-functor isomorphisms of (i) cancel by naturality of
+$\delta$ and $\alpha$, and for permutation objects $P$, $Q$
+\[
+  \beta_P=(\mathrm{Ind}\,\eta'_P)^{-1}\circ c_P\circ\eta_{\mathrm{Ind}\,P},\qquad
+  \gamma_Q=(\mathrm{Res}\,\eta_Q)^{-1}\circ c'_Q\circ\eta'_{\mathrm{Res}\,Q}.
+\]
+All maps used below (the multiplication pieces $g_j$, $\varepsilon_j$, the inclusions, the
+axiom maps and the constant) are stable maps defined from the same stable decompositions as
+$c$.  For each inclusion $T\to P$ of a submodule into a permutation object, naturality gives a
+commuting square whose ambient map is the fixed component above; taking images identifies the
+transported subobject.  So in the induction below every subobject is carried to the
+corresponding subobject on the smaller board, and no unknown automorphism enters.
+
+\subsection{Transport of the closure}\label{app:transport}
+
+\paragraph{The multiplication step as induction.}  Fix a hole $j$ and let $S_{m-1}$ fix pigeon
+$m$.  Multiplication by $x_{mj}$ maps $\mathrm{Res}\,F_{D-1}(m)$ into the summand
+$P_j\subseteq\mathrm{Res}\,F_D(m)$ spanned by matchings containing the edge $(m,j)$; call this
+map $g_j$.  $P_j$ is a permutation module of $S_{m-1}$ of weight $\le D-1$ (matchings of size
+$\le D-1$ on pigeons $[m-1]$ and holes other than $j$).  Let
+$\varepsilon_j\colon\mathrm{Ind}\,P_j\to F_D(m)$ be adjoint to the inclusion.  Both are stable
+maps with coefficients $0$ and $1$.  For an $S_m$-submodule $S\subseteq F_{D-1}(m)$,
+\[
+  \textstyle\sum_i\rho(x_{ij})S=\varepsilon_j\bigl(\mathrm{Ind}\,g_j(\mathrm{Res}\,S)\bigr),
+\]
+because $\sum_i\rho(x_{ij})S=\sum_{\sigma\in S_m}\sigma\,\rho(x_{mj})\,S$ and the image of
+$\mathrm{Ind}\,T\to F_D$ is $S_m\cdot T$.  So every $C_t(m)$ is obtained from permutation
+modules of weight $\le D$ (for $S_m$) or $\le D-1$ (for $S_{m-1}$) and stable maps by images,
+preimages ($C_t\cap F_{D-1}=\iota^{-1}(C_t)$ for the inclusion $\iota$), finite sums, and
+induction and restriction of submodules.  The constant is the stable map $k\to F_D(m)$.
+
+\begin{proof}[Proof of Theorem~\ref{thm:periodicity}(a)]
+By induction on $t$, $\eta\bigl(E_m(C_t(m))\bigr)=C_t(m')$ as subobjects of $F_D(m')$.  For
+$t=0$, $C_0$ is the sum of the images of the axiom maps, which are stable.  For the step: $E_m$
+is exact, so it preserves images, preimages and sums of subobjects, and the subobjects are the
+ordinary ones (Proposition~\ref{prop:harman-eq}); stable maps go to the same stable maps up to
+$\eta$ (Section~\ref{app:coherence}); induction and restriction of the subobjects
+$C_t\cap F_{D-1}$ and $g_j(\mathrm{Res}\,S)$ are transported by Lemma~\ref{lem:B}, with
+Step~2$'$ for the change of weight.  Both chains stabilise.  Since $E_m$ is an equivalence, the
+composite $k\to F_D(m)\to F_D(m)/C_\infty(m)$ is zero if and only if its image
+$k\to F_D(m')\to F_D(m')/C_\infty(m')$ is.  Lemma~\ref{lem:closure} and the reduction to
+$\overline{\mathbb F}_p$ (Section~\ref{sec:periodicity-closure}) finish the proof.
+\end{proof}
+
+The strict inequality $m,m'>2D$ is used twice: in Theorem~\ref{thm:harman25} and in the
+comparison of $p$-singular labels in Proposition~\ref{prop:harman-eq}.  At $m=2D$ this proof
+does not apply, and Theorem~\ref{thm:periodicity}(b) rests on the conditional proof of
+Section~\ref{sec:periodicity-oti}.

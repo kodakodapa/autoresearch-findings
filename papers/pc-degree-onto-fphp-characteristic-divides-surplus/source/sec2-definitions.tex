@@ -1,0 +1,455 @@
+% sec2-definitions.tex -- Section 2 of the C3 paper (draft 2026-11-08).
+% The framework formerly at the top of sec3-lean-results.tex, moved here and expanded:
+% full proof of the equivalence of the two PC formulations (from StdPC.lean, StdPCConv.lean),
+% degree monotonicity (maintenance-20261108/DegreeMono.lean), the upper bound, and the
+% matching/design machinery shared by Sections 3--6.  Labels are unchanged, so references in
+% sec3 still resolve.  Requires \lean as defined at the top of sec3 (or the preamble).
+
+\section{Definitions and the two formulations of polynomial calculus}\label{sec:defs}
+
+\begingroup\sloppy
+Lean names are given in footnotes, with namespaces abbreviated as in
+Section~\ref{sec:lean}: \texttt{[0459]} stands for
+\texttt{Programme.\guillemotleft 20261025-0459-proof-complexity\guillemotright}, and so on;
+\texttt{[0635]} for \texttt{Programme.\guillemotleft 20261102-0635-proof-complexity\guillemotright};
+\texttt{[maint]} stands for
+\texttt{Programme.\guillemotleft maintenance-20261108\guillemotright}.
+
+\subsection{The formula}\label{sec:defs-formula}
+
+Fix $n,k\in\mathbb N$.  There are $n+k$ pigeons $0\le i<n+k$ and $n$ holes
+$0\le j<n$; the variable $x_{ij}$ has index $in+j$, so the variables are
+$x_0,\dots,x_{N-1}$ with $N=(n+k)n$.  The system $\mathrm{ontoFPHP}(n,k)$ is the list of
+integer polynomials
+\[
+  \textstyle P_i=\sum_{j<n}x_{ij}-1,\quad H_j=\sum_{i<n+k}x_{ij}-1,\quad
+  x_{ij}x_{i'j}\ (i<i'),\quad x_{ij}x_{ij'}\ (j<j').
+\]
+We call them pigeon, hole, collision and functional axioms.\lean{[0459] OntoFPHP.ontoFPHP}
+They are the axioms of \cite[Def.~7.2]{beame1998counting}, with integer coefficients that
+are read mod $p$ below.  Lean represents a polynomial by a list of terms (an integer coefficient and a list of
+variables) and uses its raw syntactic degree, the maximum length of a term's variable list;
+rule (eq) below permits collecting coefficients and removing zero coefficients.  For the
+displayed axioms, whose representations are normalised, this presents ordinary polynomial
+calculus over $\mathbb F_p$ with the same degree bound.  No reduction by $x^2=x$ is applied
+unless we say so.
+
+\subsection{Standard polynomial calculus}\label{sec:defs-std}
+
+\begin{definition}[standard PC]\label{def:stdpc}
+Let $p\ge2$, let $A$ be a list of integer polynomials and $D\in\mathbb N$.
+$\mathrm{Der}_p(A,D)$ is the least set of integer polynomials such that
+\begin{itemize}
+\item[(ax)] $P\in\mathrm{Der}_p(A,D)$ for every $P\in A$ with $\deg P\le D$;
+\item[(bool)] $x^2-x\in\mathrm{Der}_p(A,D)$ for every variable $x$, provided $D\ge2$;
+\item[(lin)] $uP+vQ\in\mathrm{Der}_p(A,D)$ for $P,Q\in\mathrm{Der}_p(A,D)$ and $u,v\in\mathbb Z$;
+\item[(mul)] $xP\in\mathrm{Der}_p(A,D)$ for $P\in\mathrm{Der}_p(A,D)$ with $\deg P+1\le D$;
+\item[(eq)] $Q\in\mathrm{Der}_p(A,D)$ whenever $P\in\mathrm{Der}_p(A,D)$, $\deg Q\le D$ and
+  every monomial has congruent coefficients mod $p$ in $P$ and $Q$.
+\end{itemize}
+A \emph{degree-$D$ refutation} of $A$ over $\mathbb F_p$ exists, written
+$\mathrm{Ref}_p(A,D)$, if $1\in\mathrm{Der}_p(A,D)$.\lean{[1156] StdPC.Der, StdPC.Refutes, StdPC.PEq, StdPC.boolAx}
+\end{definition}
+
+For prime $p$ this is the usual polynomial calculus over $\mathbb F_p$ with Boolean
+axioms: rule (eq) identifies an integer polynomial with its image in $\mathbb F_p[x]$, and
+every line has degree at most $D$ (by induction; (lin) does not raise degree).  Two points
+of convention matter for comparisons.  First, the degree is the degree of a \emph{line},
+measured syntactically, before any reduction by $x^2=x$: rule (mul) is guarded by
+$\deg P+1\le D$ on the unreduced polynomial $P$.  Second, Nullstellensatz degree in
+\cite{beame1998counting} is the degree of the multipliers; we quote their bounds in
+multiplier degree and state any conversion to product or PC line degree explicitly.
+
+\begin{lemma}[monotonicity]\label{lem:mono}
+If $D\le D'$ then $\mathrm{Der}_p(A,D)\subseteq\mathrm{Der}_p(A,D')$.  Hence
+$\neg\mathrm{Ref}_p(A,D')$ implies $\neg\mathrm{Ref}_p(A,D)$ for every $D\le D'$.\lean{[maint] DegreeMono.Der.mono, Refutes.mono}
+\end{lemma}
+
+\begin{proof}
+Every rule instance of degree $D$ is a rule instance of degree $D'$: each guard
+$\deg\le D$ or $\deg+1\le D$ (and $D\ge2$) implies the same guard with $D'$.
+\end{proof}
+
+The parameter $D$ is an upper bound on line degree.  Monotonicity allows a lower bound
+at $D$ to be restated for all smaller bounds; the library states those forms
+separately.\lean{[maint] DegreeMono.uniform\_no\_degree\_le\_p, uniform\_no\_standard\_degree\_le\_p, no\_deg\_le4, deg\_ge5}
+
+\subsection{Semantic polynomial calculus on the cube}\label{sec:defs-sem}
+
+The Lean library proves its lower bounds for a formulation in which lines are functions on
+the Boolean cube.  This removes the Boolean axioms and makes congruence a rule, which is
+convenient for the duality arguments of Section~\ref{sec:defs-designs}.
+
+A \emph{point} is a map $a\colon\mathbb N\to\{0,1\}$; a \emph{line} is a function
+$g$ from points to $\mathbb Z$.  Each integer polynomial $P$ defines a line $\hat P$ by
+evaluation.  A line $g$ has \emph{cube degree at most $d$} if $\hat Q(a)\equiv g(a)\pmod p$
+for all points $a$, for some integer polynomial $Q$ with $\deg Q\le d$.\lean{[1633] PCTseitin.CubeDeg}
+
+\begin{definition}[semantic PC]\label{def:ppc}
+The lines of a degree-$D$ derivation over $\mathbb Z/p$ from $A$ form the least set
+$\mathrm{PPC}_p(A,D)$ of lines containing
+(ax) $\hat P$ for each $P\in A$ with $\deg P\le D$;
+(lin) $uf+vg$ for $f,g\in\mathrm{PPC}_p(A,D)$ and $u,v\in\mathbb Z$;
+(mul) $x\cdot g$ for a variable $x$ and $g\in\mathrm{PPC}_p(A,D)$ of cube degree at most
+$d$ with $d+1\le D$;
+(congr) every $f$ with $f(a)\equiv g(a)\pmod p$ for all points $a$, for some
+$g\in\mathrm{PPC}_p(A,D)$.
+A \emph{degree-$D$ refutation} is a derivation of the constant line $1$; we write
+$\mathrm{PPCRef}_p(A,D)$.\lean{[0459] OntoFPHP.PPCDerivable, OntoFPHP.PPCRefutation}
+\end{definition}
+
+Here $p$ is any integer $\ge2$, not necessarily prime; all our results take $p$ prime.
+Degree monotonicity holds as in Lemma~\ref{lem:mono}.\lean{[maint] DegreeMono.PPCDerivable.mono, PPCRefutation.mono}
+
+\begin{theorem}\label{thm:refutes-iff}
+For every $p\ge2$, list $A$ and $D$: $\mathrm{Ref}_p(A,D)\iff\mathrm{PPCRef}_p(A,D)$.\lean{[1156] StdPCConv.refutes\_iff}
+\end{theorem}
+
+The two directions are Propositions~\ref{prop:std-to-sem} and~\ref{prop:sem-to-std}.
+Consequently every lower bound in this paper holds verbatim for standard PC over
+$\mathbb F_p$ with Boolean axioms.
+
+\begin{proposition}\label{prop:std-to-sem}
+If $p\ge2$ and $\mathrm{Ref}_p(A,D)$, then $\mathrm{PPCRef}_p(A,D)$.\lean{[1156] StdPC.refutes\_ppc}
+\end{proposition}
+
+\begin{proof}
+We show by induction on $\mathrm{Der}_p(A,D)$ that for every $P\in\mathrm{Der}_p(A,D)$
+either $\hat P(a)\equiv0\pmod p$ at every point $a$, or
+$\hat P\in\mathrm{PPC}_p(A,D)$.\lean{[1156] StdPC.der\_sem}  The first alternative is
+needed because the Boolean axioms have no semantic counterpart: their value is $0$, and
+the zero line need not be in $\mathrm{PPC}_p(A,D)$ (it is empty when $A$ has no axiom of
+degree $\le D$).
+(ax) gives the second alternative and (bool) the first.  (lin): if both $\hat P,\hat Q$
+are derivable, so is $u\hat P+v\hat Q$; if one vanishes, $u\hat P+v\hat Q$ is congruent
+to a multiple of the other and is derivable by (lin) and (congr), or vanishes.  (eq):
+polynomials with coefficients congruent mod $p$ take congruent values, so (congr)
+applies.  (mul): $\deg P+1\le D$ means $\hat P$ has cube degree at most $D-1$, so semantic
+(mul) applies to $\hat P$, and $\widehat{xP}=x\cdot\hat P$; if $\hat P$ vanishes, so does
+$x\cdot\hat P$.
+
+Now let $1\in\mathrm{Der}_p(A,D)$.  The first case is impossible: $1\not\equiv0\pmod p$ at
+any point since $p\ge2$.  So $\hat1=1\in\mathrm{PPC}_p(A,D)$.
+\end{proof}
+
+For the converse the only difficulty is (mul): a semantic line $g$ of cube degree $\le D-1$
+may be represented in the standard derivation by a polynomial $Q$ of degree $D$, which may
+not be multiplied.  We must derive a low-degree representative $R$ of $g$ instead.  Two
+lemmas do this.  For a monomial $m$ let $\mathrm{ml}(m)$ be its multilinear form (the set of
+its variables), and extend $\mathrm{ml}$ linearly to polynomials.
+
+\begin{lemma}[multilinear reduction]\label{lem:ml-reduce}
+If $\mathrm{Der}_p(A,D)$ contains some polynomial and $m$ is a monomial with $|m|\le D$,
+then $m-\mathrm{ml}(m)\in\mathrm{Der}_p(A,D)$.\lean{[1156] StdPCConv.der\_dd}
+\end{lemma}
+
+\begin{proof}
+If $m$ is multilinear, $m-\mathrm{ml}(m)$ has all coefficients $0$: derive zero as
+$0\cdot Q+0\cdot Q$ by (lin) from any derived line $Q$, and apply (eq).  Otherwise some variable $x$ occurs twice, $m=x^2u$ with
+$|u|=|m|-2$, and in particular $D\ge|m|\ge2$.  Then $m-xu=u\cdot(x^2-x)$, obtained from the
+Boolean axiom by $|u|$ applications of (mul); the intermediate products have degree
+$\le|m|\le D$, so every guard holds.  Since $\mathrm{ml}(xu)=\mathrm{ml}(m)$ and $|xu|<|m|$,
+induction on $|m|$ gives $xu-\mathrm{ml}(m)$, and (lin) adds the two.
+\end{proof}
+
+\begin{lemma}[multilinear vanishing]\label{lem:ml-vanish}
+If a multilinear integer polynomial $S=\sum_T c_Tx_T$ satisfies $\hat S(a)\equiv0\pmod p$
+at every point $a$, then $c_T\equiv0\pmod p$ for every $T$.\lean{[1156] StdPCConv.cf\_ml\_dvd}
+\end{lemma}
+
+\begin{proof}
+By induction on $|T|$.  Evaluate at the indicator point $a_T$ of $T$:
+$\hat S(a_T)=\sum_{T'\subseteq T}c_{T'}$.  By induction $c_{T'}\equiv0$ for $T'\subsetneq T$,
+so $c_T\equiv\hat S(a_T)\equiv0$.
+\end{proof}
+
+\begin{lemma}\label{lem:der-of-cube}
+Let $Q\in\mathrm{Der}_p(A,D)$, and let $R$ be an integer polynomial with $\deg R\le D$ and
+$\hat R(a)\equiv\hat Q(a)\pmod p$ at every point.  Then $R\in\mathrm{Der}_p(A,D)$.\lean{[1156] StdPCConv.der\_of\_cube, der\_of\_zero, der\_of\_ml}
+\end{lemma}
+
+\begin{proof}
+Put $S=R-Q$, a polynomial of degree $\le D$ that vanishes mod $p$ on the cube.  Its
+multilinear form $\mathrm{ml}(S)$ takes the same values, so by
+Lemma~\ref{lem:ml-vanish} all its coefficients are $\equiv0$; by (eq) applied to $0\cdot Q$,
+$\mathrm{ml}(S)\in\mathrm{Der}_p(A,D)$.  Adding the multiples $c\,(m-\mathrm{ml}(m))$ of
+Lemma~\ref{lem:ml-reduce} for the terms $cm$ of $S$ gives $S$.  Then $R=S+Q$ by (lin).
+\end{proof}
+
+\begin{proposition}\label{prop:sem-to-std}
+If $\mathrm{PPCRef}_p(A,D)$, then $\mathrm{Ref}_p(A,D)$.\lean{[1156] StdPCConv.ppc\_refutes, ppc\_std}
+\end{proposition}
+
+\begin{proof}
+By induction on $\mathrm{PPC}_p(A,D)$, every semantic line $g$ has some
+$Q\in\mathrm{Der}_p(A,D)$ with $\hat Q\equiv g$ pointwise mod $p$.  (ax), (lin) and (congr)
+are immediate.  For (mul), let $g$ have cube degree $\le D-1$, witnessed by $R$ with
+$\deg R\le D-1$, and let $Q$ be the derived representative of $g$.  By
+Lemma~\ref{lem:der-of-cube}, $R\in\mathrm{Der}_p(A,D)$, so $xR\in\mathrm{Der}_p(A,D)$ by
+(mul), and $\widehat{xR}\equiv x\cdot g$.  Finally, if $1$ is a semantic line, its
+representative $Q$ agrees with the constant polynomial $1$ on the cube, and
+Lemma~\ref{lem:der-of-cube} gives $1\in\mathrm{Der}_p(A,D)$.
+\end{proof}
+
+\subsection{The upper bound}\label{sec:defs-upper}
+
+\begin{proposition}[Riis~\cite{riis1993independence}; Theorem~8 of \cite{razborov2001php}]\label{prop:riis}
+Let $p$ be prime.  If $\binom{n+k}{d}\not\equiv\binom nd\pmod p$ for some $d\ge1$, then
+$\mathrm{onto\text{-}FPHP}^{n+k}_n$ has a PC refutation of degree $d$ over $\mathbb F_p$.  For
+$k=p^vc$ with $p\nmid c$, the choice $d=p^v$ applies by Lucas's theorem, giving degree
+$p^{v}$ for every $n$.
+\end{proposition}
+
+We use this only as an upper bound and do not re-prove it in general.  In the case needed
+for Theorem~A ($v=1$) the library proves the degree-$p$ refutation directly
+(Proposition~\ref{prop:A-upper}).  The criterion cannot give less than $p^{v}$: for
+$d<p^v$, Lucas's theorem gives $\binom{n+k}{d}\equiv\binom nd$.
+
+\subsection{Matchings, balance and extension}\label{sec:defs-matchings}
+
+A \emph{matching} is a set of variables no two of which share a pigeon or a hole;
+Lean represents it by its decreasing list (\texttt{CM}).  For
+$f\colon\{\text{matchings}\}\to\mathbb Z$, a matching $g$ and a pigeon $i$ free in
+$g$, the \emph{row sum} is $\mathrm{row}_f(g,i)=\sum_j f(g\cup\{x_{ij}\})$ over the
+holes $j$ for which $g\cup\{x_{ij}\}$ is a matching; the \emph{column sum}
+$\mathrm{col}_f(g,j)$ at a free hole $j$ is defined likewise over pigeons.
+Write $|g|$ for the number of edges.
+
+\begin{definition}\label{def:bal}
+$\mathrm{Bal}_p(f,c,e)$ holds if for every matching $g$ with $|g|=e$, every free
+row sum and every free column sum of $f$ at $g$ is $\equiv c(g)\pmod p$.  For
+$p=0$ this is exact equality.  We call $T$ a \emph{window up to level $d$} if
+$\mathrm{Bal}_p(T,T,e)$ for all $e\le d$, and write $\mathcal W_d$ for the set of
+these.\lean{[1402] ExtLemma.Bal, rowS, colS; [0607] Peel.Wd}
+\end{definition}
+
+The parameters $n,k$ are implicit in $\mathrm{Bal}$; we write
+$\mathrm{Bal}_p^{(n,k)}$ when they vary.
+
+\begin{definition}\label{def:ext}
+$\mathrm{EXT}_p(n,k,d)$: for all $f,c$, if $d=0$ or $\mathrm{Bal}_p(f,c,d-1)$, then
+there is $y$ with $\mathrm{Bal}_p(y,f,d)$.\lean{[1402] ExtLemma.EXT}
+\end{definition}
+
+For a set $G$ of functions, $\mathrm{Span}_e(G)$ is the least set containing $G$
+and closed under sums, integer multiples, and replacement of $f$ by any $f'$ with
+$f'(g)\equiv f(g)\pmod p$ for all matchings $g$ with
+$|g|=e$.\lean{[1402] ExtLin.InSpan}
+
+\begin{lemma}\label{lem:ext-span}
+$\mathrm{Bal}_p(y,f,e)$ is linear in the pair $(y,f)$ and depends on $f$ only
+through its residues on matchings of size $e$.  Hence, if every $f\in G$ has some
+$y$ with $\mathrm{Bal}_p(y,f,e)$, so does every $f\in\mathrm{Span}_e(G)$.  In
+particular, if every $f$ with $\mathrm{Bal}_p(f,c,d-1)$ (any $c$) lies in
+$\mathrm{Span}_d(G)$, then $\mathrm{EXT}_p(n,k,d)$.\lean{[1402] ExtLin.Bal\_add, Bal\_smul, Bal\_congr, ext\_of\_span, EXT\_of\_span}
+\end{lemma}
+
+\begin{proof}
+Row and column sums are linear in $f$; the three closure rules of
+$\mathrm{Span}_e$ are matched by adding extensions, scaling them, and keeping the
+same $y$.
+\end{proof}
+
+\begin{lemma}[flag lemma]\label{lem:flag}
+If $\mathrm{Bal}_p(f,c,e+1)$, then at every matching $g$ with $|g|=e$, every free
+row sum of $c$ is congruent to every free column sum of $c$.  Consequently there
+is $c'$ with $\mathrm{Bal}_p(c,c',e)$.\lean{[0607] Flag.row\_col\_gen, Flag.flag; also [1434] RowColG.link\_bal}
+\end{lemma}
+
+\begin{proof}
+Let $i$ be a free pigeon and $b$ a free hole of $g$.  For a free hole $j\ne b$,
+$c(g+x_{ij})\equiv\mathrm{col}_f(g+x_{ij},b)=\sum_{i'\ne i}f(g+x_{ij}+x_{i'b})$, so
+$\mathrm{row}_c(g,i)\equiv c(g+x_{ib})+\sum_{j\ne b}\sum_{i'\ne i}f(g+x_{ij}+x_{i'b})$.
+Expanding $\mathrm{col}_c(g,b)$ through the row sums of $f$ at $g+x_{i'b}$ gives
+$c(g+x_{ib})$ plus the same double sum; the sums run over free $j$ and free
+$i'$.  Put $c'(g)$ equal to the column sum of $c$ at a chosen free hole of $g$
+($0$ if none).
+\end{proof}
+
+\subsection{Designs and the extension criterion}\label{sec:defs-designs}
+
+Lower bounds are proved by exhibiting dual objects, \emph{designs}, which vanish on every
+line of a low-degree derivation but not on $1$.
+
+\begin{definition}\label{def:design}
+Let $N=(n+k)n$.  A \emph{functional} $E$ assigns an integer to each line, is
+linear mod $p$, respects congruence mod $p$, and reads its argument only at
+points whose variables of index $\ge N$ are $0$.  It is a \emph{degree-$D$ design}
+for $A$ if $E(x_m\cdot P)\equiv0\pmod p$ for every $P\in A$ and every list $m$ of
+variables with $|m|+\deg P\le D$, where $x_m=\prod_{v\in m}x_v$.  $E$
+\emph{extends} $E'$ to degree $d$ if $E(x_m)\equiv E'(x_m)$ for all $|m|\le
+d$.\lean{[1627] DesignExt.Fn, IsDesign, Extends}
+\end{definition}
+
+\begin{lemma}\label{lem:ext-sound}
+Let $D\ge1$.  Suppose every degree-$(D-1)$ design has an extension to degree $D-1$
+that is a degree-$D$ design, and some degree-$(D-1)$ design $E_0$ has
+$E_0(1)\not\equiv0$.  Then there is no degree-$D$ refutation of
+$A$.\lean{[1627] DesignExt.ext\_sound}
+\end{lemma}
+
+\begin{proof}
+We show that every degree-$D$ design $E$ kills every line $g$ of a degree-$D$
+derivation, by induction on the derivation.  (ax) $E(1\cdot P)\equiv0$ since
+$\deg P\le D$.  (lin), (congr) by linearity and congruence.  (mul) Let $g$ have
+cube degree $\le D-1$.  The functional $h\mapsto E(x\cdot h)$ is a degree-$(D-1)$
+design;\lean{[1627] DesignExt.xFn, xFn\_design} by hypothesis it has an extension
+$E_3$ to degree $D-1$ that is a degree-$D$ design.  By induction $E_3(g)\equiv0$;
+two functionals that agree on monomials of length $\le D-1$ agree on lines of
+cube degree $\le D-1$,\lean{[1627] DesignExt.agree} so
+$E(x\cdot g)\equiv E_3(g)\equiv0$.  Finally extend $E_0$ to a degree-$D$ design
+$E$: then $E(1)\equiv E_0(1)\not\equiv0$, so $1$ is not a line.
+\end{proof}
+
+The hypothesis of Lemma~\ref{lem:ext-sound} is stronger than the existence of one
+degree-$D$ design with $E(1)\not\equiv0$, which is the Nullstellensatz-type condition.
+The extra requirement, that \emph{every} lower-degree design extend, is what makes the
+lemma sound for PC, where multiplication may follow linear combination.
+
+\begin{lemma}[extension step]\label{lem:ext-step}
+Let $n>0$, assume $\mathrm{EXT}_p(n,k,d)$, and let $F$ be a degree-$d$ design for
+$\mathrm{ontoFPHP}(n,k)$.  Then some degree-$(d+1)$ design extends $F$ to degree
+$d$.\lean{[1402] ExtLemma.ext\_step}
+\end{lemma}
+
+\begin{proof}
+Put $f(t)=F(x_t)$ for matchings $t$.  (1) A degree-$d$ design kills every monomial
+of length $\le d$ that contains two distinct variables sharing a pigeon or a hole, since
+such a monomial is a multiple of a collision or functional
+axiom.\lean{[1402] ExtLemma.conf\_ax, kill}
+(2) $\mathrm{Bal}_p(f,f,d-1)$ when $d\ge1$: for a matching $g$ with $|g|=d-1$ and a
+free pigeon $i$, $F(x_g P_i)\equiv\sum_j F(x_{g}x_{ij})-F(x_g)$, and the terms with
+$g\cup\{x_{ij}\}$ not a matching vanish by (1), so $F(x_gP_i)\equiv
+\mathrm{row}_f(g,i)-f(g)$; the design property gives $F(x_gP_i)\equiv0$.  Columns
+likewise.\lean{[1402] ExtLemma.rowId, termsum, line\_bal}
+(3) $\mathrm{EXT}_p(n,k,d)$ yields $y$ with $\mathrm{Bal}_p(y,f,d)$.  Let $E$ be the
+moment functional whose value on $x_S$ is $F(x_S)$ for $|S|\le d$, $y(S)$ for
+matchings with $|S|=d+1$, and $0$ for other sets with $|S|=d+1$.\lean{[1402] ExtLemma.W, Ext; [1627] MomGen.sumWFn}
+It extends $F$ to degree $d$.\lean{[1402] ExtLemma.Ext\_extends}
+(4) $E$ is a degree-$(d+1)$ design.  For $|m|+\deg P\le d$ this follows from $F$
+being a design and the agreement.\lean{[1627] DesignExt.low\_kill}
+For a collision or functional axiom with $|m|=d-1$, $x_mP$ is a monomial of length
+$\le d+1$ with a conflicting pair: its value is $0$ (non-matching at the top
+level) or killed by (1).\lean{[1402] ExtLemma.Ext\_kill}
+For a pigeon axiom with $|m|=d$ (holes are symmetric), let $s$ be the set of $m$.  If
+$|s|<d$, then $x_m=x_s$ on the cube and $x_sP_i$ has degree at most $d$, so
+$E(x_mP_i)\equiv F(x_sP_i)\equiv0$; we may therefore assume $|s|=d$.
+If $s$ is not a matching, every term of $E(x_s P_i)$ contains a conflict.  If some
+$x_{ij}\in s$, all terms but one conflict and the remaining one cancels $E(x_s)$.
+Otherwise the line is free and $E(x_sP_i)\equiv \mathrm{row}_y(s,i)-f(s)\equiv0$ by
+$\mathrm{Bal}_p(y,f,d)$.\lean{[1402] ExtLemma.Ext\_line, line\_conf, line\_occ}
+\end{proof}
+
+\begin{theorem}[EXT criterion]\label{thm:ext-criterion}
+Let $p>1$, $n_0>0$, $D\ge1$, and suppose $\mathrm{EXT}_p(n_0,k,d)$ for every $d<D$.
+Then for every $n\ge n_0$ there is no degree-$D$ refutation of
+$\mathrm{ontoFPHP}(n,k)$ over $\mathbb Z/p$.  No hypothesis on $k$ is
+needed.\lean{[1402] ExtLemma.no\_refutation\_of\_ext, no\_refutation\_of\_ext\_ge}
+\end{theorem}
+
+\begin{proof}
+At $n=n_0$: the functional with moment $1$ at $\emptyset$ is a degree-$0$ design
+(vacuously, every axiom has degree $\ge1$) with value $1$ at $1$.  Lemma
+\ref{lem:ext-step} applied $D-1$ times gives a degree-$(D-1)$ design $E_0$ with
+$E_0(1)\equiv1$, and once more shows that every degree-$(D-1)$ design
+extends.\lean{[1402] ExtLemma.designs}  Lemma~\ref{lem:ext-sound} applies.
+For $n>n_0$ use restriction: substituting $x_{n+k,n}:=1$ and $0$ for the other
+variables of pigeon $n+k$ and of hole $n$ maps every axiom of
+$\mathrm{ontoFPHP}(n+1,k)$ to an axiom of $\mathrm{ontoFPHP}(n,k)$ or to a line
+derivable from them, so a degree-$D$ refutation for $n+1$ yields one for
+$n$.\lean{[0459] OntoSubst.ontoFPHP\_restrict, PPCDerivable.subst}
+\end{proof}
+
+The restriction step also shows that refutability is monotone in $n$ for fixed $k$ and
+$D$: lower bounds proved at one $n_0$ hold for all larger $n$.
+
+\paragraph{Units.}  For prime $p$ every $1\le s\le p-1$ is invertible mod $p$
+(B\'ezout), hence so is $s!$ for $s\le p-1$.\lean{[0607] Peel.units\_of\_prime, fact\_unit}
+Lean's \texttt{IsPrime p} is: $p\ge2$ and every divisor of $p$ is $1$ or
+$p$.\lean{[0607] Peel.IsPrime}
+
+\subsection{The matching algebra}\label{sec:defs-written}
+
+Sections~\ref{sec:growth}--\ref{sec:bands} work over an arbitrary field $F$ and use a
+linear-algebra form of the same duality.  We fix a board with a set $P$ of $m=n+k$ pigeons
+and a set $S$ of $n$ holes, and write $\mathrm{PC}_F$ for Definition~\ref{def:stdpc} with
+coefficients in $F$ in place of integers read mod $p$.
+
+\paragraph{Reduction.}  Let $\mathcal B=F[x]/(x_{ij}^2-x_{ij},\ \text{collision and
+functional axioms})$ be the \emph{Boolean matching algebra}, and $\rho\colon F[x]\to\mathcal B$
+the quotient map.  The monomials $x_M=\prod_{(i,j)\in M}x_{ij}$, $M$ a matching, form a
+basis of $\mathcal B$; $\rho$ sends a monomial to $x_M$ if its set of variables is a matching
+$M$ and to $0$ otherwise.  Since $\rho$ is a ring homomorphism, $\rho(xf)=\rho(x)\rho(f)$.
+Let $F_D\subseteq\mathcal B$ be the span of the $x_M$ with $|M|\le D$; then
+$\rho(f)\in F_D$ whenever $\deg f\le D$.
+
+\paragraph{The relation spaces.}  For a matching $N$ and a pigeon $i$ free in $N$, the
+\emph{row relation} at $(N,i)$ is
+$\rho(x_N\,(\sum_j x_{ij}-1))=\sum_{j}x_{N\cup\{(i,j)\}}-x_N$, the sum over holes $j$
+free in $N$; column relations at $(N,j)$ are defined likewise.  (If $i$ is not free in
+$N$, the reduced product is $0$.)  Let
+\[
+  W_D=\operatorname{span}\{\text{row and column relations at bases $N$ with } |N|\le D-1\}
+  \subseteq F_D,
+\]
+so $W_0=0$ and $W_{D-1}\subseteq W_D\cap F_{D-1}$.  We use two conditions:
+\[
+  \mathrm{U}_D:\ 1\notin W_D,\qquad
+  \mathrm{ND}_D:\ W_D\cap F_{D-1}=W_{D-1}.
+\]
+
+\paragraph{Designs.}  A \emph{unit degree-$D$ design} on the board is a linear functional
+$L$ on $F_D$ with $L(W_D)=0$ and $L(1)=1$.  In coordinates it is a function on matchings of
+size at most $D$ with value $1$ at $\emptyset$ such that, at every base $N$ with $|N|<D$,
+every free row sum and every free column sum equals the value at $N$; this is a
+$D$-design in the sense of Beame and Riis~\cite[Def.~8.2]{beame1998counting}, with values
+in $F$.  By finite-dimensional duality, $\mathrm{U}_D$ holds if and only if a unit
+degree-$D$ design exists, and $\mathrm{ND}_D$ holds if and only if every linear functional
+on $F_{D-1}$ that vanishes on $W_{D-1}$ extends to one on $F_D$ that vanishes on $W_D$.
+(If every such functional extends, each of them vanishes on $W_D\cap F_{D-1}$, so
+$W_D\cap F_{D-1}\subseteq W_{D-1}^{\perp\perp}=W_{D-1}$; the converse is the same
+argument read backwards.)
+
+$\mathrm{U}_D$ is the Nullstellensatz condition: reducing a Nullstellensatz certificate
+$\sum_r q_rA_r=1$ of product degree at most $D$ under $\rho$ kills the Boolean, collision
+and functional terms and turns each row or column term into a combination of relations
+at bases of size at most $D-1$, so the certificate exists if and only if $1\in W_D$.  This
+is the product-degree convention; it differs from the multiplier degree of
+\cite{beame1998counting}, and we convert between them only where stated.
+
+\begin{proposition}[from $\mathrm{ND}_D$ and $\mathrm{U}_D$ to PC]\label{prop:nd-pc}
+Let $D\ge1$.  If $\mathrm{ND}_D$ and $\mathrm{U}_D$ hold on a board, then
+$\mathrm{onto\text{-}FPHP}$ on that board has no $\mathrm{PC}_F$ refutation of degree at
+most $D$.
+\end{proposition}
+
+\begin{proof}
+We show that $\rho(f)\in W_D$ for every line $f$ of a degree-$D$ derivation, by induction.
+Pigeon and hole axioms reduce to the relations at $N=\emptyset$, which lie in $W_D$ since
+$D\ge1$; Boolean, collision and functional axioms reduce to $0$.  Linear combinations, and
+replacement of coefficients by equal ones in $F$, preserve membership.  For
+multiplication, the guard of rule (mul) gives $\deg f\le D-1$ for the unreduced line, so
+$\rho(f)\in W_D\cap F_{D-1}=W_{D-1}$ by $\mathrm{ND}_D$.  Each relation at a base $N$ with
+$|N|\le D-2$, multiplied by a variable $x$ and reduced, is $0$ or a relation at the base
+$N\cup\{x\}$ (or at $N$ itself, if $x\in N$), of size at most $D-1$; so
+$\rho(xf)=\rho(x)\rho(f)\in W_D$.  Since $1\notin W_D$ by $\mathrm{U}_D$, the line $1$ is
+not derived.
+\end{proof}
+
+The induction is checked in Lean in abstract form: given any predicate on polynomials with
+the closure properties used above, no refutation exists.\lean{[0635] StepSix.Invariant, StepSix.lines\_mem, StepSix.no\_refutation}
+Its instantiation with $\rho^{-1}(W_D)$ is the argument above and is not formalised.  We use a
+representative of degree at most $D-1$ before multiplying; the bounded normalisation
+argument of Lemma~\ref{lem:der-of-cube} justifies passing to such a representative.  Checking
+only the reduced degree of the product would not justify an ordinary PC multiplication
+step.
+
+\paragraph{Balanced arrays.}  For $e\ge1$ let $H_e(P,S)$ be the space of functions $f$ on
+the $e$-matchings of the board all of whose free row and column sums vanish: for every
+$(e-1)$-matching $N$ and free pigeon $i$, $\sum_j f(N\cup\{(i,j)\})=0$, and likewise for
+free holes.  If a functional $L$ on $F_t$ vanishes on $W_t$ and on all matchings of size
+$<e$, with $1\le e\le t$, then its layer $f(M)=L(x_M)$, $|M|=e$, lies in $H_e(P,S)$: the
+relation at a base of size $e-1\le t-1$ lies in $W_t$ and says that the free row (or column)
+sum equals the value at the base, which is $0$.
+
+\endgroup

@@ -1,0 +1,95 @@
+% sec7-errata.tex -- Section 7 of the C3 paper (draft 2026-11-08): result G.
+% Sources: codex-20261104-runB-adjudication/03-C1-INTERFACES-AND-ERRATA.txt \S5 (wording limits);
+% notes-20261104/referee-runB-closure-periodicity.md; claude-20261104-c3-closure/01 \S4 R1, \S6;
+% codex-20261104-c3-monoidal/03-BOUNDARY-AND-STRICT-REPAIR.md.
+
+\section{Errata in two sources}\label{sec:errata}
+
+Writing the proofs of Section~\ref{sec:periodicity} required checking two recent sources
+closely.  We record five points.  For each we say whether it is a counterexample or an
+omitted justification, and we do not draw conclusions beyond the stated point; in
+particular none of them suggests that the other results of either paper fail.  The
+first four points were sent on 8 November 2026 to Harman and to Yacobi, one of the authors
+of \cite{hone2025}.  The fifth was found afterwards, in the reconstruction of
+\cite[Thm.~8.4.5]{hone2025} described in Section~\ref{sec:periodicity}.
+
+\paragraph{Harman, Corollary~1.8(4), at $p=2$ (counterexample).}  The corollary identifies
+the value of a right adjoint on a Young module with a tilting module,
+$\tilde G(Y(\lambda))=T(\lambda')$~\cite[Thm.~1.7(4), Cor.~1.8(4)]{harman2015}.  At $p=2$ in
+polynomial degree $2$, $Y(2)$ is the trivial module $k$; the right-adjoint value has
+dimension $N(N+1)/2$, while $T(1,1)=\Lambda^2V$ has dimension $N(N-1)/2$ (at $N=2$: $3$ against
+$1$).  Harman's proof of his Theorem~2.8 uses this identification to conclude that the
+twisted Schur functor is fully faithful on tilting modules.  That conclusion is true in every
+characteristic: the tilting modules in question are the summands of the $\Lambda^\lambda V$;
+the ordinary Schur functor sends $\Lambda^\lambda V$ to $M(\lambda)\otimes\mathrm{sgn}$ and
+the twisted one to $M(\lambda)$; the
+Hom spaces on both sides have the dimension of the number of $(\lambda,\mu)$ double cosets;
+and the functor is faithful on them because $\Lambda^\mu V\subseteq V^{\otimes d}$ and
+$V^{\otimes d}$ is projective and injective with socle detected by the Schur functor.  The
+second proof of Section~\ref{sec:periodicity-tilting} uses this argument instead of
+Corollary~1.8(4).
+
+\paragraph{Harman, Theorem~2.5, the modulus (counterexample at the printed period).}  The
+theorem's printed modulus allows, at $r=p=3$, the period $3$.  But the stable incidence
+composite through $3$-subsets has scalar $\binom73\equiv2$ at rank $7$ and
+$\binom{10}3\equiv0$ at rank $10$ in $\mathbb F_3$; both ranks exceed $2r$, so no functor
+identifying these stable maps can respect this composite at period $3$.  A period that is a
+power of $p$ strictly greater than $r$ avoids the problem, and that is what we use.  We do not know whether this has been noted before; we record it because our statement
+depends on the correct modulus.
+
+\paragraph{Harman, Theorem~2.9 (omitted justification).}  The proof applies Lemma~2.10 to a
+restricted right adjoint without showing that it lands in the Serre subcategory where the
+lemma applies.  The conclusion needed, that the Serre quotient by the kernel of the twisted
+Schur functor is its full image with ambient kernels and subobjects, follows from the
+pullback-and-graph argument of Section~\ref{sec:periodicity-oti} (compare
+\cite[Lemma~8.5.1]{hone2025}).  This is not a counterexample to Theorem~2.9.
+
+\paragraph{Hone et al., Theorem~8.5.3, at the boundary of Definition~6.1.1
+(counterexample).}  Take $p=q=2$ and $d=4$; the label $(3,1)$ is $2$-stable, since
+$\lambda_1=3\ge(4+2)/2$, and it truncates to the $2$-singular label $(1,1)$.  Let $W$ be the
+sum-zero subspace of $\mathbb F_2^4$ (a submodule of the permutation module of $S_4$) and $C$
+the line of the all-ones vector.  In $W/C$ with basis $a=e_1+e_2$, $b=e_1+e_3$, the
+transposition $(34)$ acts by $a\mapsto a$, $b\mapsto b+a$.  So $W/C$ is free over
+$\mathbb F_2[\langle(34)\rangle]$ and is killed by semisimplification, although it is a
+non-zero object of the stable image category: it is a subquotient of $E_1(4)$, which belongs to
+that category, and the category is closed under ambient subquotients.  The equivalence asserted in
+\cite[Thm.~8.5.3]{hone2025} is therefore not faithful at that boundary.  The example does not
+refute Theorem~8.4.5 of the same paper: the descended functor can be exact while killing this
+object.  This is why the proof of Section~\ref{sec:periodicity-oti} detects the constant
+through a map out of the simple unit and never uses faithfulness.  With strict inequality in
+Definition~6.1.1(2b) the boundary case does not arise.
+
+\paragraph{Hone et al., Lemma~8.2.1 (counterexample), and the proof of Theorem~8.4.5.}
+Lemma~8.2.1 of \cite{hone2025} states: for a highest-weight category $(\mathcal C,\Lambda)$, a
+maximal $\lambda$, and an additive functor $\varphi$ to an abelian category that is exact on
+the Serre subcategory of $\Lambda\setminus\{\lambda\}$ and whose comparison maps
+$\varphi(\Delta_\lambda)\to\tilde\varphi(\Delta_\lambda)$ and
+$\tilde\varphi(\nabla_\lambda)\to\varphi(\nabla_\lambda)$ are isomorphisms ($\tilde\varphi$
+the tilting derived functor), the functors $L\varphi$, $\tilde\varphi$, $R\varphi$ agree and
+$\tilde\varphi$ is a direct summand of $\varphi$.  This is false.  Let $\mathcal C$ be the
+representations of the Kronecker quiver (vertices $1,2$, two arrows $1\to2$) over any field,
+ordered $1<2$.  Then $\Delta_1=\nabla_1=S_1$, $\Delta_2=S_2$ is projective, $\nabla_2=I_2$ is
+the injective of dimension vector $(2,1)$, and the tilting objects are the sums of $S_1$ and
+$I_2$.  Let $\psi(X)$ be the sum of the images of all maps from $S_1\oplus S_2\oplus I_2$ to
+$X$.  It is additive, exact on the Serre subcategory generated by $S_1$, and the identity on
+$S_1$, $S_2$, $I_2$ and the maps between them, so both hypotheses hold and $\tilde\psi$ is the
+identity.  For the projective cover $P_1$ of $S_1$, of dimension vector $(1,2)$,
+$\mathrm{Hom}(S_1,P_1)=\mathrm{Hom}(I_2,P_1)=0$ and $\mathrm{Hom}(S_2,P_1)=k^2$, so
+$\psi(P_1)=S_2^2$, of which $P_1=\tilde\psi(P_1)$ is not a direct summand; and
+$L\psi(S_1)=0\ne S_1$.  The error in the proof is the claim that $P_\bullet\to
+i_*i^*P_\bullet$ is a homotopy equivalence: a short exact sequence of complexes with
+contractible kernel gives a quasi-isomorphism, which an additive functor need not preserve.
+Lemma~8.4.4 uses Lemma~8.2.1 to identify the OTI functor with its tilting derived functor on
+all stable objects, and Theorem~8.4.5 rests on Lemma~8.4.4.  So the published proof of
+Theorem~8.4.5 is incomplete.  This is not a counterexample to Theorem~8.4.5, which may hold
+for the OTI functor by an argument specific to it.  The point was found by Astra in a model
+reconstruction of the proof and checked by hand by a second model.
+
+Further minor points found in the same reading (a misprint in \cite[\S7.3]{hone2025},
+where $M^{\lambda^t}\otimes\mathrm{sgn}$ should read $M^\lambda\otimes\mathrm{sgn}$; the
+justification of \cite[Prop.~2.7]{harman2015} at $\ell=1$) and, in the same reconstruction, two points
+in \cite[\S8.3, \S7.3]{hone2025} (the genericity condition before Definition~8.3.1 is not
+sufficient for Lemma~8.3.2 in characteristic $2$, while coefficients linearly independent
+over $\mathbb F_p$, which the paper gives as an example, suffice; and in the proof of
+Lemma~7.3.4 the dominance inequality should read $\ge$, with target degree $M-q$) do not
+affect anything here and were not included in those notes.

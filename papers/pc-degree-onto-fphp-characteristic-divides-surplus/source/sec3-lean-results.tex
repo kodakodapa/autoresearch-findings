@@ -1,0 +1,1171 @@
+% sec3-lean-results.tex -- Section 3 of the C3 paper (draft 2026-11-08).
+% Human-readable proofs of results A, B, C, written from the Lean 4 sources.
+% Requires in the preamble: amsmath, amssymb, amsthm with environments
+% theorem, proposition, lemma, corollary, definition, remark.
+\providecommand{\lean}[1]{\footnote{\raggedright Lean: \texttt{#1}.}}
+
+\section{Results proved in Lean}\label{sec:lean}
+
+\begingroup\sloppy % local to this section: long Lean names
+This section reconstructs the programme's Lean proofs of A, B and C in
+mathematical prose, with the unreconstructed dependencies marked.  The proofs are Lean~4
+developments in the programme library (directory
+\texttt{programmes/\allowbreak proof-complexity/\allowbreak library}).  The prose follows the Lean
+proofs lemma by lemma; the footnote at each statement names the Lean
+declaration that proves it.  Namespaces are abbreviated by the run they come
+from: \texttt{[0459]} stands for
+\begin{center}
+\texttt{Programme.\guillemotleft 20261025-0459-proof-complexity\guillemotright},
+\end{center}
+and likewise \texttt{[1627]}, \texttt{[1402]}, \texttt{[0607]}, \texttt{[1434]},
+\texttt{[0841]}, \texttt{[1156]}, \texttt{[0634]}, \texttt{[1249]} and \texttt{[1633]} for
+the runs 20261025-1627, 20261026-1402, 20261027-0607, 20261027-1434, 20261028-0841,
+20261029-1156, 20261030-0634, 20261102-1249 and 20261024-1633.  Names under \texttt{[1249]} live in
+the sub-namespace \texttt{UniformC3} (and \texttt{UniformC3.Block}).
+
+Where a Lean step is a finite computation evaluated by the kernel
+(\texttt{decide}, \texttt{decide +kernel}) or a case split closed by automation
+(\texttt{simp}, \texttt{omega}, \texttt{grind}), we say so and do not supply a
+conceptual argument in its place.  Lemmas from library files that we cite without reconstructing their proofs are marked
+``(stated, not reconstructed: \ldots)'' with their Lean names.
+
+\paragraph{Framework.}
+The formula $\mathrm{ontoFPHP}(n,k)$, the two formulations of PC and their equivalence
+(Theorem~\ref{thm:refutes-iff}), degree monotonicity (Lemma~\ref{lem:mono}), balance and
+extension (Definitions~\ref{def:bal}, \ref{def:ext}), designs and the EXT criterion
+(Theorem~\ref{thm:ext-criterion}) and the flag lemma (Lemma~\ref{lem:flag}) are in
+Section~\ref{sec:defs}.  All three proofs below go through the EXT criterion or the
+peeling of Section~\ref{sec:lean-A}.
+
+%======================================================================
+\subsection{A. Exact degree $p$ when $p$ divides the surplus exactly once}
+\label{sec:lean-A}
+
+\begin{theorem}[A]\label{thm:A}
+Let $p$ be prime, $c\in\mathbb N$ with $p\nmid c$, and $n\ge 2p-3$.  For every
+$D\in\mathbb N$, $\mathrm{ontoFPHP}(n,pc)$ has a degree-$D$ semantic PC refutation
+over $\mathbb Z/p$ if and only if $p\le D$.\lean{[0607] Lucas.pc\_degree\_exact}
+\end{theorem}
+
+Here $2p-3$ is natural-number subtraction (for $p=2$ the threshold is $n\ge1$).
+By Theorem~\ref{thm:refutes-iff} the same holds verbatim for standard PC.\lean{[1156] StdPCExact.std\_pc\_degree\_exact}
+Theorem~A combines an upper bound (Proposition~\ref{prop:A-upper},
+Lemma~\ref{lem:A-binom}) with the lower bound:
+
+\begin{theorem}[A, lower bound]\label{thm:A-lower}
+Let $p$ be prime, $p\mid k$ and $n\ge2p-3$.  Then $\mathrm{ontoFPHP}(n,k)$ has no
+degree-$(p-1)$ refutation over $\mathbb Z/p$.\lean{[0607] Peel.pc\_degree\_ge\_p}
+\end{theorem}
+
+\begin{corollary}[separation]\label{cor:A-sep}
+Let $p,q$ be primes, $p\nmid c$, $q\nmid pc$, $n\ge2p-3$.  Then
+$\mathrm{PPCRef}_p(\mathrm{ontoFPHP}(n,pc),D)\iff p\le D$ for all $D$, and
+$\mathrm{PPCRef}_q(\mathrm{ontoFPHP}(n,pc),1)$.\lean{[0607] Lucas.separation}
+\end{corollary}
+
+\begin{proof}
+The first part is Theorem~A.  For the second, $pc>0$ and there is $u$ with
+$upc\equiv1\pmod q$ (B\'ezout).  The degree-$1$ line
+$-u\sum_iP_i+u\sum_jH_j=-u\bigl(S-(n+pc)\bigr)+u(S-n)=upc$, where
+$S=\sum_{i,j}x_{ij}$, is $\equiv1$.\lean{[0459] OntoFPHP.ontoFPHP\_deg1; [0607] Lucas.unit\_of\_ndvd}
+\end{proof}
+
+\begin{proof}[Proof of Theorem~A]
+If $D<p$ and a degree-$D$ refutation existed, it would be a degree-$(p-1)$
+refutation (Lemma~\ref{lem:mono}), contradicting Theorem~\ref{thm:A-lower} (note $p\mid pc$).
+If $D\ge p$, Proposition~\ref{prop:A-upper} with $t=p$ and Lemma~\ref{lem:A-binom}
+give a degree-$p$ refutation, which is one of degree $D$.
+\end{proof}
+
+\subsubsection*{A.1 The upper bound}
+
+Let $r_i=\sum_{j<n}x_{ij}$ (pigeon $i$) and $c_j=\sum_{i<n+k}x_{ij}$ (hole $j$),
+and let $e_t(f_0,\dots,f_{s-1})$ be the elementary symmetric polynomial.
+
+\begin{lemma}\label{lem:esym}
+Let $D\ge1$ and assume the zero line is derivable in degree $D$.  For $s\le n+k$ and $t\le D$, the line
+$e_t(r_0,\dots,r_{s-1})-\binom st$ is derivable in degree $D$ from the pigeon axioms;
+likewise $e_t(c_0,\dots,c_{s-1})-\binom st$ for $s\le n$ from the hole
+axioms.\lean{[0459] OntoLucas.esym\_der}
+\end{lemma}
+
+\begin{proof}
+For $s=0$ or $t=0$ the line is zero.  Otherwise induction on $s$, using
+\[
+e^{(s+1)}_t-\tbinom{s+1}t=\bigl(e^{(s)}_t-\tbinom st\bigr)
++r_s\bigl(e^{(s)}_{t-1}-\tbinom s{t-1}\bigr)+\tbinom s{t-1}(r_s-1).
+\]
+The middle term is obtained by multiplying the line
+$e^{(s)}_{t-1}-\binom s{t-1}$, of cube degree $t-1\le D-1$, by each variable
+$x_{sj}$ (rule (mul)) and summing; the last term is a multiple of the axiom
+$P_s$.
+\end{proof}
+
+\begin{lemma}\label{lem:quot}
+Let every quadratic monomial axiom $x_ux_w$ of $A$ have $u\ne w$, and call a Boolean
+point \emph{good} if it satisfies all of them.  If the zero line is derivable in
+degree $D$, then every line of cube degree $\le D$ that vanishes mod $p$ at all good
+points is derivable in degree $D$.\lean{[0459] MatchQuot.quot}
+\end{lemma}
+
+\begin{proof}[Proof (as in the source)]
+Write $Q=Q|_{x_v=0}+x_v\,\partial_vQ$ variable by variable, carrying a monomial
+prefix $S$ of variables already set to $1$.  When no variable is left, the line is
+$x_S$ times a constant.  If $S$ contains a forbidden pair, $x_S$ is a monomial axiom
+times $|S|-2$ variables; otherwise the indicator point of $S$ is good, so the
+constant is $\equiv0$.  
+In detail, for a list $S$ of variables write $x_S=\prod_{s\in S}x_s$ (a line), and for a
+polynomial $Q$ and a variable $v$ let $Q|_{v=0}$ consist of the terms of $Q$ not containing
+$v$, and $\partial_vQ$ of the terms containing $v$ with every occurrence of $v$ deleted.  On
+the cube $\hat Q=\widehat{Q|_{v=0}}+x_v\,\widehat{\partial_vQ}$; moreover
+$\deg Q|_{v=0}\le\deg Q$, $\deg\partial_vQ\le d$ whenever $\deg Q\le d+1$, and
+$\widehat{Q|_{v=0}}(a)=\hat Q(a[v:=0])$.\lean{[0459] MatchQuot.pz, pd, eval\_split, deg\_pz, deg\_pd, eval\_pz}
+The Lean proof establishes, by induction on a duplicate-free list $V$ of variables:
+
+\smallskip\noindent\emph{Claim.}  Let $Q$ have all its variables in $V$, let $S$ be a list of
+variables disjoint from $V$, and let $d$ satisfy $\deg Q\le d$ and $|S|+d\le D$.  If
+$\hat Q(a)\equiv0\pmod p$ at every good point $a$ with $a_s=1$ for all $s\in S$, then
+$x_S\cdot\hat Q$ is derivable in degree $D$.\lean{[0459] MatchQuot.quot\_aux}
+
+\smallskip
+The lemma is the case $S=\emptyset$, $d=D$, $V=\{0,1,\dots,m\}$ ($m$ the largest variable of
+$Q$), where $Q$, $\deg Q\le D$, witnesses the cube degree of the given line $g$; $Q$ vanishes
+mod $p$ at good points because $g$ does, and (congr) replaces $\hat Q$ by
+$g$.\lean{[0459] MatchQuot.quot}
+The only applications of (mul) are made in the following auxiliary fact: \emph{for an
+axiom $P\in A$ and a list $m$ of variables with $\deg P+|m|\le D$, the line $x_m\hat P$ is
+derivable.}\lean{[0459] MatchQuot.mulMono}  Indeed, for $m=\emptyset$ this is (ax), as
+$\deg P\le D$; and $x_{x::m}\hat P=x\cdot(x_m\hat P)$, where $x_m\hat P$ has cube degree at
+most $\deg P+|m|$ (witness: $P$ with $m$ prepended to each monomial) and
+$\deg P+|m|+1\le D$, so (mul) applies to the line given by induction.  Every intermediate
+line $x_{m'}\hat P$ ($m'$ a suffix of $m$) thus has cube degree at most
+$\deg P+|m'|<D$ when it is multiplied.
+
+\emph{Base case} $V=\emptyset$.  Then $\hat Q$ is a constant $c$.  (i) If $S$ contains $u,w$
+with $x_ux_w\in A$, then $u\ne w$ by hypothesis; removing one occurrence of each from $S$
+leaves $S'$ with $|S'|=|S|-2$, and $x_S=x_{S'}\,x_ux_w$ on the cube.  The auxiliary fact with
+$P=x_ux_w$, $m=S'$ applies because $2+|S'|=|S|\le|S|+d\le D$; then
+$c\cdot x_{S'}x_ux_w+0\cdot0$ (rule (lin), using the zero line) is $x_S\hat Q$.  (ii) Otherwise
+the indicator point of $S$ is good and is $1$ on $S$, so $p\mid c$; hence $x_S\hat Q\equiv0$
+pointwise, and (congr) applied to the zero line gives it.
+
+\emph{Step} $V=v::V'$.  Here $v\notin V'$ and $v\notin S$; $Q|_{v=0}$ and $\partial_vQ$ have their
+variables in $V'$.
+\begin{itemize}
+\item $x_S\cdot\widehat{Q|_{v=0}}$: the induction hypothesis with the same $S$ and $d$.  Its
+vanishing hypothesis holds because $\widehat{Q|_{v=0}}(a)=\hat Q(a[v:=0])$ and setting $x_v$
+to $0$ keeps a point good and keeps it $1$ on $S$ ($v\notin S$).
+\item $x_{v::S}\cdot\widehat{\partial_vQ}$: if $d=0$, all terms of $Q$ are constants,
+$\widehat{\partial_vQ}=0$, and the line is the zero line.  If $d=d'+1$, use the induction
+hypothesis with prefix $v::S$ and bound $d'$: $\deg\partial_vQ\le d'$ and
+$|v::S|+d'=|S|+d\le D$.  For its vanishing hypothesis let $a$ be good with $a_v=1$ and
+$a=1$ on $S$; then $\hat Q(a)=\hat Q(a[v:=0])+\widehat{\partial_vQ}(a)$ and both values of
+$\hat Q$ are $\equiv0$, so $\widehat{\partial_vQ}(a)\equiv0$.
+\end{itemize}
+Rule (lin) with coefficients $1,1$ gives $x_S\widehat{Q|_{v=0}}+x_vx_S\widehat{\partial_vQ}=x_S\hat Q$.
+
+\emph{Degree bookkeeping.}  The invariant $|S|+d\le D$ is preserved: passing to
+$\partial_vQ$ moves one unit from $d$ to $|S|$, and passing to $Q|_{v=0}$ changes neither.
+The prefix $x_S$ is never multiplied onto a derived line: the recursion only combines lines
+by (lin) and (congr), which have no degree guard, and every product with a variable is
+formed inside the auxiliary fact, building $x_{S'}x_ux_w$ upward from the axiom $x_ux_w$
+with all intermediate lines of cube degree $<|S|\le D$.  The zero line is used in case (ii),
+in the case $d=0$, and as the second argument of (lin) in case (i).
+
+\end{proof}
+
+\begin{proposition}\label{prop:A-upper}
+Let $t\ge2$ and $n+k>0$.  If $\binom{n+k}t-\binom nt$ is a unit mod $p$, then
+$\mathrm{ontoFPHP}(n,k)$ has a degree-$t$ refutation over
+$\mathbb Z/p$.\lean{[0459] OntoLucas.ontoFPHP\_upper}
+\end{proposition}
+
+\begin{proof}
+The zero line is $0\cdot P_0$.  At a good point (collision and functional axioms
+hold) every $r_i$ and every $c_j$ is $0$ or $1$ and $\sum_ir_i=\sum_jc_j=N$, so
+$e_t(r)=\binom Nt=e_t(c)$.\lean{[0459] OntoLucas.good\_eq}  By
+Lemma~\ref{lem:quot} (here $t\ge2$ makes the quadratic axioms available)
+$e_t(r)-e_t(c)$ is derivable in degree $t$.  With Lemma~\ref{lem:esym},
+$\bigl(e_t(r)-\binom{n+k}t\bigr)-\bigl(e_t(c)-\binom nt\bigr)-\bigl(e_t(r)-e_t(c)\bigr)
+=\binom nt-\binom{n+k}t$ is derivable; multiply by $-u$, where $u$ inverts
+$\binom{n+k}t-\binom nt$ mod $p$, and apply (congr).
+\end{proof}
+
+\begin{lemma}\label{lem:A-binom}
+Let $p$ be prime.  Then $p\mid\binom pr$ for $0<r<p$; $\binom{m+p}r\equiv\binom mr$
+for $r<p$; $\binom{m+p}p\equiv\binom mp+1$; hence
+$\binom{n+pc}p-\binom np\equiv c\pmod p$, which is a unit when
+$p\nmid c$.\lean{[0607] Lucas.dvd\_bin, shift, shiftp, telescope, unit\_c}
+\end{lemma}
+
+\begin{proof}
+$p\mid\binom pr$: from the absorption identity $r\binom pr=p\binom{p-1}{r-1}$ and
+Euclid's lemma, since $p\nmid r$.  The two shift congruences follow by induction on
+$m$ from Pascal's rule, the base case $m=0$ being the first statement (and
+$\binom pp=1$).  Telescoping $c$ times gives the congruence; B\'ezout gives the
+inverse of $c$.
+\end{proof}
+
+\begin{remark}
+This congruence is what Lucas's theorem gives here, but the Lean proof does not
+invoke Lucas's theorem (the file is called \texttt{Lucas.lean}); it proves the
+shift congruences directly as above.
+\end{remark}
+
+\subsubsection*{A.2 The lower bound: peeling}
+
+Theorem~\ref{thm:A-lower} follows from Theorem~\ref{thm:ext-criterion} with
+$D=p-1$ and $n_0=2p-3$ once $\mathrm{EXT}_p(2p-3,k,d)$ holds for all $d\le p-2$.
+That is the case $t=p-1$ of:
+
+\begin{proposition}\label{prop:ext-d}
+Let $p\mid k$, $2d+1\le n$, and suppose $s$ is invertible mod $p$ for
+$1\le s\le d+1$.  Then $\mathrm{EXT}_p(n,k,d)$.\lean{[0607] Peel.ext\_d}
+\end{proposition}
+
+For $d\le p-2$ we have $2d+1\le 2p-3$ and $d+1\le p-1$, so the hypotheses hold for
+prime $p$; this proves Theorem~\ref{thm:A-lower}.\lean{[0607] Peel.no\_refutation\_units}
+The rest of A.2 proves Proposition~\ref{prop:ext-d}.
+
+\paragraph{Rectangle products.}
+Let $j\ge0$, let $P=((a_s,a'_s))_{s<j}$ be pigeon pairs and $Q=((b_s,b'_s))_{s<j}$
+hole pairs, with the $2j$ pigeons distinct and the $2j$ holes distinct.  Put
+$\rho_s(x_{ib})=([i=a_s]-[i=a'_s])([b=b_s]-[b=b'_s])$, the signed indicator of the
+rectangle $\{a_s,a'_s\}\times\{b_s,b'_s\}$.  For a matching $g$ with $|g|=j$,
+$\mathrm{RP}_j(P,Q)(g)=\sum_\sigma\prod_{s<j}\rho_s(\sigma(s))$, the sum over the
+bijections $\sigma$ from slots to the edges of $g$ (a permanent; $\mathrm{RP}_0=1$).\lean{[0607] SJ.RP, SJ.jp, LemK.VP}
+
+\begin{lemma}[$S_j$]\label{lem:SJ}
+Let $2(j+1)\le n$ and let $(j+1)!$ be invertible mod $p$.  If
+$\mathrm{Bal}_p(f,0,j)$ (``$f$ has zero links at level $j$''), then $f$ lies in
+$\mathrm{Span}_{j+1}$ of the rectangle products
+$\mathrm{RP}_{j+1}(P,Q)$.\lean{[0607] SJ.SJ}
+\end{lemma}
+
+\begin{proof}[Proof outline (from the Lean structure)]
+For an injective pigeon tuple $u$ and hole tuple $w$ of length $j+1$, put
+$F(u,w)=f(\{x_{u_sw_s}\})$.  Zero links translate into vanishing slot sums:
+the pigeon-slot sums of $F$ are column sums of $f$ and the hole-slot sums are row
+sums.  \emph{Lemma~K} (characteristic-free): a function on injective $j$-tuples
+from a ground set with at least $2j$ points whose slot sums all vanish is, on
+valid tuples, a finite sum $\sum_P \mathrm{DP}_P(u)\,c_P(w)$ with
+$\mathrm{DP}_P(u)=\prod_s([u_s=P_s^1]-[u_s=P_s^2])$ and each $c_P$ an integer
+combination of the functions $F(u',\cdot)$.\lean{[0607] LemK.lemK (file LemKMain.lean)}
+Applying it over pigeons and then over holes gives
+$F\equiv\sum d\,\mathrm{DP}_P(u)\mathrm{DP}_Q(w)$.\lean{[0607] SJ.SJ\_tuple}
+Summing over the $(j+1)!$ orderings of a matching $g$ turns
+$\mathrm{DP}_P(u)\mathrm{DP}_Q(w)$ into $\mathrm{RP}_{j+1}(P,Q)(g)$, so
+$(j+1)!\,f\equiv\sum d\,\mathrm{RP}_{j+1}(P,Q)$ on matchings of size
+$j+1$;\lean{[0607] SJ.SJ\_avg} multiply by the inverse of $(j+1)!$.
+
+It remains to prove Lemma~K, which we restate in the form proved in Lean.  Let $X$ be a
+finite set (Lean: a Boolean predicate read below a bound $M$) and $W$ any set of parameters.
+A \emph{valid} $j$-tuple is $u=(u_0,\dots,u_{j-1})$ of distinct points of $X$.  For
+$F\colon\{\text{valid $j$-tuples}\}\times W\to\mathbb Z$, the \emph{slot-$t$ sum} at a valid
+$u$ is $\sigma^X_tF(u,w)=\sum_aF(u[t:=a],w)$ over the $a\in X$ different from all $u_s$,
+$s\ne t$.  Write $\mathrm{KC}_m(X,j,F)$ if $m\mid\sigma^X_tF(u,w)$ for all valid $u$, $t<j$,
+$w$ ($m\in\mathbb Z$ arbitrary, $m=0$ meaning exactly).  A pair list
+$P=((P^1_s,P^2_s))_{s<j}$ is \emph{valid} if its $2j$ points are distinct points of $X$, and
+$\mathrm{DP}_P(u)=\prod_{s<j}\delta_{P_s}(u_s)$ with $\delta_q(x)=[x=q^1]-[x=q^2]$.  Finally
+$\mathrm{LC}_X(F)$ is the set of functions $c(w)=\sum_\ell a_\ell F(u^{(\ell)},w)$, a finite
+integer combination with valid $u^{(\ell)}$.\lean{[0607] LemK.Valid, sig, KC, DP, VP, LC}
+
+\smallskip\noindent\emph{Lemma K.}  If $|X|\ge2j$ and $\mathrm{KC}_m(X,j,F)$, there is a finite
+list of pairs $(P,c_P)$, $P$ valid and $c_P\in\mathrm{LC}_X(F)$, with
+$F(u,w)\equiv\sum_P\mathrm{DP}_P(u)\,c_P(w)\pmod m$ for all valid $u$ and all
+$w$.\lean{[0607] LemK.LK, lemK (LemKMain.lean)}
+
+\smallskip
+Three facts are used.  (K1) \emph{Difference products have zero slot sums}: if the pairs of
+$P$ are pairwise disjoint and the two points of $P_t$ are distinct and lie in $Y$, then
+$\sigma^Y_t\mathrm{DP}_P(u)=0$ exactly.  For $\mathrm{DP}_P(u[t:=a])=\delta_{P_t}(a)\,R$ with
+$R$ the product of the other factors, so the sum is
+$R\,([P^1_t\text{ free}]-[P^2_t\text{ free}])$; if $P^1_t$ (say) is not free, it equals some
+$u_s$, $s\ne t$, and $\delta_{P_s}(u_s)=0$ by disjointness, so $R=0$.\lean{[0607] LemK.sig\_DP}
+(K2) \emph{Vanishing off an anchor}: if $z\in X$, $\mathrm{KC}_m(X,j+1,H)$, and $H\equiv0$ at
+all valid tuples not containing $z$, then $H\equiv0$ at all valid tuples.  If $u_t=z$, the
+term $a=z$ of $\sigma^X_tH(u)$ is $H(u)$ itself and every other term is at a tuple without
+$z$, so $H(u)\equiv\sigma^X_tH(u)\equiv0$.\lean{[0607] LemK.zero\_of\_del}
+(K3) $\mathrm{LC}$ is closed under sums and integer multiples, and is transitive: a combination
+of functions each in $\mathrm{LC}_X(F)$ lies in $\mathrm{LC}_X(F)$.\lean{[0607] LemK.LC\_add, LC\_smul, LC\_tr}
+
+\smallskip\noindent\emph{Proof of Lemma K.}  Induction on $j$.  For $j=0$ the only valid tuple
+is empty; take the single pair $(\emptyset,F(\emptyset,\cdot))$, with
+$\mathrm{DP}_\emptyset=1$.\lean{[0607] LemK.lemK\_zero}
+For the step let $|X|\ge2j+2$ and $\mathrm{KC}_m(X,j+1,F)$.\lean{[0607] LemK.lemK\_step}
+\begin{enumerate}
+\item \emph{Anchor.}  Fix $z\in X$ and put $X'=X\setminus\{z\}$, so $|X'|\ge2j+1$.
+\item \emph{Slot defects.}  For $t\le j$ and a valid $j$-tuple $v$ over $X'$ let
+$G_t(v,w)=-F(\mathrm{ins}_t(z,v),w)$, where $\mathrm{ins}_t(z,v)$ inserts $z$ at slot $t$
+(a valid $(j+1)$-tuple over $X$).  A point can fill slot $t'$ of $v$ over $X'$ if and only if
+it can fill the corresponding slot ($t'$ if $t'<t$, else $t'+1$) of $\mathrm{ins}_t(z,v)$
+over $X$, so the slot sums of $G_t$ are minus slot sums of $F$ and
+$\mathrm{KC}_m(X',j,G_t)$.\lean{[0607] LemK.free\_ins, ins\_upd, valid\_ins}  The induction
+hypothesis ($|X'|\ge2j$) gives a list $B_t$ of pairs $(Q,c)$, $Q$ valid over $X'$, with
+$G_t(v,w)\equiv\sum_{B_t}\mathrm{DP}_Q(v)c(w)$; by (K3) each $c$ lies in
+$\mathrm{LC}_X(F)$ (at length $j+1$).
+\item \emph{Correction.}  For each such $Q$ choose $w_Q\in X'$ outside the $2j$ points of
+$Q$, possible as $|X'|>2j$.\lean{[0607] LemK.fresh}  Let $\varepsilon(u,w)$ be the sum, over
+$t\le j$ and $(Q,c)\in B_t$, of $\mathrm{DP}_{P}(u)c(w)$ with $P=\mathrm{ins}_t((w_Q,z),Q)$
+(the pair $(w_Q,z)$ inserted at slot $t$; $P$ is valid over $X$), and put
+$\psi=F-\varepsilon$.\lean{[0607] LemK.insP, VP\_insP}
+\item \emph{$\psi$ has zero slot sums over $X'$.}  Let $u$ be valid over $X'$ and $s\le j$.
+Since $z$ is not in $u$, it is free at slot $s$, and $u[s:=z]=\mathrm{ins}_s(z,\mathrm{skip}_su)$
+($\mathrm{skip}_s$ deletes slot $s$); hence
+$\sigma^{X'}_sF(u)=\sigma^X_sF(u)+G_s(\mathrm{skip}_su)$.  In $\sigma^{X'}_s\varepsilon(u)$ the
+terms with $t\ne s$ vanish by (K1), as the slot-$s$ pair of $P$ is a pair of $Q$, inside $X'$.
+For $t=s$, $\mathrm{DP}_P(u[s:=a])=\delta_{(w_Q,z)}(a)\,\mathrm{DP}_Q(\mathrm{skip}_su)$; summing
+over free $a\in X'$ ($z\notin X'$) gives $\mathrm{DP}_Q(\mathrm{skip}_su)$ if $w_Q$ is free, and
+otherwise $0=\mathrm{DP}_Q(\mathrm{skip}_su)$, because then $w_Q$ is an entry of
+$\mathrm{skip}_su$ lying off the pairs of $Q$.\lean{[0607] LemK.DP\_insP, DP\_off}  So
+\[
+\sigma^{X'}_s\psi(u)=\sigma^X_sF(u)+\Bigl(G_s(\mathrm{skip}_su)-\sum_{B_s}\mathrm{DP}_Q(\mathrm{skip}_su)\,c\Bigr)\equiv0+0 .
+\]
+\item \emph{Slices.}  For $a\in X'$ let $\psi_a(v)=\psi((a,v))$ on valid $j$-tuples $v$ over
+$X''=X'\setminus\{a\}$, where $(a,v)$ prepends $a$.  Slot $s$ of $v$ is slot $s+1$ of
+$(a,v)$, so $\mathrm{KC}_m(X'',j,\psi_a)$; and $|X''|=|X|-2\ge2j$.  The induction hypothesis
+gives $B_a$, with coefficients in $\mathrm{LC}_X(F)$ by (K3) ($\psi_a(v)$ is $F((a,v))$ minus a
+combination of the coefficients of $\varepsilon$).  Let $B_\psi$ consist of the pairs
+$(\mathrm{ins}_0((a,z),Q),c)$ for $a\in X'$, $(Q,c)\in B_a$.  For $u$ valid over $X'$,
+$u_0\ne z$ gives $\mathrm{DP}_{\mathrm{ins}_0((a,z),Q)}(u)=[u_0=a]\,\mathrm{DP}_Q(\mathrm{skip}_0u)$, so
+$\sum_{B_\psi}\mathrm{DP}\,c=\sum_{B_{u_0}}\mathrm{DP}_Q(\mathrm{skip}_0u)\,c\equiv\psi_{u_0}(\mathrm{skip}_0u)=\psi(u)$.\lean{[0607] LemK.valid\_cns, free\_cns, cns\_skip}
+\item \emph{Assembly.}  Take the pairs of $\varepsilon$ followed by $B_\psi$, and let
+$H=F-\sum\mathrm{DP}_P\,c_P$ over this list.  $\mathrm{KC}_m(X,j+1,H)$ holds since $F$ satisfies
+it and each $\mathrm{DP}_P$ ($P$ valid over $X$) has zero slot sums over $X$ by (K1).  At
+tuples avoiding $z$, $H=\psi-\sum_{B_\psi}\mathrm{DP}\,c\equiv0$ by step~5.  By (K2),
+$H\equiv0$ at every valid tuple.
+\end{enumerate}
+The size hypothesis is used four times: the anchor exists ($|X|>0$), the induction
+hypothesis applies on $X'$ and on $X''$ ($\ge2j$ points), and the fresh points $w_Q$ exist
+($|X'|>2j$).  No division occurs, which is why Lemma~K holds for every modulus $m$.
+
+\end{proof}
+
+\paragraph{Windows.}  The next lemma realises every rectangle product, up to a
+factorial, as a window.
+
+\begin{lemma}[windows for rectangle data]\label{lem:window}
+Let $p\mid k$, $j\le d$, $2d+1\le n$, and $P,Q$ as above with $j$ pairs each.  There
+is $W\in\mathcal W_d$ with $W(g)=(d-j+1)!\,\mathrm{RP}_j(P,Q)(g)$ for every matching
+$g$ with $|g|=j$.\lean{[0607] WinMain.window}
+\end{lemma}
+
+\begin{proof}
+Split pigeons and holes into blocks: the $j$ rectangle blocks
+$\{a_s,a'_s\}\times\{b_s,b'_s\}$; $T=n-j-d-1$ blocks $\{x_t\}\times\{h_t\}$ on fresh
+pigeons and holes; and a rest block with $m=n-2j-T=d-j+1$ holes and
+$n+k-2j-T\equiv m\pmod p$ pigeons (here $p\mid k$ is used).\lean{[0607] WinMain.good\_of, Blocks.fresh\_fn}
+$W$ is the block product: on a matching with an edge joining two different blocks
+it is $0$; otherwise it is the product of local factors evaluated on the parts of
+the matching inside the blocks.\lean{[0607] WinJ.Wn, BProd.PB}  The local factors
+are: on a rectangle block, $A_s$ with $A_s(\emptyset)=0$, $A_s=\rho_s$ on single
+edges, and $A_s=x_{a_sb_s}x_{a'_sb'_s}-x_{a_sb'_s}x_{a'_sb_s}$ (the determinant)
+on its two $2$-matchings;\lean{[1402] Win.Aw} the constant $1$ on each $1\times1$
+block; and on the rest block the symmetric design of degree $D=d-j+1$, whose value
+at a local $s$-matching is $\mathrm{cv}(s)=(m-s)(m-s-1)\cdots(m-D+1)$, so
+$\mathrm{cv}(s)=(m-s)!$ as $m=D$.\lean{[1402] Win.cvf, SymDesign.cv}
+
+\emph{Balance} for $e<D+j=d+1$.\lean{[0607] WinJ.win\_bal}
+A free line at a matching lies in one block, and its sum factors as the local line
+sum times the other factors.\lean{[0607] BProd.line\_PB, bal\_winB}  Each local
+factor satisfies the local window identity wherever a free line exists:
+for the symmetric design at a local $s$-matching with $s<D$ the free row sum is
+$(m-s)\,\mathrm{cv}(s+1)=\mathrm{cv}(s)$ exactly and the free column sum is
+$(\#\text{pigeons}-s)\,\mathrm{cv}(s+1)\equiv\mathrm{cv}(s)$ mod
+$p$;\lean{[1402] SymDesign.cv\_step; [0607] LocWin.sym\_rowD, sym\_colD} the constant
+block is trivial;\lean{[0607] LocWin.unit\_row, unit\_col} and for $A_s$ the
+identity can be checked by hand: at $\emptyset$ the row sum at $a_s$ is
+$\rho_s(x_{a_sb_s})+\rho_s(x_{a_sb'_s})=1-1=0=A_s(\emptyset)$ (other rows and the
+columns alike), and at the edge $x_{a_sb_s}$ the only free cell is
+$x_{a'_sb'_s}$, with $A_s(\{x_{a_sb_s},x_{a'_sb'_s}\})=1=A_s(x_{a_sb_s})$ (the other
+three edges alike, with signs).\lean{[0607] LocWin.rect\_row, rect\_col via [1402] Win.blk0\_row, blk0\_col}
+A rest line at a matching in which every rectangle block is occupied sees at most
+$e-j<D$ rest edges;\lean{[0607] Blocks.cnt\_filter} otherwise some rectangle block
+is empty and its factor $A_s(\emptyset)=0$ makes both sides vanish.
+
+\emph{Value.} At a matching $g$ with $|g|=j$ and $W(g)\ne0$ every rectangle block
+carries exactly one edge, so the rest block is empty and contributes
+$\mathrm{cv}(0)=D!$; the permanent of functions with pairwise disjoint supports is
+the product of their sums,\lean{[0607] Blocks.jp\_prod; WinJ.win\_val} giving
+$W(g)=(d-j+1)!\,\mathrm{RP}_j(P,Q)(g)$.
+\end{proof}
+
+\begin{corollary}\label{cor:rp-span}
+If moreover $(d-j+1)!$ is invertible mod $p$, every $\mathrm{RP}_j(P,Q)$ lies in
+$\mathrm{Span}_j(\mathcal W_d)$.\lean{[0607] Peel.rp\_span}
+\end{corollary}
+
+\begin{proof}
+$\mathrm{RP}_j\equiv u\,W$ on $j$-matchings, $u$ the inverse of $(d-j+1)!$.
+\end{proof}
+
+\paragraph{Peeling.}
+Call $f$ \emph{admissible at level $0$} always, and \emph{at level $\ell+1$} if
+$\mathrm{Bal}_p(f,c,\ell)$ for some $c$ admissible at level $\ell$.  By the flag
+lemma (Lemma~\ref{lem:flag}) iterated, $\mathrm{Bal}_p(f,c,\ell)$ already implies
+that $f$ is admissible at level $\ell+1$.\lean{[0607] Peel.Adm, adm\_of\_bal}
+$\mathcal W_d$ is closed under sums and multiples, so every member of
+$\mathrm{Span}_\ell(\mathcal W_d)$ agrees mod $p$ on $\ell$-matchings with a single
+$T\in\mathcal W_d$.\lean{[0607] Peel.span\_rep}
+
+\begin{proposition}[peeling]\label{prop:peel}
+Under the hypotheses of Proposition~\ref{prop:ext-d}, for every $\ell\le d$ every
+$f$ admissible at level $\ell$ lies in
+$\mathrm{Span}_\ell(\mathcal W_d)$.\lean{[0607] Peel.claim}
+\end{proposition}
+
+\begin{proof}
+Induction on $\ell$.  $\ell=0$: Lemma~\ref{lem:window} with $j=0$ gives a window $W$
+with $W(\emptyset)=(d+1)!$ (the \emph{type-$0$ window}: $n-d-1$ unit blocks and a
+rest block with $d+1$ holes); $f\equiv f(\emptyset)\,u\,W$ at $\emptyset$, $u$ the
+inverse of $(d+1)!$.
+$\ell\to\ell+1$: let $\mathrm{Bal}_p(f,c,\ell)$ with $c$ admissible.  By induction
+$c\equiv T$ on $\ell$-matchings for some $T\in\mathcal W_d$.  Since
+$\mathrm{Bal}_p(T,T,\ell)$, the residual $f-T$ satisfies
+$\mathrm{Bal}_p(f-T,\,c-T,\,\ell)$, i.e.\ it has zero links at level $\ell$.  By
+Lemma~\ref{lem:SJ} (with $(\ell+1)!$ invertible and $2(\ell+1)\le n$) it lies in the
+span of the $\mathrm{RP}_{\ell+1}$, which by Corollary~\ref{cor:rp-span} lies in
+$\mathrm{Span}_{\ell+1}(\mathcal W_d)$.  Add $T$ back.
+\end{proof}
+
+\begin{proof}[Proof of Proposition~\ref{prop:ext-d}]
+Each $T\in\mathcal W_d$ has the extension $T$ itself ($\mathrm{Bal}_p(T,T,d)$).
+An $f$ with $\mathrm{Bal}_p(f,c,d-1)$ is admissible at level $d$, so lies in
+$\mathrm{Span}_d(\mathcal W_d)$ by Proposition~\ref{prop:peel};
+Lemma~\ref{lem:ext-span} concludes.  All factorials used are at most $(d+1)!$.
+\end{proof}
+
+\paragraph{Mechanism of A.}
+The upper bound is Riis's symmetric-function refutation at $t=p$, made a unit by the
+Lucas-type congruence $\binom{n+pc}p-\binom np\equiv c$.  The lower bound is
+\emph{peeling}: a balanced function at level $d$ is written, level by level, as a
+window plus a zero-link residual; zero-link residuals are spans of rectangle
+products ($S_j$, via Lemma~K), and rectangle products are windows up to the factorial
+$(d-j+1)!$.  The only arithmetic input is that $1!,\dots,(d+1)!$ are units, which for
+$d=p-2$ is exactly why the bound stops at $p-1$: at $d=p-1$ the type-$0$ window has
+value $p!\equiv0$.  The board must hold the blocks, which gives $n\ge 2d+1=2p-3$.
+
+%======================================================================
+\subsection{B. Degree at least $p+1$ when $p^2$ divides the surplus}
+\label{sec:lean-B}
+
+\begin{theorem}[B]\label{thm:B}
+Let $p$ be prime and $c,n\in\mathbb N$ with $n\ge2p-1$.  Then
+$\mathrm{ontoFPHP}(n,cp^2)$ has no degree-$p$ semantic PC refutation over
+$\mathbb Z/p$, and no degree-$p$ standard PC refutation
+over~$\mathbb F_p$.\lean{[1249] uniform\_no\_degree\_p\_unconditional, uniform\_no\_standard\_degree\_p\_unconditional}
+\end{theorem}
+
+The Lean statement allows $c=0$ (then the formula is satisfiable and the claim is
+trivial) and states the bound $D=p$; by monotonicity
+(Lemma~\ref{lem:mono}) there is no
+refutation of degree at most $p$ (for $c\ge1$),\lean{[maint] DegreeMono.uniform\_no\_degree\_le\_p, uniform\_no\_standard\_degree\_le\_p} so the PC degree is at least $p+1$.  The surplus
+is written $(c\cdot p)\cdot p$.  The proof produces, as an intermediate result:
+
+\begin{theorem}[unit design]\label{thm:B-design}
+For prime $p$ and every $c$ there is $T$ with
+$\mathrm{Bal}^{(2p-1,\,cp^2)}_p(T,T,e)$ for all $e\le p-1$ and
+$T(\emptyset)\equiv1\pmod p$.\lean{[1249] uniform\_unit\_design\_unconditional}
+\end{theorem}
+
+The proof has four steps: a criterion turning such a $T$ into the lower bound
+(B.1); the construction of $T$ from a \emph{rectangular lift} (B.2); the rectangular
+lift from a \emph{square lift} on the $(2p-1)\times(2p-1)$ board (B.3); and an
+explicit square lift for every prime (B.4).  In Lean, B.2--B.3 are proved first
+under the hypothesis that a square lift exists
+(\texttt{SquareLiftAssumption}),\lean{[1249] Main.lean: uniform\_unit\_design, uniform\_no\_degree\_p}
+and B.4 discharges it.\lean{[1249] squareLiftAssumption (Unconditional.lean)}
+
+\subsubsection*{B.1 The design-to-lower-bound criterion}
+
+\begin{theorem}\label{thm:B-criterion}
+Let $p$ be prime, $p\mid k$, $n_0\ge2p-1$, and let $T_0$ satisfy
+$\mathrm{Bal}^{(n_0,k)}_p(T_0,T_0,e)$ for all $e\le p-1$ and $T_0(\emptyset)\equiv1$.
+Then for every $n\ge n_0$, $\mathrm{ontoFPHP}(n,k)$ has no degree-$p$ refutation
+over $\mathbb Z/p$.\lean{[0607] VUnit.no\_refutation\_of\_unit}
+\end{theorem}
+
+\begin{proof}
+Apply Theorem~\ref{thm:ext-criterion} with $D=p$; we need
+$\mathrm{EXT}_p(n_0,k,d)$ for $d\le p-1$.  For $d\le p-2$ this is
+Proposition~\ref{prop:ext-d} ($2d+1\le2p-3\le n_0$, $d+1\le p-1$).  For $d=p-1$ run
+the peeling of Proposition~\ref{prop:peel} with $T_0$ in place of the type-$0$
+window: at level $0$, $f\equiv f(\emptyset)T_0$ at $\emptyset$ because
+$T_0(\emptyset)\equiv1$; at levels $\ell+1\ge1$ the argument is unchanged and uses
+only the units $(\ell+1)!$ with $\ell+1\le p-1$ (Lemma~\ref{lem:SJ}) and
+$(d-j+1)!$ with $j\ge1$, i.e.\ at most $(p-1)!$
+(Corollary~\ref{cor:rp-span}).\lean{[0607] VUnit.claimU, rp\_span', ext\_unit}
+The board condition is $2d+1=2p-1\le n_0$.  The type-$0$ window would have needed
+$(d+1)!=p!$, which is $0$ mod $p$; $T_0$ is exactly what replaces it.
+\end{proof}
+
+\subsubsection*{B.2 From a rectangular lift to a unit design}
+
+\begin{definition}\label{def:rect-lift}
+A \emph{rectangular lift} for $(p,k)$ is a function $H$ on matchings of the board
+with $2p-1$ holes and $2p-1+k$ pigeons such that $H(g)\equiv1\pmod p$ for every
+matching with $|g|=p$, and at every matching with $|g|=p-1$ every free row sum and
+every free column sum of $H$ is exactly $0$ (as an
+integer).\lean{[1249] RectangularLift (Boundary.lean)}
+\end{definition}
+
+\begin{lemma}[top layer]\label{lem:top}
+Let $p$ be prime and $H$ a rectangular lift for $(p,cp^2)$.  Put $U(g)=(H(g)-1)/p$ for
+$|g|=p$.  Then $\mathrm{Bal}^{(2p-1,cp^2)}_p(U,-1,p-1)$.\lean{[1249] RectangularLift.top, top\_bal}
+\end{lemma}
+
+\begin{proof}
+Let $|g|=p-1$.  At a free pigeon there are $(2p-1)-(p-1)=p$ free holes, so
+$0=\mathrm{row}_H(g,i)=p+p\,\mathrm{row}_U(g,i)$ and $\mathrm{row}_U(g,i)=-1$.  At a
+free hole there are $(2p-1+k)-(p-1)=p+k$ free pigeons, so
+$0=(p+k)+p\,\mathrm{col}_U(g,j)$, i.e.\ $\mathrm{col}_U(g,j)=-1-k/p=-1-cp\equiv-1$.
+This is the step that uses $p^2\mid k$.\lean{[1249] RectangularLift.line\_eq; [1402] SymDesign.rowS\_const, colS\_const}
+\end{proof}
+
+\begin{lemma}[symmetric boundary]\label{lem:boundary}
+Let $n>0$, $p\mid k$, and $\mathrm{Bal}^{(n,k)}_p(U,-1,d)$.  Define
+$T(g)=-\mathrm{cv}_{n,d}(|g|)=-(n-|g|)(n-|g|-1)\cdots(n-d+1)$ for $|g|\le d$ and
+$T(g)=U(g)$ for $|g|=d+1$.  Then $T(\emptyset)=-n(n-1)\cdots(n-d+1)$ and
+$\mathrm{Bal}_p(T,T,e)$ for every $e\le d$.\lean{[0634] FactorBoundary.design\_of\_top, lower\_bal, lower\_top; TopSplice.splice\_bal}
+\end{lemma}
+
+\begin{proof}
+For $e<d$ the free row sum is $-(n-e)\mathrm{cv}(e+1)=-\mathrm{cv}(e)=T(g)$ and the
+free column sum is $-(n+k-e)\mathrm{cv}(e+1)\equiv-\mathrm{cv}(e)=T(g)$, using $p\mid k$.  For
+$e=d$ the line sums are sums of $U$, which are $\equiv-1=T(g)$ since
+$\mathrm{cv}(d)=1$.
+\end{proof}
+
+\begin{proposition}\label{prop:B-design}
+If $p$ is prime and a rectangular lift for $(p,cp^2)$ exists, then the conclusion
+of Theorem~\ref{thm:B-design} holds.\lean{[1249] unit\_design\_of\_rectangular\_lift}
+\end{proposition}
+
+\begin{proof}
+Lemma~\ref{lem:top} and Lemma~\ref{lem:boundary} with $n=2p-1$, $d=p-1$ give $T$ with
+$T(\emptyset)=-(2p-1)(2p-2)\cdots(p+1)$.  Each factor $p+r$ ($1\le r\le p-1$) is
+$\equiv r$, a unit, so $T(\emptyset)$ is a unit;\lean{[0634] FactorUnit.ff\_unit, empty\_unit}
+scale $T$ by its inverse.
+\end{proof}
+
+Theorem~B follows from Proposition~\ref{prop:B-design} and
+Theorem~\ref{thm:B-criterion} with $n_0=2p-1$ ($p\mid cp^2$), and the standard form
+from Theorem~\ref{thm:refutes-iff}.\lean{[1249] no\_refutation\_of\_rectangular\_lift; uniform\_no\_standard\_degree\_p}
+
+\subsubsection*{B.3 From the square to the rectangle}
+
+\begin{definition}\label{def:square-lift}
+A \emph{square lift} (integral lift) for $p$ is a function $H$ on matchings of the
+square board, $2p-1$ pigeons and $2p-1$ holes ($k=0$), with $H(g)\equiv1$ for
+$|g|=p$ and all free row and column sums exactly $0$ at matchings with
+$|g|=p-1$.\lean{[1249] IntegralLift (Lift.lean)}
+\end{definition}
+
+\begin{proposition}\label{prop:transfer}
+For prime $p$, a square lift for $p$ and any $c$ yield a rectangular lift for
+$(p,cp^2)$.\lean{[1249] rectangleFromSquare (Transfer.lean)}
+\end{proposition}
+
+\begin{proof}
+Let $k=cp^2$.  For each set $A$ of $2p-1$ pigeons among $2p-1+k$, let $H_A$ be $H$
+transported to the pigeons $A$ by a relabelling and extended by $0$ to every
+matching that uses a pigeon outside $A$.\lean{[1249] Selection.embed, Selection.perm, Pad.pad}
+Put $\widetilde H=\sum_AH_A$.\lean{[1249] transferred}
+
+\emph{Exact harmonicity.}  Padding by zeros keeps all free line sums at
+$(p-1)$-matchings exactly $0$: a row of an outside pigeon sums zeros, a line of an
+inside pigeon or of a hole only gains zero terms, and at a matching that already
+uses an outside pigeon every term is $0$.  Relabelling preserves $\mathrm{Bal}$, and
+a sum of exactly harmonic functions is exactly harmonic.\lean{[1249] Pad.pad\_bal, embedded\_bal, embed\_harmonic, bal\_sum; [1402] Relabel.bal\_relab}
+
+\emph{Unit.}  For $|g|=p$, $H_A(g)\equiv[\text{the pigeons of $g$ lie in $A$}]$.
+The $p$ pigeons of $g$ are distinct, so the number of such $A$ is
+$\binom{2p-1+k-p}{(2p-1)-p}=\binom{k+p-1}{p-1}$.\lean{[1249] embed\_unit, selection\_count, SubsetCount.coverCount\_eq, transferred\_congr\_count}
+Finally $\binom{cp^2+p-1}{p-1}\equiv\binom{p-1}{p-1}=1$, by iterating
+$\binom{a+p}r\equiv\binom ar$ ($r<p$, Lemma~\ref{lem:A-binom}) $cp$
+times.\lean{[1249] Multiplicity.subset\_multiplicity\_congr, bin\_shift\_multiple}
+(This step only needs $p\mid k$.)
+\end{proof}
+
+\subsubsection*{B.4 An explicit square lift}
+
+Split the rows and the columns of the square board into the blocks
+$B_0=\{0,\dots,p-2\}$, $B_1=\{p-1,\dots,2p-3\}$, $B_2=\{2p-2\}$ of sizes
+$a=(p-1,p-1,1)$.\lean{[1249] Block.squarePartition, capacity, blockOf}  For a
+matching $g$ let $M(g)\in\mathbb N^{3\times3}$ count its edges from row block $I$ to
+column block $J$, with row sums $\mathrm{rc}_I$ and column sums $\mathrm{cc}_J$.
+$M$ is \emph{feasible} if $\mathrm{rc}_I\le a_I$ and $\mathrm{cc}_J\le a_J$; its
+\emph{total} is the number of edges.  $E_{IJ}$ is the unit matrix at
+$(I,J)$.\lean{[1249] Block.counts, Feasible, inc}
+
+\begin{lemma}[reduction to count matrices]\label{lem:certificate}
+Let $V\colon\mathbb N^{3\times3}\to\mathbb Z$ satisfy, for feasible $M$:
+(unit) $V(M)\equiv1$ if the total is $p$; and, if the total is $p-1$,
+\begin{gather*}
+\textstyle\sum_J(a_J-\mathrm{cc}_J(M))\,V(M+E_{IJ})=0\ \text{for every }I,\\
+\textstyle\sum_I(a_I-\mathrm{rc}_I(M))\,V(M+E_{IJ})=0\ \text{for every }J .
+\end{gather*}
+Then $H(g)=V(M(g))$ is a square lift.\lean{[1249] Block.Certificate, Certificate.toIntegralLift, row\_formula, col\_formula, feasible\_counts}
+\end{lemma}
+
+\begin{proof}
+At a matching $g$, a free pigeon in row block $I$ has $a_J-\mathrm{cc}_J(M(g))$ free
+holes in column block $J$, and each extension has count matrix $M(g)+E_{IJ}$.
+\end{proof}
+
+Define, for feasible $M$ of total $p$,
+\begin{multline*}
+V_0(M)=-(-1)^{M_{01}+M_{10}}\,(p-2)!\;N(M)\\
+\cdot(p-1-\mathrm{rc}_0)!\,(p-1-\mathrm{rc}_1)!\,(p-1-\mathrm{cc}_0)!\,(p-1-\mathrm{cc}_1)!
+\end{multline*}
+and $V_0(M)=0$ otherwise, where the numerator $N(M)$ is, for feasible $M$ (cases
+read top to bottom; feasibility allows at most one edge in block row $2$ and one in
+block column $2$),
+\begin{itemize}
+\item $N(M)=p-1$ if $M_{22}=1$;
+\item $N(M)=M_{00}M_{11}-M_{01}M_{10}$ if $\mathrm{rc}_2=\mathrm{cc}_2=0$;
+\item if $\mathrm{rc}_2=0$ and $\mathrm{cc}_2=1$: $N(M)=-(M_{10}+M_{11})$ when
+$M_{02}=1$, and $-(M_{00}+M_{01})$ when $M_{12}=1$;
+\item if $\mathrm{rc}_2=1$ and $\mathrm{cc}_2=0$: $N(M)=-(M_{01}+M_{11})$ when
+$M_{20}=1$, and $-(M_{00}+M_{10})$ when $M_{21}=1$;
+\item if $\mathrm{rc}_2=\mathrm{cc}_2=1$ and $M_{22}=0$: $N(M)=-1$ when
+$M_{02}=M_{20}$, and $1$ otherwise.\lean{[1249] Block.numerator, explicitValue (ExplicitFormula.lean)}
+\end{itemize}
+(A comment in the source says the formula was obtained from a generating-function
+coefficient; that derivation is not part of the Lean proof and is not used.)
+
+\begin{lemma}\label{lem:weight}
+Let $w(M)=\prod_I(a_I-\mathrm{rc}_I)!\prod_J(a_J-\mathrm{cc}_J)!$ and
+$\varphi(M)=(-1)^{M_{01}+M_{10}}N(M)$ when $\mathrm{rc}_2,\mathrm{cc}_2\le1$, else $0$.
+For feasible $M$ of total $p$, $V_0(M)=-(p-2)!\,w(M)\,\varphi(M)$; and
+$(a_I-\mathrm{rc}_I)(a_J-\mathrm{cc}_J)\,w(M+E_{IJ})=w(M)$ when
+$\mathrm{rc}_I<a_I$, $\mathrm{cc}_J<a_J$.\lean{[1249] Block.weight, explicit\_eq, weight\_inc; ExplicitAlgebra.phi, jCore}
+\end{lemma}
+
+\begin{lemma}\label{lem:phi-row}
+Let $M$ be feasible of total $p-1$ and $\mathrm{rc}_I<a_I$.  Then
+$\sum_J\varphi(M+E_{IJ})=0$.  Also $\varphi(M)=0$ whenever $M$ has total $p$ and some
+$\mathrm{cc}_J>a_J$; and $\varphi(M^{\mathsf T})=\varphi(M)$.\lean{[1249] Block.phi\_row, phi\_bad\_col, phi\_transpose}
+\end{lemma}
+
+\begin{proof}
+Feasibility leaves ten patterns for the entries in block row and column~$2$
+(at most one edge in row block $2$ and one in column block $2$).\lean{[1249] Block.boundary\_cases}
+The Lean proof checks the identity in each of the $10\times3$ cases (pattern, row
+block $I$) by rewriting and linear arithmetic (\texttt{simp}, \texttt{omega},
+\texttt{grind}).  One case, for illustration: no edges in block row or column $2$
+and $I=0$.  Writing $\sigma=(-1)^{M_{01}+M_{10}}$, the three terms are
+$\sigma\bigl((M_{00}+1)M_{11}-M_{01}M_{10}\bigr)$,
+$-\sigma\bigl(M_{00}M_{11}-(M_{01}+1)M_{10}\bigr)$ and $-\sigma(M_{10}+M_{11})$,
+which sum to $0$.
+\end{proof}
+
+\begin{proposition}[exact harmonicity]\label{prop:B-harm}
+For feasible $M$ of total $p-1$:
+$\sum_J(a_J-\mathrm{cc}_J)V_0(M+E_{IJ})=0$ for every $I$ and
+$\sum_I(a_I-\mathrm{rc}_I)V_0(M+E_{IJ})=0$ for every $J$.\lean{[1249] Block.explicit\_row, explicit\_col, weighted\_term}
+\end{proposition}
+
+\begin{proof}
+If $\mathrm{rc}_I=a_I$, every $M+E_{IJ}$ is infeasible and all terms vanish.
+Otherwise multiply the row sum by $a_I-\mathrm{rc}_I\ne0$.  By
+Lemma~\ref{lem:weight} each term becomes $-(p-2)!\,w(M)\,\varphi(M+E_{IJ})$ (when
+$\mathrm{cc}_J=a_J$ the coefficient is $0$ and $\varphi(M+E_{IJ})=0$ by
+Lemma~\ref{lem:phi-row}), and the sum vanishes by Lemma~\ref{lem:phi-row}.  Columns
+follow from $V_0(M^{\mathsf T})=V_0(M)$.\lean{[1249] Block.explicit\_transpose}
+\end{proof}
+
+\begin{lemma}[factorial reflection]\label{lem:reflection}
+For every $p\ge1$ and $r\le p-1$:
+$(-1)^r\,r!\,(p-1-r)!\equiv(p-1)!\pmod p$.  For $p\ge2$:
+$(p-2)!\equiv-(p-1)!$.\lean{[1249] Block.factorial\_reflection, factorial\_tail}
+\end{lemma}
+
+\begin{proof}
+Induction on $r$: passing from $r$ to $r+1$ multiplies by $-(r+1)$ and divides by
+$p-1-r\equiv-(r+1)$.  The difference of consecutive terms is an explicit multiple
+of $p$, so no division is needed.  For the second claim,
+$(p-1)!=(p-1)(p-2)!\equiv-(p-2)!$.
+\end{proof}
+
+\begin{proposition}[common residue]\label{prop:B-cong}
+For feasible $M$ of total $p$, $V_0(M)\equiv-\bigl((p-1)!\bigr)^3\pmod p$.\lean{[1249] Block.explicit\_common\_congruence, commonValue, main\_pair}
+\end{proposition}
+
+\begin{proof}
+The Lean proof treats the ten boundary patterns separately.  In each it rewrites
+the four factorial arguments using the total $p$, reduces $V_0(M)$ mod $p$ to
+$(p-2)!\,(-1)^{r+t}\,r!\,s!\,t!\,u!$ with $r+s=t+u=p-1$, and applies
+Lemma~\ref{lem:reflection} twice:
+$(p-2)!\,(p-1)!^2\equiv-(p-1)!^3$.  The first pattern (no edges in block row or
+column $2$) runs as follows.  Then $\mathrm{rc}_0+\mathrm{rc}_1=p$ with
+$\mathrm{rc}_I\le p-1$, so both are $\ge1$, and similarly for columns; the
+factorial arguments are $p-1-\mathrm{rc}_0=\mathrm{rc}_1-1$, etc.  Since
+$M_{00}M_{11}-M_{01}M_{10}=pM_{00}-\mathrm{rc}_0\,\mathrm{cc}_0$, and
+$(-1)^{\mathrm{rc}_0+\mathrm{cc}_0}=(-1)^{M_{01}+M_{10}}$,
+\[
+V_0(M)\equiv(p-2)!\,(-1)^{\mathrm{rc}_0}\,\mathrm{rc}_0!\,(\mathrm{rc}_1-1)!\cdot
+(-1)^{\mathrm{cc}_0}\,\mathrm{cc}_0!\,(\mathrm{cc}_1-1)!\pmod p,
+\]
+which has the stated form with $r=\mathrm{rc}_0$, $s=\mathrm{rc}_1-1$,
+$t=\mathrm{cc}_0$, $u=\mathrm{cc}_1-1$.  The other nine patterns are verified in
+Lean by the same rewriting followed by \texttt{simp}/\texttt{grind}; we have not
+written them out.
+\end{proof}
+
+\begin{theorem}\label{thm:square-lift}
+For every prime $p$ a square lift exists.\lean{[1249] squareLiftAssumption, Block.squareLiftAssumption}
+\end{theorem}
+
+\begin{proof}
+$(p-1)!$ is a unit (units), so $-\bigl((p-1)!\bigr)^3$ has an inverse
+$u$.\lean{[1249] Block.commonValue\_unit}  Then $V=u\,V_0$ satisfies the hypotheses of
+Lemma~\ref{lem:certificate} by Propositions~\ref{prop:B-cong} and~\ref{prop:B-harm}.
+\end{proof}
+
+\begin{remark}
+For $p=2$ and $p=3$ the library also contains explicit square lifts given as data,
+whose defining properties are verified by kernel computation (\texttt{decide});
+they give the statements for $p=2$, $n\ge3$ and $p=3$, $n\ge5$ independently of
+B.4.\lean{[1249] integralLift2, integralLift3, no\_standard\_degree\_two, no\_standard\_degree\_three}
+\end{remark}
+
+\paragraph{Mechanism of B.}
+An explicit integer function on $p$-matchings of the $(2p-1)\times(2p-1)$ board,
+depending only on the $3\times3$ block-count matrix, has all free line sums at
+$(p-1)$-matchings exactly $0$ and is $\equiv$ a unit on every $p$-matching (the
+\emph{square lift}).  Summing its copies over all choices of $2p-1$ pigeons among
+$2p-1+k$ keeps exact harmonicity and multiplies the residue by
+$\binom{k+p-1}{p-1}\equiv1$.  Because the line sums are exact, the top layer
+$(H-1)/p$ is balanced against $-1$; this is where $p^2\mid k$ enters, since the
+column count $p+k$ must leave $k/p\equiv0$.  Spliced under the symmetric
+falling-factorial levels it is a \emph{balanced unit design} of degree $p$ on
+$2p-1$ holes.  The \emph{design-to-lower-bound criterion} (B.1) is the peeling of A
+run at level $p-1$, with this design replacing the type-$0$ window whose value $p!$
+vanishes mod $p$.
+
+%======================================================================
+\subsection{C. No degree-4 refutation over $\mathbb F_2$ at surplus $8$}
+\label{sec:lean-C}
+
+\begin{theorem}[C]\label{thm:C}
+For every $n\ge7$, $\mathrm{ontoFPHP}(n,8)$ has no degree-$4$ semantic PC refutation
+over $\mathbb Z/2$, and no degree-$4$ standard PC refutation over
+$\mathbb F_2$.\lean{[0841] L3.Main.no\_deg4; [1156] StdPCCor.std\_no\_deg4\_k8}
+\end{theorem}
+
+By monotonicity (Lemma~\ref{lem:mono}) there is no refutation of degree at most $4$, so the PC degree is at
+least $5$.\lean{[maint] DegreeMono.no\_deg\_le4, deg\_ge5}  The proof is Theorem~\ref{thm:ext-criterion} with $p=2$, $k=8$,
+$n_0=7$, $D=4$: it suffices to prove $\mathrm{EXT}_2(7,8,d)$ for $d=0,1,2,3$.\lean{[1434] Ext278b.hard\_of\_ext3}
+Level $0$ is explicit and levels $1$, $2$ use small kernel-checked certificates; level $3$ is reduced to a single finite
+statement, Proposition~\ref{prop:C-z3}, which is established by a kernel-checked
+certificate.  Throughout, $n=7$, $k=8$: $15$ pigeons, $7$ holes, $105$ variables.
+
+\paragraph{Relabellings.}  Permutations $\sigma$ of the pigeons and $\tau$ of the
+holes act on functions of matchings, and $\mathrm{Bal}_p(y,f,e)$ implies
+$\mathrm{Bal}_p(y^{\sigma\tau},f^{\sigma\tau},e)$.\lean{[1402] Relabel.relab, bal\_relab}
+So every relabelling of a function with an extension has one.
+
+\begin{lemma}[level 0]\label{lem:C0}
+If $p\mid k$ and $n>0$, then $\mathrm{EXT}_p(n,k,0)$.\lean{[1402] Ext0.ext0}
+\end{lemma}
+
+\begin{proof}
+Given $f(\emptyset)$, put $y(x_{ii})=f(\emptyset)$ for $i<n$,
+$y(x_{i0})=f(\emptyset)$ for $i\ge n$, and $y=0$ elsewhere.  Every row sums to
+$f(\emptyset)$, columns $j\ne0$ sum to $f(\emptyset)$, and column $0$ sums to
+$(k+1)f(\emptyset)\equiv f(\emptyset)$.
+\end{proof}
+
+\begin{lemma}[level 1]\label{lem:C1}
+$\mathrm{EXT}_2(7,8,1)$.\lean{[1434] Ext278a.ext1}
+\end{lemma}
+
+\begin{proof}
+Let $H$ be the degree-$3$ design of the library: $H(\emptyset)=1$ and
+$\mathrm{Bal}_2(H,H,e)$ for $e\le2$.\lean{[1434] HDes.H, HDes.h\_design}  It is a
+two-block product: on pigeons $<12$ $\times$ holes $<4$ it is the library design of
+$\mathrm{ontoFPHP}(4,8)$ reindexed, on pigeons $12,13,14$ $\times$ holes $4,5,6$ the
+indicator of the diagonal, and $0$ on cross edges.  Every function $c$ on edges
+whose row and column sums at $\emptyset$ are all $\equiv\kappa$ lies in
+$\mathrm{Span}_1$ of the relabellings of $H$: this is a kernel-checked peeling
+certificate (85 elimination steps by sums of relabellings in echelon order, then
+21 line propagations), sound by the general checker
+theorem.\lean{[1434] Ext278a.span1; L1Data.cert, L1Data.run\_ok; Peel.span\_of\_run}
+Each relabelling of $H$ extends itself at level $1$; Lemma~\ref{lem:ext-span}
+concludes.
+\end{proof}
+
+\begin{lemma}[level 2]\label{lem:C2}
+$\mathrm{EXT}_2(7,8,2)$.\lean{[1434] Ext278b.ext2, span2, g\_ext}
+\end{lemma}
+
+\begin{proof}
+Let $\mathrm{Bal}_2(f,c,1)$.  By the flag lemma at $g=\emptyset$ the link $c$ is
+level-$0$ balanced,\lean{[1434] Ext278a.link\_bal; [1402] RowCol.row\_col} so by the
+level-$1$ certificate $c\in\mathrm{Span}_1$(relabellings of $H$).  Since each
+generator extends itself, there is $u$ in $\mathrm{Span}_2$ of the same generators
+with $\mathrm{Bal}_2(u,c,1)$.\lean{[1434] Ext278a.lift1}  Then $f-u$ has zero links at
+level $1$, and a kernel-checked level-$2$ certificate (files \texttt{L2C0}--\texttt{L2C8})
+puts it in $\mathrm{Span}_2$ of the relabellings of $R_0$, the product of the
+rectangles on $\{0,1\}\times\{0,1\}$ and $\{2,3\}\times\{2,3\}$, and of $T$, the
+indicator of $2$-matchings inside the $3\times3$ block on pigeons and holes
+$\{0,1,2\}$.\lean{[1434] L2Base.R0; [1402] TExt.T; [1434] Ext278b.bases2, cov, p0}
+Each generator has a level-$2$ extension: $R_0$ by a three-block product with
+block extensions (uses $n\ge7$, $p\mid k$), $T$ by an explicit two-block product,
+$H$ by itself.\lean{[1402] RectExt.rect\_ext, TImage.t\_image\_ext, TExt.t\_ext; [1434] Ext278a.gh\_ext}
+\end{proof}
+
+\begin{lemma}[lifting to level 3]\label{lem:C-lift}
+Let $1<n$ and let $G$, $G_z$ be sets of functions such that
+(i) each $\gamma\in G$ has $L$ with $\mathrm{Bal}_p(L,\gamma,2)$ and a level-$3$
+extension of $L$;
+(ii) every $c$ with $\mathrm{Bal}_p(c,h,1)$ for some $h$ lies in $\mathrm{Span}_2(G)$;
+(iii) each $z\in G_z$ has a level-$3$ extension;
+(iv) every $z$ with $\mathrm{Bal}_p(z,0,2)$ lies in $\mathrm{Span}_3(G_z)$.
+Then $\mathrm{EXT}_p(n,k,3)$.\lean{[1434] Lift.EXT\_lift (with d = 1), Lift.lift\_of\_span}
+\end{lemma}
+
+\begin{proof}
+Let $\mathrm{Bal}_p(f,c,2)$.  The link $c$ is level-$1$ balanced (flag lemma), so
+$c\in\mathrm{Span}_2(G)$ by (ii).  Lifts are linear, so by (i) there is $L$ with
+$\mathrm{Bal}_p(L,c,2)$ and an extension $y$ of $L$.  Then $f-L$ has zero links at
+level $2$, so by (iv), (iii) and Lemma~\ref{lem:ext-span} it has an extension $y'$.
+$y+y'$ extends $f$.
+\end{proof}
+
+Let $\mathcal S_{23}$ be the set of $g$ with $\mathrm{Bal}_2(g,g,2)$ and
+$\mathrm{Bal}_2(g,g,3)$, and $\mathcal S_3$ those with
+$\mathrm{Bal}_2(g,g,3)$.\lean{[1434] Ext278c.SB23, SB3}  For $G=\mathcal S_{23}$ take
+$L=\gamma$ in (i); for $G_z=\mathcal S_3$ take the extension $z$ itself in (iii).
+
+\begin{lemma}[condition (ii)]\label{lem:C-span2b}
+Every $c$ with $\mathrm{Bal}_2(c,h,1)$ lies in
+$\mathrm{Span}_2(\mathcal S_{23})$.\lean{[1434] Ext278c.span2b}
+\end{lemma}
+
+\begin{proof}
+The link $h$ is level-$0$ balanced.  A second kernel-checked level-$1$ certificate,
+over the library's degree-$4$ unit design $D$ (with $D(\emptyset)=1$ and
+$\mathrm{Bal}_2(D,D,e)$ for $e\le3$) and a rectangle tower $R_{Bd}$, puts $h$ in
+$\mathrm{Span}_1$ of functions self-balanced at levels $1,2,3$, which lifts to $u\in
+\mathrm{Span}_2(\mathcal S_{23})$ with $\mathrm{Bal}_2(u,h,1)$.\lean{[1434] Ext278c.span1b, lift1b, bases1b; L1bData; K5Bal; Towers.RBd}
+Then $c-u$ has zero links at level $1$, so the level-$2$ certificate of
+Lemma~\ref{lem:C2} puts it in the span of relabellings of $R_0$ and $T$.  By kernel
+evaluation on all pairs of variables, $R_0$ agrees mod $2$ on $2$-matchings with a
+self-balanced tower $R_{RM}$, and $T$ with a relabelling of a tower $T_B$; both are in
+$\mathcal S_{23}$.\lean{[1434] Ext278c.zl2, gz\_span; Cong.r0\_cong, Cong.t\_cong; Towers.rrm\_bal}
+\end{proof}
+
+
+\paragraph{Generator lemmas for levels 1--3.}
+We prove the properties of the generators used in Lemmas~\ref{lem:C1}, \ref{lem:C2} and
+\ref{lem:C-span2b}.  Throughout $n=7$, $k=8$ unless stated otherwise; pigeon $i$ and hole $j$
+give the variable $x_{ij}$ of index $7i+j$.
+
+\emph{Block products.}  Block maps $\beta_P$ on pigeons and $\beta_H$ on holes, with values
+$<m$, put the edge $x_{ij}$ in block $b$ if $\beta_P(i)=\beta_H(j)=b$, and make it a
+\emph{cross edge} otherwise.  For factors $\varphi_b$ on local matchings whose values depend
+only on the set of edges, the block product is $\Pi(g)=0$ if $g$ has a cross edge and
+$\Pi(g)=\prod_b\varphi_b(g_b)$ otherwise, $g_b$ the edges of $g$ in block $b$.  For a local
+matching $\sigma$ of block $b$ and a pigeon $i$ of block $b$ free in $\sigma$, the
+\emph{local row sum} $\mathrm{lrow}_{\varphi_b}(\sigma,i)$ is $\sum\varphi_b(\sigma+x_{it})$ over
+the holes $t$ of block $b$ free in $\sigma$; local column sums are defined likewise.  We use:
+\begin{itemize}
+\item[(P1)] (stated, not reconstructed: \texttt{[1402] Win.bal\_win}; its hypotheses are read
+off the call in \texttt{HDes.lean}.)  If at every matching $g$ with $|g|=e$ (under a further
+hypothesis on $g$ that the proof of Lemma~\ref{lem:C-H} does not use) every local row sum
+$\mathrm{lrow}_{\varphi_b}(g_b,i)$, $b=\beta_P(i)$, $i$ free, is $\equiv\varphi_b(g_b)$, and
+likewise every local column sum, then $\mathrm{Bal}_p(\Pi,\Pi,e)$ ($m=3$).
+\item[(P2)] The same with the weaker hypothesis that, for $g$ without cross edges,
+$\bigl(\mathrm{lrow}_{\varphi_b}(g_b,i)-\varphi_b(g_b)\bigr)\prod_{c\ne b}\varphi_c(g_c)\equiv0$,
+and likewise for columns.\lean{[1402] TExt.bal\_win'}  Proof: if $g$ has a cross edge, $\Pi$
+vanishes at $g$ and at every one-edge extension of it; otherwise the free row sum of $\Pi$ at
+$g$ is $\mathrm{lrow}_{\varphi_b}(g_b,i)\prod_{c\ne b}\varphi_c(g_c)$, since an edge from $i$ to
+a hole of another block is a cross edge (stated, not reconstructed: \texttt{[1402]
+ProdExt.line\_Prod}), while $\Pi(g)=\varphi_b(g_b)\prod_{c\ne b}\varphi_c(g_c)$.
+\item[(P3)] (stated, not reconstructed: \texttt{[1434] ProdM.bal\_prodM}, in the form
+described in the paragraph on the generators below.)  Say $\varphi_b$ is \emph{locally balanced
+up to $E_b$} if the local line identities hold at every local matching of block $b$ with at
+most $E_b$ edges.\lean{[1434] ProdM.LocBal (definition read off its uses in Towers.lean)}  If
+each $\varphi_b$ is locally balanced up to $E_b$, vanishes on local matchings with fewer than
+$s_b$ edges, and $e\le E_b+\sum_{c\ne b}s_c$ for every $b$, then $\mathrm{Bal}_p(\Pi,\Pi,e)$.
+\end{itemize}
+A \emph{length-only} factor is $\varphi(\sigma)=G(|\sigma|)$.  On a block with $P$ pigeons and
+$Q$ holes its local row sum at $\sigma$ is exactly $(Q-|\sigma|)\,G(|\sigma|+1)$ and its local
+column sum $(P-|\sigma|)\,G(|\sigma|+1)$, by counting free cells.\lean{[1402] TExt.gsym\_row, gsym\_col}
+Local balance of a length-only factor is packaged as (stated, not reconstructed:
+\texttt{[1434] LocLf.lf\_locbal}); in every application below its numerical hypotheses
+are closed by \texttt{omega} and \texttt{decide}.
+
+\begin{lemma}[the design $H$]\label{lem:C-H}
+$H(\emptyset)=1$ and $\mathrm{Bal}_2(H,H,e)$ for $e\le2$.\lean{[1434] HDes.h\_design}
+\end{lemma}
+
+\begin{proof}
+$H$ is the block product with $\beta_P(i)=[i\ge12]$, $\beta_H(j)=[j\ge4]$ and factors
+$\varphi_0=B_7$, $\varphi_1=\mathrm{Dg}$ (the third slot of the Lean product is unused).  Here
+$B_7(\sigma)=B(\rho(\sigma))$, where $B$ is the library design of $\mathrm{ontoFPHP}(4,8)$ and
+$\rho(x_{ij})=4i+j$ renames an edge of block $0$ to the variable $x_{ij}$ of the $4$-hole
+board; and $\mathrm{Dg}(\sigma)=1$ if every edge of $\sigma$ is one of $(12,4)$, $(13,5)$,
+$(14,6)$, else $0$.\lean{[1434] HDes.H, B7, Dg, rho}  $H(\emptyset)=1$ is evaluated by
+\texttt{decide}.  For the balance we apply (P1) and check the local identities at a matching
+$g$ with $|g|=e\le2$.
+
+\emph{Block $0$.}  $\rho$ is injective on block $0$, preserves pigeons, holes and conflicts,
+and maps local matchings to matchings of $\mathrm{ontoFPHP}(4,8)$ of the same size.  So for a
+pigeon $i<12$ free in $g$ the local row sum of $B_7$ at $g_0$ over the holes $t<4$ is the row
+sum $\mathrm{row}^{(4,8)}_B(\rho(g_0),i)$, with $i$ free in $\rho(g_0)$; likewise for columns
+$j<4$.\lean{[1434] HDes.row0, col0, red\_CM, red\_len, red\_pfree, red\_hfree}  Since
+$|\rho(g_0)|\le2$, the library fact $\mathrm{Bal}^{(4,8)}_2(B,B,e')$ for $e'\le2$ (stated,
+not reconstructed: \texttt{[1402] BDesMain.b\_design}) gives $\equiv B(\rho(g_0))=B_7(g_0)$.
+
+\emph{Block $1$.}  For a pigeon $i\in\{12,13,14\}$ free in $g$, among the holes $4,5,6$ only
+$t=i-8$ can give a nonzero term $\mathrm{Dg}(g_1+x_{it})$.  If $\mathrm{Dg}(g_1)=0$ all terms are
+$0$; if $\mathrm{Dg}(g_1)=1$, then $g_1$ is diagonal, the hole $i-8$ is free (its diagonal
+pigeon $i$ is), and the term is $1$.  So the local row sum equals $\mathrm{Dg}(g_1)$ exactly;
+columns $j\in\{4,5,6\}$ likewise, with the single pigeon $j+8$.\lean{[1434] HDes.row1, col1}
+\end{proof}
+
+\begin{lemma}[the design $D$]\label{lem:C-D}
+$D(\emptyset)=1$ and $\mathrm{Bal}_2(D,D,e)$ for $e\le3$.\lean{[1434] K5Bal.d\_design}
+\end{lemma}
+
+\begin{proof}
+$D=\mathrm{Wt}(\mathit{sup})$ is the $\mathbb Z_{15}\times\mathbb Z_7$-invariant weight of the
+library design of run 1627 (stated, not reconstructed: \texttt{[1627] K5Defs.Wt}
+with its properties \texttt{Wt\_congr}, \texttt{Wt\_nm}); $\mathrm{Wt}$ depends only on the set of a list and vanishes on lists
+that are not matchings.  $D(\emptyset)=1$ is the kernel-checked fact
+\texttt{chk\_W0}.  Let $|g|\le3$.  By the two properties of $\mathrm{Wt}$, each term of the row
+sum of $D$ at $g$ and pigeon $i$ equals $\mathrm{Wt}(x_{ij}::g)$, so
+$\mathrm{row}_D(g,i)-D(g)$ is the pigeon defect $\mathrm{pigS}(\mathit{sup},i,g)$ of the run-1627
+development, and likewise columns.\lean{[1434] K5Bal.term, row\_eq, col\_eq}  The library
+lemma \texttt{[1627] K5Lem.lin\_all} (stated, not reconstructed), fed with the
+kernel-checked certificates \texttt{chk\_all} and \texttt{chk\_empty} (\texttt{[1627] K5Chk}),
+states that both defects are even for every $g$ of size $\le3$; the freeness of $i$ is not
+used.\lean{[1434] K5Bal.d\_bal}
+\end{proof}
+
+\begin{lemma}[towers]\label{lem:C-towers}
+The four block products of Table~\ref{tab:towers} satisfy $\mathrm{Bal}_2(\Phi,\Phi,e)$ for
+every $e\le3$.\lean{[1434] Towers.towers\_bal, rbd\_bal, tb\_bal, rrm\_bal, rrrm\_bal}
+\end{lemma}
+
+\begin{table}[ht]
+\centering\small
+\begin{tabular}{llllll}
+tower & block (pigeons $\times$ holes) & factor & $E_b$ & $s_b$\\\hline
+$R_{Bd}$ & $\{0,\dots,11\}\times\{0,\dots,3\}$ & $B_7$ & $2$ & $0$\\
+ & $\{12,13\}\times\{4,5\}$ & $[s\ge1]$ & $\infty$ & $1$\\
+ & $\{14\}\times\{6\}$ & $1$ & $\infty$ & $0$\\\hline
+$T_B$ & $\{0,\dots,11\}\times\{0,\dots,3\}$ & $B_7$ & $2$ & $0$\\
+ & $\{12,13,14\}\times\{4,5,6\}$ & $[s\ge2]$ & $\infty$ & $2$\\\hline
+$R_{RM}$ & $\{0,1\}^2$, $\{2,3\}^2$ & $[s\ge1]$ each & $\infty$ & $1$\\
+ & $\{4,\dots,14\}\times\{4,5,6\}$ & $M$ & $1$ & $0$\\\hline
+$R_{RRRM}$ & $\{0,1\}^2$, $\{2,3\}^2$, $\{4,5\}^2$ & $[s\ge1]$ each & $\infty$ & $1$\\
+ & $\{6,\dots,14\}\times\{6\}$ & $1$ & $0$ & $0$
+\end{tabular}
+\caption{The towers of \texttt{Towers.lean} ($s$ = local size; $\infty$ is $100$ in Lean).}
+\label{tab:towers}
+\end{table}
+
+\begin{proof}
+Each tower is a block product, and we apply (P3) with the $E_b$ and $s_b$ of
+Table~\ref{tab:towers}.\lean{[1434] Towers.RBd, TB, RRM, RRRM}
+\emph{Vanishing below $s_b$}: $[s\ge1]$ at $s=0$ and $[s\ge2]$ at $s\le1$ are $0$ (\texttt{simp}).
+\emph{Truncation}: $e\le E_b+\sum_{c\ne b}s_c$ for $e\le3$ and all $b$ is checked by
+\texttt{decide}; the binding cases are $3\le2+1+0$ for $B_7$ in $R_{Bd}$, $3\le2+2$ for $B_7$
+in $T_B$, $3\le1+1+1$ for $M$, and $3\le0+1+1+1$ for the all-ones block of $R_{RRRM}$.
+\emph{Local balance}:
+\begin{itemize}
+\item Length-only factors, by \texttt{LocLf.lf\_locbal} with \texttt{decide}.  With the
+local sums $(Q-s)G(s+1)$ and $(P-s)G(s+1)$ the identities read, mod $2$: for $[s\ge1]$ on
+$2\times2$, $2\cdot1\equiv0$ at $s=0$ and $1\cdot1=1$ at $s=1$; for $[s\ge2]$ on $3\times3$,
+$3\cdot0=0$, $2\cdot1\equiv0$, $1\cdot1=1$ at $s=0,1,2$; for the pin, $1\cdot1=1$ at $s=0$; for
+the all-ones $9\times1$ block, $1\cdot1=1$ (rows) and $9\cdot1\equiv1$ (columns) at $s=0$.
+At larger $s$ there is no free line in the block, except for rows of the $9\times1$ block at
+$s=1$, where the identity would read $0\equiv1$; this is why $E_b=0$ there.
+\item $B_7$ (on pigeons $<12$, holes $<4$) up to $E=2$: by the reindexing argument of
+Lemma~\ref{lem:C-H} and \texttt{BDesMain.b\_design}.\lean{[1434] Towers.b7\_loc}
+\item $M$ up to $E=1$: $M(\emptyset)=1$, $M(\{v\})=[v\in S_1]$, $M(\{v,w\})=[\{v,w\}\in S_2]$
+for explicit lists $S_1$ ($11$ edges) and $S_2$, and $M=0$ on larger sets.  The local
+identities at $\emptyset$ and at every single edge of the block are verified by kernel
+computation (\texttt{decide +kernel}).\lean{[1434] Towers.M, MS1, MS2, M\_chk0, M\_chk1r, M\_chk1c, M\_loc}
+\qedhere
+\end{itemize}
+\end{proof}
+
+\begin{lemma}[rectangle pairs extend]\label{lem:C-rect}
+Let $n\ge7$, $p\mid k$, and let $f=\rho\otimes\rho'$ be the product (\texttt{tprod},
+defined in \texttt{RectBlock}) of the signed rectangles $\rho$ on $\{a,a'\}\times\{b,b'\}$ and $\rho'$ on
+$\{c,c'\}\times\{d,d'\}$, with $a,a',c,c'$ distinct and $b,b',d,d'$ distinct.  Then there is $Y$
+with $\mathrm{Bal}_p(Y,f,2)$.\lean{[1402] RectExt.rect\_ext, rect\_ext\_lab}
+\end{lemma}
+
+\begin{proof}
+Choose fresh pigeons $x\ne y$ and fresh holes $h\ne h'$ (possible as $n\ge7$).\lean{[1402] RectExt.fresh}
+Blocks: $0=\{a,a',x\}\times\{b,b',h\}$, $1=\{c,c',y\}\times\{d,d',h'\}$, and $2$ the rest, with
+$n+k-6$ pigeons and $n-6\ge1$ holes.\lean{[1402] RectExt.bpf, count2}
+
+\emph{Block $2$.}  There is $\mu$ on the block-$2$ cells with every row sum and every column sum
+$\equiv1\pmod p$.  This holds for any $L_1$ pigeons and $L_2\ge1$ holes with $L_2\le L_1$ and
+$p\mid L_1-L_2$ (here $L_1-L_2=k$), by induction on $L_2$: for $L_2=1$ take $\mu\equiv1$
+(the column sum is $L_1\equiv L_2=1$); otherwise put $\mu=1$ at one cell $(s,q)$, $\mu=0$ on
+the rest of row $s$ and column $q$, and take $\mu$ on the remaining $(L_1-1)\times(L_2-1)$
+board by induction.\lean{[1402] RectExt.mu\_exists}  Let $M_2$ be $\mu$ on single edges and $0$
+elsewhere; its local line sums at $\emptyset$ are $\equiv1$.
+
+\emph{The extension.}  The library combines block data by (stated, not reconstructed:
+\texttt{[1402] ProdExt.bal\_prod3}), applied with local degrees $1,1,0$.  Its data are, on
+block $0$, the function $A_0$ equal to $\rho$ on single edges and $0$ elsewhere, and the
+degree-$2$ function $Y_0=\mathrm{Yb}(a,a',x;b,b',h)$, a signed sum of three products of edge
+functions (stated, not reconstructed: \texttt{[1402] RectBlock.Yb}); on block $1$ the same
+for $\rho'$; on block $2$ the indicator $A_2$ of $\emptyset$ and $Y_2=M_2$.  The hypotheses
+supplied are: the local line sums of $A_0$ at $\emptyset$ are $0$ (in row $a$,
+$\rho(x_{ab})+\rho(x_{ab'})+\rho(x_{ah})=1-1+0$, and likewise elsewhere); at each block-$0$
+edge $e$, every free local line sum of $Y_0$ at $\{e\}$ equals $\rho(e)$ exactly (stated, not
+reconstructed: \texttt{[1402] RectBlock.r\_row, r\_col, Yb\_row, Yb\_col}); the same on block
+$1$; and the line sums of $M_2$ at $\emptyset$ are $\equiv1=A_2(\emptyset)$.  The result is $Y$
+with $\mathrm{Bal}_p(Y,\Pi_A,2)$, where $\Pi_A$ is the block product of $A_0,A_1,A_2$.
+
+\emph{Agreement.}  On $2$-matchings $\Pi_A=\rho\otimes\rho'$: $\rho$ and $\rho'$ vanish off
+blocks $0$ and $1$, and the remaining case split on the blocks of the two edges is closed by
+\texttt{simp} and \texttt{grind}.\lean{[1402] RectExt.rect\_zero, tprod\_eq\_prod}  Since
+$\mathrm{Bal}_p(Y,\cdot,2)$ depends only on residues on $2$-matchings
+(Lemma~\ref{lem:ext-span}), $\mathrm{Bal}_p(Y,f,2)$.
+\end{proof}
+
+\begin{lemma}[the generator $T$ extends]\label{lem:C-T}
+Let $n\ge4$ and $2\mid k$, and let $T$ be the indicator of the $2$-matchings inside the
+block $\{0,1,2\}\times\{0,1,2\}$.  Then $\mathrm{Bal}_2(Y,T,2)$ for the block product $Y$
+below.\lean{[1402] TExt.t\_ext}
+\end{lemma}
+
+\begin{proof}
+Blocks: $0=\{0,1,2\}\times\{0,1,2\}$ and $2$ the remaining pigeons and holes (the middle
+slot of the Lean product is empty, with factor $1$).  Factors: $\varphi_0(\sigma)=[|\sigma|\ge2]$;
+$\varphi_2(\emptyset)=1$, $\varphi_2(\{x_{ij}\})=1$ if $i=j$ or ($i\ge n$ and $j=3$), else $0$,
+and $\varphi_2=0$ on two or more edges.\lean{[1402] TExt.bt, G0, dd, dl, Y, T}  We show
+$\mathrm{Bal}_2(Y,Y,2)$ by (P2); let $g$ have $|g|=2$ and no cross edge.\lean{[1402] TExt.Y\_bal}
+
+\emph{Lines in block $0$.}  The bracket of (P2) is $(3-s)\varphi_0(s+1)-\varphi_0(s)$ with
+$s=|g_0|\le2$ (three holes, resp.\ three pigeons, in the block), i.e.\ $0$, $2$, $0$ for
+$s=0,1,2$: even, by \texttt{decide}.
+
+\emph{Lines in block $2$.}  If $g_2=\emptyset$: a pigeon $i\ge3$ has exactly one block-$2$ hole
+with $\varphi_2=1$, namely $i$ if $i<n$ and $3$ if $i\ge n$ (here $n\ge4$), so its local row
+sum is $1=\varphi_2(\emptyset)$;\lean{[1402] TExt.row\_out} a hole $j\ge3$ has local column sum
+$1+[j=3]\,k\equiv1$, using $2\mid k$.\lean{[1402] TExt.col\_out}  If $g_2\ne\emptyset$: the local
+line sums of $\varphi_2$ at $g_2$ are $0$ ($\varphi_2$ vanishes on two edges), and the other
+factor $\varphi_0(g_0)=0$ because $|g_0|\le1$, so the bracket times the other factor is $0$.\lean{[1402] TExt.loc\_big, G0\_small}
+
+\emph{Agreement.}  On $2$-matchings $Y=T$: if both edges lie in block $0$, $Y=1\cdot1=T$;
+otherwise either there is a cross edge, or an edge in block $2$ forces $|g_0|\le1$ and
+$\varphi_0(g_0)=0$, and in both cases $Y=0=T$.\lean{[1402] TExt.Y\_eq}  Hence
+$\mathrm{Bal}_2(Y,T,2)$ (Lemma~\ref{lem:ext-span}).
+\end{proof}
+
+Lemma~\ref{lem:C-H} is the design $H$ of Lemma~\ref{lem:C1}; Lemmas~\ref{lem:C-rect}
+and~\ref{lem:C-T} are the extensions of $R_0$ and $T$ in Lemma~\ref{lem:C2}; and
+Lemmas~\ref{lem:C-D} and~\ref{lem:C-towers} give the self-balanced functions $D$,
+$R_{Bd}$, $R_{RM}$ and $T_B$ of Lemma~\ref{lem:C-span2b}.  The tower $R_{RRRM}$ (an
+RRR-type product) is not cited in Lemma~\ref{lem:C-span2b}.
+
+
+It remains to verify condition (iv) for $G_z=\mathcal S_3$; this is the level-$3$
+certificate.
+
+\begin{proposition}[level-3 zero-link span]\label{prop:C-z3}
+Every $z$ on matchings of $\mathrm{ontoFPHP}(7,8)$ with $\mathrm{Bal}_2(z,0,2)$ lies
+in $\mathrm{Span}_3(\mathcal G_3)$, where $\mathcal G_3$ is the set of valid RRR and
+$T\otimes R$ generators defined below; $\mathcal G_3\subseteq\mathcal S_3$.\lean{[1434] Ext278d.z3\_of\_run, g3\_sb3; [0841] L3.Main.run\_all, cov\_all}
+\end{proposition}
+
+Given the proposition, Lemma~\ref{lem:C-lift} gives
+$\mathrm{EXT}_2(7,8,3)$,\lean{[1434] Ext278c.ext3\_of\_z3, hard\_of\_z3} and with
+Lemmas~\ref{lem:C0}--\ref{lem:C2} and Theorem~\ref{thm:ext-criterion} this proves
+Theorem~C.\lean{[1434] Ext278d.hard\_of\_run}
+
+\paragraph{The generators.}
+Both families are block products: matchings with an edge between different blocks
+get $0$, and otherwise the value is a product of local factors.  A \emph{length-only}
+factor on a block with $P$ pigeons and $Q$ holes has a value $G(s)$ depending only
+on the size $s$ of the local matching; it is locally balanced up to length $L$ when, for
+every $s\le L$, $(Q-s)G(s+1)\equiv G(s)\pmod p$ if $s<P$ (a free pigeon exists) and
+$(P-s)G(s+1)\equiv G(s)\pmod p$ if $s<Q$ (a free hole exists).\lean{[1434] LocLf.lf\_locbal}  A
+product of locally balanced factors is balanced against itself at level $e$, with a
+truncation rule: a factor need only be balanced up to some length $E_b$ provided it
+vanishes below some length $s_b$ and $e\le E_b+\sum_{c\ne b}s_c$ for every
+block~$b$.\lean{[1434] ProdM.bal\_prodM}
+\begin{itemize}
+\item $\mathrm{RRR}(\pi)$: three $2\times2$ rectangle blocks
+$\{p_c,q_c\}\times\{j_c,h_c\}$ ($c<3$) and the all-ones block on the remaining $9$
+pigeons $\times$ $1$ hole.\lean{[1434] Gen3.GRR}
+\item $T\otimes R(\pi)$: the $T$ tower on a $3\times3$ block, a rectangle block, the
+all-ones block on $9$ pigeons $\times$ the remaining hole, and a $1\times1$ pin.\lean{[1434] Gen3T.GTR}
+\end{itemize}
+For valid parameters (a decidable condition) both are self-balanced at every level
+$e\le3$; in the Lean proof the local conditions and the truncation inequality are
+discharged by \texttt{decide}.\lean{[1434] Gen3.grr\_bal, Gen3T.gtr\_bal}  They vanish on
+matchings of size $<3$, so they have zero links at level $2$.\lean{[1434] Peel3.GS.zero2, GS.zl}
+On a matching with $3$ edges each value is the number of occurrences of the
+matching's code in an explicit list: the $64$ products of one edge from each
+rectangle for RRR, and the $72$ products of a $2$-matching inside the $T$ block with a
+rectangle edge for $T\otimes R$.\lean{[1434] Gen3.grr\_count, Gen3T.gtr\_count; Peel3.GS.count}
+
+\paragraph{The certificate and what it asserts.}
+Code the matchings with three edges, i.e.\ decreasing lists $[a,b,c]$ of variables
+$<105$, by $r_3(a,b,c)=\binom a3+\binom b2+c<187460$ (injective).\lean{[1434] Code3.r3, r3\_inj}
+A \emph{state} for $z$ is a pair $(r,P)$ of a residual function $r$ and a set $P$ of
+\emph{finalised} codes such that
+(S1) $\mathrm{Bal}_2(r,0,2)$; (S2) $z-r\in\mathrm{Span}_3(\mathcal G_3)$; (S3) $r$ is
+even on every finalised matching.\lean{[1434] Peel3.State3, Inv3}
+Initially $r=z$ and $P=\emptyset$.\lean{[1434] Peel3.state\_init}  Each step names a
+pivot $[a,b,c]$, which must be a matching with three edges, and adds it to $P$:
+\begin{itemize}
+\item \texttt{k1}$(\mathit{gs};a,b,c)$: valid generators $\mathit{gs}$ such that every
+code in their joint support list is the pivot or not finalised, and the pivot occurs
+an odd number of times.  Replace $r$ by $r-r(\text{pivot})\sum\mathit{gs}$.  The new
+residual is even at the pivot and unchanged mod $2$ at finalised codes (the
+generators are $0$ there); (S1) and (S2) are preserved because the generators have
+zero links and lie in $\mathcal G_3$.\lean{[1434] Peel3.chk1, kill\_sound}
+\item \texttt{kx}: the same, with the parity condition checked through the XOR mask
+of the support list, which allows cancellations among the
+generators.\lean{[1434] Peel3.chkX; [0841] L3.Big.Part (splitting of large masks)}
+\item \texttt{pr}$(u,w,\mathit{line};a,b,c)$: a free row or column at the
+$2$-matching $[u,w]$ all of whose codes other than the pivot are finalised, the
+pivot occurring an odd number of times.  By (S1) the line sum of $r$ is even, and
+by (S3) all other terms are even, so $r(\text{pivot})$ is even; $r$ is
+unchanged.\lean{[1434] Peel3.chkP, line\_par, step\_sound}
+\end{itemize}
+If after the run every matching with three edges is finalised, then $r\equiv0$ on all
+of them and $z\equiv z-r$, so $z\in\mathrm{Span}_3(\mathcal G_3)$ by
+(S2).\lean{[1434] Peel3.run3\_sound, span\_of\_cov, covA}
+
+The Lean proof of Proposition~\ref{prop:C-z3} consists of the soundness theorem
+just described, which is a conventional proof, and two finite facts, each
+\emph{verified by kernel computation} (\texttt{decide +kernel}):
+\begin{enumerate}
+\item the checker accepts the step list: $\mathrm{run}_3(\emptyset,\mathit{ss})$ returns a
+final mask $P_{\mathrm f}$.  The list is stored in files \texttt{L3/F0}--\texttt{F89};
+their headers record $95{,}550$ steps in $2{,}154$ pieces, one kernel check per piece,
+and the files contain $35{,}811$ \texttt{k1}, $1{,}394$ \texttt{kx} and $58{,}345$
+\texttt{pr} steps.  The pieces are chained by kernel-checked equalities of the
+intermediate masks;\lean{[0841] L3.F$i$.r$j$, L3.Main.lk0--lk89, run\_all; [1434] Peel3.run3\_append}
+\item $P_{\mathrm f}$ covers every matching with three edges: for every $a<105$, every
+$b<a$, $c<b$ with $[a,b,c]$ a matching, $r_3(a,b,c)\in P_{\mathrm f}$
+($60$ kernel checks).\lean{[0841] L3.Cov.cov, L3.Main.cov\_all}
+\end{enumerate}
+We do not reproduce the certificate.  Its correctness rests on the kernel's
+evaluation of these two facts; no part of the argument above depends on how the
+step list was found.  (The finding page reports that a second agent re-checked the
+certificate with an independent program; that check is outside the Lean proof.)
+
+\paragraph{Mechanism of C.}
+The same EXT criterion as in A and B, at $(p,k,n_0)=(2,8,7)$.  Levels $0$--$2$
+follow the peeling pattern with fixed designs and small certificates.  Level $3$
+reduces, by the lifting lemma, to one finite linear-algebra statement over
+$\mathbb F_2$: the zero-link space on matchings with three edges is spanned by the
+self-balanced RRR and $T\otimes R$ products.  A Gaussian-elimination-style
+certificate with $95{,}550$ steps proves it.
+\endgroup

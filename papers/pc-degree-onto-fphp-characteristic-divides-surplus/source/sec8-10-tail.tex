@@ -1,0 +1,138 @@
+% sec8-10-tail.tex -- Sections 8-10 of the C3 paper (draft 2026-11-08).
+% Sources: requests-20261106/c3-publication-prior-art-v2.md; notes-20261025/c3-sources.md;
+% publish/summaries/c3-*.md; OUTLINE.md section 9; PLAN.md rows G-C3.1-G-C3.3.
+
+\section{Relation to the literature}\label{sec:literature}
+
+\paragraph{The same family.}  Three sources treat the PC or Nullstellensatz degree of
+$\mathrm{onto\text{-}FPHP}^{n+k}_n$ with $p\mid k$.
+\begin{itemize}
+\item Riis's criterion~\cite{riis1993independence} (Theorem~8 of \cite{razborov2001php}) gives
+  the upper bound $p^{v_p(k)}$ for every $n$ (Proposition~\ref{prop:riis}).  Our results show
+  that it is attained: at the Lean tier for $v_p(k)=1$ from $n=2p-3$ (A), and at the written
+  tier for every $k$ from $n=2p^{v_p(k)}-1$ (E).
+\item Beame and Riis~\cite{beame1998counting} prove Nullstellensatz degree at least
+  $2^\ell-1$ (multiplier degree) for surplus $p^\ell$ and $n\ge((p+2)^\ell-p^\ell)/2$, and at
+  most $p^\ell-1$ for $n\ge p^\ell$, and list PC lower bounds for this family as open.  Their designs are the input of D.
+\item Riis and Sitharam~\cite[Thm.~33]{riis1997nonconstant} state PC degree at least $2^\ell-1$
+  for surplus $p^\ell$ once $N\ge(21+3p^2)(2^\ell-2)-p$.  We have read the statement and the
+  preceding lemmas (pp.~36--38, same linear encoding) but not checked the proof, which
+  delegates to a tree translation (Lemmas~31, 32) that we have not reconstructed.  We draw no
+  conclusion about its correctness, and none from the fact that Razborov's later survey asks
+  Question~7 without citing it.  For comparison: at $\ell=2$ it gives $3$ for
+  $N\ge2(21+3p^2)-p$, against $p+1$ from $n=2p-1$ (B, Lean) and $p^2$ from $n=2p^2-3$ (F,
+  written); at $p=2$, $\ell=3$ it gives $7$ for $N\ge196$, against $5$ from $n=7$ (C, Lean)
+  and $8$ from $n=15$ (E, written).
+\end{itemize}
+
+\paragraph{Razborov's Question~7.}  The mathematical statements here concern the exact
+eventual degree and, for surplus $p^\ell$, growth as $\ell$ varies; under E's named inputs
+that degree is $p^\ell$.  We make no claim of resolving the historical formulation of
+Question~7 or of priority over Theorem~33 of \cite{riis1997nonconstant}.  None of the Lean
+results bears on growth.
+
+\paragraph{Other characteristics and other principles.}  Buss, Grigoriev, Impagliazzo and
+Pitassi~\cite{bgip2001} prove linear PC degree for Tseitin formulas mod $p$ in
+characteristic $q\ne p$ (when the field contains a root of unity of order $p$) and for counting principles
+in other characteristics; Alekhnovich and Razborov~\cite{alekhnovich2003nonbinomial} extend
+linear bounds to non-binomial cases; Buss, Impagliazzo, Kraj\'\i\v cek, Pudl\'ak, Razborov
+and Sgall~\cite{bikprs1996} prove Nullstellensatz lower bounds for counting principles mod
+$q$ over $\mathbb Z_m$ with $q\nmid m$.  All concern the regime in which the characteristic
+does not divide the relevant modulus, and none treats the onto principle with $p\mid k$.
+Impagliazzo, Pudl\'ak and Sgall~\cite{ips1999} give Razborov's bound for the injective
+principle, where the onto and functional axioms are absent and the bound does not depend on
+$p$.  The applications of general degree methods~\cite{miksa2015generalized} that we examined do
+not yield bounds for the linear onto functional system when $p$ divides $k$, and in the
+sources we examined we found no suitable low-degree reduction from the cited counting or
+Tseitin principles to this system.
+
+\paragraph{The algebraic inputs.}  The proofs of D, E and F use published results from
+representation stability and modular representation theory: FI-modules~\cite{churchellenberg},
+matrix loci~\cite{rhoades2024}, stable periodicity~\cite{harman2015},
+semisimplification~\cite{hone2025}, chessboard complexes~\cite{shareshianwachs}, Moore spaces
+and the Dade group~\cite{yalcin2016}, and endosplit resolutions~\cite{miller2024}.  We make no claim about whether they have been
+used in proof complexity before.
+
+\paragraph{Search.}  The searches behind this section (web, ECCC, and the citations of the
+sources; October and November 2026), with the list of sources opened and of those read only as
+abstracts, are published with each of the findings behind A--C, under \emph{prior art}.
+
+\section{How these results were produced, and what was checked}\label{sec:process}
+
+\paragraph{Who did what.}  All results in this paper were found and proved by AI research
+agents (Claude models by Anthropic and Codex models by OpenAI) working in an automated
+research harness in October and November 2026.  The author built and ran the harness, chose
+the problems, directed the runs, read the outputs and decided what to publish.  He is not a
+specialist in this area and does not follow every proof in detail himself.  He publishes the
+results as they stand, with the evidence for each stated by its tier, and takes
+responsibility for publishing them.  The harness records every claim together with its
+evidence, its reviews and the files behind it; those records are the basis of the roles stated
+below.  Results A--C come from runs that produce Lean proofs; D--G from one exploratory run
+(20261104-0759) with two Claude and two Codex agents, followed by adjudication.
+
+\paragraph{The Lean results.}  The formal statements are supported by kernel-checked proof
+terms.  Their interpretation as the claims of this paper also depends on the definitions and
+the correspondence established in Section~\ref{sec:defs}.  The library is public, with the exact toolchain and a
+manifest; each finding records the commit it was checked at.  Its checks rebuild the proof modules with
+the recorded toolchain and then check the published declarations' types and axiom
+dependencies with \texttt{\#check} and \texttt{\#print axioms}.  Every theorem uses
+only \texttt{propext}, \texttt{Classical.choice} and \texttt{Quot.sound}.  On 6 November 2026 a separate model reproduction rebuilt the named proof targets from the
+public repository and checked the published declarations; hardware, timings and memory are
+recorded in the ``How to verify'' section of each finding.
+For A and B, a second agent in the same run supplied Lean re-proofs, reusing between one and
+nine of the first agent's lemmas for A and six for each statement of B.  For C, a second agent
+independently checked the level-3 certificate with a program written from the Lean
+definitions; this was not a second Lean re-proof.
+
+\paragraph{The written results.}  Each proof of D--G was written by one agent and
+reconstructed by at least one other, of the other vendor in most cases; a separate model
+referee with no contact with the run re-read the primary sources for each of the three
+mechanisms; and the adjudicator Astra (a Codex model outside the run) checked each against the
+primary sources and wrote the scoped verdicts we report.  Section~\ref{sec:growth-provenance}
+and the corresponding paragraphs of Sections~\ref{sec:periodicity}--\ref{sec:bands} give the
+roles per result.  Where reviewers co-developed an argument before reviewing it, the run
+records say so.  The paper's later prose reconstructions (Section~\ref{sec:lean},
+Appendix~\ref{app:tilting}) and added corollaries were checked in a separate model review of
+the paper, which led to corrections.  This is a demanding process, but it is model review,
+and we do not present it as more.
+
+\paragraph{What was not done.}  No human expert has reviewed any proof in this paper.  The
+external theorems named as inputs were checked at the level of their statements and the
+interfaces we use, not re-proved; the exception is \cite[Thm.~8.4.5]{hone2025}, whose proof
+was reconstructed, with the result described in Sections~\ref{sec:periodicity}
+and~\ref{sec:errata}.  D--G are not formalised.  The finite computations are
+exact, but are evidence only for the cases computed.  We would welcome corrections, and will
+record them with the published findings.
+
+\section{Open problems}\label{sec:open}
+
+\begin{enumerate}
+\item \emph{Formalise E.}  A first step is planned for a revision of this paper: a Lean proof that
+  periodicity, and hence the exact degree $p^{v_p(k)}$, follows from the existence of a functor
+  with the properties used in Section~\ref{sec:periodicity-oti} or Appendix~\ref{app:tilting}, so that the remaining trust is
+  isolated in explicit functor properties and the listed external inputs.  The inputs are deep; a formalisation of F in
+  the bands $d<2p$, which needs only the connectivity theorem, is closer.
+\item \emph{Complete the proof of \cite[Thm.~8.4.5]{hone2025}} for the semisimplification
+  functor, without their Lemma~8.2.1.  This would make Theorem~\ref{thm:periodicity}(b) and
+  the threshold $n\ge2q-2$ unconditional.
+\item \emph{The uniform spanning statement.}  Prove the spanning statements
+  (A)$(n+k,n,r)$, $r=2,3,4$, uniformly over $\mathbb F_3$ for $n\ge7$ and $9\mid k$ ((A) fails
+  off the stable range, Section~\ref{sec:bands-reduction}).  Alternatively, formalise
+  Lemmas~\ref{lem:hole-avoid} and~\ref{lem:pigeon-ind} and import kernel-checked square
+  certificates $S(2)$, $S(3)$, $S(4)$ in the formal spanning definitions; this would discharge
+  the hypotheses of the Lean theorem behind Corollary~\ref{cor:f3}.
+\item \emph{Thresholds.}  The degree is $p^{v_p(k)}$ from $n=2p^{v_p(k)}-1$ (E) and, for
+  $v_p(k)\le2$, from $2p^{v_p(k)}-3$ (A, F).  What is it below?  Over $\mathbb F_2$ with $k=4$
+  it is $3$ at $n=3,4$ and $4$ from $n=5$, so the threshold of E is not sharp.
+\item \emph{The ideal identity beyond $p^2$.}  Investigate the full identity
+  $(I\cap J)_d=(IJ)_d+\sum_{t=1}^d\sigma_t\mathcal A_{d-t}$, the form tested by exact
+  computation in the run, for $d\ge p^2$.  For $d<p^2$ the proof of
+  Section~\ref{sec:bands-high} establishes the stronger form with $\sigma_1$ and $\sigma_p$
+  only; at $d=p^2$ the elementary abelian subgroup is no longer Sylow and the transfer
+  argument stops.
+\item \emph{Designs of degree $p^\ell-1$.}  Beame and Riis leave the Nullstellensatz degree for
+  surplus $p^\ell$ between $2^\ell-1$ and $p^\ell-1$ for odd $p$.  Unit designs of degree
+  $p^\ell-1$ would close that gap and, through Theorem~\ref{thm:padding}, give the exact PC
+  degree $p^\ell$ on the inputs of Section~\ref{sec:growth} alone.
+\item \emph{Riis--Sitharam, Theorem~33.}  Check its proof.
+\end{enumerate}

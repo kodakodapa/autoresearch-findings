@@ -1,0 +1,64 @@
+{
+  "abstract": "The onto functional pigeonhole principle with $n+k$ pigeons and $n$ holes has a polynomial\ncalculus refutation of degree $1$ over $\\mathbb F_p$ when $p\\nmid k$, and one of degree\n$p^{v_p(k)}$ in general, by a criterion of Riis.  We study the lower bound when $p$ divides\n$k$.  In Lean~4 we prove that the degree is exactly $p$ when $p$ divides $k$ exactly once\n($n\\ge2p-3$), at least $p+1$ when $p^2$ divides $k$ ($n\\ge2p-1$), and at least $5$ for $p=2$,\n$k=8$ ($n\\ge7$).  With written proofs that rest on named published theorems and have been\nchecked by AI reviewers but not by people, we show that the degree is exactly $p^{v_p(k)}$\nfor $n\\ge2p^{v_p(k)}-1$, so that for surplus $p^\\ell$ it grows as $p^\\ell$; we give two\nfurther mechanisms, one through Nullstellensatz designs (degree at least $2^\\ell$ with\nexplicit thresholds) and one degree by degree (exact degree $p^2$ when $v_p(k)=2$); and we\nrecord five errata in two of the sources these proofs use, among them a gap in the published\nproof of a theorem we would otherwise have used.  Every statement carries its\nevidence tier.  All results were produced by AI research agents under the author's direction.",
+  "author": "Lindheim, Bj\u00f6rn",
+  "date": "2026-11-09",
+  "files": [
+    {
+      "path": "paper.pdf",
+      "sha256": "a18300fb9a786872a66493b182a020ecad08a7910f1173125c5bafdd6bd22aad"
+    },
+    {
+      "path": "source/appA-tilting.tex",
+      "sha256": "7ac4567241b9aa34fb8c01edf36202f84b934462e892360a740eaeef0c19c1c9"
+    },
+    {
+      "path": "source/main.tex",
+      "sha256": "edf6888a839496f99b8c8cce14eebdab37988b23479d92a159dae71d4030f6d5"
+    },
+    {
+      "path": "source/refs.bib",
+      "sha256": "896308218d9d8930607b5f0c4c6ab1d5fce87ab9e5c51f581538da90cd66793e"
+    },
+    {
+      "path": "source/sec1-introduction.tex",
+      "sha256": "07087b8280533493610a71759c945290279f0385fffa602a4561957da83ac295"
+    },
+    {
+      "path": "source/sec2-definitions.tex",
+      "sha256": "6206c8445882ec34220ee0d19a78de2f3b114302d5b6c37d8a8a81568972c627"
+    },
+    {
+      "path": "source/sec3-lean-results.tex",
+      "sha256": "5772ee9a1992486a836ad854db7cfd7d9d7f477864a37eab6843e8bb2ff6d66e"
+    },
+    {
+      "path": "source/sec4-growth.tex",
+      "sha256": "d5a1d9c88d26bea03906b0e46eaaa90511a7e75df43a45c1e70719728038f2f8"
+    },
+    {
+      "path": "source/sec5-periodicity.tex",
+      "sha256": "90bba0737a2d4fb31d64c1dc0f569e576c1fb952e55ee2f66e9367ff77776d15"
+    },
+    {
+      "path": "source/sec6-bands.tex",
+      "sha256": "383bde77161778621cf67038d0a6132d514fffe722b2e7a7bf6b88b2606691d0"
+    },
+    {
+      "path": "source/sec7-errata.tex",
+      "sha256": "3e19ed4a5fee2a88b4dcd84c1c99a676b24dbc099f986312960d73c47f03aea4"
+    },
+    {
+      "path": "source/sec8-10-tail.tex",
+      "sha256": "c8537c28224482882f9dc64d4c9e34824edbbcee8947832f52fb4d9e9ec091c5"
+    }
+  ],
+  "related": [
+    "exact-pc-degree-onto-fphp-first-level",
+    "pc-degree-above-p-onto-fphp-surplus-p-squared",
+    "pc-degree-5-onto-fphp-surplus-8",
+    "conditional-pc-degree-four-onto-fphp-surplus-9"
+  ],
+  "slug": "pc-degree-onto-fphp-characteristic-divides-surplus",
+  "title": "Polynomial calculus degree of the onto functional pigeonhole principle when the characteristic divides the surplus",
+  "version": 1
+}
