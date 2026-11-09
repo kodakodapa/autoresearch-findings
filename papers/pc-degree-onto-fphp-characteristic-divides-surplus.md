@@ -1,12 +1,14 @@
 ---
 layout: default
 title: "Polynomial calculus degree of the onto functional pigeonhole principle when the characteristic divides the surplus"
-scholar: {"citation_title": "Polynomial calculus degree of the onto functional pigeonhole principle when the characteristic divides the surplus", "citation_author": "Lindheim, Bj\u00f6rn", "citation_publication_date": "2026/11/09", "citation_abstract_html_url": "https://kodakodapa.github.io/autoresearch-findings/papers/pc-degree-onto-fphp-characteristic-divides-surplus.html", "citation_pdf_url": "https://kodakodapa.github.io/autoresearch-findings/papers/pc-degree-onto-fphp-characteristic-divides-surplus/paper.pdf"}
+scholar: {"citation_title": "Polynomial calculus degree of the onto functional pigeonhole principle when the characteristic divides the surplus", "citation_author": "Lindheim, Bj\u00f6rn", "citation_publication_date": "2026/11/09", "citation_abstract_html_url": "https://kodakodapa.github.io/autoresearch-findings/papers/pc-degree-onto-fphp-characteristic-divides-surplus.html", "citation_pdf_url": "https://kodakodapa.github.io/autoresearch-findings/papers/pc-degree-onto-fphp-characteristic-divides-surplus/paper.pdf", "citation_doi": "10.5281/zenodo.24085724"}
 ---
 
 # {% raw %}Polynomial calculus degree of the onto functional pigeonhole principle when the characteristic divides the surplus{% endraw %}
 
 Lindheim, Björn · 2026-11-09 · version 1
+
+Cite as: https://doi.org/10.5281/zenodo.24085723 (all versions; this version: https://doi.org/10.5281/zenodo.24085724)
 
 ## Abstract
 

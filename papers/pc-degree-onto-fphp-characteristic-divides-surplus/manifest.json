@@ -60,5 +60,8 @@
   ],
   "slug": "pc-degree-onto-fphp-characteristic-divides-surplus",
   "title": "Polynomial calculus degree of the onto functional pigeonhole principle when the characteristic divides the surplus",
-  "version": 1
+  "version": 1,
+  "doi": "10.5281/zenodo.24085724",
+  "concept_doi": "10.5281/zenodo.24085723",
+  "zenodo_record_id": "24085724"
 }
