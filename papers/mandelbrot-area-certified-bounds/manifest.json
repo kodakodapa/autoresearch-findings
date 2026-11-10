@@ -19,5 +19,8 @@
   "related": [],
   "slug": "mandelbrot-area-certified-bounds",
   "title": "Interval-certified bounds on the area of the Mandelbrot set",
-  "version": 1
+  "version": 1,
+  "doi": "10.5281/zenodo.24116751",
+  "concept_doi": "10.5281/zenodo.24116750",
+  "zenodo_record_id": "24116751"
 }
