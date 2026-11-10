@@ -1,0 +1,128 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{booktabs}
+\usepackage[hidelinks]{hyperref}
+\usepackage{url}
+
+\newtheorem{lemma}{Lemma}
+\newtheorem{theorem}{Theorem}
+
+\title{Interval-certified bounds on the area of the Mandelbrot set}
+\author{Bj\"orn Lindheim}
+\date{10 November 2026 \\[0.5ex] \small Version 1. An independent review of the mathematics is pending; a revised version will follow it.}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We give interval-certified bounds on the area $\mu(M)$ of the Mandelbrot set:
+\[
+  1.5064820 \;\le\; \mu(M) \;\le\; 1.5643498 .
+\]
+The lower bound sums certified lower bounds on the areas of 3,352,592 hyperbolic components (periods 3 to 508, plus the exact areas of the period-1 and period-2 components). Each component's centre is isolated by a Krawczyk test, its exact period is checked, and its area is bounded below by the first three terms of the area formula for the inverse of its multiplier map. The upper bound is the area of a depth-17 dyadic quadtree (with two further levels of exterior refinement) minus the cells certified to lie outside $M$, by escape or by a Koebe-type distance estimate with explicit truncation bounds. All arithmetic is ball arithmetic (Arb via python-flint). Both certificates were audited in full by independently written checkers at adaptive precision. The lower bound exceeds every published lower bound we know of, certified or not; the upper bound improves on Fisher and Hill's 1993 bound and on every certified upper bound we found, but not on F\"orstemann's uncertified 1.53121. The trust base is Arb, Python and the lemmas stated here; nothing is formalised in a proof assistant.
+\end{abstract}
+
+\section{Introduction}
+
+The area of the Mandelbrot set $M=\{c\in\mathbb{C}: \text{the orbit of }0\text{ under }z\mapsto z^2+c\text{ is bounded}\}$ is not known in closed form. Pixel counting gives $\mu(M)\approx1.5065918849\pm2.8\cdot10^{-9}$ (F\"orstemann 2012, via \cite{munafo}). Rigorous bounds are much weaker. Fisher and Hill \cite{fisherhill1993} gave $1.50296686<\mu(M)<1.57012937$ from a quadtree and the Koebe quarter theorem, computed in floating point. Hill later summed the areas of about 430,000 hyperbolic components to obtain lower bounds of $1.50585063$ (1996) and $1.506303622$ (1997) \cite{munafo}, and F\"orstemann \cite{forstemann2017} reports $1.50640<\mu(M)<1.53121$ from a depth-26 quadtree in double precision. None of these computations controls floating-point error. Upper bounds from the Laurent series of the B\"ottcher map \cite{ewingschober1992,bittner2017,irving_mandelbrot} converge very slowly; the best is $\mu(M)\le1.651587$ \cite{irving_mandelbrot}.
+
+Certified bounds, as far as we have found, are far weaker. Irving's verified render gives $\mu(M)\le1.826454$ at depth 12 \cite{irving_render}, part of a Lean formalisation programme whose stated goal includes beating the best area bounds \cite{irving_ray}. Heiland-Allen's interval computation gives $1.4165\le\mu(M)\le1.8478$ at level 11 \cite{heilandallen2023}.
+
+\begin{theorem}\label{thm:main}
+$1.5064820\le\mu(M)\le 6880083171681/2^{42} = 1.5643497981\ldots$
+\end{theorem}
+
+The methods are those of Hill (component sums) and of Fisher and Hill (quadtree with a distance estimate). What is new is that every inequality is certified in ball arithmetic and that each certificate was re-verified in full by a checker written independently of the code that produced it. To our knowledge these are the first interval-certified bounds of this quality.
+
+\section{The lower bound: hyperbolic components}
+
+A hyperbolic component $W$ of period $p$ is a connected component of the set of $c$ for which $z\mapsto z^2+c$ has an attracting cycle of exact period $p$. Each $W$ has a unique centre $c^*$, where $0$ lies on the cycle, and the multiplier map $\lambda:W\to\mathbb{D}$ is a conformal isomorphism with $\lambda(c^*)=0$ \cite{douadyhubbard,milnor2000}. Distinct components are disjoint open subsets of $\operatorname{int}M$.
+
+\begin{lemma}[component area]\label{lem:area}
+Let $c(\lambda)=c^*+\sum_{n\ge1}a_n\lambda^n$ be the inverse of the multiplier map of $W$. Then
+\[
+  \mu(W)=\pi\sum_{n\ge1}n|a_n|^2 \;\ge\; \pi\big(|a_1|^2+2|a_2|^2+3|a_3|^2\big).
+\]
+\end{lemma}
+This is the area formula for a univalent map of the unit disk \cite{duren1983}; every term is non-negative, so truncation gives a lower bound. If $\lambda(c^*+e)=\lambda_1e+\lambda_2e^2+\lambda_3e^3+O(e^4)$, series inversion gives $a_1=1/\lambda_1$, $a_2=-\lambda_2/\lambda_1^3$ and $a_3=(2\lambda_2^2-\lambda_1\lambda_3)/\lambda_1^5$. At the centre, $\lambda_1=2^p\,\partial_c f_c^p(0)\big|_{c^*}\prod_{j=1}^{p-1}f^j_{c^*}(0)$, and $\lambda_2,\lambda_3$ are obtained by iterating the orbit on truncated power series (jets) in $e$, evaluated in disk arithmetic over a certified disk containing $c^*$.
+
+\paragraph{Certification of each component.} For each candidate centre (found by floating-point Newton iteration):
+\begin{enumerate}
+\item a Krawczyk test \cite{krawczyk1969} for $g(c)=f_c^p(0)$ on a box $C$, with strict inclusion, proves a unique zero $c^*\in C$;
+\item for every proper divisor $m$ of $p$, $0\notin f^m_C(0)$ in ball arithmetic, so the period is exactly $p$;
+\item $(\lambda_1,\lambda_2,\lambda_3)$ are enclosed over $C$, and $\pi(|a_1|^2+2|a_2|^2+3|a_3|^2)$ is bounded below.
+\end{enumerate}
+Components of different periods are distinct. Within a period, boxes are required to be pairwise disjoint, so their centres, and hence their components, are distinct; the certificate is checked for global disjointness across all files. Missing components only weaken the bound. Boxes strictly above the real axis are counted twice (for the conjugate component), boxes meeting the axis once. The period-1 and period-2 components (the main cardioid and the disk of radius $1/4$) contribute exactly $3\pi/8+\pi/16=7\pi/16$.
+
+\paragraph{Result.} The certificate has 1,679,806 rows (one per upper-half-plane box) in twelve files, covering 3,352,592 components. Table~\ref{tab:lb} gives the cumulative bound. The third coefficient is included for all components except those of periods 65--508 in the base set, where it was omitted (which only weakens the bound).
+
+\begin{table}[h]
+\centering
+\begin{tabular}{@{}lrr@{}}
+\toprule
+Components added & Count & Cumulative lower bound \\
+\midrule
+Periods 1--2 (exact) & 2 & $7\pi/16 = 1.3744468$ \\
+Base search, periods 3--508 & 374,785 & 1.5063005 \\
+Exact periods 13--22 & 188,049 & 1.5063855 \\
+Exact periods 23--42 & 687,751 & 1.5064457 \\
+Exact periods 43--52 & 252,395 & 1.5064579 \\
+Exact periods 53--64 & 479,982 & 1.5064680 \\
+Exact periods 65--88 & 656,611 & 1.5064777 \\
+Exact periods 89--112 & 422,622 & 1.5064818 \\
+Exact periods 113--136 & 290,397 & 1.5064835 \\
+\bottomrule
+\end{tabular}
+\caption{Cumulative certified lower bound, as recomputed by the independent audit (512 to 2048 bits). The claimed bound $1.5064820$ was stated from the generator's own sums at 192 bits; the audit's sums exceed every stated threshold by about $1.4\cdot10^{-6}$. Supplementary sets exclude boxes already in the base set.}
+\label{tab:lb}
+\end{table}
+
+\section{The upper bound: a certified quadtree}
+
+$M$ lies in the closed disk of radius 2 and is symmetric under conjugation. We cover the upper half-plane part by the root squares $[-2,0]\times[0,2]$ and $[0,2]\times[0,2]$ and subdivide dyadically. A stored cell is \emph{exterior} if it is certified disjoint from $M$; then $\mu(M)\le 2(8-A_E)$, where $A_E$ is the total area of exterior cells (disjoint, inside the root). Cells meeting the real axis are counted once and the axis has measure zero. Write $z_1=c$, $z_{k+1}=z_k^2+c$, $z_k'=dz_k/dc$.
+
+\begin{lemma}[escape]
+If $|z_n|>2$ for some $n$ then $c\notin M$. A cell whose ball orbit satisfies this at some step is exterior.
+\end{lemma}
+
+\begin{lemma}[exterior distance estimate]\label{lem:koebe}
+Let $N\ge1$, $|z_N|\ge4$, $\delta=|z_N|^{-2}$ and $\varepsilon=|c|\delta\le1/8$, and let $G$ be the Green's function of $\mathbb{C}\setminus M$. Then $c\notin M$,
+\[
+  \big|G(c)-2^{1-N}\log|z_N|\big|\le2^{1-N}\varepsilon,\qquad
+  |\nabla G(c)|\le2^{1-N}\frac{|z_N'|}{|z_N|}(1+3\varepsilon)+2^{1-N}\delta,
+\]
+and $\operatorname{dist}(c,M)\ge\big(1-e^{-2G(c)}\big)/\big(4|\nabla G(c)|\big)$.
+\end{lemma}
+The truncation bounds follow from $|z_{k+1}|\ge\tfrac78|z_k|^2$ for $k\ge N$, which makes $\varepsilon_k=|c|/|z_k|^2$ decrease at least twelvefold per step; the tails of $G=\lim2^{1-k}\log|z_k|$ and of its derivative are then geometric. The distance estimate applies Koebe's quarter theorem to the inverse of the B\"ottcher map $\Phi$ composed with a M\"obius map of the disk, which is holomorphic on the disk of radius $1/|\Phi(c)|$; it gives $\operatorname{dist}(c,M)\ge(r^2-1)/(4r|\Phi'(c)|)$ with $r=|\Phi(c)|=e^{G(c)}$, which equals the expression above. A cell of half-side $h$ with centre $c_0$ is exterior when the bound at $c_0$, computed with a lower bound on $G$ and an upper bound on $|\nabla G|$, exceeds $h\sqrt2$. The hypotheses are checked in ball arithmetic at the stored point $c_0$, never transferred to other points; $1-e^{-2G}$ is evaluated as $-\operatorname{expm1}(-2G)$ to avoid cancellation.
+
+At the deepest level the certificate may also credit part of a cell: if the distance bound $\rho$ at the centre is smaller than the cell, the disk of radius $\min(\rho,s/2)$, or the axis-aligned square of half-diagonal $\min(\rho,s/\sqrt2)$, both inside the cell of side $s$ and outside $M$, is credited as exterior area.
+
+\paragraph{Result.} The certificate has 808,356,698 stored leaves at base depth 17 with two further exterior levels (maximum depth 19), and gives
+\[
+\mu(M)\le 6880083171681/2^{42}=1.5643497981002383 .
+\]
+
+\section{Verification}
+
+Each bound was produced by one program and audited by others written separately from the certificate format and the stated lemmas, without reading the generator's code.
+
+\begin{itemize}
+\item \textbf{Lower bound.} Two full audits: one re-executed every row's Krawczyk test, exact-period test and coefficient enclosures and checked global disjointness of all 1,679,806 boxes; the other, written by a model from a different vendor, did the same in Arb at adaptive precision from 512 to 2048 bits (about 67 minutes) and recomputed the cumulative sums of Table~\ref{tab:lb}. Both pass. The audits also reject deliberately corrupted certificates.
+\item \textbf{Upper bound.} A full audit re-verified every one of the 808,356,698 leaves in Arb with adaptive precision (192, 384, 768 and 1536 bits), checked exact disjointness and containment of all leaves by dyadic (Morton) intervals, and recomputed the exact area by integer arithmetic (about 4.1 hours on four cores). It rejects five corrupted certificates. An earlier attempt at fixed 192-bit precision stopped on an enclosure failure caused by cancellation in $1-e^{-2G}$; the rejected cell passes at 512 bits and the audit was rerun with adaptive precision.
+\end{itemize}
+
+\paragraph{What is trusted.} The correctness of Arb and python-flint, of the Python interpreter, and of the lemmas above. Independent code does not make the lemmas independent: every checker relies on Lemma~\ref{lem:area} for the lower bound and Lemma~\ref{lem:koebe} for the upper bound. An independent review of these lemmas and of the counting is in progress; this version will be revised after it.
+
+\section{How this result was produced}
+
+This work was done with an automated research harness in which teams of AI agents (models from Anthropic and OpenAI) work in rounds: a theorist states lemmas, researchers write generators and checkers, a skeptic attacks claims, and an editor tracks what is established. The author chose the problem, set the direction and the acceptance rules (a bound counts only when an independent checker passes the whole certificate), approved long computations, and corrected the comparison with prior work. The lemmas, code and certificates were produced by the agents over two runs on 9 and 10 November 2026 on a laptop. The author has checked the overall argument but not every detail of the proofs and code; that is the reason for the pending independent review and for publishing the certificates and checkers.
+
+\section*{Data}
+
+The certificates (about 1.5 GB for the upper bound, 40 MB for the lower bound), the generators and the independent checkers will be deposited with the revised version.
+
+\bibliographystyle{plain}
+\bibliography{refs}
+
+\end{document}

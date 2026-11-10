@@ -40,4 +40,5 @@ Research findings with reproducible proofs and checks.
 
 ## Papers
 
+- [Interval-certified bounds on the area of the Mandelbrot set]({{ "/papers/mandelbrot-area-certified-bounds.html" | relative_url }}) ([PDF]({{ "/papers/mandelbrot-area-certified-bounds/paper.pdf" | relative_url }}), version 1)
 - [Polynomial calculus degree of the onto functional pigeonhole principle when the characteristic divides the surplus]({{ "/papers/pc-degree-onto-fphp-characteristic-divides-surplus.html" | relative_url }}) ([PDF]({{ "/papers/pc-degree-onto-fphp-characteristic-divides-surplus/paper.pdf" | relative_url }}), version 1)
