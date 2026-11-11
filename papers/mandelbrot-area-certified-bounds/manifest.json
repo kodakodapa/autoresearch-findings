@@ -1,26 +1,33 @@
 {
-  "abstract": "Interval-certified bounds on the area of the Mandelbrot set: $1.5064820 \\le \\mu(M) \\le 1.5643498$. The lower bound sums certified lower bounds on the areas of 3,352,592 hyperbolic components (Krawczyk-isolated centres, exact periods, the first three terms of the area formula for the inverse multiplier map). The upper bound is a depth-17 dyadic quadtree minus cells certified exterior by escape or a Koebe-type distance estimate with explicit truncation bounds. All arithmetic is Arb ball arithmetic, and both certificates were audited in full by independently written checkers. The lower bound exceeds every published lower bound we know of; the upper bound improves on Fisher and Hill (1993) and on every certified upper bound we found, but not on F\u00f6rstemann's uncertified 1.53121. Version 1: an independent review of the mathematics is pending.",
+  "abstract": "Using ball-arithmetic certificates checked by separately implemented verifiers, we establish $1.5064820 \\le \\mu(M) \\le 6880083171681/2^{42} < 1.5643498$ for the area of the Mandelbrot set. The upper bound comes from a certified depth-17 dyadic quadtree (escape and a Koebe-type distance estimate with explicit truncation bounds); it is below Fisher and Hill's 1993 bound and the certified upper bounds we found, but above F\u00f6rstemann's uncertified 1.53121. The lower bound sums certified area-theorem lower bounds over 3,352,592 hyperbolic components of periods 3 to 504 plus the exact period-1 and period-2 components; a stronger ball-arithmetic lower bound, above 1.50651, was published in October 2026 by the same method. Version 2: revised after an independent review; certificates and checkers are deposited separately.",
   "author": "Lindheim, Bj\u00f6rn",
-  "date": "2026-11-10",
+  "concept_doi": "10.5281/zenodo.24116750",
+  "date": "2026-11-11",
+  "doi": "10.5281/zenodo.24116751",
   "files": [
     {
       "path": "paper.pdf",
-      "sha256": "aece6f06050f5686208884cfe1a0cf8fcdd3a5b1b58096c5fb1de6db54415ae6"
+      "sha256": "2976f18f7697111668f624c3668c97a38372b6c6bcc79d8e15ab4d97c34c8ace"
     },
     {
       "path": "source/main.tex",
-      "sha256": "cec92db2957de929634bdd09fdd2bf14e05c9730fc28dbc16f6ea4df12f716b2"
+      "sha256": "86ce88f0bdde92dcd193e8a1fa6912c04e36eceb56bee867d409b1efb9c38411"
     },
     {
       "path": "source/refs.bib",
-      "sha256": "6ef68d5b76e7478bb017485957a804ebabbecf93fcc8060232c2b5dcf1de2acb"
+      "sha256": "dfcb8a9bf0a3a9a025268e0bc66ed1c1e1fb68ae7825fa7696fbf0f65402c43c"
     }
   ],
   "related": [],
+  "revisions": [
+    {
+      "date": "2026-11-11",
+      "reason": "Independent review: withdraw the lower-bound record claim (stronger 2026 bound found), correct counts and coefficient description, add proofs, checkpoint warning and data DOI",
+      "version": 2
+    }
+  ],
   "slug": "mandelbrot-area-certified-bounds",
   "title": "Interval-certified bounds on the area of the Mandelbrot set",
-  "version": 1,
-  "doi": "10.5281/zenodo.24116751",
-  "concept_doi": "10.5281/zenodo.24116750",
+  "version": 2,
   "zenodo_record_id": "24116751"
 }
