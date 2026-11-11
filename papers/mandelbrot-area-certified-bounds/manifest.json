@@ -3,7 +3,7 @@
   "author": "Lindheim, Bj\u00f6rn",
   "concept_doi": "10.5281/zenodo.24116750",
   "date": "2026-11-11",
-  "doi": "10.5281/zenodo.24116751",
+  "doi": "10.5281/zenodo.24138640",
   "files": [
     {
       "path": "paper.pdf",
@@ -29,5 +29,5 @@
   "slug": "mandelbrot-area-certified-bounds",
   "title": "Interval-certified bounds on the area of the Mandelbrot set",
   "version": 2,
-  "zenodo_record_id": "24116751"
+  "zenodo_record_id": "24138640"
 }

@@ -1,14 +1,14 @@
 ---
 layout: default
 title: "Interval-certified bounds on the area of the Mandelbrot set"
-scholar: {"citation_title": "Interval-certified bounds on the area of the Mandelbrot set", "citation_author": "Lindheim, Bj\u00f6rn", "citation_publication_date": "2026/11/11", "citation_abstract_html_url": "https://kodakodapa.github.io/autoresearch-findings/papers/mandelbrot-area-certified-bounds.html", "citation_pdf_url": "https://kodakodapa.github.io/autoresearch-findings/papers/mandelbrot-area-certified-bounds/paper.pdf", "citation_doi": "10.5281/zenodo.24116751"}
+scholar: {"citation_title": "Interval-certified bounds on the area of the Mandelbrot set", "citation_author": "Lindheim, Bj\u00f6rn", "citation_publication_date": "2026/11/11", "citation_abstract_html_url": "https://kodakodapa.github.io/autoresearch-findings/papers/mandelbrot-area-certified-bounds.html", "citation_pdf_url": "https://kodakodapa.github.io/autoresearch-findings/papers/mandelbrot-area-certified-bounds/paper.pdf", "citation_doi": "10.5281/zenodo.24138640"}
 ---
 
 # {% raw %}Interval-certified bounds on the area of the Mandelbrot set{% endraw %}
 
 Lindheim, Björn · 2026-11-11 · version 2
 
-Cite as: https://doi.org/10.5281/zenodo.24116750 (all versions; this version: https://doi.org/10.5281/zenodo.24116751)
+Cite as: https://doi.org/10.5281/zenodo.24116750 (all versions; this version: https://doi.org/10.5281/zenodo.24138640)
 
 ## Abstract
 
