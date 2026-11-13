@@ -1,0 +1,101 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage[hidelinks]{hyperref}
+\usepackage{url}
+
+\title{How long can a message hidden in DNA be read?\\[0.3ex]\large Model results from a six-hour AI research run}
+\author{Bj\"orn Lindheim}
+\date{13 November 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Suppose a message is written into non-functional DNA of a living species and protected by an error-correcting code. How long can it still be decoded, from the population or from all descendant species, and how much could be hidden this way? A team of three AI agents worked on this question for six hours in an exploratory research harness. In their models, a 1\,kB message in one million bases of human DNA has an information ceiling of 470--890 million years at long-run mutation and DNA-loss rates; an implemented code gives an estimated 380--650 million years, but that decoder fails once realistic unknown-position deletions are added. Those timescales are hundreds of times longer than a mammal species usually lasts. A message placed in the ancestor of birds and mammals 320 million years ago could still carry about 0.2--1.2\,MB per 1\% of a human-sized genome when read from one descendant, and 1.7--5.0\,MB when descendants are read jointly; at four billion years only about two bits remain. A message written into one individual is usually lost: in an idealised population of 10{,}000 only 1 in 20{,}000 spreads to everyone, which takes about a million years. These are model results, not forecasts, and the main limitation (the loss rate of an inserted stretch of DNA) is not calibrated. We make no claim of priority.
+\end{abstract}
+
+\section{The question}
+
+Peter Nilson's novel \emph{Nyaga} (1996) has a character who hides himself in the non-coding DNA of a population. Proposals to look for messages in genomes go back to the late 1970s; the most recent, ``SETI in vivo'' \cite{shcherbak2013,makukov2018}, argue that a neutral segment would not survive for billions of years, so a lasting message would have to sit in features that selection keeps fixed. Laboratory work on storing data in living cells reports recovery after about a hundred bacterial generations \cite{xu2026}, and the capacity of one lineage under substitutions is known \cite{balado2013}. We did not find a lifetime for a coded message read from a whole population, with all the ways DNA is lost, or for a message read from a whole clade. This note reports what one run produced on those questions.
+
+\section{Model}
+
+The message is $K$ bits written into $F$ bases of neutral DNA, read back from the consensus of sampled genomes. Loss processes: point substitutions (Jukes--Cantor and Kimura two-parameter), small insertions and deletions, loss of DNA by deletion, deletion of a whole locus, transposon insertion, gene conversion between copies, and the end of the species. Parameters were taken from pedigree studies (for example 1.29$\times10^{-8}$ substitutions per site per generation in humans), from a transposon-age calibration that gives a long-run mammalian rate four to eight times the pedigree rate, and from comparative estimates of DNA loss \cite{buckley2018}. Simulations used a Wright--Fisher population and real codes (Reed--Solomon, and an LDPC code on purine/pyrimidine runs) decoded from the sampled consensus.
+
+\section{Results}
+
+Results were labelled \textsc{established} when written down and reconstructed by an agent who did not author them (most reconstructions were across vendors: Claude checking Codex and the reverse), \textsc{t-measured} for reproducible computations, and \textsc{candidate} otherwise.
+
+\paragraph{One species.} For small code rate $R=K/F$ the lifetime is approximately
+\[
+  T \approx \frac{\ln(c_0/R)}{2\gamma+\ell},
+\]
+where $\gamma$ is the slowest substitution eigen-rate ($4s/3$ for Jukes--Cantor, $2s/(\kappa+1)$ for the purine/pyrimidine class), $s$ the substitution rate per site per year and $\ell$ the per-base loss rate (\textsc{established}). Footprint and copy number enter only through $\ln(1/R)$; with no footprint budget there is no finite optimum. The population consensus behaves like a single lineage delayed by about $0.61H$ generations ($H$ the number of gene copies) in the weak-mutation regime. Small indels cost a factor of about 0.6 in lifetime when they occur at a tenth of the substitution rate.
+
+\begin{center}
+\begin{tabular}{lcc}
+\toprule
+1\,kB in 1\,Mb, long-run rates & information ceiling & implemented-code estimate \\
+\midrule
+human & 470--890 Myr & 380--650 Myr \\
+mouse & 580--600 Myr & 420 Myr \\
+\emph{Drosophila} & 52--65 Myr & 26 Myr \\
+\emph{E.~coli} & at most 460 Myr & --- (added DNA is not neutral) \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The implemented-code column is a retention-adjusted estimate, not a demonstrated recovery: with extra deletions at unknown positions, at a loss rate close to the substitution rate, the frozen decoder recovered 0 of 8 test files. What was decoded: 100-byte frames through small insertions and deletions (954 of 1{,}000 at one tested depth); whole 1\,kB files with an outer Reed--Solomon code in 11 of 12 single-lineage trials; and two of two complete 1\,kB files read from simulated populations after aligning sampled copies, using 2.93 million bases and independently simulated locus histories.
+
+\paragraph{What ends it.} Every mammal row exceeds a typical mammal species duration (1--2 million years) at least a hundredfold, so the end of the lineage is the plausible binding limit in these scenarios. This is not a proved all-process bound: the loss hazard of an engineered insert is not calibrated. Design rules within the model: spread one long code over unlinked loci; avoid identical copies or shared homology above a few hundred bases, since gene conversion makes copies fail together; store information in the purine/pyrimidine class, which changes more slowly when transitions dominate.
+
+\paragraph{A whole clade.} After speciation each daughter species carries a copy. A sufficient condition for the root sequence to stay recoverable from the descendants is that net carrier growth exceeds twice the per-site decay, $r_{\mathrm{eff}} = \lambda-\mu-D > 2\gamma$ (\textsc{established} within the model; for the two-state Yule case this reduces to known results on ancestral reconstruction \cite{gascuelsteel,mosselslysohn}). Coding changes the capacity at the condition, not the condition. Real clades stop growing, and then the gain is a constant: about $\ln(m_{\mathrm{eff}})/(2\gamma)$, with $m_{\mathrm{eff}}\approx 2.1$ effective copies on the mammal backbone timetree of \cite{upham2019}, roughly 130 million extra years.
+
+\paragraph{A message placed in an ancestor.} Ideal information ceilings for 31 million ancestral bases (1\% of a human-sized genome), long-run rates, perfect alignment, read from one descendant:
+
+\begin{center}
+\begin{tabular}{lr}
+\toprule
+placed & ceiling \\
+\midrule
+6 Myr (human--chimpanzee split) & 7 MB \\
+100 Myr (early placentals) & 2.1--3.9 MB \\
+320 Myr (early amniotes) & 0.18--1.18 MB \\
+600 Myr (early animals) & 7--307 kB \\
+1 Gyr & 67 bytes--53 kB \\
+4 Gyr & about 2 bits \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+Reading descendants jointly on a dated amniote tree (from \cite{irisarri2017} and \cite{upham2019}) gives 1.7--5.0\,MB at 320 Myr and 0.12--1.42\,MB at 600 Myr from jawed vertebrates alone. The deep rows extrapolate mammalian rates far beyond their calibration. For comparison, a 2010 whole-genome alignment matched 37--57\% of human DNA to mouse, dog or cow, 3.76\% to chicken and 2.24\% to zebrafish; this includes selected DNA and measures recognisability, so it is only a qualitative check. At billions of years only sequence held by selection remains, and conservation does not make it writable: the fixed blocks of the genetic code give a raw combinatorial ceiling of 61 bits, and ultra-conserved elements at most 0.59\,MB of raw choices with an unknown writable fraction.
+
+\paragraph{A message starting in one individual.} In an idealised Wright--Fisher population of $N=10^4$ (a long-term human effective size, not a census), a neutral message on one chromosome is gone after one generation in about a third of cases, survives $t$ generations with probability close to $2/t$, reaches everyone with probability $1/(2N)$ (1 in 20{,}000) and then takes about $4N$ generations, roughly a million years (\textsc{established} within the model). In a band of 50, 1 in 100 succeeds, in about 200 generations. While rare, one intact block survives better than separate pieces that are all needed. Population consensus cannot see a rare message; conditional on survival, finding a carrier with 95\% probability takes about 2{,}900 sequenced genomes after 100 generations and about 360 after 1{,}000, depending strongly on history.
+
+\paragraph{Detection without the key.} An encrypted message matched to the background composition is statistically undetectable in the tested model; encryption alone is not enough. A purine/pyrimidine run pattern is detectable at first, fades on timescales comparable to decoding, and later shows as a deficit of natural pattern: an anomaly, not a recognisable message. This rests on one chromosome without a calibrated genome-wide false-positive rate.
+
+\section{Limitations}
+
+These are model results. The absolute loss hazard of an inserted stretch of DNA, the joint law of losses across loci, and the transition bias per species are not calibrated; some secondary-source rates remain unverified. No decoder was shown to survive realistic deletions at unknown positions. Population experiments used independent locus histories, not a shared diploid pedigree. Extending present rates over hundreds of millions of years is uncertain, and the deepest rows extrapolate far beyond calibration. Prior-art searches were limited (arXiv, Crossref and Europe PMC queries); the run did not find an all-process population lifetime or the clade treatment of a coded message, but that is not proof of absence. Relevant work it did find includes a caution that consensus-level substitution rates differ from per-copy rates \cite{pascall2026} and an earlier treatment of synchronisation errors at low signal-to-noise ratio \cite{lowsnr}.
+
+\section{How this was produced}
+
+The work was done by three AI agents (two Claude Opus 5.5, one Codex) in a self-organising research harness over six hours on 12 November 2026, from a two-page plan and a dossier of prior work and parameters prepared by Claude in conversation with the author. The author chose the question, and in four notes during the run asked for the headline table to include DNA loss, a plain-language summary, the ancestor question and the single-individual question. The agents divided the work themselves and checked each other's claims. The author has not verified the derivations and simulations in detail; the evidence, scripts and seeds are kept with the run records and are available on request.
+
+\begin{thebibliography}{99}
+\bibitem{shcherbak2013} V.~I. shCherbak and M.~A. Makukov, ``The `Wow! signal' of the terrestrial genetic code'', \emph{Icarus} 224 (2013) 228--242, arXiv:1303.6739.
+\bibitem{makukov2018} M.~A. Makukov and V.~I. shCherbak, ``SETI in vivo: testing the we-are-them hypothesis'', \emph{Int.\ J.\ Astrobiology} 17 (2018) 127, arXiv:1707.03382.
+\bibitem{xu2026} Xu et al., ``Highly secure in vivo DNA data storage driven by genomic dynamics'', \emph{Advanced Science} (2026), PMC12948191.
+\bibitem{balado2013} F.~Balado, ``Capacity of DNA data embedding under substitution mutations'', \emph{IEEE Trans.\ Inf.\ Theory} (2013), doi:10.1109/TIT.2012.2219495, arXiv:1101.3457.
+\bibitem{buckley2018} R.~M. Buckley, R.~D. Kortschak and D.~L. Adelson, \emph{PLoS Comput.\ Biol.} (2018), PMC5931693.
+\bibitem{gascuelsteel} O.~Gascuel and M.~Steel, ``Inferring ancestral sequences in taxon-rich phylogenies'', arXiv:1004.1212.
+\bibitem{mosselslysohn} E.~Mossel, A.~Sly and Y.~Sohn, \emph{Ann.\ Probab.} 53 (2025) 967--1018, doi:10.1214/24-AOP1723, arXiv:2212.03362.
+\bibitem{upham2019} N.~S. Upham, J.~A. Esselstyn and W.~Jetz, ``Inferring the mammal tree: species-level sets of phylogenies for questions in ecology, evolution, and conservation'', \emph{PLoS Biol.} 17 (2019).
+\bibitem{irisarri2017} I.~Irisarri et al., \emph{Nature Ecology \& Evolution} (2017), PMC5584656.
+\bibitem{pascall2026} Pascall, ``Consensus-level substitution rates are distinct from the virion-level rate'', arXiv:2605.31305.
+\bibitem{lowsnr} ``Energy-efficient communication in the presence of synchronization errors'', arXiv:1301.6589.
+\end{thebibliography}
+
+\end{document}

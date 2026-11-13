@@ -40,5 +40,6 @@ Research findings with reproducible proofs and checks.
 
 ## Papers
 
+- [How long can a message hidden in DNA be read? Model results from a six-hour AI research run]({{ "/papers/genome-message-lifetime.html" | relative_url }}) ([PDF]({{ "/papers/genome-message-lifetime/paper.pdf" | relative_url }}), version 1)
 - [Interval-certified bounds on the area of the Mandelbrot set]({{ "/papers/mandelbrot-area-certified-bounds.html" | relative_url }}) ([PDF]({{ "/papers/mandelbrot-area-certified-bounds/paper.pdf" | relative_url }}), version 2)
 - [Polynomial calculus degree of the onto functional pigeonhole principle when the characteristic divides the surplus]({{ "/papers/pc-degree-onto-fphp-characteristic-divides-surplus.html" | relative_url }}) ([PDF]({{ "/papers/pc-degree-onto-fphp-characteristic-divides-surplus/paper.pdf" | relative_url }}), version 1)
